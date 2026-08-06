@@ -1,0 +1,5 @@
+# --- Editor / OS cruft ---
+.claude/
+INSTRUCTIONS.md
+SPEC.md
+ver7.html
