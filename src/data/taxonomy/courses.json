@@ -1,0 +1,16 @@
+{
+  "items": [
+    { "id": "starter", "label": "Starter" },
+    { "id": "main-course", "label": "Main Course" },
+    { "id": "side", "label": "Side" },
+    { "id": "salad", "label": "Salad" },
+    { "id": "soup", "label": "Soup" },
+    { "id": "breakfast", "label": "Breakfast" },
+    { "id": "snack", "label": "Snack" },
+    { "id": "dessert", "label": "Dessert" },
+    { "id": "bread", "label": "Bread" },
+    { "id": "sauce", "label": "Sauce" },
+    { "id": "condiment", "label": "Condiment" },
+    { "id": "drink", "label": "Drink" }
+  ]
+}

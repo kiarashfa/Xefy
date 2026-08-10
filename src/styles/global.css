@@ -1,0 +1,156 @@
+@import 'tailwindcss';
+
+/*
+ * The token layer.
+ *
+ * Every colour on the site resolves through one of these, per theme. Nothing
+ * downstream declares a colour of its own: a value that exists in two places
+ * is a value that can disagree with itself, and the second theme is where that
+ * shows up.
+ *
+ * Layout and motion tokens live here on the same terms — the reading measure
+ * and the easing curve are as much part of the design as the palette.
+ */
+
+:root,
+[data-theme='light'] {
+  --surface: #faf7f2;
+  --surface-2: #f2ede4;
+  --surface-3: #ffffff;
+  --ink: #241f1c;
+  --ink-soft: #55504a;
+  --line: #e4dcd0;
+  --line-strong: #d8cfc0;
+  --accent: #9a3324;
+  --accent-soft: #f0ddd6;
+  --accent-ink: #6e2417;
+  --sage: #5c6b47;
+  --sage-soft: #eef0e6;
+  --gold: #c8862f;
+  --gold-soft: #f7ecd8;
+  --muted: #8a8074;
+  --shadow: rgba(60, 45, 30, 0.1);
+  --overlay: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] {
+  --surface: #1c1a17;
+  --surface-2: #252220;
+  --surface-3: #2c2925;
+  --ink: #f3ede4;
+  --ink-soft: #c9c0b4;
+  --line: #3a3530;
+  --line-strong: #47413a;
+  --accent: #e2795f;
+  --accent-soft: #3a2621;
+  --accent-ink: #f2b09d;
+  --sage: #93a67f;
+  --sage-soft: #2a3024;
+  --gold: #e0ab5c;
+  --gold-soft: #35301f;
+  --muted: #8d8578;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --overlay: rgba(44, 41, 37, 0.85);
+}
+
+:root {
+  /* The centred content band. Borders and background washes may go full-bleed;
+     text never does, or the method column runs past 110 characters on a wide
+     monitor. */
+  --page-max: 1240px;
+  --gutter: 48px;
+
+  /* Reading-measure cap for step prose. Tuned by measurement rather than by the
+     usual "65ch" guideline: 1ch is the width of a zero, which in Inter is much
+     wider than the average glyph, so the conventional figure overshoots by
+     roughly a fifth. Re-measure if the body face ever changes. */
+  --measure: 55ch;
+
+  /* One easing curve everywhere. Motion is slow and eased, never bouncy. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Fraunces carries headings and every number that is data; Inter carries
+     body and UI. */
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/*
+ * `inline` matters here: it resolves each token where it is used rather than
+ * emitting a variable pointing at a variable, so utilities pick up the value
+ * the active theme has set rather than the one that was current at build time.
+ */
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-muted: var(--muted);
+  --color-overlay: var(--overlay);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --ease-quiet: var(--ease);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--surface);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    transition:
+      background 0.3s,
+      color 0.3s;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  /* Motion is a texture here, not an affordance — removing it costs nothing. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Every band of every page constrains its content to this. */
+  .wrap {
+    max-width: var(--page-max);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+
+  @media (max-width: 760px) {
+    .wrap {
+      padding-inline: 22px;
+    }
+  }
+}

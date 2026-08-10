@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "id": "vegan",
+      "label": "Vegan",
+      "heroEligible": true,
+      "description": "Every ingredient is plant-derived."
+    },
+    {
+      "id": "vegetarian",
+      "label": "Vegetarian",
+      "heroEligible": true,
+      "description": "No meat, poultry, fish or shellfish, including hidden animal inputs such as rennet, gelatine and anchovy."
+    },
+    {
+      "id": "pescatarian",
+      "label": "Pescatarian",
+      "heroEligible": true,
+      "description": "No meat or poultry; fish and shellfish included."
+    },
+    {
+      "id": "gluten-free",
+      "label": "Gluten-free",
+      "heroEligible": false,
+      "description": "No ingredient in the recipe contains gluten."
+    },
+    {
+      "id": "dairy-free",
+      "label": "Dairy-free",
+      "heroEligible": false,
+      "description": "No ingredient in the recipe contains dairy."
+    },
+    {
+      "id": "nut-free",
+      "label": "Nut-free",
+      "heroEligible": false,
+      "description": "No ingredient in the recipe is flagged for tree nuts or peanuts."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "note": "Categories where a large share of an authored ingredient is discarded rather than eaten. The build warns when an ingredient line matching one of these has no consumedFraction. Defaults are starting points for an author to reason from, not values to apply blindly — absorption varies with batter, temperature and technique.",
+  "matching": "A line matches on its id containing one of lineIdPatterns, or on its ingredient's category being listed AND its amount reaching minAmount. The amount floor is what keeps a drizzle of oil from being mistaken for a fryer full of it: a warning that fires on every recipe is a warning nobody reads.",
+  "classes": [
+    {
+      "id": "deep-frying-oil",
+      "label": "Deep-frying oil",
+      "defaultConsumedFraction": 0.12,
+      "matches": {
+        "categories": ["oil", "fat"],
+        "minAmount": 300,
+        "lineIdPatterns": ["fry", "frying", "deep-fry"]
+      },
+      "note": "Most frying oil stays in the pan; absorption varies with batter and oil temperature."
+    },
+    {
+      "id": "marinade",
+      "label": "Marinade",
+      "defaultConsumedFraction": 0.25,
+      "matches": {
+        "categories": [],
+        "lineIdPatterns": ["marinade", "marinate", "marinating"]
+      },
+      "note": "Marinades are largely discarded; only what clings to the surface is eaten."
+    },
+    {
+      "id": "brine",
+      "label": "Brine or cure",
+      "defaultConsumedFraction": 0.1,
+      "matches": {
+        "categories": [],
+        "lineIdPatterns": ["brine", "brining", "cure", "curing"]
+      },
+      "note": "Brine is poured away; the food retains only a fraction of its salt."
+    },
+    {
+      "id": "boiling-water-salt",
+      "label": "Salt for boiling water",
+      "defaultConsumedFraction": 0.1,
+      "matches": {
+        "categories": [],
+        "lineIdPatterns": ["pasta-water", "boiling-water", "water-salt", "salt-water"]
+      },
+      "note": "Most of the salt added to boiling water goes down the drain with it."
+    },
+    {
+      "id": "dusting-flour",
+      "label": "Dusting or bench flour",
+      "defaultConsumedFraction": 0.4,
+      "matches": {
+        "categories": [],
+        "lineIdPatterns": ["dusting", "bench-flour", "dredging"]
+      },
+      "note": "Flour used to dust a surface is only partly picked up by the dough."
+    },
+    {
+      "id": "poaching-liquid",
+      "label": "Poaching or blanching liquid",
+      "defaultConsumedFraction": 0.05,
+      "matches": {
+        "categories": [],
+        "lineIdPatterns": ["poaching-liquid", "blanching-water", "cooking-liquid"]
+      },
+      "note": "Discarded unless the recipe reduces it into a sauce, in which case it is fully consumed."
+    }
+  ]
+}

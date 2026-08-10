@@ -1,0 +1,23 @@
+---
+# FIXTURE — a second version sharing its sibling's label, which is not allowed.
+label: Standard
+defaultServings: 2
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: test-flour
+    form: "00"
+    amount: 250
+    unit: g
+steps:
+  - { id: mix, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: null
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="mix">
+  Weigh out the <Qty ref="flour"/>.
+</Step>

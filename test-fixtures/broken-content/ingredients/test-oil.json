@@ -1,0 +1,18 @@
+{
+  "id": "test-oil",
+  "name": "Test Oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "refined",
+      "label": "Refined",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "1",
+      "nutritionPer100g": { "kcal": 884, "protein": 0, "carbs": 0, "fat": 100 }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "disclaimer": "Allergen flags are computed from the ingredients listed in this recipe only. They cannot account for cross-contamination or for the specific product or brand you buy, and they are not medical or safety guidance.",
+  "items": [
+    { "id": "nuts", "label": "Tree nuts" },
+    { "id": "peanuts", "label": "Peanuts" },
+    { "id": "shellfish", "label": "Shellfish (crustacean)" },
+    { "id": "molluscs", "label": "Molluscs" },
+    { "id": "fish", "label": "Fish" },
+    { "id": "dairy", "label": "Dairy" },
+    { "id": "gluten", "label": "Gluten" },
+    { "id": "soy", "label": "Soy" },
+    { "id": "egg", "label": "Egg" },
+    { "id": "sesame", "label": "Sesame" },
+    { "id": "celery", "label": "Celery" },
+    { "id": "mustard", "label": "Mustard" },
+    { "id": "lupin", "label": "Lupin" },
+    { "id": "sulphites", "label": "Sulphites" }
+  ]
+}

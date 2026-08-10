@@ -1,5 +1,36 @@
+# --- Build output ---
+dist/
+.astro/
+node_modules/
+
+# --- Logs ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Environment ---
+.env
+.env.*
+!.env.example
+
 # --- Editor / OS cruft ---
+.DS_Store
+Thumbs.db
+.idea/
 .claude/
-INSTRUCTIONS.md
+
+# --- Working notes ---
+# Planning and handover documents. The build never reads them.
+CLAUDE.md
 SPEC.md
+INSTRUCTIONS.md
+HANDOFF.md
+ADDING_NEW.md
+AGENT_BRIEF.md
 ver7.html
+
+# Scratch analysis and checkup output. Build-critical scripts under scripts/
+# are tracked; ad-hoc investigation is not.
+scratch/
+*.local.md

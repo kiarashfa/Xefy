@@ -1,0 +1,94 @@
+---
+# FIXTURE — valid against the schema, wrong in every way the schema cannot see.
+title: Test Logic Errors
+subtitle: A fixture whose frontmatter parses cleanly and whose content does not hold together.
+label: Default
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Test Something Else
+      note: A different fixture entirely.
+      slugRef: this-slug-does-not-exist
+ingredients:
+  # portions do not sum to the line total
+  - id: flour
+    ingredientRef: test-flour
+    form: "00"
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 200 }
+      - { id: flour-dusting, amount: 50 }
+  # form does not exist on this ingredient
+  - id: oil
+    ingredientRef: test-oil
+    form: cold-pressed
+    amount: 30
+    unit: ml
+  # ingredient record does not exist at all
+  - id: mystery
+    ingredientRef: test-does-not-exist
+    form: whole
+    amount: 10
+    unit: g
+  # duplicate id with the line above it
+  - id: mystery
+    ingredientRef: test-salt
+    form: fine
+    amount: 5
+    unit: g
+  # looks like frying oil but declares no consumedFraction
+  - id: frying-oil
+    ingredientRef: test-oil
+    form: refined
+    amount: 1000
+    unit: ml
+  # never named by a Qty anywhere, and no reason given
+  - id: garnish-salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: mix, durationMin: 10, type: active, phase: prep }
+  - { id: rest, durationMin: 60, type: passive }
+  - { componentRef: test-no-such-component, multiplier: 1 }
+  - { id: orphan-step, durationMin: 5, type: active, phase: cook }
+  - { id: parallel-nowhere, durationMin: 5, type: "parallel-with:not-a-step", phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: not-a-line
+    substitute: something else
+    ratio: "1:1"
+    note: A substitution pointing at nothing.
+notes:
+  techniqueRationale:
+    - stepId: no-such-step
+      text: A note attached to a step that does not exist.
+---
+
+<Step id="mix">
+  Combine the <Qty ref="flour-dough"/> with 250 ml of water and a pinch of
+  <Qty ref="not-a-real-ref"/>, then knead for <Dur step="no-such-step"/>.
+</Step>
+
+<Step id="rest">
+  Cover and leave for <Dur step="rest"/>.
+</Step>
+
+<Step id="parallel-nowhere">
+  Meanwhile, warm the <Qty ref="oil"/>.
+</Step>
+
+<Step id="">
+  A step block with no id at all.
+</Step>

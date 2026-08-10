@@ -1,0 +1,32 @@
+{
+  "items": [
+    { "id": "italian", "label": "Italian" },
+    { "id": "french", "label": "French" },
+    { "id": "spanish", "label": "Spanish" },
+    { "id": "portuguese", "label": "Portuguese" },
+    { "id": "greek", "label": "Greek" },
+    { "id": "british", "label": "British" },
+    { "id": "german", "label": "German" },
+    { "id": "polish", "label": "Polish" },
+    { "id": "nordic", "label": "Nordic" },
+    { "id": "turkish", "label": "Turkish" },
+    { "id": "levantine", "label": "Levantine" },
+    { "id": "persian", "label": "Persian" },
+    { "id": "moroccan", "label": "Moroccan" },
+    { "id": "ethiopian", "label": "Ethiopian" },
+    { "id": "west-african", "label": "West African" },
+    { "id": "indian", "label": "Indian" },
+    { "id": "thai", "label": "Thai" },
+    { "id": "vietnamese", "label": "Vietnamese" },
+    { "id": "chinese", "label": "Chinese" },
+    { "id": "japanese", "label": "Japanese" },
+    { "id": "korean", "label": "Korean" },
+    { "id": "indonesian", "label": "Indonesian" },
+    { "id": "filipino", "label": "Filipino" },
+    { "id": "mexican", "label": "Mexican" },
+    { "id": "peruvian", "label": "Peruvian" },
+    { "id": "brazilian", "label": "Brazilian" },
+    { "id": "caribbean", "label": "Caribbean" },
+    { "id": "american", "label": "American" }
+  ]
+}

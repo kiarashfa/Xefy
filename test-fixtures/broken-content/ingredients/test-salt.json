@@ -1,0 +1,19 @@
+{
+  "id": "test-salt",
+  "name": "Test Salt",
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "fine",
+      "label": "Fine",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "2",
+      "nutritionPer100g": { "kcal": 0, "protein": 0, "carbs": 0, "fat": 0, "sodium": 38758 }
+    }
+  ]
+}

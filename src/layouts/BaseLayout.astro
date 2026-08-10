@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Set on pages that hold user state rather than content. */
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical.href} />
+    {
+      noindex && (
+        <meta name="robots" content="noindex, follow" />
+      )
+    }
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
+    />
+
+    <script is:inline>
+      // Resolve the theme before first paint. Deferring it to a component would
+      // flash the wrong palette on every page load.
+      (() => {
+        let theme = null;
+        try {
+          const stored = JSON.parse(localStorage.getItem('xefy.theme.v1') ?? 'null');
+          if (stored && stored.schema === 1) theme = stored.theme;
+        } catch {
+          // Storage can be unavailable. The page still works, it just forgets.
+        }
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

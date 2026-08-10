@@ -1,0 +1,28 @@
+{
+  "id": "test-flour",
+  "name": "Test Flour",
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": ["gluten"],
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Test Meal",
+        "note": "Coarser grind, different hydration.",
+        "slugRef": "a-page-that-does-not-exist"
+      }
+    ],
+    "alsoKnownAs": [{ "name": "Test Farina", "formRef": "not-a-real-form" }]
+  },
+  "forms": [
+    {
+      "id": "00",
+      "label": "Type 00",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "0",
+      "nutritionPer100g": { "kcal": 364, "protein": 10.3, "carbs": 76.3, "fat": 1 }
+    }
+  ]
+}

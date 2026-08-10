@@ -1,0 +1,4 @@
+{
+  "note": "Explicit exemptions for digits that appear in step prose and are not derived data. Keep this list short and specific: an entry is a promise that the number can never go out of step with anything else on the page. A plain count is better spelled out (\"six wedges\") than allowlisted. Match is exact on file + stepId + text.",
+  "entries": []
+}

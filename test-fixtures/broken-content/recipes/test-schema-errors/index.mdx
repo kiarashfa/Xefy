@@ -1,0 +1,45 @@
+---
+# FIXTURE — every violation here should be caught by Zod before any check runs.
+title: Test Schema Errors
+subtitle: A fixture that the schema itself must reject.
+label: Default
+defaultServings: 2
+difficulty: Trivial # not in the difficulty vocabulary
+tags:
+  cuisine: [atlantean] # not in the cuisine vocabulary
+  course: [main-course]
+names:
+  notToBeConfusedWith:
+    - name: Something Else
+      note: "" # a false-friend entry with no stated difference
+ingredients:
+  - id: oil
+    ingredientRef: test-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 1.5 # outside 0 < x <= 1
+  - id: salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 5
+    unit: tbsp # not a base unit; cups and spoons are display-only
+steps:
+  - { durationMin: 10, type: active, phase: prep } # no id
+  - { id: fry, durationMin: 5, type: sizzling, phase: cook } # not a step type
+  - { id: season, durationMin: 1, type: active } # active step with no phase
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - text: One.
+    - text: Two.
+    - text: Three — over the cap of two.
+---
+
+<Step id="fry">
+  Heat the <Qty ref="oil"/>.
+</Step>

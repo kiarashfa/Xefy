@@ -1,0 +1,25 @@
+{
+  "items": [
+    { "id": "baking", "label": "Baking" },
+    { "id": "roasting", "label": "Roasting" },
+    { "id": "grilling", "label": "Grilling" },
+    { "id": "pan-frying", "label": "Pan-frying" },
+    { "id": "deep-frying", "label": "Deep-frying" },
+    { "id": "stir-frying", "label": "Stir-frying" },
+    { "id": "sauteing", "label": "Sautéing" },
+    { "id": "boiling", "label": "Boiling" },
+    { "id": "simmering", "label": "Simmering" },
+    { "id": "poaching", "label": "Poaching" },
+    { "id": "steaming", "label": "Steaming" },
+    { "id": "braising", "label": "Braising" },
+    { "id": "stewing", "label": "Stewing" },
+    { "id": "blanching", "label": "Blanching" },
+    { "id": "pressure-cooking", "label": "Pressure cooking" },
+    { "id": "slow-cooking", "label": "Slow cooking" },
+    { "id": "fermenting", "label": "Fermenting" },
+    { "id": "curing", "label": "Curing" },
+    { "id": "smoking", "label": "Smoking" },
+    { "id": "pickling", "label": "Pickling" },
+    { "id": "no-cook", "label": "No-cook" }
+  ]
+}

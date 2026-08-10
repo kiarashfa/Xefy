@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Placeholder homepage. The catalogue that belongs here is built once there is
+// content to put in it; this exists to prove the pipeline end to end.
+const title = 'Xefy';
+const description =
+  'A free recipe encyclopedia where every quantity, nutrition figure and timing is computed from structured data rather than typed by hand.';
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="wrap py-24">
+    <p class="text-accent mb-4 text-xs font-medium tracking-[0.12em] uppercase">In progress</p>
+    <h1 class="font-display text-ink mb-5 text-5xl leading-tight font-medium tracking-tight">
+      Xefy
+    </h1>
+    <p class="font-display text-ink-soft max-w-[42ch] text-lg leading-relaxed italic">
+      {description}
+    </p>
+    <hr class="border-line-strong mt-12 border-0 border-t" />
+    <p class="text-muted mt-6 max-w-[var(--measure)] text-sm leading-relaxed">
+      Nothing is published yet.
+    </p>
+  </main>
+</BaseLayout>
