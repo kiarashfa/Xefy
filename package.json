@@ -31,6 +31,7 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "pagefind": "^1.5.2",
+    "sharp": "^0.35.3",
     "tinyglobby": "^0.2.17",
     "yaml": "^2.9.0"
   }

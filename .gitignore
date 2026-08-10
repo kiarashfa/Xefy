@@ -34,3 +34,6 @@ ver7.html
 # are tracked; ad-hoc investigation is not.
 scratch/
 *.local.md
+
+# Image curation scratch — downloaded candidates, reviewed then discarded.
+image-review/

@@ -1,0 +1,43 @@
+{
+  "source": "US FDA Daily Values for adults and children aged 4 and over, as used on the Nutrition Facts label (21 CFR 101.9).",
+  "note": "These are US reference values. EU Reference Intakes differ for several nutrients, and no single set is right everywhere — so the nutrition panel labels the column as US Daily Values rather than presenting it as a universal figure. A nutrient absent from this table has no established Daily Value and its %DV column is omitted rather than computed against an invented denominator. Total sugars is the notable case: the FDA sets a Daily Value for added sugars only, and Xefy does not distinguish added from intrinsic sugars, so no percentage is shown for it.",
+  "basisKcal": 2000,
+  "values": {
+    "kcal": { "amount": 2000, "unit": "kcal" },
+    "fat": { "amount": 78, "unit": "g" },
+    "saturatedFat": { "amount": 20, "unit": "g" },
+    "cholesterol": { "amount": 300, "unit": "mg" },
+    "sodium": { "amount": 2300, "unit": "mg" },
+    "carbs": { "amount": 275, "unit": "g" },
+    "fiber": { "amount": 28, "unit": "g" },
+    "protein": { "amount": 50, "unit": "g" },
+
+    "vitaminDMcg": { "amount": 20, "unit": "ug" },
+    "calcium": { "amount": 1300, "unit": "mg" },
+    "iron": { "amount": 18, "unit": "mg" },
+    "potassium": { "amount": 4700, "unit": "mg" },
+    "vitaminAMcg": { "amount": 900, "unit": "ug" },
+    "vitaminC": { "amount": 90, "unit": "mg" },
+    "vitaminE": { "amount": 15, "unit": "mg" },
+    "vitaminKMcg": { "amount": 120, "unit": "ug" },
+    "thiamin": { "amount": 1.2, "unit": "mg" },
+    "riboflavin": { "amount": 1.3, "unit": "mg" },
+    "niacin": { "amount": 16, "unit": "mg" },
+    "vitaminB6": { "amount": 1.7, "unit": "mg" },
+    "folateMcg": { "amount": 400, "unit": "ug" },
+    "vitaminB12Mcg": { "amount": 2.4, "unit": "ug" },
+    "phosphorus": { "amount": 1250, "unit": "mg" },
+    "magnesium": { "amount": 420, "unit": "mg" },
+    "zinc": { "amount": 11, "unit": "mg" },
+    "seleniumMcg": { "amount": 55, "unit": "ug" },
+    "copper": { "amount": 0.9, "unit": "mg" },
+    "manganese": { "amount": 2.3, "unit": "mg" },
+    "choline": { "amount": 550, "unit": "mg" }
+  },
+  "noDailyValue": {
+    "sugars": "The FDA sets a Daily Value for added sugars only, which this data cannot separate from intrinsic sugars.",
+    "monounsaturatedFat": "No Daily Value established.",
+    "polyunsaturatedFat": "No Daily Value established.",
+    "transFat": "No Daily Value established; the guidance is to keep intake as low as possible."
+  }
+}

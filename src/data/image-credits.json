@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "basil",
+    "kind": "ingredient",
+    "alt": "Fresh basil, its broad leaves growing in opposite pairs",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFresh_green_basil_leaves_(54986224214).jpg",
+    "title": "File:Fresh green basil leaves (54986224214).jpg",
+    "author": "AS Photography from Poland",
+    "credit": "Fresh green basil leaves (Explored!)",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-10",
+    "originalWidth": 5658,
+    "originalHeight": 3772,
+    "files": {
+      "hero": "images/ingredients/basil.webp",
+      "card": "images/ingredients/basil-card.webp",
+      "thumb": "images/ingredients/basil-thumb.webp"
+    }
+  },
+  {
+    "slug": "mozzarella",
+    "kind": "ingredient",
+    "alt": "A ball of buffalo mozzarella on a wooden board, its surface faintly creased",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMozzarella_di_bufala3.jpg",
+    "title": "File:Mozzarella di bufala3.jpg",
+    "author": "Popo le Chien",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-10",
+    "originalWidth": 4160,
+    "originalHeight": 3120,
+    "files": {
+      "hero": "images/ingredients/mozzarella.webp",
+      "card": "images/ingredients/mozzarella-card.webp",
+      "thumb": "images/ingredients/mozzarella-thumb.webp"
+    }
+  },
+  {
+    "slug": "san-marzano-tomato",
+    "kind": "ingredient",
+    "alt": "Ripe and ripening San Marzano tomatoes on the vine, elongated and tapering to a point",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATomateSanMarzano.jpg",
+    "title": "File:TomateSanMarzano.jpg",
+    "author": "Goldlocki",
+    "credit": "This is of my own making",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-10",
+    "originalWidth": 2448,
+    "originalHeight": 3264,
+    "files": {
+      "hero": "images/ingredients/san-marzano-tomato.webp",
+      "card": "images/ingredients/san-marzano-tomato-card.webp",
+      "thumb": "images/ingredients/san-marzano-tomato-thumb.webp"
+    }
+  },
+  {
+    "slug": "margherita-pizza",
+    "kind": "recipe",
+    "alt": "A margherita pizza on a white plate, its crust blistered and its basil laid over melted mozzarella",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMargherita_pizza_on_plate.jpg",
+    "title": "File:Margherita pizza on plate.jpg",
+    "author": "Shisma",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-10",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/margherita-pizza.webp",
+      "card": "images/recipes/margherita-pizza-card.webp",
+      "thumb": "images/recipes/margherita-pizza-thumb.webp"
+    }
+  }
+]

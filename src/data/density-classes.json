@@ -1,0 +1,199 @@
+{
+  "note": "Reference densities for interpolating a volume conversion where a Form has no direct density source of its own (§5.3). A figure taken from here is tagged densitySource: \"estimated\" and carries the tilde and dotted underline wherever it appears. Density never touches a stored amount — it is a display convenience over weight, so an estimate here cannot corrupt a figure the site presents as authoritative.",
+  "howToUse": "Prefer a measured figure from the ingredient's own USDA record: `node scripts/data/usda.ts fetch <fdcId>` reports the household portions that record publishes, and those are measured, not estimated. Reach for a class only when the record has none.",
+  "sources": {
+    "USDA FDC": "Household portion weights published on the food's own record. Public domain.",
+    "King Arthur Baking": "Ingredient weight chart, used where USDA publishes no household portion for a common baking ingredient.",
+    "physical": "Standard density of the substance at room temperature."
+  },
+  "classes": [
+    {
+      "id": "flour-like",
+      "label": "Flour and finely milled powders",
+      "gPerCup": 125,
+      "reference": "Wheat flour, white, all-purpose, enriched, bleached",
+      "source": "USDA FDC",
+      "sourceId": "168894",
+      "note": "Scooped rather than spooned-and-levelled. Flour is the ingredient where volume measuring goes most wrong — a heavy hand can put 20% more in the same cup, which is the reason this project authors in grams."
+    },
+    {
+      "id": "granulated-sugar-like",
+      "label": "Granulated sugar and similar free-flowing crystals",
+      "gPerCup": 200,
+      "reference": "Granulated white sugar",
+      "source": "King Arthur Baking",
+      "note": "USDA's granulated sugar record publishes no household portion, so this comes from the standard baking reference."
+    },
+    {
+      "id": "powdered-sugar-like",
+      "label": "Icing sugar and other very fine powders",
+      "gPerCup": 113,
+      "reference": "Confectioners' sugar, unsifted",
+      "source": "King Arthur Baking"
+    },
+    {
+      "id": "cocoa-powder-like",
+      "label": "Cocoa and other light milled powders",
+      "gPerCup": 86,
+      "gPerTbsp": 5.4,
+      "reference": "Cocoa, dry powder, unsweetened",
+      "source": "USDA FDC",
+      "sourceId": "169593"
+    },
+    {
+      "id": "leafy-fresh-herb",
+      "label": "Fresh leafy herbs, whole leaves",
+      "gPerCup": 24,
+      "reference": "Basil, fresh",
+      "source": "USDA FDC",
+      "sourceId": "172232",
+      "note": "Whole leaves, loosely packed. Chopped is roughly twice as dense — the same record gives 2.65 g per tablespoon chopped, which works out near 42 g per cup."
+    },
+    {
+      "id": "leafy-dried-herb",
+      "label": "Dried leafy herbs",
+      "gPerTbsp": 2.1,
+      "gPerTsp": 0.7,
+      "reference": "Spices, basil, dried, leaves",
+      "source": "USDA FDC",
+      "sourceId": "171317",
+      "note": "Crumbled leaf. The same record gives 4.5 g per tablespoon for the ground form, which is more than twice as dense — use the ground-spice class for anything milled."
+    },
+    {
+      "id": "ground-spice",
+      "label": "Ground spices",
+      "gPerTbsp": 4.5,
+      "gPerTsp": 1.4,
+      "reference": "Spices, basil, dried, ground",
+      "source": "USDA FDC",
+      "sourceId": "171317",
+      "note": "Ground spices vary by a factor of about two across the shelf — cinnamon is dense, dried oregano is not. Treat this as a floor for confidence, and prefer the ingredient's own record."
+    },
+    {
+      "id": "salt-fine",
+      "label": "Fine salt",
+      "gPerTsp": 6,
+      "gPerTbsp": 18,
+      "gPerCup": 292,
+      "reference": "Salt, table",
+      "source": "USDA FDC",
+      "sourceId": "173468"
+    },
+    {
+      "id": "salt-flaked",
+      "label": "Flaked and coarse salt",
+      "gPerTsp": 2.8,
+      "reference": "Diamond Crystal kosher salt",
+      "source": "King Arthur Baking",
+      "note": "This is the one figure here that changes the outcome of a dish. Coarse salts differ by brand by more than a factor of two — Morton kosher is about 4.8 g per teaspoon against Diamond Crystal's 2.8 — which is exactly why salt is authored by weight and never by spoon."
+    },
+    {
+      "id": "hard-cheese-grated",
+      "label": "Hard cheese, grated",
+      "gPerCup": 100,
+      "gPerTbsp": 5,
+      "reference": "Cheese, parmesan, grated",
+      "source": "USDA FDC",
+      "sourceId": "171247"
+    },
+    {
+      "id": "dry-pasta-shapes",
+      "label": "Dried pasta shapes",
+      "gPerCup": 95,
+      "reference": "Pasta, dry, enriched",
+      "source": "USDA FDC",
+      "sourceId": "169736",
+      "note": "The weakest class here, and worth saying so: the same record gives 64 g per cup for shells and 122 g for elbows. A cup of pasta is not a quantity. Show weight and treat any volume figure as a rough orientation."
+    },
+    {
+      "id": "grain-uncooked",
+      "label": "Uncooked rice and similar grains",
+      "gPerCup": 185,
+      "reference": "Rice, white, long-grain, regular, raw",
+      "source": "USDA FDC",
+      "sourceId": "169756"
+    },
+    {
+      "id": "rolled-oats",
+      "label": "Rolled oats and flakes",
+      "gPerCup": 90,
+      "reference": "Old-fashioned rolled oats",
+      "source": "King Arthur Baking",
+      "note": "USDA's rolled oats record publishes no household portion."
+    },
+    {
+      "id": "legume-dried",
+      "label": "Dried pulses",
+      "gPerCup": 192,
+      "gPerTbsp": 12,
+      "reference": "Lentils, raw",
+      "source": "USDA FDC",
+      "sourceId": "172420"
+    },
+    {
+      "id": "nut-whole",
+      "label": "Whole nuts",
+      "gPerCup": 143,
+      "reference": "Nuts, almonds, whole",
+      "source": "USDA FDC",
+      "sourceId": "170567"
+    },
+    {
+      "id": "nut-chopped",
+      "label": "Chopped, slivered or ground nuts",
+      "gPerCup": 100,
+      "reference": "Nuts, almonds — slivered 108 g, ground 95 g, sliced 92 g per cup",
+      "source": "USDA FDC",
+      "sourceId": "170567",
+      "note": "Averaged across the cut forms on one record, which agree closely enough for a display conversion."
+    },
+    {
+      "id": "breadcrumbs-dry",
+      "label": "Dry breadcrumbs",
+      "gPerCup": 108,
+      "reference": "Bread, crumbs, dry, grated, plain",
+      "source": "USDA FDC",
+      "sourceId": "174928"
+    },
+    {
+      "id": "liquid-water-like",
+      "label": "Water, stock and thin watery liquids",
+      "gPerMl": 1,
+      "reference": "Water at room temperature",
+      "source": "physical",
+      "note": "Stock, wine and vinegar sit within a percent or two of this, which is well inside the precision a kitchen can act on."
+    },
+    {
+      "id": "liquid-dairy-like",
+      "label": "Milk, cream and pourable dairy",
+      "gPerMl": 1.03,
+      "reference": "Whole milk",
+      "source": "physical",
+      "note": "Cream is slightly lighter than milk, not heavier — the fat it carries is less dense than the water it replaces."
+    },
+    {
+      "id": "liquid-oil-like",
+      "label": "Cooking oils",
+      "gPerMl": 0.918,
+      "reference": "Olive oil at room temperature",
+      "source": "physical",
+      "note": "Common cooking oils run between about 0.91 and 0.93, so one figure serves them all at display precision."
+    },
+    {
+      "id": "honey-syrup-like",
+      "label": "Honey, treacle and heavy syrups",
+      "gPerMl": 1.42,
+      "reference": "Honey",
+      "source": "physical",
+      "note": "Half again as heavy as water, which is why a syrup measured by volume rather than weight is a common way to get a bake wrong."
+    },
+    {
+      "id": "solid-fat",
+      "label": "Butter and solid fats",
+      "gPerCup": 227,
+      "reference": "Butter, packed",
+      "source": "King Arthur Baking",
+      "note": "A US stick is 113 g, so a cup is two sticks."
+    }
+  ]
+}

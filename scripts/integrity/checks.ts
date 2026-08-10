@@ -510,6 +510,26 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
   }
 
+  // An estimated density has to name the class it was interpolated from, and
+  // that class has to exist — otherwise the estimate cites nothing.
+  const densityClasses = JSON.parse(
+    await readFile(path.join(ROOT, 'src', 'data', 'density-classes.json'), 'utf8'),
+  ) as { classes: { id: string }[] };
+  const classIds = new Set(densityClasses.classes.map((c) => c.id));
+  for (const ingredient of content.ingredients) {
+    for (const form of ingredient.data.forms) {
+      const densityClass = form.density?.densityClass;
+      if (densityClass && !classIds.has(densityClass)) {
+        add(
+          'density-classes',
+          'fail',
+          ingredient.file,
+          `form "${form.id}" cites density class "${densityClass}", which is not in src/data/density-classes.json`,
+        );
+      }
+    }
+  }
+
   /* --- 10. Ingredients nobody reaches for (warn) ----------------------- */
   for (const unit of authored) {
     const used = new Set(qtyRefs(unit.prose).map((r) => r.ref));
