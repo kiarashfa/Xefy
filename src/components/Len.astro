@@ -1,0 +1,14 @@
+---
+import { lenHtml } from '../lib/render/live-values.ts';
+import type { UnitSystem } from '../lib/math/units.ts';
+
+/** Authored in centimetres; inches read as fractions, never decimals. */
+interface Props {
+  cm: number;
+  system: UnitSystem;
+}
+
+const { cm, system } = Astro.props;
+---
+
+<Fragment set:html={lenHtml(cm, system)} />

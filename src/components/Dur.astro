@@ -1,0 +1,17 @@
+---
+import { durHtml } from '../lib/render/live-values.ts';
+
+/**
+ * Reads a step's own declared duration rather than taking a value, for the
+ * same reason a quantity takes a ref: the number already exists in structured
+ * data, and typing it again creates a second copy that can drift.
+ */
+interface Props {
+  stepId: string;
+  minutes: number;
+}
+
+const { stepId, minutes } = Astro.props;
+---
+
+<Fragment set:html={durHtml(minutes, stepId)} />

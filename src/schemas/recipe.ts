@@ -104,6 +104,8 @@ export const inlineStep = z
   })
   .superRefine((step, ctx) => {
     const isPassive = step.type === 'passive';
+    const isParallel = step.type.startsWith('parallel-with:');
+
     if (!isPassive && step.phase == null) {
       ctx.addIssue({
         code: 'custom',
@@ -111,7 +113,10 @@ export const inlineStep = z
         message: 'an active step must declare whether its time is prep or cook',
       });
     }
-    if (!isPassive && step.phase === 'rest') {
+    // A concurrent step may be waiting rather than working — "meanwhile, let
+    // the sauce settle" — and the type field is already spent naming what it
+    // runs alongside, so its phase is where that gets said.
+    if (!isPassive && !isParallel && step.phase === 'rest') {
       ctx.addIssue({
         code: 'custom',
         path: ['phase'],

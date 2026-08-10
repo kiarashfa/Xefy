@@ -1,0 +1,20 @@
+{
+  "id": "test-sunflower-oil",
+  "name": "Sunflower Oil",
+  "proseName": "sunflower oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "refined",
+      "label": "Refined",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "oil-sunflower",
+      "nutritionPer100g": { "kcal": 884, "protein": 0, "carbs": 0, "fat": 100, "saturatedFat": 10.3, "vitaminE": 41.1 },
+      "density": { "gPerMl": 0.92, "densitySource": "measured" }
+    }
+  ]
+}

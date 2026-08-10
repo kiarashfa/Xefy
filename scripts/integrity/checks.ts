@@ -16,7 +16,10 @@ import path from 'node:path';
 import { isComponentStep, type IngredientLine, type StepEntry } from '../../src/schemas/recipe.ts';
 import { ALLERGENS, ANIMAL_ORIGINS } from '../../src/schemas/vocabularies.ts';
 import { ALLERGEN_TERMS, DIETS } from '../../src/schemas/taxonomy.ts';
-import { ROOT, type Content, type StepProse } from './load.ts';
+import { ROOT, type Content, type StepProse } from '../../src/lib/content/disk.ts';
+import { resolveRecipe, type ComponentInput } from '../../src/lib/content/resolve.ts';
+import { parallelTarget } from '../../src/lib/math/timing.ts';
+import { proseName } from '../../src/lib/render/prose.ts';
 
 export type Severity = 'fail' | 'warn';
 
@@ -384,10 +387,6 @@ export async function runChecks(content: Content): Promise<CheckResult> {
       }
     }
   }
-  pending.push({
-    check: 'id-collisions (post-merge)',
-    waitingOn: 'the transclusion engine — collisions synthesised during a Component merge',
-  });
 
   /* --- 9. consumedFraction is a fraction ------------------------------- */
   for (const unit of authored) {
@@ -436,7 +435,16 @@ export async function runChecks(content: Content): Promise<CheckResult> {
   }
   for (const version of content.recipeVersions) {
     const lineIds = new Set(version.data.ingredients.map((l) => l.id));
+    // A note may reasonably attach to a step that arrives through a Component:
+    // once flattened it is an ordinary step of this method, and the reason a
+    // roux is cooked out belongs beside the step that cooks it.
     const stepIds = inlineStepIds(version.data.steps);
+    for (const step of version.data.steps) {
+      if (!isComponentStep(step)) continue;
+      const component = componentBySlug.get(step.componentRef);
+      if (!component) continue;
+      for (const id of inlineStepIds(component.data.steps)) stepIds.add(id);
+    }
     for (const sub of version.data.substitutions) {
       if (!lineIds.has(sub.lineRef)) {
         add(
@@ -562,15 +570,131 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
   }
 
-  /* --- 12/13. Timing figures agree ------------------------------------- */
-  pending.push({
-    check: 'timing-card-sum',
-    waitingOn: 'the timing aggregation engine',
-  });
-  pending.push({
-    check: 'timeline-critical-path',
-    waitingOn: 'the cook-back timeline engine',
-  });
+  /* --- 8, 12, 13. What only survives contact with the real engine ------ */
+
+  // Everything above reads the content as authored. These run it through
+  // transclusion and the math engine, which is where merge collisions, an
+  // unconvertible amount, and a timing card that disagrees with itself show up.
+  const componentInputs = new Map<string, ComponentInput>(
+    content.components.map((c) => [
+      c.slug,
+      { slug: c.slug, data: c.data, prose: new Map(c.steps.map((s) => [s.stepId, s.text])) },
+    ]),
+  );
+  const ingredientIndex = new Map(content.ingredients.map((i) => [i.slug, i.data]));
+
+  for (const version of content.recipeVersions) {
+    let resolved;
+    try {
+      resolved = resolveRecipe(
+        {
+          slug: version.recipe,
+          versionId: version.versionId,
+          data: version.data,
+          prose: new Map(version.steps.map((s) => [s.stepId, s.text])),
+        },
+        componentInputs,
+        ingredientIndex,
+      );
+    } catch (error) {
+      add(
+        'transclusion',
+        'fail',
+        version.file,
+        `could not be flattened: ${error instanceof Error ? error.message : String(error)}`,
+      );
+      continue;
+    }
+
+    for (const message of resolved.errors) add('transclusion', 'fail', version.file, message);
+    for (const message of resolved.warnings) add('transclusion', 'warn', version.file, message);
+
+    // Two Forms of one ingredient are two lines on purpose — but if they read
+    // the same in the method, the reader cannot tell which one a step means.
+    const byIngredient = new Map<string, typeof resolved.lines>();
+    for (const line of resolved.lines) {
+      const key = line.ingredient.id;
+      byIngredient.set(key, [...(byIngredient.get(key) ?? []), line]);
+    }
+    for (const [ingredientId, group] of byIngredient) {
+      if (group.length < 2) continue;
+      const names = group.map((l) => proseName(l));
+      if (new Set(names).size < names.length) {
+        add(
+          'ambiguous-forms',
+          'fail',
+          version.file,
+          `this recipe uses ${group.length} forms of "${ingredientId}" that all read as "${names[0]}" in the method. ` +
+            `Give each form a proseQualifier so a step can say which one it means`,
+        );
+      }
+    }
+
+    // 8. Nothing may share an id once Components have been merged in.
+    const ids = new Map<string, number>();
+    for (const line of resolved.flat.ingredients) {
+      ids.set(line.id, (ids.get(line.id) ?? 0) + 1);
+      for (const p of line.portions ?? []) ids.set(p.id, (ids.get(p.id) ?? 0) + 1);
+    }
+    for (const step of resolved.flat.steps) {
+      ids.set(step.id, (ids.get(step.id) ?? 0) + 1);
+    }
+    for (const [id, count] of ids) {
+      if (count > 1) {
+        add('id-collisions', 'fail', version.file, `"${id}" is used ${count} times after the merge`);
+      }
+    }
+
+    // The merge re-expresses contributions as portions, so the portion-sum rule
+    // above validates it for free — but only if it is applied to the merged
+    // list too, which is what this does.
+    for (const line of resolved.flat.ingredients) {
+      if (!line.portions) continue;
+      const sum = line.portions.reduce((n, p) => n + p.amount, 0);
+      if (Math.abs(sum - line.amount) > 1e-6) {
+        add(
+          'portion-sums',
+          'fail',
+          version.file,
+          `after the merge, "${line.id}" totals ${line.amount}${line.unit} but its portions come to ${sum}${line.unit}`,
+        );
+      }
+    }
+
+    // 12. The card has to be internally consistent. If timing is computed this
+    // cannot fail, so a failure means something has been hand-typed.
+    const { prep, cook, rest, total } = resolved.timing;
+    if (Math.abs(prep + cook + rest - total) > 1e-9) {
+      add(
+        'timing-card-sum',
+        'fail',
+        version.file,
+        `the timing card does not add up: prep ${prep} + cook ${cook} + rest ${rest} ≠ total ${total}`,
+      );
+    }
+    const hasParallel = resolved.flat.steps.some((s) => parallelTarget(s.type) != null);
+    if (!hasParallel) {
+      const declared = resolved.flat.steps.reduce((n, s) => n + s.durationMin, 0);
+      if (Math.abs(declared - total) > 1e-9) {
+        add(
+          'timing-card-sum',
+          'fail',
+          version.file,
+          `no step runs alongside another, so the total should be the sum of the steps (${declared}), not ${total}`,
+        );
+      }
+    }
+
+    // 13. Same data, same rule — so a divergence means the two have drifted.
+    if (Math.abs(resolved.criticalPathMin - total) > 1e-9) {
+      add(
+        'timeline-critical-path',
+        'fail',
+        version.file,
+        `the timeline's critical path is ${resolved.criticalPathMin} minutes but the timing card totals ${total}`,
+      );
+    }
+  }
 
   /* --- 14. Multi-version recipes need an editorial look (warn) --------- */
   for (const versions of byRecipe.values()) {

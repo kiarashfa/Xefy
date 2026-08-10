@@ -1,0 +1,63 @@
+{
+  "id": "test-basil",
+  "name": "Basil",
+  "proseName": "basil",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Sweet basil"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "basil-fresh",
+      "nutritionPer100g": {
+        "kcal": 22,
+        "protein": 3.15,
+        "carbs": 2.65,
+        "fat": 0.64,
+        "fiber": 1.6,
+        "sodium": 4
+      },
+      "density": {
+        "gPerCup": 20,
+        "densitySource": "measured"
+      },
+      "proseQualifier": "fresh"
+    },
+    {
+      "id": "dried",
+      "label": "Dried",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "basil-dried",
+      "nutritionPer100g": {
+        "kcal": 233,
+        "protein": 22.98,
+        "carbs": 47.75,
+        "fat": 4.07,
+        "fiber": 37.7,
+        "sodium": 76
+      },
+      "density": {
+        "gPerTbsp": 1.8,
+        "densitySource": "estimated",
+        "densityClass": "leafy-dried-herb"
+      },
+      "convertsFrom": {
+        "form": "fresh",
+        "ratio": 0.33,
+        "note": "One tablespoon fresh is roughly one teaspoon dried."
+      },
+      "proseQualifier": "dried"
+    }
+  ]
+}

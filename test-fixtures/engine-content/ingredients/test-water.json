@@ -1,0 +1,20 @@
+{
+  "id": "test-water",
+  "name": "Water",
+  "category": "water",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "still",
+      "label": "Still",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "water",
+      "nutritionPer100g": { "kcal": 0, "protein": 0, "carbs": 0, "fat": 0 },
+      "density": { "gPerMl": 1, "densitySource": "measured" }
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+---
+# FIXTURE — not site content. Exercises, in one dish: a split-use ingredient,
+# a Component with a multiplier, the same ingredient and form contributed by
+# both the recipe and that Component (the §4.5 merge), two Forms of one
+# ingredient that must *not* merge, concurrent work, and partial consumption.
+title: Test Dish A
+subtitle: A synthetic dish that exists to put every part of the engine under load at once.
+label: Standard
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [baking, deep-frying]
+names:
+  alsoKnownAs:
+    - { name: Fixture Bake, region: Nowhere }
+  notToBeConfusedWith:
+    - name: Test Dish B
+      note: A different fixture entirely, with no dairy in it.
+      slugRef: test-dish-b
+ingredients:
+  # Split use: some goes into the dough, some onto the bench.
+  - id: flour
+    ingredientRef: test-flour
+    form: "00"
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 200 }
+      - { id: flour-dusting, amount: 100, note: for the bench }
+  - id: water
+    ingredientRef: test-water
+    form: still
+    amount: 180
+    unit: ml
+  - id: salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 5
+    unit: g
+  # Same ingredient, two Forms. These must stay two lines: the nutrition
+  # figures behind them are entirely different.
+  - id: basil-fresh
+    ingredientRef: test-basil
+    form: fresh
+    amount: 20
+    unit: g
+  - id: basil-dried
+    ingredientRef: test-basil
+    form: dried
+    amount: 2
+    unit: g
+  # Nearly all of this stays in the pan.
+  - id: frying-oil
+    ingredientRef: test-sunflower-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: "Most frying oil stays in the pan; absorption varies with batter and oil temperature."
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 8, type: active, phase: prep }
+  - { componentRef: test-bechamel, multiplier: 1.5 }
+  - { id: fry, durationMin: 6, type: active, phase: cook }
+  - { id: bake, durationMin: 25, type: active, phase: cook }
+  - { id: garnish, durationMin: 5, type: "parallel-with:bake", phase: prep }
+makeAhead:
+  aheadInstructions: The sauce can be made a day ahead and warmed through before assembly.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat covered until the centre is hot the whole way through.
+substitutions:
+  - lineRef: basil-fresh
+    substitute: flat-leaf parsley with a squeeze of lemon
+    ratio: "1:1"
+    note: Loses basil's anise-like sweetness but keeps the dish fresh.
+    impact: { flavor: moderate change, texture: none }
+notes:
+  techniqueRationale:
+    - stepId: cook-roux
+      text: Cooking the paste before the milk goes in is what stops the sauce tasting of raw flour.
+  commonPitfalls:
+    - stepId: fry
+      text: Crowding the pan drops the oil temperature and the crust never forms.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, the <Qty ref="water"/> and the <Qty ref="salt"/>
+  in a wide bowl and bring them together into a shaggy mass.
+</Step>
+
+<Step id="knead">
+  Dust the bench with the <Qty ref="flour-dusting"/> and knead for <Dur step="knead"/>,
+  until the dough pulls back when you stretch it.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> to <Temp c={180}/> and fry in batches for
+  <Dur step="fry"/>, turning once.
+</Step>
+
+<Step id="bake">
+  Roll the dough out to a <Len cm={24}/> round, spread the sauce over it, and bake at
+  <Temp c={220}/> for <Dur step="bake"/>.
+</Step>
+
+<Step id="garnish">
+  While it bakes, tear the <Qty ref="basil-fresh"/> and rub the <Qty ref="basil-dried"/>
+  between your palms to wake it up.
+</Step>

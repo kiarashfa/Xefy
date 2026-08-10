@@ -1,0 +1,57 @@
+---
+# FIXTURE — not site content. Two things this dish tests:
+#
+# 1. The hidden-animal-input trap. It reads vegetarian and is not: the cheese
+#    Form is set with animal rennet, and the computed label has to notice.
+# 2. The same Component used twice, whose occurrences must stay apart — and
+#    whose salt declares a consumedFraction the recipe's own salt does not,
+#    which is the §4.5 conflict case. The build should say so out loud and let
+#    the recipe's value stand.
+title: Test Dish C
+subtitle: A synthetic dish for the rennet trap and for a Component used twice in one method.
+label: Standard
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [boiling]
+ingredients:
+  - id: salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: cheese
+    ingredientRef: test-hard-cheese
+    form: animal-rennet
+    amount: 60
+    unit: g
+  - id: olive-oil
+    ingredientRef: test-olive-oil
+    form: extra-virgin
+    amount: 15
+    unit: ml
+steps:
+  - { componentRef: test-boil-pasta, multiplier: 1 }
+  - { id: toss, durationMin: 5, type: active, phase: cook }
+  - { componentRef: test-boil-pasta, multiplier: 0.5 }
+  - { id: serve, durationMin: 2, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - text: Adding the cheese to a pan still on the heat makes it seize into strings rather than a sauce.
+---
+
+<Step id="toss">
+  Take the pan off the heat, add the <Qty ref="olive-oil"/> and the <Qty ref="salt"/>,
+  and toss for <Dur step="toss"/>.
+</Step>
+
+<Step id="serve">
+  Grate the <Qty ref="cheese"/> over the top and serve straight away.
+</Step>

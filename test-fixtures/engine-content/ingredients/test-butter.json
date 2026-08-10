@@ -1,0 +1,20 @@
+{
+  "id": "test-butter",
+  "name": "Unsalted Butter",
+  "proseName": "unsalted butter",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": ["dairy"],
+  "forms": [
+    {
+      "id": "unsalted",
+      "label": "Unsalted",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "butter-unsalted",
+      "nutritionPer100g": { "kcal": 717, "protein": 0.85, "carbs": 0.06, "fat": 81.1, "saturatedFat": 51.4, "sodium": 11, "calcium": 24 },
+      "density": { "gPerCup": 227, "densitySource": "measured" }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "test-flour",
+  "name": "Type 00 Flour",
+  "proseName": "00 flour",
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": ["gluten"],
+  "forms": [
+    {
+      "id": "00",
+      "label": "Type 00",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "flour-00",
+      "nutritionPer100g": { "kcal": 364, "protein": 10.3, "carbs": 76.3, "fat": 1, "fiber": 2.7, "sugars": 0.3, "sodium": 2 },
+      "density": { "gPerCup": 120, "densitySource": "measured" }
+    }
+  ]
+}

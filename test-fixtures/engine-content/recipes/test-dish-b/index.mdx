@@ -1,0 +1,69 @@
+---
+# FIXTURE — not site content. Two things only this dish tests: a computed
+# vegan label (every ingredient plant-derived, where Dish A is merely
+# vegetarian), and a passive step long enough that working backwards from
+# dinner puts the start time on the previous day.
+title: Test Dish B
+subtitle: A synthetic long-ferment dish, for the day-offset case and the vegan computation.
+label: Standard
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [bread]
+  method: [fermenting, baking]
+ingredients:
+  - id: flour
+    ingredientRef: test-flour
+    form: "00"
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: test-water
+    form: still
+    amount: 350
+    unit: ml
+  - id: salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: olive-oil
+    ingredientRef: test-olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+steps:
+  - { id: mix, durationMin: 15, type: active, phase: prep }
+  # A full day. Working back from an evening meal, this starts yesterday.
+  - { id: ferment, durationMin: 1440, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough is the make-ahead step; it needs the long ferment either way.
+  freezable: true
+  freezeInstructions: Freeze shaped and unbaked, then bake from frozen with a few minutes added.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: ferment
+      text: The long cold ferment is what builds flavour here; warmth would rush it and cost the taste.
+---
+
+<Step id="mix">
+  Mix the <Qty ref="flour"/>, <Qty ref="water"/>, <Qty ref="salt"/> and <Qty ref="olive-oil"/>
+  until no dry flour is left, then cover the bowl.
+</Step>
+
+<Step id="ferment">
+  Leave at <Temp c={4}/> for <Dur step="ferment"/>. The dough should be domed and slack
+  when it is ready.
+</Step>
+
+<Step id="shape">
+  Turn out and shape into a <Len cm={20}/> round, handling it as little as it will allow.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={240}/> for <Dur step="bake"/>, until the crust is deeply coloured.
+</Step>

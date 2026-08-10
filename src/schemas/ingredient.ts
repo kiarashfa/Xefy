@@ -17,6 +17,13 @@ import {
 export const ingredientForm = sourceCitation.extend({
   id: slug,
   label: z.string().min(1),
+  /**
+   * The one word that names this form inside a sentence — "fresh", "dried",
+   * "smoked". Set it only where the distinction is one a cook acts on: "fresh
+   * basil" earns its adjective, and a cheese's rennet does not belong in the
+   * middle of a step. Where it is absent the ingredient name stands alone.
+   */
+  proseQualifier: z.string().min(1).optional(),
   nutritionPer100g,
   density: density.optional(),
 
@@ -48,6 +55,12 @@ export const ingredientSchema = z
   .object({
     id: slug,
     name: z.string().min(1),
+    /**
+     * The name as it reads inside a sentence. Defaults to the lowercased name,
+     * which is right for "flour" and wrong for "Parmigiano-Reggiano" — so a
+     * proper noun sets this rather than being lowercased mid-method.
+     */
+    proseName: z.string().min(1).optional(),
     names,
 
     /** Feeds reverse search grouping and ingredient-page browsing. */

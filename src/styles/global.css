@@ -148,6 +148,41 @@
     padding-inline: var(--gutter);
   }
 
+  /*
+   * Live values: quantities, temperatures, dimensions, durations.
+   *
+   * Numbers that are data render in the display face — the same typographic
+   * signal wherever a computed figure appears — while the ingredient name
+   * beside a quantity stays in the body face, the pair reading as one phrase.
+   */
+  .qty-amount,
+  .value {
+    font-family: var(--font-display);
+    font-weight: 500;
+  }
+
+  .qty-name {
+    font-family: var(--font-body);
+  }
+
+  /*
+   * A dotted underline means estimated. It means nothing else anywhere on the
+   * site — it is never emphasis — so that a reader who learns it once can
+   * trust it everywhere. It always travels with the tilde, never alone.
+   */
+  .is-estimated {
+    text-decoration: underline dotted var(--muted);
+    text-underline-offset: 3px;
+  }
+
+  /* Only reachable if the integrity checks were bypassed; visible on purpose. */
+  .is-unresolved {
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    padding-inline: 3px;
+    border-radius: 3px;
+  }
+
   @media (max-width: 760px) {
     .wrap {
       padding-inline: 22px;

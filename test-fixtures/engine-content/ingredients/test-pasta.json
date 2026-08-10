@@ -1,0 +1,20 @@
+{
+  "id": "test-pasta",
+  "name": "Dried Pasta",
+  "proseName": "dried pasta",
+  "category": "pasta",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": ["gluten"],
+  "forms": [
+    {
+      "id": "durum",
+      "label": "Durum wheat",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "pasta-durum",
+      "nutritionPer100g": { "kcal": 371, "protein": 13.04, "carbs": 74.67, "fat": 1.51, "fiber": 3.2, "sodium": 6 },
+      "density": { "gPerCup": 100, "densitySource": "estimated", "densityClass": "dry-pasta-shapes" }
+    }
+  ]
+}

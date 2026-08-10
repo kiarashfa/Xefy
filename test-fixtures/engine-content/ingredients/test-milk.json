@@ -1,0 +1,20 @@
+{
+  "id": "test-milk",
+  "name": "Whole Milk",
+  "proseName": "whole milk",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": ["dairy"],
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "milk-whole",
+      "nutritionPer100g": { "kcal": 61, "protein": 3.15, "carbs": 4.8, "fat": 3.25, "sugars": 5.05, "sodium": 43, "calcium": 113 },
+      "density": { "gPerMl": 1.03, "densitySource": "measured" }
+    }
+  ]
+}

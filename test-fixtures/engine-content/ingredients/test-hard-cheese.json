@@ -1,0 +1,30 @@
+{
+  "id": "test-hard-cheese",
+  "name": "Aged Hard Cheese",
+  "proseName": "aged hard cheese",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": ["dairy"],
+  "forms": [
+    {
+      "id": "animal-rennet",
+      "label": "Made with animal rennet",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "cheese-rennet",
+      "animalOrigin": "meat",
+      "animalOriginNote": "Set with animal rennet, which comes from a calf's stomach, so this form is not vegetarian.",
+      "nutritionPer100g": { "kcal": 392, "protein": 35.8, "carbs": 3.2, "fat": 25.8, "sodium": 1529, "calcium": 1184 },
+      "density": { "gPerCup": 100, "densitySource": "estimated", "densityClass": "hard-cheese-grated" }
+    },
+    {
+      "id": "microbial-rennet",
+      "label": "Made with microbial rennet",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "cheese-vegetarian",
+      "nutritionPer100g": { "kcal": 392, "protein": 35.8, "carbs": 3.2, "fat": 25.8, "sodium": 1529, "calcium": 1184 },
+      "density": { "gPerCup": 100, "densitySource": "estimated", "densityClass": "hard-cheese-grated" }
+    }
+  ]
+}

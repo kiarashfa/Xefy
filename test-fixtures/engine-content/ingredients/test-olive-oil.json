@@ -1,0 +1,20 @@
+{
+  "id": "test-olive-oil",
+  "name": "Extra Virgin Olive Oil",
+  "proseName": "olive oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "extra-virgin",
+      "label": "Extra virgin",
+      "sourceDataset": "FIXTURE",
+      "sourceId": "oil-evoo",
+      "nutritionPer100g": { "kcal": 884, "protein": 0, "carbs": 0, "fat": 100, "saturatedFat": 13.8, "vitaminE": 14.4 },
+      "density": { "gPerMl": 0.913, "densitySource": "measured" }
+    }
+  ]
+}

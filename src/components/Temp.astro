@@ -1,0 +1,14 @@
+---
+import { tempHtml } from '../lib/render/live-values.ts';
+import type { UnitSystem } from '../lib/math/units.ts';
+
+/** Authored in Celsius; Fahrenheit lands on the nearest five degrees. */
+interface Props {
+  c: number;
+  system: UnitSystem;
+}
+
+const { c, system } = Astro.props;
+---
+
+<Fragment set:html={tempHtml(c, system)} />

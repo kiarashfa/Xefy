@@ -1,0 +1,51 @@
+---
+# FIXTURE — exercises the §4.5 merge: its flour is the same ingredient and form
+# as the parent recipe's, so the two have to become one checklist line.
+title: Test Béchamel
+summary: A synthetic white sauce, used to prove that a Component's ingredients merge into the recipe that borrows it.
+batchLabel: One batch
+ingredients:
+  - id: butter
+    ingredientRef: test-butter
+    form: unsalted
+    amount: 50
+    unit: g
+  - id: flour
+    ingredientRef: test-flour
+    form: "00"
+    amount: 50
+    unit: g
+  - id: milk
+    ingredientRef: test-milk
+    form: whole
+    amount: 500
+    unit: ml
+  - id: salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 3
+    unit: g
+steps:
+  - { id: melt-butter, durationMin: 3, type: active, phase: cook }
+  - { id: cook-roux, durationMin: 2, type: active, phase: cook }
+  - { id: add-milk, durationMin: 8, type: active, phase: cook }
+  - { id: simmer-sauce, durationMin: 10, type: active, phase: cook }
+---
+
+<Step id="melt-butter">
+  Melt the <Qty ref="butter"/> in a heavy pan over a low heat, without letting it colour.
+</Step>
+
+<Step id="cook-roux">
+  Whisk in the <Qty ref="flour"/> and cook for <Dur step="cook-roux"/>, until the paste
+  smells faintly of biscuit rather than raw flour.
+</Step>
+
+<Step id="add-milk">
+  Add the <Qty ref="milk"/> a little at a time, whisking each addition smooth before the next.
+</Step>
+
+<Step id="simmer-sauce">
+  Simmer for <Dur step="simmer-sauce"/> at a bare <Temp c={85}/>, stirring often, then season
+  with the <Qty ref="salt"/>.
+</Step>

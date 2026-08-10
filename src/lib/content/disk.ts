@@ -12,16 +12,16 @@ import { fileURLToPath } from 'node:url';
 import { globSync } from 'tinyglobby';
 import { parse as parseYaml } from 'yaml';
 
-import { ingredientSchema } from '../../src/schemas/ingredient.ts';
-import { recipeSchema, recipeVersionSchema } from '../../src/schemas/recipe.ts';
-import { componentSchema } from '../../src/schemas/component.ts';
-import { techniqueSchema } from '../../src/schemas/technique.ts';
-import type { Ingredient } from '../../src/schemas/ingredient.ts';
-import type { Recipe, RecipeVersion } from '../../src/schemas/recipe.ts';
-import type { Component } from '../../src/schemas/component.ts';
-import type { Technique } from '../../src/schemas/technique.ts';
+import { ingredientSchema } from '../../schemas/ingredient.ts';
+import { recipeSchema, recipeVersionSchema } from '../../schemas/recipe.ts';
+import { componentSchema } from '../../schemas/component.ts';
+import { techniqueSchema } from '../../schemas/technique.ts';
+import type { Ingredient } from '../../schemas/ingredient.ts';
+import type { Recipe, RecipeVersion } from '../../schemas/recipe.ts';
+import type { Component } from '../../schemas/component.ts';
+import type { Technique } from '../../schemas/technique.ts';
 
-export const ROOT = path.resolve(fileURLToPath(new URL('../..', import.meta.url)));
+export const ROOT = path.resolve(fileURLToPath(new URL('../../..', import.meta.url)));
 export const DEFAULT_CONTENT = path.join(ROOT, 'src', 'content');
 
 export const relative = (abs: string) => path.relative(ROOT, abs).split(path.sep).join('/');

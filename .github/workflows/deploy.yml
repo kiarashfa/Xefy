@@ -31,6 +31,10 @@ jobs:
       # that has stopped matching looks exactly like a clean content set.
       - name: Integrity checks self-test
         run: npm run check:self
+      # The engine fixtures must stay clean: they are what proves transclusion,
+      # the timing rules and the diet computation still behave.
+      - name: Engine fixtures
+        run: npm run check:fixtures
       - name: Type check
         run: npm run check
 

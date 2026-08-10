@@ -11,7 +11,7 @@
  *   node scripts/integrity/run.ts --expect-failure # succeed only if problems are found
  */
 import path from 'node:path';
-import { loadContent, DEFAULT_CONTENT, ROOT } from './load.ts';
+import { loadContent, DEFAULT_CONTENT, ROOT } from '../../src/lib/content/disk.ts';
 import { runChecks, type Finding } from './checks.ts';
 
 const argv = process.argv.slice(2);

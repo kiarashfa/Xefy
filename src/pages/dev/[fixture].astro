@@ -1,0 +1,509 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServingScaler from '../../components/ServingScaler.svelte';
+import UnitToggle from '../../components/UnitToggle.svelte';
+
+import { loadContent } from '../../lib/content/disk.ts';
+import { resolveRecipe, type ComponentInput } from '../../lib/content/resolve.ts';
+import { renderProse, proseName } from '../../lib/render/prose.ts';
+import { qtyHtml } from '../../lib/render/live-values.ts';
+import { formatDuration } from '../../lib/math/units.ts';
+import { formatNutrient, type Nutrient } from '../../lib/math/nutrition.ts';
+
+/**
+ * A rendering surface for the engine fixtures.
+ *
+ * Errors in quantities, timing and step flow are far easier to see on a page
+ * than in a data dump, so this exists to review them — and to check that the
+ * serving stepper and the unit toggle really do drive every value, which is
+ * something only a browser can answer.
+ *
+ * It never ships. `getStaticPaths` returns nothing in a production build, so no
+ * route is generated unless the build is explicitly asked for one.
+ */
+export async function getStaticPaths() {
+  const wanted = import.meta.env.DEV || process.env.XEFY_DEV === '1';
+  if (!wanted) return [];
+
+  const content = await loadContent('test-fixtures/engine-content');
+  const componentInputs = new Map<string, ComponentInput>(
+    content.components.map((c) => [
+      c.slug,
+      { slug: c.slug, data: c.data, prose: new Map(c.steps.map((s) => [s.stepId, s.text])) },
+    ]),
+  );
+  const ingredients = new Map(content.ingredients.map((i) => [i.slug, i.data]));
+
+  return content.recipeVersions.map((version) => ({
+    params: { fixture: `${version.recipe}--${version.versionId}` },
+    props: {
+      title: 'title' in version.data ? version.data.title : version.recipe,
+      subtitle: 'subtitle' in version.data ? version.data.subtitle : '',
+      recipe: resolveRecipe(
+        {
+          slug: version.recipe,
+          versionId: version.versionId,
+          data: version.data,
+          prose: new Map(version.steps.map((s) => [s.stepId, s.text])),
+        },
+        componentInputs,
+        ingredients,
+      ),
+      siblings: content.recipeVersions.map((o) => ({
+        slug: `${o.recipe}--${o.versionId}`,
+        label: o.recipe,
+      })),
+    },
+  }));
+}
+
+const { title, subtitle, recipe, siblings } = Astro.props;
+
+// The server renders the authored serving count in metric; the client re-renders
+// from the same functions once the stored preferences are known.
+const servings = recipe.defaultServings;
+const system = 'metric' as const;
+
+const MACROS: Nutrient[] = ['kcal', 'protein', 'carbs', 'fat'];
+const MACRO_LABELS: Record<string, string> = {
+  kcal: 'Energy (kcal)',
+  protein: 'Protein (g)',
+  carbs: 'Carbohydrate (g)',
+  fat: 'Fat (g)',
+};
+
+const timelineData = JSON.stringify(
+  recipe.flat.steps.map((s) => ({
+    id: s.id,
+    durationMin: s.durationMin,
+    type: s.type,
+    phase: s.phase,
+  })),
+);
+---
+
+<BaseLayout title={`${title} — engine fixture`} description="Engine verification surface." noindex>
+  <main class="wrap" data-recipe={recipe.slug} data-default-servings={recipe.defaultServings}>
+    <p class="banner">
+      Engine fixture — not site content. Present only in development builds.
+      {siblings.map((s) => <a href={`${import.meta.env.BASE_URL}dev/${s.slug}/`}>{s.label}</a>)}
+    </p>
+
+    <h1>{title}</h1>
+    <p class="subtitle">{subtitle}</p>
+
+    <section class="controls">
+      <div class="control">
+        <span class="label">Servings</span>
+        <ServingScaler client:load recipe={recipe.slug} defaultServings={recipe.defaultServings} />
+      </div>
+      <div class="control">
+        <span class="label">Units</span>
+        <UnitToggle client:load />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Timing</h2>
+      <div class="timing">
+        <div><b>{formatDuration(recipe.timing.prep)}</b><span>Prep</span></div>
+        <div><b>{formatDuration(recipe.timing.cook)}</b><span>Cook</span></div>
+        <div><b>{formatDuration(recipe.timing.rest)}</b><span>Rest</span></div>
+        <div><b>{formatDuration(recipe.timing.total)}</b><span>Total</span></div>
+      </div>
+      <p class="note">
+        Critical path {recipe.criticalPathMin}m · card total {recipe.timing.total}m ·
+        {recipe.criticalPathMin === recipe.timing.total ? ' agree' : ' DISAGREE'}
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Plan my timing</h2>
+      <label>
+        Ready at
+        <input type="time" id="ready-at" value="20:00" />
+      </label>
+      <ol id="timeline" class="timeline"></ol>
+      <script is:inline type="application/json" id="timeline-data" set:html={timelineData} />
+    </section>
+
+    <div class="body-grid">
+      <section>
+        <h2>Ingredients</h2>
+        <ul class="checklist">
+          {
+            recipe.lines.map((line) => (
+              <li>
+                <input type="checkbox" />
+                <span class="ing">
+                  <Fragment
+                    set:html={qtyHtml(
+                      {
+                        amount: line.line.amount,
+                        unit: line.line.unit,
+                        defaultServings: recipe.defaultServings,
+                        name: proseName(line),
+                        density: line.density,
+                      },
+                      servings,
+                      system,
+                      { showName: false },
+                    )}
+                  />
+                  <span class="ing-name">{proseName(line)}</span>
+                  {line.line.portions && (
+                    <span class="ing-note">
+                      {line.line.contributions.map((c) => `${c.sourceKey} ${c.amount}${line.line.unit}`).join(' + ')}
+                    </span>
+                  )}
+                  {line.line.consumedFraction < 1 && (
+                    <span class="ing-note">consumed ×{line.line.consumedFraction}</span>
+                  )}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2>Method</h2>
+        <ol class="steps">
+          {
+            recipe.flat.steps.map((step) => (
+              <li>
+                <span class="badge">{step.number}</span>
+                <div>
+                  <p class="step-text" set:html={renderProse(step.prose, { recipe, servings, system })} />
+                  <p class="step-meta">
+                    {step.phase ?? 'rest'} · {formatDuration(step.durationMin)} · {step.id}
+                    {step.fromComponent && <em> · from {step.fromComponent.title}</em>}
+                  </p>
+                </div>
+              </li>
+            ))
+          }
+        </ol>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Nutrition</h2>
+      <table>
+        <thead>
+          <tr><th>Nutrient</th><th>Per serving</th><th>Total, all servings</th></tr>
+        </thead>
+        <tbody>
+          {
+            MACROS.map((key) => (
+              <tr>
+                <td>{MACRO_LABELS[key]}</td>
+                <td>{formatNutrient(recipe.nutrition.perServing[key] ?? 0, key)}</td>
+                <td
+                  data-per-serving={recipe.nutrition.perServing[key] ?? 0}
+                  data-decimals={key === 'kcal' ? 0 : 1}
+                >
+                  {((recipe.nutrition.perServing[key] ?? 0) * servings).toFixed(key === 'kcal' ? 0 : 1)}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="note">
+        Per-serving figures do not move with the stepper; the total does. As prepared with these
+        ingredients.
+      </p>
+      {
+        recipe.nutrition.estimated && (
+          <p class="note estimated">
+            Estimated — {recipe.nutrition.estimateReasons.join(' ')}
+          </p>
+        )
+      }
+      {
+        recipe.nutrition.partial.length > 0 && (
+          <p class="note">Partial (some ingredient carries no figure): {recipe.nutrition.partial.join(', ')}</p>
+        )
+      }
+    </section>
+
+    <section class="card">
+      <h2>Computed labels</h2>
+      <p>
+        Diet: <b>{recipe.diet.heroLabel ?? 'no qualifying label'}</b>
+        {recipe.diet.labels.length > 0 && <span class="note"> (qualifies: {recipe.diet.labels.join(', ')})</span>}
+      </p>
+      <p>Free from: {recipe.diet.freeFrom.join(', ') || 'nothing claimed'}</p>
+      <p>Allergens: {recipe.diet.allergens.join(', ') || 'none listed'}</p>
+      {recipe.diet.animalOriginNotes.map((n) => <p class="note">{n.label}: {n.note}</p>)}
+      {recipe.warnings.map((w) => <p class="note warn">Merge warning: {w}</p>)}
+      {recipe.errors.map((e) => <p class="note warn">Error: {e}</p>)}
+    </section>
+  </main>
+
+  <script>
+    import { initLiveValues } from '../../lib/client/live-values.ts';
+    import { computeTimeline } from '../../lib/math/timeline.ts';
+    import { formatClock, formatDayOffset } from '../../lib/math/units.ts';
+
+    initLiveValues();
+
+    // Clock times are generated readouts, not content: they are computed here
+    // and never reach the static HTML.
+    const steps = JSON.parse(document.getElementById('timeline-data')!.textContent!);
+    const input = document.getElementById('ready-at') as HTMLInputElement;
+    const list = document.getElementById('timeline')!;
+
+    function render() {
+      const [h, m] = input.value.split(':').map(Number);
+      const at = new Date();
+      at.setHours(h ?? 20, m ?? 0, 0, 0);
+      const timeline = computeTimeline(steps, { mode: 'ready-at', at });
+
+      const offset = formatDayOffset(timeline.startDayOffset);
+      list.innerHTML =
+        `<li class="summary">Start at ${formatClock(timeline.start)}${offset ? ` ${offset},` : ''} to eat at ${formatClock(timeline.end)}</li>` +
+        timeline.entries
+          .map((e) => {
+            const day = formatDayOffset(e.dayOffset);
+            return `<li>${formatClock(e.displayAt)}${day ? `, ${day}` : ''} · ${e.isPassive ? 'ready' : 'start'} · ${e.stepId}</li>`;
+          })
+          .join('');
+    }
+
+    input.addEventListener('input', render);
+    render();
+  </script>
+</BaseLayout>
+
+<style>
+  main {
+    padding-block: 32px 80px;
+  }
+
+  .banner {
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+
+  .banner a {
+    margin-left: 12px;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 42px;
+    margin: 0 0 8px;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+    max-width: 52ch;
+  }
+
+  .controls {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+
+  .control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .label,
+  .note {
+    font-size: 11px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .note {
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    margin: 10px 0 0;
+  }
+
+  .note.warn {
+    color: var(--accent);
+  }
+
+  .card {
+    background: var(--surface-2);
+    border-radius: 16px;
+    padding: 18px 22px;
+    margin-bottom: 20px;
+  }
+
+  .timing {
+    display: flex;
+    gap: 28px;
+  }
+
+  .timing b {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+  }
+
+  .timing span {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 44px;
+    margin-block: 32px;
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .body-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .checklist,
+  .steps,
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .checklist li {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+
+  .ing-name {
+    margin-left: 4px;
+  }
+
+  .ing-note {
+    display: block;
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .steps li {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .badge {
+    font-family: var(--font-display);
+    font-size: 13px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    width: 26px;
+    height: 26px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .step-text {
+    margin: 0;
+    max-width: var(--measure);
+    line-height: 1.65;
+  }
+
+  .step-meta {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 6px 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .timeline li {
+    font-size: 13px;
+    padding: 3px 0;
+    color: var(--ink-soft);
+  }
+
+  .timeline .summary {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  th {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+
+  td:not(:first-child) {
+    font-family: var(--font-display);
+  }
+
+  input[type='time'] {
+    font: inherit;
+    background: var(--surface-3);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    padding: 4px 8px;
+  }
+
+  label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+</style>

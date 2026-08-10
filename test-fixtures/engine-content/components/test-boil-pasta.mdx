@@ -1,0 +1,37 @@
+---
+# FIXTURE — deliberately used twice by one recipe, to prove that repeated
+# occurrences of a Component stay apart from each other.
+title: Test Boiled Pasta
+summary: A synthetic boiling step, used to prove that a Component referenced twice keeps its occurrences distinct.
+batchLabel: One pan
+ingredients:
+  - id: water
+    ingredientRef: test-water
+    form: still
+    amount: 2000
+    unit: ml
+  - id: salt
+    ingredientRef: test-salt
+    form: fine
+    amount: 20
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: "Most of the salt in the pan goes down the drain with the water."
+  - id: pasta
+    ingredientRef: test-pasta
+    form: durum
+    amount: 200
+    unit: g
+steps:
+  - { id: boil-water, durationMin: 8, type: active, phase: cook }
+  - { id: cook-pasta, durationMin: 10, type: active, phase: cook }
+---
+
+<Step id="boil-water">
+  Bring the <Qty ref="water"/> to a rolling boil in a wide pan and add the <Qty ref="salt"/>.
+</Step>
+
+<Step id="cook-pasta">
+  Add the <Qty ref="pasta"/> and cook for <Dur step="cook-pasta"/>, stirring once in the
+  first minute so nothing settles.
+</Step>
