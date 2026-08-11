@@ -7,10 +7,12 @@ import UnitToggle from '../../components/UnitToggle.svelte';
 
 import { loadContent } from '../../lib/content/disk.ts';
 import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from '../../lib/content/resolve.ts';
+import type { Recipe } from '../../schemas/recipe.ts';
 import { renderProse, proseName } from '../../lib/render/prose.ts';
 import { qtyHtml } from '../../lib/render/live-values.ts';
 import { formatDuration } from '../../lib/math/units.ts';
 import { formatNutrient, type Nutrient } from '../../lib/math/nutrition.ts';
+import { recipeJsonLd } from '../../lib/render/json-ld.ts';
 import { labelFor, COURSES, CUISINES, METHODS, ALLERGEN_TERMS, ALLERGEN_DISCLAIMER } from '../../schemas/taxonomy.ts';
 
 /**
@@ -65,7 +67,9 @@ export async function getStaticPaths() {
   });
 }
 
-const { identity, versions, about, credits } = Astro.props;
+// The default version carries the recipe identity; the union narrows here once.
+const { versions, about, credits } = Astro.props;
+const identity = Astro.props.identity as Recipe;
 const base = import.meta.env.BASE_URL;
 const system = 'metric' as const;
 
@@ -133,12 +137,30 @@ const facts = (r: ResolvedRecipe) =>
     { label: 'Difficulty', value: r.difficulty, difficulty: true },
   ].filter((f) => f.value);
 
+const jsonLd = recipeJsonLd(
+  { slug: Astro.params.slug!, identity, versions, about, head: versions[0].resolved } as any,
+  Astro.site?.origin ?? '',
+  base,
+);
+const searchOnly = (identity.names?.searchOnly ?? []).join(' ');
+
 const title = identity.title;
 const description = identity.description ?? identity.subtitle;
 ---
 
 <BaseLayout title={`${title} — Xefy`} description={description}>
+  <Fragment slot="head">
+    <script type="application/ld+json" is:inline set:html={jsonLd} />
+  </Fragment>
+
   <SiteHeader />
+
+  {/*
+    Search-only spellings are indexed but never displayed (§2.2). Pagefind
+    reads rendered HTML rather than frontmatter, so they have to reach the page
+    in some form — this is the non-displayed one.
+  */}
+  <span data-pagefind-index-attrs="data-alt-spellings" data-alt-spellings={searchOnly} hidden></span>
 
   <nav class="wrap crumb" aria-label="Breadcrumb">
     <a href={`${base}recipes/`}>Recipes</a> /
@@ -228,45 +250,32 @@ const description = identity.description ?? identity.subtitle;
   </div>
 
   <div class="wrap" data-recipe={Astro.params.slug} data-default-servings={versions[0].resolved.defaultServings}>
-    {/* Recipe / About. A segmented control, deliberately unlike the version tabs. */}
-    <div class="panel-switch" role="tablist" data-tablist aria-label="Recipe or background">
-      <button role="tab" aria-selected="true" aria-controls="panel-recipe" data-value="recipe">Recipe</button>
-      {about && (
-        <button role="tab" aria-selected="false" aria-controls="panel-about" data-value="about">About</button>
-      )}
-    </div>
+    {
+      versions.length > 1 && (
+        <>
+          {/* Underlined tabs: which version of the dish. Reaches both columns. */}
+          <div class="version-tabs" role="tablist" data-version-tabs aria-label="Version">
+            {versions.map((v, i) => (
+              <button role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-value={v.id}>
+                {v.resolved.label}
+              </button>
+            ))}
+          </div>
+          <p class="version-note">
+            The same dish, adapted. Every quantity, time and figure below changes with the version.
+          </p>
+        </>
+      )
+    }
 
-    <section id="panel-recipe" role="tabpanel" data-panel>
-      {
-        versions.length > 1 && (
-          <>
-            <div class="version-tabs" role="tablist" data-tablist aria-label="Version">
-              {versions.map((v, i) => (
-                <button
-                  role="tab"
-                  aria-selected={i === 0 ? 'true' : 'false'}
-                  aria-controls={`version-${v.id}`}
-                  data-value={v.id}
-                >
-                  {v.resolved.label}
-                </button>
-              ))}
-            </div>
-            <p class="version-note">
-              The same dish, adapted. Every quantity, time and figure below changes with the version.
-            </p>
-          </>
-        )
-      }
-
-      {
-        versions.map((v, vi) => {
-          const r = v.resolved;
-          const servings = r.defaultServings;
-          return (
-            <div id={`version-${v.id}`} data-version hidden={vi !== 0}>
-              <div class="body-grid">
-                <aside class="left-col">
+    <div class="body-grid">
+      <aside class="left-col">
+        {
+          versions.map((v, vi) => {
+            const r = v.resolved;
+            const servings = r.defaultServings;
+            return (
+              <div class="left-stack" data-version={v.id} hidden={vi !== 0}>
                   <div class="side-card is-row">
                     <span class="side-card-label">Servings</span>
                     <ServingScaler client:visible recipe={r.slug} defaultServings={servings} />
@@ -301,7 +310,7 @@ const description = identity.description ?? identity.subtitle;
                     <h2 class="panel-title">Ingredients</h2>
                     <ul class="ingredients">
                       {r.lines.map((line) => {
-                        const sub = r.flat.steps && identity.substitutions?.find?.((s: any) => s.lineRef === line.line.id);
+                        const sub = r.substitutions.find((s: any) => s.lineRef === line.line.id);
                         return (
                           <li>
                             <input class="chk" type="checkbox" aria-label={proseName(line)} />
@@ -399,16 +408,38 @@ const description = identity.description ?? identity.subtitle;
                       ))}
                     </div>
                   </div>
-                </aside>
+              </div>
+            );
+          })
+        }
+      </aside>
 
-                <div>
+      <div class="right-col">
+        {/* Recipe / About — a segmented control, scoped to this column only. */}
+        <div class="panel-switch" role="tablist" data-tablist aria-label="Recipe or background">
+          <button role="tab" aria-selected="true" aria-controls="panel-recipe" data-value="recipe">
+            Recipe
+          </button>
+          {about && (
+            <button role="tab" aria-selected="false" aria-controls="panel-about" data-value="about">
+              About
+            </button>
+          )}
+        </div>
+
+        <div id="panel-recipe" role="tabpanel" data-panel>
+          {versions.map((v, vi) => {
+            const r = v.resolved;
+            const servings = r.defaultServings;
+            return (
+              <div data-version={v.id} hidden={vi !== 0}>
                   <h2 class="panel-title">Method</h2>
                   <ol class="steps">
                     {r.flat.steps.map((step) => {
-                      const rationale = r.flat.steps && identity.notes?.techniqueRationale?.find?.(
+                      const rationale = r.notes.techniqueRationale.find(
                         (n: any) => n.stepId === step.id,
                       );
-                      const pitfall = identity.notes?.commonPitfalls?.find?.(
+                      const pitfall = r.notes.commonPitfalls.find(
                         (n: any) => n.stepId === step.id,
                       );
                       return (
@@ -454,7 +485,7 @@ const description = identity.description ?? identity.subtitle;
                           ['reheatInstructions', 'Reheating'],
                         ] as const
                       ).map(([key, label]) =>
-                        r.makeAhead?.[key] ? (
+                        r.makeAhead[key] ? (
                           <div class="makeahead-row">
                             <b>{label}</b>
                             {r.makeAhead[key]}
@@ -463,43 +494,42 @@ const description = identity.description ?? identity.subtitle;
                       )}
                       <div class="makeahead-row">
                         <b>Freezes</b>
-                        {r.makeAhead?.freezable === null
+                        {r.makeAhead.freezable === null
                           ? 'Not applicable to this dish.'
-                          : r.makeAhead?.freezable
+                          : r.makeAhead.freezable
                             ? 'Yes.'
                             : 'Not recommended.'}
                       </div>
                     </div>
                   </section>
+              </div>
+            );
+          })}
+        </div>
+
+        {
+          about && (
+            <div id="panel-about" role="tabpanel" data-panel hidden>
+              <div class="about">
+                <Fragment set:html={renderAbout(about.body, about.data.sources)} />
+                <div class="sources">
+                  <h2 class="panel-title">Sources</h2>
+                  <ol>
+                    {about.data.sources.map((s: any) => (
+                      <li id={`source-${s.id}`}>
+                        {s.url ? <a href={s.url}>{s.title}</a> : s.title} — {s.publisher}
+                        {s.published && <>, {s.published}</>}
+                        {s.note && <span class="source-note">{s.note}</span>}
+                      </li>
+                    ))}
+                  </ol>
                 </div>
               </div>
             </div>
-          );
-        })
-      }
-    </section>
-
-    {
-      about && (
-        <section id="panel-about" role="tabpanel" data-panel hidden>
-          <div class="about">
-            <Fragment set:html={renderAbout(about.body, about.data.sources)} />
-            <div class="sources">
-              <h2 class="panel-title">Sources</h2>
-              <ol>
-                {about.data.sources.map((s: any) => (
-                  <li id={`source-${s.id}`}>
-                    {s.url ? <a href={s.url}>{s.title}</a> : s.title} — {s.publisher}
-                    {s.published && <>, {s.published}</>}
-                    {s.note && <span class="source-note">{s.note}</span>}
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-      )
-    }
+          )
+        }
+      </div>
+    </div>
   </div>
 
   <footer class="site-footer">

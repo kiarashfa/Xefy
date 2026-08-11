@@ -26,14 +26,31 @@ function setTheme(theme: 'light' | 'dark') {
 }
 
 /** Switches one group of `aria-selected` buttons and the panels they name. */
-function selectIn(group: HTMLElement, chosen: HTMLElement, attribute: string) {
+function selectIn(group: HTMLElement, chosen: HTMLElement) {
   for (const button of group.querySelectorAll<HTMLElement>('button[aria-controls]')) {
     const selected = button === chosen;
     button.setAttribute('aria-selected', String(selected));
     const panel = document.getElementById(button.getAttribute('aria-controls') ?? '');
     if (panel) panel.toggleAttribute('hidden', !selected);
   }
-  group.dataset.active = chosen.dataset[attribute] ?? '';
+}
+
+/**
+ * Version switching reaches into both columns.
+ *
+ * A version changes its ingredients and its timing as much as its method, and
+ * those live in the left column while the method lives in the right — so this
+ * matches on a value rather than on a single panel id, and shows every block
+ * belonging to the chosen version wherever it sits.
+ */
+function selectVersion(group: HTMLElement, chosen: HTMLElement) {
+  const version = chosen.dataset.value;
+  for (const button of group.querySelectorAll<HTMLElement>('button[data-value]')) {
+    button.setAttribute('aria-selected', String(button === chosen));
+  }
+  for (const block of document.querySelectorAll<HTMLElement>('[data-version]')) {
+    block.toggleAttribute('hidden', block.dataset.version !== version);
+  }
 }
 
 export function initInteractions(): void {
@@ -49,12 +66,21 @@ export function initInteractions(): void {
     el.setAttribute('aria-expanded', String(!open));
   });
 
-  // Recipe / About, and the version strip inside the Recipe panel. Same
-  // mechanism, deliberately different-looking controls.
+  // Recipe / About: swaps the reading column and leaves the recipe's own data
+  // in place beside it.
   for (const group of document.querySelectorAll<HTMLElement>('[data-tablist]')) {
     group.addEventListener('click', (e) => {
       const button = (e.target as HTMLElement).closest<HTMLElement>('button[aria-controls]');
-      if (button) selectIn(group, button, 'value');
+      if (button) selectIn(group, button);
+    });
+  }
+
+  // The version strip: a different control doing a different job, and one that
+  // has to reach both columns.
+  for (const group of document.querySelectorAll<HTMLElement>('[data-version-tabs]')) {
+    group.addEventListener('click', (e) => {
+      const button = (e.target as HTMLElement).closest<HTMLElement>('button[data-value]');
+      if (button) selectVersion(group, button);
     });
   }
 

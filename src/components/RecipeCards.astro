@@ -1,0 +1,34 @@
+---
+import { labelFor, CUISINES } from '../schemas/taxonomy.ts';
+
+/** The card grid, shared by every listing page so they stay one vocabulary. */
+interface Props {
+  recipes: any[];
+  base: string;
+}
+const { recipes, base } = Astro.props;
+const minutes = (m: number) => (m < 60 ? `${m}m` : `${Math.floor(m / 60)}h ${m % 60 || ''}`.trim());
+---
+
+<ul class="card-grid">
+  {
+    recipes.map((r) => (
+      <li>
+        <a class="card" href={`${base}recipes/${r.slug}/`}>
+          <span class="card-image">
+            {r.image && <img src={`${base}${r.image}`} alt="" width="800" height="800" loading="lazy" />}
+          </span>
+          <span class="card-body">
+            <span class="card-eyebrow">
+              {labelFor(CUISINES, r.tags.cuisine[0])} · {r.style}
+            </span>
+            <span class="card-title">{r.title}</span>
+            <span class="card-meta">
+              {minutes(r.totalMin)} · {r.kcalPerServing} kcal · {r.difficulty}
+            </span>
+          </span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

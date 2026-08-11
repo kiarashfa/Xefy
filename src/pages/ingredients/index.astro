@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { getSite } from '../../lib/content/site.ts';
+
+const site = await getSite();
+const base = import.meta.env.BASE_URL;
+
+const byCategory = new Map<string, typeof site.ingredients>();
+for (const i of site.ingredients) {
+  byCategory.set(i.category, [...(byCategory.get(i.category) ?? []), i]);
+}
+const categories = [...byCategory].sort(([a], [b]) => a.localeCompare(b));
+---
+
+<BaseLayout
+  title="Ingredients — Xefy"
+  description={`Every ingredient used on Xefy, with cited nutrition data per form and the recipes that use it.`}
+>
+  <SiteHeader />
+
+  <main class="wrap">
+    <div class="page-head">
+      <h1 class="page-title">Ingredients</h1>
+      <p class="page-lede">
+        {site.ingredients.length} ingredients, each with its nutrition cited to a source record and
+        the recipes that use it, sorted by how much of it they need.
+      </p>
+    </div>
+
+    {
+      categories.map(([category, list]) => (
+        <section>
+          <h2 class="panel-title">{category}</h2>
+          <ul class="listing">
+            {list
+              .sort((a, b) => a.name.localeCompare(b.name))
+              .map((i) => (
+                <li>
+                  <a href={`${base}ingredients/${i.id}/`}>
+                    {i.image && <img class="ing-thumb" src={`${base}${i.image}`} alt="" width="34" height="34" />}
+                    {i.name}
+                    <span class="count">{(site.usage.get(i.id) ?? []).length}</span>
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </section>
+      ))
+    }
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>Xefy</span>
+      <span>Nutrition from USDA FoodData Central.</span>
+    </div>
+  </footer>
+
+  <script>
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

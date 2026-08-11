@@ -1,25 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Catalog from '../components/Catalog.svelte';
+import { catalogRecord, getSite } from '../lib/content/site.ts';
+import { COURSES, CUISINES, METHODS, ALLERGEN_TERMS } from '../schemas/taxonomy.ts';
 
-// Placeholder homepage. The catalogue that belongs here is built once there is
-// content to put in it; this exists to prove the pipeline end to end.
-const title = 'Xefy';
+/**
+ * The homepage: the whole catalogue, filterable.
+ *
+ * A photo-forward card grid is the default because the imagery is the site's
+ * warmth, with a dense table a click away for people comparing rather than
+ * browsing. Both read the light catalogue export — never the per-recipe detail
+ * files, which would tax this page for a feature it does not use.
+ */
+const site = await getSite();
+const recipes = site.recipes.map(catalogRecord);
+const base = import.meta.env.BASE_URL;
+
+const title = 'Xefy — a recipe encyclopedia where the numbers are computed';
 const description =
-  'A free recipe encyclopedia where every quantity, nutrition figure and timing is computed from structured data rather than typed by hand.';
+  'One page per dish. Every quantity, nutrition figure and timing is derived from structured data and recomputes when you change the serving count or the units.';
 ---
 
 <BaseLayout title={title} description={description}>
-  <main class="wrap py-24">
-    <p class="text-accent mb-4 text-xs font-medium tracking-[0.12em] uppercase">In progress</p>
-    <h1 class="font-display text-ink mb-5 text-5xl leading-tight font-medium tracking-tight">
-      Xefy
-    </h1>
-    <p class="font-display text-ink-soft max-w-[42ch] text-lg leading-relaxed italic">
-      {description}
-    </p>
-    <hr class="border-line-strong mt-12 border-0 border-t" />
-    <p class="text-muted mt-6 max-w-[var(--measure)] text-sm leading-relaxed">
-      Nothing is published yet.
-    </p>
+  <SiteHeader />
+
+  <main class="wrap">
+    <div class="page-head">
+      <h1 class="page-title">Every dish, all the numbers</h1>
+      <p class="page-lede">
+        {recipes.length} dishes. Change the servings and every quantity moves with you; switch to US
+        customary and the temperatures in the method change too. Nothing here is typed by hand.
+      </p>
+    </div>
+
+    <Catalog
+      client:load
+      recipes={recipes}
+      base={base}
+      cuisines={CUISINES}
+      courses={COURSES}
+      methods={METHODS}
+      allergens={ALLERGEN_TERMS}
+    />
   </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>
+        Xefy — free, ad-free and login-free. <a href={`${base}attributions/`}>Image credits</a>.
+      </span>
+      <span>Nutrition from USDA FoodData Central.</span>
+    </div>
+  </footer>
+
+  <script>
+    import { initInteractions } from '../lib/client/interactions.ts';
+    initInteractions();
+  </script>
 </BaseLayout>

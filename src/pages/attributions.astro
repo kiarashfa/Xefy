@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { getSite } from '../lib/content/site.ts';
+
+/**
+ * One central manifest rather than a block on every page. At this image volume
+ * a repeated per-page credit would be excessive; centralising keeps both the
+ * licence compliance and the page clean, and the popovers deep-link here.
+ *
+ * Every image is cropped and colour-graded, which makes it an adaptation — so
+ * each entry states its own licence and the modification made. §10.1.
+ */
+const site = await getSite();
+const base = import.meta.env.BASE_URL;
+const credits = [...site.credits].sort((a, b) => a.slug.localeCompare(b.slug));
+const shareAlike = credits.filter((c) => c.shareAlike).length;
+---
+
+<BaseLayout
+  title="Image credits — Xefy"
+  description="Every photograph on Xefy, with its author, its licence, and the processing applied to it."
+>
+  <SiteHeader />
+
+  <main class="wrap">
+    <div class="page-head">
+      <h1 class="page-title">Image credits</h1>
+      <p class="page-lede">
+        Every photograph here comes from Wikimedia Commons or Open Food Facts under the licence it
+        carries. All of them have been cropped square, white-balanced and colour-graded so the set
+        reads as one publication — which makes each an adaptation, offered under the same licence as
+        the original.
+      </p>
+    </div>
+
+    {
+      shareAlike > 0 && (
+        <p class="source-line">
+          {shareAlike} of {credits.length} are ShareAlike, and the adapted versions are offered under
+          those same terms.
+        </p>
+      )
+    }
+
+    <ul class="attribution-list">
+      {
+        credits.map((c) => (
+          <li id={`${c.kind}-${c.slug}`}>
+            <img src={`${base}${c.files.thumb}`} alt="" width="56" height="56" loading="lazy" />
+            <div class="meta">
+              <b>
+                <a href={`${base}${c.kind === 'recipe' ? 'recipes' : 'ingredients'}/${c.slug}/`}>
+                  {c.slug}
+                </a>
+              </b>
+              <br />
+              <a href={c.sourceUrl}>{c.title.replace('File:', '')}</a>
+              {c.author && <> by {c.author}</>} — {c.licenseUrl ? <a href={c.licenseUrl}>{c.license}</a> : c.license}
+              <br />
+              {c.modified}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><span>Xefy</span><span>Nutrition from USDA FoodData Central.</span></div>
+  </footer>
+
+  <script>
+    import { initInteractions } from '../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

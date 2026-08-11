@@ -79,3 +79,52 @@ const nav = [
     {nav.map((item) => <a href={item.href}>{item.label}</a>)}
   </nav>
 </header>
+
+{/*
+  Pagefind's assets are produced by the build, so this is inert in `astro dev`
+  and live in a real build. The index is what makes alternate and search-only
+  names findable — it reads the rendered HTML, not the frontmatter.
+*/}
+<div class="search-overlay" data-search-overlay role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <button class="close" data-search-close aria-label="Close search">✕</button>
+    <div id="pagefind-search"></div>
+    <p class="search-fallback">
+      Search covers every dish and ingredient, including regional names and alternate spellings.
+    </p>
+  </div>
+</div>
+
+<link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
+<script is:inline define:vars={{ base }}>
+  // Loaded on first use rather than on every page: most visits never search,
+  // and the bundle is not small.
+  let loaded = false;
+  const overlay = document.querySelector('[data-search-overlay]');
+
+  async function openSearch() {
+    overlay?.setAttribute('data-open', '');
+    if (loaded) return;
+    loaded = true;
+    try {
+      await import(`${base}pagefind/pagefind-ui.js`);
+      new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false });
+    } catch {
+      document.getElementById('pagefind-search').textContent =
+        'Search is available on the published site.';
+    }
+  }
+
+  for (const button of document.querySelectorAll('[data-search]')) {
+    button.addEventListener('click', openSearch);
+  }
+  document.querySelector('[data-search-close]')?.addEventListener('click', () =>
+    overlay?.removeAttribute('data-open'),
+  );
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.removeAttribute('data-open');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') overlay?.removeAttribute('data-open');
+  });
+</script>

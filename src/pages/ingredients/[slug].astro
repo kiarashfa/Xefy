@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { getSite } from '../../lib/content/site.ts';
+import { NUTRIENT_ROWS } from '../../lib/render/nutrients.ts';
+import { formatNutrient } from '../../lib/math/nutrition.ts';
+
+/**
+ * The ingredient page.
+ *
+ * Even with no hand-written enrichment this has to be a real page rather than a
+ * template with a name in it: a composed description, cited nutrition per Form,
+ * the naming block, and the recipes that use it. Hundreds of near-identical
+ * auto-generated pages would be thin content, and the way out is that the
+ * structured data genuinely differs per ingredient.
+ */
+export async function getStaticPaths() {
+  const site = await getSite();
+  return site.ingredients.map((ingredient) => ({
+    params: { slug: ingredient.id },
+    props: {
+      ingredient,
+      usedIn: site.usage.get(ingredient.id) ?? [],
+      credit: site.credits.find((c) => c.kind === 'ingredient' && c.slug === ingredient.id) ?? null,
+      about: site.raw.ingredientAbout.find((a) => a.subject === ingredient.id) ?? null,
+    },
+  }));
+}
+
+const { ingredient, usedIn, credit, about } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const primary = ingredient.forms[0]!;
+
+/**
+ * A composed opening sentence, built from the record rather than templated.
+ * Different ingredients produce genuinely different sentences because their
+ * data differs — which is the point.
+ */
+const energy = primary.nutritionPer100g.kcal;
+const descriptor = [
+  `${ingredient.name} is a ${ingredient.category}`,
+  ingredient.forms.length > 1
+    ? `recorded here in ${ingredient.forms.length} forms — ${ingredient.forms.map((f) => f.label.toLowerCase()).join(', ')}`
+    : null,
+]
+  .filter(Boolean)
+  .join(', ');
+
+const dietNote =
+  ingredient.animalOrigin === 'none'
+    ? 'It is plant-derived, so it rules out no diet on its own.'
+    : `It is of ${ingredient.animalOrigin} origin, which is what the computed diet labels on any recipe using it are derived from.`;
+
+const grams = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(1)} kg` : `${Math.round(n)} g`);
+
+const title = ingredient.name;
+const description = `${descriptor}. ${energy != null ? `100 g provides about ${Math.round(energy)} kcal. ` : ''}Used in ${usedIn.length} ${usedIn.length === 1 ? 'recipe' : 'recipes'} on Xefy.`;
+---
+
+<BaseLayout title={`${title} — Xefy`} description={description}>
+  <SiteHeader />
+
+  <nav class="wrap crumb" aria-label="Breadcrumb">
+    <a href={`${base}ingredients/`}>Ingredients</a> / {ingredient.name}
+  </nav>
+
+  <main class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">{ingredient.category}</p>
+      <h1 class="page-title">{ingredient.name}</h1>
+      <p class="page-lede">{descriptor}. {dietNote}</p>
+
+      {
+        (ingredient.names?.alsoKnownAs?.length > 0 ||
+          ingredient.names?.notToBeConfusedWith?.length > 0) && (
+          <div class="names" style="margin-top:20px">
+            {ingredient.names.alsoKnownAs.length > 0 && (
+              <p class="name-line">
+                <span class="name-label">Also known as</span>
+                {ingredient.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
+                  <>
+                    {i > 0 && <span class="name-sep">—</span>}
+                    <span class="name-alt">{n.name}</span>
+                    {n.region && <span class="name-region"> · {n.region}</span>}
+                  </>
+                ))}
+              </p>
+            )}
+            {ingredient.names.notToBeConfusedWith.length > 0 && (
+              <p class="name-line">
+                <span class="name-label">Not the same as</span>
+                {ingredient.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
+                  <>
+                    {i > 0 && <span class="name-sep">—</span>}
+                    <span class="name-alt">{n.name}</span>
+                    <span class="name-region"> — {n.note}</span>
+                  </>
+                ))}
+              </p>
+            )}
+          </div>
+        )
+      }
+    </div>
+
+    <div class="two-col">
+      <aside>
+        {
+          credit && (
+            <figure class="hero-image" style="aspect-ratio:1/1;margin-bottom:20px">
+              <img src={`${base}${credit.files.card}`} alt={credit.alt} width="800" height="800" />
+              <div class="attribution">
+                <button class="attribution-toggle" aria-expanded="false" aria-label="Image credit">
+                  i
+                </button>
+                <div class="attribution-popover">
+                  <a href={credit.sourceUrl}>{credit.title.replace('File:', '')}</a>
+                  {credit.author && <> — {credit.author}</>}
+                  <br />
+                  {credit.license}. {credit.modified}
+                </div>
+              </div>
+            </figure>
+          )
+        }
+
+        {
+          ingredient.generalSubstitutes?.length > 0 && (
+            <div class="side-card">
+              <div class="side-card-label">Rough substitutes</div>
+              {ingredient.generalSubstitutes.map((s: any) => (
+                <p class="source-line" style="margin-top:0">
+                  <b>{s.substitute}</b>
+                  {s.note && <> — {s.note}</>}
+                </p>
+              ))}
+              <p class="source-line">
+                Not dish-specific. A recipe that has a considered swap says so on its own page.
+              </p>
+            </div>
+          )
+        }
+      </aside>
+
+      <div>
+        {
+          ingredient.forms.map((form: any) => (
+            <section style="margin-bottom:36px">
+              <h2 class="panel-title">
+                {form.label} — per 100 g
+              </h2>
+
+              {form.animalOriginNote && <p class="pitfall"><b>Worth knowing</b>{form.animalOriginNote}</p>}
+              {form.nutritionCaveat && <p class="callout">{form.nutritionCaveat}</p>}
+
+              <table class="nutrition-table">
+                <thead>
+                  <tr>
+                    <th>Nutrient</th>
+                    <th style="text-align:right">Per 100 g</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {NUTRIENT_ROWS.filter(([key]) => form.nutritionPer100g[key] != null).map(
+                    ([key, label, unit]) => (
+                      <tr>
+                        <td>{label}</td>
+                        <td>
+                          {formatNutrient(form.nutritionPer100g[key], key)}
+                          {unit}
+                        </td>
+                      </tr>
+                    ),
+                  )}
+                </tbody>
+              </table>
+
+              <p class="source-line">
+                {form.sourceDataset} record{' '}
+                {form.sourceUrl ? <a href={form.sourceUrl}>{form.sourceId}</a> : form.sourceId}.
+                {form.sourceNote && <> {form.sourceNote}</>}
+                {form.density && (
+                  <>
+                    {' '}
+                    Density {form.density.densitySource === 'measured' ? 'measured' : 'estimated'}
+                    {form.density.densityClass && <> from the {form.density.densityClass} class</>}.
+                  </>
+                )}
+              </p>
+            </section>
+          ))
+        }
+
+        <section>
+          <h2 class="panel-title">Used in</h2>
+          {
+            usedIn.length === 0 ? (
+              <p class="empty-state">
+                No recipe on Xefy uses this yet. It will appear here as soon as one does.
+              </p>
+            ) : (
+              <ul class="listing" style="grid-template-columns:minmax(0,1fr)">
+                {usedIn.map(({ recipe, grams: g }) => (
+                  <li>
+                    <a href={`${base}recipes/${recipe.slug}/`}>
+                      {recipe.identity.title}
+                      <span class="count">{grams(g)}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+          {
+            usedIn.length > 0 && (
+              <p class="source-line">
+                Sorted by how much each recipe uses, at its own serving count — most first.
+              </p>
+            )
+          }
+        </section>
+
+        {
+          about && (
+            <section class="about" style="margin-top:36px">
+              <h2 class="panel-title">About {ingredient.name}</h2>
+              <p>{about.data.summary}</p>
+            </section>
+          )
+        }
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>Xefy — every number on this page is computed, not typed.</span>
+      <span>Nutrition from USDA FoodData Central.</span>
+    </div>
+  </footer>
+
+  <script>
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

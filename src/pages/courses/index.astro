@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import { catalogRecord, getSite } from '../../lib/content/site.ts';
+import { COURSES } from '../../schemas/taxonomy.ts';
+
+const site = await getSite();
+const records = site.recipes.map(catalogRecord);
+const base = import.meta.env.BASE_URL;
+const terms = COURSES.map((t) => ({
+  ...t,
+  count: records.filter((r) => r.tags.course.includes(t.id)).length,
+})).filter((t) => t.count > 0);
+---
+
+<BaseLayout title="Course — Xefy" description="Browse Xefy by course.">
+  <SiteHeader />
+  <main class="wrap">
+    <div class="page-head">
+      <h1 class="page-title">Course</h1>
+      <p class="page-lede">Browse by course. Only terms with a dish behind them are listed.</p>
+    </div>
+    <ul class="listing">
+      {terms.map((t) => (
+        <li>
+          <a href={`${base}courses/${t.id}/`}>{t.label}<span class="count">{t.count}</span></a>
+        </li>
+      ))}
+    </ul>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><span>Xefy</span><span>Nutrition from USDA FoodData Central.</span></div>
+  </footer>
+  <script>
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

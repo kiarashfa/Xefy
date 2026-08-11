@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import RecipeCards from '../../components/RecipeCards.astro';
+import { catalogRecord, getSite } from '../../lib/content/site.ts';
+import { COURSES } from '../../schemas/taxonomy.ts';
+
+/**
+ * A computed filtered view, not a place a recipe lives. Re-tagging a dish must
+ * never change its canonical URL, so taxonomy pages own nothing. §9.
+ */
+export async function getStaticPaths() {
+  const site = await getSite();
+  const records = site.recipes.map(catalogRecord);
+  return COURSES.filter((t) => records.some((r) => r.tags.course.includes(t.id))).map((term) => ({
+    params: { slug: term.id },
+    props: { term, recipes: records.filter((r) => r.tags.course.includes(term.id)) },
+  }));
+}
+
+const { term, recipes } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={`${term.label} recipes — Xefy`}
+  description={`Every ${term.label.toLowerCase()} recipe on Xefy — ${recipes.length} in all, with computed timing, nutrition and diet labels.`}
+>
+  <SiteHeader />
+
+  <nav class="wrap crumb" aria-label="Breadcrumb">
+    <a href={`${base}`}>Home</a> / <a href={`${base}courses/`}>Course</a> / {term.label}
+  </nav>
+
+  <main class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Course</p>
+      <h1 class="page-title">{term.label}</h1>
+      <p class="page-lede">
+        {recipes.length} {recipes.length === 1 ? 'dish' : 'dishes'}.
+        {term.description}
+      </p>
+    </div>
+
+    <RecipeCards recipes={recipes} base={base} />
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><span>Xefy</span><span>Nutrition from USDA FoodData Central.</span></div>
+  </footer>
+
+  <script>
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

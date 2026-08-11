@@ -53,6 +53,10 @@ export interface ResolvedRecipe {
   label: string;
   defaultServings: number;
   difficulty: Difficulty;
+  /** Version-scoped editorial data the page renders alongside the computed parts. */
+  makeAhead: RecipeVersion['makeAhead'];
+  notes: RecipeVersion['notes'];
+  substitutions: RecipeVersion['substitutions'];
   flat: FlattenResult;
   lines: ResolvedLine[];
   timing: TimingTotals;
@@ -182,6 +186,9 @@ export function resolveRecipe(
     label: recipe.data.label,
     defaultServings: recipe.data.defaultServings,
     difficulty: recipe.data.difficulty,
+    makeAhead: recipe.data.makeAhead,
+    notes: recipe.data.notes,
+    substitutions: recipe.data.substitutions,
     flat,
     lines,
     timing,

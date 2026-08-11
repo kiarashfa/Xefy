@@ -402,13 +402,19 @@
    * underlined tabs — it changes which version of the same thing you read.
    * ================================================================ */
 
+  /*
+   * The switch sits at the head of the right column rather than above the whole
+   * body, because that is the scope it actually has: the servings, timing,
+   * ingredients and nutrition stay put, and only the reading column changes.
+   * A control placed above everything would claim to change more than it does.
+   */
   .panel-switch {
     display: inline-flex;
     gap: 3px;
     padding: 4px;
     background: var(--surface-2);
     border-radius: 100px;
-    margin-top: 28px;
+    margin-bottom: 22px;
   }
 
   .panel-switch button {
@@ -498,6 +504,10 @@
 
   .left-col {
     align-self: start;
+  }
+
+  /* One stack per version; only the active one is in flow. */
+  .left-stack {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -727,12 +737,16 @@
     border-radius: 14px;
   }
 
+  /*
+   * Two by two rather than a row of four. In a 320px column four abreast
+   * squeezes each figure to nothing; paired, the numbers get room to be read
+   * as the display-face data they are.
+   */
   .nutrition-major {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 12px;
     margin-top: 14px;
-    gap: 8px;
   }
 
   .nutri-stat .val {
@@ -1036,7 +1050,7 @@
 
   .about {
     max-width: var(--measure);
-    padding-block: 32px 40px;
+    padding-bottom: 40px;
   }
 
   .about p {
@@ -1169,5 +1183,464 @@
       gap: 6px;
       padding-block: 24px;
     }
+  }
+}
+
+/*
+ * Catalogue, listing and reference pages.
+ *
+ * Designed as extensions of the recipe page's vocabulary rather than a fresh
+ * visual language per page type — the same cards, pills, rules and type scale.
+ */
+@layer components {
+  .page-head {
+    padding-block: 44px 28px;
+  }
+
+  .page-title {
+    font-family: var(--font-display);
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.012em;
+    margin: 0 0 14px;
+  }
+
+  .page-lede {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 52ch;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .catalog-controls {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+  }
+
+  .catalog-search {
+    flex: 1;
+    max-width: 380px;
+    padding: 10px 14px;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    background: var(--surface-3);
+    color: var(--ink);
+    font: inherit;
+    font-size: 14px;
+  }
+
+  .catalog-view {
+    display: flex;
+    gap: 2px;
+    padding: 3px;
+    background: var(--surface-2);
+    border-radius: 100px;
+  }
+
+  .catalog-view button {
+    border: none;
+    background: transparent;
+    padding: 7px 15px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background 0.35s var(--ease), color 0.35s var(--ease);
+  }
+
+  .catalog-view button.active {
+    background: var(--surface-3);
+    color: var(--ink);
+  }
+
+  .catalog-facets {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-block: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .facet {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  .facet-label {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    min-width: 170px;
+  }
+
+  .facet-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .pill {
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+
+  .pill:hover {
+    border-color: var(--line-strong);
+  }
+
+  .pill.on {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--surface-3);
+  }
+
+  /* Exclusion, not selection — a different action, so a different colour.
+     Allergens are a safety signal and never look like a browsing tag. */
+  .pill.is-exclusion.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .catalog-count {
+    font-size: 12px;
+    color: var(--muted);
+    padding-block: 18px 0;
+    margin: 0;
+  }
+
+  .catalog-count select {
+    font: inherit;
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2px 6px;
+  }
+
+  .card-grid {
+    list-style: none;
+    margin: 0;
+    padding: 22px 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 28px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .card-image {
+    display: block;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
+    overflow: hidden;
+    background: var(--surface-2);
+    box-shadow: 0 16px 36px -20px var(--shadow);
+    transition: transform 0.5s var(--ease), box-shadow 0.5s ease;
+  }
+
+  .card:hover .card-image {
+    transform: scale(1.025) translateY(-4px);
+    box-shadow: 0 24px 48px -18px var(--shadow);
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s var(--ease);
+  }
+
+  .card:hover .card-image img {
+    transform: scale(1.04);
+  }
+
+  .card-body {
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .card-eyebrow {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .card-meta {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    padding-block: 22px 40px;
+  }
+
+  .catalog-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+
+  .catalog-table th {
+    text-align: left;
+    font-size: 10.5px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 0 16px 10px 0;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .catalog-table td {
+    padding: 11px 16px 11px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+
+  .catalog-table td:first-child {
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .catalog-table a {
+    text-decoration: none;
+  }
+
+  .catalog-table a:hover {
+    color: var(--accent);
+  }
+
+  .catalog-empty,
+  .empty-state {
+    padding: 40px 0 60px;
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16px;
+  }
+
+  /* ---- Listing and reference pages ---- */
+
+  .listing {
+    list-style: none;
+    margin: 0;
+    padding: 22px 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 4px 28px;
+  }
+
+  .listing a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14.5px;
+  }
+
+  .listing a:hover {
+    color: var(--accent);
+  }
+
+  .listing .count {
+    margin-left: auto;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 52px;
+    padding-block: 8px 40px;
+    align-items: start;
+  }
+
+  .nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .nutrition-table th {
+    text-align: left;
+    font-size: 10.5px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line-strong);
+  }
+
+  .nutrition-table td {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+
+  .nutrition-table td:last-child {
+    text-align: right;
+    font-family: var(--font-display);
+    color: var(--ink);
+  }
+
+  .source-line {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+
+  .attribution-list {
+    list-style: none;
+    margin: 0;
+    padding: 22px 0 40px;
+  }
+
+  .attribution-list li {
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+  }
+
+  .attribution-list img {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .attribution-list .meta {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .attribution-list .meta b {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  @media (max-width: 860px) {
+    .catalog-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .catalog-search {
+      max-width: none;
+    }
+
+    .facet-label {
+      min-width: 0;
+    }
+
+    .two-col {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .page-title {
+      font-size: 34px;
+    }
+  }
+}
+
+@layer components {
+  /* Search overlay. The affordance is required (§19.4), so it has to work. */
+  .search-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    backdrop-filter: blur(6px);
+    z-index: 40;
+    display: none;
+    padding: 12vh 20px 20px;
+    overflow-y: auto;
+  }
+
+  .search-overlay[data-open] {
+    display: block;
+  }
+
+  .search-panel {
+    max-width: 620px;
+    margin-inline: auto;
+    background: var(--surface-3);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 30px 70px -24px var(--shadow);
+  }
+
+  .search-panel .close {
+    float: right;
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* Pagefind's own UI, retinted to the token set rather than left default. */
+  .search-panel {
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--ink);
+    --pagefind-ui-background: var(--surface-3);
+    --pagefind-ui-border: var(--line);
+    --pagefind-ui-tag: var(--surface-2);
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-font: var(--font-body);
+  }
+
+  .search-fallback {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 12px;
   }
 }
