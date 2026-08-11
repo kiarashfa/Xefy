@@ -3,6 +3,7 @@ import { loadContent, type Content } from './disk.ts';
 import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from './resolve.ts';
 import type { Recipe } from '../../schemas/recipe.ts';
 import type { Ingredient } from '../../schemas/ingredient.ts';
+import type { CatalogRecord } from '../plan/types.ts';
 
 /**
  * One resolved view of the whole site, loaded once and shared by every page.
@@ -128,23 +129,33 @@ export function getSite(): Promise<Site> {
   return cached;
 }
 
-/** The lightweight record the catalogue and reverse search read. §8.1 */
-export function catalogRecord(recipe: SiteRecipe) {
+/** The lightweight record the catalogue, reverse search and the Plan read. §8.1 */
+export function catalogRecord(recipe: SiteRecipe): CatalogRecord {
   const r = recipe.head;
   return {
     slug: recipe.slug,
     title: recipe.identity.title,
     subtitle: recipe.identity.subtitle,
     style: r.label,
-    tags: recipe.identity.tags,
+    tags: {
+      cuisine: [...recipe.identity.tags.cuisine],
+      course: [...recipe.identity.tags.course],
+      method: [...recipe.identity.tags.method],
+    },
     totalMin: r.timing.total,
     kcalPerServing: Math.round(r.nutrition.perServing.kcal ?? 0),
     difficulty: r.difficulty,
     diets: [...r.diet.labels, ...r.diet.freeFrom],
-    allergens: r.diet.allergens,
+    allergens: [...r.diet.allergens],
     ingredients: [...new Set(r.lines.map((l) => l.ingredient.id))],
     image: recipe.identity.image?.src ?? null,
-    versions: recipe.versions.length,
+    // The ids, not a count: the Plan stores a version reference and has to be
+    // able to tell whether the one it saved still exists. §8.3
+    versions: recipe.versions.map((v) => ({
+      id: v.id,
+      label: v.resolved.label,
+      defaultServings: v.resolved.defaultServings,
+    })),
     nutritionEstimated: r.nutrition.estimated,
   };
 }

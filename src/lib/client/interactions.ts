@@ -8,7 +8,10 @@
  * still behaving as controls.
  */
 
-const THEME_KEY = 'xefy.theme.v1';
+import { initPlanControls } from './plan-button.ts';
+import { versionedStore } from '../storage.ts';
+
+const themeStore = versionedStore<{ theme: 'light' | 'dark' }>('theme', 1, 1);
 
 function on(selector: string, event: string, handler: (el: HTMLElement, e: Event) => void) {
   for (const el of document.querySelectorAll<HTMLElement>(selector)) {
@@ -18,11 +21,7 @@ function on(selector: string, event: string, handler: (el: HTMLElement, e: Event
 
 function setTheme(theme: 'light' | 'dark') {
   document.documentElement.dataset.theme = theme;
-  try {
-    localStorage.setItem(THEME_KEY, JSON.stringify({ schema: 1, theme }));
-  } catch {
-    // Storage can be unavailable; the toggle still works for this page view.
-  }
+  themeStore.write({ theme });
 }
 
 /** Switches one group of `aria-selected` buttons and the panels they name. */
@@ -51,9 +50,15 @@ function selectVersion(group: HTMLElement, chosen: HTMLElement) {
   for (const block of document.querySelectorAll<HTMLElement>('[data-version]')) {
     block.toggleAttribute('hidden', block.dataset.version !== version);
   }
+  // A version changes the steps, so anything derived from them — the cook-back
+  // timeline — has to be told rather than left showing the other version's.
+  document.dispatchEvent(new CustomEvent('xefy:versionchange', { detail: { version } }));
 }
 
 export function initInteractions(): void {
+  // The Plan's count ships in the header on every page, so this runs everywhere.
+  initPlanControls(document.documentElement.dataset.base ?? '/');
+
   on('[data-theme-toggle]', 'click', () => {
     setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
   });

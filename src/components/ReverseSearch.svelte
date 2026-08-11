@@ -6,14 +6,32 @@
    * "you have five of six" is the useful answer and "no results" is not. Each
    * result names exactly what is missing.
    */
+  import { addToPlan, loadPlan } from '../lib/plan/store.ts';
+  import type { CatalogRecord } from '../lib/plan/types.ts';
+
   interface Props {
-    recipes: any[];
+    recipes: CatalogRecord[];
     ingredients: { id: string; name: string; category: string }[];
     staples: string[];
     base: string;
   }
 
   const { recipes, ingredients, staples, base }: Props = $props();
+
+  loadPlan();
+
+  /** Which results have been added, so the control confirms in place. */
+  let added = $state<string[]>([]);
+
+  // Closing the loop between "what can I nearly make" and "what do I need to
+  // buy" — at the default version and its own serving count, since neither has
+  // been chosen here. §8.2
+  function add(recipe: CatalogRecord) {
+    const version = recipe.versions[0];
+    if (!version) return;
+    addToPlan(recipe.slug, version.id, version.defaultServings);
+    added = [...added, recipe.slug];
+  }
 
   const THRESHOLD = 0.5;
 
@@ -100,7 +118,7 @@
       </p>
       <ul class="listing" style="grid-template-columns:minmax(0,1fr)">
         {#each results as m (m.recipe.slug)}
-          <li>
+          <li class="result-row">
             <a href={`${base}recipes/${m.recipe.slug}/`}>
               <span>
                 {m.recipe.title}
@@ -114,6 +132,13 @@
               </span>
               <span class="count">{Math.round(m.score * 100)}%</span>
             </a>
+            {#if added.includes(m.recipe.slug)}
+              <span class="result-added" role="status">
+                In your <a href={`${base}plan/`}>plan</a>
+              </span>
+            {:else}
+              <button class="result-add" onclick={() => add(m.recipe)}>Add to plan</button>
+            {/if}
           </li>
         {/each}
       </ul>

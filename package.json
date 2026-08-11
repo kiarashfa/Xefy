@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run check:content && astro build && npm run postbuild:index",
+    "test": "node --test \"src/**/*.test.ts\"",
+    "build": "npm run test && npm run check:content && astro build && npm run postbuild:index",
     "postbuild:index": "pagefind --site dist",
     "preview": "astro preview",
     "check": "astro check",

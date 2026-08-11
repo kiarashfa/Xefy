@@ -6,15 +6,24 @@ interface Props {
   description: string;
   /** Set on pages that hold user state rather than content. */
   noindex?: boolean;
+  /**
+   * Keeps the page out of the site's own search index. Defaults to `noindex`,
+   * because a page with nothing crawlable on it has nothing worth finding
+   * either — but it is a separate switch, since the two are separate
+   * requirements (§9) and meeting one has already been mistaken for meeting
+   * both once.
+   */
+  pagefindIgnore?: boolean;
 }
 
-const { title, description, noindex = false } = Astro.props;
+const { title, description, noindex = false, pagefindIgnore = noindex } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" data-theme="light">
+{/* `data-base` so client scripts can build a URL without being handed one. */}
+<html lang="en" data-theme="light" data-base={import.meta.env.BASE_URL}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -55,7 +64,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       })();
     </script>
   </head>
-  <body>
+  <body data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
     <slot />
   </body>
 </html>

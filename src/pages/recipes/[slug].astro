@@ -286,7 +286,7 @@ const description = identity.description ?? identity.subtitle;
                     <UnitToggle client:visible />
                   </div>
 
-                  <div class="side-card">
+                  <div class="side-card" data-timeline={v.id}>
                     <div class="timing">
                       {(['prep', 'cook', 'rest'] as const)
                         .filter((k) => r.timing[k] > 0)
@@ -304,6 +304,43 @@ const description = identity.description ?? identity.subtitle;
                         <span>Total</span>
                       </div>
                     </div>
+
+                    {/*
+                      The card already answers "how long", so "when do I start"
+                      belongs in the same slot rather than a new one. Off by
+                      default; every clock time it produces is created in the
+                      browser and never reaches this HTML or the JSON-LD. §19.7
+                    */}
+                    <button class="timing-link" aria-expanded="false">Plan my timing →</button>
+                    <div class="timeline-controls" hidden>
+                      <div class="timeline-modes" role="tablist" aria-label="Timing anchor">
+                        <button role="tab" aria-selected="true" data-mode="ready-at">Ready at</button>
+                        <button role="tab" aria-selected="false" data-mode="start-now">
+                          Starting now
+                        </button>
+                      </div>
+                      <label>
+                        <span class="fact-label">Time</span>
+                        {/*
+                          Native, because it is keyboard- and screen-reader-
+                          operable with no custom work — the same principle that
+                          rules out drag-and-drop on the Plan.
+                        */}
+                        <input type="time" value="20:00" aria-label="Time you want to eat" />
+                      </label>
+                    </div>
+                    <script
+                      type="application/json"
+                      is:inline
+                      set:html={JSON.stringify(
+                        r.flat.steps.map((s) => ({
+                          id: s.id,
+                          durationMin: s.durationMin,
+                          type: s.type,
+                          phase: s.phase,
+                        })),
+                      )}
+                    />
                   </div>
 
                   <div>
@@ -355,7 +392,14 @@ const description = identity.description ?? identity.subtitle;
                       })}
                     </ul>
 
-                    <button class="add-to-plan">Add to plan</button>
+                    {/*
+                      A side door, not the page's purpose — outlined rather than
+                      a filled accent button, which would read as commerce on a
+                      page that sells nothing. §19.7
+                    */}
+                    <button class="add-to-plan" data-add-to-plan data-default-servings={servings}>
+                      Add to plan
+                    </button>
                   </div>
 
                   <div class="nutrition">
@@ -432,7 +476,7 @@ const description = identity.description ?? identity.subtitle;
             const r = v.resolved;
             const servings = r.defaultServings;
             return (
-              <div data-version={v.id} hidden={vi !== 0}>
+              <div data-version={v.id} data-method hidden={vi !== 0}>
                   <h2 class="panel-title">Method</h2>
                   <ol class="steps">
                     {r.flat.steps.map((step) => {
@@ -443,7 +487,7 @@ const description = identity.description ?? identity.subtitle;
                         (n: any) => n.stepId === step.id,
                       );
                       return (
-                        <li class="step">
+                        <li class="step" data-step={step.id}>
                           <button class="step-check" aria-pressed="false" aria-label={`Mark step ${step.number} done`}>
                             <span class="num">{step.number}</span>
                           </button>
@@ -542,7 +586,9 @@ const description = identity.description ?? identity.subtitle;
   <script>
     import { initLiveValues } from '../../lib/client/live-values.ts';
     import { initInteractions } from '../../lib/client/interactions.ts';
+    import { initTimeline } from '../../lib/client/timeline.ts';
     initLiveValues();
     initInteractions();
+    initTimeline();
   </script>
 </BaseLayout>

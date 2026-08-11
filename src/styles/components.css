@@ -67,10 +67,15 @@
    * The Plan count is client-rendered from local storage, so its space is
    * reserved before hydration. A nav item that grows after load is a
    * layout-shift regression on every page. §19.4.
+   *
+   * Wide enough for two digits, because a week of meal-prep runs to ten or more
+   * dishes and the first reservation only covered one — measured, not guessed.
+   * A three-figure plan would still nudge it, and is not a case worth widening
+   * the header on every page for.
    */
   .nav-count {
     display: inline-block;
-    min-width: 1.6em;
+    min-width: 2.2em;
     text-align: left;
     font-variant-numeric: tabular-nums;
   }
@@ -1585,6 +1590,470 @@
 
     .page-title {
       font-size: 34px;
+    }
+  }
+}
+
+/*
+ * The Plan, the shopping list, and the cook-back timeline. §8.4, §8.5, §19.7
+ *
+ * Built from the vocabulary the recipe page already has — the side card for
+ * grouped controls, the checklist row for list items, the outlined button for a
+ * side door — rather than an app-like dashboard idiom these pages have no
+ * reason to introduce.
+ */
+@layer components {
+  /* ================================================================
+   * Cook-back timeline, inside the Timing card. §19.7
+   * ================================================================ */
+
+  .timeline-controls {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .timeline-controls[hidden] {
+    display: none;
+  }
+
+  /* A segmented control, like the Recipe/About switch: two peers, one active. */
+  .timeline-modes {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    background: var(--surface-3);
+    border-radius: 100px;
+    align-self: flex-start;
+  }
+
+  .timeline-modes button {
+    border: none;
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    color: var(--muted);
+    cursor: pointer;
+    transition:
+      background 0.4s var(--ease),
+      color 0.4s var(--ease);
+  }
+
+  .timeline-modes button[aria-selected='true'] {
+    background: var(--surface-2);
+    color: var(--ink);
+  }
+
+  .timeline-controls label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .timeline-controls input[type='time'] {
+    font: inherit;
+    font-family: var(--font-display);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--surface-3);
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
+
+  /* Sits above the Method, and is generated rather than built — no computed
+     clock time reaches the static HTML or the structured data. §19.7 */
+  .timeline-summary {
+    margin: 0 0 22px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    max-width: var(--measure);
+  }
+
+  /* Prepended to the meta line each step already has, rather than taking a
+     second slot for the same fact. §19.5 */
+  .step-clock {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+
+  /* ================================================================
+   * Add to plan
+   * ================================================================ */
+
+  .add-confirmed {
+    width: 100%;
+    margin: 16px 0 0;
+    padding: 12px;
+    border: 1px solid var(--sage);
+    border-radius: 10px;
+    background: var(--sage-soft);
+    color: var(--ink);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .add-confirmed a {
+    color: var(--accent);
+  }
+
+  .add-to-plan.is-link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 0;
+  }
+
+  .add-to-plan.is-inline {
+    width: auto;
+    margin: 0;
+    padding: 8px 16px;
+    flex-shrink: 0;
+  }
+
+  .share-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  .share-actions .add-to-plan {
+    margin-top: 0;
+  }
+
+  .plan-clear {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: none;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .plan-clear:hover {
+    color: var(--accent);
+  }
+
+  /* ================================================================
+   * Notices — never silent, never alarming
+   * ================================================================ */
+
+  .plan-dropped {
+    margin: 0 0 20px;
+    padding: 11px 14px;
+    background: var(--gold-soft);
+    border-left: 3px solid var(--gold);
+    border-radius: 10px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+
+  .plan-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    background: var(--surface-2);
+    border-radius: 14px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+
+  /* ================================================================
+   * Shopping list
+   * ================================================================ */
+
+  .plan-for {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+
+  .plan-for li {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .plan-for li:last-child {
+    border-bottom: none;
+  }
+
+  .plan-for a {
+    text-decoration: none;
+  }
+
+  .plan-for a:hover {
+    color: var(--accent);
+  }
+
+  .list-lines .ing-text {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 8px;
+  }
+
+  .list-name {
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  a.list-name:hover {
+    color: var(--accent);
+  }
+
+  .list-count {
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+
+  .list-optional {
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .list-lines .ing-note {
+    flex-basis: 100%;
+  }
+
+  /* Moved down and struck through — still visible, and still reversible. §8.4 */
+  .list-lines.is-had .ing-text {
+    text-decoration: line-through;
+    opacity: 0.45;
+  }
+
+  .staples {
+    margin-top: 26px;
+    max-width: none;
+  }
+
+  .panel-title.has-space {
+    margin-top: 34px;
+  }
+
+  /* ================================================================
+   * The week. Days are relative slots, not dates. §8.5
+   * ================================================================ */
+
+  .plan-day {
+    margin-bottom: 30px;
+  }
+
+  .plan-day .panel-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .plan-day-total {
+    font-family: var(--font-body);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: var(--muted);
+  }
+
+  .plan-day-empty {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .week-hint {
+    margin-top: 26px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    max-width: var(--measure);
+    line-height: 1.6;
+  }
+
+  .plan-rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .plan-row {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .plan-row:last-child {
+    border-bottom: none;
+  }
+
+  .plan-row-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .plan-row-title {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .plan-row-title:hover {
+    color: var(--accent);
+  }
+
+  .plan-row-head .ing-note {
+    display: inline;
+    margin-top: 0;
+  }
+
+  .plan-row-figures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .plan-row-figures b {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* Straight from the structured make-ahead data: the storage answer is what
+     separates "cook eight portions" from eating them before they spoil. §8.5 */
+  .plan-row-keeps {
+    margin: 8px 0 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: var(--measure);
+  }
+
+  .plan-row-controls {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .plan-row-controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .plan-row-controls input,
+  .plan-row-controls select {
+    font: inherit;
+    font-size: 13px;
+    color: var(--ink);
+    background: var(--surface-3);
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    padding: 6px 10px;
+  }
+
+  .plan-row-controls input {
+    width: 72px;
+    font-family: var(--font-display);
+  }
+
+  .plan-remove {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 7px 0;
+  }
+
+  .plan-remove:hover {
+    color: var(--accent);
+  }
+
+  /* ================================================================
+   * Reverse search results gain the same side door. §8.2
+   * ================================================================ */
+
+  .result-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .result-row a {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .result-add {
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink-soft);
+    border-radius: 100px;
+    padding: 5px 13px;
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition:
+      background 0.35s var(--ease),
+      border-color 0.35s var(--ease);
+  }
+
+  .result-add:hover {
+    background: var(--surface-2);
+    border-color: var(--ink-soft);
+  }
+
+  .result-added {
+    font-size: 11.5px;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .result-added a {
+    color: var(--accent);
+  }
+
+  @media (max-width: 860px) {
+    .plan-banner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .plan-row-controls {
+      gap: 12px;
     }
   }
 }

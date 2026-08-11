@@ -1,15 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import PlanView from '../components/PlanView.svelte';
 
 /**
- * The Plan itself is Phase 7. The nav item ships now (§19.4) so the header is
- * not widened later, which means this route has to exist rather than 404 — and
- * the empty state is the most common view of this page anyway, so it is the
- * right thing to design first.
+ * The week view of the Plan. §8.5
+ *
+ * `client:only` rather than a hydrated island: there is nothing true to render
+ * on the server here. Every figure on this page comes from one browser's
+ * storage, so server-rendering an empty plan would paint a state that is
+ * usually wrong and then replace it — a layout shift in exchange for markup
+ * nobody, crawler included, has any use for.
  *
  * noindex: a user-state page has no crawlable content. It is deliberately not
- * disallowed in robots.txt — a blocked page cannot be fetched, so the tag would
+ * disallowed in robots.txt — a blocked page is never fetched, so the tag would
  * never be seen. §9.
  */
 const base = import.meta.env.BASE_URL;
@@ -25,18 +29,19 @@ const base = import.meta.env.BASE_URL;
     <div class="page-head">
       <h1 class="page-title">Your plan</h1>
       <p class="page-lede">
-        Nothing planned yet. Add a dish from any recipe page and it will appear here, with the
-        shopping list worked out from the serving counts you chose.
+        What you mean to cook, by day, with the week's arithmetic done. Nothing here is stored
+        beyond the dishes and the portions — every figure is worked out again each time you open it.
       </p>
     </div>
-    <p class="empty-state">
-      Start from <a href={base}>the catalogue</a>, or from
-      <a href={`${base}what-can-i-make/`}>what you already have</a>.
-    </p>
-    <p class="source-line">
-      A plan lives in this browser and nowhere else — there is no account behind it, so clearing
-      site data or switching device will lose it.
-    </p>
+
+    <PlanView client:only="svelte" base={base} />
+
+    <noscript>
+      <p class="empty-state">
+        A plan is held in your own browser rather than on a server, so this page needs JavaScript to
+        read it. Everything else on Xefy works without.
+      </p>
+    </noscript>
   </main>
   <footer class="site-footer">
     <div class="wrap footer-inner"><span>Xefy</span><span>Nutrition from USDA FoodData Central.</span></div>
