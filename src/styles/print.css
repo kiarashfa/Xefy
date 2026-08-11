@@ -1,0 +1,284 @@
+/*
+ * Print. §19.10
+ *
+ * People print recipes, and what they want on paper is a clean
+ * ingredients-plus-method sheet at whatever serving count they were looking at
+ * — not the site. Every control collapses; every piece of real content stays,
+ * including the parts the screen keeps behind a disclosure, because paper has
+ * no disclosures and hiding real data on a printout is worse than a longer
+ * sheet.
+ *
+ * Deliberately **unlayered**. An `@media print` block written inside
+ * `@layer components` would lose to the unlayered base tokens it needs to
+ * override, which is the same trap the mobile `--gutter` override fell into.
+ */
+
+/*
+ * Off paper it does not exist. This has to come *before* the print block, not
+ * after: two unlayered rules of equal specificity are settled by source order,
+ * and written afterwards it would hide the line on paper as well — which is
+ * the one place it is meant to appear.
+ */
+.print-source {
+  display: none;
+}
+
+@media print {
+  /*
+   * Paper is white in both themes. Without this a reader in dark mode prints a
+   * black page, which is the single worst thing this stylesheet can prevent.
+   *
+   * The `html` in each selector is doing real work. An `@import` is hoisted to
+   * the top of the file that imports it, so these rules are emitted *before*
+   * global.css's own token block rather than after it — and two unlayered
+   * declarations of equal specificity are settled by source order. Adding the
+   * type selector puts these one step ahead, which is the whole reason they
+   * apply at all.
+   */
+  html:root,
+  html[data-theme='light'],
+  html[data-theme='dark'] {
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --surface-3: #ffffff;
+    --ink: #000000;
+    --ink-soft: #1a1a1a;
+    --line: #cccccc;
+    --line-strong: #999999;
+    --accent: #000000;
+    --accent-soft: #ffffff;
+    --accent-ink: #000000;
+    --sage: #444444;
+    --sage-soft: #ffffff;
+    --gold: #444444;
+    --gold-soft: #ffffff;
+    --muted: #555555;
+    --shadow: transparent;
+    --overlay: transparent;
+  }
+
+  html:root {
+    --page-max: none;
+    --gutter: 0;
+    /* Paper is narrower than a monitor and the type is smaller; the screen's
+       reading measure would leave a third of the page empty. */
+    --measure: none;
+  }
+
+  @page {
+    margin: 15mm;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 11pt;
+  }
+
+  /* ---- Chrome that has no meaning on paper ---------------------------- */
+
+  .site-header,
+  .search-overlay,
+  .crumb,
+  .panel-switch,
+  .version-tabs,
+  .version-note,
+  .add-to-plan,
+  .add-confirmed,
+  .timing-link,
+  .timeline-controls,
+  .attribution,
+  .sub-hint,
+  .makeahead-chevron,
+  .catalog-controls,
+  .catalog-facets,
+  .catalog-view,
+  .plan-row-controls,
+  .plan-clear,
+  .share-actions,
+  .plan-banner button,
+  .result-add,
+  astro-dev-toolbar {
+    display: none !important;
+  }
+
+  /*
+   * A card whose whole content was a control is noise once the control is
+   * gone — "Send it" with nothing under it, and the link to a page the reader
+   * is holding a printout of.
+   */
+  .side-card:has(.share-actions),
+  .side-card:has(.plan-clear) {
+    display: none;
+  }
+
+  /*
+   * The serving stepper and the unit toggle collapse to their current value —
+   * the count is the whole point of the sheet, and "Metric" is the only way a
+   * reader can tell what system the amounts are in once the control is gone.
+   * Both are Svelte components with scoped styles of their own, so the rules
+   * that undo those live inside the components, where they can win.
+   */
+
+  /* A photograph costs a page of ink and answers no question a cook has. */
+  .hero-image,
+  .card-image,
+  .ing-thumb {
+    display: none;
+  }
+
+  /* ---- Anything disclosed on screen is simply present on paper -------- */
+
+  .sub-body[hidden],
+  .makeahead-body {
+    display: block !important;
+  }
+
+  .makeahead-toggle {
+    padding: 0;
+  }
+
+  /* ---- Layout: one column, no washes ---------------------------------- */
+
+  .hero-band {
+    background: none;
+  }
+
+  .hero,
+  .body-grid,
+  .two-col {
+    display: block;
+  }
+
+  .hero-text {
+    padding-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: 24pt;
+    max-width: none;
+  }
+
+  .hero-subtitle {
+    font-size: 12pt;
+    max-width: none;
+    margin-bottom: 10px;
+  }
+
+  .fact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    padding-top: 10px;
+  }
+
+  .fact {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .fact-value {
+    font-size: 12pt;
+  }
+
+  .side-card,
+  .nutrition {
+    padding: 0;
+    margin-bottom: 12px;
+    background: none;
+    border-radius: 0;
+  }
+
+  /* These read as "Servings 6" rather than pushing the figure to the far edge
+     of a page that is now much wider than the column they were designed in. */
+  .side-card.is-row {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+
+  .left-stack {
+    gap: 12px;
+  }
+
+  /* The two columns become two stacked blocks, with the method leading —
+     ingredients first, then how to use them, which is how a sheet is read. */
+  .left-col {
+    margin-bottom: 18px;
+  }
+
+  .timing {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .callout,
+  .pitfall,
+  .allergen-box,
+  .timeline-summary,
+  .plan-dropped {
+    background: none;
+    border: none;
+    border-left: 2px solid var(--line-strong);
+    border-radius: 0;
+    padding: 2px 0 2px 10px;
+    max-width: none;
+  }
+
+  .step-text,
+  .makeahead,
+  .about,
+  .plan-row-keeps {
+    max-width: none;
+  }
+
+  /* ---- Page breaks ---------------------------------------------------- */
+
+  .step,
+  .ingredients li,
+  .list-lines li,
+  .plan-row,
+  .makeahead,
+  .nutrition,
+  .callout,
+  .pitfall {
+    break-inside: avoid;
+  }
+
+  .panel-title,
+  .plan-day .panel-title {
+    break-after: avoid;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /*
+   * The address the sheet came from, so a printout can be found again. Rendered
+   * into every page and shown here only — a URL printed under the footer is the
+   * one piece of chrome that gains meaning on paper rather than losing it.
+   */
+  .print-source {
+    display: block;
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    font-size: 8pt;
+    color: var(--muted);
+  }
+
+  .site-footer {
+    margin-top: 16px;
+  }
+
+  .footer-inner {
+    padding-block: 8px;
+    font-size: 8pt;
+  }
+}

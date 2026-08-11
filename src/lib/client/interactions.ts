@@ -55,6 +55,35 @@ function selectVersion(group: HTMLElement, chosen: HTMLElement) {
   document.dispatchEvent(new CustomEvent('xefy:versionchange', { detail: { version } }));
 }
 
+/**
+ * Arrow keys along a tab strip, which is what a screen-reader user is told to
+ * expect the moment the markup says `role="tablist"`. Home and End go to the
+ * ends. Tab itself keeps working, so nothing is taken away by adding this.
+ */
+function wireTabKeys(group: HTMLElement, choose: (tab: HTMLElement) => void): void {
+  group.addEventListener('keydown', (e) => {
+    const keys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+    if (!keys.includes(e.key)) return;
+
+    const tabs = [...group.querySelectorAll<HTMLElement>('[role="tab"]')];
+    const current = tabs.indexOf(document.activeElement as HTMLElement);
+    if (current < 0) return;
+
+    e.preventDefault();
+    const next =
+      e.key === 'Home'
+        ? 0
+        : e.key === 'End'
+          ? tabs.length - 1
+          : (current + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+
+    const target = tabs[next];
+    if (!target) return;
+    choose(target);
+    target.focus();
+  });
+}
+
 export function initInteractions(): void {
   // The Plan's count ships in the header on every page, so this runs everywhere.
   initPlanControls(document.documentElement.dataset.base ?? '/');
@@ -78,6 +107,7 @@ export function initInteractions(): void {
       const button = (e.target as HTMLElement).closest<HTMLElement>('button[aria-controls]');
       if (button) selectIn(group, button);
     });
+    wireTabKeys(group, (chosen) => selectIn(group, chosen));
   }
 
   // The version strip: a different control doing a different job, and one that
@@ -87,6 +117,7 @@ export function initInteractions(): void {
       const button = (e.target as HTMLElement).closest<HTMLElement>('button[data-value]');
       if (button) selectVersion(group, button);
     });
+    wireTabKeys(group, (chosen) => selectVersion(group, chosen));
   }
 
   // Marking a step done changes an attribute and nothing else; the text is
@@ -122,5 +153,17 @@ export function initInteractions(): void {
     const open = popover.hasAttribute('data-open');
     popover.toggleAttribute('data-open', !open);
     el.setAttribute('aria-expanded', String(!open));
+  });
+
+  // Anything opened by keyboard has to be closable by keyboard, and Escape is
+  // the key everyone already tries.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    for (const popover of document.querySelectorAll<HTMLElement>('.attribution-popover[data-open]')) {
+      popover.removeAttribute('data-open');
+      const toggle = popover.previousElementSibling as HTMLElement | null;
+      toggle?.setAttribute('aria-expanded', 'false');
+      toggle?.focus();
+    }
   });
 }

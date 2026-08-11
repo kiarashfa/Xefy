@@ -548,45 +548,6 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
   }
 
-  /*
-   * The pantry-staples list and the ingredient records must agree.
-   *
-   * §8.1 names `pantry-staples.json` as the one list every client tool reads,
-   * and the tools do read only that — so a disagreement cannot make two pages
-   * behave differently. But an ingredient record carrying `pantryStaple` that
-   * the list omits is a statement about the same fact in two places, and a fact
-   * in two places is a fact that can disagree with itself. Which way to
-   * reconcile is an editorial call about the food, so this reports rather than
-   * fails.
-   */
-  const pantry = JSON.parse(
-    await readFile(path.join(ROOT, 'src', 'data', 'pantry-staples.json'), 'utf8'),
-  ) as { staples: string[] };
-  const listed = new Set(pantry.staples);
-  const flagged = new Set(
-    content.ingredients.filter((i) => i.data.pantryStaple).map((i) => i.slug),
-  );
-  for (const id of flagged) {
-    if (!listed.has(id)) {
-      add(
-        'pantry-staples',
-        'warn',
-        'src/data/pantry-staples.json',
-        `"${id}" is marked pantryStaple on its own record but is not in this list, so the shopping list and reverse search will treat it as something to buy`,
-      );
-    }
-  }
-  for (const id of listed) {
-    if (!flagged.has(id)) {
-      add(
-        'pantry-staples',
-        'warn',
-        `src/content/ingredients/${id}.json`,
-        `this ingredient is listed as a pantry staple in src/data/pantry-staples.json but its own record does not say so`,
-      );
-    }
-  }
-
   /* --- 15-19. Reference prose is sourced ------------------------------- */
 
   // The one place on the site where citation is mandatory. Technique is

@@ -137,7 +137,30 @@ export const ingredientSchema = z
 
     forms: z.array(ingredientForm).min(1),
 
-    /** Set where the ingredient is assumed on hand rather than shopped for. */
+    /**
+     * Assumed on hand rather than shopped for. §8.1
+     *
+     * This is the single source of the staples list — the record is where every
+     * other property of the food already lives, and a central list would have to
+     * be edited by every author of every new ingredient, which is exactly the
+     * cross-file edit a catalogue authored by many hands over time gets wrong.
+     *
+     * The test is *both* parts of the following, not either:
+     *
+     * 1. A kitchen keeps it rather than shopping for it — it lives in the
+     *    cupboard, keeps for months, and is bought without reference to any
+     *    particular dish. Salt, pepper, oil, sugar, bicarbonate, dried yeast,
+     *    common dried spices.
+     * 2. Recipes use it in small supporting amounts. If a dish is *built* out of
+     *    it, it is a purchase however common it is: flour for a pizza, tinned
+     *    tomatoes for a shakshuka, rice for a pilaf.
+     *
+     * Fresh and perishable fails the first test almost always — an onion is in
+     * most kitchens most weeks and is still shopped for. Note that reverse
+     * search drops staples from matching entirely (§8.2), so an over-generous
+     * list quietly inflates every match percentage on the site; the cost of a
+     * wrong `true` is higher than the cost of a wrong `false`.
+     */
     pantryStaple: z.boolean().default(false),
 
     image: z.string().min(1).optional(),

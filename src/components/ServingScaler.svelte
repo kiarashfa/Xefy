@@ -79,4 +79,26 @@
     font-family: var(--font-display);
     font-size: 16px;
   }
+
+  /*
+   * On paper the count stays and the controls go — the sheet is printed *at* a
+   * serving count, and that number is the one thing the rest of it depends on.
+   * Scoped here because a scoped style beats a global one. §19.10
+   */
+  @media print {
+    .stepper {
+      border: none;
+      background: none;
+    }
+
+    button {
+      display: none;
+    }
+
+    .count {
+      width: auto;
+      text-align: right;
+      font-size: 12pt;
+    }
+  }
 </style>

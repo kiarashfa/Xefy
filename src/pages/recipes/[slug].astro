@@ -169,6 +169,11 @@ const description = identity.description ?? identity.subtitle;
     </a> / {title}
   </nav>
 
+  {/*
+    The breadcrumb is navigation and stays outside; everything from the hero
+    down is the page's one main region, and it carries the skip link's target.
+  */}
+  <main id="main">
   <div class="hero-band">
     <div class="wrap hero">
       <div class="hero-text">
@@ -227,7 +232,15 @@ const description = identity.description ?? identity.subtitle;
       {
         identity.image && (
           <figure class="hero-image">
-            <img src={`${base}${identity.image.src}`} alt={identity.image.alt} width="1200" height="1200" />
+            {/* Almost always the page's largest contentful paint, so it is
+                fetched ahead of everything else and never lazily. §14.6 */}
+            <img
+              src={`${base}${identity.image.src}`}
+              alt={identity.image.alt}
+              width="1200"
+              height="1200"
+              fetchpriority="high"
+            />
             {heroCredit && (
               <div class="attribution">
                 <button class="attribution-toggle" aria-expanded="false" aria-label="Image credit">
@@ -253,10 +266,21 @@ const description = identity.description ?? identity.subtitle;
     {
       versions.length > 1 && (
         <>
-          {/* Underlined tabs: which version of the dish. Reaches both columns. */}
+          {/*
+            Underlined tabs: which version of the dish. It reaches both columns,
+            so each tab names two panels — `aria-controls` takes an id list, and
+            saying so is more honest than pointing at the method alone and
+            leaving the ingredients it also changes unaccounted for.
+          */}
           <div class="version-tabs" role="tablist" data-version-tabs aria-label="Version">
             {versions.map((v, i) => (
-              <button role="tab" aria-selected={i === 0 ? 'true' : 'false'} data-value={v.id}>
+              <button
+                role="tab"
+                id={`tab-${v.id}`}
+                aria-selected={i === 0 ? 'true' : 'false'}
+                aria-controls={`panel-${v.id}-side panel-${v.id}-method`}
+                data-value={v.id}
+              >
                 {v.resolved.label}
               </button>
             ))}
@@ -275,7 +299,14 @@ const description = identity.description ?? identity.subtitle;
             const r = v.resolved;
             const servings = r.defaultServings;
             return (
-              <div class="left-stack" data-version={v.id} hidden={vi !== 0}>
+              <div
+                class="left-stack"
+                data-version={v.id}
+                hidden={vi !== 0}
+                id={`panel-${v.id}-side`}
+                role={versions.length > 1 ? 'tabpanel' : undefined}
+                aria-labelledby={versions.length > 1 ? `tab-${v.id}` : undefined}
+              >
                   <div class="side-card is-row">
                     <span class="side-card-label">Servings</span>
                     <ServingScaler client:visible recipe={r.slug} defaultServings={servings} />
@@ -313,9 +344,16 @@ const description = identity.description ?? identity.subtitle;
                     */}
                     <button class="timing-link" aria-expanded="false">Plan my timing →</button>
                     <div class="timeline-controls" hidden>
-                      <div class="timeline-modes" role="tablist" aria-label="Timing anchor">
-                        <button role="tab" aria-selected="true" data-mode="ready-at">Ready at</button>
-                        <button role="tab" aria-selected="false" data-mode="start-now">
+                      {/*
+                        A group of toggle buttons rather than a tablist: these
+                        choose how the schedule is anchored and control no panel,
+                        and calling something a tab that opens nothing misleads a
+                        screen reader about what pressing it will do. Same shape
+                        as the unit toggle, which is the same kind of control.
+                      */}
+                      <div class="timeline-modes" role="group" aria-label="Timing anchor">
+                        <button type="button" aria-pressed="true" data-mode="ready-at">Ready at</button>
+                        <button type="button" aria-pressed="false" data-mode="start-now">
                           Starting now
                         </button>
                       </div>
@@ -352,7 +390,17 @@ const description = identity.description ?? identity.subtitle;
                           <li>
                             <input class="chk" type="checkbox" aria-label={proseName(line)} />
                             {line.ingredient.image ? (
-                              <a class="ing-thumb" href={`${base}ingredients/${line.ingredient.id}/`}>
+                              /*
+                               * The image is decorative — the ingredient's name
+                               * is already the next thing in the line — so the
+                               * link needs a name of its own, or it reaches a
+                               * screen reader as an anchor with no content.
+                               */
+                              <a
+                                class="ing-thumb"
+                                href={`${base}ingredients/${line.ingredient.id}/`}
+                                aria-label={`${line.ingredient.name} — ingredient page`}
+                              >
                                 <img src={`${base}${line.ingredient.image}`} alt="" width="34" height="34" />
                               </a>
                             ) : (
@@ -461,22 +509,41 @@ const description = identity.description ?? identity.subtitle;
       <div class="right-col">
         {/* Recipe / About — a segmented control, scoped to this column only. */}
         <div class="panel-switch" role="tablist" data-tablist aria-label="Recipe or background">
-          <button role="tab" aria-selected="true" aria-controls="panel-recipe" data-value="recipe">
+          <button
+            role="tab"
+            id="tab-recipe"
+            aria-selected="true"
+            aria-controls="panel-recipe"
+            data-value="recipe"
+          >
             Recipe
           </button>
           {about && (
-            <button role="tab" aria-selected="false" aria-controls="panel-about" data-value="about">
+            <button
+              role="tab"
+              id="tab-about"
+              aria-selected="false"
+              aria-controls="panel-about"
+              data-value="about"
+            >
               About
             </button>
           )}
         </div>
 
-        <div id="panel-recipe" role="tabpanel" data-panel>
+        <div id="panel-recipe" role="tabpanel" aria-labelledby="tab-recipe" data-panel>
           {versions.map((v, vi) => {
             const r = v.resolved;
             const servings = r.defaultServings;
             return (
-              <div data-version={v.id} data-method hidden={vi !== 0}>
+              <div
+                data-version={v.id}
+                data-method
+                hidden={vi !== 0}
+                id={`panel-${v.id}-method`}
+                role={versions.length > 1 ? 'tabpanel' : undefined}
+                aria-labelledby={versions.length > 1 ? `tab-${v.id}` : undefined}
+              >
                   <h2 class="panel-title">Method</h2>
                   <ol class="steps">
                     {r.flat.steps.map((step) => {
@@ -553,7 +620,7 @@ const description = identity.description ?? identity.subtitle;
 
         {
           about && (
-            <div id="panel-about" role="tabpanel" data-panel hidden>
+            <div id="panel-about" role="tabpanel" aria-labelledby="tab-about" data-panel hidden>
               <div class="about">
                 <Fragment set:html={renderAbout(about.body, about.data.sources)} />
                 <div class="sources">
@@ -575,6 +642,7 @@ const description = identity.description ?? identity.subtitle;
       </div>
     </div>
   </div>
+  </main>
 
   <footer class="site-footer">
     <div class="wrap footer-inner">

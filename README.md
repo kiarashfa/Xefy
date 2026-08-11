@@ -21,10 +21,12 @@ npm run dev
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Development server |
-| `npm run build` | Content checks, then a production build, then the search index |
+| `npm run build` | Tests and content checks, a production build, the search index, then the site check |
 | `npm run preview` | Serve the production build locally |
+| `npm run test` | Unit tests |
 | `npm run check` | TypeScript and Astro diagnostics |
 | `npm run check:content` | Content integrity checks on their own |
+| `npm run check:site` | Links, images and page structure, over a built site |
 | `npm run check:self` | Confirms those checks still catch known-bad content |
 
 ## How content is checked
@@ -37,6 +39,11 @@ of computed — each of these stops the build rather than reaching a page.
 Some things only warrant a warning: an ingredient the method never mentions
 might be a garnish, and a recipe with two versions might be right. Those are
 reported and left to a human.
+
+The finished site is checked too, once it exists: every internal link has to
+land on a page that was actually built, every image has to resolve, and every
+page has to hold together as a document — one heading, unique ids, and a name
+on everything a keyboard can reach.
 
 `scripts/integrity/` holds the checks. `test-fixtures/broken-content/` holds
 content that breaks every one of them on purpose, so there is a way to tell

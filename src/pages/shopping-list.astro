@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import ShoppingList from '../components/ShoppingList.svelte';
-import staplesData from '../data/pantry-staples.json' with { type: 'json' };
+import { getSite } from '../lib/content/site.ts';
 
 /**
  * The Plan, aggregated into one list. §8.4
@@ -12,6 +12,7 @@ import staplesData from '../data/pantry-staples.json' with { type: 'json' };
  * those exists at build time.
  */
 const base = import.meta.env.BASE_URL;
+const site = await getSite();
 ---
 
 <BaseLayout
@@ -20,7 +21,7 @@ const base = import.meta.env.BASE_URL;
   noindex
 >
   <SiteHeader />
-  <main class="wrap">
+  <main id="main" class="wrap">
     <div class="page-head">
       <h1 class="page-title">Shopping list</h1>
       <p class="page-lede">
@@ -29,7 +30,7 @@ const base = import.meta.env.BASE_URL;
       </p>
     </div>
 
-    <ShoppingList client:only="svelte" base={base} staples={staplesData.staples} />
+    <ShoppingList client:only="svelte" base={base} staples={site.staples} />
 
     <noscript>
       <p class="empty-state">

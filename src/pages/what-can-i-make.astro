@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import ReverseSearch from '../components/ReverseSearch.svelte';
 import { catalogRecord, getSite } from '../lib/content/site.ts';
-import staplesData from '../data/pantry-staples.json' with { type: 'json' };
 
 const site = await getSite();
 const base = import.meta.env.BASE_URL;
@@ -16,7 +15,7 @@ const ingredients = site.ingredients.map((i) => ({ id: i.id, name: i.name, categ
   description="Tick what you have and see which dishes are within reach, ranked by how close each one is."
 >
   <SiteHeader />
-  <main class="wrap">
+  <main id="main" class="wrap">
     <div class="page-head">
       <h1 class="page-title">What can I make?</h1>
       <p class="page-lede">
@@ -28,7 +27,7 @@ const ingredients = site.ingredients.map((i) => ({ id: i.id, name: i.name, categ
       client:load
       recipes={recipes}
       ingredients={ingredients}
-      staples={staplesData.staples}
+      staples={site.staples}
       base={base}
     />
   </main>

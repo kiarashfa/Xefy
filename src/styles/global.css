@@ -1,5 +1,8 @@
 @import 'tailwindcss';
+@import './fonts.css';
 @import './components.css';
+/* Last, and unlayered, so its overrides beat the component layer. §19.10 */
+@import './print.css';
 
 /*
  * The token layer.
@@ -11,6 +14,15 @@
  *
  * Layout and motion tokens live here on the same terms — the reading measure
  * and the easing curve are as much part of the design as the palette.
+ *
+ * Every foreground token clears **4.5:1 against all three surfaces of its own
+ * theme**, measured rather than eyeballed. Three were adjusted in the Phase 8
+ * accessibility pass and the reason is worth keeping, because the originals
+ * looked perfectly fine: light `--muted` sat at 3.3–3.9:1 and carries most of
+ * the small print on the site, and light `--gold` sat at 2.6–3.0:1 while
+ * carrying the Difficulty value *and* its dot, which is a non-text indicator
+ * needing 3:1 in its own right. Each was darkened along its own hue until it
+ * cleared, and no further. Re-measure if any of these change.
  */
 
 :root,
@@ -27,9 +39,9 @@
   --accent-ink: #6e2417;
   --sage: #5c6b47;
   --sage-soft: #eef0e6;
-  --gold: #c8862f;
+  --gold: #926222;
   --gold-soft: #f7ecd8;
-  --muted: #8a8074;
+  --muted: #736a60;
   --shadow: rgba(60, 45, 30, 0.1);
   --overlay: rgba(255, 255, 255, 0.85);
 }
@@ -49,7 +61,7 @@
   --sage-soft: #2a3024;
   --gold: #e0ab5c;
   --gold-soft: #35301f;
-  --muted: #8d8578;
+  --muted: #968f83;
   --shadow: rgba(0, 0, 0, 0.35);
   --overlay: rgba(44, 41, 37, 0.85);
 }
@@ -141,6 +153,19 @@
     color: inherit;
   }
 
+  /*
+   * One focus ring, everywhere, in a token that clears 3:1 against every
+   * surface. The browser default is a thin ring in a colour chosen against a
+   * white page, and on this palette it disappears on half the site — which
+   * makes every custom control here unusable by keyboard without ever looking
+   * broken to anyone using a mouse.
+   */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
   /* Motion is a texture here, not an affordance — removing it costs nothing. */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -155,6 +180,30 @@
 }
 
 @layer components {
+  /*
+   * Bypass blocks. Every page opens with the same header, and without this a
+   * keyboard or screen-reader user tabs through the whole nav on every one of
+   * them before reaching the dish they came for. Off-screen until focused,
+   * which is the only state it is ever meant to be seen in.
+   */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--surface-3);
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    border-radius: 0 0 8px 0;
+    padding: 12px 18px;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
   /* Every band of every page constrains its content to this. */
   .wrap {
     max-width: var(--page-max);

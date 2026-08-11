@@ -94,7 +94,7 @@ const timelineData = JSON.stringify(
 ---
 
 <BaseLayout title={`${title} — engine fixture`} description="Engine verification surface." noindex>
-  <main class="wrap" data-recipe={recipe.slug} data-default-servings={recipe.defaultServings}>
+  <main id="main" class="wrap" data-recipe={recipe.slug} data-default-servings={recipe.defaultServings}>
     <p class="banner">
       Engine fixture — not site content. Present only in development builds.
       {siblings.map((s) => <a href={`${import.meta.env.BASE_URL}dev/${s.slug}/`}>{s.label}</a>)}

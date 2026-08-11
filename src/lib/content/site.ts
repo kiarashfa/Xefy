@@ -43,6 +43,16 @@ export interface Site {
   recipes: SiteRecipe[];
   ingredients: Ingredient[];
   credits: ImageCredit[];
+  /**
+   * The one pantry-staples list every client tool reads. §8.1
+   *
+   * Derived from the ingredient records rather than hand-maintained in a file
+   * of its own: the flag is a property of the food and belongs beside the
+   * food's other properties, and a central list is a second place to state the
+   * same fact — which is a second place for it to be wrong, and one more
+   * cross-file edit for every author of every new ingredient.
+   */
+  staples: string[];
   /** Ingredient slug to the recipes using it, with how much each uses. */
   usage: Map<string, { recipe: SiteRecipe; grams: number }[]>;
 }
@@ -120,6 +130,7 @@ async function build(): Promise<Site> {
     recipes,
     ingredients: raw.ingredients.map((i) => i.data),
     credits,
+    staples: raw.ingredients.filter((i) => i.data.pantryStaple).map((i) => i.data.id),
     usage,
   };
 }

@@ -7,7 +7,7 @@
   "containsGluten": false,
   "containsDairy": false,
   "allergenTags": [],
-  "pantryStaple": true,
+  "pantryStaple": false,
   "generalSubstitutes": [
     {
       "substitute": "ripe fresh tomatoes, skinned",

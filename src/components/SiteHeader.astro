@@ -20,6 +20,8 @@ const nav = [
 ];
 ---
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href={base}>Xefy</a>
@@ -101,30 +103,79 @@ const nav = [
   // and the bundle is not small.
   let loaded = false;
   const overlay = document.querySelector('[data-search-overlay]');
+  const panel = overlay?.querySelector('.search-panel');
+  // Where focus came from, so closing puts it back rather than dropping it at
+  // the top of the document.
+  let opener = null;
 
-  async function openSearch() {
+  const focusable = () =>
+    [...(panel?.querySelectorAll('a[href], button, input, select, textarea') ?? [])].filter(
+      (el) => !el.disabled && el.offsetParent !== null,
+    );
+
+  async function openSearch(trigger) {
+    opener = trigger;
     overlay?.setAttribute('data-open', '');
-    if (loaded) return;
-    loaded = true;
-    try {
-      await import(`${base}pagefind/pagefind-ui.js`);
-      new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false });
-    } catch {
-      document.getElementById('pagefind-search').textContent =
-        'Search is available on the published site.';
+
+    if (!loaded) {
+      loaded = true;
+      try {
+        await import(`${base}pagefind/pagefind-ui.js`);
+        new window.PagefindUI({ element: '#pagefind-search', showSubResults: true, showImages: false });
+      } catch {
+        document.getElementById('pagefind-search').textContent =
+          'Search is available on the published site.';
+      }
     }
+
+    /*
+     * A dialog that says `aria-modal="true"` and leaves focus behind it is
+     * worse than one that says nothing: it tells a screen reader the rest of
+     * the page is inert while the reader is still standing in it. Pagefind
+     * builds its own input, so this waits a frame for it to exist.
+     */
+    requestAnimationFrame(() => {
+      const input = panel?.querySelector('input') ?? panel?.querySelector('button');
+      input?.focus();
+    });
   }
 
-  for (const button of document.querySelectorAll('[data-search]')) {
-    button.addEventListener('click', openSearch);
+  function closeSearch() {
+    if (!overlay?.hasAttribute('data-open')) return;
+    overlay.removeAttribute('data-open');
+    opener?.focus();
   }
-  document.querySelector('[data-search-close]')?.addEventListener('click', () =>
-    overlay?.removeAttribute('data-open'),
-  );
+
+  // The trigger is passed explicitly rather than read off the event, so closing
+  // always has somewhere real to put focus back — there are two of these
+  // buttons, one per nav, and whichever opened it is the one to return to.
+  for (const button of document.querySelectorAll('[data-search]')) {
+    button.addEventListener('click', () => openSearch(button));
+  }
+  document.querySelector('[data-search-close]')?.addEventListener('click', closeSearch);
   overlay?.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.removeAttribute('data-open');
+    if (e.target === overlay) closeSearch();
   });
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') overlay?.removeAttribute('data-open');
+    if (!overlay?.hasAttribute('data-open')) return;
+    if (e.key === 'Escape') {
+      closeSearch();
+      return;
+    }
+    // Tab cycles inside the panel. Without this, tabbing walks out of a dialog
+    // that has just claimed to be modal.
+    if (e.key !== 'Tab') return;
+    const items = focusable();
+    if (items.length === 0) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
   });
 </script>

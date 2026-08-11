@@ -1644,7 +1644,7 @@
       color 0.4s var(--ease);
   }
 
-  .timeline-modes button[aria-selected='true'] {
+  .timeline-modes button[aria-pressed='true'] {
     background: var(--surface-2);
     color: var(--ink);
   }

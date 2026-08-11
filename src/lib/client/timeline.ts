@@ -46,7 +46,7 @@ function anchorAt(panel: Panel, mode: AnchorMode): Date {
 }
 
 const activeMode = (panel: Panel): AnchorMode =>
-  (panel.modeButtons.find((b) => b.getAttribute('aria-selected') === 'true')?.dataset
+  (panel.modeButtons.find((b) => b.getAttribute('aria-pressed') === 'true')?.dataset
     .mode as AnchorMode) ?? 'ready-at';
 
 /** Removes every generated readout, so "off" leaves the page as it was built. */
@@ -145,7 +145,7 @@ export function initTimeline(): void {
     for (const button of panel.modeButtons) {
       button.addEventListener('click', () => {
         for (const other of panel.modeButtons) {
-          other.setAttribute('aria-selected', String(other === button));
+          other.setAttribute('aria-pressed', String(other === button));
         }
         // "Starting now" has no target to set, so the input goes with it.
         panel.time.parentElement?.toggleAttribute('hidden', button.dataset.mode === 'start-now');

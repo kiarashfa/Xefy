@@ -37,12 +37,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     }
     <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap"
-    />
+    {/*
+      Both typefaces are self-hosted, declared in `src/styles/fonts.css` and
+      bundled with the rest of the CSS. §19.10 left this open; the deciding
+      fact is that browsers no longer share a font cache between sites, so the
+      CDN's one advantage is gone and what remains is a render-blocking
+      stylesheet on a third-party origin, on every page of a site that makes a
+      point of asking nothing of anyone else. §14.6
+    */}
 
     <slot name="head" />
 
@@ -66,5 +68,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
     <slot />
+    {/* Shown on paper only, so a printed sheet can be found again. §19.10 */}
+    <p class="print-source wrap">{canonical.href}</p>
   </body>
 </html>
