@@ -1,0 +1,62 @@
+{
+  "id": "miso",
+  "name": "Miso",
+  "proseName": "miso",
+  "category": "paste",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "soy"
+  ],
+  "forms": [
+    {
+      "id": "awase",
+      "label": "Awase, mixed rice and barley koji",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172442",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172442/nutrients",
+      "sourceNote": "USDA reports miso as a single food. Real misos differ widely — white miso is sweeter, shorter-fermented and roughly half as salty as a dark red one — and none of that variation is in this table. Some misos are made with barley or wheat koji and are not gluten-free; the label is the only way to tell.",
+      "nutritionPer100g": {
+        "kcal": 198,
+        "protein": 12.79,
+        "fat": 6.01,
+        "carbs": 25.37,
+        "fiber": 5.4,
+        "sugars": 6.2,
+        "calcium": 57,
+        "iron": 2.49,
+        "magnesium": 48,
+        "phosphorus": 159,
+        "potassium": 210,
+        "sodium": 3728,
+        "zinc": 2.56,
+        "copper": 0.42,
+        "manganese": 0.859,
+        "seleniumMcg": 7,
+        "vitaminC": 0,
+        "thiamin": 0.098,
+        "riboflavin": 0.233,
+        "niacin": 0.906,
+        "vitaminB6": 0.199,
+        "folateMcg": 19,
+        "choline": 72.2,
+        "vitaminB12Mcg": 0.08,
+        "vitaminAMcg": 4,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 29.3,
+        "saturatedFat": 1.025,
+        "monounsaturatedFat": 1.118,
+        "polyunsaturatedFat": 2.884,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 275,
+        "gPerTbsp": 17,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

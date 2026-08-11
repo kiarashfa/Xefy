@@ -1,0 +1,54 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2710824",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2710824/nutrients",
+  "description": "Avocado, Hass, peeled, raw",
+  "category": "Fruits and Fruit Juices",
+  "publicationDate": "10/31/2024",
+  "retrieved": "2026-08-10",
+  "nutritionPer100g": {
+    "kcal": 206.049,
+    "protein": 1.813,
+    "fat": 20.31,
+    "carbs": 8.324,
+    "calcium": 14.46,
+    "iron": 0.613,
+    "magnesium": 32.8,
+    "phosphorus": 42.38,
+    "potassium": 576.4,
+    "sodium": 0,
+    "zinc": 0.46,
+    "copper": 0.285,
+    "manganese": 0.197,
+    "vitaminC": 0,
+    "vitaminB6": 0.167
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 67,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.29,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 2.554,
+      "unit": "g"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 128.7,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

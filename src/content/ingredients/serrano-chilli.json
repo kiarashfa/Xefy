@@ -1,0 +1,72 @@
+{
+  "id": "serrano-chilli",
+  "name": "Serrano Chilli",
+  "proseName": "serrano chilli",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Jalapeño",
+        "note": "A larger, thicker-walled and markedly milder chilli. Serranos are hotter and thinner-fleshed, which is why they are chopped raw into salsas without being seeded."
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, whole",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169395",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169395/nutrients",
+      "nutritionPer100g": {
+        "kcal": 32,
+        "protein": 1.74,
+        "fat": 0.44,
+        "carbs": 6.7,
+        "fiber": 3.7,
+        "sugars": 3.83,
+        "calcium": 11,
+        "iron": 0.86,
+        "magnesium": 22,
+        "phosphorus": 40,
+        "potassium": 305,
+        "sodium": 10,
+        "zinc": 0.26,
+        "copper": 0.129,
+        "manganese": 0.187,
+        "seleniumMcg": 0.4,
+        "vitaminC": 44.9,
+        "thiamin": 0.054,
+        "riboflavin": 0.081,
+        "niacin": 1.537,
+        "vitaminB6": 0.505,
+        "folateMcg": 23,
+        "choline": 8.9,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 47,
+        "vitaminE": 0.69,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 11.8,
+        "saturatedFat": 0.059,
+        "monounsaturatedFat": 0.023,
+        "polyunsaturatedFat": 0.222,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 105,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "serrano chilli",
+        "plural": "serrano chillies",
+        "grams": 8
+      }
+    }
+  ]
+}

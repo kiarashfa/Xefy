@@ -1,0 +1,59 @@
+{
+  "id": "preserved-radish",
+  "name": "Preserved Radish",
+  "proseName": "preserved radish",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "sweet",
+      "label": "Sweet, salted and dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168453",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168453/nutrients",
+      "sourceNote": "USDA publishes no record for the Thai sweet preserved radish sold as chai po. This is its record for dried daikon, which is the same vegetable dried but without the salt and sugar cure, so the figures understate both sodium and sugars.",
+      "nutritionPer100g": {
+        "kcal": 271,
+        "protein": 7.9,
+        "fat": 0.72,
+        "carbs": 63.37,
+        "fiber": 23.9,
+        "sugars": 37.32,
+        "calcium": 629,
+        "iron": 6.73,
+        "magnesium": 170,
+        "phosphorus": 204,
+        "potassium": 3494,
+        "sodium": 278,
+        "zinc": 2.13,
+        "copper": 1.631,
+        "manganese": 0.539,
+        "seleniumMcg": 0.7,
+        "vitaminC": 0,
+        "thiamin": 0.27,
+        "riboflavin": 0.68,
+        "niacin": 3.4,
+        "vitaminB6": 0.618,
+        "folateMcg": 295,
+        "choline": 109.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 4.5,
+        "saturatedFat": 0.218,
+        "monounsaturatedFat": 0.119,
+        "polyunsaturatedFat": 0.325,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 116,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

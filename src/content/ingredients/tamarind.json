@@ -1,0 +1,58 @@
+{
+  "id": "tamarind",
+  "name": "Tamarind",
+  "proseName": "tamarind",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "pulp",
+      "label": "Seedless block pulp",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167763",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167763/nutrients",
+      "sourceNote": "USDA publishes raw tamarind fruit. The compressed seedless blocks sold for cooking are the same pulp with the pods, seeds and fibre removed, so the figures are close but not identical; the blocks are a little more concentrated for having lost some moisture in pressing.",
+      "nutritionPer100g": {
+        "kcal": 239,
+        "protein": 2.8,
+        "fat": 0.6,
+        "carbs": 62.5,
+        "fiber": 5.1,
+        "sugars": 38.8,
+        "calcium": 74,
+        "iron": 2.8,
+        "magnesium": 92,
+        "phosphorus": 113,
+        "potassium": 628,
+        "sodium": 28,
+        "zinc": 0.1,
+        "copper": 0.086,
+        "seleniumMcg": 1.3,
+        "vitaminC": 3.5,
+        "thiamin": 0.428,
+        "riboflavin": 0.152,
+        "niacin": 1.938,
+        "vitaminB6": 0.066,
+        "folateMcg": 14,
+        "choline": 8.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 2,
+        "vitaminE": 0.1,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.8,
+        "saturatedFat": 0.272,
+        "monounsaturatedFat": 0.181,
+        "polyunsaturatedFat": 0.059,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 120,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

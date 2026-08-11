@@ -1,0 +1,77 @@
+{
+  "id": "chickpea",
+  "name": "Chickpea",
+  "proseName": "chickpeas",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Garbanzo bean",
+        "region": "North America"
+      },
+      {
+        "name": "Ceci",
+        "region": "Italy",
+        "lang": "it"
+      }
+    ],
+    "searchOnly": [
+      "garbanzo",
+      "chick pea"
+    ]
+  },
+  "category": "pulse",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173756",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173756/nutrients",
+      "nutritionPer100g": {
+        "kcal": 378,
+        "protein": 20.47,
+        "fat": 6.04,
+        "carbs": 62.95,
+        "fiber": 12.2,
+        "sugars": 10.7,
+        "calcium": 57,
+        "iron": 4.31,
+        "magnesium": 79,
+        "phosphorus": 252,
+        "potassium": 718,
+        "sodium": 24,
+        "zinc": 2.76,
+        "copper": 0.656,
+        "manganese": 4.15,
+        "seleniumMcg": 0,
+        "vitaminC": 4,
+        "thiamin": 0.477,
+        "riboflavin": 0.212,
+        "niacin": 1.541,
+        "vitaminB6": 0.535,
+        "folateMcg": 557,
+        "choline": 99.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 3,
+        "vitaminE": 0.82,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 9,
+        "saturatedFat": 0.603,
+        "monounsaturatedFat": 1.377,
+        "polyunsaturatedFat": 2.731,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 200,
+        "gPerTbsp": 12.5,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

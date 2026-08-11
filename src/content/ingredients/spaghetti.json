@@ -1,0 +1,62 @@
+{
+  "id": "spaghetti",
+  "name": "Spaghetti",
+  "proseName": "spaghetti",
+  "category": "pasta",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried durum wheat",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169736",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169736/nutrients",
+      "sourceNote": "USDA reports dry enriched pasta generally. The volume figure is its measure for spaghetti specifically; other shapes in the same record range from 64 g to 122 g per cup, which is why pasta is bought and cooked by weight.",
+      "nutritionPer100g": {
+        "kcal": 371,
+        "protein": 13.04,
+        "fat": 1.51,
+        "carbs": 74.67,
+        "fiber": 3.2,
+        "sugars": 2.67,
+        "calcium": 21,
+        "iron": 3.3,
+        "magnesium": 53,
+        "phosphorus": 189,
+        "potassium": 223,
+        "sodium": 6,
+        "zinc": 1.41,
+        "copper": 0.289,
+        "manganese": 0.917,
+        "seleniumMcg": 63.2,
+        "vitaminC": 0,
+        "thiamin": 0.891,
+        "riboflavin": 0.4,
+        "niacin": 7.177,
+        "vitaminB6": 0.142,
+        "folateMcg": 391,
+        "choline": 15.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.11,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.277,
+        "monounsaturatedFat": 0.171,
+        "polyunsaturatedFat": 0.564,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 91,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

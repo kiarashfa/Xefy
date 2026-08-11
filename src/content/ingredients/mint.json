@@ -1,0 +1,55 @@
+{
+  "id": "mint",
+  "name": "Mint",
+  "proseName": "mint",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh spearmint",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173475",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173475/nutrients",
+      "sourceNote": "USDA's record for fresh spearmint, which is the mint used in Levantine cooking. Peppermint is a different and much more menthol-heavy plant.",
+      "nutritionPer100g": {
+        "kcal": 44,
+        "protein": 3.29,
+        "fat": 0.73,
+        "carbs": 8.41,
+        "fiber": 6.8,
+        "calcium": 199,
+        "iron": 11.87,
+        "magnesium": 63,
+        "phosphorus": 60,
+        "potassium": 458,
+        "sodium": 30,
+        "zinc": 1.09,
+        "copper": 0.24,
+        "manganese": 1.118,
+        "vitaminC": 13.3,
+        "thiamin": 0.078,
+        "riboflavin": 0.175,
+        "niacin": 0.948,
+        "vitaminB6": 0.158,
+        "folateMcg": 105,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 203,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.191,
+        "monounsaturatedFat": 0.025,
+        "polyunsaturatedFat": 0.394,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 5.7,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

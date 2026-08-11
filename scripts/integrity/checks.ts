@@ -510,6 +510,24 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
   }
 
+  // A qualifier that repeats a word already in the prose name stutters:
+  // "dried yeast" plus "active dried" reads as "active dried dried yeast".
+  for (const ingredient of content.ingredients) {
+    const base = (ingredient.data.proseName ?? ingredient.data.name).toLowerCase().split(/\s+/);
+    for (const form of ingredient.data.forms) {
+      const qualifier = form.proseQualifier?.toLowerCase().split(/\s+/) ?? [];
+      const repeated = qualifier.filter((word) => base.includes(word));
+      if (repeated.length > 0) {
+        add(
+          'prose-names',
+          'warn',
+          ingredient.file,
+          `form "${form.id}": the qualifier "${form.proseQualifier}" repeats "${repeated.join('", "')}" from the prose name "${ingredient.data.proseName ?? ingredient.data.name}", which reads as a stutter mid-sentence`,
+        );
+      }
+    }
+  }
+
   // An estimated density has to name the class it was interpolated from, and
   // that class has to exist — otherwise the estimate cites nothing.
   const densityClasses = JSON.parse(
@@ -527,6 +545,103 @@ export async function runChecks(content: Content): Promise<CheckResult> {
           `form "${form.id}" cites density class "${densityClass}", which is not in src/data/density-classes.json`,
         );
       }
+    }
+  }
+
+  /* --- 15-19. Reference prose is sourced ------------------------------- */
+
+  // The one place on the site where citation is mandatory. Technique is
+  // trusted directly because a wrong technique is caught by the first person
+  // who cooks the dish; an invented origin story is caught by nobody.
+  const aboutBySubject = new Map(content.recipeAbout.map((a) => [a.subject, a]));
+  for (const version of content.recipeVersions) {
+    if (!version.isDefault) continue;
+    const draft = 'draft' in version.data && version.data.draft;
+    if (draft) continue;
+    if (!aboutBySubject.has(version.recipe)) {
+      add(
+        'about-required',
+        'fail',
+        `${version.file.slice(0, version.file.lastIndexOf('/'))}/`,
+        'has no about.mdx. Every dish carries a sourced About section — set draft: true while it is still being researched',
+      );
+    }
+  }
+
+  const CITE = /<Cite\b[^>]*?\bref\s*=\s*["']([^"']*)["'][^>]*?\/?>/g;
+  /** A year, a century, or a percentage — the claims most worth a source. */
+  const CHECKABLE_CLAIM = /\b(1[0-9]{3}|20[0-9]{2})\b|\b\d{1,2}(st|nd|rd|th) century\b|\d+(\.\d+)?%/i;
+
+  for (const about of [...content.recipeAbout, ...content.ingredientAbout]) {
+    const declared = new Set(about.data.sources.map((s) => s.id));
+    const cited = new Set<string>();
+
+    for (const match of about.body.matchAll(CITE)) {
+      const ref = match[1] ?? '';
+      if (declared.has(ref)) {
+        cited.add(ref);
+      } else {
+        add(
+          'about-sources',
+          'fail',
+          about.file,
+          `<Cite ref="${ref}"/> does not resolve to a declared source`,
+        );
+      }
+    }
+
+    for (const id of declared) {
+      if (!cited.has(id)) {
+        add(
+          'about-sources',
+          'warn',
+          about.file,
+          `source "${id}" is declared but never cited — either the claim it supported went missing, or it was listed to satisfy the rule rather than to support anything`,
+        );
+      }
+    }
+
+    // Prose only: strip components and markup before counting.
+    const prose = proseWithoutComponents(about.body).replace(/\s+/g, ' ').trim();
+    const words = prose ? prose.split(' ').length : 0;
+    if (words < 150 || words > 500) {
+      add(
+        'about-length',
+        'warn',
+        about.file,
+        `${words} words; the range is 150–500. Short is fine if the sourced material runs out — padding to reach a number is not`,
+      );
+    }
+
+    // A date is the most checkable kind of claim and the most commonly
+    // invented. The check cannot know whether a citation elsewhere covers it,
+    // so it only surfaces the paragraph rather than failing.
+    for (const paragraph of about.body.split(/\n\s*\n/)) {
+      const claim = paragraph.match(CHECKABLE_CLAIM);
+      if (claim && !/<Cite\b/.test(paragraph)) {
+        add(
+          'about-citations',
+          'warn',
+          about.file,
+          `a paragraph states "${claim[0]}" with no citation in it. Dates, centuries and statistics are checkable claims — cite them or cut them`,
+        );
+      }
+    }
+  }
+
+  for (const about of content.recipeAbout) {
+    if (!content.recipeVersions.some((v) => v.recipe === about.subject)) {
+      add('about-required', 'fail', about.file, 'has no matching recipe');
+    }
+  }
+  for (const about of content.ingredientAbout) {
+    if (!ingredientBySlug.has(about.subject)) {
+      add(
+        'about-required',
+        'fail',
+        about.file,
+        `has no matching ingredient record "${about.subject}.json"`,
+      );
     }
   }
 

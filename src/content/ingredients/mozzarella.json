@@ -1,0 +1,77 @@
+{
+  "id": "mozzarella",
+  "name": "Mozzarella",
+  "proseName": "mozzarella",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Fior di latte",
+        "region": "Italy",
+        "lang": "it",
+        "note": "The cow's-milk mozzarella, as against the buffalo-milk one."
+      }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Mozzarella di bufala",
+        "note": "Made from water-buffalo milk: wetter, tangier and considerably more expensive, and it releases far more liquid when baked."
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Rennet type varies by producer. Much industrial mozzarella is set with microbial rennet and is therefore vegetarian, but traditional and protected-origin cheeses are frequently not — check the label if it matters to you.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, whole milk",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170845",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170845/nutrients",
+      "nutritionPer100g": {
+        "kcal": 299,
+        "protein": 22.17,
+        "fat": 22.14,
+        "carbs": 2.4,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 505,
+        "iron": 0.44,
+        "magnesium": 20,
+        "phosphorus": 354,
+        "potassium": 76,
+        "sodium": 486,
+        "zinc": 2.92,
+        "copper": 0.011,
+        "manganese": 0.03,
+        "seleniumMcg": 17,
+        "vitaminC": 0,
+        "thiamin": 0.03,
+        "riboflavin": 0.283,
+        "niacin": 0.104,
+        "vitaminB6": 0.037,
+        "folateMcg": 7,
+        "choline": 15.4,
+        "vitaminB12Mcg": 2.28,
+        "vitaminAMcg": 179,
+        "vitaminE": 0.19,
+        "vitaminDMcg": 0.4,
+        "vitaminKMcg": 2.3,
+        "saturatedFat": 13.9,
+        "monounsaturatedFat": 6.573,
+        "polyunsaturatedFat": 0.765,
+        "cholesterol": 79
+      },
+      "density": {
+        "gPerCup": 112,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

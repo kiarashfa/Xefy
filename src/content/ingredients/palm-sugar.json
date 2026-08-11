@@ -1,0 +1,64 @@
+{
+  "id": "palm-sugar",
+  "name": "Palm Sugar",
+  "proseName": "palm sugar",
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "generalSubstitutes": [
+    {
+      "substitute": "soft light brown sugar",
+      "note": "The nearest supermarket equivalent, and slightly sweeter for the same weight."
+    }
+  ],
+  "forms": [
+    {
+      "id": "block",
+      "label": "Block or paste",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168833",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168833/nutrients",
+      "sourceNote": "USDA publishes no record for palm sugar. This is its record for soft brown sugar, the closest partly-refined cane or beet sugar it carries: both are largely sucrose with a residue of the parent syrup, and the energy figures are within a few per cent of each other. Palm sugar is marginally less sweet and carries more moisture.",
+      "nutritionPer100g": {
+        "kcal": 380,
+        "protein": 0.12,
+        "fat": 0,
+        "carbs": 98.09,
+        "fiber": 0,
+        "sugars": 97.02,
+        "calcium": 83,
+        "iron": 0.71,
+        "magnesium": 9,
+        "phosphorus": 4,
+        "potassium": 133,
+        "sodium": 28,
+        "zinc": 0.03,
+        "copper": 0.047,
+        "manganese": 0.064,
+        "seleniumMcg": 1.2,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0.11,
+        "vitaminB6": 0.041,
+        "folateMcg": 1,
+        "choline": 2.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 220,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": "dark-chocolate",
+  "name": "Dark Chocolate",
+  "proseName": "dark chocolate",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Chocolate chips",
+        "note": "Chips are formulated with less cocoa butter so that they hold their shape in the oven. That is the opposite of what a chopped bar does, which is melt into seams through the dough."
+      }
+    ]
+  },
+  "category": "confectionery",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dark",
+      "label": "Seventy to eighty-five per cent cocoa solids",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170273",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170273/nutrients",
+      "sourceNote": "USDA groups all chocolate from seventy to eighty-five per cent cocoa solids into one record, so sugar and fat within that band vary more than the single figure suggests. Most dark chocolate contains no milk, but some brands add milk fat and the label is the only way to know.",
+      "nutritionPer100g": {
+        "kcal": 598,
+        "protein": 7.79,
+        "fat": 42.63,
+        "carbs": 45.9,
+        "fiber": 10.9,
+        "sugars": 23.99,
+        "calcium": 73,
+        "iron": 11.9,
+        "magnesium": 228,
+        "phosphorus": 308,
+        "potassium": 715,
+        "sodium": 20,
+        "zinc": 3.31,
+        "copper": 1.766,
+        "manganese": 1.948,
+        "seleniumMcg": 6.8,
+        "thiamin": 0.034,
+        "riboflavin": 0.078,
+        "niacin": 1.054,
+        "vitaminB6": 0.038,
+        "vitaminB12Mcg": 0.28,
+        "vitaminAMcg": 2,
+        "vitaminE": 0.59,
+        "vitaminKMcg": 7.3,
+        "saturatedFat": 24.489,
+        "monounsaturatedFat": 12.781,
+        "polyunsaturatedFat": 1.257,
+        "transFat": 0.03,
+        "cholesterol": 3
+      }
+    }
+  ]
+}

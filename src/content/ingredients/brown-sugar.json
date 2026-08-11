@@ -1,0 +1,60 @@
+{
+  "id": "brown-sugar",
+  "name": "Brown Sugar",
+  "proseName": "brown sugar",
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "light-soft",
+      "label": "Light, soft",
+      "proseQualifier": "light",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168833",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168833/nutrients",
+      "sourceNote": "USDA reports brown sugar as one food, without distinguishing light from dark. The volume figure is its measure for a packed cup; the same record gives 145 g for a cup left loose, which is a forty per cent difference on one ingredient and a good argument for weighing.",
+      "nutritionPer100g": {
+        "kcal": 380,
+        "protein": 0.12,
+        "fat": 0,
+        "carbs": 98.09,
+        "fiber": 0,
+        "sugars": 97.02,
+        "calcium": 83,
+        "iron": 0.71,
+        "magnesium": 9,
+        "phosphorus": 4,
+        "potassium": 133,
+        "sodium": 28,
+        "zinc": 0.03,
+        "copper": 0.047,
+        "manganese": 0.064,
+        "seleniumMcg": 1.2,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0.11,
+        "vitaminB6": 0.041,
+        "folateMcg": 1,
+        "choline": 2.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 220,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

@@ -17,8 +17,24 @@ export interface NutrientMapping {
   label: string;
 }
 
+/**
+ * Energy is reported under three different nutrient numbers depending on the
+ * dataset, and a record may carry any combination of them. SR Legacy uses the
+ * classic 208; Foundation records frequently carry only the Atwater figures,
+ * which is why a Foundation record can look as though the food has no calories.
+ *
+ * Preference order: the directly reported value, then Atwater specific factors
+ * (which vary the coefficients by food), then Atwater general factors.
+ */
+export const ENERGY_NUMBERS: readonly string[] = ['208', '958', '957'];
+
+/** Without these four, nutrition cannot be computed at all. */
+export const REQUIRED_FIELDS: readonly Nutrient[] = ['kcal', 'protein', 'carbs', 'fat'];
+
 export const NUTRIENT_MAP: readonly NutrientMapping[] = [
   { number: '208', field: 'kcal', unit: 'kcal', label: 'Energy' },
+  { number: '958', field: 'kcal', unit: 'kcal', label: 'Energy (Atwater specific factors)' },
+  { number: '957', field: 'kcal', unit: 'kcal', label: 'Energy (Atwater general factors)' },
   { number: '203', field: 'protein', unit: 'g', label: 'Protein' },
   { number: '205', field: 'carbs', unit: 'g', label: 'Carbohydrate, by difference' },
   { number: '204', field: 'fat', unit: 'g', label: 'Total fat' },

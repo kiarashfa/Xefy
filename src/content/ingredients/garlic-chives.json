@@ -1,0 +1,68 @@
+{
+  "id": "garlic-chives",
+  "name": "Garlic Chives",
+  "proseName": "garlic chives",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Chives",
+        "note": "The common European chive is a thin hollow tube with an onion flavour. Garlic chives are flat, broader blades that taste of garlic, and they are cooked rather than scattered raw."
+      }
+    ]
+  },
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169994",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169994/nutrients",
+      "sourceNote": "USDA publishes no record for garlic chives, also sold as Chinese chives or kuchai. This is its record for common chives, the nearest allium leaf it carries; the two are close in composition and quite different on the plate.",
+      "nutritionPer100g": {
+        "kcal": 30,
+        "protein": 3.27,
+        "fat": 0.73,
+        "carbs": 4.35,
+        "fiber": 2.5,
+        "sugars": 1.85,
+        "calcium": 92,
+        "iron": 1.6,
+        "magnesium": 42,
+        "phosphorus": 58,
+        "potassium": 296,
+        "sodium": 3,
+        "zinc": 0.56,
+        "copper": 0.157,
+        "manganese": 0.373,
+        "seleniumMcg": 0.9,
+        "vitaminC": 58.1,
+        "thiamin": 0.078,
+        "riboflavin": 0.115,
+        "niacin": 0.647,
+        "vitaminB6": 0.138,
+        "folateMcg": 105,
+        "choline": 5.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 218,
+        "vitaminE": 0.21,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 212.7,
+        "saturatedFat": 0.146,
+        "monounsaturatedFat": 0.095,
+        "polyunsaturatedFat": 0.267,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 3,
+        "gPerTsp": 1,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

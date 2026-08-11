@@ -1,0 +1,59 @@
+{
+  "id": "lemon-juice",
+  "name": "Lemon Juice",
+  "proseName": "lemon juice",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Freshly squeezed",
+      "proseQualifier": "freshly squeezed",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167747",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167747/nutrients",
+      "nutritionPer100g": {
+        "kcal": 22,
+        "protein": 0.35,
+        "fat": 0.24,
+        "carbs": 6.9,
+        "fiber": 0.3,
+        "sugars": 2.52,
+        "calcium": 6,
+        "iron": 0.08,
+        "magnesium": 6,
+        "phosphorus": 8,
+        "potassium": 103,
+        "sodium": 1,
+        "zinc": 0.05,
+        "copper": 0.016,
+        "manganese": 0.012,
+        "seleniumMcg": 0.1,
+        "vitaminC": 38.7,
+        "thiamin": 0.024,
+        "riboflavin": 0.015,
+        "niacin": 0.091,
+        "vitaminB6": 0.046,
+        "folateMcg": 20,
+        "choline": 5.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.15,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.04,
+        "monounsaturatedFat": 0.006,
+        "polyunsaturatedFat": 0.021,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 244,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

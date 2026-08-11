@@ -1,0 +1,123 @@
+---
+title: Hummus
+subtitle: Chickpeas cooked until they collapse, blended hot with tahini, lemon and garlic until the texture stops being a purée and becomes a cream.
+description: Hummus from dried chickpeas, cooked soft with bicarbonate of soda and blended hot with tahini, lemon and garlic.
+label: Levantine
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [levantine]
+  course: [starter, side]
+  method: [boiling, no-cook]
+names:
+  alsoKnownAs:
+    - { name: Ḥummuṣ bi-ṭaḥīna, region: Levant, lang: ar, note: "The full name: chickpeas with tahini. Ḥummuṣ on its own is simply the Arabic for chickpea." }
+  notToBeConfusedWith:
+    - name: Msabbaha
+      note: The same ingredients left coarse, with whole chickpeas folded through rather than blended smooth.
+  searchOnly: ["houmous", "hommus", "humus", "hoummous"]
+ingredients:
+  - id: chickpeas
+    ingredientRef: chickpea
+    form: dried
+    amount: 250
+    unit: g
+    note: soaked overnight in plenty of cold water
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: cooking-water
+    ingredientRef: water
+    form: tap
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.2
+    consumedFractionNote: "The chickpeas absorb roughly their own weight again; the rest of the cooking water is drained away."
+  - id: tahini
+    ingredientRef: tahini
+    form: light
+    amount: 130
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 60
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 40
+    unit: ml
+    note: to serve
+    notReferencedInSteps: Poured over at the table rather than blended in, so it belongs to serving rather than to a step.
+steps:
+  - { id: cook-chickpeas, durationMin: 55, type: active, phase: cook }
+  - { id: steep-garlic, durationMin: 10, type: "parallel-with:cook-chickpeas", phase: prep }
+  - { id: blend, durationMin: 6, type: active, phase: prep }
+  - { id: rest, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: Hummus keeps three days covered in the fridge. It stiffens when cold, so let it come back to room temperature and beat in a spoonful of water before serving.
+  freezable: true
+  freezeInstructions: Freeze without the oil for up to three months. Thaw in the fridge and beat hard to bring the texture back.
+  reheatInstructions: null
+substitutions:
+  - lineRef: chickpeas
+    substitute: tinned cooked chickpeas, drained
+    ratio: "250 g dried is roughly two 400 g tins, so scale by weight rather than by tin"
+    note: Faster, and noticeably grainier. Simmer them with the bicarbonate of soda for twenty minutes anyway — tinned chickpeas are rarely soft enough to blend smooth as they come.
+    impact: { texture: moderate change, flavor: minor }
+notes:
+  techniqueRationale:
+    - stepId: cook-chickpeas
+      text: The bicarbonate of soda raises the pH of the water, which breaks down pectin in the skins and lets the chickpeas collapse. Without it they stay intact and the hummus stays grainy however long it is blended.
+    - stepId: blend
+      text: Blending the chickpeas hot is what makes the difference between a purée and a cream. They break down while soft and the tahini emulsifies into them rather than sitting alongside.
+  commonPitfalls:
+    - stepId: blend
+      text: Adding the tahini and lemon to a cold blender seizes the tahini into a stiff paste. Both go in while the chickpeas are still steaming.
+---
+
+<Step id="cook-chickpeas">
+  Drain the soaked <Qty ref="chickpeas"/> and put them in a pan with the
+  <Qty ref="bicarb"/> and the <Qty ref="cooking-water"/>. Bring to the boil, skim off
+  the foam, then simmer for <Dur step="cook-chickpeas"/>, until a chickpea crushes to
+  nothing between finger and thumb. They should be well past the point of merely
+  cooked.
+</Step>
+
+<Step id="steep-garlic">
+  Meanwhile crush the <Qty ref="garlic"/> and leave it in the <Qty ref="lemon-juice"/>
+  for <Dur step="steep-garlic"/>. The acid takes the raw heat out of the garlic, which
+  would otherwise dominate everything.
+</Step>
+
+<Step id="blend">
+  Drain the chickpeas, keeping the water, and tip them straight into a blender while
+  still steaming. Add the <Qty ref="tahini"/>, the strained lemon and garlic, the
+  <Qty ref="cumin"/> and the <Qty ref="salt"/>, and blend for <Dur step="blend"/>,
+  loosening with the cooking water until it turns pale and moves like whipped cream.
+  It should be looser than you think — it sets as it cools.
+</Step>
+
+<Step id="rest">
+  Leave for <Dur step="rest"/> before serving, so the garlic and cumin settle into it.
+  Spread into a shallow bowl, work a hollow into the middle with the back of a spoon,
+  and pour the olive oil into it.
+</Step>

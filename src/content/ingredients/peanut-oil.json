@@ -1,0 +1,61 @@
+{
+  "id": "peanut-oil",
+  "name": "Peanut Oil",
+  "proseName": "peanut oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "peanuts"
+  ],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "refined",
+      "label": "Refined",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171410",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171410/nutrients",
+      "nutritionPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0.03,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "sodium": 0,
+        "zinc": 0.01,
+        "copper": 0,
+        "seleniumMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 15.69,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.7,
+        "saturatedFat": 16.9,
+        "monounsaturatedFat": 46.2,
+        "polyunsaturatedFat": 32,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 13.5,
+        "gPerTsp": 4.5,
+        "gPerCup": 216,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

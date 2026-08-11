@@ -1,0 +1,60 @@
+{
+  "id": "fish-sauce",
+  "name": "Fish Sauce",
+  "proseName": "fish sauce",
+  "category": "seasoning",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Bottled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174531",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174531/nutrients",
+      "sourceNote": "USDA reports fish sauce generically. Salt content is the figure that varies most between brands, and the record's sodium is at the high end of what Thai bottles declare.",
+      "nutritionPer100g": {
+        "kcal": 35,
+        "protein": 5.06,
+        "fat": 0.01,
+        "carbs": 3.64,
+        "fiber": 0,
+        "sugars": 3.64,
+        "calcium": 43,
+        "iron": 0.78,
+        "magnesium": 175,
+        "phosphorus": 7,
+        "potassium": 288,
+        "sodium": 7851,
+        "zinc": 0.2,
+        "copper": 0.05,
+        "manganese": 0.233,
+        "seleniumMcg": 9.1,
+        "vitaminC": 0.5,
+        "thiamin": 0.012,
+        "riboflavin": 0.057,
+        "niacin": 2.313,
+        "vitaminB6": 0.396,
+        "folateMcg": 51,
+        "choline": 13.2,
+        "vitaminB12Mcg": 0.48,
+        "vitaminAMcg": 4,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.003,
+        "monounsaturatedFat": 0.002,
+        "polyunsaturatedFat": 0.003,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 18,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

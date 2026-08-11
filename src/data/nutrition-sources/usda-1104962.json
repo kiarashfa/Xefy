@@ -1,0 +1,96 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "1104962",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/1104962/nutrients",
+  "description": "Onions, white, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "10/30/2020",
+  "retrieved": "2026-08-10",
+  "nutritionPer100g": {
+    "kcal": 35,
+    "protein": 0.89,
+    "fat": 0.13,
+    "carbs": 7.68,
+    "fiber": 1.2,
+    "calcium": 21,
+    "iron": 0.15,
+    "magnesium": 9.3,
+    "phosphorus": 29,
+    "potassium": 141,
+    "sodium": 2,
+    "zinc": 0.12,
+    "copper": 0.047,
+    "manganese": 0.099,
+    "seleniumMcg": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 91.3,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 148,
+      "unit": "kJ"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.14,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 5.76,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 0.59,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 2.63,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 2.52,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "287",
+      "name": "Galactose",
+      "amount": 0.03,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

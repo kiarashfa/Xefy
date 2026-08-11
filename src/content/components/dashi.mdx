@@ -1,0 +1,58 @@
+---
+title: Dashi
+summary: The Japanese stock — kombu drawn out below a simmer, then katsuobushi steeped off the heat and strained without pressing.
+batchLabel: About 400 ml
+ingredients:
+  - id: dashi-water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: ml
+    consumedFraction: 0.85
+    consumedFractionNote: "The kombu and the katsuobushi carry a good deal of water away with them when they are strained out."
+  - id: kombu
+    ingredientRef: kombu
+    form: dried
+    amount: 8
+    unit: g
+    note: a postcard-sized piece
+    consumedFraction: 0.06
+    consumedFractionNote: "The kombu is lifted out whole; only what it gives up to the water is eaten."
+  - id: katsuobushi
+    ingredientRef: katsuobushi
+    form: shaved
+    amount: 15
+    unit: g
+    consumedFraction: 0.08
+    consumedFractionNote: "The flakes are strained out and discarded; what stays behind is what dissolved into the stock."
+steps:
+  - { id: steep-kombu, durationMin: 30, type: passive }
+  - { id: draw-kombu, durationMin: 10, type: active, phase: cook }
+  - { id: steep-katsuobushi, durationMin: 4, type: active, phase: cook }
+  - { id: strain-dashi, durationMin: 3, type: active, phase: cook }
+---
+
+<Step id="steep-kombu">
+  Wipe the <Qty ref="kombu"/> over with a dry cloth, leaving the white bloom on the
+  surface — that is where much of its flavour sits. Put it into a pan with the
+  <Qty ref="dashi-water"/> and leave it to steep for <Dur step="steep-kombu"/>.
+</Step>
+
+<Step id="draw-kombu">
+  Bring the pan up very slowly over <Dur step="draw-kombu"/>, aiming to hold it around
+  <Temp c={60}/>. Lift the kombu out as soon as the first fine bubbles climb the sides
+  and well before the water simmers: kelp held at the boil turns the stock slippery and
+  faintly bitter.
+</Step>
+
+<Step id="steep-katsuobushi">
+  Bring the liquid to a boil, take the pan straight off the heat and scatter in the
+  <Qty ref="katsuobushi"/>. Leave it for <Dur step="steep-katsuobushi"/>, until the
+  flakes have all sunk.
+</Step>
+
+<Step id="strain-dashi">
+  Pour it through a sieve lined with muslin and let it drip for
+  <Dur step="strain-dashi"/>. Do not press or squeeze the flakes — that forces
+  bitterness and cloudiness into a stock whose entire point is clarity.
+</Step>

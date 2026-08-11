@@ -1,5 +1,5 @@
 import { formatQuantity, type BaseUnit, type Density } from '../math/quantity.ts';
-import { formatLength, formatTemperature, type UnitSystem } from '../math/units.ts';
+import { formatCount, formatLength, formatTemperature, type UnitSystem } from '../math/units.ts';
 import { restoreServings, restoreUnitSystem, servings, unitSystem } from '../stores/display.ts';
 
 /**
@@ -41,6 +41,17 @@ function updateQuantity(el: HTMLElement, count: number, system: UnitSystem): voi
   if (!target) return;
   target.textContent = estimated ? `~${text}` : text;
   target.classList.toggle('is-estimated', estimated);
+
+  // Countable things carry a count alongside the weight, and it scales with it.
+  const perUnit = num(el, 'countGrams');
+  const countEl = el.querySelector<HTMLElement>('.qty-count');
+  const nameEl = el.querySelector<HTMLElement>('.qty-name');
+  if (perUnit && countEl && nameEl) {
+    const rendered = formatCount(scaled / perUnit);
+    countEl.textContent = rendered;
+    nameEl.textContent =
+      rendered === '1' ? (el.dataset.countSingular ?? '') : (el.dataset.countPlural ?? '');
+  }
 }
 
 /**

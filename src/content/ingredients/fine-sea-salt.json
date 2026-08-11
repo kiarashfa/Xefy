@@ -1,0 +1,61 @@
+{
+  "id": "fine-sea-salt",
+  "name": "Fine Sea Salt",
+  "proseName": "fine sea salt",
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "fine",
+      "label": "Fine",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173468",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173468/nutrients",
+      "sourceNote": "USDA reports table salt; fine sea salt is compositionally the same to the precision this table carries.",
+      "nutritionPer100g": {
+        "kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 24,
+        "iron": 0.33,
+        "magnesium": 1,
+        "phosphorus": 0,
+        "potassium": 8,
+        "sodium": 38758,
+        "zinc": 0.1,
+        "copper": 0.03,
+        "manganese": 0.1,
+        "seleniumMcg": 0.1,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 6,
+        "gPerTbsp": 18,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

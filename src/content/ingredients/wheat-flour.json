@@ -1,0 +1,147 @@
+{
+  "id": "wheat-flour",
+  "name": "Wheat Flour",
+  "proseName": "flour",
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "generalSubstitutes": [
+    {
+      "substitute": "bread flour",
+      "note": "Higher in protein; gives a chewier crumb and a tougher crust."
+    }
+  ],
+  "forms": [
+    {
+      "id": "00",
+      "label": "Type 00",
+      "proseQualifier": "00",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2003586",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2003586/nutrients",
+      "sourceNote": "The USDA record for Type 00 flour publishes no household portion, so the volume conversion comes from the general flour density class.",
+      "nutritionPer100g": {
+        "kcal": 365.611,
+        "protein": 11.4,
+        "fat": 1.52,
+        "carbs": 74.446,
+        "fiber": 2.656,
+        "calcium": 18.68,
+        "iron": 0.986,
+        "magnesium": 25.8,
+        "phosphorus": 106.2,
+        "potassium": 135.5,
+        "sodium": 0,
+        "zinc": 0.791,
+        "copper": 0.168,
+        "manganese": 0.552,
+        "seleniumMcg": 10.3,
+        "thiamin": 0.125,
+        "riboflavin": 0.091,
+        "niacin": 1.364,
+        "vitaminB6": 0.055
+      },
+      "density": {
+        "gPerCup": 125,
+        "densitySource": "estimated",
+        "densityClass": "flour-like"
+      }
+    },
+    {
+      "id": "bread",
+      "label": "Bread flour",
+      "proseQualifier": "bread",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168896",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168896/nutrients",
+      "nutritionPer100g": {
+        "kcal": 361,
+        "protein": 11.98,
+        "fat": 1.66,
+        "carbs": 72.53,
+        "fiber": 2.4,
+        "sugars": 0.31,
+        "calcium": 15,
+        "iron": 4.41,
+        "magnesium": 25,
+        "phosphorus": 97,
+        "potassium": 100,
+        "sodium": 2,
+        "zinc": 0.85,
+        "copper": 0.182,
+        "manganese": 0.792,
+        "seleniumMcg": 39.7,
+        "vitaminC": 0,
+        "thiamin": 0.812,
+        "riboflavin": 0.512,
+        "niacin": 7.554,
+        "vitaminB6": 0.037,
+        "folateMcg": 288,
+        "choline": 10.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.4,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.3,
+        "saturatedFat": 0.244,
+        "monounsaturatedFat": 0.14,
+        "polyunsaturatedFat": 0.727,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 137,
+        "densitySource": "measured"
+      }
+    },
+    {
+      "id": "plain",
+      "label": "Plain white",
+      "proseQualifier": "plain",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168936",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168936/nutrients",
+      "sourceNote": "USDA's record for unbleached all-purpose flour, which is what British plain flour corresponds to. Bleaching is a North American practice and is reported separately; it weakens the protein slightly and is worth avoiding where the choice exists.",
+      "nutritionPer100g": {
+        "kcal": 364,
+        "protein": 10.33,
+        "fat": 0.98,
+        "carbs": 76.31,
+        "fiber": 2.7,
+        "sugars": 0.27,
+        "calcium": 15,
+        "iron": 4.64,
+        "magnesium": 22,
+        "phosphorus": 108,
+        "potassium": 107,
+        "sodium": 2,
+        "zinc": 0.7,
+        "copper": 0.144,
+        "manganese": 0.682,
+        "seleniumMcg": 33.9,
+        "vitaminC": 0,
+        "thiamin": 0.785,
+        "riboflavin": 0.494,
+        "niacin": 5.904,
+        "vitaminB6": 0.044,
+        "folateMcg": 291,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.23,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.3,
+        "saturatedFat": 0.155,
+        "monounsaturatedFat": 0.087,
+        "polyunsaturatedFat": 0.413,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 125,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

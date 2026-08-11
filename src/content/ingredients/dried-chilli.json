@@ -1,0 +1,61 @@
+{
+  "id": "dried-chilli",
+  "name": "Dried Chilli",
+  "proseName": "chilli",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "flakes",
+      "label": "Coarsely ground flakes",
+      "proseName": "chilli flakes",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170932",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170932/nutrients",
+      "sourceNote": "USDA reports ground red or cayenne pepper. Thai dried chilli ground coarsely for the table is the same food at a coarser grind; heat varies by cultivar and is not something this table records.",
+      "nutritionPer100g": {
+        "kcal": 318,
+        "protein": 12.01,
+        "fat": 17.27,
+        "carbs": 56.63,
+        "fiber": 27.2,
+        "sugars": 10.34,
+        "calcium": 148,
+        "iron": 7.8,
+        "magnesium": 152,
+        "phosphorus": 293,
+        "potassium": 2014,
+        "sodium": 30,
+        "zinc": 2.48,
+        "copper": 0.373,
+        "manganese": 2,
+        "seleniumMcg": 8.8,
+        "vitaminC": 76.4,
+        "thiamin": 0.328,
+        "riboflavin": 0.919,
+        "niacin": 8.701,
+        "vitaminB6": 2.45,
+        "folateMcg": 106,
+        "choline": 51.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 2081,
+        "vitaminE": 29.83,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 80.3,
+        "saturatedFat": 3.26,
+        "monounsaturatedFat": 2.75,
+        "polyunsaturatedFat": 8.37,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 5.3,
+        "gPerTsp": 1.8,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

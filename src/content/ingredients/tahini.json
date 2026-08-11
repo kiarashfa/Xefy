@@ -1,0 +1,66 @@
+{
+  "id": "tahini",
+  "name": "Tahini",
+  "proseName": "tahini",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Tahina",
+        "region": "Levant"
+      }
+    ],
+    "searchOnly": [
+      "tahin",
+      "tehina"
+    ]
+  },
+  "category": "paste",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "sesame"
+  ],
+  "forms": [
+    {
+      "id": "light",
+      "label": "Light, hulled sesame",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168604",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168604/nutrients",
+      "nutritionPer100g": {
+        "kcal": 592,
+        "protein": 17.4,
+        "fat": 53.01,
+        "carbs": 21.5,
+        "fiber": 4.7,
+        "calcium": 141,
+        "iron": 4.42,
+        "magnesium": 95,
+        "phosphorus": 790,
+        "potassium": 459,
+        "sodium": 35,
+        "zinc": 4.62,
+        "copper": 1.61,
+        "seleniumMcg": 34.4,
+        "vitaminC": 4.2,
+        "thiamin": 1.59,
+        "riboflavin": 0.12,
+        "niacin": 5.64,
+        "vitaminB6": 0.15,
+        "folateMcg": 98,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 3,
+        "vitaminDMcg": 0,
+        "saturatedFat": 7.423,
+        "monounsaturatedFat": 20.016,
+        "polyunsaturatedFat": 23.232,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 15,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

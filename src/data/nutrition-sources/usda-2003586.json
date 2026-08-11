@@ -1,0 +1,64 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2003586",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2003586/nutrients",
+  "description": "Flour, 00",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "10/28/2021",
+  "retrieved": "2026-08-10",
+  "nutritionPer100g": {
+    "kcal": 365.611,
+    "protein": 11.4,
+    "fat": 1.52,
+    "carbs": 74.446,
+    "fiber": 2.656,
+    "calcium": 18.68,
+    "iron": 0.986,
+    "magnesium": 25.8,
+    "phosphorus": 106.2,
+    "potassium": 135.5,
+    "sodium": 0,
+    "zinc": 0.791,
+    "copper": 0.168,
+    "manganese": 0.552,
+    "seleniumMcg": 10.3,
+    "thiamin": 0.125,
+    "riboflavin": 0.091,
+    "niacin": 1.364,
+    "vitaminB6": 0.055
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 12.17,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 1.824,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.4638,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 34.41,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 13.46,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

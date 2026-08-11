@@ -1,4 +1,11 @@
 {
   "note": "Explicit exemptions for digits that appear in step prose and are not derived data. Keep this list short and specific: an entry is a promise that the number can never go out of step with anything else on the page. A plain count is better spelled out (\"six wedges\") than allowlisted. Match is exact on file + stepId + text.",
-  "entries": []
+  "entries": [
+    {
+      "file": "src/content/recipes/margherita-pizza/home-oven.mdx",
+      "stepId": "knead",
+      "text": "00",
+      "reason": "The grade of a flour, not a quantity. Italian flours are named by how finely they are milled — 00 is the finest — and the name cannot drift because it is not derived from anything."
+    }
+  ]
 }

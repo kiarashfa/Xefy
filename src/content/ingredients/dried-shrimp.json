@@ -1,0 +1,43 @@
+{
+  "id": "dried-shrimp",
+  "name": "Dried Shrimp",
+  "proseName": "dried shrimp",
+  "category": "seafood",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "shellfish"
+  ],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Small, salted and sun-dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175180",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175180/nutrients",
+      "sourceNote": "USDA publishes no record for dried shrimp; this is its record for cooked shrimp, which is the same animal before drying. The figures are therefore conservative by a wide margin — drying removes most of the water, so dried shrimp carry roughly three times this energy and protein for the same weight, and far more salt. The quantity used here is small, but the nutrition panel understates it.",
+      "nutritionPer100g": {
+        "kcal": 99,
+        "protein": 23.98,
+        "fat": 0.28,
+        "carbs": 0.2,
+        "calcium": 70,
+        "iron": 0.51,
+        "magnesium": 39,
+        "phosphorus": 237,
+        "potassium": 259,
+        "sodium": 111,
+        "zinc": 1.64,
+        "copper": 0.379,
+        "manganese": 0.033,
+        "saturatedFat": 0.056,
+        "monounsaturatedFat": 0.048,
+        "polyunsaturatedFat": 0.079,
+        "transFat": 0.002,
+        "cholesterol": 189
+      },
+      "nutritionCaveat": "Cited against cooked shrimp. Dried shrimp has had most of its water removed and is roughly three times as concentrated as these figures show; USDA publishes no dried-shrimp record."
+    }
+  ]
+}

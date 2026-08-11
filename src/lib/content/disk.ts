@@ -13,10 +13,12 @@ import { globSync } from 'tinyglobby';
 import { parse as parseYaml } from 'yaml';
 
 import { ingredientSchema } from '../../schemas/ingredient.ts';
+import { recipeAboutSchema, ingredientAboutSchema } from '../../schemas/about.ts';
 import { recipeSchema, recipeVersionSchema } from '../../schemas/recipe.ts';
 import { componentSchema } from '../../schemas/component.ts';
 import { techniqueSchema } from '../../schemas/technique.ts';
 import type { Ingredient } from '../../schemas/ingredient.ts';
+import type { RecipeAbout, IngredientAbout } from '../../schemas/about.ts';
 import type { Recipe, RecipeVersion } from '../../schemas/recipe.ts';
 import type { Component } from '../../schemas/component.ts';
 import type { Technique } from '../../schemas/technique.ts';
@@ -58,6 +60,15 @@ export interface LoadedIngredient {
   data: Ingredient;
 }
 
+/** Sourced reference prose, for a dish or an ingredient. */
+export interface LoadedAbout {
+  /** Recipe slug or ingredient slug. */
+  subject: string;
+  file: string;
+  data: RecipeAbout | IngredientAbout;
+  body: string;
+}
+
 export interface LoadedComponent {
   slug: string;
   file: string;
@@ -74,7 +85,9 @@ export interface LoadedTechnique {
 
 export interface Content {
   recipeVersions: LoadedRecipeVersion[];
+  recipeAbout: LoadedAbout[];
   ingredients: LoadedIngredient[];
+  ingredientAbout: LoadedAbout[];
   components: LoadedComponent[];
   techniques: LoadedTechnique[];
   schemaErrors: SchemaError[];
@@ -127,7 +140,11 @@ export async function loadContent(contentRoot: string = DEFAULT_CONTENT): Promis
   const schemaErrors: SchemaError[] = [];
   const CONTENT = contentRoot;
 
-  const recipeFiles = globSync('*/*.mdx', { cwd: path.join(CONTENT, 'recipes'), absolute: true });
+  // `about.mdx` shares the recipe directory and is not a version of the dish.
+  const recipeFiles = globSync(['*/*.mdx', '!*/about.mdx'], {
+    cwd: path.join(CONTENT, 'recipes'),
+    absolute: true,
+  });
   const recipeVersions: LoadedRecipeVersion[] = [];
   for (const abs of recipeFiles.sort()) {
     const file = relative(abs);
@@ -164,6 +181,33 @@ export async function loadContent(contentRoot: string = DEFAULT_CONTENT): Promis
     }
     ingredients.push({ slug: path.basename(abs, '.json'), file, data: parsed.data });
   }
+
+  const loadAbout = async (
+    pattern: string,
+    dir: string,
+    schema: typeof recipeAboutSchema | typeof ingredientAboutSchema,
+    subjectOf: (abs: string) => string,
+  ): Promise<LoadedAbout[]> => {
+    const out: LoadedAbout[] = [];
+    for (const abs of globSync(pattern, { cwd: path.join(CONTENT, dir), absolute: true }).sort()) {
+      const file = relative(abs);
+      const { data, body } = splitFrontmatter(await readFile(abs, 'utf8'));
+      const parsed = schema.safeParse(data);
+      if (!parsed.success) {
+        schemaErrors.push(...collectErrors(file, parsed.error.issues));
+        continue;
+      }
+      out.push({ subject: subjectOf(abs), file, data: parsed.data, body });
+    }
+    return out;
+  };
+
+  const recipeAbout = await loadAbout('*/about.mdx', 'recipes', recipeAboutSchema, (abs) =>
+    path.basename(path.dirname(abs)),
+  );
+  const ingredientAbout = await loadAbout('*.mdx', 'ingredients', ingredientAboutSchema, (abs) =>
+    path.basename(abs, '.mdx'),
+  );
 
   const componentFiles = globSync('*.mdx', {
     cwd: path.join(CONTENT, 'components'),
@@ -203,5 +247,13 @@ export async function loadContent(contentRoot: string = DEFAULT_CONTENT): Promis
     techniques.push({ slug: path.basename(abs, '.mdx'), file, data: parsed.data });
   }
 
-  return { recipeVersions, ingredients, components, techniques, schemaErrors };
+  return {
+    recipeVersions,
+    recipeAbout,
+    ingredients,
+    ingredientAbout,
+    components,
+    techniques,
+    schemaErrors,
+  };
 }

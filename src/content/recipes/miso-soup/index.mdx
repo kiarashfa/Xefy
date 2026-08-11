@@ -1,0 +1,85 @@
+---
+title: Miso Soup
+subtitle: Dashi with miso stirred through it off the heat, holding silken tofu and wakame.
+description: Miso soup built on a proper kombu and katsuobushi dashi, with the miso dissolved through a ladle and never allowed to boil.
+label: Everyday
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [soup, starter]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Misoshiru, region: Japan, lang: ja }
+  searchOnly: ["miso shiru", "misosiru", "miso soup with tofu"]
+ingredients:
+  - id: wakame
+    ingredientRef: wakame
+    form: dried
+    amount: 4
+    unit: g
+  - id: tofu
+    ingredientRef: tofu
+    form: silken
+    amount: 150
+    unit: g
+    note: cut into small cubes
+  - id: miso
+    ingredientRef: miso
+    form: awase
+    amount: 36
+    unit: g
+  - id: spring-onions
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: sliced into thin rings
+steps:
+  - { componentRef: dashi, multiplier: 1 }
+  - { id: soak-wakame, durationMin: 10, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: warm-tofu, durationMin: 3, type: active, phase: cook }
+  - { id: dissolve-miso, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made up to three days ahead and keeps in the fridge; the soup itself is assembled in the minutes before it is drunk and does not sit.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: miso
+    substitute: white miso
+    ratio: "45 g white miso in place of the awase"
+    note: Shorter-fermented and roughly half as salty, so a little more of it goes in for the same body. The soup comes out paler and noticeably sweeter, with the miso sitting behind the dashi rather than in front of it.
+    impact: { flavor: moderate change, color: moderate change }
+notes:
+  techniqueRationale:
+    - stepId: dissolve-miso
+      text: The miso goes in off the heat and is never boiled. Boiling drives off the volatile aromatics that make it worth using and kills the live cultures in unpasteurised paste, leaving a soup that tastes only of salt.
+    - stepId: soak-wakame
+      text: Wakame swells to many times its dry volume, which is why the weight here looks improbably small. Judging it by eye from the packet is the reliable way to end up with a bowl of seaweed.
+  commonPitfalls:
+    - stepId: dissolve-miso
+      text: Spooning the paste straight into the pan leaves lumps that never break up and grains of koji in the bottom of the bowl. It is worked apart in a ladle of hot stock first, every time.
+---
+
+<Step id="soak-wakame">
+  While the kombu steeps, cover the <Qty ref="wakame"/> with cold water and leave it for
+  <Dur step="soak-wakame"/>. It will swell to many times its dry size. Drain it and cut
+  any long fronds into short lengths.
+</Step>
+
+<Step id="warm-tofu">
+  Bring the strained dashi back to just under a simmer, then slide in the
+  <Qty ref="tofu"/> and the drained wakame and give them <Dur step="warm-tofu"/> to heat
+  through. The surface should barely tremble; silken tofu breaks up if the pan is stirred
+  or allowed to boil.
+</Step>
+
+<Step id="dissolve-miso">
+  Take the pan off the heat. Put the <Qty ref="miso"/> into a ladle, dip the ladle into
+  the hot stock and work the paste apart against the metal with chopsticks until it has
+  gone completely, then tip it back into the pan and turn it through gently over
+  <Dur step="dissolve-miso"/>. Scatter the <Qty ref="spring-onions"/> over and serve at
+  once, without letting it near the heat again.
+</Step>

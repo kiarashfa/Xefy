@@ -1,0 +1,26 @@
+---
+# FIXTURE — every sourcing rule in §11.5 broken on purpose.
+summary: A fixture About section that breaks each of the sourcing rules in turn.
+sources:
+  - id: cited-source
+    title: A source that is actually cited
+    publisher: Fixture Press
+    url: https://example.invalid/cited
+  - id: orphan-source
+    title: A source listed but never cited
+    publisher: Fixture Press
+    url: https://example.invalid/orphan
+---
+
+This paragraph cites a source that exists <Cite ref="cited-source"/>, which is
+the shape a real claim should take.
+
+This paragraph cites a source that does not exist <Cite ref="no-such-source"/>.
+
+This paragraph says the dish was first recorded in 1889 and offers nothing to
+support it, which is the exact failure the citation rule exists to catch.
+
+This one claims it accounts for 42% of something, again with no source.
+
+The whole section is also far shorter than the range allows, which should be
+reported rather than ignored.

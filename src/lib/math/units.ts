@@ -85,6 +85,19 @@ export function formatFraction(value: number, coarse = false): string {
 }
 
 /**
+ * A count of countable things, snapped to the half.
+ *
+ * Halves rather than the full kitchen set: a third of an egg is not an
+ * instruction anyone can follow, where half of a beaten one is.
+ */
+export function formatCount(value: number): string {
+  const halves = Math.max(0.5, Math.round(value * 2) / 2);
+  const whole = Math.floor(halves);
+  if (halves - whole === 0) return String(whole);
+  return whole === 0 ? '½' : `${whole} ½`;
+}
+
+/**
  * Metric amounts are decimal, with precision that falls off as the number
  * grows — a tenth of a gram matters in 3 g of yeast and is noise in 450 g of
  * flour.

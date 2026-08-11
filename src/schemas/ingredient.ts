@@ -24,7 +24,60 @@ export const ingredientForm = sourceCitation.extend({
    * middle of a step. Where it is absent the ingredient name stands alone.
    */
   proseQualifier: z.string().min(1).optional(),
+
+  /**
+   * Overrides the ingredient's prose name entirely, for forms an adjective
+   * cannot reach. A qualifier is a prefix, which serves "fresh basil" and
+   * fails "egg yolk" — the yolk is not a kind of adjective applied to an egg.
+   */
+  proseName: z.string().min(1).optional(),
+
+  /**
+   * For things a cook counts rather than weighs: eggs, garlic cloves, chillies.
+   *
+   * Weight stays the source of truth and the stored figure — a count is a
+   * derived display exactly as a cup measurement is, and it scales with the
+   * serving stepper because the grams behind it do. But "60 g egg yolk" is not
+   * a usable instruction in a kitchen, so where a Form declares this, the
+   * count leads and the weight follows in the same breath: "3 ½ egg yolks
+   * (60 g)".
+   *
+   * Both are shown because the count is necessarily approximate — eggs vary —
+   * and the exact figure sitting beside it is what keeps the display honest.
+   * The dotted-underline estimate marker is deliberately not used here: it is
+   * reserved for a figure whose true value is *not* on the page (§5.3), and
+   * here it is.
+   */
+  countUnit: z
+    .object({
+      /** The full noun phrase, so it reads alone: "egg yolk", "garlic clove". */
+      singular: z.string().min(1),
+      plural: z.string().min(1),
+      /** Average weight of one, which is what makes the count approximate. */
+      grams: z.number().positive(),
+    })
+    .optional(),
   nutritionPer100g,
+
+  /**
+   * Set when the cited record is known to be wrong for this food in a stated
+   * direction, and no better record exists.
+   *
+   * `sourceNote` explains where a figure came from; this says the figure is not
+   * right. The distinction matters for dried foods above all: reference
+   * datasets carry raw kelp and cooked shrimp but not dried kombu or dried
+   * shrimp, and the same food at a tenth of the water content is several times
+   * as concentrated. Citing the wet record is the most honest option available
+   * and still produces a number that is too low.
+   *
+   * Declaring it here marks the whole dish's nutrition as an estimate with this
+   * reason attached, so the figure is never presented as computed fact. It is a
+   * confession, not a correction — the arithmetic is not adjusted, because a
+   * scaling factor nobody can source would be exactly the invented number this
+   * project exists to avoid.
+   */
+  nutritionCaveat: z.string().min(1).optional(),
+
   density: density.optional(),
 
   /**
@@ -122,9 +175,3 @@ export const ingredientSchema = z
 
 export type Ingredient = z.infer<typeof ingredientSchema>;
 export type IngredientForm = z.infer<typeof ingredientForm>;
-
-/** Optional narrative enrichment: history, buying, storage. Never required. */
-export const ingredientEnrichmentSchema = z.object({
-  ingredientRef: slug,
-  title: z.string().min(1).optional(),
-});

@@ -1,0 +1,66 @@
+{
+  "id": "onion",
+  "name": "Onion",
+  "proseName": "onion",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "white",
+      "label": "White",
+      "proseQualifier": "white",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "1104962",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/1104962/nutrients",
+      "sourceNote": "The Foundation record publishes no household portion, so there is no volume conversion for this form. Onion is bought and chopped by weight, and a cup of chopped onion varies with how fine the chop is.",
+      "nutritionPer100g": {
+        "kcal": 35,
+        "protein": 0.89,
+        "fat": 0.13,
+        "carbs": 7.68,
+        "fiber": 1.2,
+        "calcium": 21,
+        "iron": 0.15,
+        "magnesium": 9.3,
+        "phosphorus": 29,
+        "potassium": 141,
+        "sodium": 2,
+        "zinc": 0.12,
+        "copper": 0.047,
+        "manganese": 0.099,
+        "seleniumMcg": 0
+      }
+    },
+    {
+      "id": "yellow",
+      "label": "Yellow",
+      "proseQualifier": "yellow",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "790646",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/790646/nutrients",
+      "sourceNote": "The everyday brown-skinned cooking onion. The Foundation record publishes no household portion, so this form carries no volume conversion.",
+      "nutritionPer100g": {
+        "kcal": 38,
+        "protein": 0.83,
+        "fat": 0.05,
+        "carbs": 8.61,
+        "fiber": 1.9,
+        "calcium": 15,
+        "iron": 0.28,
+        "magnesium": 9,
+        "phosphorus": 34,
+        "potassium": 182,
+        "sodium": 1,
+        "zinc": 0.2,
+        "copper": 0.035,
+        "manganese": 0.144,
+        "seleniumMcg": 0,
+        "vitaminC": 8.2
+      }
+    }
+  ]
+}

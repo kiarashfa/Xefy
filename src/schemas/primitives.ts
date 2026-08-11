@@ -139,4 +139,11 @@ export const sourceCitation = z.object({
   sourceDataset: z.string().min(1),
   sourceId: z.string().min(1),
   sourceUrl: z.url().optional(),
+  /**
+   * Required when the cited record is a stand-in rather than the food itself.
+   * Reference datasets do not cover every regional ingredient — there is no
+   * guanciale in USDA — and the choice of substitute is a judgment that belongs
+   * on the record where a reader can weigh it, not buried in a commit message.
+   */
+  sourceNote: z.string().min(1).optional(),
 });

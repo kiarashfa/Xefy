@@ -57,6 +57,7 @@ function qtyDataFor(recipe: ResolvedRecipe, ref: string): QtyData | null {
       defaultServings: recipe.defaultServings,
       name: proseName(resolved),
       density: resolved.density,
+      countUnit: resolved.form.countUnit,
     };
   }
   return null;
@@ -71,6 +72,8 @@ function qtyDataFor(recipe: ResolvedRecipe, ref: string): QtyData | null {
  * separate fields rather than one doing both jobs badly.
  */
 export function proseName(resolved: ResolvedRecipe['lines'][number]): string {
+  // A Form may replace the name outright where an adjective cannot reach it.
+  if (resolved.form.proseName) return resolved.form.proseName;
   const base = resolved.ingredient.proseName ?? resolved.ingredient.name.toLowerCase();
   const qualifier = resolved.form.proseQualifier;
   return qualifier ? `${qualifier} ${base}` : base;

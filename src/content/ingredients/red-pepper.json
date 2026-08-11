@@ -1,0 +1,71 @@
+{
+  "id": "red-pepper",
+  "name": "Red Pepper",
+  "proseName": "red pepper",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Red bell pepper", "region": "North America", "lang": "en" }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Crushed red pepper",
+        "note": "In American usage that names dried chilli flakes, which are a different food entirely and carry heat."
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, sweet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170108",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170108/nutrients",
+      "sourceNote": "The volume figure is USDA's own measure for a cup of chopped pepper; the same record gives 92 g for a cup sliced, which is why peppers are weighed rather than cupped.",
+      "nutritionPer100g": {
+        "kcal": 26,
+        "protein": 0.99,
+        "fat": 0.3,
+        "carbs": 6.03,
+        "fiber": 2.1,
+        "sugars": 4.2,
+        "calcium": 7,
+        "iron": 0.43,
+        "magnesium": 12,
+        "phosphorus": 26,
+        "potassium": 211,
+        "sodium": 4,
+        "zinc": 0.25,
+        "copper": 0.017,
+        "manganese": 0.112,
+        "seleniumMcg": 0.1,
+        "vitaminC": 127.7,
+        "thiamin": 0.054,
+        "riboflavin": 0.085,
+        "niacin": 0.979,
+        "vitaminB6": 0.291,
+        "folateMcg": 46,
+        "choline": 5.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 157,
+        "vitaminE": 1.58,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 4.9,
+        "saturatedFat": 0.059,
+        "monounsaturatedFat": 0.007,
+        "polyunsaturatedFat": 0.156,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 149,
+        "gPerTbsp": 9.3,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+---
+# The same dish adapted to an oven that cannot reach Neapolitan temperatures:
+# stronger flour, a colder and much longer ferment, and a longer bake.
+label: Home oven
+defaultServings: 2
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 340
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 320 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 235
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 1
+    unit: g
+  - id: tomatoes
+    ingredientRef: san-marzano-tomato
+    form: canned-whole
+    amount: 200
+    unit: g
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 170
+    unit: g
+    note: torn and drained on paper for an hour
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 8
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 12, type: active, phase: prep }
+  - { id: cold-ferment, durationMin: 1440, type: passive }
+  - { id: divide, durationMin: 8, type: active, phase: prep }
+  - { id: prove-balls, durationMin: 180, type: passive }
+  - { id: heat-oven, durationMin: 60, type: "parallel-with:prove-balls", phase: cook }
+  - { id: shape, durationMin: 6, type: active, phase: prep }
+  - { id: top, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 7, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cold ferment is the make-ahead step; the dough will hold in the fridge for a third day and improve for it.
+  freezable: true
+  freezeInstructions: Freeze the dough balls after proving, well oiled and separately wrapped. Thaw overnight in the fridge, then let them come round at room temperature.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cold-ferment
+      text: A domestic oven cannot supply the colour a wood fire gives in ninety seconds, so the flavour has to come from somewhere else. A full day in the fridge is where.
+  commonPitfalls:
+    - stepId: heat-oven
+      text: A stone that has been in a hot oven for ten minutes is not hot. It needs the best part of an hour to hold enough heat to set the base before the top overcooks.
+---
+
+<Step id="mix-dough">
+  Dissolve the <Qty ref="yeast"/> in the <Qty ref="water"/>, then work in the
+  <Qty ref="flour-dough"/> a handful at a time until no dry flour remains. Rest the
+  shaggy dough for <Dur step="mix-dough"/>, then add the <Qty ref="salt"/>.
+</Step>
+
+<Step id="knead">
+  Knead for <Dur step="knead"/>. Bread flour takes longer to come together than 00 and
+  fights back more; work it until the surface is smooth and a pulled corner stretches
+  thin without tearing.
+</Step>
+
+<Step id="cold-ferment">
+  Cover and refrigerate at <Temp c={4}/> for <Dur step="cold-ferment"/>. The dough will
+  rise slowly and smell faintly of beer when it is ready.
+</Step>
+
+<Step id="divide">
+  Turn the dough out and divide it into two equal pieces. Shape each into a tight ball
+  by dragging it against the bench until the surface is under tension.
+</Step>
+
+<Step id="prove-balls">
+  Cover and leave at room temperature for <Dur step="prove-balls"/>, until the chill
+  has gone out of the dough and it has softened and spread.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile set the oven to its maximum with a stone or steel on the upper shelf, and
+  give it <Dur step="heat-oven"/>. Most domestic ovens reach <Temp c={250}/>; use the
+  grill element for the last stretch if yours has one.
+</Step>
+
+<Step id="shape">
+  Working with the <Qty ref="flour-bench"/>, press each ball out from the centre,
+  leaving the rim untouched, and stretch it to a <Len cm={26}/> round — slightly
+  smaller than the Neapolitan, which helps the base set before the top dries.
+</Step>
+
+<Step id="top">
+  Crush the <Qty ref="tomatoes"/> by hand and spread a thin film to within a finger's
+  width of the rim. Scatter the <Qty ref="mozzarella"/> over, add most of the
+  <Qty ref="basil"/>, and thread the <Qty ref="olive-oil"/> across.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/> on the stone, switching to the grill for the final
+  minute so the top colours before the base overcooks. Finish with the remaining basil.
+</Step>

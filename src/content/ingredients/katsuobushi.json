@@ -1,0 +1,61 @@
+{
+  "id": "katsuobushi",
+  "name": "Katsuobushi",
+  "proseName": "katsuobushi",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Dried bonito flakes",
+        "region": "United Kingdom",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "seafood",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "shaved",
+      "label": "Shaved flakes",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175156",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175156/nutrients",
+      "sourceNote": "USDA publishes no record for katsuobushi. This is its record for raw skipjack tuna, which is the same fish — katsuobushi is skipjack simmered, smoked, fermented with mould and dried until it is hard enough to shave. The dried block is several times as concentrated as the raw fish, so these figures understate it; in a stock the flakes are strained out and discarded.",
+      "nutritionPer100g": {
+        "kcal": 103,
+        "protein": 22,
+        "fat": 1.01,
+        "carbs": 0,
+        "fiber": 0,
+        "calcium": 29,
+        "iron": 1.25,
+        "magnesium": 34,
+        "phosphorus": 222,
+        "potassium": 407,
+        "sodium": 37,
+        "zinc": 0.82,
+        "copper": 0.086,
+        "manganese": 0.015,
+        "seleniumMcg": 36.5,
+        "vitaminC": 1,
+        "thiamin": 0.033,
+        "riboflavin": 0.1,
+        "niacin": 15.4,
+        "vitaminB6": 0.85,
+        "folateMcg": 9,
+        "vitaminB12Mcg": 1.9,
+        "vitaminAMcg": 16,
+        "saturatedFat": 0.328,
+        "monounsaturatedFat": 0.19,
+        "polyunsaturatedFat": 0.315,
+        "cholesterol": 47
+      },
+      "nutritionCaveat": "Cited against raw skipjack tuna, the same fish before it is smoked, fermented and dried to a fraction of its water content. The real figures are several times these; USDA publishes no record for katsuobushi."
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+---
+title: Tabbouleh
+subtitle: A parsley salad with a little bulgur in it, soaked in the juice of the tomatoes rather than in water.
+description: Levantine tabbouleh in its proper proportions — overwhelmingly parsley and mint, with fine bulgur softened in tomato juice and lemon, dressed only at the table.
+label: Lebanese
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [levantine]
+  course: [salad, starter, side]
+  method: [no-cook]
+names:
+  notToBeConfusedWith:
+    - name: Kısır
+      note: The Turkish relative, in which the proportions are reversed — a bulgur salad with herbs in it rather than a herb salad with bulgur.
+    - name: Fattoush
+      note: The other Levantine chopped salad, built on fried or toasted flatbread and sumac, with no grain in it at all.
+  searchOnly: ["tabouleh", "tabouli", "tabbouli", "taboule", "tabbouleh salad"]
+ingredients:
+  - id: tomatoes
+    ingredientRef: tomato
+    form: fresh
+    amount: 250
+    unit: g
+    note: the ripest available, cut into small dice
+  - id: bulgur
+    ingredientRef: bulgur
+    form: fine
+    amount: 40
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 60
+    unit: ml
+    portions:
+      - { id: lemon-soak, amount: 30 }
+      - { id: lemon-dress, amount: 30 }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 200
+    unit: g
+    note: leaves and fine stalks, washed and dried completely
+  - id: mint
+    ingredientRef: mint
+    form: fresh
+    amount: 30
+    unit: g
+    note: leaves only
+  - id: spring-onions
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 60
+    unit: g
+    note: sliced as thinly as possible
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 60
+    unit: ml
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: dice-tomatoes, durationMin: 8, type: active, phase: prep }
+  - { id: soak-bulgur, durationMin: 25, type: passive }
+  - { id: cut-herbs, durationMin: 18, type: "parallel-with:soak-bulgur", phase: prep }
+  - { id: dress, durationMin: 4, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The tomatoes, bulgur and lemon can sit together for a few hours and only improve. The herbs are cut and the salad dressed at the last possible moment, because salt and acid pull water out of parsley within the hour and the whole thing collapses into a puddle.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: spring-onions
+    substitute: white onion
+    ratio: "40 g white onion in place of the spring onions"
+    note: Used across the Levant and sharper than spring onion, so less of it goes in. Chop it very fine and salt it for a few minutes first to take the raw edge off.
+    impact: { flavor: minor }
+notes:
+  techniqueRationale:
+    - stepId: soak-bulgur
+      text: The bulgur is soaked in the tomatoes and lemon rather than in water. Fine bulgur has already been parboiled, so it needs moisture rather than cooking — and whatever it takes up is what it will taste of, which is an argument against giving it water.
+    - stepId: cut-herbs
+      text: The parsley has to be bone dry and the knife has to be sharp. A blunt blade bruises the leaf rather than cutting it, which turns the salad dark and gives it a flat, grassy taste no amount of lemon will lift.
+  commonPitfalls:
+    - stepId: dress
+      text: Dressing it in advance is the way this salad is usually ruined. Within an hour the salt has drawn the water out of the parsley and the bowl is sitting in a pool of pink liquid.
+---
+
+<Step id="dice-tomatoes">
+  Cut the <Qty ref="tomatoes"/> into small, even dice, working over a bowl so that none
+  of the juice is lost. Take <Dur step="dice-tomatoes"/> and keep the pieces small —
+  they should be a texture in the salad rather than an obstacle. Turn the
+  <Qty ref="salt"/> through them.
+</Step>
+
+<Step id="soak-bulgur">
+  Stir the <Qty ref="bulgur"/> and the <Qty ref="lemon-soak"/> into the tomatoes and
+  leave them for <Dur step="soak-bulgur"/>. The grain swells on the juice alone and
+  should finish tender with a distinct bite; if it is still hard, give it longer rather
+  than adding water.
+</Step>
+
+<Step id="cut-herbs">
+  Meanwhile, gather the <Qty ref="parsley"/>, dried thoroughly, into a tight bundle and
+  cut across it with the sharpest knife in the house, then turn the pile and cut again,
+  working for
+  <Dur step="cut-herbs"/> until it is fine but not minced. Do the same with the
+  <Qty ref="mint"/>, which bruises faster and goes in last. Slice the
+  <Qty ref="spring-onions"/> thinly, greens and all.
+</Step>
+
+<Step id="dress">
+  Combine the herbs and spring onions with the soaked bulgur and tomatoes, pour over the
+  <Qty ref="olive-oil"/> and the <Qty ref="lemon-dress"/>, add the
+  <Qty ref="black-pepper"/> and turn it all over with your hands for
+  <Dur step="dress"/> — lifting rather than stirring, so the leaves stay separate. Serve
+  immediately.
+</Step>

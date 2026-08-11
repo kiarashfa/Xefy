@@ -1,0 +1,60 @@
+{
+  "id": "tomato",
+  "name": "Tomato",
+  "proseName": "tomatoes",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, ripe",
+      "proseQualifier": "ripe",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170457",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170457/nutrients",
+      "sourceNote": "USDA's year-round average for red ripe tomatoes, which is the honest figure for a fruit whose sugars swing widely with the season. The volume figure is its measure for a cup chopped.",
+      "nutritionPer100g": {
+        "kcal": 18,
+        "protein": 0.88,
+        "fat": 0.2,
+        "carbs": 3.89,
+        "fiber": 1.2,
+        "sugars": 2.63,
+        "calcium": 10,
+        "iron": 0.27,
+        "magnesium": 11,
+        "phosphorus": 24,
+        "potassium": 237,
+        "sodium": 5,
+        "zinc": 0.17,
+        "copper": 0.059,
+        "manganese": 0.114,
+        "seleniumMcg": 0,
+        "vitaminC": 13.7,
+        "thiamin": 0.037,
+        "riboflavin": 0.019,
+        "niacin": 0.594,
+        "vitaminB6": 0.08,
+        "folateMcg": 15,
+        "choline": 6.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 42,
+        "vitaminE": 0.54,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 7.9,
+        "saturatedFat": 0.028,
+        "monounsaturatedFat": 0.031,
+        "polyunsaturatedFat": 0.083,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 180,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

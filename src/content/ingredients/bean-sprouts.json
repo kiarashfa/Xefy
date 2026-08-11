@@ -1,0 +1,58 @@
+{
+  "id": "bean-sprouts",
+  "name": "Bean Sprouts",
+  "proseName": "bean sprouts",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Mung bean, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169957",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169957/nutrients",
+      "nutritionPer100g": {
+        "kcal": 30,
+        "protein": 3.04,
+        "fat": 0.18,
+        "carbs": 5.94,
+        "fiber": 1.8,
+        "sugars": 4.13,
+        "calcium": 13,
+        "iron": 0.91,
+        "magnesium": 21,
+        "phosphorus": 54,
+        "potassium": 149,
+        "sodium": 6,
+        "zinc": 0.41,
+        "copper": 0.164,
+        "manganese": 0.188,
+        "seleniumMcg": 0.6,
+        "vitaminC": 13.2,
+        "thiamin": 0.084,
+        "riboflavin": 0.124,
+        "niacin": 0.749,
+        "vitaminB6": 0.088,
+        "folateMcg": 61,
+        "choline": 14.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminE": 0.1,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 33,
+        "saturatedFat": 0.046,
+        "monounsaturatedFat": 0.022,
+        "polyunsaturatedFat": 0.058,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 104,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

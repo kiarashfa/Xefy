@@ -1,0 +1,73 @@
+{
+  "id": "bulgur",
+  "name": "Bulgur",
+  "proseName": "bulgur",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Cracked wheat",
+        "note": "Cracked wheat is raw grain broken up. Bulgur has been parboiled and dried before cracking, which is why it needs only soaking rather than cooking."
+      },
+      {
+        "name": "Couscous",
+        "note": "Not a grain at all but small pellets of rolled semolina dough, and no substitute in a salad that depends on the bite of whole cracked wheat."
+      }
+    ]
+  },
+  "category": "grain",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "fine",
+      "label": "Fine, dry",
+      "proseQualifier": "fine",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170688",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170688/nutrients",
+      "sourceNote": "USDA reports dry bulgur without distinguishing grades. Grade matters in the kitchen rather than in the table: fine bulgur softens in cold liquid, while coarse grades have to be cooked.",
+      "nutritionPer100g": {
+        "kcal": 342,
+        "protein": 12.29,
+        "fat": 1.33,
+        "carbs": 75.87,
+        "fiber": 12.5,
+        "sugars": 0.41,
+        "calcium": 35,
+        "iron": 2.46,
+        "magnesium": 164,
+        "phosphorus": 300,
+        "potassium": 410,
+        "sodium": 17,
+        "zinc": 1.93,
+        "copper": 0.335,
+        "manganese": 3.048,
+        "seleniumMcg": 2.3,
+        "vitaminC": 0,
+        "thiamin": 0.232,
+        "riboflavin": 0.115,
+        "niacin": 5.114,
+        "vitaminB6": 0.342,
+        "folateMcg": 27,
+        "choline": 28.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.06,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1.9,
+        "saturatedFat": 0.232,
+        "monounsaturatedFat": 0.173,
+        "polyunsaturatedFat": 0.541,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 140,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

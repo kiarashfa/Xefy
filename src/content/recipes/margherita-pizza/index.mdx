@@ -1,0 +1,148 @@
+---
+title: Margherita Pizza
+subtitle: Tomato, mozzarella and basil on a dough left to ferment slowly and baked in the fiercest heat available.
+description: Neapolitan margherita pizza — a slow-fermented 00 dough, tinned San Marzano tomatoes crushed by hand, fresh mozzarella and basil, baked in ninety seconds.
+label: Neapolitan
+defaultServings: 2
+difficulty: Hard
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [baking, fermenting]
+names:
+  alsoKnownAs:
+    - { name: Pizza Margherita, region: Italy, lang: it }
+  notToBeConfusedWith:
+    - name: Pizza marinara
+      note: No cheese at all — tomato, garlic and oregano only. The other classic Neapolitan pizza, and the older of the two.
+  searchOnly: ["pizza margarita", "margarita pizza"]
+image:
+  src: images/recipes/margherita-pizza.webp
+  alt: A margherita pizza on a white plate, its crust blistered and its basil laid over melted mozzarella
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: "00"
+    amount: 340
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 320 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 220
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 0.5
+    unit: g
+  - id: tomatoes
+    ingredientRef: san-marzano-tomato
+    form: canned-whole
+    amount: 200
+    unit: g
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 170
+    unit: g
+    note: torn and drained on paper for an hour
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 8
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 12, type: active, phase: prep }
+  - { id: bulk-ferment, durationMin: 480, type: passive }
+  - { id: divide, durationMin: 8, type: active, phase: prep }
+  - { id: prove-balls, durationMin: 240, type: passive }
+  - { id: heat-oven, durationMin: 60, type: "parallel-with:prove-balls", phase: cook }
+  - { id: shape, durationMin: 6, type: active, phase: prep }
+  - { id: top, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough balls can go into the fridge after dividing and stay there for up to two days; bring them back to room temperature for three hours before shaping.
+  freezable: true
+  freezeInstructions: Freeze the dough balls after proving, well oiled and separately wrapped. Thaw overnight in the fridge, then let them come round at room temperature.
+  reheatInstructions: null
+substitutions:
+  - lineRef: mozzarella
+    substitute: mozzarella di bufala
+    ratio: "1:1"
+    note: Traditional in Naples and wetter than cow's-milk mozzarella. Tear it and drain it for at least an hour or the middle of the pizza will flood.
+    impact: { flavor: minor, texture: moderate change }
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: The rim is never touched by a rolling pin or a knuckle. Pressing the gas out of the outer inch is what costs a Neapolitan pizza its cornicione.
+  commonPitfalls:
+    - stepId: top
+      text: Too much tomato and the base steams instead of baking. It should be a thin, uneven film with the dough showing through in places.
+---
+
+<Step id="mix-dough">
+  Dissolve the <Qty ref="yeast"/> in the <Qty ref="water"/>, then work in the
+  <Qty ref="flour-dough"/> a handful at a time until no dry flour remains. Rest the
+  shaggy dough for <Dur step="mix-dough"/>, then add the <Qty ref="salt"/>.
+</Step>
+
+<Step id="knead">
+  Knead for <Dur step="knead"/>. The dough starts slack and tacky and finishes smooth
+  and slightly resistant; it is ready when a pulled corner stretches thin enough to
+  see light through before it tears.
+</Step>
+
+<Step id="bulk-ferment">
+  Cover and leave at room temperature for <Dur step="bulk-ferment"/>, until roughly
+  doubled and domed.
+</Step>
+
+<Step id="divide">
+  Turn the dough out and divide it into two equal pieces. Shape each into a tight
+  ball by dragging it against the bench until the surface is under tension.
+</Step>
+
+<Step id="prove-balls">
+  Cover the balls and prove for <Dur step="prove-balls"/>. They should spread and
+  soften but still hold their shape when nudged.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile bring the oven to its absolute maximum, with a stone or steel in place,
+  and give it <Dur step="heat-oven"/> to saturate. A true Neapolitan oven runs at
+  <Temp c={450}/>; a domestic one will not, which is what the home-oven version of
+  this recipe is for.
+</Step>
+
+<Step id="shape">
+  Working with the <Qty ref="flour-bench"/>, press each ball out from the centre with
+  your fingertips, leaving the outer rim untouched, then stretch it over your knuckles
+  to a <Len cm={28}/> round. Leave it thicker at the edge.
+</Step>
+
+<Step id="top">
+  Crush the <Qty ref="tomatoes"/> by hand, season them with nothing, and spread a thin
+  film to within a finger's width of the rim. Scatter the <Qty ref="mozzarella"/> over,
+  add most of the <Qty ref="basil"/>, and thread the <Qty ref="olive-oil"/> across in a
+  spiral.
+</Step>
+
+<Step id="bake">
+  Launch onto the stone and bake for <Dur step="bake"/>, turning once, until the rim
+  has blistered and charred in spots and the centre is set. Finish with the remaining
+  basil.
+</Step>

@@ -159,6 +159,7 @@ export function resolveRecipe(
       grams: l.grams,
       consumedFraction: l.line.consumedFraction,
       consumedFractionNote: l.line.consumedFractionNote,
+      nutritionCaveat: l.form.nutritionCaveat,
       nutritionPer100g: l.form.nutritionPer100g,
     })),
     recipe.data.defaultServings,

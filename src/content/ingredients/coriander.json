@@ -1,0 +1,71 @@
+{
+  "id": "coriander",
+  "name": "Coriander",
+  "proseName": "coriander",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Cilantro", "region": "North America", "lang": "en" }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Coriander seed",
+        "note": "The dried seed of the same plant, which tastes of citrus and warm spice rather than of the leaf, and is not a substitute for it."
+      }
+    ]
+  },
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh leaves",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169997",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169997/nutrients",
+      "sourceNote": "The volume figure is USDA's own measure for whole leaves, loosely packed. Chopped coriander packs considerably tighter.",
+      "nutritionPer100g": {
+        "kcal": 23,
+        "protein": 2.13,
+        "fat": 0.52,
+        "carbs": 3.67,
+        "fiber": 2.8,
+        "sugars": 0.87,
+        "calcium": 67,
+        "iron": 1.77,
+        "magnesium": 26,
+        "phosphorus": 48,
+        "potassium": 521,
+        "sodium": 46,
+        "zinc": 0.5,
+        "copper": 0.225,
+        "manganese": 0.426,
+        "seleniumMcg": 0.9,
+        "vitaminC": 27,
+        "thiamin": 0.067,
+        "riboflavin": 0.162,
+        "niacin": 1.114,
+        "vitaminB6": 0.149,
+        "folateMcg": 62,
+        "choline": 12.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 337,
+        "vitaminE": 2.5,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 310,
+        "saturatedFat": 0.014,
+        "monounsaturatedFat": 0.275,
+        "polyunsaturatedFat": 0.04,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 16,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

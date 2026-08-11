@@ -1,0 +1,60 @@
+{
+  "id": "vanilla-extract",
+  "name": "Vanilla Extract",
+  "proseName": "vanilla extract",
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "pure",
+      "label": "Pure",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173471",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173471/nutrients",
+      "sourceNote": "USDA's record for real vanilla extract, not the imitation, which it lists separately and which is a solution of synthesised vanillin with none of the several hundred other compounds in the bean.",
+      "nutritionPer100g": {
+        "kcal": 288,
+        "protein": 0.06,
+        "fat": 0.06,
+        "carbs": 12.65,
+        "fiber": 0,
+        "sugars": 12.65,
+        "calcium": 11,
+        "iron": 0.12,
+        "magnesium": 12,
+        "phosphorus": 6,
+        "potassium": 148,
+        "sodium": 9,
+        "zinc": 0.11,
+        "copper": 0.072,
+        "manganese": 0.23,
+        "seleniumMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0.011,
+        "riboflavin": 0.095,
+        "niacin": 0.425,
+        "vitaminB6": 0.026,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.01,
+        "monounsaturatedFat": 0.01,
+        "polyunsaturatedFat": 0.004,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 4.2,
+        "gPerTbsp": 13,
+        "gPerCup": 208,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

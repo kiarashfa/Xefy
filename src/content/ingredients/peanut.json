@@ -1,0 +1,61 @@
+{
+  "id": "peanut",
+  "name": "Peanuts",
+  "proseName": "peanuts",
+  "category": "pulse",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "peanuts"
+  ],
+  "forms": [
+    {
+      "id": "roasted",
+      "label": "Dry-roasted, unsalted",
+      "proseQualifier": "roasted",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173806",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173806/nutrients",
+      "nutritionPer100g": {
+        "kcal": 587,
+        "protein": 24.35,
+        "fat": 49.66,
+        "carbs": 21.26,
+        "fiber": 8.4,
+        "sugars": 4.9,
+        "calcium": 58,
+        "iron": 1.58,
+        "magnesium": 178,
+        "phosphorus": 363,
+        "potassium": 634,
+        "sodium": 6,
+        "zinc": 2.77,
+        "copper": 0.428,
+        "manganese": 1.786,
+        "seleniumMcg": 9.3,
+        "vitaminC": 0,
+        "thiamin": 0.152,
+        "riboflavin": 0.197,
+        "niacin": 14.355,
+        "vitaminB6": 0.466,
+        "folateMcg": 97,
+        "choline": 64.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 4.93,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 7.723,
+        "monounsaturatedFat": 26.181,
+        "polyunsaturatedFat": 9.773,
+        "transFat": 0.027,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 146,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

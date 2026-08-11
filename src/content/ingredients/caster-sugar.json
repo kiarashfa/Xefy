@@ -1,0 +1,65 @@
+{
+  "id": "caster-sugar",
+  "name": "Caster Sugar",
+  "proseName": "caster sugar",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Superfine sugar", "region": "North America", "lang": "en" }
+    ]
+  },
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "white",
+      "label": "White",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169655",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169655/nutrients",
+      "sourceNote": "USDA reports granulated sugar. Caster is the same sucrose milled to a finer crystal, which changes how quickly it dissolves and nothing at all about its composition.",
+      "nutritionPer100g": {
+        "kcal": 387,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 99.98,
+        "fiber": 0,
+        "sugars": 99.8,
+        "calcium": 1,
+        "iron": 0.05,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 2,
+        "sodium": 1,
+        "zinc": 0.01,
+        "copper": 0.007,
+        "manganese": 0.004,
+        "seleniumMcg": 0.6,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0.019,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 200,
+        "gPerTsp": 4.2,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

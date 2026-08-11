@@ -6,6 +6,13 @@ export type NutritionTotals = Partial<Record<Nutrient, number>>;
 /** Always present on every Form, so a total for these is never partial. */
 const REQUIRED_NUTRIENTS: readonly Nutrient[] = ['kcal', 'protein', 'carbs', 'fat'];
 
+/**
+ * How much discarded energy makes a figure worth calling an estimate. Below
+ * this the exclusion is real but immaterial — the salt in pasta water, the
+ * water itself — and saying so would be noise.
+ */
+const MATERIAL_KCAL = 25;
+
 export interface NutritionContribution {
   /** For messages, not display. */
   label: string;
@@ -14,6 +21,8 @@ export interface NutritionContribution {
   /** The eaten share. 1 unless the ingredient is largely thrown away. */
   consumedFraction: number;
   consumedFractionNote?: string | undefined;
+  /** A known, stated inaccuracy in the source figures for this ingredient. */
+  nutritionCaveat?: string | undefined;
   nutritionPer100g: NutritionPer100g;
 }
 
@@ -81,9 +90,21 @@ export function computeNutrition(
       }
       total[key] = (total[key] ?? 0) + per100 * factor;
     }
-    if (c.consumedFraction < 1 && c.consumedFractionNote) {
+    // A partially-consumed ingredient only makes the figures an estimate if
+    // discarding it actually moves them. Cooking water is genuinely thrown
+    // away and contributes nothing, and flagging a dish's nutrition as
+    // estimated on that basis would spend the reader's attention on nothing —
+    // and devalue the flag where it does matter, like a litre of frying oil.
+    const discardedKcal =
+      (c.nutritionPer100g.kcal ?? 0) * (c.grams! / 100) * (1 - c.consumedFraction);
+    if (c.consumedFraction < 1 && c.consumedFractionNote && discardedKcal >= MATERIAL_KCAL) {
       estimateReasons.push(c.consumedFractionNote);
     }
+
+    // Unlike the above, this one is unconditional. It is a statement that the
+    // source figures are wrong, not that some of the ingredient is discarded,
+    // so no amount is small enough to make it not worth saying.
+    if (c.nutritionCaveat) estimateReasons.push(c.nutritionCaveat);
   }
 
   for (const key of REQUIRED_NUTRIENTS) partial.delete(key);

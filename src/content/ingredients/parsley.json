@@ -1,0 +1,61 @@
+{
+  "id": "parsley",
+  "name": "Parsley",
+  "proseName": "parsley",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "flat-leaf",
+      "label": "Flat-leaf, fresh",
+      "proseQualifier": "flat-leaf",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170416",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170416/nutrients",
+      "sourceNote": "USDA reports fresh parsley without distinguishing flat-leaf from curly. The volume figure is its measure for a cup chopped.",
+      "nutritionPer100g": {
+        "kcal": 36,
+        "protein": 2.97,
+        "fat": 0.79,
+        "carbs": 6.33,
+        "fiber": 3.3,
+        "sugars": 0.85,
+        "calcium": 138,
+        "iron": 6.2,
+        "magnesium": 50,
+        "phosphorus": 58,
+        "potassium": 554,
+        "sodium": 56,
+        "zinc": 1.07,
+        "copper": 0.149,
+        "manganese": 0.16,
+        "seleniumMcg": 0.1,
+        "vitaminC": 133,
+        "thiamin": 0.086,
+        "riboflavin": 0.098,
+        "niacin": 1.313,
+        "vitaminB6": 0.09,
+        "folateMcg": 152,
+        "choline": 12.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 421,
+        "vitaminE": 0.75,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1640,
+        "saturatedFat": 0.132,
+        "monounsaturatedFat": 0.295,
+        "polyunsaturatedFat": 0.124,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 60,
+        "gPerTbsp": 3.8,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

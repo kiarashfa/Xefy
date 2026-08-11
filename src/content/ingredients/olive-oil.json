@@ -1,0 +1,61 @@
+{
+  "id": "olive-oil",
+  "name": "Olive Oil",
+  "proseName": "olive oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "extra-virgin",
+      "label": "Extra virgin",
+      "proseQualifier": "extra-virgin",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171413",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171413/nutrients",
+      "nutritionPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 1,
+        "iron": 0.56,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 1,
+        "sodium": 2,
+        "zinc": 0,
+        "copper": 0,
+        "manganese": 0,
+        "seleniumMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 14.35,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 60.2,
+        "saturatedFat": 13.808,
+        "monounsaturatedFat": 72.961,
+        "polyunsaturatedFat": 10.523,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 13.5,
+        "gPerTsp": 4.5,
+        "gPerCup": 216,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

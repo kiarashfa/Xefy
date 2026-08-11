@@ -1,0 +1,103 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "790646",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/790646/nutrients",
+  "description": "Onions, yellow, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/1/2020",
+  "retrieved": "2026-08-10",
+  "nutritionPer100g": {
+    "kcal": 38,
+    "protein": 0.83,
+    "fat": 0.05,
+    "carbs": 8.61,
+    "fiber": 1.9,
+    "calcium": 15,
+    "iron": 0.28,
+    "magnesium": 9,
+    "phosphorus": 34,
+    "potassium": 182,
+    "sodium": 1,
+    "zinc": 0.2,
+    "copper": 0.035,
+    "manganese": 0.144,
+    "seleniumMcg": 0,
+    "vitaminC": 8.2
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 90.1,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 160,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.41,
+      "unit": "g"
+    },
+    {
+      "number": "293",
+      "name": "Total dietary fiber (AOAC 2011.25)",
+      "amount": 2.71,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 5.82,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 1.6,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 2.31,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 1.91,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "314",
+      "name": "Iodine, I",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

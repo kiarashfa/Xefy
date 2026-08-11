@@ -1,5 +1,11 @@
 import { formatQuantity, type BaseUnit, type Density } from '../math/quantity.ts';
-import { formatDuration, formatLength, formatTemperature, type UnitSystem } from '../math/units.ts';
+import {
+  formatCount,
+  formatDuration,
+  formatLength,
+  formatTemperature,
+  type UnitSystem,
+} from '../math/units.ts';
 
 /**
  * The live values — quantities, temperatures, dimensions, durations.
@@ -24,6 +30,8 @@ export interface QtyData {
   density?: Density | undefined;
   /** Partial use of a line, for the rare case a portion would be overkill. */
   fraction?: number | undefined;
+  /** Present for things a cook counts: the count leads, the weight follows. */
+  countUnit?: { singular: string; plural: string; grams: number } | undefined;
 }
 
 export const escapeHtml = (value: string): string =>
@@ -49,6 +57,24 @@ export function renderQtyText(
   return formatQuantity(scaled, data.unit, system, data.density);
 }
 
+/**
+ * "3 ½ egg yolks (60 g)".
+ *
+ * The count is what a cook acts on and the weight is what the site computes
+ * from, so both are shown. Eggs vary, which makes the count approximate — and
+ * printing the exact figure beside it is what makes saying so unnecessary.
+ */
+export function countText(
+  data: QtyData,
+  servings: number,
+): { count: string; label: string } | null {
+  if (!data.countUnit || data.unit !== 'g') return null;
+  const grams = data.amount * (servings / data.defaultServings) * (data.fraction ?? 1);
+  const raw = grams / data.countUnit.grams;
+  const count = formatCount(raw);
+  return { count, label: count === '1' ? data.countUnit.singular : data.countUnit.plural };
+}
+
 export function qtyHtml(
   data: QtyData,
   servings: number,
@@ -66,6 +92,11 @@ export function qtyHtml(
     `data-default-servings="${data.defaultServings}"`,
   ];
   if (data.fraction != null) attrs.push(`data-fraction="${data.fraction}"`);
+  if (data.countUnit && data.unit === 'g') {
+    attrs.push(`data-count-grams="${data.countUnit.grams}"`);
+    attrs.push(`data-count-singular="${escapeHtml(data.countUnit.singular)}"`);
+    attrs.push(`data-count-plural="${escapeHtml(data.countUnit.plural)}"`);
+  }
   if (data.density) {
     // One figure is enough for the client: every volume unit derives from it.
     const gPerMl =
@@ -77,6 +108,19 @@ export function qtyHtml(
       attrs.push(`data-g-per-ml="${gPerMl}"`);
       attrs.push(`data-density-source="${data.density.source}"`);
     }
+  }
+
+  const counted = countText(data, servings);
+  if (counted) {
+    // The count is the instruction; the weight is the authority. Both are shown,
+    // and the name is already inside the count's own label.
+    return (
+      `<span ${attrs.join(' ')}>` +
+      `<span class="qty-count">${escapeHtml(counted.count)}</span> ` +
+      `<span class="qty-name">${escapeHtml(counted.label)}</span> ` +
+      `<span class="qty-weight">(${amountSpan(text, estimated)})</span>` +
+      `</span>`
+    );
   }
 
   const name = showName ? ` <span class="qty-name">${escapeHtml(data.name)}</span>` : '';

@@ -1,0 +1,199 @@
+---
+title: Pad Thai
+subtitle: Soaked rice noodles fried hard in a tamarind, palm sugar and fish sauce caramel, with tofu, egg and dried shrimp.
+description: Pad thai made the street-stall way — noodles soaked rather than boiled, a sauce reduced before it meets the wok, and everything cooked in under ten minutes.
+label: Street stall
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [thai]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  alsoKnownAs:
+    - name: Kuai tiao phat thai
+      region: Thailand
+      lang: th
+      note: "The full name — rice noodles fried Thai-style — of which pad thai is the everyday shortening."
+  searchOnly: ["phad thai", "phat thai", "pad thai noodles"]
+ingredients:
+  - id: noodles
+    ingredientRef: rice-noodles
+    form: dried-flat
+    amount: 180
+    unit: g
+  - id: tamarind
+    ingredientRef: tamarind
+    form: pulp
+    amount: 40
+    unit: g
+  - id: tamarind-water
+    ingredientRef: water
+    form: tap
+    amount: 80
+    unit: ml
+  - id: palm-sugar
+    ingredientRef: palm-sugar
+    form: block
+    amount: 45
+    unit: g
+    note: chopped or grated off the block
+  - id: fish-sauce
+    ingredientRef: fish-sauce
+    form: standard
+    amount: 45
+    unit: ml
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 120
+    unit: g
+    note: pressed dry and cut into short batons
+  - id: shrimp
+    ingredientRef: dried-shrimp
+    form: dried
+    amount: 15
+    unit: g
+    note: rinsed and soaked briefly
+  - id: radish
+    ingredientRef: preserved-radish
+    form: sweet
+    amount: 20
+    unit: g
+    note: rinsed of its cure and chopped fine
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: chopped
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: sprouts
+    ingredientRef: bean-sprouts
+    form: raw
+    amount: 120
+    unit: g
+    portions:
+      - { id: sprouts-wok, amount: 80 }
+      - { id: sprouts-raw, amount: 40, note: raw, to serve }
+  - id: chives
+    ingredientRef: garlic-chives
+    form: fresh
+    amount: 40
+    unit: g
+    note: cut into short lengths
+    portions:
+      - { id: chives-wok, amount: 30 }
+      - { id: chives-serve, amount: 10, note: raw, to serve }
+  - id: peanuts
+    ingredientRef: peanut
+    form: roasted
+    amount: 40
+    unit: g
+    note: crushed coarsely in a mortar
+    portions:
+      - { id: peanuts-wok, amount: 20 }
+      - { id: peanuts-serve, amount: 20, note: to serve }
+  - id: lime
+    ingredientRef: lime
+    form: fresh
+    amount: 70
+    unit: g
+    note: cut into wedges
+    consumedFraction: 0.35
+    consumedFractionNote: "The wedges are squeezed and the peel and pith left on the plate."
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 2
+    unit: g
+    note: to serve
+steps:
+  - { id: soak-noodles, durationMin: 45, type: passive }
+  - { id: make-sauce, durationMin: 8, type: "parallel-with:soak-noodles", phase: prep }
+  - { id: prep-everything, durationMin: 10, type: "parallel-with:soak-noodles", phase: prep }
+  - { id: fry-aromatics, durationMin: 4, type: active, phase: cook }
+  - { id: fry-noodles, durationMin: 4, type: active, phase: cook }
+  - { id: add-egg, durationMin: 2, type: active, phase: cook }
+  - { id: finish, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The sauce keeps a fortnight in a jar in the fridge and is worth making in quantity; everything else has to happen at the last minute.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: shrimp
+    substitute: raw peeled prawns
+    ratio: "120 g raw prawns in place of the dried shrimp"
+    note: This makes pad thai goong, the version most often met outside Thailand. The prawns go in after the tofu and come out once they turn opaque, returning at the end so they do not toughen. The dried shrimp are doing a different job — they are seasoning rather than protein — so the dish loses a savoury depth it does not get back.
+    impact: { flavor: moderate change, texture: moderate change }
+notes:
+  techniqueRationale:
+    - stepId: soak-noodles
+      text: The noodles are soaked in cold water and never boiled. They finish cooking in the wok in the sauce, which is where they take up their flavour; a noodle that arrives already cooked has nothing left to absorb and breaks up instead.
+    - stepId: make-sauce
+      text: The sauce is reduced to a syrup before it goes near the wok. Adding tamarind, sugar and fish sauce separately floods the pan, and the noodles stew in the time it takes the liquid to cook off.
+  commonPitfalls:
+    - stepId: fry-noodles
+      text: A cool or crowded pan is the usual failure. The noodles need to fry, not simmer, and a domestic burner will only manage two servings at a time — doubling the recipe means cooking it twice.
+---
+
+<Step id="soak-noodles">
+  Cover the <Qty ref="noodles"/> with plenty of cold water and leave them for
+  <Dur step="soak-noodles"/>, until they are white, pliable and limp but still firm
+  enough to snap. Drain them and leave them to drip dry.
+</Step>
+
+<Step id="make-sauce">
+  Break the <Qty ref="tamarind"/> into the <Qty ref="tamarind-water"/>, hot from the
+  kettle, and work it apart with your fingers until it has dissolved into a thick brown
+  liquid; push it through a sieve and throw away the fibre. Set it over a low heat with
+  the <Qty ref="palm-sugar"/> and the <Qty ref="fish-sauce"/> and simmer for
+  <Dur step="make-sauce"/>, until it thickens to a loose syrup that coats a spoon. It
+  should read sour first, then sweet, then salt.
+</Step>
+
+<Step id="prep-everything">
+  Everything from here happens faster than it can be prepared, so prepare it all now and
+  set it beside the stove in the order it goes in: the <Qty ref="garlic"/>, the
+  <Qty ref="radish"/>, the <Qty ref="shrimp"/>, the <Qty ref="tofu"/>, the beaten
+  <Qty ref="eggs"/>, the <Qty ref="sprouts-wok"/> and the <Qty ref="chives-wok"/>. Take
+  <Dur step="prep-everything"/> over it.
+</Step>
+
+<Step id="fry-aromatics">
+  Heat a wok until a drop of water skitters and vanishes. Add the <Qty ref="oil"/>, then
+  the tofu, and fry without moving it much until the faces are gold. Add the garlic, the
+  preserved radish and the dried shrimp and stir for <Dur step="fry-aromatics"/>, until
+  the garlic smells sweet and the shrimp have crisped.
+</Step>
+
+<Step id="fry-noodles">
+  Add the drained noodles and pour the sauce down the side of the wok. Toss and lift for
+  <Dur step="fry-noodles"/>, keeping the heat high, until the noodles have drunk all the
+  liquid, turned a deep russet and started to catch in places. They should be tender with
+  a little resistance left at the centre.
+</Step>
+
+<Step id="add-egg">
+  Push the noodles to one side of the wok, pour the egg into the space and leave it alone
+  for a moment to set at the edges. Break it up, then fold it through the noodles over
+  <Dur step="add-egg"/>.
+</Step>
+
+<Step id="finish">
+  Throw in the <Qty ref="sprouts-wok"/>, the <Qty ref="chives-wok"/> and the
+  <Qty ref="peanuts-wok"/> and toss for <Dur step="finish"/> — no longer, or the sprouts
+  go limp. Turn out onto two plates and serve at once with the <Qty ref="sprouts-raw"/>,
+  the <Qty ref="chives-serve"/>, the <Qty ref="peanuts-serve"/>, the <Qty ref="chilli"/>
+  and the <Qty ref="lime"/> alongside.
+</Step>

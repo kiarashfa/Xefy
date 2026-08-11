@@ -1,0 +1,60 @@
+{
+  "id": "lime-juice",
+  "name": "Lime Juice",
+  "proseName": "lime juice",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Freshly squeezed",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168156",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168156/nutrients",
+      "sourceNote": "USDA's raw lime juice. Bottled juice is a different food — it is pasteurised and often preserved, and it tastes of it.",
+      "nutritionPer100g": {
+        "kcal": 25,
+        "protein": 0.42,
+        "fat": 0.07,
+        "carbs": 8.42,
+        "fiber": 0.4,
+        "sugars": 1.69,
+        "calcium": 14,
+        "iron": 0.09,
+        "magnesium": 8,
+        "phosphorus": 14,
+        "potassium": 117,
+        "sodium": 2,
+        "zinc": 0.08,
+        "copper": 0.027,
+        "manganese": 0.018,
+        "seleniumMcg": 0.1,
+        "vitaminC": 30,
+        "thiamin": 0.025,
+        "riboflavin": 0.015,
+        "niacin": 0.142,
+        "vitaminB6": 0.038,
+        "folateMcg": 10,
+        "choline": 5.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 2,
+        "vitaminE": 0.22,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.6,
+        "saturatedFat": 0.008,
+        "monounsaturatedFat": 0.008,
+        "polyunsaturatedFat": 0.023,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 242,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

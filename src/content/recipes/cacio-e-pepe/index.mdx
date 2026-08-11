@@ -1,0 +1,79 @@
+---
+title: Cacio e Pepe
+subtitle: Sheep's cheese and black pepper worked into a sauce with nothing but the starch of the water the pasta cooked in.
+description: Roman cacio e pepe — Pecorino Romano and toasted black pepper emulsified with starchy pasta water, off the heat, with no butter and no cream.
+label: Roman
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [boiling]
+names:
+  notToBeConfusedWith:
+    - name: Pasta alla gricia
+      note: The same Pecorino and pepper with rendered guanciale added — gricia is, in effect, cacio e pepe with cured pork in it.
+  searchOnly: ["cacio pepe", "cacio e peppe", "spaghetti cacio e pepe"]
+ingredients:
+  - id: pecorino
+    ingredientRef: pecorino-romano
+    form: aged
+    amount: 100
+    unit: g
+    note: grated as finely as the grater allows
+    portions:
+      - { id: pecorino-cream, amount: 85 }
+      - { id: pecorino-serve, amount: 15, note: to finish }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 4
+    unit: g
+    note: cracked coarsely from whole peppercorns
+steps:
+  - { componentRef: boil-pasta-al-dente, multiplier: 1 }
+  - { id: toast-pepper, durationMin: 2, type: "parallel-with:boil-water", phase: cook }
+  - { id: make-cream, durationMin: 4, type: "parallel-with:cook-pasta", phase: prep }
+  - { id: emulsify, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: pepper
+    substitute: Tellicherry peppercorns
+    ratio: "1:1"
+    note: Larger berries left longer on the vine, more aromatic and less abrasively hot. The only variable worth changing in a dish with two ingredients.
+    impact: { flavor: minor }
+notes:
+  techniqueRationale:
+    - stepId: make-cream
+      text: The cheese is loosened with cooking water rather than plain water because the dissolved starch is what holds the melted proteins apart. Without it they draw together into strings and the sauce splits.
+  commonPitfalls:
+    - stepId: emulsify
+      text: Cheese meeting a pan still on the flame is the single way this dish fails. It seizes into rubbery clots that no amount of tossing will bring back, and the only remedy is to start the sauce again.
+---
+
+<Step id="toast-pepper">
+  While the water heats, tip the <Qty ref="pepper"/> into a wide, dry pan over a
+  moderate flame and toast it for <Dur step="toast-pepper"/>, shaking it about, until
+  it turns fragrant and resinous rather than dusty. Take the pan off the heat and leave
+  the pepper in it.
+</Step>
+
+<Step id="make-cream">
+  Once the pasta is in the water, put the <Qty ref="pecorino-cream"/> in a bowl and beat
+  in a ladleful of the starchy cooking water a little at a time, working it for
+  <Dur step="make-cream"/> until it becomes a slack, entirely smooth paste with no grain
+  left in it. Leave it to lose its heat while the pasta finishes.
+</Step>
+
+<Step id="emulsify">
+  Drain the pasta, keeping plenty of the water back, and tip it into the pepper pan with
+  a splash of that water, tossing over the pan's residual warmth until every strand is
+  slick and coated. Now, off the heat and well below <Temp c={65}/>, add the cheese paste
+  and toss hard for <Dur step="emulsify"/>, loosening with more cooking water until the
+  sauce turns glossy and moves as one mass. Serve at once under the
+  <Qty ref="pecorino-serve"/>.
+</Step>

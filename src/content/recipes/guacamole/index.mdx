@@ -1,0 +1,92 @@
+---
+title: Guacamole
+subtitle: Ripe avocado crushed into a ground paste of white onion, green chilli, coriander and salt, and sharpened with lime.
+description: Guacamole made in a mortar — the aromatics ground to a paste first, the avocado crushed in after and left lumpy, no tomato and no blender.
+label: Molcajete
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [mexican]
+  course: [starter, condiment]
+  method: [no-cook]
+names:
+  notToBeConfusedWith:
+    - name: Avocado dip
+      note: Commercial dips are usually thinned with soured cream, mayonnaise or vegetable oil and stabilised so they will not brown, which is a different food with a similar colour.
+  searchOnly: ["guac", "guacamole dip", "guacamole sauce"]
+ingredients:
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 50
+    unit: g
+    note: chopped as finely as patience allows
+  - id: chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 16
+    unit: g
+    note: stalks removed, seeds left in
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: leaves and the tender upper stalks
+    portions:
+      - { id: coriander-paste, amount: 10 }
+      - { id: coriander-finish, amount: 5, note: to scatter over }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: avocado
+    ingredientRef: avocado
+    form: hass
+    amount: 420
+    unit: g
+    note: flesh from fruit that yields to a thumb at the stem end
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 20
+    unit: ml
+steps:
+  - { id: grind-paste, durationMin: 5, type: active, phase: prep }
+  - { id: crush-avocado, durationMin: 3, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Guacamole is made to be eaten within the hour. It will hold a little longer with a sheet of cling film pressed flat onto its surface, which browns it more slowly by keeping the air off, but the colour goes first and the freshness goes with it.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: chilli
+    substitute: jalapeño
+    ratio: "1:1 by weight"
+    note: Milder and thicker-walled, so the same weight brings less heat and more watery flesh. It is the usual supermarket stand-in where serranos are not sold.
+    impact: { flavor: moderate change, texture: minor }
+notes:
+  techniqueRationale:
+    - stepId: grind-paste
+      text: The onion, chilli, coriander and salt are ground to a paste before the avocado goes anywhere near them. The salt acts as an abrasive and the grinding ruptures cells that chopping only cuts past, which is the difference between a seasoned avocado and a seasoning that has become part of it.
+  commonPitfalls:
+    - stepId: crush-avocado
+      text: A food processor turns guacamole into a smooth pale purée that tastes flat. It is crushed by hand and left visibly lumpy, because the pieces of intact avocado are most of the texture.
+---
+
+<Step id="grind-paste">
+  Grind the <Qty ref="onion"/>, the <Qty ref="chilli"/>, the <Qty ref="coriander-paste"/>
+  and the <Qty ref="salt"/> together in a mortar — a basalt molcajete if there is one —
+  working for <Dur step="grind-paste"/> until they collapse into a coarse green paste and
+  the onion has given up its juice. It should smell of all four at once rather than of
+  each in turn.
+</Step>
+
+<Step id="crush-avocado">
+  Halve the <Qty ref="avocado"/>, lever out the stones and scoop the flesh in on top.
+  Crush it into the paste with a fork or the pestle for <Dur step="crush-avocado"/>,
+  turning it over rather than beating it, until it is bound but still plainly in pieces.
+  Fold through the <Qty ref="lime-juice"/>, scatter the <Qty ref="coriander-finish"/>
+  over the top and serve it in the mortar.
+</Step>

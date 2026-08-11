@@ -1,0 +1,66 @@
+{
+  "id": "caraway",
+  "name": "Caraway",
+  "proseName": "caraway seed",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Cumin",
+        "note": "Similar in shape and often confused for it, but caraway is anise-scented and cumin is earthy and warm. Swapping one for the other changes the dish completely."
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole seed",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170918",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170918/nutrients",
+      "nutritionPer100g": {
+        "kcal": 333,
+        "protein": 19.77,
+        "fat": 14.59,
+        "carbs": 49.9,
+        "fiber": 38,
+        "sugars": 0.64,
+        "calcium": 689,
+        "iron": 16.23,
+        "magnesium": 258,
+        "phosphorus": 568,
+        "potassium": 1351,
+        "sodium": 17,
+        "zinc": 5.5,
+        "copper": 0.91,
+        "manganese": 1.3,
+        "seleniumMcg": 12.1,
+        "vitaminC": 21,
+        "thiamin": 0.383,
+        "riboflavin": 0.379,
+        "niacin": 3.606,
+        "vitaminB6": 0.36,
+        "folateMcg": 10,
+        "choline": 24.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 18,
+        "vitaminE": 2.5,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.62,
+        "monounsaturatedFat": 7.125,
+        "polyunsaturatedFat": 3.272,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 2.1,
+        "gPerTbsp": 6.7,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

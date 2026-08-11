@@ -1,0 +1,141 @@
+---
+title: Chocolate Chip Cookies
+subtitle: A creamed butter dough rested cold and baked with chopped chocolate, pulled from the oven while the middle still looks unfinished.
+description: Chocolate chip cookies in the Toll House line — two sugars, a cold rest for the dough, chopped dark chocolate rather than chips, and a short bake that leaves the centre soft.
+label: Toll House
+defaultServings: 12
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [dessert, snack]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Toll House cookie, region: United States, lang: en, note: After the Massachusetts inn where the recipe was written, and the name Nestlé printed on its wrappers. }
+  searchOnly: ["choc chip cookies", "chocolate chip cookie", "toll house cookies"]
+ingredients:
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 170
+    unit: g
+    note: soft enough to take a fingerprint, but not oily
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 150
+    unit: g
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: at room temperature
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 280
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 5
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 220
+    unit: g
+    note: chopped into uneven shards rather than dice
+    portions:
+      - { id: chocolate-dough, amount: 190 }
+      - { id: chocolate-top, amount: 30, note: for the tops }
+steps:
+  - { id: cream, durationMin: 5, type: active, phase: prep }
+  - { id: beat-in-eggs, durationMin: 3, type: active, phase: prep }
+  - { id: fold-dry, durationMin: 4, type: active, phase: prep }
+  - { id: chill, durationMin: 60, type: passive }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:chill", phase: cook }
+  - { id: bake, durationMin: 12, type: active, phase: cook }
+  - { id: set-on-tray, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The dough keeps three days in the fridge and is better on the second than the first, as the flour hydrates and the flavour darkens.
+  freezable: true
+  freezeInstructions: Roll the dough into balls, freeze them solid on a tray and then bag them. Bake from frozen with a few minutes added; there is no need to thaw.
+  reheatInstructions: null
+substitutions:
+  - lineRef: chocolate
+    substitute: chocolate chips
+    ratio: "1:1"
+    note: What the original recipe used and what most people expect. Chips are made with less cocoa butter so they keep their shape in the oven, which gives discrete pockets of chocolate instead of the thin seams a chopped bar leaves running through the crumb.
+    impact: { texture: moderate change, flavor: minor }
+notes:
+  techniqueRationale:
+    - stepId: cream
+      text: Creaming is aeration, not mixing. Beating sugar crystals through soft butter cuts air pockets into the fat, and those pockets are what the dough rises on — there is no other leavening here doing that job.
+    - stepId: chill
+      text: Cold dough spreads less, so the cookie bakes upwards rather than outwards. The rest also lets the flour hydrate fully, which darkens both the colour and the flavour of the finished cookie.
+  commonPitfalls:
+    - stepId: bake
+      text: They come out looking underdone, and that is the point — the centres are still soft and slightly domed when the tray leaves the oven. A cookie baked until the middle looks cooked has been baked until it is dry.
+---
+
+<Step id="cream">
+  Beat the <Qty ref="butter"/> with the <Qty ref="brown-sugar"/> and the
+  <Qty ref="caster-sugar"/> for <Dur step="cream"/>, until the mixture has gone visibly
+  paler and grown in volume, and no grittiness is left when a little is rubbed between
+  finger and thumb.
+</Step>
+
+<Step id="beat-in-eggs">
+  Beat in the <Qty ref="eggs"/> a little at a time, letting each addition disappear
+  completely before the next goes in, then the <Qty ref="vanilla"/>. Take
+  <Dur step="beat-in-eggs"/> over it; adding the egg too fast splits the mixture and it
+  will not come back.
+</Step>
+
+<Step id="fold-dry">
+  Sift the <Qty ref="flour"/> together with the <Qty ref="bicarb"/> and the
+  <Qty ref="salt"/> and fold them in with a spatula over <Dur step="fold-dry"/>, stopping
+  the instant no dry flour is visible. Fold the <Qty ref="chocolate-dough"/> through with
+  the last few turns.
+</Step>
+
+<Step id="chill">
+  Cover the bowl and leave it in the fridge for <Dur step="chill"/>. The dough should be
+  firm enough to roll without sticking.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile heat the oven to <Temp c={180}/> and give it <Dur step="heat-oven"/> to come
+  up properly — an oven that has only just reached the dial is not the same as one that
+  has settled there. Line the flattest baking trays in the house.
+</Step>
+
+<Step id="bake">
+  Roll the dough into balls a little larger than a walnut and set them far apart, since
+  they spread to roughly <Len cm={9}/> across. Press the <Qty ref="chocolate-top"/> onto
+  the tops. Bake for <Dur step="bake"/>, until the edges have set and coloured and the
+  centres are still pale and slightly domed.
+</Step>
+
+<Step id="set-on-tray">
+  Leave them on the hot tray for <Dur step="set-on-tray"/> before moving them. They go on
+  cooking on the metal and are too fragile to lift until the middles have set and sunk
+  into the dense, ridged centre that is the whole object.
+</Step>

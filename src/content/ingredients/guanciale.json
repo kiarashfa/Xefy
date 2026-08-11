@@ -1,0 +1,72 @@
+{
+  "id": "guanciale",
+  "name": "Guanciale",
+  "proseName": "guanciale",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Pancetta",
+        "note": "Cured pork belly rather than jowl: leaner, and it renders less of the soft fat that carries the sauce."
+      },
+      {
+        "name": "Bacon",
+        "note": "Usually smoked, which guanciale is not, and the smoke dominates a dish built on cured pork and cheese."
+      }
+    ]
+  },
+  "category": "cured meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "generalSubstitutes": [
+    {
+      "substitute": "pancetta",
+      "note": "The usual stand-in where guanciale is unavailable. Expect a leaner result and less rendered fat to bind the sauce."
+    }
+  ],
+  "forms": [
+    {
+      "id": "cured",
+      "label": "Cured",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168287",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168287/nutrients",
+      "sourceNote": "USDA has no record for guanciale. This is its record for raw cured salt pork, the closest cured-pork-fat profile it publishes; treat the figures as indicative of the cut rather than specific to it.",
+      "nutritionPer100g": {
+        "kcal": 748,
+        "protein": 5.05,
+        "fat": 80.5,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 6,
+        "iron": 0.44,
+        "magnesium": 7,
+        "phosphorus": 52,
+        "potassium": 66,
+        "sodium": 2684,
+        "zinc": 0.9,
+        "copper": 0.05,
+        "manganese": 0.005,
+        "seleniumMcg": 5.8,
+        "vitaminC": 0,
+        "thiamin": 0.215,
+        "riboflavin": 0.061,
+        "niacin": 1.62,
+        "vitaminB6": 0.08,
+        "folateMcg": 1,
+        "choline": 19.3,
+        "vitaminB12Mcg": 0.29,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0.2,
+        "vitaminKMcg": 0,
+        "saturatedFat": 29.38,
+        "monounsaturatedFat": 37.94,
+        "polyunsaturatedFat": 9.4,
+        "cholesterol": 86
+      }
+    }
+  ]
+}

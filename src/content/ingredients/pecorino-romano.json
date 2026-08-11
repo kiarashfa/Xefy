@@ -1,0 +1,71 @@
+{
+  "id": "pecorino-romano",
+  "name": "Pecorino Romano",
+  "proseName": "Pecorino Romano",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Parmigiano-Reggiano",
+        "note": "Cow's milk rather than sheep's, aged longer, and markedly less salty — the two are not interchangeable in a Roman pasta."
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "aged",
+      "label": "Aged, made with lamb rennet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171249",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171249/nutrients",
+      "sourceNote": "USDA publishes a generic Romano cheese record rather than one for the protected sheep's-milk designation.",
+      "animalOrigin": "meat",
+      "animalOriginNote": "Pecorino Romano DOP must be set with lamb rennet, so it is not vegetarian. This is not a matter of producer choice — it is written into the protected designation.",
+      "nutritionPer100g": {
+        "kcal": 387,
+        "protein": 31.8,
+        "fat": 26.94,
+        "carbs": 3.63,
+        "fiber": 0,
+        "sugars": 0.73,
+        "calcium": 1064,
+        "iron": 0.77,
+        "magnesium": 41,
+        "phosphorus": 760,
+        "potassium": 86,
+        "sodium": 1433,
+        "zinc": 2.58,
+        "copper": 0.03,
+        "manganese": 0.02,
+        "seleniumMcg": 14.5,
+        "vitaminC": 0,
+        "thiamin": 0.037,
+        "riboflavin": 0.37,
+        "niacin": 0.077,
+        "vitaminB6": 0.085,
+        "folateMcg": 7,
+        "choline": 15.4,
+        "vitaminB12Mcg": 1.12,
+        "vitaminAMcg": 96,
+        "vitaminE": 0.23,
+        "vitaminDMcg": 0.5,
+        "vitaminKMcg": 2.2,
+        "saturatedFat": 17.115,
+        "monounsaturatedFat": 7.838,
+        "polyunsaturatedFat": 0.593,
+        "cholesterol": 104
+      },
+      "density": {
+        "gPerCup": 100,
+        "densitySource": "estimated",
+        "densityClass": "hard-cheese-grated"
+      }
+    }
+  ]
+}

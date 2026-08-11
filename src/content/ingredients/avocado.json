@@ -1,0 +1,64 @@
+{
+  "id": "avocado",
+  "name": "Avocado",
+  "proseName": "avocado",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "hass",
+      "label": "Hass, ripe",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171706",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171706/nutrients",
+      "sourceNote": "USDA's record for California-grown avocado, which is overwhelmingly the Hass cultivar. Its Foundation record for Hass specifically is more recent but carries no fibre and no fat breakdown, so the older complete record is used instead. Figures are for the flesh, which is a little over half the weight of the whole fruit.",
+      "nutritionPer100g": {
+        "kcal": 167,
+        "protein": 1.96,
+        "fat": 15.41,
+        "carbs": 8.64,
+        "fiber": 6.8,
+        "sugars": 0.3,
+        "calcium": 13,
+        "iron": 0.61,
+        "magnesium": 29,
+        "phosphorus": 54,
+        "potassium": 507,
+        "sodium": 8,
+        "zinc": 0.68,
+        "copper": 0.17,
+        "manganese": 0.149,
+        "seleniumMcg": 0.4,
+        "vitaminC": 8.8,
+        "thiamin": 0.075,
+        "riboflavin": 0.143,
+        "niacin": 1.912,
+        "vitaminB6": 0.287,
+        "folateMcg": 89,
+        "choline": 14.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 7,
+        "vitaminE": 1.97,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 21,
+        "saturatedFat": 2.126,
+        "monounsaturatedFat": 9.799,
+        "polyunsaturatedFat": 1.816,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 230,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "avocado",
+        "plural": "avocados",
+        "grams": 140
+      }
+    }
+  ]
+}

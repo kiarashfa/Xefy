@@ -1,0 +1,65 @@
+{
+  "id": "kombu",
+  "name": "Kombu",
+  "proseName": "kombu",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Dried kelp",
+        "region": "United Kingdom",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "seaweed",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried sheet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168457",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168457/nutrients",
+      "sourceNote": "USDA publishes no record for dried kombu; this is its record for raw kelp, the same seaweed before drying. Dried kombu is several times as concentrated by weight, so these figures understate it. In a stock it is drawn on and lifted out again, so almost none of it is eaten either way.",
+      "nutritionPer100g": {
+        "kcal": 43,
+        "protein": 1.68,
+        "fat": 0.56,
+        "carbs": 9.57,
+        "fiber": 1.3,
+        "sugars": 0.6,
+        "calcium": 168,
+        "iron": 2.85,
+        "magnesium": 121,
+        "phosphorus": 42,
+        "potassium": 89,
+        "sodium": 233,
+        "zinc": 1.23,
+        "copper": 0.13,
+        "manganese": 0.2,
+        "seleniumMcg": 0.7,
+        "vitaminC": 3,
+        "thiamin": 0.05,
+        "riboflavin": 0.15,
+        "niacin": 0.47,
+        "vitaminB6": 0.002,
+        "folateMcg": 180,
+        "choline": 12.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 6,
+        "vitaminE": 0.87,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 66,
+        "saturatedFat": 0.247,
+        "monounsaturatedFat": 0.098,
+        "polyunsaturatedFat": 0.047,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "nutritionCaveat": "Cited against raw kelp. Dried kombu holds a fraction of the water, so it is several times as concentrated as these figures show; USDA publishes no dried-kelp record."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "tinned-tomato",
+  "name": "Tinned Tomatoes",
+  "proseName": "tinned tomatoes",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "generalSubstitutes": [
+    {
+      "substitute": "ripe fresh tomatoes, skinned",
+      "note": "Only worth it at the height of the season. Tinned tomatoes are picked ripe and processed at once, which is why they beat most of what is sold fresh for most of the year."
+    }
+  ],
+  "forms": [
+    {
+      "id": "whole-plum",
+      "label": "Whole peeled plum, in juice",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170051",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170051/nutrients",
+      "sourceNote": "USDA's record for red ripe tomatoes canned in tomato juice. Whole peeled tomatoes are preferable to chopped, which are commonly firmed with calcium chloride and then refuse to break down.",
+      "nutritionPer100g": {
+        "kcal": 16,
+        "protein": 0.79,
+        "fat": 0.25,
+        "carbs": 3.47,
+        "fiber": 1.9,
+        "sugars": 2.55,
+        "calcium": 33,
+        "iron": 0.57,
+        "magnesium": 10,
+        "phosphorus": 17,
+        "potassium": 191,
+        "sodium": 115,
+        "zinc": 0.12,
+        "copper": 0.052,
+        "manganese": 0.068,
+        "seleniumMcg": 0.7,
+        "vitaminC": 12.6,
+        "thiamin": 0.575,
+        "riboflavin": 0.055,
+        "niacin": 0.712,
+        "vitaminB6": 0.111,
+        "folateMcg": 8,
+        "choline": 6.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 20,
+        "vitaminE": 0.59,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.6,
+        "saturatedFat": 0.034,
+        "monounsaturatedFat": 0.04,
+        "polyunsaturatedFat": 0.101,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 240,
+        "gPerTbsp": 15,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

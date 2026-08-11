@@ -1,0 +1,65 @@
+{
+  "id": "garlic",
+  "name": "Garlic",
+  "proseName": "garlic",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169230",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169230/nutrients",
+      "nutritionPer100g": {
+        "kcal": 149,
+        "protein": 6.36,
+        "fat": 0.5,
+        "carbs": 33.06,
+        "fiber": 2.1,
+        "sugars": 1,
+        "calcium": 181,
+        "iron": 1.7,
+        "magnesium": 25,
+        "phosphorus": 153,
+        "potassium": 401,
+        "sodium": 17,
+        "zinc": 1.16,
+        "copper": 0.299,
+        "manganese": 1.672,
+        "seleniumMcg": 14.2,
+        "vitaminC": 31.2,
+        "thiamin": 0.2,
+        "riboflavin": 0.11,
+        "niacin": 0.7,
+        "vitaminB6": 1.235,
+        "folateMcg": 3,
+        "choline": 23.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.08,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1.7,
+        "saturatedFat": 0.089,
+        "monounsaturatedFat": 0.011,
+        "polyunsaturatedFat": 0.249,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 136,
+        "gPerTsp": 2.8,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "garlic clove",
+        "plural": "garlic cloves",
+        "grams": 5
+      }
+    }
+  ]
+}

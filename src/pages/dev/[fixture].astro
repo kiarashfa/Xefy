@@ -25,36 +25,47 @@ export async function getStaticPaths() {
   const wanted = import.meta.env.DEV || process.env.XEFY_DEV === '1';
   if (!wanted) return [];
 
-  const content = await loadContent('test-fixtures/engine-content');
-  const componentInputs = new Map<string, ComponentInput>(
-    content.components.map((c) => [
-      c.slug,
-      { slug: c.slug, data: c.data, prose: new Map(c.steps.map((s) => [s.stepId, s.text])) },
-    ]),
-  );
-  const ingredients = new Map(content.ingredients.map((i) => [i.slug, i.data]));
+  // Both the real catalogue and the engine fixtures, so authored content and
+  // the synthetic edge cases can be reviewed on the same surface.
+  const roots = ['src/content', 'test-fixtures/engine-content'];
+  const paths = [];
+  const all: { slug: string; label: string }[] = [];
 
-  return content.recipeVersions.map((version) => ({
-    params: { fixture: `${version.recipe}--${version.versionId}` },
-    props: {
-      title: 'title' in version.data ? version.data.title : version.recipe,
-      subtitle: 'subtitle' in version.data ? version.data.subtitle : '',
-      recipe: resolveRecipe(
-        {
-          slug: version.recipe,
-          versionId: version.versionId,
-          data: version.data,
-          prose: new Map(version.steps.map((s) => [s.stepId, s.text])),
+  for (const root of roots) {
+    const content = await loadContent(root);
+    const componentInputs = new Map<string, ComponentInput>(
+      content.components.map((c) => [
+        c.slug,
+        { slug: c.slug, data: c.data, prose: new Map(c.steps.map((s) => [s.stepId, s.text])) },
+      ]),
+    );
+    const ingredients = new Map(content.ingredients.map((i) => [i.slug, i.data]));
+
+    for (const version of content.recipeVersions) {
+      const slug = `${version.recipe}--${version.versionId}`;
+      all.push({ slug, label: version.recipe });
+      paths.push({
+        params: { fixture: slug },
+        props: {
+          title: 'title' in version.data ? version.data.title : version.recipe,
+          subtitle: 'subtitle' in version.data ? version.data.subtitle : '',
+          fixture: root !== 'src/content',
+          recipe: resolveRecipe(
+            {
+              slug: version.recipe,
+              versionId: version.versionId,
+              data: version.data,
+              prose: new Map(version.steps.map((s) => [s.stepId, s.text])),
+            },
+            componentInputs,
+            ingredients,
+          ),
         },
-        componentInputs,
-        ingredients,
-      ),
-      siblings: content.recipeVersions.map((o) => ({
-        slug: `${o.recipe}--${o.versionId}`,
-        label: o.recipe,
-      })),
-    },
-  }));
+      });
+    }
+  }
+
+  return paths.map((p) => ({ ...p, props: { ...p.props, siblings: all } }));
 }
 
 const { title, subtitle, recipe, siblings } = Astro.props;
@@ -144,13 +155,15 @@ const timelineData = JSON.stringify(
                         defaultServings: recipe.defaultServings,
                         name: proseName(line),
                         density: line.density,
+                        countUnit: line.form.countUnit,
                       },
                       servings,
                       system,
                       { showName: false },
                     )}
                   />
-                  <span class="ing-name">{proseName(line)}</span>
+                  {/* A counted line already names itself: "3 ½ egg yolks (60 g)". */}
+                  {!line.form.countUnit && <span class="ing-name">{proseName(line)}</span>}
                   {line.line.portions && (
                     <span class="ing-note">
                       {line.line.contributions.map((c) => `${c.sourceKey} ${c.amount}${line.line.unit}`).join(' + ')}

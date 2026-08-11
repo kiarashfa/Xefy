@@ -1,0 +1,152 @@
+---
+title: Shakshuka
+subtitle: Eggs poached in a tomato and pepper sauce cooked down until the oil separates out of it.
+description: Maghrebi shakshuka — onion and red pepper softened slowly, spices bloomed in the oil, tomatoes reduced hard, and the eggs set in wells at the very end.
+label: Tunisian
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [tunisian]
+  course: [breakfast, main-course]
+  method: [simmering, poaching]
+names:
+  alsoKnownAs:
+    - { name: Chakchouka, region: Maghreb, lang: ar, note: The French transcription, which is how the dish is usually written in North Africa and in the earliest European records of it. }
+  notToBeConfusedWith:
+    - name: Menemen
+      note: The Turkish dish of eggs with tomato and green pepper, in which the eggs are stirred through into a soft scramble rather than left whole in the sauce.
+  searchOnly: ["shakshouka", "shaksuka", "shakshuka eggs"]
+ingredients:
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 35
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: halved and sliced thin
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 180
+    unit: g
+    note: seeded and cut into broad strips
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+    note: sliced
+  - id: caraway
+    ingredientRef: caraway
+    form: whole
+    amount: 2
+    unit: g
+    note: crushed in a mortar
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 5
+    unit: g
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 1
+    unit: g
+  - id: tomatoes
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 400
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: at room temperature
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 8
+    unit: g
+    note: roughly torn
+steps:
+  - { id: soften, durationMin: 18, type: active, phase: cook }
+  - { id: bloom-spices, durationMin: 2, type: active, phase: cook }
+  - { id: reduce, durationMin: 20, type: active, phase: cook }
+  - { id: poach-eggs, durationMin: 9, type: active, phase: cook }
+  - { id: settle, durationMin: 3, type: passive }
+makeAhead:
+  aheadInstructions: The sauce is better for being made in advance and keeps four days in the fridge. Bring it back to a simmer in the pan before the eggs go in.
+  freezable: true
+  freezeInstructions: Freeze the sauce alone, without eggs, for up to three months. Thaw it in the fridge and reduce it again briefly, since freezing loosens it.
+  reheatInstructions: null
+substitutions:
+  - lineRef: chilli
+    substitute: harissa
+    ratio: "10 g harissa in place of the chilli flakes"
+    note: Closer to how the dish is made in Tunisia, where the heat comes from a paste rather than a dry spice. Harissa also carries garlic, caraway and coriander seed, so it brings some of the rest of the spicing with it.
+    impact: { flavor: moderate change }
+notes:
+  techniqueRationale:
+    - stepId: reduce
+      text: The sauce has to be finished before the eggs go in. Once they are set into it the pan cannot be cooked any further without ruining them, so a thin sauce at that point stays thin.
+    - stepId: bloom-spices
+      text: The spices go into the hot oil rather than into the tomatoes. Their flavour compounds are fat-soluble and barely move in water, which is why a spoonful stirred into the sauce at the end tastes dusty.
+  commonPitfalls:
+    - stepId: poach-eggs
+      text: Too much heat under the pan sets the whites into rubber before the yolks have warmed. The eggs go into wells pushed down to the base of the pan, with a lid on and the flame as low as it goes.
+---
+
+<Step id="soften">
+  Warm the <Qty ref="olive-oil"/> in a wide, shallow pan over a low flame and add the
+  <Qty ref="onion"/> and the <Qty ref="red-pepper"/>. Cook them for <Dur step="soften"/>,
+  turning them over occasionally, until both have collapsed to softness and the pepper
+  has begun to slump against the pan. They should take almost no colour.
+</Step>
+
+<Step id="bloom-spices">
+  Add the <Qty ref="garlic"/>, the <Qty ref="caraway"/>, the <Qty ref="cumin"/>, the
+  <Qty ref="paprika"/> and the <Qty ref="chilli"/>, and stir them through the hot oil for
+  <Dur step="bloom-spices"/>, until the paprika has darkened a shade and the pan smells
+  of spice rather than of raw powder.
+</Step>
+
+<Step id="reduce">
+  Crush the <Qty ref="tomatoes"/> in your hand as they go into the pan, add the
+  <Qty ref="salt"/> and the <Qty ref="black-pepper"/>, and simmer for
+  <Dur step="reduce"/>. It is done when the sauce has darkened to brick, the oil has
+  separated out around the edge, and a spoon dragged across the base leaves a channel
+  that fills in slowly.
+</Step>
+
+<Step id="poach-eggs">
+  Push a well down to the base of the pan for each egg with the back of a spoon and slide
+  the <Qty ref="eggs"/> in one at a time. Season the tops, put a lid on and cook over the
+  lowest heat you can hold for <Dur step="poach-eggs"/>, until the whites have turned
+  opaque and firm and the yolks still shift when the pan is nudged.
+</Step>
+
+<Step id="settle">
+  Take the pan off the heat and leave it to stand for <Dur step="settle"/>; the whites
+  finish setting on residual heat while the yolks do not. Tear the <Qty ref="coriander"/>
+  over the top and bring the pan to the table.
+</Step>

@@ -1,0 +1,98 @@
+---
+title: Spaghetti alla Carbonara
+subtitle: Cured pork, sheep's cheese and egg, brought together by nothing but the heat of the pasta and a little of its water.
+description: Roman carbonara made the standard way — guanciale, Pecorino Romano, egg yolk and black pepper, with no cream and no pan on the heat when the egg goes in.
+label: Roman
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [boiling, pan-frying]
+names:
+  alsoKnownAs:
+    - { name: Pasta alla carbonara, region: Italy, lang: it }
+  notToBeConfusedWith:
+    - name: Pasta alla gricia
+      note: The same guanciale and Pecorino without the egg — carbonara is, in effect, gricia with egg added.
+    - name: Cacio e pepe
+      note: Cheese and pepper only, with no pork and no egg; the creaminess comes from cheese and pasta water alone.
+  searchOnly: ["spaghetti carbonara", "pasta carbonara"]
+ingredients:
+  - id: guanciale
+    ingredientRef: guanciale
+    form: cured
+    amount: 120
+    unit: g
+    note: rind removed, cut into short thick batons
+  - id: egg-yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 60
+    unit: g
+  - id: whole-egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: pecorino
+    ingredientRef: pecorino-romano
+    form: aged
+    amount: 60
+    unit: g
+    note: finely grated
+    portions:
+      - { id: pecorino-sauce, amount: 45 }
+      - { id: pecorino-serve, amount: 15, note: to finish }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+    note: coarsely cracked
+steps:
+  - { componentRef: boil-pasta-al-dente, multiplier: 1 }
+  - { id: render-guanciale, durationMin: 9, type: "parallel-with:boil-water", phase: cook }
+  - { id: mix-eggs, durationMin: 4, type: "parallel-with:boil-water", phase: prep }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: guanciale
+    substitute: pancetta
+    ratio: "1:1"
+    note: The usual stand-in. Pancetta is leaner, so it renders less fat and the sauce will be a little thinner; keep back more pasta water to compensate.
+    impact: { flavor: moderate change, texture: minor }
+notes:
+  techniqueRationale:
+    - stepId: combine
+      text: The pan comes off the heat before the egg goes anywhere near it. The sauce is set by residual warmth and the starch in the pasta water; direct heat scrambles it instead.
+  commonPitfalls:
+    - stepId: render-guanciale
+      text: Starting the guanciale in a hot pan seizes the outside before the fat has run. It goes into a cold, dry pan and comes up to temperature with it.
+---
+
+<Step id="render-guanciale">
+  While the water heats, put the <Qty ref="guanciale"/> into a cold, dry pan and set it
+  over a low flame. Let it render for <Dur step="render-guanciale"/>, until the fat has
+  run clear and the edges have gone glassy and crisp. Take the pan off the heat and
+  leave the fat in it.
+</Step>
+
+<Step id="mix-eggs">
+  Beat the <Qty ref="egg-yolks"/> and the <Qty ref="whole-egg"/> together with the
+  <Qty ref="pecorino-sauce"/> and most of the <Qty ref="pepper"/> until the mixture is
+  thick and pale and holds a ribbon.
+</Step>
+
+<Step id="combine">
+  Tip the drained pasta into the pan with the guanciale and toss it through the warm
+  fat. Wait half a minute for the pan to drop below <Temp c={70}/>, then add the egg
+  mixture along with a splash of the reserved cooking water, tossing hard and
+  continuously for <Dur step="combine"/>. It will look loose at first and then turn
+  glossy. Serve at once, with the <Qty ref="pecorino-serve"/> and the rest of the
+  pepper over the top.
+</Step>

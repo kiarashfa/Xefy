@@ -39,9 +39,9 @@
       "defaultConsumedFraction": 0.1,
       "matches": {
         "categories": [],
-        "lineIdPatterns": ["pasta-water", "boiling-water", "water-salt", "salt-water"]
+        "lineIdPatterns": ["pasta-salt", "water-salt", "salt-water", "boiling-salt"]
       },
-      "note": "Most of the salt added to boiling water goes down the drain with it."
+      "note": "Most of the salt added to boiling water goes down the drain with it. The patterns name the salt rather than the water, so that a line for the water itself — which is discarded but carries nothing — is not flagged."
     },
     {
       "id": "dusting-flour",

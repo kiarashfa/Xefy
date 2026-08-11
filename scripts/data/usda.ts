@@ -23,7 +23,7 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { convertAmount, NUTRIENT_MAP } from './usda-nutrients.ts';
+import { convertAmount, ENERGY_NUMBERS, NUTRIENT_MAP, REQUIRED_FIELDS } from './usda-nutrients.ts';
 import type { NutritionPer100g } from '../../src/schemas/primitives.ts';
 
 const ROOT = path.resolve(fileURLToPath(new URL('../..', import.meta.url)));
@@ -114,11 +114,22 @@ function mapNutrition(food: RawFood): Pick<CachedRecord, 'nutritionPer100g' | 'u
   const unmapped: CachedRecord['unmapped'] = [];
   const skipped: CachedRecord['skipped'] = [];
 
+  // Energy is the one field several numbers compete for, so it is resolved by
+  // preference rather than by whichever happens to be read last.
+  const reported = new Map(
+    (food.foodNutrients ?? [])
+      .filter((e) => e.nutrient?.number && e.amount != null)
+      .map((e) => [e.nutrient!.number!, e]),
+  );
+  const energyNumber = ENERGY_NUMBERS.find((n) => reported.has(n));
+
   for (const entry of food.foodNutrients ?? []) {
     const number = entry.nutrient?.number;
     const amount = entry.amount;
     // Category headers ("Proximates") carry no amount.
     if (!number || amount == null) continue;
+    // Skip the energy figures that lost the preference contest.
+    if (ENERGY_NUMBERS.includes(number) && number !== energyNumber) continue;
 
     const mapping = byNumber.get(number);
     if (!mapping) {
@@ -252,11 +263,28 @@ async function show(fdcId: string, refresh: boolean): Promise<void> {
   console.log(`${cached ? 'From the local cache' : 'Fetched and cached'}: src/data/nutrition-sources/usda-${fdcId}.json\n`);
 
   console.log('Per 100 g:');
+  // Several nutrient numbers map onto one field — the three energy figures in
+  // particular — so print each field once.
+  const shown = new Set<string>();
   for (const mapping of NUTRIENT_MAP) {
     const value = record.nutritionPer100g[mapping.field];
-    if (value == null) continue;
+    if (value == null || shown.has(mapping.field)) continue;
+    shown.add(mapping.field);
     const unit = mapping.unit === 'kcal' ? 'kcal' : mapping.unit === 'ug' ? 'µg' : mapping.unit;
     console.log(`  ${mapping.label.padEnd(30)} ${String(value).padStart(9)} ${unit}`);
+  }
+
+  // A record missing a macro cannot back a Form, and the failure would
+  // otherwise surface much later as a schema error on a half-written
+  // ingredient. Foundation records are the usual culprit: more recently
+  // sampled, and frequently carrying only part of the panel.
+  const missing = REQUIRED_FIELDS.filter((f) => record.nutritionPer100g[f] == null);
+  if (missing.length > 0) {
+    console.log(
+      `\nINCOMPLETE — this record carries no ${missing.join(', ')}.\n` +
+        '  Look for an SR Legacy record of the same food, which is usually complete:\n' +
+        `    node scripts/data/usda.ts search "${record.description}"`,
+    );
   }
 
   if (record.densityCandidates.length > 0) {

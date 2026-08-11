@@ -1,0 +1,62 @@
+{
+  "id": "butter",
+  "name": "Butter",
+  "proseName": "butter",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "unsalted",
+      "label": "Unsalted",
+      "proseQualifier": "unsalted",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173430",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173430/nutrients",
+      "sourceNote": "Unsalted rather than salted, because a baking recipe has to control its own salt: salted butter runs from around one to two per cent salt with no way of knowing which you have bought.",
+      "nutritionPer100g": {
+        "kcal": 717,
+        "protein": 0.85,
+        "fat": 81.11,
+        "carbs": 0.06,
+        "fiber": 0,
+        "sugars": 0.06,
+        "calcium": 24,
+        "iron": 0.02,
+        "magnesium": 2,
+        "phosphorus": 24,
+        "potassium": 24,
+        "sodium": 11,
+        "zinc": 0.09,
+        "copper": 0.016,
+        "manganese": 0.004,
+        "seleniumMcg": 1,
+        "vitaminC": 0,
+        "thiamin": 0.005,
+        "riboflavin": 0.034,
+        "niacin": 0.042,
+        "vitaminB6": 0.003,
+        "folateMcg": 3,
+        "choline": 18.8,
+        "vitaminB12Mcg": 0.17,
+        "vitaminAMcg": 684,
+        "vitaminE": 2.32,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 7,
+        "saturatedFat": 50.489,
+        "monounsaturatedFat": 23.43,
+        "polyunsaturatedFat": 3.01,
+        "cholesterol": 215
+      },
+      "density": {
+        "gPerCup": 227,
+        "gPerTbsp": 14.2,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

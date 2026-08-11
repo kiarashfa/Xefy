@@ -1,0 +1,38 @@
+---
+title: Pasta, boiled al dente
+summary: Dried pasta cooked in heavily salted water and lifted out while it still has bite, with a mugful of its starchy water kept back.
+batchLabel: Two servings
+ingredients:
+  - id: pasta-water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: pasta-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: "Most of the salt in the pan is drained away with the water; only what the pasta absorbs is eaten."
+  - id: spaghetti
+    ingredientRef: spaghetti
+    form: dried
+    amount: 180
+    unit: g
+steps:
+  - { id: boil-water, durationMin: 9, type: active, phase: cook }
+  - { id: cook-pasta, durationMin: 9, type: active, phase: cook }
+---
+
+<Step id="boil-water">
+  Bring the <Qty ref="pasta-water"/> to a rolling boil in the widest pan you have,
+  then add the <Qty ref="pasta-salt"/> and let it dissolve.
+</Step>
+
+<Step id="cook-pasta">
+  Add the <Qty ref="spaghetti"/> and cook for <Dur step="cook-pasta"/>, or two minutes
+  short of whatever the packet claims. Before draining, lift out a mugful of the
+  cooking water — the starch it carries is what will let the sauce bind. Drain the
+  pasta while the centre still resists a bite.
+</Step>
