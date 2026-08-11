@@ -1,0 +1,1173 @@
+/*
+ * The component layer.
+ *
+ * Every value here resolves through a token. Nothing declares a colour, and no
+ * component re-declares a spacing or type value that belongs to the system —
+ * §1.1's discipline, which is only worth anything if it holds from the first
+ * component rather than being retrofitted.
+ *
+ * Colour meanings are reserved and hold everywhere:
+ *   --accent  brand and primary emphasis. Never "done", never success.
+ *   --sage    completion, and the Common Pitfall callout.
+ *   --gold    the editorial Difficulty rating, and nothing else.
+ *   dotted underline + tilde  estimated, and nothing else.
+ */
+
+@layer components {
+  /* ================================================================
+   * Header — four nav items, search, theme. §19.4
+   * ================================================================ */
+
+  .site-header {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 20px;
+    gap: 16px;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 21px;
+    text-decoration: none;
+  }
+
+  /*
+   * Desktop and mobile navigation are governed by separate classes with no
+   * shared display-relevant base, so a media query override reliably wins
+   * without a specificity contest. §19.6.
+   */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+
+  .desktop-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.3s var(--ease);
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a[aria-current='page'] {
+    opacity: 1;
+  }
+
+  /*
+   * The Plan count is client-rendered from local storage, so its space is
+   * reserved before hydration. A nav item that grows after load is a
+   * layout-shift regression on every page. §19.4.
+   */
+  .nav-count {
+    display: inline-block;
+    min-width: 1.6em;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition:
+      background 0.4s var(--ease),
+      border-color 0.4s var(--ease);
+  }
+
+  .icon-btn:hover {
+    background: var(--surface-2);
+    border-color: var(--line-strong);
+  }
+
+  .icon-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .mobile-nav {
+    display: none;
+    gap: 10px;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    padding-bottom: 16px;
+  }
+
+  .mobile-menu[data-open] {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+
+  /* ================================================================
+   * Breadcrumb — real links, for internal linking. §19.4
+   * ================================================================ */
+
+  .crumb {
+    padding-top: 18px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .crumb a {
+    text-decoration: none;
+    color: var(--muted);
+  }
+
+  .crumb a:hover {
+    color: var(--ink-soft);
+  }
+
+  /* ================================================================
+   * Hero identity block. §19.5
+   * ================================================================ */
+
+  .hero-band {
+    position: relative;
+    background: radial-gradient(
+      ellipse 70% 105% at 76% 45%,
+      var(--accent-soft) 0%,
+      transparent 62%
+    );
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 56px;
+    padding-top: 44px;
+    align-items: center;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 44px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: 62px;
+    line-height: 1.03;
+    font-weight: 500;
+    margin: 0 0 18px;
+    letter-spacing: -0.012em;
+    max-width: 16ch;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 42ch;
+    line-height: 1.55;
+    margin: 0 0 22px;
+  }
+
+  /* Naming line. Absent entirely on most recipes — never placeholdered. */
+  .names {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 28px;
+    max-width: 54ch;
+  }
+
+  .name-line {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .name-label,
+  .fact-label {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .name-label {
+    margin-right: 8px;
+  }
+
+  .name-alt {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .name-sep {
+    color: var(--line-strong);
+    margin: 0 6px;
+  }
+
+  /*
+   * A wrapping grid of equal columns, never a fixed four: a fact with no value
+   * is omitted rather than shown empty, and the row stays symmetric when it
+   * wraps. §19.5.
+   */
+  .fact-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 26px 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .fact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .fact-value {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 19px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* Difficulty is an editorial assessment, not a controlled tag, and is
+     marked as a different kind of thing. §19.5. */
+  .fact-value.is-difficulty {
+    color: var(--gold);
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .fact-value.is-difficulty::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .hero-image {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 24px 56px -18px var(--shadow);
+    aspect-ratio: 1 / 1;
+    align-self: center;
+    margin-bottom: 44px;
+    transition:
+      transform 0.5s var(--ease),
+      box-shadow 0.5s ease;
+  }
+
+  .hero-image:hover {
+    transform: scale(1.025) translateY(-4px);
+    box-shadow: 0 32px 68px -16px var(--shadow);
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease);
+  }
+
+  .hero-image:hover img {
+    transform: scale(1.04);
+  }
+
+  .hero-close {
+    padding-top: 40px;
+  }
+
+  .hero-close hr {
+    border: none;
+    border-top: 1px solid var(--line-strong);
+    margin: 0;
+  }
+
+  /* ================================================================
+   * Image attribution. §19.8
+   * ================================================================ */
+
+  .attribution {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .attribution-toggle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: none;
+    background: var(--overlay);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 11px;
+    opacity: 0.75;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    display: grid;
+    place-items: center;
+  }
+
+  .attribution-toggle:hover,
+  .attribution-toggle:focus-visible {
+    opacity: 1;
+  }
+
+  .attribution-popover {
+    position: absolute;
+    bottom: 32px;
+    right: 0;
+    width: 250px;
+    padding: 12px 14px;
+    background: var(--surface-3);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 12px 32px -10px var(--shadow);
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    text-align: left;
+    display: none;
+    z-index: 5;
+  }
+
+  .attribution:hover .attribution-popover,
+  .attribution-popover[data-open] {
+    display: block;
+  }
+
+  .attribution-popover a {
+    color: var(--accent);
+  }
+
+  /* ================================================================
+   * Panel switch and version tabs — designed together. §11.5, §19.10
+   *
+   * These sit next to each other and do different jobs, so they are
+   * deliberately different *kinds* of control rather than two tab strips.
+   * The panel switch is a segmented control: two peers, one active, a moving
+   * surface — it changes what you are reading. The version strip is a row of
+   * underlined tabs — it changes which version of the same thing you read.
+   * ================================================================ */
+
+  .panel-switch {
+    display: inline-flex;
+    gap: 3px;
+    padding: 4px;
+    background: var(--surface-2);
+    border-radius: 100px;
+    margin-top: 28px;
+  }
+
+  .panel-switch button {
+    border: none;
+    background: transparent;
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--muted);
+    cursor: pointer;
+    transition:
+      background 0.4s var(--ease),
+      color 0.4s var(--ease);
+  }
+
+  .panel-switch button[aria-selected='true'] {
+    background: var(--surface-3);
+    color: var(--ink);
+    box-shadow: 0 1px 3px var(--shadow);
+  }
+
+  .version-tabs {
+    display: flex;
+    gap: 26px;
+    border-bottom: 1px solid var(--line);
+    margin-top: 26px;
+  }
+
+  .version-tabs button {
+    border: none;
+    background: transparent;
+    padding: 0 0 12px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--muted);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.35s var(--ease);
+  }
+
+  .version-tabs button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform 0.35s var(--ease);
+  }
+
+  .version-tabs button[aria-selected='true'] {
+    color: var(--ink);
+  }
+
+  .version-tabs button[aria-selected='true']::after {
+    transform: scaleX(1);
+  }
+
+  .version-note {
+    font-size: 11.5px;
+    color: var(--muted);
+    margin: 10px 0 0;
+  }
+
+  [data-panel][hidden],
+  [data-version][hidden] {
+    display: none;
+  }
+
+  /* ================================================================
+   * Body grid — nothing on this page is sticky. §19.4
+   * ================================================================ */
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 52px;
+    padding-block: 32px 40px;
+    align-items: start;
+  }
+
+  .left-col {
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .side-card {
+    background: var(--surface-2);
+    border-radius: 16px;
+    padding: 18px 22px;
+    flex-shrink: 0;
+  }
+
+  .side-card-label {
+    font-size: 10.5px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .side-card.is-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .side-card.is-row .side-card-label {
+    margin-bottom: 0;
+  }
+
+  .panel-title {
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+
+  /* ================================================================
+   * Timing card. §3.5
+   * ================================================================ */
+
+  .timing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .timing-item b {
+    font-family: var(--font-display);
+    font-weight: 500;
+    display: block;
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  .timing-item span {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+  }
+
+  .stat-sep {
+    width: 1px;
+    height: 26px;
+    background: var(--line-strong);
+    flex-shrink: 0;
+  }
+
+  .timing-link {
+    margin-top: 14px;
+    font-size: 11.5px;
+    color: var(--accent);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  /* ================================================================
+   * Ingredient checklist — checkbox, thumbnail, text. §19.7
+   * ================================================================ */
+
+  .ingredients {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ingredients li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14.5px;
+  }
+
+  .chk {
+    width: 17px;
+    height: 17px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+    margin-top: 2px;
+    appearance: none;
+    background: var(--surface-3);
+    position: relative;
+  }
+
+  .chk:checked {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .chk:checked::after {
+    content: '✓';
+    position: absolute;
+    inset: 0;
+    color: var(--surface-3);
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  li:has(.chk:checked) .ing-text {
+    text-decoration: line-through;
+    opacity: 0.45;
+  }
+
+  /* Small and circular: a scanning aid for a dense list, not a gallery.
+     Top-aligned so a wrapped line does not centre it against the block. */
+  .ing-thumb {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface-3);
+    display: block;
+    margin-top: 1px;
+    transition: transform 0.25s var(--ease);
+  }
+
+  .ing-thumb:hover {
+    transform: scale(1.08);
+  }
+
+  .ing-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ing-note {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 2px;
+  }
+
+  .sub-hint {
+    font-size: 11px;
+    color: var(--accent);
+    margin-top: 3px;
+    cursor: pointer;
+    display: block;
+    opacity: 0.8;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .sub-body {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin-top: 6px;
+    padding-left: 10px;
+    border-left: 2px solid var(--line-strong);
+  }
+
+  /*
+   * "Add to plan" is a side door, not the page's purpose — outlined rather
+   * than a filled accent button, which would read as commerce on a page that
+   * sells nothing. §19.7.
+   */
+  .add-to-plan {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 13px;
+    cursor: pointer;
+    transition:
+      background 0.35s var(--ease),
+      border-color 0.35s var(--ease);
+  }
+
+  .add-to-plan:hover {
+    background: var(--surface-2);
+    border-color: var(--ink-soft);
+  }
+
+  /* ================================================================
+   * Nutrition. Always expanded — no collapse. §19.7
+   * ================================================================ */
+
+  .nutrition {
+    margin-top: 28px;
+    padding: 22px;
+    background: var(--surface-2);
+    border-radius: 14px;
+  }
+
+  .nutrition-major {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    gap: 8px;
+  }
+
+  .nutri-stat .val {
+    font-family: var(--font-display);
+    font-size: 23px;
+    font-weight: 500;
+  }
+
+  .nutri-stat .lbl {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .nutrition-minor-label {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    font-size: 11.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .nutrition-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 14px;
+    font-size: 11.5px;
+    margin-top: 10px;
+  }
+
+  .nutrition-grid div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+
+  .nutrition-grid b {
+    color: var(--ink);
+    font-weight: 500;
+    font-family: var(--font-display);
+  }
+
+  .nutrition-note {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 12px 0 0;
+  }
+
+  /* An allergen flag is a safety signal, not a browsing tag, and never
+     appears without its disclaimer. §5.4, §19.9. */
+  .allergen-box {
+    margin-top: 14px;
+    padding: 11px 13px;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    font-size: 11px;
+    color: var(--accent-ink);
+    line-height: 1.5;
+  }
+
+  .allergen-box b {
+    display: block;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+
+  /* ================================================================
+   * Method. §19.7
+   * ================================================================ */
+
+  .steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .step:first-child {
+    padding-top: 0;
+  }
+
+  /* Not circular, and the numeral is plain rather than italic. §19.7. */
+  .step-check {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    background: var(--surface-3);
+    position: relative;
+    margin-top: 2px;
+    padding: 0;
+    transition:
+      background 0.35s var(--ease),
+      border-color 0.35s var(--ease);
+  }
+
+  .step-check .num {
+    font-family: var(--font-display);
+    font-size: 12.5px;
+    font-style: normal;
+    color: var(--muted);
+  }
+
+  .step-check:hover {
+    border-color: var(--accent);
+  }
+
+  .step[data-done] .step-check {
+    background: var(--sage);
+    border-color: var(--sage);
+  }
+
+  .step[data-done] .step-check .num {
+    display: none;
+  }
+
+  .step[data-done] .step-check::after {
+    content: '✓';
+    color: var(--surface-3);
+    font-size: 13px;
+  }
+
+  /*
+   * Done-state is a class change only. Step text stays in the DOM at all
+   * times so crawlers see the full method. §19.7.
+   */
+  .step[data-done] .step-body {
+    opacity: 0.48;
+  }
+
+  .step[data-done] .step-text {
+    text-decoration: line-through;
+    text-decoration-color: var(--muted);
+  }
+
+  .step-text {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: var(--measure);
+    margin: 0;
+  }
+
+  .step-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 0 0;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  .step-meta .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .step-from {
+    font-style: italic;
+  }
+
+  /* ================================================================
+   * Notes. Two categories, visually distinct from each other. §19.9
+   * ================================================================ */
+
+  .callout,
+  .pitfall {
+    margin: 14px 0 0;
+    padding: 13px 17px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    max-width: var(--measure);
+  }
+
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    font-style: italic;
+    font-family: var(--font-display);
+    color: var(--accent-ink);
+  }
+
+  .pitfall {
+    border-left: 3px solid var(--sage);
+    background: var(--sage-soft);
+    color: var(--ink);
+  }
+
+  .pitfall b {
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 4px;
+    color: var(--sage);
+    font-weight: 600;
+  }
+
+  /* ================================================================
+   * Make-ahead — collapsed, but the content stays in the DOM. §19.7
+   * ================================================================ */
+
+  .makeahead {
+    margin-top: 8px;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    max-width: var(--measure);
+  }
+
+  .makeahead-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+    padding: 4px 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+  }
+
+  .makeahead-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .makeahead-chevron {
+    color: var(--muted);
+    transition: transform 0.35s var(--ease);
+    font-size: 13px;
+  }
+
+  .makeahead[data-open] .makeahead-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* CSS-hidden rather than unrendered: hidden text is still crawled and
+     weighted, so there is no reason to lazy-render it and a clear reason
+     not to. §19.7. */
+  .makeahead-body {
+    display: none;
+    padding-top: 18px;
+  }
+
+  .makeahead[data-open] .makeahead-body {
+    display: block;
+  }
+
+  .makeahead-row {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .makeahead-row:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .makeahead-row b {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink);
+    font-size: 14.5px;
+    margin-bottom: 4px;
+  }
+
+  /* ================================================================
+   * About panel. §11.5
+   * ================================================================ */
+
+  .about {
+    max-width: var(--measure);
+    padding-block: 32px 40px;
+  }
+
+  .about p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0 0 20px;
+  }
+
+  .cite {
+    font-family: var(--font-display);
+    font-size: 11px;
+    vertical-align: super;
+    line-height: 0;
+    color: var(--accent);
+    text-decoration: none;
+    padding-inline: 1px;
+  }
+
+  .cite:hover {
+    text-decoration: underline;
+  }
+
+  .sources {
+    margin-top: 36px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  .sources ol {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .sources li {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  .sources a {
+    color: var(--accent);
+  }
+
+  .sources .source-note {
+    display: block;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ================================================================
+   * Footer
+   * ================================================================ */
+
+  .site-footer {
+    border-top: 1px solid var(--line);
+    margin-top: 40px;
+  }
+
+  .footer-inner {
+    padding-block: 36px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  /* ================================================================
+   * Responsive. §19.6 — separate selectors, consistent specificity.
+   * ================================================================ */
+
+  @media (max-width: 860px) {
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: flex;
+    }
+
+    .hero {
+      grid-template-columns: minmax(0, 1fr);
+      padding-top: 20px;
+      gap: 20px;
+    }
+
+    .hero-image {
+      order: -1;
+      max-width: 280px;
+      margin: 0 auto 32px;
+      width: 100%;
+    }
+
+    .hero-text {
+      padding-bottom: 28px;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      max-width: none;
+    }
+
+    .hero-subtitle {
+      font-size: 15.5px;
+    }
+
+    .names {
+      max-width: none;
+    }
+
+    /* A 2×2 grid at mobile width, never 3+1. §19.5. */
+    .fact-row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 20px;
+    }
+
+    .hero-close {
+      padding-top: 0;
+    }
+
+    .body-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .footer-inner {
+      flex-direction: column;
+      gap: 6px;
+      padding-block: 24px;
+    }
+  }
+}

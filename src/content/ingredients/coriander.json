@@ -4,7 +4,11 @@
   "proseName": "coriander",
   "names": {
     "alsoKnownAs": [
-      { "name": "Cilantro", "region": "North America", "lang": "en" }
+      {
+        "name": "Cilantro",
+        "region": "North America",
+        "lang": "en"
+      }
     ],
     "notToBeConfusedWith": [
       {
@@ -67,5 +71,6 @@
         "densitySource": "measured"
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/coriander-thumb.webp"
 }

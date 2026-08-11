@@ -4,8 +4,16 @@
   "proseName": "spring onions",
   "names": {
     "alsoKnownAs": [
-      { "name": "Scallion", "region": "North America", "lang": "en" },
-      { "name": "Green onion", "region": "North America", "lang": "en" }
+      {
+        "name": "Scallion",
+        "region": "North America",
+        "lang": "en"
+      },
+      {
+        "name": "Green onion",
+        "region": "North America",
+        "lang": "en"
+      }
     ]
   },
   "category": "vegetable",
@@ -66,5 +74,6 @@
         "grams": 15
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/spring-onion-thumb.webp"
 }

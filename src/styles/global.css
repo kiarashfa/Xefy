@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './components.css';
 
 /*
  * The token layer.
@@ -73,6 +74,19 @@
      body and UI. */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/*
+ * The narrow-screen gutter, declared here with the token it overrides rather
+ * than beside the components that consume it. An unlayered declaration beats
+ * anything inside `@layer`, so an override written in the component layer
+ * would silently lose to the base value above and leave `--gutter` reporting a
+ * figure the page is not actually using.
+ */
+@media (max-width: 860px) {
+  :root {
+    --gutter: 20px;
+  }
 }
 
 /*
@@ -183,9 +197,4 @@
     border-radius: 3px;
   }
 
-  @media (max-width: 760px) {
-    .wrap {
-      padding-inline: 22px;
-    }
-  }
 }

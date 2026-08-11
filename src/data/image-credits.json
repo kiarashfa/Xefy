@@ -23,6 +23,98 @@
     }
   },
   {
+    "slug": "black-pepper",
+    "kind": "ingredient",
+    "alt": "Whole black peppercorns gathered in a brass mortar",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATellicherry_Black_Peppercorns.jpg",
+    "title": "File:Tellicherry Black Peppercorns.jpg",
+    "author": "Misterneedlemouse",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3024,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/ingredients/black-pepper.webp",
+      "card": "images/ingredients/black-pepper-card.webp",
+      "thumb": "images/ingredients/black-pepper-thumb.webp"
+    }
+  },
+  {
+    "slug": "coriander",
+    "kind": "ingredient",
+    "alt": "Bunches of fresh coriander, their flat leaves deeply lobed",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABunches_of_coriander_leaves.jpg",
+    "title": "File:Bunches of coriander leaves.jpg",
+    "author": "Kpsudeep",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 5456,
+    "originalHeight": 3064,
+    "files": {
+      "hero": "images/ingredients/coriander.webp",
+      "card": "images/ingredients/coriander-card.webp",
+      "thumb": "images/ingredients/coriander-thumb.webp"
+    }
+  },
+  {
+    "slug": "egg",
+    "kind": "ingredient",
+    "alt": "Brown and white hen eggs in a wicker basket",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEggs_in_basket_2020_G1.jpg",
+    "title": "File:Eggs in basket 2020 G1.jpg",
+    "author": "George Chernilevsky",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3700,
+    "originalHeight": 3700,
+    "files": {
+      "hero": "images/ingredients/egg.webp",
+      "card": "images/ingredients/egg-card.webp",
+      "thumb": "images/ingredients/egg-thumb.webp"
+    }
+  },
+  {
+    "slug": "garlic",
+    "kind": "ingredient",
+    "alt": "Whole garlic bulbs beside a separated clove",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGarlic_bulbs_and_cloves.jpg",
+    "title": "File:Garlic bulbs and cloves.jpg",
+    "author": "Ivar Leidus",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 8256,
+    "originalHeight": 5504,
+    "files": {
+      "hero": "images/ingredients/garlic.webp",
+      "card": "images/ingredients/garlic-card.webp",
+      "thumb": "images/ingredients/garlic-thumb.webp"
+    }
+  },
+  {
     "slug": "mozzarella",
     "kind": "ingredient",
     "alt": "A ball of buffalo mozzarella on a wooden board, its surface faintly creased",
@@ -43,6 +135,52 @@
       "hero": "images/ingredients/mozzarella.webp",
       "card": "images/ingredients/mozzarella-card.webp",
       "thumb": "images/ingredients/mozzarella-thumb.webp"
+    }
+  },
+  {
+    "slug": "olive-oil",
+    "kind": "ingredient",
+    "alt": "A glass carafe of green-gold olive oil",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOlive_oil_from_Oneglia.jpg",
+    "title": "File:Olive oil from Oneglia.jpg",
+    "author": "Lemone",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 1933,
+    "originalHeight": 2620,
+    "files": {
+      "hero": "images/ingredients/olive-oil.webp",
+      "card": "images/ingredients/olive-oil-card.webp",
+      "thumb": "images/ingredients/olive-oil-thumb.webp"
+    }
+  },
+  {
+    "slug": "onion",
+    "kind": "ingredient",
+    "alt": "Red, white and brown onions, some halved to show their rings",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMixed_onions.jpg",
+    "title": "File:Mixed onions.jpg",
+    "author": "Colin",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 2797,
+    "originalHeight": 2797,
+    "files": {
+      "hero": "images/ingredients/onion.webp",
+      "card": "images/ingredients/onion-card.webp",
+      "thumb": "images/ingredients/onion-thumb.webp"
     }
   },
   {
@@ -69,6 +207,167 @@
     }
   },
   {
+    "slug": "spring-onion",
+    "kind": "ingredient",
+    "alt": "Bunches of spring onions with long green tops and pale bulbs",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASpring_onions_displayed.jpg",
+    "title": "File:Spring onions displayed.jpg",
+    "author": "Judethedeus",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 2484,
+    "originalHeight": 2423,
+    "files": {
+      "hero": "images/ingredients/spring-onion.webp",
+      "card": "images/ingredients/spring-onion-card.webp",
+      "thumb": "images/ingredients/spring-onion-thumb.webp"
+    }
+  },
+  {
+    "slug": "wheat-flour",
+    "kind": "ingredient",
+    "alt": "A glass bowl heaped with white wheat flour",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAll-Purpose_Flour_(4107895947).jpg",
+    "title": "File:All-Purpose Flour (4107895947).jpg",
+    "author": "Veganbaking.net from USA",
+    "credit": "All-Purpose Flour",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 4272,
+    "originalHeight": 2848,
+    "files": {
+      "hero": "images/ingredients/wheat-flour.webp",
+      "card": "images/ingredients/wheat-flour-card.webp",
+      "thumb": "images/ingredients/wheat-flour-thumb.webp"
+    }
+  },
+  {
+    "slug": "cacio-e-pepe",
+    "kind": "recipe",
+    "alt": "A bowl of cacio e pepe, the spaghetti coiled and coated in a pale cheese sauce, with grated pecorino and cracked peppercorns over it",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACacio_e_pepe.jpg",
+    "title": "File:Cacio e pepe.jpg",
+    "author": "Popo le Chien",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3794,
+    "originalHeight": 2136,
+    "files": {
+      "hero": "images/recipes/cacio-e-pepe.webp",
+      "card": "images/recipes/cacio-e-pepe-card.webp",
+      "thumb": "images/recipes/cacio-e-pepe-thumb.webp"
+    }
+  },
+  {
+    "slug": "carbonara",
+    "kind": "recipe",
+    "alt": "A plate of spaghetti alla carbonara, glossy with egg and studded with pieces of rendered cured pork",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASpaghetti_alla_Carbonara_(Madrid).JPG",
+    "title": "File:Spaghetti alla Carbonara (Madrid).JPG",
+    "author": "Tamorlan",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3888,
+    "originalHeight": 2592,
+    "files": {
+      "hero": "images/recipes/carbonara.webp",
+      "card": "images/recipes/carbonara-card.webp",
+      "thumb": "images/recipes/carbonara-thumb.webp"
+    }
+  },
+  {
+    "slug": "chocolate-chip-cookies",
+    "kind": "recipe",
+    "alt": "A batch of chocolate chip cookies cooling on a board, their surfaces cracked and spread",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChocolate_chip_cookies_on_cutting_board.jpg",
+    "title": "File:Chocolate chip cookies on cutting board.jpg",
+    "author": "Mshuang2",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 4608,
+    "originalHeight": 3456,
+    "files": {
+      "hero": "images/recipes/chocolate-chip-cookies.webp",
+      "card": "images/recipes/chocolate-chip-cookies-card.webp",
+      "thumb": "images/recipes/chocolate-chip-cookies-thumb.webp"
+    }
+  },
+  {
+    "slug": "guacamole",
+    "kind": "recipe",
+    "alt": "A white bowl of guacamole, roughly mashed and flecked with tomato and onion",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGuacamole_bowl.jpg",
+    "title": "File:Guacamole bowl.jpg",
+    "author": "Craig Dugas",
+    "credit": "https://www.flickr.com/photos/crd/3783250673/",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 2592,
+    "originalHeight": 1944,
+    "files": {
+      "hero": "images/recipes/guacamole.webp",
+      "card": "images/recipes/guacamole-card.webp",
+      "thumb": "images/recipes/guacamole-thumb.webp"
+    }
+  },
+  {
+    "slug": "hummus",
+    "kind": "recipe",
+    "alt": "A shallow plate of hummus with a hollow of olive oil in the middle, scattered with whole chickpeas and parsley",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHummus_plate.jpg",
+    "title": "File:Hummus plate.jpg",
+    "author": "Orenrosenfeld",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3264,
+    "originalHeight": 2448,
+    "files": {
+      "hero": "images/recipes/hummus.webp",
+      "card": "images/recipes/hummus-card.webp",
+      "thumb": "images/recipes/hummus-thumb.webp"
+    }
+  },
+  {
     "slug": "margherita-pizza",
     "kind": "recipe",
     "alt": "A margherita pizza on a white plate, its crust blistered and its basil laid over melted mozzarella",
@@ -89,6 +388,98 @@
       "hero": "images/recipes/margherita-pizza.webp",
       "card": "images/recipes/margherita-pizza-card.webp",
       "thumb": "images/recipes/margherita-pizza-thumb.webp"
+    }
+  },
+  {
+    "slug": "miso-soup",
+    "kind": "recipe",
+    "alt": "A lacquer bowl of miso soup seen from above, with cubes of tofu, wakame and a green herb garnish",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMiso_soup_overhead.jpg",
+    "title": "File:Miso soup overhead.jpg",
+    "author": "Douglas Perkins",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3024,
+    "originalHeight": 2924,
+    "files": {
+      "hero": "images/recipes/miso-soup.webp",
+      "card": "images/recipes/miso-soup-card.webp",
+      "thumb": "images/recipes/miso-soup-thumb.webp"
+    }
+  },
+  {
+    "slug": "pad-thai",
+    "kind": "recipe",
+    "alt": "A plate of pad thai topped with bean sprouts, served with a lime wedge and crushed peanuts alongside",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APad_Thai_Noodles_-_Little_Thai%2C_Brighton_2024-03-21.jpg",
+    "title": "File:Pad Thai Noodles - Little Thai, Brighton 2024-03-21.jpg",
+    "author": "Andy Li",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/pad-thai.webp",
+      "card": "images/recipes/pad-thai-card.webp",
+      "thumb": "images/recipes/pad-thai-thumb.webp"
+    }
+  },
+  {
+    "slug": "shakshuka",
+    "kind": "recipe",
+    "alt": "A pan of red shakshuka with an egg set into the sauce and herbs scattered over",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALiat_Portal_for_Foodie_Disorder_-_Classic_Red_Shakshuka_with_Egg.jpg",
+    "title": "File:Liat Portal for Foodie Disorder - Classic Red Shakshuka with Egg.jpg",
+    "author": "HaJunkiyada",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/recipes/shakshuka.webp",
+      "card": "images/recipes/shakshuka-card.webp",
+      "thumb": "images/recipes/shakshuka-thumb.webp"
+    }
+  },
+  {
+    "slug": "tabbouleh",
+    "kind": "recipe",
+    "alt": "A bowl of tabbouleh, overwhelmingly green with chopped parsley and flecked with tomato",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALiat_Portal_for_Foodie_Disorder_-_Bulgur_salad.jpg",
+    "title": "File:Liat Portal for Foodie Disorder - Bulgur salad.jpg",
+    "author": "HaJunkiyada",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.",
+    "retrieved": "2026-08-11",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/recipes/tabbouleh.webp",
+      "card": "images/recipes/tabbouleh-card.webp",
+      "thumb": "images/recipes/tabbouleh-thumb.webp"
     }
   }
 ]

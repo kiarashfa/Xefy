@@ -1,0 +1,518 @@
+---
+import { readFile } from 'node:fs/promises';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import ServingScaler from '../../components/ServingScaler.svelte';
+import UnitToggle from '../../components/UnitToggle.svelte';
+
+import { loadContent } from '../../lib/content/disk.ts';
+import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from '../../lib/content/resolve.ts';
+import { renderProse, proseName } from '../../lib/render/prose.ts';
+import { qtyHtml } from '../../lib/render/live-values.ts';
+import { formatDuration } from '../../lib/math/units.ts';
+import { formatNutrient, type Nutrient } from '../../lib/math/nutrition.ts';
+import { labelFor, COURSES, CUISINES, METHODS, ALLERGEN_TERMS, ALLERGEN_DISCLAIMER } from '../../schemas/taxonomy.ts';
+
+/**
+ * The recipe page — the canonical template the rest of the site is built from.
+ *
+ * Every version and both panels ship in this HTML. Switching between them is
+ * client-side state on one canonical URL, so nothing a crawler needs is behind
+ * an interaction.
+ */
+export async function getStaticPaths() {
+  const content = await loadContent('src/content');
+  const credits = JSON.parse(
+    await readFile('src/data/image-credits.json', 'utf8').catch(() => '[]'),
+  );
+  const componentInputs = new Map<string, ComponentInput>(
+    content.components.map((c) => [
+      c.slug,
+      { slug: c.slug, data: c.data, prose: new Map(c.steps.map((s) => [s.stepId, s.text])) },
+    ]),
+  );
+  const ingredients = new Map(content.ingredients.map((i) => [i.slug, i.data]));
+
+  const bySlug = new Map<string, typeof content.recipeVersions>();
+  for (const v of content.recipeVersions) {
+    bySlug.set(v.recipe, [...(bySlug.get(v.recipe) ?? []), v]);
+  }
+
+  return [...bySlug].map(([slug, versions]) => {
+    const ordered = [...versions].sort((a, b) => Number(b.isDefault) - Number(a.isDefault));
+    const about = content.recipeAbout.find((a) => a.subject === slug);
+    return {
+      params: { slug },
+      props: {
+        identity: ordered.find((v) => v.isDefault)!.data,
+        versions: ordered.map((v) => ({
+          id: v.versionId,
+          resolved: resolveRecipe(
+            {
+              slug: v.recipe,
+              versionId: v.versionId,
+              data: v.data,
+              prose: new Map(v.steps.map((s) => [s.stepId, s.text])),
+            },
+            componentInputs,
+            ingredients,
+          ),
+        })),
+        about: about ? { data: about.data, body: about.body } : null,
+        credits,
+      },
+    };
+  });
+}
+
+const { identity, versions, about, credits } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const system = 'metric' as const;
+
+const heroCredit = credits.find((c: any) => c.kind === 'recipe' && c.slug === Astro.params.slug);
+
+const MACROS: [Nutrient, string][] = [
+  ['kcal', 'kcal'],
+  ['protein', 'Protein'],
+  ['carbs', 'Carbs'],
+  ['fat', 'Fat'],
+];
+const MICROS: [Nutrient, string, string][] = [
+  ['fiber', 'Fibre', 'g'],
+  ['sugars', 'Sugars', 'g'],
+  ['saturatedFat', 'Saturated fat', 'g'],
+  ['sodium', 'Sodium', 'mg'],
+  ['calcium', 'Calcium', 'mg'],
+  ['iron', 'Iron', 'mg'],
+  ['potassium', 'Potassium', 'mg'],
+  ['vitaminC', 'Vitamin C', 'mg'],
+];
+
+/**
+ * Renders the About body: paragraphs, emphasis, and citation markers.
+ *
+ * Citations are pulled out *before* the text is escaped. Escaping first turns
+ * `<Cite …/>` into `&lt;Cite …/>` and the marker silently stops being a marker
+ * — the same ordering trap the step-prose renderer avoids by splitting on
+ * components first.
+ */
+const CITE = /<Cite\s+ref="([^"]+)"\s*\/>/g;
+
+function renderAbout(body: string, sources: { id: string }[]): string {
+  const index = new Map(sources.map((s, i) => [s.id, i + 1]));
+  const escape = (text: string) =>
+    text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+      .replace(/\s*\n\s*/g, ' ');
+
+  return body
+    .trim()
+    .split(/\n\s*\n/)
+    .map((para) => {
+      let html = '';
+      let cursor = 0;
+      for (const match of para.matchAll(CITE)) {
+        html += escape(para.slice(cursor, match.index));
+        cursor = (match.index ?? 0) + match[0].length;
+        const n = index.get(match[1]!);
+        if (n) html += `<a class="cite" href="#source-${match[1]}">[${n}]</a>`;
+      }
+      html += escape(para.slice(cursor));
+      return `<p>${html}</p>`;
+    })
+    .join('');
+}
+
+const facts = (r: ResolvedRecipe) =>
+  [
+    { label: 'Style', value: r.label },
+    { label: 'Method', value: identity.tags.method.map((m: string) => labelFor(METHODS, m)).join(', ') },
+    { label: 'Diet', value: r.diet.heroLabel },
+    { label: 'Difficulty', value: r.difficulty, difficulty: true },
+  ].filter((f) => f.value);
+
+const title = identity.title;
+const description = identity.description ?? identity.subtitle;
+---
+
+<BaseLayout title={`${title} — Xefy`} description={description}>
+  <SiteHeader />
+
+  <nav class="wrap crumb" aria-label="Breadcrumb">
+    <a href={`${base}recipes/`}>Recipes</a> /
+    <a href={`${base}cuisines/${identity.tags.cuisine[0]}/`}>
+      {labelFor(CUISINES, identity.tags.cuisine[0])}
+    </a> / {title}
+  </nav>
+
+  <div class="hero-band">
+    <div class="wrap hero">
+      <div class="hero-text">
+        <p class="eyebrow">
+          {identity.tags.cuisine.map((c: string) => labelFor(CUISINES, c)).join(' · ')} · {
+            identity.tags.course.map((c: string) => labelFor(COURSES, c)).join(' · ')
+          }
+        </p>
+        <h1 class="hero-title">{title}</h1>
+        <p class="hero-subtitle">{identity.subtitle}</p>
+
+        {
+          (identity.names.alsoKnownAs.length > 0 ||
+            identity.names.notToBeConfusedWith.length > 0) && (
+            <div class="names">
+              {identity.names.alsoKnownAs.length > 0 && (
+                <p class="name-line">
+                  <span class="name-label">Also known as</span>
+                  {identity.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
+                    <>
+                      {i > 0 && <span class="name-sep">—</span>}
+                      <span class="name-alt">{n.name}</span>
+                      {n.region && <span class="name-region"> · {n.region}</span>}
+                    </>
+                  ))}
+                </p>
+              )}
+              {identity.names.notToBeConfusedWith.length > 0 && (
+                <p class="name-line">
+                  <span class="name-label">Not the same as</span>
+                  {identity.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
+                    <>
+                      {i > 0 && <span class="name-sep">—</span>}
+                      <span class="name-alt">{n.name}</span>
+                      <span class="name-region"> — {n.note}</span>
+                    </>
+                  ))}
+                </p>
+              )}
+            </div>
+          )
+        }
+
+        <div class="fact-row">
+          {
+            facts(versions[0].resolved).map((f) => (
+              <div class="fact">
+                <span class="fact-label">{f.label}</span>
+                <span class={`fact-value${f.difficulty ? ' is-difficulty' : ''}`}>{f.value}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      {
+        identity.image && (
+          <figure class="hero-image">
+            <img src={`${base}${identity.image.src}`} alt={identity.image.alt} width="1200" height="1200" />
+            {heroCredit && (
+              <div class="attribution">
+                <button class="attribution-toggle" aria-expanded="false" aria-label="Image credit">
+                  i
+                </button>
+                <div class="attribution-popover">
+                  <a href={heroCredit.sourceUrl}>{heroCredit.title.replace('File:', '')}</a>
+                  {heroCredit.author && <> — {heroCredit.author}</>}
+                  <br />
+                  {heroCredit.license}. {heroCredit.modified}
+                </div>
+              </div>
+            )}
+          </figure>
+        )
+      }
+    </div>
+
+    <div class="wrap hero-close"><hr /></div>
+  </div>
+
+  <div class="wrap" data-recipe={Astro.params.slug} data-default-servings={versions[0].resolved.defaultServings}>
+    {/* Recipe / About. A segmented control, deliberately unlike the version tabs. */}
+    <div class="panel-switch" role="tablist" data-tablist aria-label="Recipe or background">
+      <button role="tab" aria-selected="true" aria-controls="panel-recipe" data-value="recipe">Recipe</button>
+      {about && (
+        <button role="tab" aria-selected="false" aria-controls="panel-about" data-value="about">About</button>
+      )}
+    </div>
+
+    <section id="panel-recipe" role="tabpanel" data-panel>
+      {
+        versions.length > 1 && (
+          <>
+            <div class="version-tabs" role="tablist" data-tablist aria-label="Version">
+              {versions.map((v, i) => (
+                <button
+                  role="tab"
+                  aria-selected={i === 0 ? 'true' : 'false'}
+                  aria-controls={`version-${v.id}`}
+                  data-value={v.id}
+                >
+                  {v.resolved.label}
+                </button>
+              ))}
+            </div>
+            <p class="version-note">
+              The same dish, adapted. Every quantity, time and figure below changes with the version.
+            </p>
+          </>
+        )
+      }
+
+      {
+        versions.map((v, vi) => {
+          const r = v.resolved;
+          const servings = r.defaultServings;
+          return (
+            <div id={`version-${v.id}`} data-version hidden={vi !== 0}>
+              <div class="body-grid">
+                <aside class="left-col">
+                  <div class="side-card is-row">
+                    <span class="side-card-label">Servings</span>
+                    <ServingScaler client:visible recipe={r.slug} defaultServings={servings} />
+                  </div>
+
+                  <div class="side-card is-row">
+                    <span class="side-card-label">Units</span>
+                    <UnitToggle client:visible />
+                  </div>
+
+                  <div class="side-card">
+                    <div class="timing">
+                      {(['prep', 'cook', 'rest'] as const)
+                        .filter((k) => r.timing[k] > 0)
+                        .map((k) => (
+                          <>
+                            <div class="timing-item">
+                              <b>{formatDuration(r.timing[k])}</b>
+                              <span>{k}</span>
+                            </div>
+                            <div class="stat-sep" />
+                          </>
+                        ))}
+                      <div class="timing-item">
+                        <b>{formatDuration(r.timing.total)}</b>
+                        <span>Total</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h2 class="panel-title">Ingredients</h2>
+                    <ul class="ingredients">
+                      {r.lines.map((line) => {
+                        const sub = r.flat.steps && identity.substitutions?.find?.((s: any) => s.lineRef === line.line.id);
+                        return (
+                          <li>
+                            <input class="chk" type="checkbox" aria-label={proseName(line)} />
+                            {line.ingredient.image ? (
+                              <a class="ing-thumb" href={`${base}ingredients/${line.ingredient.id}/`}>
+                                <img src={`${base}${line.ingredient.image}`} alt="" width="34" height="34" />
+                              </a>
+                            ) : (
+                              <span class="ing-thumb" />
+                            )}
+                            <span class="ing-text">
+                              <Fragment
+                                set:html={qtyHtml(
+                                  {
+                                    amount: line.line.amount,
+                                    unit: line.line.unit,
+                                    defaultServings: servings,
+                                    name: proseName(line),
+                                    density: line.density,
+                                    countUnit: line.form.countUnit,
+                                  },
+                                  servings,
+                                  system,
+                                  { showName: Boolean(line.form.countUnit) },
+                                )}
+                              />
+                              {!line.form.countUnit && <> {proseName(line)}</>}
+                              {line.line.note && <span class="ing-note">{line.line.note}</span>}
+                              {sub && (
+                                <>
+                                  <button class="sub-hint" aria-expanded="false">
+                                    No {proseName(line)}? →
+                                  </button>
+                                  <span class="sub-body" hidden>
+                                    <b>{sub.substitute}</b> ({sub.ratio}). {sub.note}
+                                  </span>
+                                </>
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+
+                    <button class="add-to-plan">Add to plan</button>
+                  </div>
+
+                  <div class="nutrition">
+                    <h2 class="panel-title">Nutrition, per serving</h2>
+                    <div class="nutrition-major">
+                      {MACROS.map(([key, label]) => (
+                        <div class="nutri-stat">
+                          <div class="val">
+                            {formatNutrient(r.nutrition.perServing[key] ?? 0, key)}
+                            {key !== 'kcal' && 'g'}
+                          </div>
+                          <div class="lbl">{label}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div class="nutrition-minor-label">Also per serving</div>
+                    <div class="nutrition-grid">
+                      {MICROS.filter((m) => r.nutrition.perServing[m[0]] != null).map(
+                        ([key, label, unit]) => (
+                          <div>
+                            <span>{label}</span>
+                            <b>
+                              {formatNutrient(r.nutrition.perServing[key] ?? 0, key)}
+                              {unit}
+                            </b>
+                          </div>
+                        ),
+                      )}
+                    </div>
+
+                    <p class="nutrition-note">
+                      As prepared with these ingredients, not as served.
+                      {r.nutrition.estimated && (
+                        <> Estimated — {r.nutrition.estimateReasons.join(' ')}</>
+                      )}
+                    </p>
+
+                    <div class="allergen-box">
+                      <b>Allergens</b>
+                      {r.diet.allergens.length > 0
+                        ? r.diet.allergens.map((a) => labelFor(ALLERGEN_TERMS, a)).join(', ')
+                        : 'None listed'}
+                      . {ALLERGEN_DISCLAIMER}
+                      {r.diet.animalOriginNotes.map((n) => (
+                        <>
+                          {' '}
+                          {n.label}: {n.note}
+                        </>
+                      ))}
+                    </div>
+                  </div>
+                </aside>
+
+                <div>
+                  <h2 class="panel-title">Method</h2>
+                  <ol class="steps">
+                    {r.flat.steps.map((step) => {
+                      const rationale = r.flat.steps && identity.notes?.techniqueRationale?.find?.(
+                        (n: any) => n.stepId === step.id,
+                      );
+                      const pitfall = identity.notes?.commonPitfalls?.find?.(
+                        (n: any) => n.stepId === step.id,
+                      );
+                      return (
+                        <li class="step">
+                          <button class="step-check" aria-pressed="false" aria-label={`Mark step ${step.number} done`}>
+                            <span class="num">{step.number}</span>
+                          </button>
+                          <div class="step-body">
+                            <p
+                              class="step-text"
+                              set:html={renderProse(step.prose, { recipe: r, servings, system })}
+                            />
+                            <p class="step-meta">
+                              <span class="dot" />
+                              {step.phase ?? 'rest'} · {formatDuration(step.durationMin)}
+                              {step.fromComponent && (
+                                <span class="step-from">· from {step.fromComponent.title}</span>
+                              )}
+                            </p>
+                            {rationale && <p class="callout">{rationale.text}</p>}
+                            {pitfall && (
+                              <p class="pitfall">
+                                <b>Common pitfall</b>
+                                {pitfall.text}
+                              </p>
+                            )}
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ol>
+
+                  <section class="makeahead">
+                    <button class="makeahead-toggle" aria-expanded="false">
+                      <span class="makeahead-title">Make ahead, freeze and reheat</span>
+                      <span class="makeahead-chevron">▾</span>
+                    </button>
+                    <div class="makeahead-body">
+                      {(
+                        [
+                          ['aheadInstructions', 'Ahead of time'],
+                          ['freezeInstructions', 'Freezing'],
+                          ['reheatInstructions', 'Reheating'],
+                        ] as const
+                      ).map(([key, label]) =>
+                        r.makeAhead?.[key] ? (
+                          <div class="makeahead-row">
+                            <b>{label}</b>
+                            {r.makeAhead[key]}
+                          </div>
+                        ) : null,
+                      )}
+                      <div class="makeahead-row">
+                        <b>Freezes</b>
+                        {r.makeAhead?.freezable === null
+                          ? 'Not applicable to this dish.'
+                          : r.makeAhead?.freezable
+                            ? 'Yes.'
+                            : 'Not recommended.'}
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </section>
+
+    {
+      about && (
+        <section id="panel-about" role="tabpanel" data-panel hidden>
+          <div class="about">
+            <Fragment set:html={renderAbout(about.body, about.data.sources)} />
+            <div class="sources">
+              <h2 class="panel-title">Sources</h2>
+              <ol>
+                {about.data.sources.map((s: any) => (
+                  <li id={`source-${s.id}`}>
+                    {s.url ? <a href={s.url}>{s.title}</a> : s.title} — {s.publisher}
+                    {s.published && <>, {s.published}</>}
+                    {s.note && <span class="source-note">{s.note}</span>}
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+      )
+    }
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>Xefy — every number on this page is computed, not typed.</span>
+      <span>Nutrition from USDA FoodData Central.</span>
+    </div>
+  </footer>
+
+  <script>
+    import { initLiveValues } from '../../lib/client/live-values.ts';
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initLiveValues();
+    initInteractions();
+  </script>
+</BaseLayout>

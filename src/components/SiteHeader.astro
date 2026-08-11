@@ -1,0 +1,81 @@
+---
+/**
+ * The site header, on every page.
+ *
+ * Four nav items is the ceiling (§19.4); anything further belongs in the
+ * footer. Plan ships now, even though the Plan pages themselves come later,
+ * because widening the header afterwards means re-checking every layout.
+ *
+ * The search affordance is required rather than optional: the naming system
+ * assumes people can search alternate names, and a site with no way to search
+ * is missing a primary function.
+ */
+const base = import.meta.env.BASE_URL;
+
+const nav = [
+  { href: `${base}recipes/`, label: 'Recipes' },
+  { href: `${base}ingredients/`, label: 'Ingredients' },
+  { href: `${base}what-can-i-make/`, label: 'What Can I Make' },
+  { href: `${base}plan/`, label: 'Plan', count: true },
+];
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href={base}>Xefy</a>
+
+    <nav class="desktop-nav" aria-label="Main">
+      {
+        nav.map((item) => (
+          <a href={item.href}>
+            {item.label}
+            {/* Space is reserved before hydration so the count cannot shift the row. */}
+            {item.count && <span class="nav-count" data-plan-count aria-hidden="true" />}
+          </a>
+        ))
+      }
+      <button class="icon-btn" data-search aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="6.5"></circle>
+          <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
+        </svg>
+      </button>
+      <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path
+            d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"
+          ></path>
+        </svg>
+      </button>
+    </nav>
+
+    <div class="mobile-nav">
+      <button class="icon-btn" data-search aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="11" cy="11" r="6.5"></circle>
+          <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
+        </svg>
+      </button>
+      <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <path
+            d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"
+          ></path>
+        </svg>
+      </button>
+      <button class="icon-btn" data-menu-toggle aria-label="Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <line x1="4" y1="7" x2="20" y2="7"></line>
+          <line x1="4" y1="12" x2="20" y2="12"></line>
+          <line x1="4" y1="17" x2="20" y2="17"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="wrap mobile-menu" data-mobile-menu aria-label="Main">
+    {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+</header>
