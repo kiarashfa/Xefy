@@ -42,6 +42,20 @@ export interface PlanItem {
   /** Absolute, so a change to `defaultServings` cannot rewrite a saved plan. */
   servings: number;
   day: Day | null;
+  /**
+   * Wanted for the shopping, not for the week.
+   *
+   * §8.3 makes the Plan the single primitive and the shopping list a view of
+   * it, which is right and which leaves one thing unsaid: someone can want a
+   * dish's ingredients without committing to cook it as part of their week.
+   * Two stores would be the wrong answer — they would disagree the moment a
+   * serving count changed — so it is one flag on one item instead.
+   *
+   * A list-only item contributes to the shopping list exactly as any other
+   * does, takes no day, and stays out of the week's nutrition, because it is
+   * not a meal anybody has planned to eat.
+   */
+  listOnly: boolean;
 }
 
 export interface Plan {

@@ -69,6 +69,9 @@ export function sanitisePlan(raw: Partial<Plan> | null): Plan {
         version: i.version,
         servings: clampServings(i.servings),
         day: isDay(i.day) ? i.day : null,
+        // Absent in plans saved before the flag existed, and false is what
+        // those meant — every one of them was added as something to cook.
+        listOnly: i.listOnly === true,
       })),
     have: stringList(raw.have),
     needStaples: stringList(raw.needStaples),
@@ -106,10 +109,32 @@ const update = (change: (current: Plan) => Plan) => commit(change(plan.get()));
  * Adds a dish at the serving count currently showing in the stepper. Adding the
  * same recipe twice is allowed and meaningful — cook it Monday and Thursday.
  */
-export function addToPlan(recipe: string, version: string, servings: number): PlanItem {
-  const item: PlanItem = { uid: uid(), recipe, version, servings: clampServings(servings), day: null };
+export function addToPlan(
+  recipe: string,
+  version: string,
+  servings: number,
+  listOnly = false,
+): PlanItem {
+  const item: PlanItem = {
+    uid: uid(),
+    recipe,
+    version,
+    servings: clampServings(servings),
+    day: null,
+    listOnly,
+  };
   update((current) => ({ ...current, items: [...current.items, item] }));
   return item;
+}
+
+/** Promoting something bought-for into something planned, or the reverse. */
+export function setItemListOnly(itemUid: string, listOnly: boolean): void {
+  update((current) => ({
+    ...current,
+    items: current.items.map((i) =>
+      i.uid === itemUid ? { ...i, listOnly, day: listOnly ? null : i.day } : i,
+    ),
+  }));
 }
 
 export function removeFromPlan(itemUid: string): void {

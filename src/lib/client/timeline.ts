@@ -41,7 +41,15 @@ function anchorAt(panel: Panel, mode: AnchorMode): Date {
   if (mode === 'start-now') return new Date();
   const [hours, minutes] = panel.time.value.split(':').map(Number);
   const at = new Date();
-  at.setHours(Number.isFinite(hours) ? hours! : 20, Number.isFinite(minutes) ? minutes! : 0, 0, 0);
+  // Eight in the evening is a sensible time to eat and a strange time to start
+  // cooking, so the two anchors that take a time fall back differently.
+  const fallbackHour = mode === 'start-at' ? 18 : 20;
+  at.setHours(
+    Number.isFinite(hours) ? hours! : fallbackHour,
+    Number.isFinite(minutes) ? minutes! : 0,
+    0,
+    0,
+  );
   return at;
 }
 
@@ -75,9 +83,9 @@ function render(panel: Panel): void {
   summary.setAttribute('data-timeline-summary', '');
   summary.setAttribute('role', 'status');
   summary.textContent =
-    mode === 'start-now'
-      ? `Starting now, ready at ${formatClock(timeline.end)}${endOffset ? ` ${endOffset}` : ''} — ${formatDuration(timeline.totalMin)} of elapsed time.`
-      : `Start at ${formatClock(timeline.start)}${startOffset ? `, ${startOffset},` : ''} to eat at ${formatClock(timeline.end)}.`;
+    mode === 'ready-at'
+      ? `Start at ${formatClock(timeline.start)}${startOffset ? `, ${startOffset},` : ''} to eat at ${formatClock(timeline.end)}.`
+      : `${mode === 'start-now' ? 'Starting now' : `Starting at ${formatClock(timeline.start)}`}, ready at ${formatClock(timeline.end)}${endOffset ? ` ${endOffset}` : ''} — ${formatDuration(timeline.totalMin)} of elapsed time.`;
   scope.prepend(summary);
 
   for (const entry of timeline.entries) {
@@ -147,8 +155,14 @@ export function initTimeline(): void {
         for (const other of panel.modeButtons) {
           other.setAttribute('aria-pressed', String(other === button));
         }
-        // "Starting now" has no target to set, so the input goes with it.
+        // "Starting now" is the only anchor that needs no time from anyone, so
+        // it is the only one that hides the input.
         panel.time.parentElement?.toggleAttribute('hidden', button.dataset.mode === 'start-now');
+        // The two timed anchors mean different things by the same field.
+        const label = panel.root.querySelector<HTMLElement>('[data-time-label]');
+        if (label) {
+          label.textContent = button.dataset.mode === 'start-at' ? 'Start' : 'Ready';
+        }
         render(panel);
       });
     }

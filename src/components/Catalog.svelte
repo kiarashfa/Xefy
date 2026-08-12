@@ -19,6 +19,8 @@
     allergens: readonly Term[];
   }
 
+  import FacetMenu from './FacetMenu.svelte';
+
   const { recipes, base, cuisines, courses, methods, allergens }: Props = $props();
 
   let view = $state<'grid' | 'table'>('grid');
@@ -27,12 +29,26 @@
   let course = $state<string[]>([]);
   let method = $state<string[]>([]);
   let excludedAllergens = $state<string[]>([]);
-  let sort = $state<'title' | 'totalMin' | 'kcalPerServing' | 'difficulty'>('title');
+
+  /**
+   * Sorting is a property of the list, not of the table.
+   *
+   * It used to appear only in the table view, which quietly said that anyone
+   * browsing cards did not want an order — while the cards are exactly where
+   * "quickest first" is a reasonable thing to ask for.
+   */
+  type SortKey = 'title' | 'title-desc' | 'totalMin' | 'kcalPerServing' | 'difficulty';
+  let sort = $state<SortKey>('title');
+
+  const SORTS: { id: SortKey; label: string }[] = [
+    { id: 'title', label: 'Name A–Z' },
+    { id: 'title-desc', label: 'Name Z–A' },
+    { id: 'totalMin', label: 'Quickest first' },
+    { id: 'kcalPerServing', label: 'Fewest calories' },
+    { id: 'difficulty', label: 'Easiest first' },
+  ];
 
   const DIFFICULTY_ORDER = { Easy: 0, Medium: 1, Hard: 2 } as const;
-
-  const toggle = (list: string[], id: string) =>
-    list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
 
   const minutes = (m: number) => (m < 60 ? `${m}m` : `${Math.floor(m / 60)}h ${m % 60 || ''}`.trim());
 
@@ -52,26 +68,62 @@
       })
       .sort((a, b) => {
         if (sort === 'title') return a.title.localeCompare(b.title);
+        if (sort === 'title-desc') return b.title.localeCompare(a.title);
         if (sort === 'difficulty')
-          return DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty];
-        return a[sort] - b[sort];
+          return (
+            DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty] ||
+            a.title.localeCompare(b.title)
+          );
+        return a[sort] - b[sort] || a.title.localeCompare(b.title);
       }),
   );
 
-  const facets = $derived([
-    { label: 'Cuisine', terms: cuisines, selected: cuisine, set: (v: string[]) => (cuisine = v) },
-    { label: 'Course', terms: courses, selected: course, set: (v: string[]) => (course = v) },
-    { label: 'Method', terms: methods, selected: method, set: (v: string[]) => (method = v) },
-  ]);
-
-  const usedIds = $derived({
+  /* Only terms with a dish behind them: a menu of empty filters wastes the
+     reader's attention on answers that are all "nothing". */
+  const used = $derived({
     cuisine: new Set(recipes.flatMap((r) => r.tags.cuisine)),
     course: new Set(recipes.flatMap((r) => r.tags.course)),
     method: new Set(recipes.flatMap((r) => r.tags.method)),
   });
+
+  const facets = $derived([
+    {
+      key: 'Cuisine',
+      terms: cuisines.filter((t) => used.cuisine.has(t.id)),
+      selected: cuisine,
+      set: (v: string[]) => (cuisine = v),
+    },
+    {
+      key: 'Course',
+      terms: courses.filter((t) => used.course.has(t.id)),
+      selected: course,
+      set: (v: string[]) => (course = v),
+    },
+    {
+      key: 'Method',
+      terms: methods.filter((t) => used.method.has(t.id)),
+      selected: method,
+      set: (v: string[]) => (method = v),
+    },
+  ]);
+
+  const hideTerms = $derived(allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id))));
+
+  const activeCount = $derived(
+    cuisine.length + course.length + method.length + excludedAllergens.length + (query ? 1 : 0),
+  );
+
+  function clearAll() {
+    query = '';
+    cuisine = [];
+    course = [];
+    method = [];
+    excludedAllergens = [];
+  }
 </script>
 
-<div class="catalog-controls">
+<!-- One row: everything that narrows the list, above the list it narrows. -->
+<div class="catalog-bar">
   <input
     class="catalog-search"
     type="search"
@@ -80,58 +132,44 @@
     aria-label="Search the catalogue"
   />
 
+  {#each facets as facet (facet.key)}
+    <FacetMenu
+      label={facet.key}
+      terms={facet.terms}
+      selected={facet.selected}
+      onchange={facet.set}
+    />
+  {/each}
+
+  {#if hideTerms.length > 0}
+    <FacetMenu
+      label="Hide"
+      terms={hideTerms}
+      selected={excludedAllergens}
+      onchange={(v) => (excludedAllergens = v)}
+      exclusion
+    />
+  {/if}
+
+  <label class="catalog-sort">
+    <span class="visually-hidden">Sort by</span>
+    <select bind:value={sort}>
+      {#each SORTS as s (s.id)}
+        <option value={s.id}>{s.label}</option>
+      {/each}
+    </select>
+  </label>
+
   <div class="catalog-view">
     <button class:active={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>
     <button class:active={view === 'table'} onclick={() => (view = 'table')}>Table</button>
   </div>
 </div>
 
-<div class="catalog-facets">
-  {#each facets as facet (facet.label)}
-    <div class="facet">
-      <span class="facet-label">{facet.label}</span>
-      <div class="facet-terms">
-        {#each facet.terms.filter((t) => usedIds[facet.label.toLowerCase() as 'cuisine'].has(t.id)) as term (term.id)}
-          <button
-            class="pill"
-            class:on={facet.selected.includes(term.id)}
-            aria-pressed={facet.selected.includes(term.id)}
-            onclick={() => facet.set(toggle(facet.selected, term.id))}
-          >
-            {term.label}
-          </button>
-        {/each}
-      </div>
-    </div>
-  {/each}
-
-  <div class="facet">
-    <span class="facet-label">Hide recipes containing</span>
-    <div class="facet-terms">
-      {#each allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id))) as term (term.id)}
-        <button
-          class="pill is-exclusion"
-          class:on={excludedAllergens.includes(term.id)}
-          aria-pressed={excludedAllergens.includes(term.id)}
-          onclick={() => (excludedAllergens = toggle(excludedAllergens, term.id))}
-        >
-          {term.label}
-        </button>
-      {/each}
-    </div>
-  </div>
-</div>
-
 <p class="catalog-count">
   {shown.length} of {recipes.length}
-  {#if view === 'table'}
-    · sort
-    <select bind:value={sort} aria-label="Sort by">
-      <option value="title">Name</option>
-      <option value="totalMin">Time</option>
-      <option value="kcalPerServing">Calories</option>
-      <option value="difficulty">Difficulty</option>
-    </select>
+  {#if activeCount > 0}
+    · <button class="catalog-clear" onclick={clearAll}>Clear filters</button>
   {/if}
 </p>
 
@@ -160,9 +198,11 @@
   <div class="table-scroll">
     <table class="catalog-table">
       <thead>
+        <!-- Diet is gone: three or four labels per row made it the widest
+             column on the table, for a fact the filters already act on. -->
         <tr>
           <th>Name</th><th>Style</th><th>Cuisine</th><th>Course</th>
-          <th>Time</th><th>kcal</th><th>Difficulty</th><th>Diet</th>
+          <th>Time</th><th>kcal</th><th>Difficulty</th>
         </tr>
       </thead>
       <tbody>
@@ -175,7 +215,6 @@
             <td>{minutes(r.totalMin)}</td>
             <td>{r.kcalPerServing}</td>
             <td>{r.difficulty}</td>
-            <td>{r.diets.join(', ') || '—'}</td>
           </tr>
         {/each}
       </tbody>

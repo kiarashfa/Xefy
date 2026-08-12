@@ -848,6 +848,13 @@
     padding-top: 0;
   }
 
+  /* The last step's rule and the make-ahead section's rule sat one above the
+     other and read as a double line. The section keeps its own; the list
+     stops. */
+  .step:last-child {
+    border-bottom: none;
+  }
+
   /* Not circular, and the numeral is plain rather than italic. §19.7. */
   .step-check {
     width: 24px;
@@ -978,20 +985,30 @@
    * Make-ahead — collapsed, but the content stays in the DOM. §19.7
    * ================================================================ */
 
+  /*
+   * The make-ahead disclosure sits directly under the last step, and the
+   * separation between them is one rule rather than two: the step list drops
+   * its final border (below) so this one is the only line there.
+   *
+   * Full column width, not the reading measure. The measure belongs to running
+   * prose; this is a labelled block like the Method heading above it, and
+   * indenting it to a narrower column made it read as a footnote to the last
+   * step rather than as a section of its own.
+   */
   .makeahead {
-    margin-top: 8px;
-    border-top: 1px solid var(--line);
-    padding-top: 24px;
-    max-width: var(--measure);
+    margin-top: 30px;
+    border-top: 1px solid var(--line-strong);
+    padding-top: 8px;
   }
 
   .makeahead-toggle {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 16px;
     width: 100%;
     cursor: pointer;
-    padding: 4px 0;
+    padding: 16px 0;
     background: none;
     border: none;
     color: inherit;
@@ -999,20 +1016,44 @@
     text-align: left;
   }
 
+  /* Same type as Method, because it is the same level of thing. */
   .makeahead-title {
     font-family: var(--font-display);
-    font-size: 15px;
+    font-size: 12.5px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
     font-weight: 500;
   }
 
+  /* A round control rather than a bare glyph — the same affordance the header
+     and the attribution popover use, so it reads as pressable. */
   .makeahead-chevron {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
     color: var(--muted);
-    transition: transform 0.35s var(--ease);
-    font-size: 13px;
+    font-size: 11px;
+    line-height: 1;
+    transition:
+      transform 0.35s var(--ease),
+      border-color 0.3s var(--ease),
+      color 0.3s var(--ease);
+  }
+
+  .makeahead-toggle:hover .makeahead-chevron {
+    border-color: var(--line-strong);
+    color: var(--ink-soft);
   }
 
   .makeahead[data-open] .makeahead-chevron {
     transform: rotate(180deg);
+    border-color: var(--accent);
+    color: var(--accent);
   }
 
   /* CSS-hidden rather than unrendered: hidden text is still crawled and
@@ -1020,7 +1061,7 @@
      not to. §19.7. */
   .makeahead-body {
     display: none;
-    padding-top: 18px;
+    padding-bottom: 8px;
   }
 
   .makeahead[data-open] .makeahead-body {
@@ -1085,9 +1126,15 @@
     border-top: 1px solid var(--line);
   }
 
+  /* The list is numbered by a counter rather than by the browser's own marker,
+     so an entry reads "[2]" exactly as the citation pointing at it does. A
+     reference list whose numbering does not match its citations is no better
+     than an unnumbered one. */
   .sources ol {
     margin: 0;
-    padding-left: 20px;
+    padding-left: 34px;
+    list-style: none;
+    counter-reset: source;
   }
 
   .sources li {
@@ -1095,6 +1142,24 @@
     line-height: 1.6;
     color: var(--ink-soft);
     margin-bottom: 12px;
+    counter-increment: source;
+    position: relative;
+  }
+
+  .sources li::before {
+    content: '[' counter(source) ']';
+    position: absolute;
+    left: -34px;
+    width: 30px;
+    text-align: right;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* The anchor a citation jumps to. Without it the target lands under the
+     sticky-free header but flush against the viewport edge. */
+  .sources li:target::before {
+    font-weight: 600;
   }
 
   .sources a {
@@ -1299,14 +1364,6 @@
     border-bottom-color: var(--accent);
   }
 
-  .catalog-controls {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 8px;
-  }
-
   .catalog-search {
     flex: 1;
     max-width: 380px;
@@ -1343,33 +1400,160 @@
     color: var(--ink);
   }
 
-  .catalog-facets {
+  /*
+   * Every control that narrows the catalogue, on one line above it.
+   *
+   * The facets used to be rows of pills — one row per facet, wrapping. Honest,
+   * and it does not survive a growing catalogue: thirty cuisines is three
+   * wrapped lines of controls before a single dish is visible. Menus keep the
+   * row one line whatever the vocabulary grows to.
+   */
+  .catalog-bar {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
     padding-block: 22px;
     border-bottom: 1px solid var(--line);
   }
 
-  .facet {
-    display: flex;
-    gap: 14px;
-    align-items: baseline;
-    flex-wrap: wrap;
+  .catalog-bar .catalog-search {
+    flex: 1 1 220px;
   }
 
-  .facet-label {
+  .facet-menu {
+    position: relative;
+  }
+
+  .facet-menu-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition:
+      border-color 0.3s var(--ease),
+      background 0.3s var(--ease);
+  }
+
+  .facet-menu-button:hover {
+    border-color: var(--line-strong);
+  }
+
+  .facet-menu-button.on {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--surface-3);
+  }
+
+  /* Hiding is not selecting, so it never looks like it. */
+  .facet-menu-button.is-exclusion.on {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .facet-menu-count {
+    display: grid;
+    place-items: center;
+    min-width: 17px;
+    height: 17px;
+    padding: 0 4px;
+    border-radius: 100px;
+    background: var(--surface-3);
+    color: var(--accent);
     font-size: 10.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-    min-width: 170px;
+    font-variant-numeric: tabular-nums;
   }
 
-  .facet-terms {
+  .facet-menu-button.is-exclusion.on .facet-menu-count {
+    background: var(--accent);
+    color: var(--surface-3);
+  }
+
+  .facet-menu-caret {
+    font-size: 9px;
+    opacity: 0.7;
+  }
+
+  .facet-menu-panel {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 210px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    box-shadow: 0 18px 40px rgb(0 0 0 / 0.28);
+  }
+
+  .facet-menu-panel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .facet-menu-panel label {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+
+  .facet-menu-panel label:hover {
+    background: var(--surface-3);
+  }
+
+  .facet-menu-clear {
+    width: 100%;
+    margin-top: 6px;
+    padding: 8px;
+    background: none;
+    border: none;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font: inherit;
+    font-size: 12px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .facet-menu-clear:hover {
+    color: var(--accent);
+  }
+
+  .catalog-sort select {
+    font: inherit;
+    font-size: 12.5px;
+    padding: 9px 10px;
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    cursor: pointer;
+  }
+
+  .catalog-clear {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--accent);
+    cursor: pointer;
   }
 
   .pill {
@@ -1564,6 +1748,25 @@
     color: var(--accent);
   }
 
+  /* Backlinks in the side column: a name and how much of the ingredient it
+     takes, which is the sort order and therefore the reason to show it. */
+  .used-in .ing-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .used-in a {
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .used-in a:hover {
+    color: var(--accent);
+  }
+
   /* One column, for listings whose rows carry a sentence rather than a word. */
   .listing-single {
     grid-template-columns: minmax(0, 1fr);
@@ -1676,17 +1879,12 @@
   }
 
   @media (max-width: 860px) {
-    .catalog-controls {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
     .catalog-search {
       max-width: none;
     }
 
-    .facet-label {
-      min-width: 0;
+    .catalog-bar .catalog-search {
+      flex-basis: 100%;
     }
 
     .two-col {
@@ -1869,6 +2067,126 @@
     height: 15px;
     flex: none;
     fill: currentColor;
+  }
+
+  /* Adding a dish to a day without leaving the plan. §8.5 */
+  .day-adder-open {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 4px;
+    padding: 7px 0;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: color 0.3s var(--ease);
+  }
+
+  .day-adder-open:hover {
+    color: var(--accent);
+  }
+
+  .day-adder-open span {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 1;
+  }
+
+  .day-adder-open:hover span {
+    border-color: var(--accent);
+  }
+
+  .day-adder {
+    margin-top: 8px;
+  }
+
+  .day-adder .catalog-search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .day-adder-results {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .day-adder-results button {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .day-adder-results li:last-child button {
+    border-bottom: none;
+  }
+
+  .day-adder-results button:hover {
+    background: var(--surface-2);
+    color: var(--accent);
+  }
+
+  /* Two intentions, two controls, stacked so neither reads as the primary. */
+  .add-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .add-actions .add-to-plan {
+    margin-top: 0;
+  }
+
+  /* Sharing a dish is a secondary action on a page meant to be cooked from,
+     so it is collapsed until asked for. */
+  .share-card-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .share-card-toggle .side-card-label {
+    margin-bottom: 0;
+  }
+
+  .share-card[data-open] .makeahead-chevron {
+    transform: rotate(180deg);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .share-card .share-actions {
+    margin-top: 14px;
   }
 
   .plan-clear {
@@ -2199,57 +2517,20 @@
 }
 
 @layer components {
-  /* Search overlay. The affordance is required (§19.4), so it has to work. */
-  .search-overlay {
-    position: fixed;
-    inset: 0;
-    background: var(--overlay);
-    backdrop-filter: blur(6px);
-    z-index: 40;
-    display: none;
-    padding: 12vh 20px 20px;
-    overflow-y: auto;
-  }
-
-  .search-overlay[data-open] {
-    display: block;
-  }
-
-  .search-panel {
-    max-width: 620px;
-    margin-inline: auto;
-    background: var(--surface-3);
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 0 30px 70px -24px var(--shadow);
-  }
-
-  .search-panel .close {
-    float: right;
-    background: none;
-    border: none;
-    color: var(--muted);
-    cursor: pointer;
-    font-size: 18px;
-    line-height: 1;
-  }
-
-  /* Pagefind's own UI, retinted to the token set rather than left default. */
-  .search-panel {
+  /*
+   * Search, on its own page. Pagefind's own UI, retinted to the token set
+   * rather than left at its defaults, and given the reading measure — a results
+   * list running the full width of a 1240px band is unreadable.
+   */
+  .search-page {
+    max-width: 640px;
+    padding-bottom: 48px;
     --pagefind-ui-primary: var(--accent);
     --pagefind-ui-text: var(--ink);
-    --pagefind-ui-background: var(--surface-3);
+    --pagefind-ui-background: var(--surface-1);
     --pagefind-ui-border: var(--line);
     --pagefind-ui-tag: var(--surface-2);
     --pagefind-ui-border-radius: 10px;
     --pagefind-ui-font: var(--font-body);
-  }
-
-  .search-fallback {
-    font-size: 12.5px;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-top: 12px;
   }
 }

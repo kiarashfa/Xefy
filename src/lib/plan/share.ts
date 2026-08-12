@@ -58,6 +58,47 @@ export function shareText(
   ].join('\n');
 }
 
+/**
+ * The week, as a message.
+ *
+ * Same discipline as the list: one line per thing, no markdown, nothing that
+ * depends on a monospaced font to make sense. Days are relative slots rather
+ * than dates (§8.5), so they are named and not dated — a plan sent on Thursday
+ * still means "Monday", whenever the reader cooks it.
+ *
+ * Anything without a day is grouped at the end rather than dropped. A dish
+ * someone means to cook but has not placed is still part of what they are
+ * sharing.
+ */
+export function planText(
+  items: readonly ResolvedPlanItem[],
+  dayLabels: Readonly<Record<string, string>>,
+  days: readonly string[],
+  url?: string,
+): string {
+  const line = (i: ResolvedPlanItem) =>
+    `- ${i.recipe.title} (${i.item.servings} ${i.item.servings === 1 ? 'serving' : 'servings'})`;
+
+  const scheduled = days
+    .map((day) => ({ day, entries: items.filter((i) => i.item.day === day) }))
+    .filter((slot) => slot.entries.length > 0)
+    .flatMap((slot) => [`${dayLabels[slot.day] ?? slot.day}:`, ...slot.entries.map(line), '']);
+
+  const loose = items.filter((i) => i.item.day === null);
+
+  return [
+    'Meal plan — Xefy',
+    '',
+    ...(scheduled.length > 0 ? scheduled : []),
+    ...(loose.length > 0 ? ['Not yet given a day:', ...loose.map(line), ''] : []),
+    ...(items.length === 0 ? ['- (nothing planned)', ''] : []),
+    ...(url ? [url] : []),
+  ]
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trimEnd();
+}
+
 /* ------------------------------------------------------------------ *
  * The fragment
  * ------------------------------------------------------------------ */
@@ -125,7 +166,9 @@ export function decodePlanFragment(
     const version = recipe.versions.find((v) => v.id === versionId) ?? recipe.versions[0];
     if (!version) continue;
 
-    out.push({ recipe: recipe.slug, version: version.id, servings, day: null });
+    // A shared plan is a plan: everything in it arrives as something to cook,
+    // whatever the sender had marked as shopping-only.
+    out.push({ recipe: recipe.slug, version: version.id, servings, day: null, listOnly: false });
   }
 
   return out;

@@ -10,13 +10,23 @@ import { buildParallelGroups, criticalPathTotal, phaseOf, type TimedStep } from 
  * cannot drift from the timing card.
  */
 
-export type AnchorMode = 'ready-at' | 'start-now';
+/**
+ * Which end of the schedule is fixed.
+ *
+ * `start-now` and `start-at` are the same walk from opposite intentions — one
+ * takes the current moment and one takes a chosen one — so the engine treats
+ * them together and only the anchor differs.
+ */
+export type AnchorMode = 'ready-at' | 'start-at' | 'start-now';
 
 export interface TimelineAnchor {
   mode: AnchorMode;
   /** The moment to be ready, or the moment work begins. */
   at: Date;
 }
+
+/** True where the anchor is the beginning rather than the end. */
+export const anchorsStart = (mode: AnchorMode): boolean => mode !== 'ready-at';
 
 export interface TimelineEntry {
   stepId: string;
@@ -57,7 +67,9 @@ const addMinutes = (date: Date, minutes: number) => new Date(date.getTime() + mi
  */
 export function computeTimeline(steps: TimedStep[], anchor: TimelineAnchor): Timeline {
   const totalMin = criticalPathTotal(steps);
-  const start = anchor.mode === 'start-now' ? new Date(anchor.at) : addMinutes(anchor.at, -totalMin);
+  const start = anchorsStart(anchor.mode)
+    ? new Date(anchor.at)
+    : addMinutes(anchor.at, -totalMin);
   const end = addMinutes(start, totalMin);
 
   const byId = new Map(steps.map((s) => [s.id, s]));

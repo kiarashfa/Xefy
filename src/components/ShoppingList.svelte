@@ -179,14 +179,21 @@
         </div>
         {#if copied}<p class="source-line" role="status">{copied}</p>{/if}
 
-        <ShareTargets text={text} body={body} url={shareUrl()} />
+        <ShareTargets
+          mode="message"
+          text={text}
+          body={body}
+          url={shareUrl()}
+          title="Shopping list — Xefy"
+        />
 
         <p class="source-line">
           The link carries the plan rather than the list, so whoever opens it sees the amounts
           worked out in their own units.
           {#if canShare}
-            Share… opens your device's own list, which is the way to reach Instagram and anything
-            else installed on it.
+            Share… opens your device's own sheet, which is how to reach Instagram Direct, an X
+            message, Signal and anything else installed on it — none of those can be opened with a
+            message already written from a web page.
           {/if}
         </p>
       </div>

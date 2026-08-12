@@ -5,6 +5,7 @@ import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import ServingScaler from '../../components/ServingScaler.svelte';
 import UnitToggle from '../../components/UnitToggle.svelte';
+import ShareRecipe from '../../components/ShareRecipe.svelte';
 
 import { loadContent } from '../../lib/content/disk.ts';
 import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from '../../lib/content/resolve.ts';
@@ -324,18 +325,21 @@ const description = identity.description ?? identity.subtitle;
                       */}
                       <div class="timeline-modes" role="group" aria-label="Timing anchor">
                         <button type="button" aria-pressed="true" data-mode="ready-at">Ready at</button>
+                        <button type="button" aria-pressed="false" data-mode="start-at">Start at</button>
                         <button type="button" aria-pressed="false" data-mode="start-now">
                           Starting now
                         </button>
                       </div>
                       <label>
-                        <span class="fact-label">Time</span>
+                        {/* The same field means the end of the schedule or the
+                            beginning of it, so it says which. */}
+                        <span class="fact-label" data-time-label>Ready</span>
                         {/*
                           Native, because it is keyboard- and screen-reader-
                           operable with no custom work — the same principle that
                           rules out drag-and-drop on the Plan.
                         */}
-                        <input type="time" value="20:00" aria-label="Time you want to eat" />
+                        <input type="time" value="20:00" aria-label="Time to anchor the schedule to" />
                       </label>
                     </div>
                     <script
@@ -415,10 +419,18 @@ const description = identity.description ?? identity.subtitle;
                       A side door, not the page's purpose — outlined rather than
                       a filled accent button, which would read as commerce on a
                       page that sells nothing. §19.7
+
+                      Two doors, because they are two intentions: cooking this
+                      as part of the week, and simply wanting what it takes.
                     */}
-                    <button class="add-to-plan" data-add-to-plan data-default-servings={servings}>
-                      Add to plan
-                    </button>
+                    <div class="add-actions">
+                      <button class="add-to-plan" data-add-to-plan="plan" data-default-servings={servings}>
+                        Add to plan
+                      </button>
+                      <button class="add-to-plan" data-add-to-plan="list" data-default-servings={servings}>
+                        Add to shopping list
+                      </button>
+                    </div>
                   </div>
 
                   <div class="nutrition">
@@ -475,6 +487,18 @@ const description = identity.description ?? identity.subtitle;
             );
           })
         }
+
+        {/*
+          The one thing here somebody might show an audience, so this is where
+          the public intents live and the only place on the site they do.
+        */}
+        <ShareRecipe
+          client:visible
+          title={identity.title}
+          subtitle={identity.subtitle}
+          url={`${Astro.site?.origin ?? ''}${base}recipes/${Astro.params.slug}/`}
+          image={identity.image ? `${Astro.site?.origin ?? ''}${base}${identity.image.src}` : ''}
+        />
       </aside>
 
       <div class="right-col">

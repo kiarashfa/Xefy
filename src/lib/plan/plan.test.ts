@@ -122,6 +122,7 @@ const details = new Map([
 ]);
 
 const item = (over: Partial<PlanItem> = {}): PlanItem => ({
+  listOnly: false,
   uid: 'a1',
   recipe: 'test-pizza',
   version: 'index',
@@ -406,14 +407,14 @@ test('a fragment round-trips through the catalogue', () => {
   );
   const decoded = decodePlanFragment(encodePlanFragment(items), catalog);
   assert.deepEqual(decoded, [
-    { recipe: 'test-pizza', version: 'index', servings: 4, day: null },
-    { recipe: 'test-pizza', version: 'home-oven', servings: 6, day: null },
+    { recipe: 'test-pizza', version: 'index', servings: 4, day: null, listOnly: false },
+    { recipe: 'test-pizza', version: 'home-oven', servings: 6, day: null, listOnly: false },
   ]);
 });
 
 test('§8.4’s two-field form is still valid input', () => {
   assert.deepEqual(decodePlanFragment('#p=test-stew:6', catalog), [
-    { recipe: 'test-stew', version: 'index', servings: 6, day: null },
+    { recipe: 'test-stew', version: 'index', servings: 6, day: null, listOnly: false },
   ]);
 });
 
@@ -455,7 +456,7 @@ test('a stored plan is checked field by field rather than trusted', () => {
     items: [
       { uid: 'a1', recipe: 'test-pizza', version: 'index', servings: 900, day: 'tue' },
       { uid: 'b2', recipe: 'test-pizza', version: 'index', servings: 2, day: 'someday' },
-      { recipe: 'test-pizza', version: 'index', servings: 2, day: null },
+      { recipe: 'test-pizza', version: 'index', servings: 2, day: null, listOnly: false },
       { recipe: 42, version: 'index', servings: 2 },
       null,
     ],

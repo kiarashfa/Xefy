@@ -2,9 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
-import RecipeCards from '../../components/RecipeCards.astro';
+import Catalog from '../../components/Catalog.svelte';
 import { catalogRecord, getSite } from '../../lib/content/site.ts';
+import { COURSES, CUISINES, METHODS, ALLERGEN_TERMS } from '../../schemas/taxonomy.ts';
 
+/**
+ * The same catalogue as the homepage, with the same controls — the component is
+ * shared rather than the markup copied, so a change to filtering or sorting
+ * cannot land on one of these pages and not the other.
+ */
 const site = await getSite();
 const recipes = site.recipes.map(catalogRecord);
 const base = import.meta.env.BASE_URL;
@@ -19,10 +25,19 @@ const base = import.meta.env.BASE_URL;
     <div class="page-head">
       <h1 class="page-title">Recipes</h1>
       <p class="page-lede">
-        {recipes.length} dishes. The homepage has the same set with filters on it.
+        {recipes.length} dishes, every one with its timing, nutrition and diet labels computed
+        rather than typed.
       </p>
     </div>
-    <RecipeCards recipes={recipes} base={base} />
+    <Catalog
+      client:load
+      recipes={recipes}
+      base={base}
+      cuisines={CUISINES}
+      courses={COURSES}
+      methods={METHODS}
+      allergens={ALLERGEN_TERMS}
+    />
   </main>
   <SiteFooter />
   <script>

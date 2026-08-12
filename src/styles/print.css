@@ -82,7 +82,7 @@
   /* ---- Chrome that has no meaning on paper ---------------------------- */
 
   .site-header,
-  .search-overlay,
+  .search-page,
   .crumb,
   .panel-switch,
   .version-tabs,
@@ -94,8 +94,7 @@
   .attribution,
   .sub-hint,
   .makeahead-chevron,
-  .catalog-controls,
-  .catalog-facets,
+  .catalog-bar,
   .catalog-view,
   .plan-row-controls,
   .plan-clear,

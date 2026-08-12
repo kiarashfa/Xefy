@@ -55,6 +55,14 @@ const dietNote =
 
 const grams = (n: number) => (n >= 1000 ? `${(n / 1000).toFixed(1)} kg` : `${Math.round(n)} g`);
 
+/**
+ * A staple's backlinks grow with the whole catalogue — every dish using butter
+ * would eventually be listed here — and the tail of that list answers nobody's
+ * question. The ones using the most are the useful answer, and the rest are
+ * reachable by search.
+ */
+const USED_IN_SHOWN = 10;
+
 const title = ingredient.name;
 const description = `${descriptor}. ${energy != null ? `100 g provides about ${Math.round(energy)} kcal. ` : ''}Used in ${usedIn.length} ${usedIn.length === 1 ? 'recipe' : 'recipes'} on Xefy.`;
 ---
@@ -126,6 +134,35 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
           )
         }
 
+        <div class="side-card">
+          <div class="side-card-label">Used in</div>
+          {
+            usedIn.length === 0 ? (
+              <p class="empty-state">
+                No recipe on Xefy uses this yet. It will appear here as soon as one does.
+              </p>
+            ) : (
+              <>
+                <ul class="ingredients used-in">
+                  {usedIn.slice(0, USED_IN_SHOWN).map(({ recipe, grams: g }) => (
+                    <li>
+                      <span class="ing-text">
+                        <a href={`${base}recipes/${recipe.slug}/`}>{recipe.identity.title}</a>
+                        <span class="count">{grams(g)}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p class="source-line">
+                  {usedIn.length > USED_IN_SHOWN
+                    ? `The ${USED_IN_SHOWN} dishes using the most, at their own serving counts. ${usedIn.length - USED_IN_SHOWN} more use it in smaller amounts.`
+                    : 'Sorted by how much each recipe uses, at its own serving count — most first.'}
+                </p>
+              </>
+            )
+          }
+        </div>
+
         {
           ingredient.generalSubstitutes?.length > 0 && (
             <div class="side-card">
@@ -192,35 +229,6 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
             </section>
           ))
         }
-
-        <section>
-          <h2 class="panel-title">Used in</h2>
-          {
-            usedIn.length === 0 ? (
-              <p class="empty-state">
-                No recipe on Xefy uses this yet. It will appear here as soon as one does.
-              </p>
-            ) : (
-              <ul class="listing listing-single">
-                {usedIn.map(({ recipe, grams: g }) => (
-                  <li>
-                    <a href={`${base}recipes/${recipe.slug}/`}>
-                      {recipe.identity.title}
-                      <span class="count">{grams(g)}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )
-          }
-          {
-            usedIn.length > 0 && (
-              <p class="source-line">
-                Sorted by how much each recipe uses, at its own serving count — most first.
-              </p>
-            )
-          }
-        </section>
 
         {
           about && (

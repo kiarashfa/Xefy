@@ -41,15 +41,24 @@ function wireAddButtons(base: string): void {
       const count = servings.get() || Number(button.dataset.defaultServings ?? '0');
       if (!count) return;
 
-      addToPlan(slug, version, count);
+      // Wanting the ingredients and planning to cook it this week are different
+      // intentions, and the second implies the first rather than the reverse.
+      const listOnly = button.dataset.addToPlan === 'list';
+      addToPlan(slug, version, count, listOnly);
 
       const confirmation = document.createElement('p');
       confirmation.className = 'add-confirmed';
       confirmation.setAttribute('role', 'status');
-      confirmation.innerHTML =
-        `Added at ${count} servings — ` +
-        `<a href="${base}plan/">Plan</a> · <a href="${base}shopping-list/">Shopping list</a>`;
-      button.replaceWith(confirmation);
+      confirmation.innerHTML = listOnly
+        ? `On the list at ${count} servings — ` +
+          `<a href="${base}shopping-list/">Shopping list</a>`
+        : `Added at ${count} servings — ` +
+          `<a href="${base}plan/">Plan</a> · <a href="${base}shopping-list/">Shopping list</a>`;
+
+      // Both buttons go: the dish is in, and offering the other one now would
+      // add it twice rather than change what the first did.
+      const group = button.closest('.add-actions');
+      (group ?? button).replaceWith(confirmation);
     });
   }
 }

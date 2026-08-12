@@ -67,12 +67,15 @@ export const TREATMENT = {
 } as const;
 
 /**
- * The sentence that goes in each image's `modified` field. CC ShareAlike
- * requires modifications to be indicated, and cropping plus grading is
- * unambiguously a modification.
+ * The sentence that goes in each image's `modified` field.
+ *
+ * ShareAlike requires modifications to be *indicated*, not itemised, and the
+ * itemised version — white balance, grading, resampling, re-encoding — told a
+ * reader nothing they could act on while taking three lines of an attribution
+ * popover to do it. What the treatment actually consists of belongs in this
+ * file, where someone can read the code.
  */
-export const MODIFICATION_NOTE =
-  'Cropped to a square, white-balanced and colour-graded for consistency across the site, resized and re-encoded as WebP.';
+export const MODIFICATION_NOTE = 'Cropped and colour-adjusted for this site.';
 
 const clamp = (value: number, spread: number) => Math.min(1 + spread, Math.max(1 - spread, value));
 

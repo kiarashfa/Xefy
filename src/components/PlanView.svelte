@@ -13,15 +13,19 @@
   import { catalog, details, ensureCatalog, ensureDetails, loadError } from '../lib/plan/client.ts';
   import { describeDropped, resolvePlan, totalPortions, type ResolvedPlanItem } from '../lib/plan/resolve.ts';
   import {
+    addToPlan,
     clearPlan,
     loadPlan,
     plan,
     planNotice,
     removeFromPlan,
     setItemDay,
+    setItemListOnly,
     setItemServings,
   } from '../lib/plan/store.ts';
   import { DAYS, DAY_LABELS, type Day } from '../lib/plan/types.ts';
+  import { encodePlanFragment, planText } from '../lib/plan/share.ts';
+  import ShareTargets from './ShareTargets.svelte';
   import { formatNutrient, type Nutrient } from '../lib/math/nutrition.ts';
   import { formatDuration } from '../lib/math/units.ts';
 
@@ -40,17 +44,46 @@
     ensureDetails(base, resolution.items.map((i) => i.recipe.slug));
   });
 
-  const nutrition = $derived(aggregateNutrition(resolution.items, $details));
+  // Shopping-only items are not meals anybody has planned to eat, so they stay
+  // out of what the week comes to — while still reaching the shopping list.
+  const nutrition = $derived(aggregateNutrition(planned, $details));
 
-  const unscheduled = $derived(resolution.items.filter((i) => i.item.day === null));
-  const anyScheduled = $derived(unscheduled.length < resolution.items.length);
+  /* Three groups: in the week, meant to be cooked but unplaced, and wanted for
+     the shopping alone. Only the first two are meals anybody has planned. */
+  const planned = $derived(resolution.items.filter((i) => !i.item.listOnly));
+  const listOnly = $derived(resolution.items.filter((i) => i.item.listOnly));
+  const unscheduled = $derived(planned.filter((i) => i.item.day === null));
   const byDay = $derived(
     DAYS.map((day) => ({
       day,
       label: DAY_LABELS[day],
-      items: resolution.items.filter((i) => i.item.day === day),
+      items: planned.filter((i) => i.item.day === day),
     })),
   );
+
+  /* --- adding a dish from this page ---------------------------------- */
+
+  /** Which day's picker is open, so only one is at a time. */
+  let adding = $state<Day | null>(null);
+  let query = $state('');
+
+  const matches = $derived(
+    query.trim().length === 0
+      ? []
+      : ($catalog ?? [])
+          .filter((r) => r.title.toLowerCase().includes(query.trim().toLowerCase()))
+          .slice(0, 8),
+  );
+
+  function addOn(day: Day, slug: string) {
+    const record = ($catalog ?? []).find((r) => r.slug === slug);
+    const version = record?.versions[0];
+    if (!version) return;
+    const item = addToPlan(slug, version.id, version.defaultServings);
+    setItemDay(item.uid, day);
+    query = '';
+    adding = null;
+  }
 
   /** The recipe page's nutrition card, at plan scale — same labels, same units. */
   const MACROS: [Nutrient, string][] = [
@@ -63,6 +96,34 @@
   const versionDetail = (entry: ResolvedPlanItem) =>
     $details.get(entry.recipe.slug)?.versions.find((v) => v.id === entry.item.version);
 
+  /* Sharing the week — a message to one person, not a post. §8.4 */
+  function planUrl(): string {
+    return `${location.origin}${location.pathname}${encodePlanFragment(resolution.items)}`;
+  }
+
+  const planMessage = $derived(planText(resolution.items, DAY_LABELS, DAYS, planUrl()));
+  const planBody = $derived(planText(resolution.items, DAY_LABELS, DAYS));
+
+  const canShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function';
+  let copied = $state('');
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(planMessage);
+      copied = 'Copied to the clipboard.';
+    } catch {
+      copied = 'This browser would not let the page copy for you — select the plan and copy it.';
+    }
+  }
+
+  async function share() {
+    try {
+      await navigator.share({ title: 'Meal plan — Xefy', text: planMessage });
+    } catch {
+      // A cancelled share is the ordinary case and is not an error.
+    }
+  }
+
   const keeps = (entry: ResolvedPlanItem): string | null => {
     const ahead = versionDetail(entry)?.makeAhead;
     if (!ahead) return null;
@@ -74,16 +135,16 @@
 
 {#if $loadError}
   <p class="empty-state">{$loadError}</p>
-{:else if resolution.items.length === 0}
-  <p class="empty-state">
-    Nothing planned yet. Add a dish from any <a href={`${base}recipes/`}>recipe page</a> and it will
-    appear here, with the <a href={`${base}shopping-list/`}>shopping list</a> worked out from the
-    serving counts you chose — or start from
-    <a href={`${base}what-can-i-make/`}>what you already have</a>.
-  </p>
-  {#if dropped}<p class="plan-dropped">{dropped}</p>{/if}
-  {#if $planNotice}<p class="plan-dropped">{$planNotice}</p>{/if}
 {:else}
+  {#if resolution.items.length === 0}
+    <p class="empty-state">
+      Nothing planned yet. Add a dish to any day below, from any
+      <a href={`${base}recipes/`}>recipe page</a>, or from
+      <a href={`${base}what-can-i-make/`}>what you already have</a>. The
+      <a href={`${base}shopping-list/`}>shopping list</a> works itself out from the serving counts
+      you choose.
+    </p>
+  {/if}
   {#if dropped}<p class="plan-dropped">{dropped}</p>{/if}
   {#if $planNotice}<p class="plan-dropped">{$planNotice}</p>{/if}
 
@@ -124,6 +185,28 @@
           {#if nutrition.estimated}
             Estimated — {nutrition.reasons.join(' ')}
           {/if}
+        </p>
+      </div>
+
+      <div class="side-card">
+        <div class="side-card-label">Send it</div>
+        <div class="share-actions">
+          {#if canShare}
+            <button class="add-to-plan" onclick={share}>Share…</button>
+          {/if}
+          <button class="add-to-plan" onclick={copy}>Copy as text</button>
+        </div>
+        {#if copied}<p class="source-line" role="status">{copied}</p>{/if}
+        <ShareTargets
+          mode="message"
+          text={planMessage}
+          body={planBody}
+          url={planUrl()}
+          title="Meal plan — Xefy"
+        />
+        <p class="source-line">
+          The link carries the plan itself, so whoever opens it can copy the whole week into their
+          own.
         </p>
       </div>
 
@@ -191,14 +274,22 @@
               <!-- A select rather than drag-and-drop: operable by keyboard and
                    screen reader with no extra work. §8.5 -->
               <select
-                value={entry.item.day ?? ''}
-                onchange={(e) =>
-                  setItemDay(entry.item.uid, (e.currentTarget.value || null) as Day | null)}
+                value={entry.item.listOnly ? 'list' : (entry.item.day ?? '')}
+                onchange={(e) => {
+                  const value = e.currentTarget.value;
+                  if (value === 'list') {
+                    setItemListOnly(entry.item.uid, true);
+                    return;
+                  }
+                  if (entry.item.listOnly) setItemListOnly(entry.item.uid, false);
+                  setItemDay(entry.item.uid, (value || null) as Day | null);
+                }}
               >
-                <option value="">Unscheduled</option>
+                <option value="">No day yet</option>
                 {#each DAYS as day (day)}
                   <option value={day}>{DAY_LABELS[day]}</option>
                 {/each}
+                <option value="list">Shopping only</option>
               </select>
             </label>
             <button
@@ -212,28 +303,70 @@
         </li>
       {/snippet}
 
+      {#snippet dayAdder(day: Day)}
+        {#if adding === day}
+          <div class="day-adder is-open">
+            <!-- svelte-ignore a11y_autofocus -->
+            <input
+              class="catalog-search"
+              type="search"
+              bind:value={query}
+              autofocus
+              placeholder="Search dishes…"
+              aria-label={`Find a dish for ${DAY_LABELS[day]}`}
+              onkeydown={(e) => {
+                if (e.key === 'Escape') {
+                  adding = null;
+                  query = '';
+                }
+              }}
+            />
+            {#if matches.length > 0}
+              <ul class="day-adder-results">
+                {#each matches as m (m.slug)}
+                  <li>
+                    <button onclick={() => addOn(day, m.slug)}>
+                      {m.title}
+                      <span class="ing-note">{m.style}</span>
+                    </button>
+                  </li>
+                {/each}
+              </ul>
+            {:else if query.trim()}
+              <p class="plan-day-empty">Nothing matches that.</p>
+            {/if}
+            <button class="plan-remove" onclick={() => { adding = null; query = ''; }}>
+              Cancel
+            </button>
+          </div>
+        {:else}
+          <button
+            class="day-adder-open"
+            onclick={() => { adding = day; query = ''; }}
+            aria-label={`Add a dish to ${DAY_LABELS[day]}`}
+          >
+            <span aria-hidden="true">+</span> Add a dish
+          </button>
+        {/if}
+      {/snippet}
+
       {#if unscheduled.length > 0}
         <section class="plan-day">
-          <h2 class="panel-title">Unscheduled</h2>
+          <h2 class="panel-title">Not yet given a day</h2>
           <ul class="plan-rows">
             {#each unscheduled as entry (entry.item.uid)}{@render row(entry)}{/each}
           </ul>
         </section>
       {/if}
 
-      {#if !anyScheduled}
-        <!--
-          Seven empty day headings is filler, not a week. The week appears the
-          moment it means something, and until then the control that produces
-          it is named instead.
-        -->
-        <p class="plan-day-empty week-hint">
-          Nothing is assigned to a day yet. Give any dish a day above and the week appears here,
-          with what each day comes to.
-        </p>
-      {/if}
-
-      {#each anyScheduled ? byDay : [] as slot (slot.day)}
+      <!--
+        The week is always here, empty days included. It was hidden until
+        something was assigned, on the reasoning that seven empty headings are
+        filler — but an empty week that can be filled *in place* is the page's
+        starting state rather than padding, and hiding the only structure the
+        page has left a first visit with nothing to act on.
+      -->
+      {#each byDay as slot (slot.day)}
         <section class="plan-day">
           <h2 class="panel-title">
             {slot.label}
@@ -249,15 +382,26 @@
               </span>
             {/if}
           </h2>
-          {#if slot.items.length === 0}
-            <p class="plan-day-empty">Nothing planned.</p>
-          {:else}
+          {#if slot.items.length > 0}
             <ul class="plan-rows">
               {#each slot.items as entry (entry.item.uid)}{@render row(entry)}{/each}
             </ul>
           {/if}
+          {@render dayAdder(slot.day)}
         </section>
       {/each}
+
+      {#if listOnly.length > 0}
+        <section class="plan-day">
+          <h2 class="panel-title">Shopping only</h2>
+          <p class="plan-day-empty">
+            On the list, not in the week. Give one a day and it joins the plan proper.
+          </p>
+          <ul class="plan-rows">
+            {#each listOnly as entry (entry.item.uid)}{@render row(entry)}{/each}
+          </ul>
+        </section>
+      {/if}
     </div>
   </div>
 {/if}
