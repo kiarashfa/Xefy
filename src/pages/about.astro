@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import PayPalMark from '../assets/paypal.svg';
+import CoffeeMark from '../assets/buy-me-a-coffee.svg';
+
+/**
+ * What the site is, who builds it, and how to reach or support them.
+ *
+ * Laid out as a recipe page: the cards that say who and where in the left
+ * column, the prose in the reading column beside them. Everything here is
+ * vocabulary the site already has — the body grid, the side card, the About
+ * panel's reading measure — with one new control, the support link, which is
+ * the outlined button carried in the accent wash the exclusion pill uses.
+ */
+const base = import.meta.env.BASE_URL;
+
+const contact = [
+  { label: 'Personal site', href: 'https://kiarashfa.github.io/website/', note: 'kiarashfa.github.io' },
+  { label: 'Email', href: 'mailto:kiarashfa@gmail.com', note: 'kiarashfa@gmail.com' },
+  { label: 'GitHub', href: 'https://github.com/kiarashfa', note: 'github.com/kiarashfa' },
+];
+
+const title = 'About — Xefy';
+const description = 'What Xefy is, who builds it, and how to get in touch or support the work.';
+---
+
+<BaseLayout title={title} description={description}>
+  <SiteHeader />
+
+  <main id="main" class="wrap">
+    <div class="page-head">
+      <h1 class="page-title">About Xefy</h1>
+      <p class="page-lede">
+        A recipe encyclopedia where the numbers are computed rather than typed, built and kept in
+        the open by one person.
+      </p>
+    </div>
+
+    <div class="body-grid">
+      <aside class="left-col">
+        <div class="side-card">
+          <div class="side-card-label">Who made this</div>
+          <div class="author-head">
+            <img
+              class="author-avatar"
+              src={`${base}images/author.webp`}
+              alt="Kiarash Farajzadehahary"
+              width="64"
+              height="64"
+            />
+            <div>
+              <div class="author-name">Kiarash Farajzadehahary</div>
+              <div class="author-role">Scientist · developer · designer</div>
+            </div>
+          </div>
+          <p class="author-bio">
+            I cook, and I kept halving a recipe in my head only to find the oven temperature still
+            written for the other quantity. Xefy is what I wanted instead: one page per dish that
+            does its own arithmetic and never contradicts itself. I build it in the open, on my own
+            time, and I would genuinely like to hear when something here is wrong.
+          </p>
+        </div>
+
+        <div class="side-card">
+          <div class="side-card-label">Contact</div>
+          <ul class="ingredients">
+            {
+              contact.map((item) => (
+                <li>
+                  <span class="ing-text">
+                    {item.href.startsWith('mailto:') ? (
+                      <a href={item.href}>{item.label}</a>
+                    ) : (
+                      <a href={item.href} target="_blank" rel="noopener">
+                        {item.label}
+                      </a>
+                    )}
+                    <span class="ing-note">{item.note}</span>
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+
+        <div class="side-card">
+          <div class="side-card-label">Support</div>
+          <p class="support-note">
+            Xefy is free, ad-free and login-free, and stays that way — if it saved you a dinner, you
+            can put something toward the next hundred dishes.
+          </p>
+          <div class="support-links">
+            <a
+              class="support-link"
+              href="https://www.paypal.com/donate/?hosted_button_id=S3BD5XFBMMWSJ"
+              target="_blank"
+              rel="noopener"
+            >
+              <PayPalMark />
+              <span>Donate · PayPal</span>
+            </a>
+            <a class="support-link" href="https://www.buymeacoffee.com/kiarashfa" target="_blank" rel="noopener">
+              <CoffeeMark />
+              <span>Buy Me a Coffee</span>
+            </a>
+          </div>
+        </div>
+      </aside>
+
+      <div>
+        <h2 class="panel-title">What it does</h2>
+
+        <div class="about about-prose">
+          <p>
+            Xefy gives every dish one page and derives every figure on it from structured data.
+            Change the serving count and the quantities move with it; switch to US customary and
+            the temperatures and dimensions in the method text change too. Nothing is typed into
+            prose by hand, so nothing on a page can drift out of step with anything else on it.
+          </p>
+          <p>
+            The scaling is arithmetic rather than a multiplier printed beside a string. Amounts are
+            held in grams and millilitres and converted once, at the end, so nothing accumulates
+            rounding on the way, and a count like two egg yolks carries its exact weight beside it.
+            Nutrition is computed from USDA records for the ingredients actually listed: the
+            per-serving figures hold steady when you move the stepper, because that is what per
+            serving means, while the totals move with it.
+          </p>
+          <p>
+            Timing comes from the method too. Prep, cook and total are derived from the steps rather
+            than declared over them, and the cook-back timeline turns them into clock times — say
+            when you want to eat, or when you are starting, and it tells you when each step begins.
+            Steps tick off as you go, and the page prints as a sheet worth taking to the kitchen.
+          </p>
+          <p>
+            Past a single dish, a <a href={`${base}plan/`}>weekly plan</a> holds what you intend to
+            cook and the <a href={`${base}shopping-list/`}>shopping list</a> adds it up across every
+            dish on it, merging the same ingredient wherever it appears and converting once at the
+            end. <a href={`${base}what-can-i-make/`}>What can I make</a> runs the other way: tick
+            what is already in the kitchen and dishes are ranked by how close you are, each one
+            naming exactly what is missing. Search reaches alternate and regional names, not just
+            the title on the page.
+          </p>
+          <p>
+            It is a static site with no backend, no accounts, no advertising and no tracking.
+            Whatever it remembers — your plan, your units, your theme — stays in your own browser.
+            Nutrition comes from USDA FoodData Central, and the photography from Wikimedia Commons
+            and Open Food Facts, each image credited on the{' '}
+            <a href={`${base}attributions/`}>image credits</a> page.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <SiteFooter />
+
+  <script>
+    import { initInteractions } from '../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

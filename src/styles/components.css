@@ -73,6 +73,14 @@
    * A three-figure plan would still nudge it, and is not a case worth widening
    * the header on every page for.
    */
+  /* The page controls, spaced to each other rather than to the nav items, so
+     they read as one group at the end of the row rather than three more links. */
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
   .nav-count {
     display: inline-block;
     min-width: 2.2em;
@@ -87,6 +95,7 @@
     border: 1px solid var(--line);
     background: transparent;
     color: var(--ink);
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -1962,6 +1971,103 @@
   .attribution-list .meta b {
     color: var(--ink);
     font-weight: 500;
+  }
+
+  /* ---- About page ---- */
+
+  /* The prose is the one place on the site where a link sits inside a sentence
+     rather than on a line of its own, so it takes the accent a source citation
+     already uses. Scoped: the recipe page's About panel is not this page. */
+  .about-prose a {
+    color: var(--accent);
+  }
+
+  .author-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  /* The ingredient thumbnail's treatment at portrait size: round, ruled, and on
+     a surface of its own, which the photograph needs because it carries its own
+     transparency and would otherwise sit on whichever theme is loaded. */
+  .author-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: var(--surface-3);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    font-family: var(--font-display);
+    font-size: 15.5px;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .author-role {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+
+  /* A sentence inside a side card, at the size the card's own rows use. */
+  .author-bio,
+  .support-note {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+
+  .author-bio {
+    margin-bottom: 0;
+  }
+
+  .support-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+  }
+
+  /*
+   * The outlined button of the recipe page, carried in the accent wash the
+   * exclusion pill already uses: enough that the offer is visible beside the
+   * contact rows, short of the filled accent this palette reserves for a
+   * control that is on. Both pairings exist in both themes, so neither state
+   * invents a colour or a contrast ratio.
+   */
+  .support-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent-ink);
+    font-size: 13px;
+    text-decoration: none;
+    transition:
+      background 0.35s var(--ease),
+      color 0.35s var(--ease);
+  }
+
+  .support-link:hover {
+    background: var(--accent);
+    color: var(--surface-3);
+  }
+
+  .support-link svg {
+    width: 15px;
+    height: 15px;
+    flex: none;
+    fill: currentColor;
   }
 
   @media (max-width: 860px) {

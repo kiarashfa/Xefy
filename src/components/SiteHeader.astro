@@ -42,20 +42,35 @@ const nav = [
           </a>
         ))
       }
-      <button class="icon-btn" data-search aria-label="Search" aria-expanded="false" aria-controls="site-search">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="11" cy="11" r="6.5"></circle>
-          <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
-        </svg>
-      </button>
-      <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-          <circle cx="12" cy="12" r="4.2"></circle>
-          <path
-            d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"
-          ></path>
-        </svg>
-      </button>
+      {/*
+        The three controls are one group, spaced to each other rather than to
+        the nav items: they act on the page you are on, where the links above
+        leave it. About is a destination too, but not one of the four the header
+        is for (§19.4), so it takes an icon here rather than a fifth nav item.
+      */}
+      <div class="nav-icons">
+        <button class="icon-btn" data-search aria-label="Search" aria-expanded="false" aria-controls="site-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
+          </svg>
+        </button>
+        <a class="icon-btn" href={`${base}about/`} aria-label="About this site">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 11.2v5.1"></path>
+            <path d="M12 7.9h.01" stroke-linecap="round"></path>
+          </svg>
+        </a>
+        <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <path
+              d="M12 2.5v2.2M12 19.3v2.2M4.2 4.2l1.5 1.5M18.3 18.3l1.5 1.5M2.5 12h2.2M19.3 12h2.2M4.2 19.8l1.5-1.5M18.3 5.7l1.5-1.5"
+            ></path>
+          </svg>
+        </button>
+      </div>
     </nav>
 
     <div class="mobile-nav">
@@ -65,6 +80,13 @@ const nav = [
           <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
         </svg>
       </button>
+      <a class="icon-btn" href={`${base}about/`} aria-label="About this site">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 11.2v5.1"></path>
+          <path d="M12 7.9h.01" stroke-linecap="round"></path>
+        </svg>
+      </a>
       <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <circle cx="12" cy="12" r="4.2"></circle>
