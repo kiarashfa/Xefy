@@ -7,6 +7,7 @@
    * month ago benefits from every correction made since.
    */
   import UnitToggle from './UnitToggle.svelte';
+  import ShareTargets from './ShareTargets.svelte';
   import { unitSystem, restoreUnitSystem } from '../lib/stores/display.ts';
   import {
     aggregateList,
@@ -84,6 +85,10 @@
   const text = $derived(
     shareText(groups.toBuy, resolution.items, $unitSystem, shareUrl()),
   );
+
+  // The same list without the trailing URL, for the destinations that take a
+  // link in a parameter of their own and would otherwise repeat it.
+  const body = $derived(shareText(groups.toBuy, resolution.items, $unitSystem));
 
   function shareUrl(): string {
     const fragment = encodePlanFragment(resolution.items);
@@ -168,14 +173,21 @@
         <div class="side-card-label">Send it</div>
         <div class="share-actions">
           {#if canShare}
-            <button class="add-to-plan" onclick={share}>Share</button>
+            <button class="add-to-plan" onclick={share}>Share…</button>
           {/if}
           <button class="add-to-plan" onclick={copy}>Copy as text</button>
         </div>
         {#if copied}<p class="source-line" role="status">{copied}</p>{/if}
+
+        <ShareTargets text={text} body={body} url={shareUrl()} />
+
         <p class="source-line">
           The link carries the plan rather than the list, so whoever opens it sees the amounts
           worked out in their own units.
+          {#if canShare}
+            Share… opens your device's own list, which is the way to reach Instagram and anything
+            else installed on it.
+          {/if}
         </p>
       </div>
     </aside>
@@ -214,6 +226,9 @@
                 {#if line.optional}<span class="list-optional">optional</span>{/if}
                 <span class="ing-note">
                   {line.sources.map((s) => s.title).join(' · ')}
+                  {#if line.boughtFor.length > 0}
+                    — enough for the {line.boughtFor.join(' and the ')} too
+                  {/if}
                 </span>
               </span>
             </li>

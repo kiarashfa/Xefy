@@ -45,6 +45,21 @@ export const GET: APIRoute = ({ props }) => {
       makeAhead: resolved.makeAhead,
       ingredients: resolved.lines.map((l): DetailLine => {
         const gPerMl = l.density ? gramsPerMl(l.density) : null;
+        // Resolved here rather than on the client: the Form a thing is bought
+        // as may not appear in the plan at all, so the client has nothing to
+        // look it up against.
+        const bought = l.form.purchasedAs
+          ? l.ingredient.forms.find((f) => f.id === l.form.purchasedAs!.form)
+          : undefined;
+        const boughtGPerMl = bought?.density
+          ? gramsPerMl({
+              gPerMl: bought.density.gPerMl,
+              gPerCup: bought.density.gPerCup,
+              gPerTbsp: bought.density.gPerTbsp,
+              gPerTsp: bought.density.gPerTsp,
+              source: bought.density.densitySource,
+            })
+          : null;
         return {
           ingredientRef: l.ingredient.id,
           name: l.ingredient.name,
@@ -60,6 +75,22 @@ export const GET: APIRoute = ({ props }) => {
             ? { gPerMl, densityEstimated: l.density?.source === 'estimated' }
             : {}),
           ...(l.form.countUnit ? { countUnit: l.form.countUnit } : {}),
+          ...(bought && l.form.purchasedAs
+            ? {
+                purchaseAs: {
+                  form: bought.id,
+                  formLabel: bought.label,
+                  ratio: l.form.purchasedAs.ratio,
+                  ...(boughtGPerMl != null
+                    ? {
+                        gPerMl: boughtGPerMl,
+                        densityEstimated: bought.density?.densitySource === 'estimated',
+                      }
+                    : {}),
+                  ...(bought.countUnit ? { countUnit: bought.countUnit } : {}),
+                },
+              }
+            : {}),
         };
       }),
     })),

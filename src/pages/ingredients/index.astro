@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { getSite } from '../../lib/content/site.ts';
 
 const site = await getSite();
@@ -50,12 +51,7 @@ const categories = [...byCategory].sort(([a], [b]) => a.localeCompare(b));
     }
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <span>Xefy</span>
-      <span>Nutrition from USDA FoodData Central.</span>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script>
     import { initInteractions } from '../../lib/client/interactions.ts';

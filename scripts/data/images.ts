@@ -209,7 +209,7 @@ async function review(query: string, slug: string, limit: number): Promise<void>
 
   const index: string[] = [];
   for (const [i, c] of candidates.entries()) {
-    const raw = Buffer.from(await (await fetch(c.fileUrl, { headers: { 'User-Agent': UA } })).arrayBuffer());
+    const raw = await fetchImage(c.fileUrl);
     const n = String(i + 1).padStart(2, '0');
     await writeFile(path.join(dir, `${n}-before.webp`), await untreated(raw, 'card'));
     await writeFile(path.join(dir, `${n}-after.webp`), await treat(raw, 'card'));
@@ -252,9 +252,7 @@ async function adopt(
     process.exit(1);
   }
 
-  const raw = Buffer.from(
-    await (await fetch(candidate.fileUrl, { headers: { 'User-Agent': UA } })).arrayBuffer(),
-  );
+  const raw = await fetchImage(candidate.fileUrl);
 
   const folder = `${kind}s`;
   const outDir = path.join(IMAGE_DIR, folder);
@@ -292,6 +290,21 @@ async function adopt(
   credits.sort((a, b) => a.kind.localeCompare(b.kind) || a.slug.localeCompare(b.slug));
   await writeFile(CREDITS, `${JSON.stringify(credits, null, 2)}\n`, 'utf8');
 
+  // An ingredient record points at its own thumbnail, and adopting an image
+  // without setting it leaves the file on disk and the page unchanged — a
+  // silent no-op that looks exactly like success. The record is the only place
+  // the site reads, so writing it here is what makes adoption mean anything.
+  if (kind === 'ingredient') {
+    const record = path.join('src/content/ingredients', `${slug}.json`);
+    try {
+      const data = JSON.parse(await readFile(record, 'utf8'));
+      data.image = files.thumb;
+      await writeFile(record, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+    } catch {
+      console.log(`  note: no ingredient record at ${record}; its image field is unset.`);
+    }
+  }
+
   console.log(`Adopted "${candidate.title}" as ${kind}/${slug}`);
   for (const [size, file] of Object.entries(files)) console.log(`  ${size.padEnd(6)} ${file}`);
   console.log(`  ${candidate.license}${candidate.author ? ` · ${candidate.author}` : ''}`);
@@ -328,6 +341,29 @@ async function offFetch(url: URL): Promise<any | null> {
 
 /** The API hands back a 400px rendition; the original is what a hero needs. */
 const fullSize = (imageUrl: string) => imageUrl.replace(/\.(\d+)\.400\.jpg$/, '.$1.full.jpg');
+
+/**
+ * Downloads one image, with retries.
+ *
+ * Open Food Facts' image host in particular refuses connections often enough
+ * that a single attempt fails perhaps half the time, and losing a whole batch of
+ * curation work to one flaky socket is not a useful outcome. The JSON side has
+ * had a retry since it was written; the images never did.
+ */
+async function fetchImage(url: string): Promise<Buffer> {
+  let last: unknown;
+  for (const attempt of [1, 2, 3, 4]) {
+    try {
+      const res = await fetch(url, { headers: { 'User-Agent': UA } });
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      return Buffer.from(await res.arrayBuffer());
+    } catch (error) {
+      last = error;
+      if (attempt < 4) await new Promise((r) => setTimeout(r, attempt * 1500));
+    }
+  }
+  throw new Error(`Could not download ${url} after four attempts: ${String(last)}`);
+}
 
 async function offSearch(query: string): Promise<void> {
   // v2 filters by category and is the maintained endpoint; the older CGI search
@@ -369,9 +405,123 @@ async function offSearch(query: string): Promise<void> {
     console.log(`   https://world.openfoodfacts.org/product/${p.code}`);
   }
   console.log(
-    '\nAdoption from here is deliberately manual: the images vary too much to trust' +
-      '\nunseen, and many carry packaging that would have to be cropped out.',
+    `\nReview one before taking it:  images.ts off-review <barcode> --slug <s>` +
+      `\nThen:                         images.ts off-adopt <barcode> --slug <s> --kind ingredient --alt "…"`,
   );
+}
+
+/** The product record behind one barcode, with its front image resolved. */
+async function offProduct(
+  barcode: string,
+): Promise<{ name: string; brands: string; image: string; page: string } | null> {
+  const url = new URL(`https://world.openfoodfacts.org/api/v2/product/${barcode}`);
+  url.searchParams.set('fields', 'code,product_name,brands,image_front_url,image_url');
+  const data = await offFetch(url);
+  const p = data?.product;
+  const image = p?.image_front_url || p?.image_url;
+  if (!p || !image) {
+    console.error(`No Open Food Facts product with an image for barcode ${barcode}.`);
+    return null;
+  }
+  return {
+    name: p.product_name || '(unnamed)',
+    brands: p.brands || '',
+    image: fullSize(image),
+    page: `https://world.openfoodfacts.org/product/${barcode}`,
+  };
+}
+
+/** Same treatment, same before/after pair — an OFF image is never taken unseen either. */
+async function offReview(barcode: string, slug: string): Promise<void> {
+  const product = await offProduct(barcode);
+  if (!product) return;
+
+  const dir = path.join(REVIEW_DIR, slug);
+  await mkdir(dir, { recursive: true });
+  const raw = await fetchImage(product.image);
+  await writeFile(path.join(dir, `off-${barcode}-before.webp`), await untreated(raw, 'card'));
+  await writeFile(path.join(dir, `off-${barcode}-after.webp`), await treat(raw, 'card'));
+  console.log(`  wrote off-${barcode}-before/after.webp  ${product.name} — ${product.brands}`);
+}
+
+/**
+ * Adopting from Open Food Facts.
+ *
+ * The `off` command could search and nothing could take what it found, which
+ * made §16's secondary source advice a dead end in practice. It stays a last
+ * resort — these are packaging photographs of one brand's tin, and an ingredient
+ * page usually wants the food — but "last resort" and "impossible" are different
+ * things, and the ingredients Commons covers badly are exactly the ones that
+ * need it.
+ *
+ * Contributions are CC BY-SA 3.0, so the ShareAlike obligation and the
+ * attribution are recorded the same way a Commons image's are.
+ */
+async function offAdopt(
+  barcode: string,
+  slug: string,
+  kind: ImageCredit['kind'],
+  alt: string,
+): Promise<void> {
+  if (!slug || !alt) {
+    console.error('--slug and --alt are both required. Alt text is not optional on a real page.');
+    process.exit(1);
+  }
+  const product = await offProduct(barcode);
+  if (!product) process.exit(1);
+
+  const raw = await fetchImage(product!.image);
+
+  const folder = `${kind}s`;
+  const outDir = path.join(IMAGE_DIR, folder);
+  await mkdir(outDir, { recursive: true });
+
+  const files: Record<string, string> = {};
+  for (const size of Object.keys(OUTPUT_SIZES) as OutputSize[]) {
+    const name = size === 'hero' ? `${slug}.webp` : `${slug}-${size}.webp`;
+    await writeFile(path.join(outDir, name), await treat(raw, size));
+    files[size] = `images/${folder}/${name}`;
+  }
+
+  const credit: ImageCredit = {
+    slug,
+    kind,
+    alt,
+    source: 'Open Food Facts',
+    sourceUrl: product!.page,
+    title: `${product!.name}${product!.brands ? ` — ${product!.brands}` : ''} (${barcode})`,
+    author: 'Open Food Facts contributors',
+    credit: 'Open Food Facts',
+    license: 'CC BY-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0',
+    shareAlike: true,
+    attributionRequired: true,
+    modified: MODIFICATION_NOTE,
+    retrieved: new Date().toISOString().slice(0, 10),
+    files,
+  };
+
+  const credits = (await readCredits()).filter((c) => !(c.slug === slug && c.kind === kind));
+  credits.push(credit);
+  credits.sort((a, b) => a.kind.localeCompare(b.kind) || a.slug.localeCompare(b.slug));
+  await writeFile(CREDITS, `${JSON.stringify(credits, null, 2)}\n`, 'utf8');
+
+  if (kind === 'ingredient') {
+    const record = path.join('src/content/ingredients', `${slug}.json`);
+    try {
+      const data = JSON.parse(await readFile(record, 'utf8'));
+      data.image = files.thumb;
+      await writeFile(record, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+    } catch {
+      console.log(`  note: no ingredient record at ${record}; its image field is unset.`);
+    }
+  }
+
+  console.log(`Adopted Open Food Facts ${barcode} as ${kind}/${slug}`);
+  console.log(`  ${credit.title}`);
+  console.log('  CC BY-SA 3.0 · Open Food Facts contributors');
+  console.log('  ShareAlike: the graded image is offered under the same licence, and the');
+  console.log('  modification is recorded. Both appear on /attributions/.');
 }
 
 async function list(): Promise<void> {
@@ -433,6 +583,17 @@ switch (command) {
   case 'off':
     await offSearch(positional().join(' '));
     break;
+  case 'off-review':
+    await offReview(positional()[0] ?? '', flag('slug') ?? 'unsorted');
+    break;
+  case 'off-adopt':
+    await offAdopt(
+      positional()[0] ?? '',
+      flag('slug') ?? '',
+      (flag('kind') as ImageCredit['kind']) ?? 'ingredient',
+      flag('alt') ?? '',
+    );
+    break;
   case 'list':
     await list();
     break;
@@ -444,6 +605,9 @@ switch (command) {
         '  adopt "<File:Title>" --slug <s>   process and record one\n' +
         '         --kind recipe|ingredient|technique --alt "…"\n' +
         '  off <query>                       Open Food Facts, for coverage gaps\n' +
+        '  off-review <barcode> --slug <s>   download and grade one of them\n' +
+        '  off-adopt <barcode> --slug <s>    process and record it\n' +
+        '         --kind ingredient --alt "…"\n' +
         '  list                              what has been adopted\n',
     );
 }

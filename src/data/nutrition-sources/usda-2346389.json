@@ -1,0 +1,62 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346389",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346389/nutrients",
+  "description": "Lettuce, romaine, green, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-08-12",
+  "nutritionPer100g": {
+    "kcal": 17.458,
+    "protein": 0.977,
+    "fat": 0.071,
+    "carbs": 4.056,
+    "calcium": 27.56,
+    "iron": 0.267,
+    "magnesium": 12.05,
+    "phosphorus": 23.41,
+    "potassium": 260.4,
+    "sodium": 23,
+    "zinc": 0.252,
+    "copper": 0.049,
+    "manganese": 0.227,
+    "thiamin": 0.063,
+    "niacin": 0.371,
+    "vitaminB6": 0.063,
+    "vitaminKMcg": 83.4
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 94.29,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.1563,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.6063,
+      "unit": "g"
+    },
+    {
+      "number": "429",
+      "name": "Vitamin K (Dihydrophylloquinone)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "428",
+      "name": "Vitamin K (Menaquinone-4)",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

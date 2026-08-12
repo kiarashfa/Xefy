@@ -38,6 +38,8 @@ export interface ListLine {
   pantryStaple: boolean;
   density?: Density | undefined;
   countUnit?: DetailLine['countUnit'];
+  /** Forms folded into this purchase — "bought for the yolks". §8.4 */
+  boughtFor: string[];
   sources: ListSource[];
 }
 
@@ -48,6 +50,38 @@ const densityOf = (line: DetailLine): Density | undefined =>
   line.gPerMl == null
     ? undefined
     : { gPerMl: line.gPerMl, source: line.densityEstimated ? 'estimated' : 'measured' };
+
+/**
+ * Rewrites a line into the Form a shopper actually buys — §8.4 rule 1 says one
+ * ingredient in one Form is one line, and this decides which Form that is.
+ *
+ * A recipe wanting yolks and whole eggs needs both in the kitchen and neither
+ * in the shop, where there are only eggs. Converting here, on the way into the
+ * grouping, means the two arrive as one line and the existing merge does the
+ * rest without knowing anything about it.
+ *
+ * The conversion never touches nutrition, which reads the recipe's own lines:
+ * the dish contains yolk, whatever the shopping list had to say to be useful.
+ */
+function asPurchased(line: DetailLine): DetailLine {
+  const buy = line.purchaseAs;
+  if (!buy || line.unit !== 'g') return line;
+  return {
+    ...line,
+    form: buy.form,
+    formLabel: buy.formLabel,
+    // The reader is told which of their lines was folded in, or a checklist
+    // saying "eggs" against a recipe saying "egg yolks" looks like a bug. The
+    // count's own noun is the one to use where there is one: "the egg yolks"
+    // is what the recipe called them, and "Yolk, raw" is a table heading.
+    boughtFor: [...(line.boughtFor ?? []), line.countUnit?.plural ?? line.formLabel.toLowerCase()],
+    ...(buy.gPerMl != null
+      ? { gPerMl: buy.gPerMl, densityEstimated: buy.densityEstimated }
+      : { gPerMl: undefined, densityEstimated: undefined }),
+    countUnit: buy.countUnit,
+    purchaseAs: undefined,
+  };
+}
 
 /**
  * The aggregation itself. §8.4
@@ -74,8 +108,8 @@ export function aggregateList(
     const scale = entry.item.servings / version.defaultServings;
     return version.ingredients.map((line) => ({
       sourceKey: entry.item.uid,
-      line,
-      amount: line.amount * scale,
+      line: asPurchased(line),
+      amount: line.amount * scale * (line.purchaseAs?.ratio ?? 1),
     }));
   });
 
@@ -97,16 +131,27 @@ export function aggregateList(
       pantryStaple: stapleSet.has(group.ingredientRef),
       density: densityOf(line),
       countUnit: line.countUnit,
-      sources: group.contributions.map((c) => {
-        const entry = byUid.get(c.sourceKey)!;
-        return {
-          uid: c.sourceKey,
-          slug: entry.recipe.slug,
-          title: entry.recipe.title,
-          servings: entry.item.servings,
-          amount: c.amount,
-        };
-      }),
+      boughtFor: [
+        ...new Set(group.contributions.flatMap((c) => c.line.boughtFor ?? [])),
+      ],
+      // One planned dish is one source, however many of its lines ended up
+      // here. Two lines of one recipe merging — a split use, or a Form folded
+      // into its purchase — must not make the recipe appear twice.
+      sources: [...group.contributions.reduce(
+        (acc, c) => {
+          const entry = byUid.get(c.sourceKey)!;
+          const existing = acc.get(c.sourceKey);
+          acc.set(c.sourceKey, {
+            uid: c.sourceKey,
+            slug: entry.recipe.slug,
+            title: entry.recipe.title,
+            servings: entry.item.servings,
+            amount: (existing?.amount ?? 0) + c.amount,
+          });
+          return acc;
+        },
+        new Map<string, ListSource>(),
+      ).values()],
     };
   });
 }
@@ -152,8 +197,9 @@ export interface DisplayAmount {
 }
 
 export function displayAmount(line: ListLine, system: UnitSystem): DisplayAmount {
-  const { text, estimated } = formatQuantity(line.total, line.unit, system, line.density);
-  if (!line.countUnit || line.unit !== 'g') return { text, estimated };
+  const counted = line.countUnit != null && line.unit === 'g';
+  const { text, estimated } = formatQuantity(line.total, line.unit, system, line.density, counted);
+  if (!counted || !line.countUnit) return { text, estimated };
 
   const raw = formatCount(line.total / line.countUnit.grams);
   const label = raw === '1' ? line.countUnit.singular : line.countUnit.plural;

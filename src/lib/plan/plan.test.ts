@@ -252,6 +252,82 @@ test('amounts render in the reader’s unit system, and mark an estimated densit
   assert.equal(displayAmount(estimated, 'metric').estimated, false);
 });
 
+/**
+ * §8.4 rule 1 makes one ingredient in one Form one line, and a recipe using
+ * both yolks and whole eggs therefore produced two — correct, and useless in a
+ * shop, where there are only eggs.
+ */
+const eggDetail: RecipeDetail = {
+  ...pizzaDetail,
+  slug: 'test-eggs',
+  title: 'Test Eggs',
+  versions: [
+    {
+      ...pizzaDetail.versions[0]!,
+      ingredients: [
+        line({
+          ingredientRef: 'egg',
+          name: 'Egg',
+          form: 'yolk',
+          formLabel: 'Yolk, raw',
+          amount: 60,
+          countUnit: { singular: 'egg yolk', plural: 'egg yolks', grams: 17 },
+          purchaseAs: {
+            form: 'whole',
+            formLabel: 'Whole, raw',
+            ratio: 3,
+            countUnit: { singular: 'egg', plural: 'eggs', grams: 50 },
+          },
+        }),
+        line({
+          ingredientRef: 'egg',
+          name: 'Egg',
+          form: 'whole',
+          formLabel: 'Whole, raw',
+          amount: 50,
+          countUnit: { singular: 'egg', plural: 'eggs', grams: 50 },
+        }),
+      ],
+    },
+  ],
+};
+
+const eggCatalog = [{ ...pizza, slug: 'test-eggs', ingredients: ['egg'] }];
+const eggDetails = new Map([['test-eggs', eggDetail]]);
+
+test('a Form bought as another becomes one purchase line, not two', () => {
+  const { items } = resolvePlan(planOf([item({ recipe: 'test-eggs' })]), eggCatalog);
+  const lines = aggregateList(items, eggDetails, STAPLES);
+
+  assert.equal(lines.length, 1);
+  // 60 g of yolk needs 180 g of egg, plus the 50 g the recipe asks for whole.
+  assert.equal(lines[0]!.total, 230);
+  assert.equal(lines[0]!.form, 'whole');
+  assert.equal(displayAmount(lines[0]!, 'metric').count, '4 ½ eggs');
+});
+
+test('the list says which Form it folded in, so the count is not a surprise', () => {
+  const { items } = resolvePlan(planOf([item({ recipe: 'test-eggs' })]), eggCatalog);
+  const lines = aggregateList(items, eggDetails, STAPLES);
+  // The count's own noun, not the nutrition table's heading.
+  assert.deepEqual(lines[0]!.boughtFor, ['egg yolks']);
+});
+
+test('one dish is one source however many of its lines merged', () => {
+  const { items } = resolvePlan(planOf([item({ recipe: 'test-eggs' })]), eggCatalog);
+  const lines = aggregateList(items, eggDetails, STAPLES);
+  assert.equal(lines[0]!.sources.length, 1);
+  assert.equal(lines[0]!.sources[0]!.amount, 230);
+});
+
+test('a Form bought as another leaves the recipe untouched', () => {
+  // The dish contains yolk. Only the shopping list has to say "eggs".
+  const version = eggDetail.versions[0]!;
+  assert.equal(version.ingredients[0]!.form, 'yolk');
+  assert.equal(version.ingredients[0]!.amount, 60);
+  assert.equal(version.perServing.kcal, 700);
+});
+
 test('a countable Form shows the count alongside the weight', () => {
   const { items } = resolvePlan(planOf([item()]), catalog);
   const flour = aggregateList(items, details, STAPLES)[0]!;

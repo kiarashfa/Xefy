@@ -1,0 +1,70 @@
+{
+  "id": "romaine-lettuce",
+  "name": "Romaine Lettuce",
+  "proseName": "romaine",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Cos lettuce",
+        "region": "United Kingdom",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "generalSubstitutes": [
+    {
+      "substitute": "Little Gem lettuce",
+      "note": "The same type grown small. It keeps the crisp rib that holds a thick dressing, which is what separates romaine from a soft-leaf lettuce."
+    }
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169247",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169247/nutrients",
+      "nutritionPer100g": {
+        "kcal": 17,
+        "protein": 1.23,
+        "fat": 0.3,
+        "carbs": 3.29,
+        "fiber": 2.1,
+        "sugars": 1.19,
+        "calcium": 33,
+        "iron": 0.97,
+        "magnesium": 14,
+        "phosphorus": 30,
+        "potassium": 247,
+        "sodium": 8,
+        "zinc": 0.23,
+        "copper": 0.048,
+        "manganese": 0.155,
+        "seleniumMcg": 0.4,
+        "vitaminC": 4,
+        "thiamin": 0.072,
+        "riboflavin": 0.067,
+        "niacin": 0.313,
+        "vitaminB6": 0.074,
+        "folateMcg": 136,
+        "choline": 9.9,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 436,
+        "vitaminE": 0.13,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 102.5,
+        "saturatedFat": 0.039,
+        "monounsaturatedFat": 0.012,
+        "polyunsaturatedFat": 0.16,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/romaine-lettuce-thumb.webp"
+}

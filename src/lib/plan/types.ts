@@ -104,6 +104,28 @@ export interface DetailLine {
   /** §5.3 — travels with the figure so the dotted underline follows it. */
   densityEstimated?: boolean;
   countUnit?: { singular: string; plural: string; grams: number };
+  /**
+   * Where this Form is not the thing a shopper buys, the Form that is — already
+   * resolved, because the target may not appear anywhere else in the plan. A
+   * recipe made only of yolks still sends someone to buy eggs.
+   */
+  purchaseAs?:
+    | {
+        form: string;
+        formLabel: string;
+        /** Grams of the target Form per gram of this one. */
+        ratio: number;
+        gPerMl?: number;
+        densityEstimated?: boolean;
+        countUnit?: { singular: string; plural: string; grams: number };
+      }
+    | undefined;
+  /**
+   * Set on a line only after a list has folded another Form into it: the Form
+   * labels the reader asked for, so the list can say why it names something
+   * else. Never present in the build-time export.
+   */
+  boughtFor?: string[] | undefined;
 }
 
 export interface DetailVersion {

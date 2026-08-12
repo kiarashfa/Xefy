@@ -4,7 +4,11 @@
   "proseName": "caster sugar",
   "names": {
     "alsoKnownAs": [
-      { "name": "Superfine sugar", "region": "North America", "lang": "en" }
+      {
+        "name": "Superfine sugar",
+        "region": "North America",
+        "lang": "en"
+      }
     ]
   },
   "category": "seasoning",
@@ -61,5 +65,6 @@
         "densitySource": "measured"
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/caster-sugar-thumb.webp"
 }

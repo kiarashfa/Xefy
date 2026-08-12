@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { getSite } from '../../lib/content/site.ts';
 import { NUTRIENT_ROWS } from '../../lib/render/nutrients.ts';
 import { formatNutrient } from '../../lib/math/nutrition.ts';
@@ -200,7 +201,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
                 No recipe on Xefy uses this yet. It will appear here as soon as one does.
               </p>
             ) : (
-              <ul class="listing" style="grid-template-columns:minmax(0,1fr)">
+              <ul class="listing listing-single">
                 {usedIn.map(({ recipe, grams: g }) => (
                   <li>
                     <a href={`${base}recipes/${recipe.slug}/`}>
@@ -233,12 +234,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <span>Xefy — every number on this page is computed, not typed.</span>
-      <span>Nutrition from USDA FoodData Central.</span>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script>
     import { initInteractions } from '../../lib/client/interactions.ts';

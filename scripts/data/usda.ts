@@ -76,6 +76,9 @@ function requireKey(): string {
   return key;
 }
 
+/** An expected failure — printed as a sentence rather than as a stack trace. */
+class UsdaError extends Error {}
+
 async function api(pathname: string, params: Record<string, string>): Promise<unknown> {
   const url = new URL(`${API}${pathname}`);
   for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
@@ -85,7 +88,16 @@ async function api(pathname: string, params: Record<string, string>): Promise<un
   if (res.status === 429) {
     throw new Error('USDA rate limit reached (3,600/hour). Wait and try again.');
   }
-  if (!res.ok) throw new Error(`USDA responded ${res.status} ${res.statusText}`);
+  // The search index and the detail endpoint do not always agree: search
+  // returns records the detail endpoint will not serve. That is a dead
+  // candidate rather than a fault to investigate, so say so and move on.
+  if (res.status === 404) {
+    throw new UsdaError(
+      'USDA has no record at that id. The search index sometimes lists records ' +
+        'the detail endpoint does not serve — take the next candidate.',
+    );
+  }
+  if (!res.ok) throw new UsdaError(`USDA responded ${res.status} ${res.statusText}`);
   return res.json();
 }
 
@@ -360,19 +372,35 @@ const flag = (name: string) => {
   return i === -1 ? undefined : rest[i + 1];
 };
 
+/** The rate limit and a missing record are ordinary outcomes, not crashes. */
+async function run<T>(work: Promise<T>): Promise<void> {
+  try {
+    await work;
+  } catch (error) {
+    if (error instanceof UsdaError || (error as NodeJS.ErrnoException)?.code === 'ENOENT') {
+      console.error((error as Error).message);
+      process.exitCode = 1;
+      return;
+    }
+    throw error;
+  }
+}
+
 switch (command) {
   case 'search':
-    await search(rest.filter((a) => !a.startsWith('--')).join(' '));
+    await run(search(rest.filter((a) => !a.startsWith('--')).join(' ')));
     break;
   case 'fetch':
   case 'show':
-    await show(rest[0]!, rest.includes('--refresh'));
+    await run(show(rest[0]!, rest.includes('--refresh')));
     break;
   case 'form':
-    await form(rest[0]!, flag('id') ?? 'default', flag('label') ?? 'Default', flag('density'));
+    await run(
+      form(rest[0]!, flag('id') ?? 'default', flag('label') ?? 'Default', flag('density')),
+    );
     break;
   case 'list':
-    await list();
+    await run(list());
     break;
   default:
     console.log(

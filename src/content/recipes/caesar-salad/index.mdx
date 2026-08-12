@@ -1,0 +1,137 @@
+---
+title: Caesar Salad
+subtitle: Whole romaine leaves in a thick dressing of pounded anchovy, garlic and raw yolk, with croutons fried in olive oil.
+description: The Caesar salad as restaurants now make it — an emulsified dressing of anchovy, garlic, egg yolk and Parmigiano-Reggiano over whole romaine leaves, with fried croutons.
+label: Restaurant
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [mexican, american]
+  course: [salad, starter]
+  method: [pan-frying]
+names:
+  alsoKnownAs:
+    - { name: Ensalada César, region: Mexico, lang: es }
+  searchOnly: ["ceasar salad", "cesar salad", "ensalada cesar"]
+image:
+  src: images/recipes/caesar-salad.webp
+  alt: A plate of Caesar salad, large romaine leaves coated in dressing under a heavy scattering of grated hard cheese
+ingredients:
+  - id: romaine
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 600
+    unit: g
+    note: inner leaves, kept whole, washed and dried thoroughly
+  - id: bread
+    ingredientRef: sourdough-bread
+    form: crumb
+    amount: 120
+    unit: g
+    note: a day old, crust on, torn into rough pieces
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 105
+    unit: ml
+    portions:
+      - { id: oil-croutons, amount: 45, note: for frying }
+      - { id: oil-dressing, amount: 60 }
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: peeled
+  - id: anchovy
+    ingredientRef: anchovy
+    form: fillets
+    amount: 16
+    unit: g
+    note: drained of their oil
+  - id: egg-yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 34
+    unit: g
+  - id: lemon
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: worcestershire
+    ingredientRef: worcestershire-sauce
+    form: bottled
+    amount: 8
+    unit: ml
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 60
+    unit: g
+    note: finely grated
+    portions:
+      - { id: parmigiano-dressing, amount: 40 }
+      - { id: parmigiano-finish, amount: 20, note: to finish }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+    note: coarsely cracked
+steps:
+  - { id: croutons, durationMin: 12, type: active, phase: cook }
+  - { id: dressing, durationMin: 8, type: "parallel-with:croutons", phase: prep }
+  - { id: toss, durationMin: 3, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The croutons keep for two days in an airtight tin, and the dressing for a day in the fridge under a film pressed to its surface. The salad itself is assembled at the last moment — dressed leaves collapse within minutes.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+substitutions:
+  - lineRef: anchovy
+    substitute: Worcestershire sauce
+    ratio: 1 g of anchovy to 2 ml of sauce
+    note: The Tijuana original had no fillets in it and leaned on the Worcestershire alone for the same flavour. Leaving them out gets close to that dressing, but it loses the body the pounded fillets give it and gains a little sweetness.
+    impact: { flavor: moderate change, texture: minor }
+notes:
+  techniqueRationale:
+    - stepId: dressing
+      text: The oil goes in slowly because a yolk can only take up so much of it at a time. Poured in at once it will not emulsify, and the dressing stays thin and slides off the leaves instead of clinging to them.
+  commonPitfalls:
+    - stepId: toss
+      text: The croutons go in after the leaves are coated, not alongside them. Added at the same time they take up the dressing meant for the romaine and are soft before the bowl reaches the table.
+---
+
+<Step id="croutons">
+  Warm the <Qty ref="oil-croutons"/> in a wide pan over a medium heat. Put in the
+  <Qty ref="bread"/> with the <Qty ref="salt"/> and turn the pieces until they have
+  taken up the oil evenly. Fry for <Dur step="croutons"/>, moving them often, until
+  they are deep gold and dry through to the middle rather than only at the edges.
+  Tip them out onto paper and leave them to crisp as they cool.
+</Step>
+
+<Step id="dressing">
+  While the croutons colour, pound the <Qty ref="anchovy"/> and the
+  <Qty ref="garlic"/> to a smooth paste in a mortar, or chop them together and work
+  them under the flat of a knife. Scrape the paste into a wide bowl and whisk in the
+  <Qty ref="egg-yolk"/>, the <Qty ref="lemon"/> and the <Qty ref="worcestershire"/>.
+  Add the <Qty ref="oil-dressing"/> a few drops at a time to begin with, whisking
+  constantly, then in a thin steady stream once the mixture has thickened and taken
+  on a pale gloss. Whisk in the <Qty ref="parmigiano-dressing"/> and the
+  <Qty ref="pepper"/>. It takes <Dur step="dressing"/> in all, and the dressing
+  should end up thick enough to hold a line drawn through it.
+</Step>
+
+<Step id="toss">
+  Put the <Qty ref="romaine"/> into the widest bowl available and spoon the dressing
+  over it. Turn the leaves through it with both hands for <Dur step="toss"/>, until
+  every surface is coated and nothing has pooled at the bottom. Add the croutons,
+  turn them through once, and scatter over the <Qty ref="parmigiano-finish"/>. Serve
+  straight away.
+</Step>

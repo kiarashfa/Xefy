@@ -2,6 +2,7 @@ import { formatQuantity, type BaseUnit, type Density } from '../math/quantity.ts
 import { formatCount, formatLength, formatTemperature, type UnitSystem } from '../math/units.ts';
 import { restoreServings, restoreUnitSystem, servings, unitSystem } from '../stores/display.ts';
 
+
 /**
  * The one script that keeps every live value on the page current.
  *
@@ -35,7 +36,8 @@ function updateQuantity(el: HTMLElement, count: number, system: UnitSystem): voi
   if (amount == null || defaultServings == null || !defaultServings || !unit) return;
 
   const scaled = amount * (count / defaultServings) * (num(el, 'fraction') ?? 1);
-  const { text, estimated } = formatQuantity(scaled, unit, system, densityOf(el));
+  const perUnit = num(el, 'countGrams');
+  const { text, estimated } = formatQuantity(scaled, unit, system, densityOf(el), perUnit != null);
 
   const target = el.querySelector<HTMLElement>('.qty-amount');
   if (!target) return;
@@ -43,7 +45,6 @@ function updateQuantity(el: HTMLElement, count: number, system: UnitSystem): voi
   target.classList.toggle('is-estimated', estimated);
 
   // Countable things carry a count alongside the weight, and it scales with it.
-  const perUnit = num(el, 'countGrams');
   const countEl = el.querySelector<HTMLElement>('.qty-count');
   const nameEl = el.querySelector<HTMLElement>('.qty-name');
   if (perUnit && countEl && nameEl) {
@@ -105,6 +106,13 @@ export function initLiveValues(): void {
   restoreUnitSystem();
   if (root) {
     restoreServings(root.dataset.recipe ?? '', Number(root.dataset.defaultServings ?? '0'));
+  } else {
+    // A page with live values but no serving count — a Component's own page,
+    // where the amounts are a batch. The store starts at zero so that a recipe
+    // never renders against a placeholder count before its real one is
+    // restored, and that guard would otherwise leave these quantities frozen
+    // in whatever system the server happened to pick.
+    servings.set(1);
   }
 
   applyDisplayState();

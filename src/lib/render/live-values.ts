@@ -54,7 +54,8 @@ export function renderQtyText(
   system: UnitSystem,
 ): { text: string; estimated: boolean } {
   const scaled = data.amount * (servings / data.defaultServings) * (data.fraction ?? 1);
-  return formatQuantity(scaled, data.unit, system, data.density);
+  const counted = data.countUnit != null && data.unit === 'g';
+  return formatQuantity(scaled, data.unit, system, data.density, counted);
 }
 
 /**

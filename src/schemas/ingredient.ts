@@ -101,6 +101,32 @@ export const ingredientForm = sourceCitation.extend({
     })
     .optional(),
 
+  /**
+   * The Form a shopper actually buys, where it is not this one.
+   *
+   * Egg yolk is the case that forces it: a recipe using yolks and whole eggs
+   * needs two lines, because they are two different things in a bowl — but
+   * nobody buys yolks. Two lines on a shopping list means either buying twice
+   * or doing the arithmetic in the aisle.
+   *
+   * Deliberately not `convertsFrom`, which is a *cooking* equivalence — a
+   * teaspoon of dried oregano standing in for a tablespoon of fresh. That
+   * direction must never reach a shopping list: nobody buys fresh basil in
+   * order to dry it. This field says only "on a list, count this as that".
+   *
+   * `ratio` is how many grams of the target Form yield one gram of this one —
+   * roughly three grams of whole egg per gram of yolk. It is applied only when
+   * a list is aggregated. Nutrition, the recipe page and the method are
+   * untouched, because the recipe really does need the yolk.
+   */
+  purchasedAs: z
+    .object({
+      form: slug,
+      ratio: z.number().positive(),
+      note: z.string().min(1).optional(),
+    })
+    .optional(),
+
   image: z.string().min(1).optional(),
 });
 
@@ -184,6 +210,32 @@ export const ingredientSchema = z
           path: ['forms', i, 'convertsFrom', 'form'],
           message: `convertsFrom points at "${form.convertsFrom.form}", which is not a form of this ingredient`,
         });
+      }
+      if (form.purchasedAs) {
+        if (!ing.forms.some((f) => f.id === form.purchasedAs!.form)) {
+          ctx.addIssue({
+            code: 'custom',
+            path: ['forms', i, 'purchasedAs', 'form'],
+            message: `purchasedAs points at "${form.purchasedAs.form}", which is not a form of this ingredient`,
+          });
+        }
+        // A chain would have to be resolved rather than looked up once, and
+        // nothing needs one; a self-reference would loop.
+        if (form.purchasedAs.form === form.id) {
+          ctx.addIssue({
+            code: 'custom',
+            path: ['forms', i, 'purchasedAs', 'form'],
+            message: 'purchasedAs points at its own form',
+          });
+        }
+        const target = ing.forms.find((f) => f.id === form.purchasedAs!.form);
+        if (target?.purchasedAs) {
+          ctx.addIssue({
+            code: 'custom',
+            path: ['forms', i, 'purchasedAs', 'form'],
+            message: `purchasedAs points at "${target.id}", which is itself bought as something else`,
+          });
+        }
       }
       if (form.animalOrigin != null && form.animalOrigin !== 'none' && !form.animalOriginNote) {
         ctx.addIssue({

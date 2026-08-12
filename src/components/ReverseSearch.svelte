@@ -38,6 +38,32 @@
   let have = $state<string[]>([]);
   let filter = $state('');
 
+  /**
+   * The homepage teaser hands its selection over in the fragment. It is
+   * untrusted input like any other, so every id is resolved against the real
+   * ingredient list and anything that does not match is discarded rather than
+   * carried.
+   *
+   * Read on `hashchange` as well as at start-up: arriving at a fragment on the
+   * page you are already on is a same-document navigation, so nothing
+   * re-initialises and a one-shot read would silently ignore it.
+   */
+  function readFragment() {
+    const raw = /(?:^|&)have=([^&]*)/.exec(location.hash.replace(/^#/, ''));
+    if (!raw?.[1]) return;
+    const known = new Set(ingredients.map((i) => i.id));
+    const picked = decodeURIComponent(raw[1])
+      .split(',')
+      .filter((id) => known.has(id) && !staples.includes(id));
+    if (picked.length > 0) have = [...new Set(picked)];
+  }
+
+  $effect(() => {
+    readFragment();
+    window.addEventListener('hashchange', readFragment);
+    return () => window.removeEventListener('hashchange', readFragment);
+  });
+
   // Staples are assumed and excluded from the checklist and from matching
   // entirely — nobody wants to tick "water". §8.2
   const selectable = $derived(
@@ -109,14 +135,14 @@
       </p>
     {:else if results.length === 0}
       <p class="empty-state">
-        Nothing is within reach of that yet — with ten dishes on the site, that is more a comment on
-        the catalogue than on your cupboard.
+        Nothing is within reach of that yet — with {recipes.length} dishes on the site, that is more a
+        comment on the catalogue than on your cupboard.
       </p>
     {:else}
       <p class="catalog-count">
         {results.length} within reach of {have.length} ingredient{have.length === 1 ? '' : 's'}
       </p>
-      <ul class="listing" style="grid-template-columns:minmax(0,1fr)">
+      <ul class="listing listing-single">
         {#each results as m (m.recipe.slug)}
           <li class="result-row">
             <a href={`${base}recipes/${m.recipe.slug}/`}>

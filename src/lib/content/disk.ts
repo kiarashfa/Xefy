@@ -81,6 +81,8 @@ export interface LoadedTechnique {
   slug: string;
   file: string;
   data: Technique;
+  /** Explanatory prose. Unlike a recipe body this is ordinary narrative. */
+  body: string;
 }
 
 export interface Content {
@@ -238,13 +240,13 @@ export async function loadContent(contentRoot: string = DEFAULT_CONTENT): Promis
   const techniques: LoadedTechnique[] = [];
   for (const abs of techniqueFiles.sort()) {
     const file = relative(abs);
-    const { data } = splitFrontmatter(await readFile(abs, 'utf8'));
+    const { data, body } = splitFrontmatter(await readFile(abs, 'utf8'));
     const parsed = techniqueSchema.safeParse(data);
     if (!parsed.success) {
       schemaErrors.push(...collectErrors(file, parsed.error.issues));
       continue;
     }
-    techniques.push({ slug: path.basename(abs, '.mdx'), file, data: parsed.data });
+    techniques.push({ slug: path.basename(abs, '.mdx'), file, data: parsed.data, body });
   }
 
   return {

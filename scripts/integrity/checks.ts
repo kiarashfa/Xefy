@@ -435,6 +435,7 @@ export async function runChecks(content: Content): Promise<CheckResult> {
   }
   for (const version of content.recipeVersions) {
     const lineIds = new Set(version.data.ingredients.map((l) => l.id));
+    for (const l of version.data.ingredients) for (const p of l.portions ?? []) lineIds.add(p.id);
     // A note may reasonably attach to a step that arrives through a Component:
     // once flattened it is an ordinary step of this method, and the reason a
     // roux is cooked out belongs beside the step that cooks it.
@@ -444,6 +445,12 @@ export async function runChecks(content: Content): Promise<CheckResult> {
       const component = componentBySlug.get(step.componentRef);
       if (!component) continue;
       for (const id of inlineStepIds(component.data.steps)) stepIds.add(id);
+      // And a substitution may target an ingredient the same way, for the same
+      // reason: flattened, a Component's ingredients are this dish's own.
+      for (const l of component.data.ingredients) {
+        lineIds.add(l.id);
+        for (const p of l.portions ?? []) lineIds.add(p.id);
+      }
     }
     for (const sub of version.data.substitutions) {
       if (!lineIds.has(sub.lineRef)) {

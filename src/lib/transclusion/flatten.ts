@@ -384,12 +384,42 @@ export function flatten(
   /* --- 5. Remap the parent's substitution targets ----------------------- */
 
   const substitutionTargets = new Map<string, string>();
+  const ownerOf = (mapped: string) =>
+    merged.find((l) => l.id === mapped || l.portions?.some((p) => p.id === mapped));
+
+  /*
+   * A recipe may substitute a line it did not author.
+   *
+   * Once flattened, a Component's ingredients are ordinary ingredients of this
+   * dish — the reader has no idea which file they came from — so refusing to
+   * let the dish speak about them is an authoring artefact leaking into the
+   * page. The most-wanted swap in Japanese cooking is a vegetarian dashi, and
+   * the katsuobushi it replaces arrives through a Component.
+   *
+   * The recipe's own lines are mapped last so they win outright: an id the dish
+   * itself authored means that line, whatever a borrowed Component calls its
+   * own. Where two Components use the same id and the recipe does not, the
+   * reference is genuinely ambiguous and is left unmapped rather than guessed —
+   * the check that validates `lineRef` then reports it.
+   */
+  const fromComponents = new Map<string, string[]>();
+  for (const instance of instances) {
+    if (instance.sourceKey === 'self') continue;
+    for (const line of instance.source.ingredients) {
+      const mapped = refMap.get(`${instance.sourceKey} ${line.id}`);
+      const owner = mapped ? ownerOf(mapped) : undefined;
+      if (owner) fromComponents.set(line.id, [...(fromComponents.get(line.id) ?? []), owner.id]);
+    }
+  }
+  for (const [authoredId, owners] of fromComponents) {
+    const unique = new Set(owners);
+    if (unique.size === 1) substitutionTargets.set(authoredId, owners[0]!);
+  }
+
   for (const line of parent.ingredients) {
     const mapped = refMap.get(`self ${line.id}`);
-    if (mapped) {
-      const owner = merged.find((l) => l.id === mapped || l.portions?.some((p) => p.id === mapped));
-      if (owner) substitutionTargets.set(line.id, owner.id);
-    }
+    const owner = mapped ? ownerOf(mapped) : undefined;
+    if (owner) substitutionTargets.set(line.id, owner.id);
   }
 
   return {

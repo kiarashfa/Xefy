@@ -1,0 +1,48 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2747652",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2747652/nutrients",
+  "description": "Anchovies, canned in olive oil, with salt, drained",
+  "category": "Finfish and Shellfish Products",
+  "publicationDate": "12/18/2025",
+  "retrieved": "2026-08-12",
+  "nutritionPer100g": {
+    "kcal": 206.065,
+    "protein": 26.938,
+    "fat": 9.853,
+    "carbs": 2.41,
+    "calcium": 239.8,
+    "iron": 2.688,
+    "magnesium": 227.6,
+    "phosphorus": 225.7,
+    "potassium": 297.8,
+    "sodium": 5403,
+    "zinc": 2.539,
+    "copper": 0.235,
+    "manganese": 0.138,
+    "seleniumMcg": 48.15,
+    "vitaminB12Mcg": 12.65
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 44.43,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 4.31,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 16.37,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

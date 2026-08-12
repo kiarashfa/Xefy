@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import { catalogRecord, getSite } from '../../lib/content/site.ts';
 import { COURSES } from '../../schemas/taxonomy.ts';
 
@@ -28,9 +29,7 @@ const terms = COURSES.map((t) => ({
       ))}
     </ul>
   </main>
-  <footer class="site-footer">
-    <div class="wrap footer-inner"><span>Xefy</span><span>Nutrition from USDA FoodData Central.</span></div>
-  </footer>
+  <SiteFooter />
   <script>
     import { initInteractions } from '../../lib/client/interactions.ts';
     initInteractions();

@@ -4,7 +4,11 @@
   "proseName": "red pepper",
   "names": {
     "alsoKnownAs": [
-      { "name": "Red bell pepper", "region": "North America", "lang": "en" }
+      {
+        "name": "Red bell pepper",
+        "region": "North America",
+        "lang": "en"
+      }
     ],
     "notToBeConfusedWith": [
       {
@@ -67,5 +71,6 @@
         "densitySource": "measured"
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/red-pepper-thumb.webp"
 }

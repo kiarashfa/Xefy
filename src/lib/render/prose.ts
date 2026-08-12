@@ -38,14 +38,26 @@ function inlineMarkdown(escaped: string): string {
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
 }
 
+/**
+ * What the renderer actually needs to resolve a `<Qty>` or a `<Dur>`. Stated
+ * structurally rather than as a resolved recipe, so a Component's own page can
+ * render the same prose from the same code — a Component is a batch with no
+ * serving count, which is the only thing it lacks.
+ */
+export interface ProseSource {
+  lines: ResolvedRecipe['lines'];
+  defaultServings: number;
+  flat: ResolvedRecipe['flat'];
+}
+
 export interface ProseContext {
-  recipe: ResolvedRecipe;
+  recipe: ProseSource;
   servings: number;
   system: UnitSystem;
 }
 
 /** Finds the merged line or portion a ref points at, and the amount it means. */
-function qtyDataFor(recipe: ResolvedRecipe, ref: string): QtyData | null {
+function qtyDataFor(recipe: ProseSource, ref: string): QtyData | null {
   for (const resolved of recipe.lines) {
     const { line } = resolved;
     const portion = line.portions?.find((p) => p.id === ref);

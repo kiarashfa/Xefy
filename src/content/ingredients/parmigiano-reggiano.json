@@ -1,0 +1,82 @@
+{
+  "id": "parmigiano-reggiano",
+  "name": "Parmigiano-Reggiano",
+  "proseName": "Parmigiano-Reggiano",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Parmesan",
+        "region": "English-speaking countries",
+        "lang": "en",
+        "note": "Inside the EU the name is reserved to Parmigiano-Reggiano; elsewhere it is used loosely for any hard grating cheese."
+      }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Grana Padano",
+        "note": "A separate protected cheese made across a far larger area of northern Italy, aged for less time and milder for it. It is not the vegetarian alternative it is sometimes taken for — its own production standard also requires calf rennet."
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "generalSubstitutes": [],
+  "forms": [
+    {
+      "id": "aged",
+      "label": "Aged, made with animal rennet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170848",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170848/nutrients",
+      "nutritionPer100g": {
+        "kcal": 392,
+        "protein": 35.75,
+        "fat": 25,
+        "carbs": 3.22,
+        "fiber": 0,
+        "sugars": 0.11,
+        "calcium": 1184,
+        "iron": 0.82,
+        "magnesium": 44,
+        "phosphorus": 694,
+        "potassium": 92,
+        "sodium": 1175,
+        "zinc": 2.75,
+        "copper": 0.032,
+        "manganese": 0.02,
+        "seleniumMcg": 22.5,
+        "vitaminC": 0,
+        "thiamin": 0.039,
+        "riboflavin": 0.332,
+        "niacin": 0.271,
+        "vitaminB6": 0.091,
+        "folateMcg": 7,
+        "choline": 15.4,
+        "vitaminB12Mcg": 1.2,
+        "vitaminAMcg": 207,
+        "vitaminE": 0.22,
+        "vitaminDMcg": 0.5,
+        "vitaminKMcg": 1.7,
+        "saturatedFat": 14.85,
+        "monounsaturatedFat": 7.515,
+        "polyunsaturatedFat": 0.569,
+        "cholesterol": 68
+      },
+      "sourceNote": "USDA publishes no record for the protected designation; this is its record for hard parmesan. Its grated-parmesan record carries a measured density but nearly 14 g of carbohydrate per 100 g, which describes a shelf-stable grated product rather than the cheese.",
+      "animalOrigin": "meat",
+      "animalOriginNote": "Parmigiano-Reggiano DOP must be set with calf rennet, so it is not vegetarian. The production standard leaves the producer no choice.",
+      "density": {
+        "gPerCup": 100,
+        "gPerTbsp": 5,
+        "densitySource": "estimated",
+        "densityClass": "hard-cheese-grated"
+      }
+    }
+  ],
+  "image": "images/ingredients/parmigiano-reggiano-thumb.webp"
+}

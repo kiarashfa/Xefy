@@ -17,7 +17,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "169736",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/169736/nutrients",
-      "sourceNote": "USDA reports dry enriched pasta generally. The volume figure is its measure for spaghetti specifically; other shapes in the same record range from 64 g to 122 g per cup, which is why pasta is bought and cooked by weight.",
+      "sourceNote": "USDA reports dry enriched pasta generally. It publishes a volume measure for spaghetti, which this record deliberately does not carry: shapes in the same record range from 64 g to 122 g per cup, so a cup of dry pasta names no fixed quantity and the site shows weight instead.",
       "nutritionPer100g": {
         "kcal": 371,
         "protein": 13.04,
@@ -52,11 +52,8 @@
         "polyunsaturatedFat": 0.564,
         "transFat": 0,
         "cholesterol": 0
-      },
-      "density": {
-        "gPerCup": 91,
-        "densitySource": "measured"
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/spaghetti-thumb.webp"
 }

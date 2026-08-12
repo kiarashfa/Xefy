@@ -1,0 +1,63 @@
+{
+  "id": "worcestershire-sauce",
+  "name": "Worcestershire Sauce",
+  "proseName": "Worcestershire sauce",
+  "category": "seasoning",
+  "animalOrigin": "fish",
+  "animalOriginNote": "Fermented anchovy is one of the defining ingredients rather than a trace flavouring, so the sauce is neither vegetarian nor vegan. It is the most commonly overlooked animal input in an otherwise meatless dish.",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish",
+    "gluten"
+  ],
+  "generalSubstitutes": [],
+  "forms": [
+    {
+      "id": "bottled",
+      "label": "Bottled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171610",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171610/nutrients",
+      "nutritionPer100g": {
+        "kcal": 77,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 19.17,
+        "fiber": 0,
+        "sugars": 10.03,
+        "calcium": 107,
+        "iron": 5.3,
+        "magnesium": 13,
+        "phosphorus": 60,
+        "potassium": 800,
+        "sodium": 1300,
+        "zinc": 0.19,
+        "copper": 0.2,
+        "seleniumMcg": 0.5,
+        "vitaminC": 13,
+        "thiamin": 0.07,
+        "riboflavin": 0.13,
+        "niacin": 0.7,
+        "vitaminB6": 0,
+        "folateMcg": 8,
+        "choline": 2.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 5,
+        "vitaminE": 0.08,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 17,
+        "densitySource": "measured"
+      },
+      "sourceNote": "A generic bottled Worcestershire record. Formulations differ between markets — the malt vinegar that carries the gluten declaration here is replaced by distilled vinegar in some, so a label is the only reliable answer for a given bottle."
+    }
+  ],
+  "image": "images/ingredients/worcestershire-sauce-thumb.webp"
+}

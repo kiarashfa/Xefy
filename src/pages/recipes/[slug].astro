@@ -2,6 +2,7 @@
 import { readFile } from 'node:fs/promises';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import ServingScaler from '../../components/ServingScaler.svelte';
 import UnitToggle from '../../components/UnitToggle.svelte';
 
@@ -9,6 +10,7 @@ import { loadContent } from '../../lib/content/disk.ts';
 import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from '../../lib/content/resolve.ts';
 import type { Recipe } from '../../schemas/recipe.ts';
 import { renderProse, proseName } from '../../lib/render/prose.ts';
+import { renderAbout } from '../../lib/render/markdown.ts';
 import { qtyHtml } from '../../lib/render/live-values.ts';
 import { formatDuration } from '../../lib/math/units.ts';
 import { formatNutrient, type Nutrient } from '../../lib/math/nutrition.ts';
@@ -34,6 +36,11 @@ export async function getStaticPaths() {
     ]),
   );
   const ingredients = new Map(content.ingredients.map((i) => [i.slug, i.data]));
+  // §4.2's optional cross-link. Only Components that have a page of their own
+  // become links; the procedure itself is already here in full either way.
+  const standalone = new Set(
+    content.components.filter((c) => c.data.standalonePage && !c.data.draft).map((c) => c.slug),
+  );
 
   const bySlug = new Map<string, typeof content.recipeVersions>();
   for (const v of content.recipeVersions) {
@@ -62,13 +69,14 @@ export async function getStaticPaths() {
         })),
         about: about ? { data: about.data, body: about.body } : null,
         credits,
+        standalone: [...standalone],
       },
     };
   });
 }
 
 // The default version carries the recipe identity; the union narrows here once.
-const { versions, about, credits } = Astro.props;
+const { versions, about, credits, standalone } = Astro.props;
 const identity = Astro.props.identity as Recipe;
 const base = import.meta.env.BASE_URL;
 const system = 'metric' as const;
@@ -91,43 +99,6 @@ const MICROS: [Nutrient, string, string][] = [
   ['potassium', 'Potassium', 'mg'],
   ['vitaminC', 'Vitamin C', 'mg'],
 ];
-
-/**
- * Renders the About body: paragraphs, emphasis, and citation markers.
- *
- * Citations are pulled out *before* the text is escaped. Escaping first turns
- * `<Cite …/>` into `&lt;Cite …/>` and the marker silently stops being a marker
- * — the same ordering trap the step-prose renderer avoids by splitting on
- * components first.
- */
-const CITE = /<Cite\s+ref="([^"]+)"\s*\/>/g;
-
-function renderAbout(body: string, sources: { id: string }[]): string {
-  const index = new Map(sources.map((s, i) => [s.id, i + 1]));
-  const escape = (text: string) =>
-    text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-      .replace(/\s*\n\s*/g, ' ');
-
-  return body
-    .trim()
-    .split(/\n\s*\n/)
-    .map((para) => {
-      let html = '';
-      let cursor = 0;
-      for (const match of para.matchAll(CITE)) {
-        html += escape(para.slice(cursor, match.index));
-        cursor = (match.index ?? 0) + match[0].length;
-        const n = index.get(match[1]!);
-        if (n) html += `<a class="cite" href="#source-${match[1]}">[${n}]</a>`;
-      }
-      html += escape(para.slice(cursor));
-      return `<p>${html}</p>`;
-    })
-    .join('');
-}
 
 const facts = (r: ResolvedRecipe) =>
   [
@@ -566,9 +537,17 @@ const description = identity.description ?? identity.subtitle;
                             <p class="step-meta">
                               <span class="dot" />
                               {step.phase ?? 'rest'} · {formatDuration(step.durationMin)}
-                              {step.fromComponent && (
-                                <span class="step-from">· from {step.fromComponent.title}</span>
-                              )}
+                              {step.fromComponent &&
+                                (standalone.includes(step.fromComponent.slug) ? (
+                                  <span class="step-from">
+                                    ·{' '}
+                                    <a href={`${base}techniques/${step.fromComponent.slug}/`}>
+                                      from {step.fromComponent.title}
+                                    </a>
+                                  </span>
+                                ) : (
+                                  <span class="step-from">· from {step.fromComponent.title}</span>
+                                ))}
                             </p>
                             {rationale && <p class="callout">{rationale.text}</p>}
                             {pitfall && (
@@ -644,12 +623,7 @@ const description = identity.description ?? identity.subtitle;
   </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <span>Xefy — every number on this page is computed, not typed.</span>
-      <span>Nutrition from USDA FoodData Central.</span>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <script>
     import { initLiveValues } from '../../lib/client/live-values.ts';

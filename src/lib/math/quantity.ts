@@ -103,12 +103,20 @@ function formatUsMass(grams: number): string {
  * A millilitre amount converts to US volume exactly — no density involved. A
  * gram amount prefers volume where a density exists, because that is how a US
  * recipe is read and measured, and falls back to weight where it does not.
+ *
+ * `counted` is the exception, and it exists because the figure means something
+ * different there. Beside a count — "2 garlic cloves (…)" — the bracketed
+ * figure is not an alternative way to measure the ingredient; it is the exact
+ * weight that makes the approximate count honest (§2.1.1). A volume in that
+ * position is a second approximation, which leaves the reader with two
+ * estimates and no fact, so a counted amount always renders as mass.
  */
 export function formatQuantity(
   amount: number,
   unit: BaseUnit,
   system: UnitSystem,
   density?: Density,
+  counted = false,
 ): FormattedQuantity {
   if (system === 'metric') {
     return { text: formatMetric(amount, unit), estimated: false };
@@ -118,7 +126,7 @@ export function formatQuantity(
     return { text: formatUsVolume(amount), estimated: false };
   }
 
-  const gPerMl = density ? gramsPerMl(density) : null;
+  const gPerMl = counted || !density ? null : gramsPerMl(density);
   if (gPerMl != null && density) {
     return { text: formatUsVolume(amount / gPerMl), estimated: density.source === 'estimated' };
   }

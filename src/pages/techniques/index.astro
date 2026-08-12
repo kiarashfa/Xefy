@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { getSite } from '../../lib/content/site.ts';
+
+/**
+ * Components and Techniques listed together — §9 gives them one URL family,
+ * and to a reader they answer one question. Which of the two a given entry is
+ * matters only to the build.
+ */
+const site = await getSite();
+const base = import.meta.env.BASE_URL;
+
+const entries = [
+  ...site.components.map((c) => ({
+    slug: c.slug,
+    title: c.data.title,
+    summary: c.data.summary,
+    note: c.usedBy.length > 0 ? `used in ${c.usedBy.length}` : null,
+  })),
+  ...site.techniques.map((t) => ({
+    slug: t.slug,
+    title: t.data.title,
+    summary: t.data.summary,
+    note: null,
+  })),
+].sort((a, b) => a.title.localeCompare(b.title));
+---
+
+<BaseLayout
+  title="Techniques — Xefy"
+  description="The procedures the recipes are built from, each written once and shared between the dishes that use it."
+>
+  <SiteHeader />
+  <main id="main" class="wrap">
+    <div class="page-head">
+      <h1 class="page-title">Techniques</h1>
+      <p class="page-lede">
+        The procedures the recipes are built from. Every dish that uses one carries it in full,
+        inline — these pages are for looking a method up on its own.
+      </p>
+    </div>
+
+    {
+      entries.length > 0 ? (
+        <ul class="listing listing-single">
+          {entries.map((e) => (
+            <li class="result-row">
+              <a href={`${base}techniques/${e.slug}/`}>
+                <span>
+                  {e.title}
+                  <span class="ing-note">{e.summary}</span>
+                </span>
+                {e.note && <span class="count">{e.note}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="empty-state">No standalone procedures yet.</p>
+      )
+    }
+  </main>
+  <SiteFooter />
+  <script>
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

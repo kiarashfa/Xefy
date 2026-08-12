@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import RecipeCards from '../../components/RecipeCards.astro';
+import { catalogRecord, getSite } from '../../lib/content/site.ts';
+import { DIETS } from '../../schemas/taxonomy.ts';
+
+/**
+ * The one taxonomy listing whose terms nobody typed — §5.2 computes every diet
+ * label from the ingredient records, so this page is a view of an inference
+ * rather than of an editorial tag. Otherwise it behaves like the others: a
+ * computed filtered view that owns no recipe and no URL. §9.
+ */
+export async function getStaticPaths() {
+  const site = await getSite();
+  const records = site.recipes.map(catalogRecord);
+  return DIETS.filter((t) => records.some((r) => r.diets.includes(t.id))).map((term) => ({
+    params: { slug: term.id },
+    props: { term, recipes: records.filter((r) => r.diets.includes(term.id)) },
+  }));
+}
+
+const { term, recipes } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<BaseLayout
+  title={`${term.label} recipes — Xefy`}
+  description={`Every ${term.label.toLowerCase()} recipe on Xefy — ${recipes.length} in all. Labels are computed from the ingredient records, never hand-applied.`}
+>
+  <SiteHeader />
+
+  <nav class="wrap crumb" aria-label="Breadcrumb">
+    <a href={`${base}`}>Home</a> / <a href={`${base}diets/`}>Diet</a> / {term.label}
+  </nav>
+
+  <main id="main" class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Diet</p>
+      <h1 class="page-title">{term.label}</h1>
+      <p class="page-lede">
+        {recipes.length} {recipes.length === 1 ? 'dish' : 'dishes'}.
+        {term.description}
+      </p>
+    </div>
+
+    <RecipeCards recipes={recipes} base={base} />
+
+    <p class="source-line">
+      Computed from every ingredient in the recipe, including the ones a name does not give away —
+      the rennet in a hard cheese, the anchovy in a bottle of Worcestershire. Nothing here is
+      hand-tagged, and nothing is a guarantee about the particular product you buy.
+    </p>
+  </main>
+
+  <SiteFooter />
+
+  <script>
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initInteractions();
+  </script>
+</BaseLayout>

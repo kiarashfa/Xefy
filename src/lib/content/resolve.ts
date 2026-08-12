@@ -79,43 +79,16 @@ const densityOf = (form: IngredientForm): Density | undefined =>
       }
     : undefined;
 
-export const timedSteps = (flat: FlattenResult): TimedStep[] =>
-  flat.steps.map((s) => ({
-    id: s.id,
-    durationMin: s.durationMin,
-    type: s.type,
-    phase: s.phase,
-  }));
-
-export function resolveRecipe(
-  recipe: RecipeInput,
-  componentInputs: Map<string, ComponentInput>,
+/**
+ * Joins merged ingredient lines to their records. Shared by a recipe and by a
+ * Component's own page: the two differ in what surrounds the ingredients —
+ * servings, diet, make-ahead — and not at all in how a line resolves.
+ */
+function resolveLines(
+  flat: FlattenResult,
   ingredients: Map<string, Ingredient>,
-): ResolvedRecipe {
-  const errors: string[] = [];
-
-  const components = new Map<string, ComponentSource>(
-    [...componentInputs].map(([slug, input]) => [
-      slug,
-      {
-        slug,
-        title: input.data.title,
-        ingredients: input.data.ingredients,
-        steps: input.data.steps,
-        prose: input.prose,
-      },
-    ]),
-  );
-
-  const flat = flatten(
-    {
-      ingredients: recipe.data.ingredients,
-      steps: recipe.data.steps,
-      prose: recipe.prose,
-    },
-    components,
-  );
-
+  errors: string[],
+): ResolvedLine[] {
   const lines: ResolvedLine[] = [];
   for (const line of flat.ingredients) {
     const ingredient = ingredients.get(line.ingredientRef);
@@ -153,6 +126,95 @@ export function resolveRecipe(
       grams,
     });
   }
+  return lines;
+}
+
+/**
+ * A Component on its own page — §4.2's "independently notable" case.
+ *
+ * Deliberately narrower than a resolved recipe. A Component is a batch, not a
+ * meal: it has no serving count, so it has no per-serving nutrition and no
+ * stepper, and inventing either would put a figure on the page that means
+ * nothing. What it does have is a real ingredient list, real steps and real
+ * timing, which is what the page shows.
+ */
+export interface ResolvedComponent {
+  slug: string;
+  flat: FlattenResult;
+  lines: ResolvedLine[];
+  timing: TimingTotals;
+  criticalPathMin: number;
+  errors: string[];
+  warnings: string[];
+}
+
+export function resolveComponent(
+  component: ComponentInput,
+  componentInputs: Map<string, ComponentInput>,
+  ingredients: Map<string, Ingredient>,
+): ResolvedComponent {
+  const errors: string[] = [];
+  const flat = flatten(
+    {
+      ingredients: component.data.ingredients,
+      steps: component.data.steps,
+      prose: component.prose,
+    },
+    componentSources(componentInputs),
+  );
+  const lines = resolveLines(flat, ingredients, errors);
+  const steps = timedSteps(flat);
+
+  return {
+    slug: component.slug,
+    flat,
+    lines,
+    timing: computeTiming(steps),
+    criticalPathMin: criticalPathTotal(steps),
+    errors,
+    warnings: flat.warnings,
+  };
+}
+
+const componentSources = (inputs: Map<string, ComponentInput>) =>
+  new Map<string, ComponentSource>(
+    [...inputs].map(([slug, input]) => [
+      slug,
+      {
+        slug,
+        title: input.data.title,
+        ingredients: input.data.ingredients,
+        steps: input.data.steps,
+        prose: input.prose,
+      },
+    ]),
+  );
+
+export const timedSteps = (flat: FlattenResult): TimedStep[] =>
+  flat.steps.map((s) => ({
+    id: s.id,
+    durationMin: s.durationMin,
+    type: s.type,
+    phase: s.phase,
+  }));
+
+export function resolveRecipe(
+  recipe: RecipeInput,
+  componentInputs: Map<string, ComponentInput>,
+  ingredients: Map<string, Ingredient>,
+): ResolvedRecipe {
+  const errors: string[] = [];
+
+  const flat = flatten(
+    {
+      ingredients: recipe.data.ingredients,
+      steps: recipe.data.steps,
+      prose: recipe.prose,
+    },
+    componentSources(componentInputs),
+  );
+
+  const lines = resolveLines(flat, ingredients, errors);
 
   const steps = timedSteps(flat);
   const timing = computeTiming(steps);

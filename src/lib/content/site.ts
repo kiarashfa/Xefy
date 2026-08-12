@@ -1,6 +1,14 @@
 import { readFile } from 'node:fs/promises';
 import { loadContent, type Content } from './disk.ts';
-import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from './resolve.ts';
+import {
+  resolveComponent,
+  resolveRecipe,
+  type ComponentInput,
+  type ResolvedComponent,
+  type ResolvedRecipe,
+} from './resolve.ts';
+import type { Component } from '../../schemas/component.ts';
+import type { Technique } from '../../schemas/technique.ts';
 import type { Recipe } from '../../schemas/recipe.ts';
 import type { Ingredient } from '../../schemas/ingredient.ts';
 import type { CatalogRecord } from '../plan/types.ts';
@@ -38,9 +46,29 @@ export interface ImageCredit {
   files: Record<string, string>;
 }
 
+/**
+ * A Component that also stands on its own — §4.2. `usedBy` is the reason the
+ * page is worth having: flattened into a recipe the Component disappears, so
+ * this is the only place a reader can see which dishes share one procedure.
+ */
+export interface SiteComponent {
+  slug: string;
+  data: Component;
+  resolved: ResolvedComponent;
+  usedBy: SiteRecipe[];
+}
+
+export interface SiteTechnique {
+  slug: string;
+  data: Technique;
+  body: string;
+}
+
 export interface Site {
   raw: Content;
   recipes: SiteRecipe[];
+  components: SiteComponent[];
+  techniques: SiteTechnique[];
   ingredients: Ingredient[];
   credits: ImageCredit[];
   /**
@@ -104,6 +132,29 @@ async function build(): Promise<Site> {
   }
   recipes.sort((a, b) => a.identity.title.localeCompare(b.identity.title));
 
+  /*
+   * Only Components that ask for a page get one. A Component exists to keep
+   * authoring DRY, and most of them are a fragment nobody would search for —
+   * "combine the dry ingredients" deserves reuse, not a URL. §4.2
+   */
+  const usesComponent = (recipe: SiteRecipe, slug: string) =>
+    recipe.versions.some((v) => v.resolved.flat.components.some((c) => c.slug === slug));
+
+  const components: SiteComponent[] = raw.components
+    .filter((c) => c.data.standalonePage && !c.data.draft)
+    .map((c) => ({
+      slug: c.slug,
+      data: c.data,
+      resolved: resolveComponent(componentInputs.get(c.slug)!, componentInputs, ingredientIndex),
+      usedBy: recipes.filter((r) => usesComponent(r, c.slug)),
+    }))
+    .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
+  const techniques: SiteTechnique[] = raw.techniques
+    .filter((t) => !t.data.draft)
+    .map((t) => ({ slug: t.slug, data: t.data, body: t.body }))
+    .sort((a, b) => a.data.title.localeCompare(b.data.title));
+
   const credits: ImageCredit[] = JSON.parse(
     await readFile('src/data/image-credits.json', 'utf8').catch(() => '[]'),
   );
@@ -128,6 +179,8 @@ async function build(): Promise<Site> {
   return {
     raw,
     recipes,
+    components,
+    techniques,
     ingredients: raw.ingredients.map((i) => i.data),
     credits,
     staples: raw.ingredients.filter((i) => i.data.pantryStaple).map((i) => i.data.id),

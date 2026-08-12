@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import UnitToggle from '../../components/UnitToggle.svelte';
+import { getSite, type SiteComponent, type SiteTechnique } from '../../lib/content/site.ts';
+import { renderProse, proseName } from '../../lib/render/prose.ts';
+import { qtyHtml } from '../../lib/render/live-values.ts';
+import { formatDuration } from '../../lib/math/units.ts';
+import { renderMarkdown } from '../../lib/render/markdown.ts';
+
+/**
+ * The standalone page for a reusable procedure — §4.2, §9.
+ *
+ * Components and Techniques share one URL family because they are one thing to
+ * a reader looking for "how do I make dashi": the difference between them is
+ * whether the site can transclude the answer, which is an authoring concern.
+ *
+ * A Component page is *additive*. Every recipe using it still carries the whole
+ * procedure inline, flattened, so nobody is ever sent here mid-cook. This page
+ * exists for the search that starts here.
+ */
+export async function getStaticPaths() {
+  const site = await getSite();
+  return [
+    ...site.components.map((component) => ({
+      params: { slug: component.slug },
+      props: { component, technique: null },
+    })),
+    ...site.techniques.map((technique) => ({
+      params: { slug: technique.slug },
+      props: { component: null, technique },
+    })),
+  ];
+}
+
+interface Props {
+  component: SiteComponent | null;
+  technique: SiteTechnique | null;
+}
+
+const { component, technique } = Astro.props as Props;
+const site = await getSite();
+const base = import.meta.env.BASE_URL;
+
+const title = component ? component.data.title : technique!.data.title;
+const summary = component ? component.data.summary : technique!.data.summary;
+
+// A Component is a batch, not a meal. There is no serving count to scale by, so
+// the amounts render exactly as authored and no stepper is offered.
+const servings = 1;
+const system = 'metric' as const;
+
+const related = technique
+  ? site.components.filter((c) => technique.data.relatedComponents.includes(c.slug))
+  : [];
+const relatedRecipes = technique
+  ? site.recipes.filter((r) => technique.data.relatedRecipes.includes(r.slug))
+  : [];
+const techniquesHere = component
+  ? site.techniques.filter((t) => component.data.relatedTechniques.includes(t.slug))
+  : [];
+---
+
+<BaseLayout title={`${title} — Xefy`} description={summary}>
+  <SiteHeader />
+
+  <main id="main" class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href={`${base}techniques/`}>Techniques</a> / {title}
+    </nav>
+
+    <div class="page-head">
+      <h1 class="page-title">{title}</h1>
+      <p class="page-lede">{summary}</p>
+    </div>
+
+    {
+      component && (
+        <div class="two-col">
+          <aside>
+            <div class="side-card is-row">
+              <div class="side-card-label">Units</div>
+              <UnitToggle client:visible />
+            </div>
+
+            <div class="side-card">
+              <div class="side-card-label">
+                Ingredients{component.data.batchLabel ? ` — ${component.data.batchLabel}` : ''}
+              </div>
+              <ul class="ingredients">
+                {component.resolved.lines.map((line) => (
+                  <li>
+                    <input class="chk" type="checkbox" aria-label={proseName(line)} />
+                    <span class="ing-text">
+                      <Fragment
+                        set:html={qtyHtml(
+                          {
+                            amount: line.line.amount,
+                            unit: line.line.unit,
+                            defaultServings: servings,
+                            name: proseName(line),
+                            density: line.density,
+                            countUnit: line.form.countUnit,
+                          },
+                          servings,
+                          system,
+                          { showName: Boolean(line.form.countUnit) },
+                        )}
+                      />
+                      {!line.form.countUnit && <> {proseName(line)}</>}
+                      {line.line.note && <span class="ing-note">{line.line.note}</span>}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="source-line">
+                A batch, not a serving. A recipe using this scales it by its own multiplier, and
+                your serving count applies on top of that.
+              </p>
+            </div>
+
+            <div class="side-card">
+              <div class="side-card-label">Timing</div>
+              <p class="catalog-count">Total {formatDuration(component.resolved.timing.total)}</p>
+            </div>
+          </aside>
+
+          <div>
+            <h2 class="panel-title">Method</h2>
+            <ol class="steps">
+              {component.resolved.flat.steps.map((step) => (
+                <li class="step" data-step={step.id}>
+                  <button
+                    class="step-check"
+                    aria-pressed="false"
+                    aria-label={`Mark step ${step.number} done`}
+                  >
+                    <span class="num">{step.number}</span>
+                  </button>
+                  <div class="step-body">
+                    <p
+                      class="step-text"
+                      set:html={renderProse(step.prose, {
+                        recipe: { ...component.resolved, defaultServings: servings },
+                        servings,
+                        system,
+                      })}
+                    />
+                    <p class="step-meta">
+                      <span class="dot" />
+                      {step.phase ?? 'rest'} · {formatDuration(step.durationMin)}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <h2 class="panel-title">Used in</h2>
+            {component.usedBy.length > 0 ? (
+              <ul class="listing listing-single">
+                {component.usedBy.map((recipe) => (
+                  <li class="result-row">
+                    <a href={`${base}recipes/${recipe.slug}/`}>
+                      <span>
+                        {recipe.identity.title}
+                        <span class="ing-note">{recipe.identity.subtitle}</span>
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p class="empty-state">
+                Nothing on the site uses this yet. It is written and ready for the first dish that
+                does.
+              </p>
+            )}
+
+            {techniquesHere.length > 0 && (
+              <p class="source-line">
+                See also{' '}
+                {techniquesHere.map((t, i) => (
+                  <>
+                    {i > 0 ? ', ' : ''}
+                    <a href={`${base}techniques/${t.slug}/`}>{t.data.title}</a>
+                  </>
+                ))}
+                .
+              </p>
+            )}
+          </div>
+        </div>
+      )
+    }
+
+    {
+      technique && (
+        <div class="two-col">
+          <div class="technique-prose" set:html={renderMarkdown(technique.body)} />
+
+          <aside>
+            {/* Technique prose carries live temperatures like any other, so the
+                control that changes them has to be here too. */}
+            {technique.body.includes('<Temp') || technique.body.includes('<Len') ? (
+              <div class="side-card is-row">
+                <div class="side-card-label">Units</div>
+                <UnitToggle client:visible />
+              </div>
+            ) : null}
+
+            {related.length > 0 && (
+              <div class="side-card">
+                <div class="side-card-label">Make it</div>
+                <ul class="ingredients">
+                  {related.map((c) => (
+                    <li>
+                      <span class="ing-text">
+                        <a href={`${base}techniques/${c.slug}/`}>{c.data.title}</a>
+                        <span class="ing-note">{c.data.summary}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {relatedRecipes.length > 0 && (
+              <div class="side-card">
+                <div class="side-card-label">Dishes that use it</div>
+                <ul class="ingredients">
+                  {relatedRecipes.map((r) => (
+                    <li>
+                      <span class="ing-text">
+                        <a href={`${base}recipes/${r.slug}/`}>{r.identity.title}</a>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </aside>
+        </div>
+      )
+    }
+  </main>
+
+  <SiteFooter />
+
+  <script>
+    import { initLiveValues } from '../../lib/client/live-values.ts';
+    import { initInteractions } from '../../lib/client/interactions.ts';
+    initLiveValues();
+    initInteractions();
+  </script>
+</BaseLayout>

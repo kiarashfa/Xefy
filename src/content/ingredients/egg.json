@@ -60,6 +60,11 @@
     {
       "id": "yolk",
       "label": "Yolk, raw",
+      "purchasedAs": {
+        "form": "whole",
+        "ratio": 2.94,
+        "note": "Yolks are separated from whole eggs; a large egg gives about a third of its weight in yolk."
+      },
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172184",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172184/nutrients",
