@@ -90,6 +90,35 @@
   // link in a parameter of their own and would otherwise repeat it.
   const body = $derived(shareText(groups.toBuy, resolution.items, $unitSystem));
 
+  /**
+   * The same list as structured data.
+   *
+   * Every figure here was computed rather than typed, so handing an assistant
+   * the prose and asking it to parse the numbers back out would throw away the
+   * one thing this site is careful about. Grams and millilitres, because those
+   * are what the site stores; the display conversion is a reader's preference
+   * and means nothing to a script.
+   */
+  const payload = $derived({
+    kind: 'xefy.shopping-list',
+    generated: new Date().toISOString().slice(0, 10),
+    url: shareUrl(),
+    for: resolution.items.map((i) => ({
+      recipe: i.recipe.title,
+      slug: i.recipe.slug,
+      version: i.version.label,
+      servings: i.item.servings,
+    })),
+    items: groups.toBuy.map((line) => ({
+      ingredient: displayName(line),
+      amount: Number(line.total.toFixed(2)),
+      unit: line.unit,
+      ...(amountOf(line).count ? { count: amountOf(line).count } : {}),
+      optional: line.optional,
+      forRecipes: line.sources.map((s) => s.title),
+    })),
+  });
+
   function shareUrl(): string {
     const fragment = encodePlanFragment(resolution.items);
     return `${location.origin}${location.pathname}${fragment}`;
@@ -185,6 +214,7 @@
           body={body}
           url={shareUrl()}
           title="Shopping list — Xefy"
+          payload={payload}
         />
 
         <p class="source-line">

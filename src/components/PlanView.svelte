@@ -104,6 +104,33 @@
   const planMessage = $derived(planText(resolution.items, DAY_LABELS, DAYS, planUrl()));
   const planBody = $derived(planText(resolution.items, DAY_LABELS, DAYS));
 
+  /** The week as structured data, for an assistant rather than a person. */
+  const payload = $derived({
+    kind: 'xefy.meal-plan',
+    generated: new Date().toISOString().slice(0, 10),
+    url: planUrl(),
+    days: DAYS.map((day) => ({
+      day: DAY_LABELS[day],
+      dishes: planned
+        .filter((i) => i.item.day === day)
+        .map((i) => ({
+          recipe: i.recipe.title,
+          slug: i.recipe.slug,
+          version: i.version.label,
+          servings: i.item.servings,
+          kcalPerServing: versionDetail(i)?.perServing.kcal ?? null,
+        })),
+    })).filter((d) => d.dishes.length > 0),
+    unscheduled: planned
+      .filter((i) => i.item.day === null)
+      .map((i) => ({ recipe: i.recipe.title, slug: i.recipe.slug, servings: i.item.servings })),
+    shoppingOnly: listOnly.map((i) => ({
+      recipe: i.recipe.title,
+      slug: i.recipe.slug,
+      servings: i.item.servings,
+    })),
+  });
+
   const canShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function';
   let copied = $state('');
 
@@ -203,6 +230,7 @@
           body={planBody}
           url={planUrl()}
           title="Meal plan — Xefy"
+          payload={payload}
         />
         <p class="source-line">
           The link carries the plan itself, so whoever opens it can copy the whole week into their

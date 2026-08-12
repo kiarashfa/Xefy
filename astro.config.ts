@@ -18,7 +18,7 @@ export default defineConfig({
     // User-state pages carry noindex and are kept out of the sitemap. They are
     // deliberately *not* disallowed in robots.txt: a blocked page is never
     // fetched, so the noindex tag would never be seen.
-    sitemap({ filter: (page) => !/\/(plan|shopping-list|search)\/?$/.test(page) }),
+    sitemap({ filter: (page) => !/\/(plan|shopping-list)\/?$/.test(page) }),
   ],
 
   vite: {

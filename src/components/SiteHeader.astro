@@ -8,9 +8,8 @@
  *
  * The search affordance is required rather than optional: the naming system
  * assumes people can search alternate names, and a site with no way to search
- * is missing a primary function. It is a link to a page rather than a button
- * opening a dialog — a search result is a thing worth sending someone, and an
- * overlay has no URL.
+ * is missing a primary function. It opens as a drawer under the header, in
+ * place, on whichever page the reader is already on.
  */
 const base = import.meta.env.BASE_URL;
 
@@ -43,12 +42,12 @@ const nav = [
           </a>
         ))
       }
-      <a class="icon-btn" href={`${base}search/`} aria-label="Search">
+      <button class="icon-btn" data-search aria-label="Search" aria-expanded="false" aria-controls="site-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <circle cx="11" cy="11" r="6.5"></circle>
           <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
         </svg>
-      </a>
+      </button>
       <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <circle cx="12" cy="12" r="4.2"></circle>
@@ -60,12 +59,12 @@ const nav = [
     </nav>
 
     <div class="mobile-nav">
-      <a class="icon-btn" href={`${base}search/`} aria-label="Search">
+      <button class="icon-btn" data-search aria-label="Search" aria-expanded="false" aria-controls="site-search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <circle cx="11" cy="11" r="6.5"></circle>
           <line x1="15.8" y1="15.8" x2="20.5" y2="20.5"></line>
         </svg>
-      </a>
+      </button>
       <button class="icon-btn" data-theme-toggle aria-label="Switch between light and dark">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
           <circle cx="12" cy="12" r="4.2"></circle>
@@ -87,4 +86,97 @@ const nav = [
   <nav class="wrap mobile-menu" data-mobile-menu aria-label="Main">
     {nav.map((item) => <a href={item.href}>{item.label}</a>)}
   </nav>
+
+  {/*
+    Search opens in place, under the header, on whatever page the reader is
+    already on — the same drawer idiom as the mobile menu rather than a dialog
+    over the page or a page of its own. Nothing about searching requires
+    leaving, and an overlay costs a focus trap and an inertness claim to get
+    right.
+
+    Pagefind's assets are produced by the build, so this is inert in `astro dev`
+    and live in a real build. The index reads rendered HTML, which is what makes
+    alternate and search-only names findable.
+  */}
+  <div class="search-drawer" id="site-search" data-search-drawer hidden>
+    <div class="wrap search-drawer-inner">
+      <div id="pagefind-search"></div>
+      <p class="search-hint">
+        Every dish and ingredient, including regional names and the spellings people type.
+      </p>
+    </div>
+  </div>
 </header>
+
+<link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
+<script is:inline define:vars={{ base }}>
+  (() => {
+    const drawer = document.querySelector('[data-search-drawer]');
+    const buttons = [...document.querySelectorAll('[data-search]')];
+    if (!drawer || buttons.length === 0) return;
+
+    let loaded = false;
+    // Where focus came from, so closing puts it back rather than dropping it.
+    let opener = null;
+
+    async function load() {
+      if (loaded) return;
+      loaded = true;
+      try {
+        await import(`${base}pagefind/pagefind-ui.js`);
+        new window.PagefindUI({
+          element: '#pagefind-search',
+          showSubResults: true,
+          showImages: false,
+          /*
+           * Required, and its absence is why search never returned anything.
+           * The UI script loads the search core itself, from a root-relative
+           * `/pagefind/` unless told otherwise — which 404s on a site served
+           * from a repository subpath. The failure is silent in the UI: the
+           * field works, the query runs, and it sits on "Searching…" forever.
+           */
+          bundlePath: `${base}pagefind/`,
+        });
+      } catch {
+        document.getElementById('pagefind-search').textContent =
+          'Search is available on the published site.';
+      }
+    }
+
+    function setOpen(open, trigger) {
+      // `hidden` is removed a frame before the open attribute so the drawer has
+      // a laid-out height to transition from; adding both at once animates from
+      // nothing and the box appears instantly.
+      if (open) {
+        opener = trigger ?? opener;
+        drawer.hidden = false;
+        requestAnimationFrame(() => drawer.setAttribute('data-open', ''));
+        load().then(() => {
+          drawer.querySelector('input')?.focus();
+        });
+      } else {
+        drawer.removeAttribute('data-open');
+        opener?.focus();
+      }
+      for (const b of buttons) b.setAttribute('aria-expanded', String(open));
+    }
+
+    // Kept in the DOM but out of the tab order while closed, without which a
+    // keyboard user tabs into a search field they cannot see.
+    drawer.addEventListener('transitionend', (e) => {
+      if (e.propertyName === 'grid-template-rows' && !drawer.hasAttribute('data-open')) {
+        drawer.hidden = true;
+      }
+    });
+
+    for (const button of buttons) {
+      button.addEventListener('click', () =>
+        setOpen(!drawer.hasAttribute('data-open'), button),
+      );
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.hasAttribute('data-open')) setOpen(false);
+    });
+  })();
+</script>

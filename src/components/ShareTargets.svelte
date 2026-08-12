@@ -33,9 +33,36 @@
     /** Post mode: the headline, and an image for the one network that wants one. */
     title?: string;
     image?: string;
+    /**
+     * Message mode: the same content as structured data, for handing to an
+     * assistant or a script rather than to a person.
+     */
+    payload?: unknown;
   }
 
-  const { mode, text, body = text, url, title = '', image = '' }: Props = $props();
+  const { mode, text, body = text, url, title = '', image = '', payload }: Props = $props();
+
+  let copied = $state('');
+
+  /**
+   * The sixth destination, and the only one that is not another company's app.
+   *
+   * A shopping list is already structured — the site computed every figure on
+   * it — and flattening that to prose so an assistant can guess it back is a
+   * loss nobody needs to take. This copies the JSON instead.
+   *
+   * Deliberately the clipboard rather than a POST somewhere: there is no
+   * endpoint, and inventing one would send a reader's plan to a server this
+   * site otherwise makes a point of not having.
+   */
+  async function copyPayload() {
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(payload, null, 2));
+      copied = 'JSON copied — paste it to an assistant.';
+    } catch {
+      copied = 'This browser would not let the page copy for you.';
+    }
+  }
 
   const e = encodeURIComponent;
 
@@ -55,6 +82,9 @@
       'M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.42 7.62 11.17-.1-.95-.2-2.4.04-3.44.22-.93 1.4-5.95 1.4-5.95s-.36-.72-.36-1.78c0-1.67.97-2.92 2.17-2.92 1.02 0 1.52.77 1.52 1.69 0 1.03-.66 2.57-1 4-.28 1.19.6 2.16 1.77 2.16 2.13 0 3.76-2.24 3.76-5.48 0-2.86-2.06-4.87-5-4.87-3.4 0-5.4 2.55-5.4 5.19 0 1.03.4 2.13.89 2.73.1.12.11.22.08.34l-.33 1.36c-.05.22-.17.27-.4.16-1.5-.7-2.44-2.89-2.44-4.65 0-3.79 2.75-7.27 7.93-7.27 4.17 0 7.4 2.97 7.4 6.93 0 4.14-2.6 7.47-6.22 7.47-1.21 0-2.35-.63-2.74-1.38l-.75 2.84c-.27 1.04-1 2.35-1.49 3.15C9.57 23.82 10.77 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z',
     reddit:
       'M24 11.78a3.4 3.4 0 0 0-3.4-3.4 3.36 3.36 0 0 0-2.3.92 16.6 16.6 0 0 0-8.9-2.83l1.5-7.06 4.9 1.04a2.42 2.42 0 1 0 .27-1.36l-5.5-1.17a.7.7 0 0 0-.83.53L8.05 6.47a16.6 16.6 0 0 0-8.98 2.83A3.4 3.4 0 1 0 2.9 15.4a6.4 6.4 0 0 0-.08 1.02c0 4.13 4.9 7.48 10.93 7.48s10.93-3.35 10.93-7.48c0-.34-.03-.68-.08-1.01a3.4 3.4 0 0 0 1.4-3.63zM6.9 14.2a2.42 2.42 0 1 1 4.84 0 2.42 2.42 0 0 1-4.84 0zm10.1 5.4c-1.7 1.7-5.3 1.8-6.35 1.8s-4.65-.1-6.35-1.8a.7.7 0 0 1 .98-.98c1.07 1.07 3.36 1.45 5.37 1.45s4.3-.38 5.37-1.45a.7.7 0 1 1 .98.98zm-.28-2.98a2.42 2.42 0 1 1 0-4.84 2.42 2.42 0 0 1 0 4.84z',
+    // A terminal prompt: this is the one destination that is a format, not a place.
+    agent:
+      'M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v14h18V5H3zm3.7 3.3 3.6 3.6a1 1 0 0 1 0 1.4l-3.6 3.6-1.4-1.4L8 12 5.3 9.3l1.4-1.4zM12 15h6v2h-6v-2z',
   };
 
   /** Sending it to someone. */
@@ -123,4 +153,17 @@
       </a>
     </li>
   {/each}
+
+  {#if mode === 'message' && payload}
+    <li>
+      <button class="share-target" onclick={copyPayload} aria-label="Copy this as JSON">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d={ICONS.agent} />
+        </svg>
+        <span>As JSON</span>
+      </button>
+    </li>
+  {/if}
 </ul>
+
+{#if copied}<p class="source-line" role="status">{copied}</p>{/if}

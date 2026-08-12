@@ -36,19 +36,47 @@
    * It used to appear only in the table view, which quietly said that anyone
    * browsing cards did not want an order — while the cards are exactly where
    * "quickest first" is a reasonable thing to ask for.
+   *
+   * The name sort and the numeric ones are separate controls because they are
+   * different questions. Direction belongs to the numeric one: a single list
+   * mixing "Name A–Z" with "Fewest calories" can only offer one direction per
+   * entry and doubles in length the moment both are wanted.
    */
-  type SortKey = 'title' | 'title-desc' | 'totalMin' | 'kcalPerServing' | 'difficulty';
-  let sort = $state<SortKey>('title');
+  type SortField = 'title' | 'totalMin' | 'kcalPerServing' | 'difficulty';
+  let sortField = $state<SortField>('title');
+  let sortDesc = $state(false);
 
-  const SORTS: { id: SortKey; label: string }[] = [
-    { id: 'title', label: 'Name A–Z' },
-    { id: 'title-desc', label: 'Name Z–A' },
-    { id: 'totalMin', label: 'Quickest first' },
-    { id: 'kcalPerServing', label: 'Fewest calories' },
-    { id: 'difficulty', label: 'Easiest first' },
+  const SORT_FIELDS: { id: SortField; label: string; low: string; high: string }[] = [
+    { id: 'title', label: 'Name', low: 'A–Z', high: 'Z–A' },
+    { id: 'totalMin', label: 'Time', low: 'Quickest', high: 'Longest' },
+    { id: 'kcalPerServing', label: 'Calories', low: 'Fewest', high: 'Most' },
+    { id: 'difficulty', label: 'Difficulty', low: 'Easiest', high: 'Hardest' },
   ];
 
+  const activeSort = $derived(SORT_FIELDS.find((s) => s.id === sortField)!);
+
   const DIFFICULTY_ORDER = { Easy: 0, Medium: 1, Hard: 2 } as const;
+
+  /**
+   * Ceilings on the three computed figures — "nothing over 600 kcal", "under
+   * half an hour".
+   *
+   * A number the reader types, not a bucket somebody chose for them: any fixed
+   * set of ranges is wrong for most people, and every one of these figures is
+   * already computed per recipe, so there is nothing to estimate.
+   */
+  let maxMinutes = $state<number | null>(null);
+  let maxKcal = $state<number | null>(null);
+  let maxDifficulty = $state<'' | 'Easy' | 'Medium' | 'Hard'>('');
+
+  const limitCount = $derived(
+    (maxMinutes != null ? 1 : 0) + (maxKcal != null ? 1 : 0) + (maxDifficulty ? 1 : 0),
+  );
+
+  const num = (v: string): number | null => {
+    const n = Number(v);
+    return v.trim() === '' || !Number.isFinite(n) || n <= 0 ? null : n;
+  };
 
   const minutes = (m: number) => (m < 60 ? `${m}m` : `${Math.floor(m / 60)}h ${m % 60 || ''}`.trim());
 
@@ -64,17 +92,22 @@
         if (method.length && !method.some((c) => r.tags.method.includes(c))) return false;
         // Allergens are an exclusion filter, never an inclusion one.
         if (excludedAllergens.some((a) => r.allergens.includes(a))) return false;
+        if (maxMinutes != null && r.totalMin > maxMinutes) return false;
+        if (maxKcal != null && r.kcalPerServing > maxKcal) return false;
+        if (maxDifficulty && DIFFICULTY_ORDER[r.difficulty] > DIFFICULTY_ORDER[maxDifficulty])
+          return false;
         return true;
       })
       .sort((a, b) => {
-        if (sort === 'title') return a.title.localeCompare(b.title);
-        if (sort === 'title-desc') return b.title.localeCompare(a.title);
-        if (sort === 'difficulty')
-          return (
-            DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty] ||
-            a.title.localeCompare(b.title)
-          );
-        return a[sort] - b[sort] || a.title.localeCompare(b.title);
+        const dir = sortDesc ? -1 : 1;
+        if (sortField === 'title') return dir * a.title.localeCompare(b.title);
+        const key =
+          sortField === 'difficulty'
+            ? DIFFICULTY_ORDER[a.difficulty] - DIFFICULTY_ORDER[b.difficulty]
+            : a[sortField] - b[sortField];
+        // Ties fall back to the name, so the order is stable and readable
+        // rather than whatever the source array happened to be in.
+        return dir * key || a.title.localeCompare(b.title);
       }),
   );
 
@@ -110,7 +143,12 @@
   const hideTerms = $derived(allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id))));
 
   const activeCount = $derived(
-    cuisine.length + course.length + method.length + excludedAllergens.length + (query ? 1 : 0),
+    cuisine.length +
+      course.length +
+      method.length +
+      excludedAllergens.length +
+      limitCount +
+      (query ? 1 : 0),
   );
 
   function clearAll() {
@@ -119,7 +157,34 @@
     course = [];
     method = [];
     excludedAllergens = [];
+    maxMinutes = null;
+    maxKcal = null;
+    maxDifficulty = '';
   }
+
+  /* The limits panel dismisses the same way a facet menu does. */
+  let limitsOpen = $state(false);
+  let limitsRoot = $state<HTMLElement | null>(null);
+  let limitsButton = $state<HTMLButtonElement | null>(null);
+
+  $effect(() => {
+    if (!limitsOpen) return;
+    const onDown = (e: MouseEvent) => {
+      if (limitsRoot && !limitsRoot.contains(e.target as Node)) limitsOpen = false;
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        limitsOpen = false;
+        limitsButton?.focus();
+      }
+    };
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('mousedown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  });
 </script>
 
 <!-- One row: everything that narrows the list, above the list it narrows. -->
@@ -151,14 +216,102 @@
     />
   {/if}
 
+  <!-- Ceilings on the computed figures. A typed number, not a chosen bucket. -->
+  <div class="facet-menu" bind:this={limitsRoot}>
+    <button
+      class="facet-menu-button"
+      class:on={limitCount > 0}
+      bind:this={limitsButton}
+      aria-expanded={limitsOpen}
+      aria-haspopup="true"
+      onclick={() => (limitsOpen = !limitsOpen)}
+    >
+      Limits
+      {#if limitCount > 0}<span class="facet-menu-count">{limitCount}</span>{/if}
+      <span class="facet-menu-caret" aria-hidden="true">▾</span>
+    </button>
+
+    {#if limitsOpen}
+      <div class="facet-menu-panel is-limits" role="group" aria-label="Limits">
+        <label class="limit-row">
+          <span>Time at most</span>
+          <span class="limit-input">
+            <input
+              type="number"
+              min="1"
+              step="5"
+              inputmode="numeric"
+              placeholder="any"
+              value={maxMinutes ?? ''}
+              oninput={(e) => (maxMinutes = num(e.currentTarget.value))}
+            />
+            <span class="limit-unit">min</span>
+          </span>
+        </label>
+
+        <label class="limit-row">
+          <span>Calories at most</span>
+          <span class="limit-input">
+            <input
+              type="number"
+              min="1"
+              step="50"
+              inputmode="numeric"
+              placeholder="any"
+              value={maxKcal ?? ''}
+              oninput={(e) => (maxKcal = num(e.currentTarget.value))}
+            />
+            <span class="limit-unit">kcal</span>
+          </span>
+        </label>
+
+        <label class="limit-row">
+          <span>Difficulty at most</span>
+          <select bind:value={maxDifficulty}>
+            <option value="">any</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </label>
+
+        <p class="limit-note">Calories are per serving, and time is the whole dish.</p>
+
+        {#if limitCount > 0}
+          <button
+            class="facet-menu-clear"
+            onclick={() => {
+              maxMinutes = null;
+              maxKcal = null;
+              maxDifficulty = '';
+            }}
+          >
+            Clear limits
+          </button>
+        {/if}
+      </div>
+    {/if}
+  </div>
+
   <label class="catalog-sort">
     <span class="visually-hidden">Sort by</span>
-    <select bind:value={sort}>
-      {#each SORTS as s (s.id)}
+    <select bind:value={sortField}>
+      {#each SORT_FIELDS as s (s.id)}
         <option value={s.id}>{s.label}</option>
       {/each}
     </select>
   </label>
+
+  <!-- Direction is its own control, so every field can go both ways. -->
+  <button
+    class="sort-dir"
+    aria-pressed={sortDesc}
+    onclick={() => (sortDesc = !sortDesc)}
+    title={`Sorted by ${activeSort.label.toLowerCase()}: ${sortDesc ? activeSort.high : activeSort.low} first`}
+  >
+    <span aria-hidden="true">{sortDesc ? '↓' : '↑'}</span>
+    {sortDesc ? activeSort.high : activeSort.low}
+  </button>
 
   <div class="catalog-view">
     <button class:active={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>

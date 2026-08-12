@@ -79,6 +79,17 @@
      roughly a fifth. Re-measure if the body face ever changes. */
   --measure: 55ch;
 
+  /*
+   * The cap for an introduction, which is a different job from body prose.
+   *
+   * A reading measure exists so the eye can find the next line through many
+   * lines of it. A page lede is one or two sentences under a large heading, and
+   * held to the same width it does not read as careful typography — it reads as
+   * a column that stopped halfway across the page. Wide enough to reach a
+   * natural break on a large screen, still short of edge to edge.
+   */
+  --measure-intro: 76ch;
+
   /* One easing curve everywhere. Motion is slow and eased, never bouncy. */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 

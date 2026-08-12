@@ -507,8 +507,24 @@
     align-items: start;
   }
 
+  /*
+   * The column is a stack in its own right, not only the per-version block
+   * inside it. Anything that sits beside the version panels — the share card —
+   * otherwise butts straight against the last one, because the gap belonged to
+   * the inner element rather than to the column.
+   */
   .left-col {
     align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* In a side column the hero has no facing text to align to, so it keeps its
+     square and takes its spacing from the stack like every other card. */
+  .hero-image.is-square {
+    aspect-ratio: 1 / 1;
+    margin-bottom: 0;
   }
 
   /* One stack per version; only the active one is in flow. */
@@ -1317,7 +1333,7 @@
     font-style: italic;
     font-size: 18px;
     color: var(--ink-soft);
-    max-width: 52ch;
+    max-width: var(--measure-intro);
     line-height: 1.55;
     margin: 0;
   }
@@ -1554,6 +1570,76 @@
     font: inherit;
     color: var(--accent);
     cursor: pointer;
+  }
+
+  /* Direction, as its own control, so every sort field can go both ways. */
+  .sort-dir {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 13px;
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    font-size: 12.5px;
+    cursor: pointer;
+    transition: border-color 0.3s var(--ease);
+  }
+
+  .sort-dir:hover {
+    border-color: var(--line-strong);
+  }
+
+  .facet-menu-panel.is-limits {
+    min-width: 264px;
+  }
+
+  .limit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 7px 8px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .limit-input {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+  }
+
+  .limit-row input,
+  .limit-row select {
+    width: 82px;
+    padding: 6px 8px;
+    background: var(--surface-1);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+  }
+
+  .limit-row select {
+    width: 104px;
+    cursor: pointer;
+  }
+
+  .limit-unit {
+    font-size: 11px;
+    color: var(--muted);
+    min-width: 26px;
+  }
+
+  .limit-note {
+    margin: 6px 8px 0;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: var(--muted);
   }
 
   .pill {
@@ -2518,13 +2604,54 @@
 
 @layer components {
   /*
-   * Search, on its own page. Pagefind's own UI, retinted to the token set
-   * rather than left at its defaults, and given the reading measure — a results
-   * list running the full width of a 1240px band is unreadable.
+   * The search drawer.
+   *
+   * A grid whose single row animates between 0fr and 1fr, which is what allows
+   * a smooth open to a height nobody had to measure — the alternative, a fixed
+   * max-height, either clips a long result list or eases against a number that
+   * has nothing to do with the content.
    */
-  .search-page {
-    max-width: 640px;
-    padding-bottom: 48px;
+  .search-drawer {
+    display: grid;
+    grid-template-rows: 0fr;
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid transparent;
+    transition:
+      grid-template-rows 0.42s var(--ease),
+      border-color 0.42s var(--ease);
+  }
+
+  .search-drawer[data-open] {
+    grid-template-rows: 1fr;
+    border-top-color: var(--line);
+  }
+
+  /*
+   * `width: 100%` is doing real work: the inner element carries `.wrap`, whose
+   * `margin-inline: auto` stops a grid item stretching — an item with auto
+   * margins is sized to fit its content and then centred by them. Without this
+   * the band came out 652px wide, floating in the middle of the header instead
+   * of lining up with the logo above it.
+   */
+  .search-drawer-inner {
+    width: 100%;
+    overflow: hidden;
+    min-height: 0;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease);
+  }
+
+  .search-drawer[data-open] .search-drawer-inner {
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+
+  /* Pagefind's own UI, retinted to the token set rather than left at its
+     defaults, and capped — a results list running the full width of a 1240px
+     band is unreadable. */
+  #pagefind-search {
+    max-width: 660px;
+    padding-block: 20px 6px;
     --pagefind-ui-primary: var(--accent);
     --pagefind-ui-text: var(--ink);
     --pagefind-ui-background: var(--surface-1);
@@ -2532,5 +2659,13 @@
     --pagefind-ui-tag: var(--surface-2);
     --pagefind-ui-border-radius: 10px;
     --pagefind-ui-font: var(--font-body);
+  }
+
+  .search-hint {
+    max-width: 660px;
+    margin: 0;
+    padding-bottom: 22px;
+    font-size: 12px;
+    color: var(--muted);
   }
 }
