@@ -30,7 +30,18 @@ const nav = [
 
 <header class="site-header" data-pagefind-ignore>
   <div class="wrap header-inner">
-    <a class="logo" href={base}>Xefy</a>
+    <a class="logo" href={base}>
+      {/* The site mark, same geometry as the favicon. The hairline is the page
+          surface rather than a colour of its own, so it holds in both themes. */}
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <circle cx="16" cy="7" r="2.2" fill="currentColor"></circle>
+        <rect x="15" y="8.2" width="2" height="2.8" fill="currentColor"></rect>
+        <path d="M2.8 23A13.2 13.2 0 0 1 29.2 23Z" fill="currentColor"></path>
+        <rect x="1.6" y="21.9" width="28.8" height="1.2" fill="var(--surface)"></rect>
+        <rect x="1.6" y="23" width="28.8" height="3.6" rx="1.5" fill="currentColor"></rect>
+      </svg>
+      <span>Xefy</span>
+    </a>
 
     <nav class="desktop-nav" aria-label="Main">
       {

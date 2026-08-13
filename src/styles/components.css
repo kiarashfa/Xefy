@@ -31,10 +31,22 @@
   }
 
   .logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
     font-family: var(--font-display);
     font-weight: 500;
     font-size: 21px;
     text-decoration: none;
+  }
+
+  /* The mark carries the accent; the wordmark stays ink, so the pair reads as
+     one lockup rather than as a coloured word. */
+  .logo-mark {
+    width: 23px;
+    height: 23px;
+    flex: none;
+    color: var(--accent);
   }
 
   /*
