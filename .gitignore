@@ -30,6 +30,10 @@ ADDING_NEW.md
 AGENT_BRIEF.md
 ver7.html
 
+# Editorial planning: the catalogue list and its supporting files. The build
+# never reads them; they decide what gets written, not what gets shipped.
+catalogue/
+
 # Scratch analysis and checkup output. Build-critical scripts under scripts/
 # are tracked; ad-hoc investigation is not.
 scratch/

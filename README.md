@@ -11,59 +11,11 @@ Nothing is hand-typed, so nothing can drift out of step.
 Static site, no backend, no accounts. Anything the site remembers about you
 lives in your own browser.
 
-## Running it
-
-```bash
-npm install
-npm run dev
-```
-
-| Command | What it does |
-| --- | --- |
-| `npm run dev` | Development server |
-| `npm run build` | Tests and content checks, a production build, the search index, then the site check |
-| `npm run preview` | Serve the production build locally |
-| `npm run test` | Unit tests |
-| `npm run check` | TypeScript and Astro diagnostics |
-| `npm run check:content` | Content integrity checks on their own |
-| `npm run check:site` | Links, images and page structure, over a built site |
-| `npm run check:self` | Confirms those checks still catch known-bad content |
-
-## How content is checked
-
-`npm run build` will not produce a site from content that cannot be trusted. A
-quantity referenced in a step that does not exist in the ingredient list, a
-split ingredient whose parts do not add up, a number typed into prose instead
-of computed — each of these stops the build rather than reaching a page.
-
-Some things only warrant a warning: an ingredient the method never mentions
-might be a garnish, and a recipe with two versions might be right. Those are
-reported and left to a human.
-
-The finished site is checked too, once it exists: every internal link has to
-land on a page that was actually built, every image has to resolve, and every
-page has to hold together as a document — one heading, unique ids, and a name
-on everything a keyboard can reach.
-
-`scripts/integrity/` holds the checks. `test-fixtures/broken-content/` holds
-content that breaks every one of them on purpose, so there is a way to tell
-that the checks still work.
-
-## Layout
-
-```
-src/
-  content/      recipes, ingredients, reusable components, techniques
-  schemas/      the shape each of those has to have
-  data/         taxonomies and reference tables
-  lib/          scaling, unit conversion, nutrition and timing
-  components/   Astro and Svelte
-  pages/        routes
-scripts/        build-time checks and data import
-```
-
 ## Licence
 
 Recipe and ingredient text is original. Photography comes from Wikimedia
 Commons and Open Food Facts under the licence each image carries; every image
 is credited on the attributions page, along with the processing applied to it.
+
+© 2026 Kiarash Farajzadehahary.
+⚖ Licensed under the [KFA Source-Available License 1.0](LICENSE).
