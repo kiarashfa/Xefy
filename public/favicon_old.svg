@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- A cloche: knob, dome, flange, and one hairline in the face colour so the
+       dome does not merge into the rim. Two tones and three shapes, which is
+       what survives at 16px. Both palettes travel in the file, so the mark is
+       terracotta on a light browser and warm coral on a dark one. -->
+  <style>
+    :root { --face: #faf7f2; --case: #8f2f21; }
+    @media (prefers-color-scheme: dark) {
+      :root { --face: #1c1a17; --case: #e2795f; }
+    }
+  </style>
+  <circle cx="16" cy="7" r="2.2" fill="var(--case)" />
+  <rect x="15" y="8.2" width="2" height="2.8" fill="var(--case)" />
+  <path d="M2.8 23A13.2 13.2 0 0 1 29.2 23Z" fill="var(--case)" />
+  <rect x="1.6" y="21.9" width="28.8" height="1.2" fill="var(--face)" />
+  <rect x="1.6" y="23" width="28.8" height="3.6" rx="1.5" fill="var(--case)" />
+</svg>
