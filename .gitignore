@@ -22,12 +22,14 @@ Thumbs.db
 
 # --- Working notes ---
 # Planning and handover documents. The build never reads them.
+# CLAUDE.md points at MEMORY.md; MEMORY.md is the live project memory.
 CLAUDE.md
-SPEC.md
-INSTRUCTIONS.md
-HANDOFF.md
-ADDING_NEW.md
-AGENT_BRIEF.md
+MEMORY.md
+# agent/ holds the authoring contract handed to content sub-agents, and the
+# orchestrator's dispatch runbook.
+agent/
+# archive/ holds the superseded design and build documents.
+archive/
 ver7.html
 
 # Editorial planning: the catalogue list and its supporting files. The build

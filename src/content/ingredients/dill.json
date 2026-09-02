@@ -1,0 +1,56 @@
+{
+  "id": "dill",
+  "name": "Dill",
+  "proseName": "dill",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172233",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172233/nutrients",
+      "sourceNote": "Density is measured from whole sprigs, the record's only household portion; chopped dill packs a little more densely, but this is the closest measured figure available.",
+      "nutritionPer100g": {
+        "kcal": 43,
+        "protein": 3.46,
+        "fat": 1.12,
+        "carbs": 7.02,
+        "fiber": 2.1,
+        "calcium": 208,
+        "iron": 6.59,
+        "magnesium": 55,
+        "phosphorus": 66,
+        "potassium": 738,
+        "sodium": 61,
+        "zinc": 0.91,
+        "copper": 0.146,
+        "manganese": 1.264,
+        "vitaminC": 85,
+        "thiamin": 0.058,
+        "riboflavin": 0.296,
+        "niacin": 1.57,
+        "vitaminB6": 0.185,
+        "folateMcg": 150,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 386,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.06,
+        "monounsaturatedFat": 0.802,
+        "polyunsaturatedFat": 0.095,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 8.9,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/dill-thumb.webp"
+}

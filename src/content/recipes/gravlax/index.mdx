@@ -1,0 +1,120 @@
+---
+title: Gravlax
+subtitle: Raw salmon cured under salt, sugar and dill for a long, unhurried spell in the refrigerator, then sliced paper-thin and eaten cold, without ever touching heat.
+label: Swedish
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [nordic]
+  course: [starter]
+  method: [curing]
+names:
+  alsoKnownAs:
+    - { name: "Gravad Lax", region: Sweden, lang: sv }
+    - { name: "Gravlaks", region: Norway, lang: "no" }
+  notToBeConfusedWith:
+    - name: Smoked salmon
+      note: Cured and then hot- or cold-smoked. Gravlax is never smoked, and the smoke is what most separates their flavour and texture.
+    - name: Lox
+      note: Brine-cured salmon, traditionally without sugar or dill and considerably saltier. Gravlax is dry-cured and sweeter.
+ingredients:
+  - id: salmon
+    ingredientRef: salmon
+    form: raw
+    amount: 800
+    unit: g
+    note: skin-on, centre-cut, scaled
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 60
+    unit: g
+    consumedFraction: 0.4
+    consumedFractionNote: Salt drawn into the flesh by osmosis stays; the rest dissolves into the liquid the cure expels, which is drained away, or is wiped off with the spent crust before slicing.
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 50
+    unit: g
+    consumedFraction: 0.4
+    consumedFractionNote: The sugar behaves the same way as the salt in the cure — part of it draws into the flesh, and the rest leaves with the drained liquid and the wiped-off crust.
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 6
+    unit: g
+    note: coarsely crushed
+  - id: dill
+    ingredientRef: dill
+    form: fresh
+    amount: 35
+    unit: g
+    consumedFraction: 0.35
+    consumedFractionNote: Most of the dill is packed onto the fish only to flavour the cure, then scraped off and discarded with the drained liquid; just the reserved portion, added fresh at serving, is actually eaten.
+    portions:
+      - { id: dill-cure, amount: 25, note: to pack over the fish }
+      - { id: dill-garnish, amount: 10, note: chopped, to finish }
+steps:
+  - { id: trim-and-check, durationMin: 5, type: active, phase: prep }
+  - { id: mix-cure, durationMin: 2, type: active, phase: prep }
+  - { id: rub-and-wrap, durationMin: 8, type: active, phase: prep }
+  - { id: cure, durationMin: 2880, type: passive }
+  - { id: unwrap-and-dry, durationMin: 5, type: active, phase: prep }
+  - { id: slice, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The cure itself is the make-ahead step. Once cured, the whole fillet keeps tightly wrapped in the refrigerator for at least a week, so it can be finished and sliced any day after that, well ahead of when it is needed.
+  freezable: true
+  freezeInstructions: Wrap the cured, unsliced fillet tightly and freeze it for up to a month; thaw it overnight in the refrigerator before scraping off the cure and slicing.
+  reheatInstructions: null
+substitutions:
+  - lineRef: salmon
+    substitute: sea trout
+    ratio: "1:1"
+    note: The other classic gravlax fish, slightly milder and pinker. It cures exactly the same way.
+    impact: { flavor: minor change, texture: none }
+notes:
+  techniqueRationale:
+    - stepId: mix-cure
+      text: Sugar softens the harshness of an all-salt cure and moderates how hard it pulls, so the flesh ends up firm rather than rubbery.
+    - stepId: cure
+      text: Weighting the parcel holds the flesh in even contact with the cure and the liquid it releases, so the salt and sugar penetrate evenly instead of pooling on one side.
+  commonPitfalls:
+    - stepId: trim-and-check
+      text: Curing does not cook the fish and does not reliably kill parasites, so the salmon needs to have been previously frozen solid for several days first; fresh, never-frozen fish is not safe prepared this way.
+    - stepId: unwrap-and-dry
+      text: Rinsing the cure off under the tap waterlogs the surface and washes away flavour the curing time took days to build. Wiping it dry instead keeps both the texture and the seasoning intact.
+---
+
+<Step id="trim-and-check">
+  Run a finger along the flesh side of the <Qty ref="salmon"/> to find any pin bones and
+  draw them out with tweezers, then pat the fillet dry with paper towel.
+</Step>
+
+<Step id="mix-cure">
+  Stir the <Qty ref="salt"/>, <Qty ref="sugar"/> and <Qty ref="pepper"/> together in a
+  small bowl until evenly combined.
+</Step>
+
+<Step id="rub-and-wrap">
+  Lay the salmon skin-side down on a large sheet of plastic wrap and pack the salt
+  mixture evenly over the flesh, working it right to the edges. Scatter the
+  <Qty ref="dill-cure"/> over the top in an even layer, then wrap the fillet tightly and
+  set it on a tray.
+</Step>
+
+<Step id="cure">
+  Set another tray on top of the parcel and weight it down evenly, then refrigerate at
+  <Temp c={4}/> or below for <Dur step="cure"/>, turning the parcel over once around the
+  midpoint so both sides sit in the liquid the cure draws out.
+</Step>
+
+<Step id="unwrap-and-dry">
+  Unwrap the fillet, scrape away the dill and the spent cure, and discard the liquid left
+  in the wrapping. Pat the salmon dry with paper towel rather than rinsing it.
+</Step>
+
+<Step id="slice">
+  Working from the tail end with a long, thin-bladed knife held almost flat against the
+  skin, slice the salmon into thin sheets, leaving the skin behind. Scatter the
+  <Qty ref="dill-garnish"/> over the slices before serving.
+</Step>
