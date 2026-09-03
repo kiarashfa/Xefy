@@ -299,6 +299,69 @@ async function writeSheet(dir: string, tiles: Buffer[]): Promise<string> {
   return path.relative(ROOT, file);
 }
 
+/**
+ * Points the record at its own photograph. An ingredient is JSON and takes a
+ * bare thumbnail path; a recipe and a Component are MDX and take
+ * `image: { src, alt }` in frontmatter, against the hero rendition.
+ *
+ * Recipes get the field on `index.mdx` only. A version file inherits the
+ * dish's identity — title, naming, imagery — so a per-version photograph would
+ * be a second identity for one dish.
+ */
+async function writeImageField(
+  kind: ImageCredit['kind'],
+  slug: string,
+  files: Record<string, string>,
+  alt: string,
+): Promise<void> {
+  if (kind === 'ingredient') {
+    const record = path.join('src/content/ingredients', `${slug}.json`);
+    try {
+      const data = JSON.parse(await readFile(record, 'utf8'));
+      data.image = files.thumb;
+      await writeFile(record, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+    } catch {
+      console.log(`  note: no ingredient record at ${record}; its image field is unset.`);
+    }
+    return;
+  }
+
+  const record =
+    kind === 'recipe'
+      ? path.join('src/content/recipes', slug, 'index.mdx')
+      : path.join('src/content/components', `${slug}.mdx`);
+
+  let raw: string;
+  try {
+    raw = await readFile(record, 'utf8');
+  } catch {
+    console.log(`  note: no record at ${record}; its image field is unset.`);
+    return;
+  }
+
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
+  if (!match) {
+    console.log(`  note: ${record} has no frontmatter; its image field is unset.`);
+    return;
+  }
+
+  // JSON.stringify gives a correctly escaped double-quoted YAML scalar.
+  const block = `image:\n  src: ${files.hero}\n  alt: ${JSON.stringify(alt)}\n`;
+  let front = match[1] ?? '';
+
+  if (/^image:/m.test(front)) {
+    front = front.replace(/^image:\n(?:[ \t]+.*\n?)*/m, block);
+  } else {
+    // Before `ingredients:` where there is one, so identity stays together at
+    // the top; otherwise at the end of the frontmatter.
+    front = /^ingredients:/m.test(front)
+      ? front.replace(/^ingredients:/m, `${block}ingredients:`)
+      : `${front.replace(/\n?$/, '\n')}${block}`;
+  }
+
+  await writeFile(record, raw.replace(match[0], `---\n${front.replace(/\n?$/, '\n')}---`), 'utf8');
+}
+
 async function readCredits(): Promise<ImageCredit[]> {
   try {
     return JSON.parse(await readFile(CREDITS, 'utf8')) as ImageCredit[];
@@ -368,20 +431,17 @@ async function adopt(
   credits.sort((a, b) => a.kind.localeCompare(b.kind) || a.slug.localeCompare(b.slug));
   await writeFile(CREDITS, `${JSON.stringify(credits, null, 2)}\n`, 'utf8');
 
-  // An ingredient record points at its own thumbnail, and adopting an image
-  // without setting it leaves the file on disk and the page unchanged — a
-  // silent no-op that looks exactly like success. The record is the only place
-  // the site reads, so writing it here is what makes adoption mean anything.
-  if (kind === 'ingredient') {
-    const record = path.join('src/content/ingredients', `${slug}.json`);
-    try {
-      const data = JSON.parse(await readFile(record, 'utf8'));
-      data.image = files.thumb;
-      await writeFile(record, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
-    } catch {
-      console.log(`  note: no ingredient record at ${record}; its image field is unset.`);
-    }
-  }
+  // The record is the only place the site reads, so writing it here is what
+  // makes adoption mean anything: renditions on disk and a credit in the
+  // manifest change no page by themselves.
+  //
+  // This covered ingredients only for a long time, and the gap was invisible in
+  // exactly the way that matters — `adopt` printed success, `check:content` saw
+  // no claim to a missing file because there was no claim at all, and 53 dishes
+  // carried photographs that no page ever read. The same shape as the
+  // `image-file-missing` rule that once covered one collection: write it for
+  // every kind, not for the one the bug was first noticed in.
+  await writeImageField(kind, slug, files, alt);
 
   console.log(`Adopted "${candidate.title}" as ${kind}/${slug}`);
   for (const [size, file] of Object.entries(files)) console.log(`  ${size.padEnd(6)} ${file}`);
