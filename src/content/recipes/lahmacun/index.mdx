@@ -1,0 +1,173 @@
+---
+title: Lahmacun
+subtitle: A thin round of yeasted dough spread edge to edge with minced lamb, tomato and pepper and baked until crisp — one disc is a single serving, rolled up with parsley, onion and lemon.
+description: Turkish lahmacun made the standard way — a thin, yeasted wheat dough spread with a raw paste of minced lamb, tomato, red pepper, onion, garlic and spice, baked in a very hot oven until the base crisps and the topping sets, then rolled with parsley, onion and a squeeze of lemon.
+label: Standard
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [turkish]
+  course: [main-course]
+  method: [baking]
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 300
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 170
+    unit: ml
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 3
+    unit: g
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: dough-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 10
+    unit: ml
+  - id: lamb
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 250
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed to a paste
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 20
+    unit: g
+    note: finely chopped
+    portions:
+      - { id: parsley-topping, amount: 10, note: stirred into the topping }
+      - { id: parsley-serving, amount: 10, note: for rolling with the finished lahmacun }
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 3
+    unit: g
+  - id: maras-pepper
+    ingredientRef: maras-pepper
+    form: flakes
+    amount: 2
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: topping-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: topping-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 10
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 20
+    unit: ml
+steps:
+  - { id: make-dough, durationMin: 12, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 45, type: passive }
+  - { id: heat-oven, durationMin: 30, type: "parallel-with:rest-dough", phase: cook }
+  - { id: make-topping, durationMin: 12, type: "parallel-with:rest-dough", phase: prep }
+  - { id: divide-shape, durationMin: 10, type: active, phase: prep }
+  - { id: spread-topping, durationMin: 8, type: active, phase: prep }
+  - { id: bake, durationMin: 8, type: active, phase: cook }
+  - { id: serve, durationMin: 4, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The topping can be mixed and refrigerated, covered, up to a day ahead. The dough can be made and refrigerated after its rest for the same length of time; bring it back to room temperature before dividing.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: spread-topping
+      text: The topping goes on raw and paper-thin, right to the edge of the dough, because it is meant to cook in the same brief blast of heat that crisps the base rather than steaming the dough underneath it.
+  commonPitfalls:
+    - stepId: bake
+      text: A topping spread too thick never cooks through in the time the base needs to crisp, leaving a raw centre under a burnt edge.
+---
+
+<Step id="make-dough">
+  Dissolve the <Qty ref="yeast"/> in the <Qty ref="water"/>, then work in the
+  <Qty ref="flour"/> until no dry flour remains. Add the <Qty ref="dough-salt"/> and
+  <Qty ref="dough-oil"/> and knead until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest at room temperature for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile bring the oven to its absolute maximum, with a stone or steel in place,
+  and give it <Dur step="heat-oven"/> to saturate.
+</Step>
+
+<Step id="make-topping">
+  Combine the <Qty ref="lamb"/>, <Qty ref="tomato"/>, <Qty ref="red-pepper"/>,
+  <Qty ref="onion"/>, <Qty ref="garlic"/>, <Qty ref="parsley-topping"/>,
+  <Qty ref="paprika"/>, <Qty ref="maras-pepper"/>, <Qty ref="cumin"/>,
+  <Qty ref="pepper"/>, <Qty ref="topping-salt"/> and <Qty ref="topping-oil"/> to a
+  loose, spreadable paste.
+</Step>
+
+<Step id="divide-shape">
+  Divide the rested dough into even pieces and roll each out paper-thin into a round.
+</Step>
+
+<Step id="spread-topping">
+  Spread the topping over each round in a thin, even layer, right to the edge.
+</Step>
+
+<Step id="bake">
+  Bake on the stone for <Dur step="bake"/>, until the base is crisp and the topping
+  has set and coloured at the edges.
+</Step>
+
+<Step id="serve">
+  Scatter the <Qty ref="parsley-serving"/> over the hot lahmacun, roll each one up and
+  serve with the <Qty ref="lemon-juice"/> for squeezing over.
+</Step>

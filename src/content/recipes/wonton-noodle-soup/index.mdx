@@ -1,0 +1,195 @@
+---
+title: Wonton Noodle Soup
+subtitle: Pork and shrimp wontons and thin egg noodles served together in a clear chicken and dried shrimp broth, the broth doing as much work as the dumpling.
+label: Cantonese
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [soup]
+  method: [boiling]
+names:
+  alsoKnownAs:
+    - { name: Wonton mee, region: Southeast Asia, lang: en }
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: dough-egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: 1 egg
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1420
+    unit: ml
+    portions:
+      - { id: dough-water, amount: 20 }
+      - { id: broth-water, amount: 1400 }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 1 }
+      - { id: filling-salt, amount: 2 }
+      - { id: broth-salt, amount: 4 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 150
+    unit: g
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and finely chopped
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 3
+    unit: g
+  - id: starch
+    ingredientRef: tapioca-starch
+    form: starch
+    amount: 8
+    unit: g
+    note: to bind the filling
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 55
+    unit: g
+    portions:
+      - { id: filling-spring-onion, amount: 15, note: finely chopped }
+      - { id: broth-spring-onion, amount: 15 }
+      - { id: garnish-spring-onion, amount: 25, note: finely sliced }
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 20
+    unit: g
+    portions:
+      - { id: filling-ginger, amount: 5, note: grated }
+      - { id: broth-ginger, amount: 15, note: sliced }
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 28
+    unit: ml
+    portions:
+      - { id: filling-soy, amount: 8 }
+      - { id: broth-soy, amount: 20 }
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+    portions:
+      - { id: filling-sesame-oil, amount: 5 }
+      - { id: broth-sesame-oil, amount: 5 }
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 2
+    unit: g
+    portions:
+      - { id: filling-pepper, amount: 1 }
+      - { id: broth-pepper, amount: 1 }
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: bone-in, skin on
+  - id: dried-shrimp
+    ingredientRef: dried-shrimp
+    form: dried
+    amount: 10
+    unit: g
+  - id: napa-cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: leaves separated
+  - id: noodles
+    ingredientRef: egg-noodles
+    form: dried
+    amount: 240
+    unit: g
+steps:
+  - { id: start-broth, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-broth, durationMin: 30, type: passive }
+  - { id: make-dough, durationMin: 8, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: rest-dough, durationMin: 15, type: "parallel-with:simmer-broth", phase: rest }
+  - { id: make-filling, durationMin: 12, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: roll-and-fill, durationMin: 30, type: active, phase: prep }
+  - { id: cook-and-assemble, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth can be made up to two days ahead and kept covered in the fridge, and the uncooked wontons can be filled a day ahead. Cook the noodles and assemble only just before serving, since noodles left standing in broth turn soft.
+  freezable: true
+  freezeInstructions: Freeze the uncooked, filled wontons open on a tray until firm before bagging. Boil directly from frozen, adding a minute or two to the cooking time. The broth also freezes well on its own.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: start-broth
+      text: Dried shrimp is simmered into the broth rather than the filling, so the whole bowl carries its savoury depth rather than just the dumpling floating in a plainer stock.
+  commonPitfalls:
+    - stepId: cook-and-assemble
+      text: Noodles and wontons cooked in the same pot cloud the broth with starch. Boil each separately and only bring them together in the bowl, with the clear broth added last.
+---
+
+<Step id="start-broth">
+  Put the <Qty ref="chicken"/>, <Qty ref="broth-water"/>, <Qty ref="broth-ginger"/> and
+  <Qty ref="dried-shrimp"/> in a large pot and bring to the boil, skimming off any foam
+  that rises, for <Dur step="start-broth"/>.
+</Step>
+
+<Step id="simmer-broth">
+  Lower the heat and simmer gently, uncovered, for <Dur step="simmer-broth"/>, until the
+  broth is fragrant and the chicken is cooked through. Lift out the chicken, and once cool
+  enough to handle, shred the meat from the bone and set it aside. Strain the broth,
+  discarding the solids, and stir in the <Qty ref="broth-spring-onion"/>,
+  <Qty ref="broth-soy"/>, <Qty ref="broth-sesame-oil"/>, <Qty ref="broth-pepper"/> and
+  <Qty ref="broth-salt"/>. Keep warm.
+</Step>
+
+<Step id="make-dough">
+  Meanwhile, combine the <Qty ref="flour"/>, <Qty ref="dough-egg"/>,
+  <Qty ref="dough-water"/> and <Qty ref="dough-salt"/> in a bowl and bring together into a
+  firm dough, then knead for <Dur step="make-dough"/> until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature.
+</Step>
+
+<Step id="make-filling">
+  Combine the <Qty ref="pork"/>, <Qty ref="shrimp"/>, <Qty ref="filling-spring-onion"/>,
+  <Qty ref="filling-ginger"/>, <Qty ref="filling-soy"/>, <Qty ref="filling-sesame-oil"/>,
+  <Qty ref="filling-pepper"/>, <Qty ref="filling-salt"/>, <Qty ref="sugar"/> and
+  <Qty ref="starch"/> in a bowl and stir hard in one direction until sticky and cohesive.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough out thinly and cut it into small squares, keeping them stacked and
+  covered. Spoon a little filling into the centre of each square, gather the corners up
+  around it and twist to seal into a small purse.
+</Step>
+
+<Step id="cook-and-assemble">
+  Blanch the <Qty ref="napa-cabbage"/> in a pot of boiling water until just wilted, then
+  lift out and divide between serving bowls. In the same water, cook the
+  <Qty ref="noodles"/> until tender and divide between the bowls. Boil the wontons in a
+  separate pot of water for <Dur step="cook-and-assemble"/>, until they float and the
+  wrappers turn translucent, then lift into the bowls with the shredded chicken. Ladle
+  the hot broth over each bowl and scatter with the <Qty ref="garnish-spring-onion"/>.
+</Step>

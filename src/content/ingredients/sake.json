@@ -1,0 +1,58 @@
+{
+  "id": "sake",
+  "name": "Sake",
+  "proseName": "sake",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167723",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167723/nutrients",
+      "nutritionPer100g": {
+        "kcal": 134,
+        "protein": 0.5,
+        "fat": 0,
+        "carbs": 5,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 5,
+        "iron": 0.1,
+        "magnesium": 6,
+        "phosphorus": 6,
+        "potassium": 25,
+        "sodium": 2,
+        "zinc": 0.02,
+        "copper": 0.009,
+        "seleniumMcg": 1.4,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/sake-thumb.webp"
+}

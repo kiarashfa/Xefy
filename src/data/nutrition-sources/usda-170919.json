@@ -1,0 +1,149 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "170919",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/170919/nutrients",
+  "description": "Spices, cardamom",
+  "category": "Spices and Herbs",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 311,
+    "protein": 10.76,
+    "fat": 6.7,
+    "carbs": 68.47,
+    "fiber": 28,
+    "calcium": 383,
+    "iron": 13.97,
+    "magnesium": 229,
+    "phosphorus": 178,
+    "potassium": 1119,
+    "sodium": 18,
+    "zinc": 7.47,
+    "copper": 0.383,
+    "manganese": 28,
+    "vitaminC": 21,
+    "thiamin": 0.198,
+    "riboflavin": 0.182,
+    "niacin": 1.102,
+    "vitaminB6": 0.23,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 0,
+    "vitaminDMcg": 0,
+    "saturatedFat": 0.68,
+    "monounsaturatedFat": 0.87,
+    "polyunsaturatedFat": 0.43,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 8.28,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1303,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 5.78,
+      "unit": "g"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.03,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 0.57,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.06,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.02,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 0.85,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.31,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0.12,
+      "unit": "g"
+    },
+    {
+      "number": "636",
+      "name": "Phytosterols",
+      "amount": 46,
+      "unit": "mg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTsp",
+      "value": 2,
+      "from": "1 tsp, ground"
+    },
+    {
+      "measure": "gPerTbsp",
+      "value": 5.8,
+      "from": "1 tbsp, ground"
+    }
+  ]
+}

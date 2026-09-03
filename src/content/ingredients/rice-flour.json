@@ -1,0 +1,48 @@
+{
+  "id": "rice-flour",
+  "name": "Rice Flour",
+  "proseName": "rice flour",
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "white",
+      "label": "White",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "790214",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/790214/nutrients",
+      "sourceNote": "This record publishes no household portion, so the volume conversion comes from the general flour density class.",
+      "nutritionPer100g": {
+        "kcal": 359,
+        "protein": 6.94,
+        "fat": 1.3,
+        "carbs": 79.8,
+        "fiber": 0.5,
+        "calcium": 6,
+        "iron": 0.22,
+        "magnesium": 22.9,
+        "phosphorus": 94,
+        "potassium": 75,
+        "sodium": 5,
+        "zinc": 1.19,
+        "copper": 0.209,
+        "manganese": 0.892,
+        "seleniumMcg": 5.3,
+        "thiamin": 0.09,
+        "riboflavin": 0,
+        "niacin": 1.25,
+        "vitaminB6": 0.052
+      },
+      "density": {
+        "gPerCup": 125,
+        "densitySource": "estimated",
+        "densityClass": "flour-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/rice-flour-thumb.webp"
+}

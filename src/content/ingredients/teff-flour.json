@@ -1,0 +1,55 @@
+{
+  "id": "teff-flour",
+  "name": "Teff Flour",
+  "proseName": "teff flour",
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "whole-grain",
+      "label": "Whole grain",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169747",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169747/nutrients",
+      "sourceNote": "USDA carries whole uncooked teff grain rather than the milled flour. Teff is milled whole, bran and all, with nothing sifted out, so the ground flour's composition is the same as the grain this record reports.",
+      "nutritionPer100g": {
+        "kcal": 367,
+        "protein": 13.3,
+        "fat": 2.38,
+        "carbs": 73.13,
+        "fiber": 8,
+        "sugars": 1.84,
+        "calcium": 180,
+        "iron": 7.63,
+        "magnesium": 184,
+        "phosphorus": 429,
+        "potassium": 427,
+        "sodium": 12,
+        "zinc": 3.63,
+        "copper": 0.81,
+        "manganese": 9.24,
+        "seleniumMcg": 4.4,
+        "thiamin": 0.39,
+        "riboflavin": 0.27,
+        "niacin": 3.363,
+        "vitaminB6": 0.482,
+        "choline": 13.1,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.08,
+        "vitaminKMcg": 1.9,
+        "saturatedFat": 0.449,
+        "monounsaturatedFat": 0.589,
+        "polyunsaturatedFat": 1.071
+      },
+      "density": {
+        "gPerCup": 193,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/teff-flour-thumb.webp"
+}

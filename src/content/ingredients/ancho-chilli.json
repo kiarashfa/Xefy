@@ -1,0 +1,53 @@
+{
+  "id": "ancho-chilli",
+  "name": "Ancho Chilli",
+  "proseName": "ancho chillies",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169396",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169396/nutrients",
+      "sourceNote": "USDA's record for the dried poblano — the ancho is a poblano dried whole rather than ground.",
+      "nutritionPer100g": {
+        "kcal": 281,
+        "protein": 11.86,
+        "fat": 8.2,
+        "carbs": 51.42,
+        "fiber": 21.6,
+        "calcium": 61,
+        "iron": 10.93,
+        "magnesium": 113,
+        "phosphorus": 201,
+        "potassium": 2411,
+        "sodium": 43,
+        "zinc": 1.42,
+        "copper": 0.508,
+        "manganese": 1.279,
+        "seleniumMcg": 2.9,
+        "vitaminC": 2,
+        "thiamin": 0.179,
+        "riboflavin": 2.255,
+        "niacin": 6.403,
+        "vitaminB6": 3.535,
+        "folateMcg": 69,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1022,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.82,
+        "monounsaturatedFat": 0.492,
+        "polyunsaturatedFat": 4.511,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/ancho-chilli-thumb.webp"
+}

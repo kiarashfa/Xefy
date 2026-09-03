@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2646171",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646171/nutrients",
+  "description": "Chicken, thigh, boneless, skinless, raw",
+  "category": "Poultry Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 149.306,
+    "protein": 18.613,
+    "fat": 7.916,
+    "carbs": 0,
+    "calcium": 5.65,
+    "iron": 0.602,
+    "magnesium": 21.8,
+    "phosphorus": 178.3,
+    "potassium": 271.8,
+    "sodium": 62.33,
+    "zinc": 1.348,
+    "copper": 0.042,
+    "manganese": 0,
+    "saturatedFat": 1.658,
+    "monounsaturatedFat": 2.239,
+    "polyunsaturatedFat": 1.42,
+    "transFat": 0.024,
+    "cholesterol": 91.66
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 72.92,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.978,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.9575,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

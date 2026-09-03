@@ -1,0 +1,59 @@
+{
+  "id": "oregano",
+  "name": "Oregano",
+  "proseName": "oregano",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171328",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171328/nutrients",
+      "nutritionPer100g": {
+        "kcal": 265,
+        "protein": 9,
+        "fat": 4.28,
+        "carbs": 68.92,
+        "fiber": 42.5,
+        "sugars": 4.09,
+        "calcium": 1597,
+        "iron": 36.8,
+        "magnesium": 270,
+        "phosphorus": 148,
+        "potassium": 1260,
+        "sodium": 25,
+        "zinc": 2.69,
+        "copper": 0.633,
+        "manganese": 4.99,
+        "seleniumMcg": 4.5,
+        "vitaminC": 2.3,
+        "thiamin": 0.177,
+        "riboflavin": 0.528,
+        "niacin": 4.64,
+        "vitaminB6": 1.044,
+        "folateMcg": 237,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 85,
+        "vitaminE": 18.26,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 621.7,
+        "saturatedFat": 1.551,
+        "monounsaturatedFat": 0.716,
+        "polyunsaturatedFat": 1.369,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 1,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/oregano-thumb.webp"
+}

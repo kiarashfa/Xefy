@@ -56,6 +56,53 @@
         "densitySource": "estimated",
         "densityClass": "ground-spice"
       }
+    },
+    {
+      "id": "whole",
+      "label": "Whole seed",
+      "proseQualifier": "whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170923",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170923/nutrients",
+      "nutritionPer100g": {
+        "kcal": 375,
+        "protein": 17.81,
+        "fat": 22.27,
+        "carbs": 44.24,
+        "fiber": 10.5,
+        "sugars": 2.25,
+        "calcium": 931,
+        "iron": 66.36,
+        "magnesium": 366,
+        "phosphorus": 499,
+        "potassium": 1788,
+        "sodium": 168,
+        "zinc": 4.8,
+        "copper": 0.867,
+        "manganese": 3.333,
+        "seleniumMcg": 5.2,
+        "vitaminC": 7.7,
+        "thiamin": 0.628,
+        "riboflavin": 0.327,
+        "niacin": 4.579,
+        "vitaminB6": 0.435,
+        "folateMcg": 10,
+        "choline": 24.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 64,
+        "vitaminE": 3.33,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 5.4,
+        "saturatedFat": 1.535,
+        "monounsaturatedFat": 14.04,
+        "polyunsaturatedFat": 3.279,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 2.1,
+        "gPerTbsp": 6,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/cumin-thumb.webp"

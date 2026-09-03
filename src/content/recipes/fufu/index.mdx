@@ -1,0 +1,63 @@
+---
+title: Fufu
+subtitle: Boiled cassava and green plantain pounded together into a smooth, stretchy dough, eaten in torn pieces alongside a soup or stew.
+label: Cassava and plantain
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [west-african]
+  course: [side]
+  method: [boiling]
+names:
+  notToBeConfusedWith:
+    - name: Pounded yam
+      note: Made from boiled yam alone rather than cassava and plantain, with a denser, less elastic result — a related but separate West African staple.
+ingredients:
+  - id: cassava
+    ingredientRef: cassava
+    form: raw
+    amount: 700
+    unit: g
+    note: peeled and cut into chunks
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 350
+    unit: g
+    note: peeled and cut into chunks
+steps:
+  - { id: boil, durationMin: 30, type: passive }
+  - { id: pound, durationMin: 18, type: active, phase: cook }
+  - { id: shape, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Wrap the pounded dough tightly in cling film once cooled and freeze; thaw fully and warm through, covered, over gently simmering water, re-pounding briefly to restore the texture.
+  reheatInstructions: Warm gently, covered, over simmering water rather than in a microwave, which turns the outside rubbery before the centre is even warm.
+notes:
+  techniqueRationale:
+    - stepId: pound
+      text: The dough is worked until it turns smooth and elastic and pulls cleanly away from the sides of the mortar in one mass — that single change in behaviour, not a timer, is what tells you it is done.
+  commonPitfalls:
+    - stepId: boil
+      text: Cassava and plantain cook at different rates. Cutting the cassava into smaller pieces than the plantain lets both finish soft at the same time instead of leaving one half-cooked.
+---
+
+<Step id="boil">
+  Put the <Qty ref="cassava"/> and <Qty ref="plantain"/> into a large pot, cover
+  generously with water and bring to the boil. Cook for <Dur step="boil"/>, until both
+  are completely soft and a knife slides through with no resistance. Drain, keeping
+  back a little of the cooking water.
+</Step>
+
+<Step id="pound">
+  Turn the drained cassava and plantain into a large mortar and pound with a pestle,
+  turning and folding the mass between strokes and working in a splash of the reserved
+  water now and then. Continue for <Dur step="pound"/>, until the dough is smooth,
+  stretchy and free of lumps, and pulls away from the sides of the mortar as one piece.
+</Step>
+
+<Step id="shape">
+  Wet your hands and divide the dough into portions, shaping each into a smooth,
+  rounded mound. This takes <Dur step="shape"/>. Serve warm, alongside a soup or stew.
+</Step>

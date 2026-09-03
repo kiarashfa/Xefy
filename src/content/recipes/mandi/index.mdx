@@ -1,0 +1,174 @@
+---
+title: Mandi
+subtitle: Spiced lamb suspended over a pot of basmati and slow-cooked together so the meat's own juices drip down and season the rice as it steams.
+label: Lamb
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [yemeni]
+  course: [main-course]
+  method: [slow-cooking]
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 550
+    unit: g
+    note: kept in two or three large pieces
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 100
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 3
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 14
+    unit: g
+    consumedFraction: 0.97
+    consumedFractionNote: Blended across two uses. The larger portion is a dry rub worked directly into the meat, almost all of which stays on the lamb and is eaten; the rest seasons the rice, which is cooked entirely by absorption with nothing drained away.
+    portions:
+      - { id: marinade-salt, amount: 8, note: for the meat rub }
+      - { id: rice-salt, amount: 6, note: for the rice }
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 30
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 3
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: The whole pods flavour the rice but are picked out on the plate rather than eaten.
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the rice.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 3
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the rice.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the rice.
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 350
+    unit: g
+  - id: stock-water
+    ingredientRef: water
+    form: tap
+    amount: 650
+    unit: ml
+steps:
+  - { id: marinate, durationMin: 15, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 120, type: passive }
+  - { id: build-rice-base, durationMin: 10, type: active, phase: cook }
+  - { id: suspend-and-cook, durationMin: 90, type: passive }
+  - { id: smoke, durationMin: 8, type: active, phase: cook }
+  - { id: rest-and-serve, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The lamb can be marinated up to a day ahead, covered and refrigerated.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: suspend-and-cook
+      text: The lamb is never buried in the rice, only held above it, so its fat and juices baste the grains from above while the meat itself cooks by dry, enclosed heat — the mechanism a pit oven achieves with a hanging rack, adapted here to a covered pot on the stove.
+  commonPitfalls:
+    - stepId: smoke
+      text: Leaving the bowl of smoking ghee in too long turns the rice bitter rather than fragrant. A short, sealed rest is enough to carry the smoke through without scorching it.
+---
+
+<Step id="marinate">
+  Combine the <Qty ref="lamb"/> with the <Qty ref="yoghurt"/>, <Qty ref="garlic"/>,
+  <Qty ref="ginger"/>, <Qty ref="turmeric"/>, <Qty ref="cumin"/>,
+  <Qty ref="black-pepper"/>, <Qty ref="paprika"/> and the <Qty ref="marinade-salt"/>,
+  turning the pieces to coat them evenly. This takes <Dur step="marinate"/>.
+</Step>
+
+<Step id="rest-marinade">
+  Cover and refrigerate the lamb for <Dur step="rest-marinade"/>, so the yoghurt and
+  spices work into the meat.
+</Step>
+
+<Step id="build-rice-base">
+  Melt the <Qty ref="ghee"/> in a heavy pot with a tight-fitting lid and cook the
+  <Qty ref="onion"/> until soft. Add the <Qty ref="cardamom"/>, <Qty ref="cloves"/>,
+  <Qty ref="cinnamon"/>, <Qty ref="bay-leaf"/>, the <Qty ref="rice-salt"/> and the
+  <Qty ref="stock-water"/>, and bring to a simmer. Rinse the <Qty ref="rice"/> and
+  stir it in. This takes <Dur step="build-rice-base"/>.
+</Step>
+
+<Step id="suspend-and-cook">
+  Set a wire rack or trivet inside the pot, just above the level of the rice, and
+  arrange the marinated lamb on it in a single layer. Cover the pot tightly and
+  cook over the lowest possible heat for <Dur step="suspend-and-cook"/>, undisturbed,
+  until the lamb is completely tender and the rice below has absorbed the stock and
+  the meat's dripping juices.
+</Step>
+
+<Step id="smoke">
+  Lift out the rack of lamb and set it aside, covered. Nestle a small heatproof
+  bowl into the rice, put a piece of very hot lit charcoal into it, and pour a
+  little ghee over the coal so it smokes at once. Cover the pot immediately and
+  let the smoke steep through the rice for <Dur step="smoke"/>, then lift out the
+  bowl and any spent coal.
+</Step>
+
+<Step id="rest-and-serve">
+  Fluff the smoked rice, spread it over a platter, and set the lamb on top. This
+  takes <Dur step="rest-and-serve"/>.
+</Step>

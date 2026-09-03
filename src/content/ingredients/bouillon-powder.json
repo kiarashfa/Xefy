@@ -1,0 +1,60 @@
+{
+  "id": "bouillon-powder",
+  "name": "Beef Bouillon Powder",
+  "proseName": "beef bouillon powder",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Seasoning cube", "region": "West Africa", "lang": "en" }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "meat",
+  "animalOriginNote": "Made from dried beef stock, so it is not suitable for a vegetarian version of a dish that uses it.",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "powder",
+      "label": "Powder",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171560",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171560/nutrients",
+      "sourceNote": "USDA's dry beef broth/bouillon powder record, the closest published match to the crumbled seasoning cubes (such as Maggi or Knorr) used as a shortcut savoury seasoning.",
+      "nutritionPer100g": {
+        "kcal": 213,
+        "protein": 15.97,
+        "fat": 8.89,
+        "carbs": 17.4,
+        "fiber": 0,
+        "sugars": 16.71,
+        "calcium": 60,
+        "iron": 1,
+        "magnesium": 51,
+        "phosphorus": 320,
+        "potassium": 446,
+        "sodium": 26000,
+        "zinc": 0,
+        "copper": 0,
+        "manganese": 0.459,
+        "seleniumMcg": 27.6,
+        "vitaminC": 0,
+        "thiamin": 0.07,
+        "riboflavin": 0.243,
+        "niacin": 4.467,
+        "vitaminB6": 0.2,
+        "folateMcg": 32,
+        "vitaminB12Mcg": 1,
+        "vitaminAMcg": 0,
+        "vitaminE": 2.17,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 3.2,
+        "saturatedFat": 4.32,
+        "monounsaturatedFat": 3.616,
+        "polyunsaturatedFat": 0.332,
+        "cholesterol": 10
+      }
+    }
+  ]
+}

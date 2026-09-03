@@ -1,0 +1,64 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2003589",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2003589/nutrients",
+  "description": "Flour, semolina, fine",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "10/28/2021",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 365.957,
+    "protein": 13.331,
+    "fat": 1.838,
+    "carbs": 71.986,
+    "fiber": 3.683,
+    "calcium": 19.76,
+    "iron": 2.431,
+    "magnesium": 46.28,
+    "phosphorus": 163.1,
+    "potassium": 207.8,
+    "sodium": 0.426,
+    "zinc": 1.24,
+    "copper": 0.286,
+    "manganese": 0.842,
+    "seleniumMcg": 44.07,
+    "thiamin": 0.695,
+    "riboflavin": 0.34,
+    "niacin": 5.599,
+    "vitaminB6": 0.108
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 12.11,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.133,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.735,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 47.91,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 163.6,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

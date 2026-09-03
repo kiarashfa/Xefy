@@ -1,0 +1,70 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "790214",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/790214/nutrients",
+  "description": "Flour, rice, white, unenriched",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "4/1/2020",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 359,
+    "protein": 6.94,
+    "fat": 1.3,
+    "carbs": 79.8,
+    "fiber": 0.5,
+    "calcium": 6,
+    "iron": 0.22,
+    "magnesium": 22.9,
+    "phosphorus": 94,
+    "potassium": 75,
+    "sodium": 5,
+    "zinc": 1.19,
+    "copper": 0.209,
+    "manganese": 0.892,
+    "seleniumMcg": 5.3,
+    "thiamin": 0.09,
+    "riboflavin": 0,
+    "niacin": 1.25,
+    "vitaminB6": 0.052
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 11.6,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1500,
+      "unit": "kJ"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 1.11,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.35,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 45.5,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 16,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

@@ -1,0 +1,72 @@
+{
+  "id": "cassava",
+  "name": "Cassava",
+  "proseName": "cassava",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Yuca",
+        "lang": "es"
+      },
+      {
+        "name": "Manioc",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "root vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, peeled",
+      "proseQualifier": "raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169985",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169985/nutrients",
+      "nutritionPer100g": {
+        "kcal": 160,
+        "protein": 1.36,
+        "carbs": 38.06,
+        "fat": 0.28,
+        "fiber": 1.8,
+        "sugars": 1.7,
+        "saturatedFat": 0.074,
+        "monounsaturatedFat": 0.075,
+        "polyunsaturatedFat": 0.048,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 14,
+        "potassium": 271,
+        "calcium": 16,
+        "iron": 0.27,
+        "magnesium": 21,
+        "phosphorus": 27,
+        "zinc": 0.34,
+        "copper": 0.1,
+        "manganese": 0.384,
+        "seleniumMcg": 0.7,
+        "vitaminAMcg": 1,
+        "vitaminC": 20.6,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.19,
+        "vitaminKMcg": 1.9,
+        "thiamin": 0.087,
+        "riboflavin": 0.048,
+        "niacin": 0.854,
+        "vitaminB6": 0.088,
+        "folateMcg": 27,
+        "vitaminB12Mcg": 0,
+        "choline": 23.7
+      },
+      "density": {
+        "gPerCup": 206,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/cassava-thumb.webp"
+}

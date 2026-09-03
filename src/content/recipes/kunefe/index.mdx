@@ -1,0 +1,109 @@
+---
+title: Künefe
+subtitle: Buttered kadayıf packed around melting cheese, baked until the strands crisp and drenched in hot sugar syrup. One serving is a wedge cut from the tray.
+label: Hatay
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [turkish]
+  course: [dessert]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Kunefe, region: International, lang: en }
+  notToBeConfusedWith:
+    - name: Knafeh Nabulsieh
+      note: The Nablus version of the same syrup-on-hot-pastry idea, built on a semolina crust rather than shredded kadayıf and layered with akkawi rather than Hatay's own unsalted cheese; treated here as a separate dish.
+      slugRef: knafeh
+ingredients:
+  - id: kadayif
+    ingredientRef: kadayif
+    form: shredded
+    amount: 400
+    unit: g
+    note: cut into short lengths
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 200
+    unit: g
+    note: melted
+    portions:
+      - { id: butter-kadayif, amount: 180, note: worked through the kadayıf }
+      - { id: butter-tray, amount: 20, note: for greasing the tray }
+  - id: kunefe-cheese
+    ingredientRef: kunefe-cheese
+    form: unsalted
+    amount: 400
+    unit: g
+    note: soaked and thinly sliced
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 350
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 220
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: pistachio
+    ingredientRef: pistachio
+    form: raw
+    amount: 30
+    unit: g
+    note: finely crushed
+steps:
+  - { id: make-syrup, durationMin: 8, type: active, phase: cook }
+  - { id: prepare-kadayif, durationMin: 10, type: "parallel-with:make-syrup", phase: prep }
+  - { id: assemble, durationMin: 12, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: passive }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The kadayıf can be buttered and the cheese sliced up to a day ahead and kept covered and chilled separately; assemble and bake close to serving, since künefe is at its best within an hour of coming out of the oven.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: A gentle few minutes back in a hot oven will recrisp the top, though the cheese underneath will not fully re-melt to its first-bake stretch.
+notes:
+  techniqueRationale:
+    - stepId: prepare-kadayif
+      text: Working the butter through every strand before it goes near the heat is what lets the kadayıf crisp evenly instead of scorching in patches while the rest stays limp.
+  commonPitfalls:
+    - stepId: finish
+      text: Pouring the syrup on while the tray is still searingly hot boils it straight back out. It goes on the moment the künefe comes out of the oven, but only once the worst of the sizzle has settled.
+---
+
+<Step id="make-syrup">
+  Combine the <Qty ref="sugar"/>, <Qty ref="water"/> and <Qty ref="lemon-juice"/> in a
+  small pan and bring to the boil, stirring until the sugar has dissolved. Simmer for
+  <Dur step="make-syrup"/>, then take off the heat and set aside to cool.
+</Step>
+
+<Step id="prepare-kadayif">
+  Meanwhile, pull the <Qty ref="kadayif"/> apart into short lengths and work the
+  <Qty ref="butter-kadayif"/> through it with your fingers until every strand is
+  coated. This takes <Dur step="prepare-kadayif"/>.
+</Step>
+
+<Step id="assemble">
+  Grease a round baking tray with the <Qty ref="butter-tray"/>. Press half the
+  buttered kadayıf firmly into the base, lay the sliced <Qty ref="kunefe-cheese"/>
+  evenly over it, then cover with the remaining kadayıf, pressing it down so the
+  cheese is fully enclosed. This takes <Dur step="assemble"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the top is deep golden and the
+  cheese has melted and is bubbling at the edges.
+</Step>
+
+<Step id="finish">
+  Pour the cooled syrup evenly over the tray while the künefe is still hot, then
+  scatter over the <Qty ref="pistachio"/>. Cut into wedges once the syrup has soaked
+  in, after <Dur step="finish"/>.
+</Step>

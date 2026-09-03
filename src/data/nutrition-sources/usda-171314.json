@@ -1,0 +1,53 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "171314",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/171314/nutrients",
+  "description": "Butter, Clarified butter (ghee)",
+  "category": "Dairy and Egg Products",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 900,
+    "protein": 0,
+    "fat": 100,
+    "carbs": 0,
+    "fiber": 0,
+    "sugars": 0,
+    "calcium": 0,
+    "iron": 0,
+    "sodium": 0,
+    "vitaminC": 0,
+    "saturatedFat": 60,
+    "polyunsaturatedFat": 4,
+    "transFat": 0,
+    "cholesterol": 300
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 0.5,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 3766,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 4000,
+      "unit": "IU"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

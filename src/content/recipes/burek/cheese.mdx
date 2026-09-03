@@ -1,0 +1,67 @@
+---
+label: Cheese
+defaultServings: 6
+difficulty: Medium
+ingredients:
+  - id: filo
+    ingredientRef: filo
+    form: sheet
+    amount: 400
+    unit: g
+    note: about 10 sheets
+  - id: feta
+    ingredientRef: feta
+    form: brined
+    amount: 400
+    unit: g
+    note: crumbled
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: 3 eggs, beaten
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 100
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 70
+    unit: g
+    note: melted, for brushing
+steps:
+  - { id: make-filling, durationMin: 8, type: active, phase: prep }
+  - { id: roll-and-coil, durationMin: 20, type: active, phase: prep }
+  - { id: bake, durationMin: 40, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The coiled, unbaked pastry can be assembled a day ahead, covered and refrigerated in its tin; brush with butter and bake straight from the fridge.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked coil in its tin, wrapped well. Bake from frozen, adding roughly a third again to the baking time.
+  reheatInstructions: Reheat leftover slices in a hot oven for a few minutes to recrisp the pastry — a microwave leaves it soft.
+notes:
+  commonPitfalls:
+    - stepId: bake
+      text: Feta already carries a heavy salt load, so seasoning the filling again before tasting it oversalts the whole pastry — the cheese needs only the egg and yoghurt to bind it.
+---
+
+<Step id="make-filling">
+  Combine the <Qty ref="feta"/>, <Qty ref="egg"/> and <Qty ref="yoghurt"/> in a bowl and
+  mash together into a thick, spreadable curd.
+</Step>
+
+<Step id="roll-and-coil">
+  Lay out a sheet of <Qty ref="filo"/> and brush it lightly with the <Qty ref="butter"/>.
+  Spread a strip of the cheese filling along one long edge and roll the sheet up around
+  it into a loose log, leaving the ends open. Coil the log into a spiral in a round,
+  buttered baking tin, joining the next log to the end of the last so the spiral grows
+  outward, until the tin is filled and all the filling is used.
+</Step>
+
+<Step id="bake">
+  Brush the top of the coil with the remaining butter and bake for
+  <Dur step="bake"/>, until the filo is deeply golden and crisp and the filling has set.
+  Rest briefly before cutting into wedges.
+</Step>

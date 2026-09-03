@@ -1,0 +1,173 @@
+---
+title: Kabsa
+subtitle: Chicken browned with warm whole spices and tomato, then basmati simmered in the same pot until it has drunk up every drop of the spiced stock.
+label: Chicken
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [gulf]
+  course: [main-course]
+  method: [simmering]
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 700
+    unit: g
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 40
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: thinly sliced
+    portions:
+      - { id: onion-base, amount: 200, note: for the base }
+      - { id: onion-garnish, amount: 100, note: fried, for garnish }
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: tomato
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 200
+    unit: g
+    note: crushed by hand
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 2
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: The whole pods flavour the stock and rice but are picked out on the plate rather than eaten.
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the stock.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 3
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the stock.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the stock.
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 400
+    unit: g
+  - id: stock-water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 30
+    unit: g
+  - id: almonds
+    ingredientRef: almonds
+    form: raw
+    amount: 30
+    unit: g
+    note: toasted
+steps:
+  - { id: brown-chicken, durationMin: 10, type: active, phase: cook }
+  - { id: build-base, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-chicken, durationMin: 30, type: passive }
+  - { id: fry-garnish, durationMin: 10, type: "parallel-with:simmer-chicken", phase: cook }
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: rest-and-serve, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-rice
+      text: The rice is cooked in the strained, fat-flecked stock the chicken simmered in rather than in plain water, so the pot's spicing carries straight through into every grain instead of sitting only on the surface.
+  commonPitfalls:
+    - stepId: brown-chicken
+      text: Crowding the pot steams the chicken instead of browning it, and kabsa loses most of its savour without that base of browned meat and fond to build the stock on.
+---
+
+<Step id="brown-chicken">
+  Melt half of the <Qty ref="ghee"/> in a heavy pot over a high heat and brown the
+  <Qty ref="chicken"/> on all sides, working in batches if needed so it colours
+  rather than steams. This takes <Dur step="brown-chicken"/>. Lift out and set
+  aside.
+</Step>
+
+<Step id="build-base">
+  Add the remaining ghee to the pot with the <Qty ref="onion-base"/> and cook until
+  soft, then add the <Qty ref="garlic"/>, <Qty ref="cardamom"/>, <Qty ref="cloves"/>,
+  <Qty ref="cinnamon"/>, <Qty ref="bay-leaf"/>, <Qty ref="black-pepper"/>,
+  <Qty ref="cumin"/>, <Qty ref="paprika"/> and the <Qty ref="salt"/>. Cook briefly
+  until fragrant, then stir in the <Qty ref="tomato"/>, breaking it down into the
+  onion. Spend <Dur step="build-base"/> building the base.
+</Step>
+
+<Step id="simmer-chicken">
+  Return the browned chicken to the pot, pour over the <Qty ref="stock-water"/> and
+  bring to a simmer. Cover and cook gently for <Dur step="simmer-chicken"/>, until
+  the chicken is cooked through and tender. Lift the chicken out and keep it warm;
+  strain and reserve the spiced stock.
+</Step>
+
+<Step id="fry-garnish">
+  While the chicken simmers, fry the <Qty ref="onion-garnish"/> in a little oil until
+  deep golden, then set aside. Toast the <Qty ref="almonds"/> in the same pan until
+  golden. This takes <Dur step="fry-garnish"/> in total.
+</Step>
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> and add it to the reserved stock in the pot, along with
+  the <Qty ref="raisins"/>. Bring back to a simmer, then cover tightly and cook over
+  the lowest heat for <Dur step="cook-rice"/>, undisturbed, until the stock is fully
+  absorbed and the rice is tender.
+</Step>
+
+<Step id="rest-and-serve">
+  Let the rice rest off the heat, still covered, before fluffing it with a fork.
+  Spread it on a platter, set the chicken on top, and scatter over the fried onion
+  and toasted almonds. This takes <Dur step="rest-and-serve"/>.
+</Step>

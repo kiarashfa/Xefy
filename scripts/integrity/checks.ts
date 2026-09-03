@@ -609,6 +609,30 @@ export async function runChecks(content: Content): Promise<CheckResult> {
       }
     }
 
+    /* Two independent sources is the brief's floor, and "independent" is the
+     * load-bearing word: the rule exists so a claim is corroborated somewhere
+     * else, which two articles from one encyclopedia do not do. Four dishes in
+     * one round satisfied the count and not the rule, and counting publishers
+     * by hand is exactly the sort of thing that stops happening the week nobody
+     * remembers to. Distinct publishers is a heuristic — two works from one
+     * academic press really are independent — so this warns rather than fails.
+     */
+    const publishers = new Set(
+      about.data.sources.map((s) => (s.publisher ?? '').trim().toLowerCase()).filter(Boolean),
+    );
+    if (about.data.sources.length > 0 && publishers.size < 2) {
+      add(
+        'about-source-independence',
+        'warn',
+        about.file,
+        about.data.sources.length === 1
+          ? `one source. The floor is two independent sources — one account is not corroboration`
+          : `${about.data.sources.length} sources, all from one publisher ` +
+            `("${[...publishers][0]}"). Pages from one publisher corroborate nothing — ` +
+            `the floor is two independent sources`,
+      );
+    }
+
     // Prose only: strip components and markup before counting.
     const prose = proseWithoutComponents(about.body).replace(/\s+/g, ' ').trim();
     const words = prose ? prose.split(' ').length : 0;
@@ -866,9 +890,23 @@ export async function runChecks(content: Content): Promise<CheckResult> {
    *
    * Adopting is the fix, never deleting the file's twin: `images.ts adopt`
    * writes the renditions AND the manifest entry AND this field together.
+   *
+   * A recipe's `image` is an object (`{ src, alt }`) rather than a bare string,
+   * and covering only ingredients left exactly the same hole on the other half
+   * of the content. A later batch hand-wrote `image.src` on eight recipes and
+   * this check passed them all: the rule has to follow the field, not the
+   * collection it was first found in.
    */
   const imageClaims: { file: string; image: string }[] = [
     ...content.ingredients.map((i) => ({ file: i.file, image: i.data.image })),
+    ...content.recipeVersions.map((v) => ({
+      file: v.file,
+      image: (v.data as { image?: { src?: string } }).image?.src,
+    })),
+    ...content.components.map((c) => ({
+      file: c.file,
+      image: (c.data as { image?: { src?: string } }).image?.src,
+    })),
   ].filter((c): c is { file: string; image: string } => typeof c.image === 'string');
 
   for (const { file, image } of imageClaims) {

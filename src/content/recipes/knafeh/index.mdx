@@ -1,0 +1,126 @@
+---
+title: Knafeh Nabulsieh
+subtitle: A round of melting akkawi cheese under a golden semolina crust, turned out and drenched in hot rose-scented syrup. One serving is a wedge cut from the tray.
+label: Nablus
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [levantine]
+  course: [dessert]
+  method: [baking]
+names:
+  searchOnly: ["kanafeh nabulsiya", "kunafa nabulsiyeh", "knafeh bil jibn"]
+  notToBeConfusedWith:
+    - name: Künefe
+      note: Turkey's Hatay version of the same syrup-on-hot-pastry idea, built on shredded kadayıf rather than a semolina crust and layered with its own local unsalted cheese; treated here as a separate dish.
+      slugRef: kunefe
+ingredients:
+  - id: akkawi
+    ingredientRef: akkawi
+    form: unsalted
+    amount: 500
+    unit: g
+    note: soaked and thinly sliced
+  - id: semolina
+    ingredientRef: semolina
+    form: fine
+    amount: 300
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 150
+    unit: g
+    note: melted
+    portions:
+      - { id: butter-crust, amount: 130, note: worked into the semolina }
+      - { id: butter-tray, amount: 20, note: for greasing the tray }
+  - id: sugar-crust
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+  - id: sugar-syrup
+    ingredientRef: caster-sugar
+    form: white
+    amount: 350
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 220
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: rose-water
+    ingredientRef: rose-water
+    form: distilled
+    amount: 10
+    unit: ml
+  - id: pistachio
+    ingredientRef: pistachio
+    form: raw
+    amount: 40
+    unit: g
+    note: finely crushed
+steps:
+  - { id: soak-cheese, durationMin: 120, type: passive }
+  - { id: make-syrup, durationMin: 8, type: "parallel-with:soak-cheese", phase: cook }
+  - { id: mix-crust, durationMin: 6, type: active, phase: prep }
+  - { id: assemble, durationMin: 15, type: active, phase: prep }
+  - { id: bake, durationMin: 35, type: passive }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cheese can be soaked and sliced, and the semolina crust mixed, up to a day ahead and kept covered and chilled separately; assemble and bake close to serving, since knafeh is at its best within an hour of coming out of the oven.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: A gentle few minutes back in a hot oven will recrisp the top, though the cheese underneath will not fully re-melt to its first-bake stretch.
+notes:
+  techniqueRationale:
+    - stepId: soak-cheese
+      text: Akkawi is a brined cheese. Soaking it in several changes of water draws out enough salt that it melts sweetly under the syrup instead of fighting it.
+  commonPitfalls:
+    - stepId: finish
+      text: Pouring the syrup on while the tray is still searingly hot boils it straight back out. It goes on the moment the knafeh comes out of the oven, but only once the worst of the sizzle has settled.
+---
+
+<Step id="soak-cheese">
+  Cover the <Qty ref="akkawi"/> with cold water and leave it to soak for
+  <Dur step="soak-cheese"/>, changing the water once or twice, until it tastes only
+  mildly salty. Drain well and slice thinly.
+</Step>
+
+<Step id="make-syrup">
+  Meanwhile, combine the <Qty ref="sugar-syrup"/>, <Qty ref="water"/> and
+  <Qty ref="lemon-juice"/> in a small pan and bring to the boil, stirring until the
+  sugar has dissolved. Simmer for <Dur step="make-syrup"/>, then take off the heat,
+  stir in the <Qty ref="rose-water"/> and set aside to cool.
+</Step>
+
+<Step id="mix-crust">
+  Rub the <Qty ref="butter-crust"/> through the <Qty ref="semolina"/> and
+  <Qty ref="sugar-crust"/> until the mixture looks like damp, even sand. This takes
+  <Dur step="mix-crust"/>.
+</Step>
+
+<Step id="assemble">
+  Grease a round baking tray with the <Qty ref="butter-tray"/>. Lay the sliced
+  <Qty ref="akkawi"/> over the base in an even layer, then press the semolina crust
+  mixture evenly on top, right to the edges, smoothing the surface with the back of a
+  spoon. This takes <Dur step="assemble"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the crust is deep golden and
+  the cheese underneath has melted.
+</Step>
+
+<Step id="finish">
+  Run a knife around the edge and invert the tray onto a serving platter so the golden
+  crust is now on top. Pour the cooled syrup evenly over the surface while the knafeh
+  is still hot, then scatter over the <Qty ref="pistachio"/>. Cut into wedges once the
+  syrup has soaked in, after <Dur step="finish"/>.
+</Step>

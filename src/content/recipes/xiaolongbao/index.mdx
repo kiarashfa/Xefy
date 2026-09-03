@@ -1,0 +1,170 @@
+---
+title: Xiaolongbao
+subtitle: Pork dumplings pleated around a spoonful of jellied stock that melts into soup as they steam, so each one holds a mouthful of broth inside a thin, unleavened wrapper.
+label: Shanghainese
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [chinese]
+  course: [starter]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Soup dumplings, region: International, lang: en }
+  notToBeConfusedWith:
+    - name: Khinkali
+      note: A Georgian dumpling that also carries broth inside its wrapper, but gets there differently — khinkali's filling is raw meat worked with cold water and its own juices while it cooks, rather than xiaolongbao's diced, pre-set aspic that melts under steam.
+      slugRef: khinkali
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 270 }
+      - { id: flour-bench, amount: 30, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1140
+    unit: ml
+    portions:
+      - { id: dough-water, amount: 140 }
+      - { id: stock-water, amount: 1000 }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 3 }
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 500
+    unit: g
+    note: bone-in, skin on
+    consumedFraction: 0.3
+    consumedFractionNote: The chicken is simmered for its gelatine and flavour and then discarded; a share of its protein and fat leaches into the stock, but most of the meat's mass stays in the strained solids, which are not eaten.
+  - id: gelatine
+    ingredientRef: gelatine
+    form: powdered
+    amount: 12
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 23
+    unit: g
+    portions:
+      - { id: stock-ginger, amount: 15, note: sliced }
+      - { id: filling-ginger, amount: 8, note: grated }
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    portions:
+      - { id: stock-spring-onion, amount: 20 }
+      - { id: filling-spring-onion, amount: 20, note: finely chopped }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 350
+    unit: g
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 8
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: make-stock, durationMin: 45, type: active, phase: cook }
+  - { id: set-aspic, durationMin: 240, type: passive }
+  - { id: make-dough, durationMin: 10, type: "parallel-with:set-aspic", phase: prep }
+  - { id: rest-dough, durationMin: 20, type: "parallel-with:set-aspic", phase: rest }
+  - { id: dice-aspic, durationMin: 5, type: active, phase: prep }
+  - { id: make-filling, durationMin: 12, type: active, phase: prep }
+  - { id: roll-and-fill, durationMin: 45, type: active, phase: prep }
+  - { id: steam, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The aspic can be made up to two days ahead and kept covered and chilled until needed. The filled, uncooked dumplings are best steamed within a few hours, since the aspic inside begins to soften at room temperature.
+  freezable: true
+  freezeInstructions: Freeze the uncooked, filled dumplings open on a tray until firm before bagging. Steam directly from frozen, adding a couple of minutes to the steaming time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: set-aspic
+      text: The stock is chilled until firm and diced rather than added as a liquid, because a raw filling cannot hold liquid stock without it leaking through the wrapper during pleating. Solid aspic folds in like any other filling and only turns to soup once the heat of steaming melts it.
+  commonPitfalls:
+    - stepId: roll-and-fill
+      text: A wrapper rolled to one even thickness throughout tears at the pleats, which carry several folds of dough stacked on each other. Roll it thinner at the centre than at the rim, the opposite of a boiled dumpling, since the centre here is under a spoonful of soft aspic rather than a seam.
+---
+
+<Step id="make-stock">
+  Put the <Qty ref="chicken"/>, <Qty ref="stock-water"/> and <Qty ref="stock-ginger"/> in
+  a pot and bring to the boil, skimming off any foam, then lower the heat and simmer for
+  <Dur step="make-stock"/>. Strain the stock, discarding the solids, and stir in the
+  <Qty ref="stock-spring-onion"/>.
+</Step>
+
+<Step id="set-aspic">
+  While the stock is still hot, whisk in the <Qty ref="gelatine"/> until fully dissolved.
+  Pour into a shallow dish to a shallow depth and chill for <Dur step="set-aspic"/>, until
+  firm and wobbling like a set jelly rather than a liquid.
+</Step>
+
+<Step id="make-dough">
+  Meanwhile, combine the <Qty ref="flour-dough"/>, <Qty ref="dough-water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a smooth, firm dough, kneading
+  for <Dur step="make-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature.
+</Step>
+
+<Step id="dice-aspic">
+  Turn the set aspic out and cut it into small, even dice, working for
+  <Dur step="dice-aspic"/> and keeping it chilled until it goes into the filling.
+</Step>
+
+<Step id="make-filling">
+  Combine the <Qty ref="pork"/>, <Qty ref="filling-ginger"/>,
+  <Qty ref="filling-spring-onion"/>, <Qty ref="soy-sauce"/>, <Qty ref="sesame-oil"/>,
+  <Qty ref="sugar"/>, <Qty ref="pepper"/> and <Qty ref="filling-salt"/> in a bowl and stir
+  hard in one direction until sticky, then fold through the diced aspic without crushing
+  it.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece with the <Qty ref="flour-bench"/> underneath into a thin round,
+  thinner at the rim than at the centre. Spoon filling into the middle of each round and
+  gather the edge up around it into many fine pleats, twisting them together at the top to
+  seal the dumpling closed.
+</Step>
+
+<Step id="steam">
+  Line a steamer basket so the dumplings cannot stick to the metal or bamboo directly, and
+  set them in with space between each. Steam over rapidly boiling water for
+  <Dur step="steam"/>, until the wrappers turn glossy and translucent. Lift each one out
+  carefully, keeping it upright so the soup inside does not spill before it reaches the
+  table.
+</Step>

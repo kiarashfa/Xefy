@@ -1,0 +1,58 @@
+{
+  "id": "bay-leaf",
+  "name": "Bay Leaf",
+  "proseName": "bay leaf",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170917",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170917/nutrients",
+      "sourceNote": "USDA's household portion for this record is for crumbled bay leaf, so a per-leaf weight is given instead as an editorial estimate.",
+      "nutritionPer100g": {
+        "kcal": 313,
+        "protein": 7.61,
+        "fat": 8.36,
+        "carbs": 74.97,
+        "fiber": 26.3,
+        "calcium": 834,
+        "iron": 43,
+        "magnesium": 120,
+        "phosphorus": 113,
+        "potassium": 529,
+        "sodium": 23,
+        "zinc": 3.7,
+        "copper": 0.416,
+        "manganese": 8.167,
+        "seleniumMcg": 2.8,
+        "vitaminC": 46.5,
+        "thiamin": 0.009,
+        "riboflavin": 0.421,
+        "niacin": 2.005,
+        "vitaminB6": 1.74,
+        "folateMcg": 180,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 309,
+        "vitaminDMcg": 0,
+        "saturatedFat": 2.28,
+        "monounsaturatedFat": 1.64,
+        "polyunsaturatedFat": 2.29,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "bay leaf",
+        "plural": "bay leaves",
+        "grams": 0.2
+      }
+    }
+  ],
+  "image": "images/ingredients/bay-leaf-thumb.webp"
+}

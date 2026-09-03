@@ -1,0 +1,51 @@
+{
+  "id": "black-eyed-peas",
+  "name": "Black-Eyed Peas",
+  "proseName": "black-eyed peas",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Cowpeas",
+        "region": "West Africa",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "pulse",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2644284",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2644284/nutrients",
+      "sourceNote": "This record publishes no household portion or fibre figure, so the volume conversion comes from the general dried-pulse density class.",
+      "nutritionPer100g": {
+        "kcal": 345.57,
+        "protein": 21.225,
+        "fat": 2.419,
+        "carbs": 61.836,
+        "calcium": 71.4,
+        "iron": 5.93,
+        "magnesium": 183.9,
+        "phosphorus": 427.6,
+        "potassium": 1243,
+        "sodium": 3.458,
+        "zinc": 3.654,
+        "copper": 0.936,
+        "manganese": 1.288
+      },
+      "density": {
+        "gPerCup": 192,
+        "densitySource": "estimated",
+        "densityClass": "legume-dried"
+      }
+    }
+  ],
+  "image": "images/ingredients/black-eyed-peas-thumb.webp"
+}

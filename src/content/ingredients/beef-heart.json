@@ -1,0 +1,53 @@
+{
+  "id": "beef-heart",
+  "name": "Beef Heart",
+  "proseName": "beef heart",
+  "category": "offal",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168625",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168625/nutrients",
+      "sourceNote": "USDA's record for raw beef heart, trimmed of visible connective tissue before weighing.",
+      "nutritionPer100g": {
+        "kcal": 112,
+        "protein": 17.72,
+        "fat": 3.94,
+        "carbs": 0.14,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 7,
+        "iron": 4.31,
+        "magnesium": 21,
+        "phosphorus": 212,
+        "potassium": 287,
+        "sodium": 98,
+        "zinc": 1.7,
+        "copper": 0.396,
+        "manganese": 0.035,
+        "seleniumMcg": 21.8,
+        "vitaminC": 2,
+        "thiamin": 0.238,
+        "riboflavin": 0.906,
+        "niacin": 7.53,
+        "vitaminB6": 0.279,
+        "folateMcg": 3,
+        "vitaminB12Mcg": 8.55,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.22,
+        "vitaminKMcg": 0,
+        "saturatedFat": 1.383,
+        "monounsaturatedFat": 1.137,
+        "polyunsaturatedFat": 0.546,
+        "transFat": 0.18,
+        "cholesterol": 124
+      }
+    }
+  ]
+}

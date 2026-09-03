@@ -1,0 +1,113 @@
+---
+title: Seekh Kebab
+subtitle: Lamb mince worked with ginger, garlic, green chilli and warm ground spice until it clings to a skewer, then grilled over fierce heat.
+description: Seekh kebab made the standard way — lamb mince kneaded with grated ginger, garlic, green chilli, ground cumin and chilli, and fresh coriander and mint, pressed onto skewers and grilled hard. Two skewers is one serving.
+label: Lamb, charcoal-grilled
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [indian]
+  course: [main-course]
+  method: [grilling]
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 500
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 50
+    unit: g
+    note: very finely minced and squeezed dry
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: grated
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: chilli-powder
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 3
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 3
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: leaves, finely chopped
+  - id: mint
+    ingredientRef: mint
+    form: fresh
+    amount: 8
+    unit: g
+    note: leaves, finely chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+steps:
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: chill, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The kneaded mince keeps, covered and refrigerated, for up to a day before shaping and grilling.
+  freezable: true
+  freezeInstructions: Freeze the shaped, uncooked skewers on a tray until firm, then wrap individually. Grill directly from frozen, allowing extra time.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: shape
+      text: Mince that has not been squeezed free of the onion's liquid stays slack and will not hold its shape on the skewer. Working it dry and well-kneaded is what lets it grip the metal without a binder.
+---
+
+<Step id="knead">
+  Combine the <Qty ref="lamb"/>, <Qty ref="onion"/>, <Qty ref="ginger"/>,
+  <Qty ref="garlic"/>, <Qty ref="chilli"/>, <Qty ref="cumin"/>,
+  <Qty ref="chilli-powder"/>, <Qty ref="paprika"/>, <Qty ref="coriander"/>,
+  <Qty ref="mint"/> and <Qty ref="salt"/> in a wide bowl. Knead the mixture by hand for
+  <Dur step="knead"/>, until it turns dense and sticky and holds together as one mass.
+</Step>
+
+<Step id="chill">
+  Cover the mince and chill it for <Dur step="chill"/>, so it firms up and is easier to
+  mould onto the skewers.
+</Step>
+
+<Step id="shape">
+  Divide the mince into even portions. With wet hands, mould each portion around a
+  skewer, pressing and smoothing it into a long, even cylinder that grips the metal.
+  Work for <Dur step="shape"/> in total.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over fierce, direct heat, turning them often, for
+  <Dur step="grill"/>, until well charred outside and cooked through with no pink
+  remaining at the centre.
+</Step>

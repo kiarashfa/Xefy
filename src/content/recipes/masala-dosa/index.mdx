@@ -1,0 +1,165 @@
+---
+title: Masala Dosa
+subtitle: A thin, fermented rice-and-lentil crepe from Karnataka, cooked crisp on a griddle and folded around a turmeric-yellow spiced potato filling.
+description: A fermented batter of rice and split urad dal, ground finer and thinned further than idli batter, spread thin on a hot griddle and folded around a mustard-and-curry-leaf potato masala.
+label: Plain masala
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [indian]
+  course: [main-course]
+  method: [fermenting, pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Idli
+      note: Steamed from a thicker, more lentil-heavy version of the same style of batter, rather than spread thin and pan-fried.
+      slugRef: idli
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+    note: rinsed
+  - id: urad-dal
+    ingredientRef: urad-dal
+    form: dried
+    amount: 75
+    unit: g
+    note: rinsed
+  - id: fenugreek-seed
+    ingredientRef: fenugreek-seed
+    form: whole
+    amount: 3
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1750
+    unit: ml
+    consumedFraction: 0.16
+    consumedFractionNote: Blended across three uses. Most is soaking and potato-boiling water, both drained off and barely eaten; a smaller portion goes into the batter itself while grinding and thinning, where it is fully eaten.
+    portions:
+      - { id: soak-water, amount: 500, note: for soaking }
+      - { id: grind-water, amount: 250, note: added while grinding and, after fermentation, to thin the batter to a pourable consistency }
+      - { id: boil-water, amount: 1000, note: for boiling the potatoes }
+  - id: batter-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 500
+    unit: g
+    note: peeled and cut into chunks
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: mustard-seed
+    ingredientRef: mustard-seed
+    form: whole
+    amount: 4
+    unit: g
+  - id: curry-leaves
+    ingredientRef: curry-leaves
+    form: fresh
+    amount: 3
+    unit: g
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 2
+    unit: g
+  - id: chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 16
+    unit: g
+    note: slit lengthways
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 50
+    unit: g
+    portions:
+      - { id: temper-ghee, amount: 15, note: for the potato tempering }
+      - { id: cook-ghee, amount: 35, note: for cooking the dosas }
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: soak, durationMin: 240, type: passive }
+  - { id: grind, durationMin: 20, type: active, phase: prep }
+  - { id: ferment, durationMin: 600, type: passive }
+  - { id: boil-potatoes, durationMin: 20, type: passive }
+  - { id: temper, durationMin: 6, type: "parallel-with:boil-potatoes", phase: cook }
+  - { id: combine-filling, durationMin: 5, type: active, phase: cook }
+  - { id: cook-dosas, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The fermented batter keeps refrigerated for up to two days. The potato filling can be made a day ahead and reheated.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat the filling gently in a pan before filling freshly cooked dosas; the dosas themselves are best cooked to order.
+notes:
+  techniqueRationale:
+    - stepId: grind
+      text: Dosa batter is ground finer and thinned further than idli batter, because it has to pour and spread into a thin sheet rather than hold its own shape under a spoon.
+  commonPitfalls:
+    - stepId: cook-dosas
+      text: Spreading from a puddle of batter with too many passes tears the crepe. One continuous outward spiral from the centre, made quickly before the batter sets, gives an even, unbroken sheet.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="rice"/> and, in a separate bowl, the <Qty ref="urad-dal"/> and
+  <Qty ref="fenugreek-seed"/> with the <Qty ref="soak-water"/>, dividing it between the
+  two bowls. Leave both to soak at room temperature for <Dur step="soak"/>, then drain.
+</Step>
+
+<Step id="grind">
+  Grind the drained dal and fenugreek to a smooth, light paste. Grind the drained rice
+  separately to a fine paste, using the <Qty ref="grind-water"/> as needed, then combine
+  the two with the <Qty ref="batter-salt"/> into a batter with the consistency of thin
+  double cream.
+</Step>
+
+<Step id="ferment">
+  Cover the bowl loosely and leave it somewhere warm to ferment for <Dur step="ferment"/>,
+  until risen and faintly sour-smelling. Stir in any remaining <Qty ref="grind-water"/>
+  afterwards to bring it to a thin, pourable batter.
+</Step>
+
+<Step id="boil-potatoes">
+  Put the <Qty ref="potato"/> into the <Qty ref="boil-water"/> and bring to a simmer.
+  Cook for <Dur step="boil-potatoes"/>, until completely tender, then drain and roughly
+  crush.
+</Step>
+
+<Step id="temper">
+  Meanwhile, warm the <Qty ref="temper-ghee"/> in a separate pan. Add the
+  <Qty ref="mustard-seed"/> and let it pop, then add the <Qty ref="curry-leaves"/>,
+  <Qty ref="turmeric"/> and <Qty ref="chilli"/> and fry briefly before stirring in the
+  <Qty ref="onion"/>. Cook for <Dur step="temper"/>, until the onion has softened.
+</Step>
+
+<Step id="combine-filling">
+  Fold the crushed potato and the <Qty ref="filling-salt"/> into the tempered onion and
+  cook for <Dur step="combine-filling"/>, mashing lightly so the mixture holds together
+  loosely.
+</Step>
+
+<Step id="cook-dosas">
+  Heat a flat griddle and wipe it with a little of the <Qty ref="cook-ghee"/>. Pour on a
+  ladleful of batter and spread it outward from the centre in one continuous spiral into
+  a thin, even round. Drizzle a little more of the <Qty ref="cook-ghee"/> around the edge
+  and cook for most of <Dur step="cook-dosas"/>, until the underside is golden and
+  lacy and the top has dried out — dosa is cooked on one side only. Spoon a line of
+  potato filling across the centre and fold the dosa over it. Repeat with the remaining
+  batter and filling.
+</Step>

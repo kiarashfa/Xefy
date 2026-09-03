@@ -1,0 +1,185 @@
+---
+title: Shawarma
+subtitle: Chicken thigh marinated in yoghurt, garlic and warm spice, stacked on a spit, shaved and rolled in pita with tahini sauce.
+description: Levantine chicken shawarma made the standard way — thigh meat marinated in yoghurt, lemon, garlic, cumin, paprika, turmeric and cinnamon, stacked on a vertical spit, roasted, shaved into ribbons and rolled in pita with tahini sauce, tomato and onion.
+label: Chicken
+defaultServings: 2
+difficulty: Hard
+tags:
+  cuisine: [levantine]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Döner Kebap
+      note: The Ottoman dish shawarma descends from — döner is Turkish, usually lamb and beef, and marinated in yoghurt and paprika without shawarma's cumin, turmeric and cinnamon.
+      slugRef: doner-kebab
+    - name: Tacos al Pastor
+      note: The Mexican descendant of shawarma, carried there by Lebanese migrants and rebuilt around pork, achiote and pineapple.
+      slugRef: tacos-al-pastor
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: sliced thin
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 80
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 10
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 50
+    unit: ml
+    portions:
+      - { id: lemon-marinade, amount: 20 }
+      - { id: lemon-tahini, amount: 30 }
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed to a paste
+    portions:
+      - { id: garlic-marinade, amount: 10 }
+      - { id: garlic-tahini, amount: 5 }
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 2
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 1
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    portions:
+      - { id: salt-marinade, amount: 8 }
+      - { id: salt-tahini, amount: 2 }
+  - id: tahini
+    ingredientRef: tahini
+    form: light
+    amount: 80
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: ml
+  - id: pita
+    ingredientRef: pita-bread
+    form: white
+    amount: 120
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 70
+    unit: g
+    note: diced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 40
+    unit: g
+    note: thinly sliced
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 5
+    unit: g
+    note: finely chopped
+steps:
+  - { id: slice-meat, durationMin: 12, type: active, phase: prep }
+  - { id: marinate, durationMin: 240, type: passive }
+  - { id: stack, durationMin: 10, type: active, phase: prep }
+  - { id: make-tahini-sauce, durationMin: 4, type: "parallel-with:roast", phase: prep }
+  - { id: roast, durationMin: 55, type: active, phase: cook }
+  - { id: shave, durationMin: 5, type: active, phase: cook }
+  - { id: warm-bread, durationMin: 3, type: "parallel-with:shave", phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The sliced chicken can sit in the marinade, covered and refrigerated, for up to a day before stacking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: marinate
+      text: The yoghurt does more than season the chicken — its acidity tenderises the thigh meat enough to stay moist through the long roast a spit needs to build a crisp outer layer.
+  commonPitfalls:
+    - stepId: roast
+      text: Roasting the stack too fast scorches the outside before the layers beneath cook through. A steady, moderate heat lets each turn crisp the surface without racing ahead of the centre.
+---
+
+<Step id="slice-meat">
+  Trim the <Qty ref="chicken"/> of any excess fat and slice it thinly.
+</Step>
+
+<Step id="marinate">
+  Combine the <Qty ref="yoghurt"/>, <Qty ref="oil"/>, <Qty ref="lemon-marinade"/>,
+  <Qty ref="garlic-marinade"/>, <Qty ref="cumin"/>, <Qty ref="paprika"/>,
+  <Qty ref="turmeric"/>, <Qty ref="cinnamon"/>, <Qty ref="pepper"/> and
+  <Qty ref="salt-marinade"/>, add the sliced chicken and turn to coat every piece.
+  Cover and marinate, refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="stack">
+  Thread the marinated chicken tightly onto a vertical skewer, pressing each layer
+  down onto the last, building an even, dense cylinder with no gaps.
+</Step>
+
+<Step id="make-tahini-sauce">
+  Whisk the <Qty ref="tahini"/> with the <Qty ref="lemon-tahini"/> and
+  <Qty ref="garlic-tahini"/>. It will seize into a stiff, grainy paste before it does
+  anything else — keep whisking and add the <Qty ref="water"/> in a thin stream until
+  it loosens into a smooth, pourable sauce. Season with the <Qty ref="salt-tahini"/>.
+</Step>
+
+<Step id="roast">
+  Roast the stacked chicken close to a vertical heat source, turning it steadily, for
+  <Dur step="roast"/>, until the outer surface is deeply browned and the centre is
+  cooked through with no pink remaining.
+</Step>
+
+<Step id="shave">
+  Shave the roasted chicken downward off the spit in thin ribbons for
+  <Dur step="shave"/>.
+</Step>
+
+<Step id="warm-bread">
+  Warm the <Qty ref="pita"/> briefly over direct heat until soft and pliable.
+</Step>
+
+<Step id="assemble">
+  Spread the tahini sauce over the warm pita, fill with the shaved chicken,
+  <Qty ref="tomato"/>, <Qty ref="onion"/> and <Qty ref="parsley"/>, and roll it closed.
+</Step>

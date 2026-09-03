@@ -1,0 +1,61 @@
+{
+  "id": "mirin",
+  "name": "Mirin",
+  "proseName": "mirin",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173176",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173176/nutrients",
+      "sourceNote": "USDA has no record for mirin. This is its record for sweet dessert wine, the closest sweetened, low-strength rice/grape wine profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 160,
+        "protein": 0.2,
+        "fat": 0,
+        "carbs": 13.69,
+        "fiber": 0,
+        "sugars": 7.78,
+        "calcium": 8,
+        "iron": 0.24,
+        "magnesium": 9,
+        "phosphorus": 9,
+        "potassium": 92,
+        "sodium": 9,
+        "zinc": 0.07,
+        "copper": 0.045,
+        "manganese": 0.119,
+        "seleniumMcg": 0.5,
+        "vitaminC": 0,
+        "thiamin": 0.018,
+        "riboflavin": 0.018,
+        "niacin": 0.213,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "nutritionCaveat": "Cited against a generic sweet dessert wine. True mirin is a much more concentrated sweetened rice wine, typically far higher in sugar and energy than this record shows; USDA publishes no dedicated mirin record, so treat this figure as a substantial underestimate.",
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/mirin-thumb.webp"
+}

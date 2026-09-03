@@ -1,0 +1,197 @@
+---
+label: Pakki
+defaultServings: 4
+difficulty: Hard
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 450
+    unit: g
+    note: cut into large, bite-sized pieces
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 150
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 3
+    unit: g
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 6
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 250
+    unit: g
+    note: thinly sliced
+    portions:
+      - { id: onion-gravy, amount: 100, note: fried, for the gravy }
+      - { id: onion-layer, amount: 150, note: fried, for layering and garnish }
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 50
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 400
+    unit: g
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 6
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: The whole pods flavour the parboiling water and the finished rice but are picked out on the plate rather than eaten.
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 0.6
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the parboiling water.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 6
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the parboiling water.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the parboiling water.
+  - id: shahi-jeera
+    ingredientRef: caraway
+    form: whole
+    amount: 4
+    unit: g
+  - id: boil-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+    portions:
+      - { id: gravy-salt, amount: 8 }
+      - { id: rice-salt, amount: 12 }
+    consumedFraction: 0.7
+    consumedFractionNote: The rice-parboiling portion of this salt is only partly absorbed by the grains; most of it drains away with the water.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2480
+    unit: ml
+    consumedFraction: 0.13
+    consumedFractionNote: Blended across three uses. Most of it is parboiling water, drained off and discarded once the rice is lifted out; the rest goes into the meat's own gravy or blooms the saffron and is fully absorbed.
+    portions:
+      - { id: boil-water, amount: 2200, note: for parboiling the rice }
+      - { id: cook-water, amount: 250, note: for the meat gravy }
+      - { id: saffron-water, amount: 30, note: to bloom the saffron }
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.3
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 20
+    unit: g
+    note: roughly chopped
+  - id: mint
+    ingredientRef: mint
+    form: fresh
+    amount: 15
+    unit: g
+    note: leaves picked
+steps:
+  - { id: fry-onions, durationMin: 15, type: active, phase: prep }
+  - { id: cook-meat, durationMin: 40, type: active, phase: cook }
+  - { id: parboil-rice, durationMin: 12, type: "parallel-with:cook-meat", phase: cook }
+  - { id: layer-and-seal, durationMin: 15, type: active, phase: prep }
+  - { id: dum-finish, durationMin: 20, type: passive }
+  - { id: rest-and-serve, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The meat gravy can be cooked up to a day ahead and reheated gently before layering with freshly parboiled rice.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-meat
+      text: Cooking the lamb through in its own gravy before it ever meets the rice is what makes a biryani pakki rather than kacchi — the dum that follows only has to finish the rice and let the two layers exchange aroma, not cook raw meat by steam alone.
+---
+
+<Step id="fry-onions">
+  Heat a third of the <Qty ref="ghee"/> in a wide pan and fry the
+  <Qty ref="onion-gravy"/> and <Qty ref="onion-layer"/> together over a medium heat,
+  stirring often, for <Dur step="fry-onions"/>, until deep golden-brown. Lift out and
+  drain, keeping the two portions separate.
+</Step>
+
+<Step id="cook-meat">
+  Return the fried <Qty ref="onion-gravy"/> to the pan with the <Qty ref="lamb"/>,
+  <Qty ref="yoghurt"/>, <Qty ref="ginger"/>, <Qty ref="garlic"/>,
+  <Qty ref="turmeric"/>, <Qty ref="chilli"/>, <Qty ref="lemon-juice"/>, the
+  <Qty ref="gravy-salt"/> and the <Qty ref="cook-water"/>. Cover and simmer,
+  stirring occasionally, for <Dur step="cook-meat"/>, until the lamb is tender and
+  the gravy has thickened around it.
+</Step>
+
+<Step id="parboil-rice">
+  Rinse the <Qty ref="rice"/> until the water runs clear, then bring the
+  <Qty ref="boil-water"/> to the boil with the <Qty ref="rice-salt"/>, the
+  <Qty ref="cardamom"/>, <Qty ref="cloves"/>, <Qty ref="cinnamon"/>,
+  <Qty ref="bay-leaf"/> and <Qty ref="shahi-jeera"/>. Add the rinsed rice and boil
+  for <Dur step="parboil-rice"/>, until the grains are still firm at the core, then
+  drain.
+</Step>
+
+<Step id="layer-and-seal">
+  Spread the cooked lamb and its gravy across the base of a heavy, wide pot. Mound
+  the drained rice on top, then scatter over the fried <Qty ref="onion-layer"/>,
+  the <Qty ref="coriander"/> and the <Qty ref="mint"/>. Bloom the
+  <Qty ref="saffron"/> in the warm <Qty ref="saffron-water"/> and drizzle it over the
+  rice along with the remaining <Qty ref="ghee"/>. Seal the lid tightly, sealing
+  the rim with a strip of dough or a double layer of foil if it does not fit
+  snugly. This takes <Dur step="layer-and-seal"/>.
+</Step>
+
+<Step id="dum-finish">
+  Set the sealed pot over the lowest possible heat for <Dur step="dum-finish"/>.
+  Since the meat is already cooked, this dum only has to finish the rice and let
+  the two layers trade steam and aroma.
+</Step>
+
+<Step id="rest-and-serve">
+  Break the seal away from the heat and let the biryani rest briefly before
+  turning it out, working from the bottom up so the rice, meat and crisped onion
+  come together in each portion. This takes <Dur step="rest-and-serve"/>.
+</Step>

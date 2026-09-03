@@ -1,0 +1,173 @@
+---
+title: Kabuli Pulao
+subtitle: Basmati steamed over lamb and its own spiced stock, finished under a tangle of caramelised carrot, raisins and nuts. Afghanistan's national dish.
+label: Lamb
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [afghan]
+  course: [main-course]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Qabili palaw, region: Afghanistan, lang: fa }
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 450
+    unit: g
+    note: cut into large pieces
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 25
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 4
+    unit: g
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 3
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: The whole pods flavour the stock and rice but are picked out on the plate rather than eaten.
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the stock.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 3
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the stock.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the stock.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: stock-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 380
+    unit: g
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 300
+    unit: g
+    note: cut into fine matchsticks
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 50
+    unit: g
+  - id: almonds
+    ingredientRef: almonds
+    form: raw
+    amount: 15
+    unit: g
+    note: slivered
+  - id: pistachio
+    ingredientRef: pistachio
+    form: raw
+    amount: 15
+    unit: g
+    note: slivered
+steps:
+  - { id: brown-lamb, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-lamb, durationMin: 60, type: passive }
+  - { id: caramelise-carrot, durationMin: 12, type: "parallel-with:simmer-lamb", phase: cook }
+  - { id: parboil-rice, durationMin: 8, type: active, phase: cook }
+  - { id: layer-and-steam, durationMin: 30, type: passive }
+  - { id: rest-and-serve, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The lamb can be browned and simmered in its stock up to a day ahead; bring it back to a simmer before parboiling and layering the rice.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: layer-and-steam
+      text: The rice finishes over the lamb rather than beside it, absorbing the last of the meat's own stock as it steams — the same undisturbed, sealed-pot principle behind the region's other layered pilafs, adapted here to a stock built with lamb rather than saffron and butter alone.
+  commonPitfalls:
+    - stepId: caramelise-carrot
+      text: Carrot cooked past a glossy sear turns soft and loses the contrast the topping is meant to give against the rice. It wants colour and a little chew left in it, not a full braise.
+---
+
+<Step id="brown-lamb">
+  Melt the <Qty ref="ghee"/> in a heavy pot and brown the <Qty ref="lamb"/> on all
+  sides over a high heat. Add the <Qty ref="onion"/> and cook until softened, then
+  stir in the <Qty ref="garlic"/>, <Qty ref="cumin"/>, <Qty ref="cardamom"/>,
+  <Qty ref="cloves"/>, <Qty ref="cinnamon"/> and <Qty ref="bay-leaf"/>, and cook
+  briefly until fragrant. This takes <Dur step="brown-lamb"/> in total.
+</Step>
+
+<Step id="simmer-lamb">
+  Add the <Qty ref="salt"/> and the <Qty ref="stock-water"/>, bring to a simmer,
+  cover, and cook gently for <Dur step="simmer-lamb"/>, until the lamb is
+  completely tender. Lift the lamb out and keep it warm; strain and reserve the
+  stock.
+</Step>
+
+<Step id="caramelise-carrot">
+  While the lamb simmers, cook the <Qty ref="carrot"/> in a dry pan over a medium
+  heat with the <Qty ref="sugar"/>, tossing often, for <Dur step="caramelise-carrot"/>,
+  until glossy and lightly caramelised at the edges but still with some bite. Stir
+  through the <Qty ref="raisins"/>, <Qty ref="almonds"/> and <Qty ref="pistachio"/>
+  in the last minute and set aside.
+</Step>
+
+<Step id="parboil-rice">
+  Rinse the <Qty ref="rice"/> until the water runs clear, then boil it in the
+  reserved stock for <Dur step="parboil-rice"/>, until the grains are still firm at
+  the core. Drain, reserving any stock still left.
+</Step>
+
+<Step id="layer-and-steam">
+  Return the lamb to the base of the pot. Mound the parboiled rice on top, drizzle
+  over any remaining stock, cover tightly, and steam over the lowest heat for
+  <Dur step="layer-and-steam"/>, undisturbed, until the rice is fully tender.
+</Step>
+
+<Step id="rest-and-serve">
+  Spread the rice and lamb onto a platter and scatter the caramelised carrot,
+  raisin and nut topping evenly over the top. This takes <Dur step="rest-and-serve"/>.
+</Step>

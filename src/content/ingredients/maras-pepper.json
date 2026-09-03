@@ -1,0 +1,63 @@
+{
+  "id": "maras-pepper",
+  "name": "Maraş Pepper",
+  "proseName": "Maraş pepper",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Maraş biber", "region": "Turkey", "lang": "tr" }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Aleppo pepper",
+        "note": "A closely related Syrian pepper with a similar mild, fruity heat and oil-glossed flake; the two are often substituted for each other, but Maraş pepper is the one specified in Adana kebab."
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "flakes",
+      "label": "Coarse flakes",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169396",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169396/nutrients",
+      "sourceNote": "USDA has no record for Maraş pepper. This is its record for dried ancho pepper, the closest profile it publishes for a mild-to-medium, fruity dried red pepper rather than a sharply hot one.",
+      "nutritionPer100g": {
+        "kcal": 281,
+        "protein": 11.86,
+        "fat": 8.2,
+        "carbs": 51.42,
+        "fiber": 21.6,
+        "calcium": 61,
+        "iron": 10.93,
+        "magnesium": 113,
+        "phosphorus": 201,
+        "potassium": 2411,
+        "sodium": 43,
+        "zinc": 1.42,
+        "copper": 0.508,
+        "manganese": 1.279,
+        "seleniumMcg": 2.9,
+        "vitaminC": 2,
+        "thiamin": 0.179,
+        "riboflavin": 2.255,
+        "niacin": 6.403,
+        "vitaminB6": 3.535,
+        "folateMcg": 69,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1022,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.82,
+        "monounsaturatedFat": 0.492,
+        "polyunsaturatedFat": 4.511,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ]
+}

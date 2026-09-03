@@ -1,0 +1,97 @@
+---
+title: Onion Bhaji
+subtitle: Thinly sliced onion bound in a spiced gram-flour batter and deep-fried into a craggy, dark-golden fritter.
+description: Sliced onion tossed with turmeric, cumin, chilli and coriander in a thick gram-flour batter with just enough water to bind it, then deep-fried in loose, craggy spoonfuls.
+label: Home-style
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [indian]
+  course: [snack]
+  method: [deep-frying]
+names:
+  searchOnly: ["pakora", "onion pakora"]
+ingredients:
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: thinly sliced
+  - id: gram-flour
+    ingredientRef: gram-flour
+    form: besan
+    amount: 150
+    unit: g
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 2
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 3
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 80
+    unit: ml
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pot; absorption varies with the batter and the oil temperature, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: slice-onion, durationMin: 10, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 8, type: active, phase: prep }
+  - { id: fry, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: A few minutes in a hot oven brings back some crispness, though never quite as much as fresh from the oil.
+notes:
+  commonPitfalls:
+    - stepId: mix-batter
+      text: Too much water makes a smooth, clinging batter that fries into a heavy, greasy shell. The onion's own moisture should do most of the work; the batter should look barely enough, thick and just short of dry.
+---
+
+<Step id="slice-onion">
+  Thinly slice the <Qty ref="onion"/> and set aside for <Dur step="slice-onion"/> to let
+  it release a little of its own moisture.
+</Step>
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="gram-flour"/>, <Qty ref="turmeric"/>, <Qty ref="cumin"/>,
+  <Qty ref="dried-chilli"/> and <Qty ref="salt"/> together, then work in the
+  <Qty ref="water"/> to a thick, barely pourable batter. Fold in the sliced onion and the
+  <Qty ref="coriander"/> for <Dur step="mix-batter"/>, coating the onion in as little
+  batter as will hold it together.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> in a deep pan to a steady, gentle bubble. Drop in
+  loose, craggy spoonfuls of the onion mixture without crowding the pan and fry for
+  <Dur step="fry"/>, turning occasionally, until deep golden-brown and crisp throughout.
+  Lift out and drain.
+</Step>

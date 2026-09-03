@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2758997",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2758997/nutrients",
+  "description": "Tortilla, corn, shelf stable",
+  "category": "Baked Products",
+  "publicationDate": "4/30/2026",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "calcium": 35.16,
+    "iron": 0.791,
+    "magnesium": 45.19,
+    "phosphorus": 148.5,
+    "potassium": 168.2,
+    "sodium": 34.91,
+    "zinc": 0.934,
+    "copper": 0.092,
+    "manganese": 0.218,
+    "thiamin": 0.1,
+    "riboflavin": 0.111,
+    "niacin": 1.091
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 48.42,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.763,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 3.45,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 71.92,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

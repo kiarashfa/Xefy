@@ -1,0 +1,60 @@
+{
+  "id": "orange-blossom-water",
+  "name": "Orange Blossom Water",
+  "proseName": "orange blossom water",
+  "category": "flavouring",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "distilled",
+      "label": "Distilled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174158",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174158/nutrients",
+      "sourceNote": "USDA carries no record for orange blossom water. It is a steam distillate of bitter-orange flowers used only in trace amounts for aroma, so its nutrition is negligible; this is USDA's generic bottled-water record, the nearest thing it publishes to an essentially caloric-free clear liquid.",
+      "nutritionPer100g": {
+        "kcal": 0,
+        "protein": 0,
+        "carbs": 0,
+        "fat": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 2,
+        "potassium": 0,
+        "calcium": 10,
+        "iron": 0,
+        "magnesium": 2,
+        "phosphorus": 0,
+        "zinc": 0,
+        "copper": 0.007,
+        "seleniumMcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "choline": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/orange-blossom-water-thumb.webp"
+}

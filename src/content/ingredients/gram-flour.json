@@ -1,0 +1,68 @@
+{
+  "id": "gram-flour",
+  "name": "Gram Flour",
+  "proseName": "gram flour",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Besan",
+        "region": "India",
+        "lang": "hi"
+      }
+    ]
+  },
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "besan",
+      "label": "Besan",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174288",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174288/nutrients",
+      "nutritionPer100g": {
+        "kcal": 387,
+        "protein": 22.39,
+        "fat": 6.69,
+        "carbs": 57.82,
+        "fiber": 10.8,
+        "sugars": 10.85,
+        "calcium": 45,
+        "iron": 4.86,
+        "magnesium": 166,
+        "phosphorus": 318,
+        "potassium": 846,
+        "sodium": 64,
+        "zinc": 2.81,
+        "copper": 0.912,
+        "manganese": 1.6,
+        "seleniumMcg": 8.3,
+        "vitaminC": 0,
+        "thiamin": 0.486,
+        "riboflavin": 0.106,
+        "niacin": 1.762,
+        "vitaminB6": 0.492,
+        "folateMcg": 437,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 2,
+        "vitaminE": 0.83,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 9.1,
+        "saturatedFat": 0.693,
+        "monounsaturatedFat": 1.504,
+        "polyunsaturatedFat": 2.983,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 92,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/gram-flour-thumb.webp"
+}

@@ -1,0 +1,99 @@
+---
+title: Medu Vada
+subtitle: A Tamil Nadu doughnut-shaped fritter of soaked, whipped urad dal, deep-fried until the outside crisps dark gold around a soft, savoury crumb.
+description: Soaked, dehusked urad dal ground without added water into a thick, aerated paste with ginger, curry leaves and green chilli, shaped by hand into a ring and deep-fried.
+label: Tamil-style
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [indian]
+  course: [breakfast]
+  method: [deep-frying]
+ingredients:
+  - id: urad-dal
+    ingredientRef: urad-dal
+    form: dried
+    amount: 300
+    unit: g
+  - id: soak-water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: Used only to soak the dal; drained off before grinding, so only a trace clings to the grains.
+    note: for soaking
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: finely grated
+  - id: curry-leaves
+    ingredientRef: curry-leaves
+    form: fresh
+    amount: 3
+    unit: g
+    note: finely chopped
+  - id: chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 8
+    unit: g
+    note: finely chopped
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+    note: coarsely cracked
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pot; absorption varies with the batter and the oil temperature, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: soak, durationMin: 240, type: passive }
+  - { id: grind, durationMin: 15, type: active, phase: prep }
+  - { id: shape-and-fry, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The whipped batter can be covered and refrigerated for a few hours; it loses some of its air over time, so it is at its lightest fried soon after grinding.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: grind
+      text: The dal is ground with almost no water and beaten hard afterwards, which is what lets it hold both its ring shape and enough trapped air to fry light rather than dense.
+  commonPitfalls:
+    - stepId: shape-and-fry
+      text: Wet hands rather than oiled or water-slicked ones make the batter stick and drag out of shape when punching the centre hole. A little oil or water on the palms and fingers lets each vada release cleanly into the pan.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="urad-dal"/> with the <Qty ref="soak-water"/> and leave to soak for
+  <Dur step="soak"/>, then drain thoroughly.
+</Step>
+
+<Step id="grind">
+  Grind the drained dal with as little added water as possible into a thick, smooth
+  paste, then beat it hard by hand for a share of <Dur step="grind"/> until it lightens
+  and holds its shape on a spoon. Fold in the <Qty ref="ginger"/>,
+  <Qty ref="curry-leaves"/>, <Qty ref="chilli"/>, <Qty ref="pepper"/> and
+  <Qty ref="salt"/>.
+</Step>
+
+<Step id="shape-and-fry">
+  Heat the <Qty ref="frying-oil"/> in a deep pan to a steady, gentle bubble. With wet
+  hands, shape portions of the batter into flattened discs and punch a hole through the
+  centre of each to make a ring, then slide them into the oil. Fry for
+  <Dur step="shape-and-fry"/>, turning occasionally, until deep golden-brown and crisp
+  all over. Lift out and drain.
+</Step>

@@ -1,0 +1,58 @@
+{
+  "id": "curry-leaves",
+  "name": "Curry Leaves",
+  "proseName": "curry leaves",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170917",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170917/nutrients",
+      "sourceNote": "USDA carries no record for curry leaf (Murraya koenigii). This is bay leaf, the closest whole aromatic leaf spice it publishes, used only to give a plausible order of magnitude. Curry leaves are used fresh, whole, and in trivial quantity per serving, so any error here has almost no effect on the dish's totals.",
+      "nutritionCaveat": "Cited against dried bay leaf in the absence of any USDA curry leaf record. The quantity used per serving is small enough that this substitution has little practical effect on the dish's nutrition.",
+      "nutritionPer100g": {
+        "kcal": 313,
+        "protein": 7.61,
+        "fat": 8.36,
+        "carbs": 74.97,
+        "fiber": 26.3,
+        "calcium": 834,
+        "iron": 43,
+        "magnesium": 120,
+        "phosphorus": 113,
+        "potassium": 529,
+        "sodium": 23,
+        "zinc": 3.7,
+        "copper": 0.416,
+        "manganese": 8.167,
+        "seleniumMcg": 2.8,
+        "vitaminC": 46.5,
+        "thiamin": 0.009,
+        "riboflavin": 0.421,
+        "niacin": 2.005,
+        "vitaminB6": 1.74,
+        "folateMcg": 180,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 309,
+        "vitaminDMcg": 0,
+        "saturatedFat": 2.28,
+        "monounsaturatedFat": 1.64,
+        "polyunsaturatedFat": 2.29,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 1.8,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/curry-leaves-thumb.webp"
+}

@@ -1,0 +1,84 @@
+---
+title: Shashlik
+subtitle: Cubed lamb leg marinated overnight with onion, vinegar and oil, then threaded and grilled hard over charcoal.
+description: Shashlik made the standard Central Asian way — lamb leg cut into cubes, marinated overnight with sliced onion, vinegar, oil, salt and pepper, then threaded onto skewers and grilled over fierce direct heat.
+label: Lamb, charcoal-grilled
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [central-asian]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: Shashlyk, lang: ru }
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 600
+    unit: g
+    note: cut into cubes
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: sliced into rings
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 30
+    unit: ml
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: cube, durationMin: 10, type: active, phase: prep }
+  - { id: marinate, durationMin: 480, type: passive }
+  - { id: thread, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The marinating is the make-ahead step; the lamb is best started the night before it is grilled.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: marinate
+      text: The onion is layered through the meat rather than only added as a flavouring — its juice, along with the vinegar, is what tenderises the leg meat over the long marinating time.
+---
+
+<Step id="cube">
+  Trim the <Qty ref="lamb"/> of any excess fat and sinew, and cut it into even cubes.
+</Step>
+
+<Step id="marinate">
+  Layer the cubed lamb with the <Qty ref="onion"/> in a non-reactive container, then add
+  the <Qty ref="vinegar"/>, <Qty ref="oil"/>, <Qty ref="salt"/> and <Qty ref="pepper"/>
+  and turn everything together so the meat is well coated. Cover and marinate,
+  refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="thread">
+  Lift the lamb from the marinade, shaking off the excess, and thread it tightly onto
+  skewers, alternating with pieces of the marinated onion.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over fierce, direct charcoal heat, turning often, for
+  <Dur step="grill"/>, until well charred outside and cooked through with a hint of pink
+  remaining at the centre.
+</Step>

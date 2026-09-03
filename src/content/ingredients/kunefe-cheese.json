@@ -1,0 +1,71 @@
+{
+  "id": "kunefe-cheese",
+  "name": "Künefe Peyniri",
+  "proseName": "künefe cheese",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Dil peyniri",
+        "region": "Turkey",
+        "lang": "tr",
+        "note": "A stringy, unsalted cow's-milk cheese used as the everyday substitute for the Hatay original."
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Rennet type varies by producer; check the label if it matters to you.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "unsalted",
+      "label": "Unsalted, soaked",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167735",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167735/nutrients",
+      "sourceNote": "USDA has no record for künefe peyniri or dil peyniri. This is its record for low-sodium mozzarella, the closest published profile to a mild, stringy, unsalted cheese soaked to shed most of its salt before it goes under the kadayıf.",
+      "nutritionPer100g": {
+        "kcal": 280,
+        "protein": 27.5,
+        "carbs": 3.1,
+        "fat": 17.1,
+        "fiber": 0,
+        "sugars": 1.23,
+        "saturatedFat": 10.867,
+        "monounsaturatedFat": 4.844,
+        "polyunsaturatedFat": 0.509,
+        "cholesterol": 54,
+        "sodium": 16,
+        "potassium": 95,
+        "calcium": 731,
+        "iron": 0.25,
+        "magnesium": 26,
+        "phosphorus": 524,
+        "zinc": 3.13,
+        "copper": 0.027,
+        "seleniumMcg": 15.7,
+        "vitaminAMcg": 137,
+        "vitaminC": 0,
+        "vitaminDMcg": 0.3,
+        "vitaminE": 0.15,
+        "vitaminKMcg": 1.8,
+        "thiamin": 0.02,
+        "riboflavin": 0.34,
+        "niacin": 0.12,
+        "vitaminB6": 0.08,
+        "folateMcg": 9,
+        "vitaminB12Mcg": 0.92,
+        "choline": 18.4
+      },
+      "density": {
+        "gPerCup": 113,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/kunefe-cheese-thumb.webp"
+}

@@ -1,0 +1,123 @@
+---
+label: Broad bean
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: broad-bean
+    ingredientRef: dried-broad-beans
+    form: dried
+    amount: 300
+    unit: g
+  - id: soak-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: Used only to soak the beans and loosen their skins; drained off before grinding, so only a trace clings to them.
+    note: for soaking
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: roughly chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 25
+    unit: g
+  - id: dill
+    ingredientRef: dill
+    form: fresh
+    amount: 15
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: baking-soda
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: sesame-coating
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 40
+    unit: g
+    note: for coating
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the frying oil stays in the pot; absorption varies with the batter and the oil temperature, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: soak, durationMin: 720, type: passive }
+  - { id: peel, durationMin: 20, type: active, phase: prep }
+  - { id: grind, durationMin: 15, type: active, phase: prep }
+  - { id: rest, durationMin: 15, type: passive }
+  - { id: coat-and-fry, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shaped, uncooked paste keeps refrigerated for a day. It does not keep well once fried, and is at its best eaten straight from the oil.
+  freezable: true
+  freezeInstructions: Freeze the shaped, sesame-coated, uncooked patties in a single layer, then bag. Fry directly from frozen, adding a couple of minutes to the frying time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: peel
+      text: Skinning the soaked beans gives a paste fine and pale green enough to hold together without turning grey or fibrous; the skins left in would make it coarse and dull the colour.
+  commonPitfalls:
+    - stepId: grind
+      text: Over-processing to a smooth paste gives a patty that is dense and can fall apart when fried. Pulsing to a coarse, slightly grainy texture is what lets it hold together while staying light.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="broad-bean"/> with the <Qty ref="soak-water"/> and leave to soak
+  for <Dur step="soak"/>. The beans should roughly double in size and still be raw and
+  firm, not softened.
+</Step>
+
+<Step id="peel">
+  Rub the soaked beans between your hands in their soaking water to loosen the skins,
+  then skim off and discard the skins as they float free. Drain the peeled beans,
+  working for <Dur step="peel"/>.
+</Step>
+
+<Step id="grind">
+  Pulse the peeled beans in a food processor with the <Qty ref="spring-onion"/>,
+  <Qty ref="garlic"/>, <Qty ref="parsley"/>, <Qty ref="dill"/>, <Qty ref="coriander"/>,
+  <Qty ref="pepper"/> and <Qty ref="salt"/> for <Dur step="grind"/>, stopping while the
+  mixture is still coarse and slightly grainy rather than smooth.
+</Step>
+
+<Step id="rest">
+  Stir in the <Qty ref="baking-soda"/> and rest the mixture for <Dur step="rest"/> before
+  shaping.
+</Step>
+
+<Step id="coat-and-fry">
+  Heat the <Qty ref="frying-oil"/> in a deep pan to a steady, gentle bubble. Shape the
+  mixture into small flattened patties, pressing both sides into the
+  <Qty ref="sesame-coating"/> to coat, and lower them in without crowding the pan. Fry
+  for <Dur step="coat-and-fry"/>, turning once, until deeply browned and firm to the
+  touch. Lift out and drain.
+</Step>

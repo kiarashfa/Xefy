@@ -1,0 +1,46 @@
+---
+label: Shio
+defaultServings: 2
+difficulty: Easy
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 500
+    unit: g
+    note: cut into bite-sized chunks
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 60
+    unit: g
+    note: cut into short lengths
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: thread, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: grill
+      text: With no glaze to caramelise and hide behind, shio relies entirely on the char from direct heat for flavour, so the skewers sit closer to the coals than a tare-glazed batch would.
+---
+
+<Step id="thread">
+  Thread the <Qty ref="chicken"/> onto skewers, alternating each piece with a length of
+  the <Qty ref="spring-onion"/>.
+</Step>
+
+<Step id="grill">
+  Season the skewers all over with the <Qty ref="salt"/> and grill them over direct
+  charcoal heat for <Dur step="grill"/>, turning regularly, until well charred in places
+  and the chicken is cooked through.
+</Step>

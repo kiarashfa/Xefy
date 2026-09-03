@@ -1,0 +1,150 @@
+---
+title: Döner Kebap
+subtitle: Layers of marinated lamb and beef stacked on a vertical spit, roasted against its own turning heat and shaved into a warmed flatbread.
+description: Turkish döner kebap made the standard way — thin-sliced lamb and beef marinated in yoghurt, garlic and paprika, stacked tightly onto a vertical skewer, roasted until the outer layer crisps, and shaved off in ribbons to fill a warmed lavash with tomato, onion and lettuce.
+label: Vertical spit
+defaultServings: 2
+difficulty: Hard
+tags:
+  cuisine: [turkish]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Gyros
+      note: The Greek adaptation of the same vertical-spit technique, using pork or chicken and a marinade of lemon, garlic and oregano rather than döner's yoghurt and paprika.
+      slugRef: gyros
+    - name: Shawarma
+      note: The Levantine adaptation of the same technique, built on cumin, cinnamon and allspice rather than döner's yoghurt-and-paprika marinade.
+      slugRef: shawarma
+  searchOnly: ["doner kebab", "doner"]
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 200
+    unit: g
+    note: sliced thin against the grain
+  - id: beef
+    ingredientRef: beef
+    form: raw
+    amount: 200
+    unit: g
+    note: sliced thin against the grain
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 90
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 10
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: lavash
+    ingredientRef: lavash
+    form: thin
+    amount: 140
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 80
+    unit: g
+    note: diced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 50
+    unit: g
+    note: thinly sliced
+  - id: lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 30
+    unit: g
+    note: shredded
+steps:
+  - { id: slice-meat, durationMin: 15, type: active, phase: prep }
+  - { id: marinate, durationMin: 240, type: passive }
+  - { id: stack, durationMin: 10, type: active, phase: prep }
+  - { id: roast, durationMin: 75, type: active, phase: cook }
+  - { id: shave, durationMin: 5, type: active, phase: cook }
+  - { id: warm-bread, durationMin: 3, type: "parallel-with:shave", phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The sliced meat can sit in the marinade, covered and refrigerated, for up to a day before stacking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: stack
+      text: Packing the slices into a tight, air-free cylinder is what lets the spit roast the meat evenly against its own weight rather than drying out loose pieces.
+  commonPitfalls:
+    - stepId: roast
+      text: Roasting too far from the heat browns the outside before the centre is cooked. The spit works because the surface is close enough to the heat to crisp continuously as it turns.
+---
+
+<Step id="slice-meat">
+  Trim the <Qty ref="lamb"/> and <Qty ref="beef"/> of any sinew and slice both very
+  thinly against the grain.
+</Step>
+
+<Step id="marinate">
+  Combine the <Qty ref="yoghurt"/>, <Qty ref="oil"/>, <Qty ref="garlic"/>,
+  <Qty ref="paprika"/>, <Qty ref="oregano"/>, <Qty ref="pepper"/> and <Qty ref="salt"/>,
+  add the sliced meat and turn to coat every piece. Cover and marinate, refrigerated,
+  for <Dur step="marinate"/>.
+</Step>
+
+<Step id="stack">
+  Thread the marinated slices tightly onto a vertical skewer, alternating lamb and
+  beef and pressing each layer down onto the last, building an even, dense cylinder
+  with no gaps.
+</Step>
+
+<Step id="roast">
+  Roast the stacked meat close to a vertical heat source, turning it steadily, for
+  <Dur step="roast"/>, until the outer surface is deeply browned and crisp and the
+  centre is cooked through with no pink remaining.
+</Step>
+
+<Step id="shave">
+  Shave the roasted meat downward off the spit in thin ribbons for <Dur step="shave"/>.
+</Step>
+
+<Step id="warm-bread">
+  Warm the <Qty ref="lavash"/> briefly over direct heat until soft and pliable.
+</Step>
+
+<Step id="assemble">
+  Fill the warmed lavash with the shaved meat, <Qty ref="tomato"/>, <Qty ref="onion"/>
+  and <Qty ref="lettuce"/>, and roll it closed.
+</Step>

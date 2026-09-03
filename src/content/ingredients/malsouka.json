@@ -1,0 +1,71 @@
+{
+  "id": "malsouka",
+  "name": "Malsouka",
+  "proseName": "malsouka",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Feuille de brick", "region": "France", "lang": "fr" }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Warqa",
+        "note": "Morocco's equivalent hand-cooked pastry, made the same way but from a softer flour-only batter rather than malsouka's semolina-and-flour one — warqa tears more easily and is built up in the many stacked layers pastilla needs, where malsouka is used as a single robust sheet strong enough to fold around a whole egg without splitting.",
+        "slugRef": "warqa"
+      },
+      {
+        "name": "Filo pastry",
+        "note": "Filo is rolled and stretched by hand or machine in layered, oiled sheets. Malsouka is a single unlayered sheet formed by dabbing wet dough onto a hot plate and peeling it off once set, which gives it a coarser, more elastic texture that survives deep-frying without shattering the way filo would.",
+        "slugRef": "filo"
+      }
+    ]
+  },
+  "category": "pastry",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": ["gluten"],
+  "forms": [
+    {
+      "id": "sheet",
+      "label": "Sheets",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172791",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172791/nutrients",
+      "sourceNote": "USDA publishes no record for malsouka or its semolina-and-flour batter. This is its record for phyllo dough, the nearest thin, unleavened wheat pastry it carries; both are plain wheat doughs rolled or cooked out to a fraction of a millimetre with no added fat, and their nutrition panels are a reasonable match at the resolution this site reports.",
+      "nutritionPer100g": {
+        "kcal": 299,
+        "protein": 7.1,
+        "carbs": 52.6,
+        "fat": 6,
+        "fiber": 1.9,
+        "sugars": 0.18,
+        "saturatedFat": 1.47,
+        "monounsaturatedFat": 3.149,
+        "polyunsaturatedFat": 0.923,
+        "cholesterol": 0,
+        "sodium": 483,
+        "potassium": 74,
+        "calcium": 11,
+        "iron": 3.21,
+        "magnesium": 15,
+        "phosphorus": 75,
+        "zinc": 0.49,
+        "copper": 0.101,
+        "manganese": 0.476,
+        "seleniumMcg": 23.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.08,
+        "vitaminKMcg": 2.5,
+        "thiamin": 0.541,
+        "riboflavin": 0.341,
+        "niacin": 4.073,
+        "vitaminB6": 0.03,
+        "folateMcg": 137,
+        "vitaminB12Mcg": 0,
+        "choline": 6.9
+      }
+    }
+  ]
+}

@@ -12,6 +12,7 @@
  * Usage:
  *   node scripts/data/images.ts search "margherita pizza"
  *   node scripts/data/images.ts review "margherita pizza" --slug margherita-pizza
+ *   node scripts/data/images.ts review "…" --slug <s> --sheet   # one tiled sheet
  *   node scripts/data/images.ts adopt "File:Pizza.jpg" --slug margherita-pizza \
  *        --kind recipe --alt "A margherita pizza, blistered at the edge"
  *   node scripts/data/images.ts off "san marzano tomatoes"
@@ -20,6 +21,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import sharp from 'sharp';
 
 import { assessLicense, VERDICT_RANK, type LicenseAssessment } from './licensing.ts';
 import {
@@ -198,8 +201,22 @@ async function search(query: string, limit: number): Promise<void> {
 /**
  * Downloads the candidates and writes both a graded and an ungraded crop of
  * each, so the choice is made by looking rather than by reading metadata.
+ *
+ * `--sheet` also tiles the graded crops into one numbered contact sheet. The
+ * reason is cost, and it is not marginal: a reviewer that opens five 800 px
+ * candidates per subject spends most of a photograph round on images it is
+ * about to reject. One sheet is a single, much smaller read, and comparing
+ * candidates side by side is a better comparison than looking at them one after
+ * another anyway. It is triage only — the sheet is too small to show a
+ * watermark, a date stamp, or whether that mince is lamb or beef, so the
+ * finalist still gets opened at full size before it is adopted.
  */
-async function review(query: string, slug: string, limit: number): Promise<void> {
+async function review(
+  query: string,
+  slug: string,
+  limit: number,
+  sheet: boolean,
+): Promise<void> {
   const candidates = (await findCandidates(query, limit)).filter(
     (c) => c.assessment.verdict !== 'rejected' && Math.min(c.width, c.height) >= MIN_EDGE,
   );
@@ -208,17 +225,78 @@ async function review(query: string, slug: string, limit: number): Promise<void>
   await mkdir(dir, { recursive: true });
 
   const index: string[] = [];
+  const tiles: Buffer[] = [];
   for (const [i, c] of candidates.entries()) {
     const raw = await fetchImage(c.fileUrl);
     const n = String(i + 1).padStart(2, '0');
     await writeFile(path.join(dir, `${n}-before.webp`), await untreated(raw, 'card'));
-    await writeFile(path.join(dir, `${n}-after.webp`), await treat(raw, 'card'));
+    const graded = await treat(raw, 'card');
+    await writeFile(path.join(dir, `${n}-after.webp`), graded);
+    if (sheet) tiles.push(await treat(raw, 'thumb'));
     index.push(`${n}  ${c.assessment.verdict.padEnd(10)} ${c.license.padEnd(16)} ${c.title}`);
     console.log(`  wrote ${n}-before/after.webp  ${c.title}`);
   }
 
   await writeFile(path.join(dir, 'candidates.txt'), `${index.join('\n')}\n`, 'utf8');
+
+  if (sheet && tiles.length > 0) {
+    const file = await writeSheet(dir, tiles);
+    console.log(
+      `\n${candidates.length} candidate(s). Contact sheet: ${file}\n` +
+        `Read the sheet, pick the one that could be right, then read its own ` +
+        `NN-after.webp at full size before adopting — the sheet is too small to ` +
+        `show a watermark or a date stamp.`,
+    );
+    return;
+  }
+
   console.log(`\n${candidates.length} candidate(s) in image-review/${slug}/. Compare, then adopt the one you want.`);
+}
+
+/**
+ * Tiles thumbnails into one sheet, three across, each numbered to match its
+ * `NN-after.webp`. The number is drawn as an SVG overlay rather than a font
+ * dependency: `sharp` renders SVG text through librsvg, which is already there.
+ */
+async function writeSheet(dir: string, tiles: Buffer[]): Promise<string> {
+  const edge = OUTPUT_SIZES.thumb;
+  const gap = 8;
+  const cols = Math.min(3, tiles.length);
+  const rows = Math.ceil(tiles.length / cols);
+  const width = cols * edge + (cols + 1) * gap;
+  const height = rows * edge + (rows + 1) * gap;
+
+  const label = (n: number): Buffer =>
+    Buffer.from(
+      `<svg width="${edge}" height="${edge}">` +
+        `<rect x="0" y="0" width="34" height="26" fill="#000" opacity="0.72"/>` +
+        `<text x="17" y="19" font-family="sans-serif" font-size="17" font-weight="bold" ` +
+        `fill="#fff" text-anchor="middle">${String(n).padStart(2, '0')}</text></svg>`,
+    );
+
+  const numbered = await Promise.all(
+    tiles.map((tile, i) =>
+      sharp(tile)
+        .composite([{ input: label(i + 1), top: 0, left: 0 }])
+        .toBuffer(),
+    ),
+  );
+
+  const file = path.join(dir, 'sheet.webp');
+  await sharp({
+    create: { width, height, channels: 3, background: '#1c1c1a' },
+  })
+    .composite(
+      numbered.map((input, i) => ({
+        input,
+        top: gap + Math.floor(i / cols) * (edge + gap),
+        left: gap + (i % cols) * (edge + gap),
+      })),
+    )
+    .webp({ quality: 82 })
+    .toFile(file);
+
+  return path.relative(ROOT, file);
 }
 
 async function readCredits(): Promise<ImageCredit[]> {
@@ -570,7 +648,12 @@ switch (command) {
     await search(positional().join(' '), limit);
     break;
   case 'review':
-    await review(positional().join(' '), flag('slug') ?? 'unsorted', limit);
+    await review(
+      positional().join(' '),
+      flag('slug') ?? 'unsorted',
+      limit,
+      process.argv.includes('--sheet'),
+    );
     break;
   case 'adopt':
     await adopt(

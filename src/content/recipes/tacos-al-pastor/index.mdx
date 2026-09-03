@@ -1,0 +1,171 @@
+---
+title: Tacos al Pastor
+subtitle: Pork shoulder marinated in ancho chilli and achiote, stacked with pineapple on a vertical spit and shaved into small corn tortillas.
+description: Mexico City-style tacos al pastor — pork shoulder marinated in a blended paste of rehydrated ancho chilli, achiote, garlic and vinegar, stacked onto a vertical trompo with pineapple, roasted, shaved thin and served doubled on small corn tortillas with onion, coriander and lime.
+label: Mexico City
+defaultServings: 3
+difficulty: Hard
+tags:
+  cuisine: [mexican]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Shawarma
+      note: The Levantine dish tacos al pastor descends from by way of Lebanese migration to Mexico — shawarma uses lamb or chicken in pita, without al pastor's achiote, chilli or pineapple.
+      slugRef: shawarma
+    - name: Tacos árabes
+      note: An earlier, closer Puebla adaptation of shawarma that kept the pita-style bread and left out the achiote and pineapple that later defined al pastor.
+searchOnly: ["al pastor", "tacos al pastor tacos"]
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 500
+    unit: g
+    note: sliced thin against the grain
+  - id: ancho
+    ingredientRef: ancho-chilli
+    form: dried
+    amount: 15
+    unit: g
+    note: stemmed and deseeded
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 15
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 30
+    unit: ml
+  - id: pineapple
+    ingredientRef: pineapple
+    form: fresh
+    amount: 220
+    unit: g
+    note: peeled
+    portions:
+      - { id: pineapple-marinade, amount: 60, note: blended into the marinade }
+      - { id: pineapple-topping, amount: 160, note: diced, for searing }
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: tortillas
+    ingredientRef: corn-tortilla
+    form: small
+    amount: 200
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 40
+    unit: g
+    note: finely diced
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 8
+    unit: g
+    note: finely chopped
+  - id: lime
+    ingredientRef: lime
+    form: fresh
+    amount: 67
+    unit: g
+    note: cut into wedges
+    consumedFraction: 0.3
+    consumedFractionNote: Only the juice squeezed from the wedge at the table is eaten; most of the peel, pith and flesh is left behind.
+steps:
+  - { id: soak-chillies, durationMin: 20, type: passive }
+  - { id: blend-marinade, durationMin: 8, type: active, phase: prep }
+  - { id: marinate, durationMin: 240, type: passive }
+  - { id: stack, durationMin: 10, type: active, phase: prep }
+  - { id: roast, durationMin: 65, type: active, phase: cook }
+  - { id: sear-pineapple, durationMin: 6, type: "parallel-with:roast", phase: cook }
+  - { id: shave, durationMin: 5, type: active, phase: cook }
+  - { id: warm-tortillas, durationMin: 3, type: "parallel-with:shave", phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The sliced pork can sit in the marinade, covered and refrigerated, for up to two days before stacking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: stack
+      text: Setting pineapple above the stacked pork lets its juice drip down through the layers as they roast, which is where the sweetness in the meat comes from rather than from the marinade alone.
+  commonPitfalls:
+    - stepId: blend-marinade
+      text: Blending the rehydrated ancho with its soaking liquid still attached, unstrained, dilutes the paste and leaves the pork undercoloured. Drain the chillies before they go into the blender.
+---
+
+<Step id="soak-chillies">
+  Cover the <Qty ref="ancho"/> with just-boiled water and leave to soften for
+  <Dur step="soak-chillies"/>, then drain.
+</Step>
+
+<Step id="blend-marinade">
+  Blend the softened chillies with the <Qty ref="achiote"/>, <Qty ref="garlic"/>,
+  <Qty ref="vinegar"/>, <Qty ref="pineapple-marinade"/>, <Qty ref="cumin"/>,
+  <Qty ref="oregano"/>, <Qty ref="pepper"/> and <Qty ref="salt"/> to a smooth,
+  brick-red paste.
+</Step>
+
+<Step id="marinate">
+  Coat the <Qty ref="pork"/> thoroughly in the paste. Cover and marinate,
+  refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="stack">
+  Thread the marinated pork tightly onto a vertical skewer, pressing each slice down
+  onto the last, building an even, dense cone.
+</Step>
+
+<Step id="roast">
+  Roast the stacked pork close to a vertical heat source, turning it steadily, for
+  <Dur step="roast"/>, until the outer surface is deeply browned and the centre is
+  cooked through with no pink remaining.
+</Step>
+
+<Step id="sear-pineapple">
+  Sear the <Qty ref="pineapple-topping"/> in a hot dry pan for <Dur step="sear-pineapple"/>,
+  until caramelised at the edges.
+</Step>
+
+<Step id="shave">
+  Shave the roasted pork downward off the spit in thin ribbons for <Dur step="shave"/>.
+</Step>
+
+<Step id="warm-tortillas">
+  Warm the <Qty ref="tortillas"/> briefly over direct heat until soft and lightly
+  charred, and double each one up.
+</Step>
+
+<Step id="assemble">
+  Pile the shaved pork onto the doubled tortillas, top with the seared pineapple,
+  <Qty ref="onion"/> and <Qty ref="coriander"/>, and serve with the <Qty ref="lime"/>.
+</Step>

@@ -1,0 +1,59 @@
+{
+  "id": "honey",
+  "name": "Honey",
+  "proseName": "honey",
+  "category": "sweetener",
+  "animalOrigin": "honey",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Honey",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169640",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169640/nutrients",
+      "nutritionPer100g": {
+        "kcal": 304,
+        "protein": 0.3,
+        "carbs": 82.4,
+        "fat": 0,
+        "fiber": 0.2,
+        "sugars": 82.12,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0,
+        "sodium": 4,
+        "potassium": 52,
+        "calcium": 6,
+        "iron": 0.42,
+        "magnesium": 2,
+        "phosphorus": 4,
+        "zinc": 0.22,
+        "copper": 0.036,
+        "manganese": 0.08,
+        "seleniumMcg": 0.8,
+        "vitaminAMcg": 0,
+        "vitaminC": 0.5,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0,
+        "riboflavin": 0.038,
+        "niacin": 0.121,
+        "vitaminB6": 0.024,
+        "folateMcg": 2,
+        "vitaminB12Mcg": 0,
+        "choline": 2.2
+      },
+      "density": {
+        "gPerCup": 339,
+        "gPerTbsp": 21,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/honey-thumb.webp"
+}

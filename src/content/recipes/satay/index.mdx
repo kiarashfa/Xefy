@@ -1,0 +1,111 @@
+---
+title: Sate Ayam
+subtitle: Cubed chicken thigh marinated in turmeric, garlic and palm sugar, threaded onto skewers and grilled over charcoal, served with peanut sauce.
+description: Indonesian sate ayam made the standard way — chicken thigh cubed and marinated in soy sauce, palm sugar, turmeric, cumin and garlic, threaded onto skewers, grilled hard over charcoal, and served with peanut sauce, cucumber and onion.
+label: Ayam
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [indonesian]
+  course: [main-course]
+  method: [grilling]
+names:
+  searchOnly: ["satay", "sate", "satay ayam"]
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into cubes
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 20
+    unit: ml
+  - id: palm-sugar
+    ingredientRef: palm-sugar
+    form: block
+    amount: 15
+    unit: g
+    note: finely grated
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 3
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: cucumber
+    ingredientRef: cucumber
+    form: peeled
+    amount: 80
+    unit: g
+    note: sliced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 30
+    unit: g
+    note: thinly sliced
+steps:
+  - { id: cube-meat, durationMin: 10, type: active, phase: prep }
+  - { id: marinate, durationMin: 120, type: passive }
+  - { componentRef: peanut-sauce, multiplier: 1 }
+  - { id: thread, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 8, type: active, phase: cook }
+  - { id: serve, durationMin: 3, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The cubed chicken can sit in the marinade, covered and refrigerated, for up to a day before threading. The peanut sauce keeps, covered and refrigerated, for three days.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: grill
+      text: The palm sugar in the marinade burns quickly over high heat. Keep the skewers moving rather than leaving them still over the hottest part of the coals.
+---
+
+<Step id="cube-meat">
+  Trim the <Qty ref="chicken"/> and cut it into even cubes.
+</Step>
+
+<Step id="marinate">
+  Whisk the <Qty ref="soy-sauce"/>, <Qty ref="palm-sugar"/>, <Qty ref="garlic"/>,
+  <Qty ref="turmeric"/>, <Qty ref="cumin"/>, <Qty ref="oil"/> and <Qty ref="salt"/>
+  together, add the chicken and turn to coat every piece. Cover and marinate,
+  refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="thread">
+  Lift the chicken from the marinade, shaking off the excess, and thread it onto
+  skewers.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over direct charcoal heat, turning often, for <Dur step="grill"/>,
+  until charred in places and cooked through with no pink remaining.
+</Step>
+
+<Step id="serve">
+  Serve the skewers with the peanut sauce, <Qty ref="cucumber"/> and <Qty ref="onion"/>.
+</Step>

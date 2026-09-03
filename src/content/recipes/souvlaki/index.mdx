@@ -1,0 +1,86 @@
+---
+title: Souvlaki
+subtitle: Cubed pork shoulder marinated in olive oil, lemon juice, garlic and oregano, then threaded and grilled hard over charcoal.
+description: Greek souvlaki made the standard way — pork shoulder cut into cubes, marinated in olive oil, lemon juice, garlic and dried oregano, then threaded onto skewers and grilled over direct heat until charred outside and juicy within.
+label: Pork, charcoal-grilled
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [greek]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Gyros
+      note: Meat cooked on a vertical rotating spit and shaved off in slices, rather than cubed and threaded onto individual skewers.
+      slugRef: gyros
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 600
+    unit: g
+    note: cut into cubes
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 25
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: cube, durationMin: 10, type: active, phase: prep }
+  - { id: marinate, durationMin: 180, type: passive }
+  - { id: thread, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cubed pork can sit in the marinade, covered and refrigerated, for up to a day before threading and grilling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="cube">
+  Trim the <Qty ref="pork"/> of any excess fat and cut it into even cubes.
+</Step>
+
+<Step id="marinate">
+  Whisk the <Qty ref="oil"/>, <Qty ref="lemon-juice"/>, <Qty ref="garlic"/>,
+  <Qty ref="oregano"/>, <Qty ref="salt"/> and <Qty ref="pepper"/> together, add the pork
+  and turn to coat every piece. Cover and marinate, refrigerated, for
+  <Dur step="marinate"/>.
+</Step>
+
+<Step id="thread">
+  Lift the pork from the marinade, shaking off the excess, and thread it tightly onto
+  skewers.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over direct charcoal heat, turning often, for <Dur step="grill"/>,
+  until well charred outside and cooked through with no pink remaining at the centre.
+</Step>

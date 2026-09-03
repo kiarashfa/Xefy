@@ -1,0 +1,62 @@
+{
+  "id": "cloves",
+  "name": "Cloves",
+  "proseName": "cloves",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171321",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171321/nutrients",
+      "sourceNote": "USDA publishes cloves only as a ground spice; the whole dried flower bud is the same substance, so the nutrition is cited unchanged. The record's household portions are for the ground form, so a per-clove weight is given instead as an editorial estimate.",
+      "nutritionPer100g": {
+        "kcal": 274,
+        "protein": 5.97,
+        "fat": 13,
+        "carbs": 65.53,
+        "fiber": 33.9,
+        "sugars": 2.38,
+        "calcium": 632,
+        "iron": 11.83,
+        "magnesium": 259,
+        "phosphorus": 104,
+        "potassium": 1020,
+        "sodium": 277,
+        "zinc": 2.32,
+        "copper": 0.368,
+        "manganese": 60.127,
+        "seleniumMcg": 7.2,
+        "vitaminC": 0.2,
+        "thiamin": 0.158,
+        "riboflavin": 0.22,
+        "niacin": 1.56,
+        "vitaminB6": 0.391,
+        "folateMcg": 25,
+        "choline": 37.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 8,
+        "vitaminE": 8.82,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 141.8,
+        "saturatedFat": 3.952,
+        "monounsaturatedFat": 1.393,
+        "polyunsaturatedFat": 3.606,
+        "transFat": 0.254,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "clove",
+        "plural": "cloves",
+        "grams": 0.1
+      }
+    }
+  ],
+  "image": "images/ingredients/cloves-thumb.webp"
+}

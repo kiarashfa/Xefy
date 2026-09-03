@@ -1,0 +1,52 @@
+{
+  "id": "red-wine-vinegar",
+  "name": "Red Wine Vinegar",
+  "proseName": "red wine vinegar",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": ["sulphites"],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172240",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172240/nutrients",
+      "nutritionPer100g": {
+        "kcal": 19,
+        "protein": 0.04,
+        "fat": 0,
+        "carbs": 0.27,
+        "fiber": 0,
+        "sugars": 0.27,
+        "calcium": 8,
+        "iron": 0.68,
+        "magnesium": 8,
+        "phosphorus": 8,
+        "potassium": 73,
+        "sodium": 8,
+        "zinc": 0.08,
+        "copper": 0.021,
+        "manganese": 0.671,
+        "seleniumMcg": 0.1,
+        "vitaminC": 0,
+        "vitaminB6": 0.028,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ]
+}

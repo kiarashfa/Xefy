@@ -1,0 +1,60 @@
+{
+  "id": "coconut-milk",
+  "name": "Coconut Milk",
+  "proseName": "coconut milk",
+  "category": "dairy-alternative",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "tinned",
+      "label": "Tinned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170172",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170172/nutrients",
+      "nutritionPer100g": {
+        "kcal": 230,
+        "protein": 2.29,
+        "fat": 23.84,
+        "carbs": 5.54,
+        "fiber": 2.2,
+        "sugars": 3.34,
+        "calcium": 16,
+        "iron": 1.64,
+        "magnesium": 37,
+        "phosphorus": 100,
+        "potassium": 263,
+        "sodium": 15,
+        "zinc": 0.67,
+        "copper": 0.266,
+        "manganese": 0.916,
+        "seleniumMcg": 6.2,
+        "vitaminC": 2.8,
+        "thiamin": 0.026,
+        "riboflavin": 0,
+        "niacin": 0.76,
+        "vitaminB6": 0.033,
+        "folateMcg": 16,
+        "choline": 8.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.15,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 21.14,
+        "monounsaturatedFat": 1.014,
+        "polyunsaturatedFat": 0.261,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "gPerCup": 240,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/coconut-milk-thumb.webp"
+}

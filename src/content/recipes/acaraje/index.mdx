@@ -1,0 +1,90 @@
+---
+title: Acarajé
+subtitle: A Bahian fritter of skinned, ground black-eyed peas, whipped light and deep-fried in red palm oil until the crust turns a deep, cracked orange-brown.
+description: Dried black-eyed peas soaked, skinned and ground to a smooth paste with onion and dried shrimp, beaten hard to aerate it, then shaped and deep-fried in dendê palm oil.
+label: Bahian
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [brazilian]
+  course: [snack]
+  method: [deep-frying]
+ingredients:
+  - id: black-eyed-peas
+    ingredientRef: black-eyed-peas
+    form: dried
+    amount: 300
+    unit: g
+  - id: soak-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: Used only to soak the peas and loosen their skins; drained off before grinding, so only a trace clings to them.
+    note: for soaking
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: roughly chopped
+  - id: dried-shrimp
+    ingredientRef: dried-shrimp
+    form: dried
+    amount: 20
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+  - id: frying-oil
+    ingredientRef: palm-oil
+    form: red
+    amount: 800
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pot; absorption varies with the batter and the oil temperature, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: soak, durationMin: 720, type: passive }
+  - { id: peel-and-grind, durationMin: 30, type: active, phase: prep }
+  - { id: whip, durationMin: 10, type: active, phase: prep }
+  - { id: fry, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The whipped paste can be shaped and refrigerated for a few hours before frying, but it is at its lightest fried soon after whipping.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: whip
+      text: Beating air into the ground paste before frying is what gives acarajé its light, aerated crumb inside a cracked, crisp crust — an unbeaten paste fries dense and heavy.
+  commonPitfalls:
+    - stepId: peel-and-grind
+      text: Leftover skins in the ground paste make it grainy and stop it holding air when whipped. Rubbing the soaked peas between the hands in their soaking water floats the skins free so they can be skimmed off before draining.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="black-eyed-peas"/> with the <Qty ref="soak-water"/> and leave to
+  soak for <Dur step="soak"/>.
+</Step>
+
+<Step id="peel-and-grind">
+  Rub the soaked peas between your hands in their soaking water to loosen the skins,
+  then skim off and discard the skins as they float free. Drain the peas and grind them
+  with the <Qty ref="onion"/> and the <Qty ref="dried-shrimp"/> to a smooth, thick paste,
+  working for <Dur step="peel-and-grind"/>. Season with the <Qty ref="salt"/>.
+</Step>
+
+<Step id="whip">
+  Beat the paste hard with a wooden spoon or in a stand mixer for <Dur step="whip"/>,
+  until it lightens noticeably in colour and holds a soft peak.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> in a deep pan to a steady, gentle bubble. Shape
+  spoonfuls of the paste into ovals with two spoons and lower them in. Fry for
+  <Dur step="fry"/>, turning once, until deep orange-brown and cracked on the surface.
+  Lift out and drain.
+</Step>

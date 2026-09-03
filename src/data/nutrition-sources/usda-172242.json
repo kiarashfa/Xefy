@@ -1,0 +1,58 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "172242",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/172242/nutrients",
+  "description": "Seasoning mix, dry, sazon, coriander & annatto",
+  "category": "Spices and Herbs",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 0,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 0,
+    "fiber": 0,
+    "sugars": 0,
+    "calcium": 0,
+    "iron": 0,
+    "sodium": 17000,
+    "vitaminC": 0,
+    "saturatedFat": 0,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 0.2,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 0,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 99.8,
+      "unit": "g"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 0,
+      "unit": "IU"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTsp",
+      "value": 4,
+      "from": "0.25 tsp"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "fenugreek-seed",
+  "name": "Fenugreek Seed",
+  "proseName": "fenugreek seeds",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171324",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171324/nutrients",
+      "nutritionPer100g": {
+        "kcal": 323,
+        "protein": 23,
+        "fat": 6.41,
+        "carbs": 58.35,
+        "fiber": 24.6,
+        "calcium": 176,
+        "iron": 33.53,
+        "magnesium": 191,
+        "phosphorus": 296,
+        "potassium": 770,
+        "sodium": 67,
+        "zinc": 2.5,
+        "copper": 1.11,
+        "manganese": 1.228,
+        "seleniumMcg": 6.3,
+        "vitaminC": 3,
+        "thiamin": 0.322,
+        "riboflavin": 0.366,
+        "niacin": 1.64,
+        "vitaminB6": 0.6,
+        "folateMcg": 57,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 3,
+        "vitaminDMcg": 0,
+        "saturatedFat": 1.46,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 3.7,
+        "gPerTbsp": 11.1,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/fenugreek-seed-thumb.webp"
+}

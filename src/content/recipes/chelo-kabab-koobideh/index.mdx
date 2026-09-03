@@ -1,0 +1,90 @@
+---
+title: Chelo Kabab Koobideh
+subtitle: Lamb and beef mince pounded with grated onion until it clings to a flat skewer unaided, then grilled over charcoal to a deep, even char.
+description: Kabab koobideh made the standard way — an even blend of lamb and beef mince worked hard with grated onion, salt and pepper until it binds without egg or breadcrumb, then pressed onto skewers and grilled. Two skewers is one serving.
+label: Lamb and beef
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [persian]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: Kabab koobideh, region: Iran, lang: fa }
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 250
+    unit: g
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 250
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: grated
+    consumedFraction: 0.6
+    consumedFractionNote: About half the grated onion's volume is squeezed out as juice and discarded before the pulp goes into the mince; an even split is an editorial estimate rather than a measured figure.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 1
+    unit: g
+steps:
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: chill, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The kneaded mince keeps, covered and refrigerated, for up to a day before shaping and grilling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: knead
+      text: The mince is pounded and squeezed by hand, not just stirred, until the proteins break down enough to bind the meat into a paste that holds its shape on the skewer with no egg or breadcrumb added.
+  commonPitfalls:
+    - stepId: shape
+      text: Onion left wet makes the mince slack and prone to sliding off the skewer or splitting on the grill. Squeezing it dry before it goes into the mince is what keeps the paste firm enough to hold its shape.
+---
+
+<Step id="knead">
+  Squeeze the grated <Qty ref="onion"/> firmly to remove excess liquid, then combine the
+  pulp with the <Qty ref="lamb"/>, <Qty ref="beef"/>, <Qty ref="salt"/>,
+  <Qty ref="pepper"/> and <Qty ref="bicarb"/> in a wide bowl. Knead and pound the mixture
+  by hand for <Dur step="knead"/>, until it turns dense, sticky and uniform.
+</Step>
+
+<Step id="chill">
+  Cover the mince and chill it for <Dur step="chill"/>, so it firms up and is easier to
+  mould onto the skewers.
+</Step>
+
+<Step id="shape">
+  Divide the mince into even portions. With wet hands, mould each portion around a
+  broad, flat metal skewer, pressing and smoothing it into a long, even ribbon that
+  grips the blade. Work for <Dur step="shape"/> in total.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over fierce, direct charcoal heat, turning them often, for
+  <Dur step="grill"/>, until evenly charred outside and cooked through with no pink
+  remaining at the centre.
+</Step>

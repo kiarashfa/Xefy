@@ -1,0 +1,152 @@
+---
+title: Siu Mai
+subtitle: Pork and shrimp packed into a thin wheat wrapper pleated into an open cup and steamed, the filling showing bare at the top rather than sealed away.
+label: Cantonese
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [starter]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Shumai, lang: en }
+    - { name: Shaomai, lang: en }
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 200
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: 1 egg
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 55
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 2 }
+      - { id: filling-salt, amount: 3 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 300
+    unit: g
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and finely chopped
+  - id: mushroom
+    ingredientRef: mushroom
+    form: raw
+    amount: 60
+    unit: g
+    note: finely diced
+  - id: bamboo-shoots
+    ingredientRef: bamboo-shoots
+    form: tinned
+    amount: 40
+    unit: g
+    note: finely diced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: grated
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 8
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: starch
+    ingredientRef: tapioca-starch
+    form: starch
+    amount: 15
+    unit: g
+    note: to bind the filling
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 15, type: passive }
+  - { id: make-filling, durationMin: 12, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 35, type: active, phase: prep }
+  - { id: steam, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled dumplings freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Steam directly from frozen, adding a couple of minutes to the steaming time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: roll-and-fill
+      text: Leaving the top open rather than sealing it, unlike a boiled or pan-fried dumpling, lets steam reach the filling directly and is what keeps siu mai's shape a stable, upright cup instead of a pleated dome.
+  commonPitfalls:
+    - stepId: make-filling
+      text: Chopping the shrimp to the same fineness as the pork loses the contrast that defines siu mai. Leave it in a coarser, distinct chop so pieces of it stay visible and bite through separately from the mince.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="egg"/>, <Qty ref="water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, then knead for
+  <Dur step="make-dough"/> until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="pork"/>, <Qty ref="shrimp"/>, <Qty ref="mushroom"/>,
+  <Qty ref="bamboo-shoots"/>, <Qty ref="spring-onion"/>, <Qty ref="ginger"/>,
+  <Qty ref="soy-sauce"/>, <Qty ref="sesame-oil"/>, <Qty ref="sugar"/>,
+  <Qty ref="pepper"/>, <Qty ref="filling-salt"/> and <Qty ref="starch"/> in a bowl and stir
+  hard in one direction until sticky and cohesive, keeping the shrimp in distinct pieces
+  rather than mashing it in with the pork.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece into a thin round. Cup a round in one hand, spoon filling into
+  the centre, and gently press the wrapper up around the sides with your fingers so it
+  pleats loosely into itself, leaving the filling showing at the top. Tap each one flat on
+  its base so it stands upright.
+</Step>
+
+<Step id="steam">
+  Line a steamer basket and set the dumplings in with space between each. Steam over
+  rapidly boiling water for <Dur step="steam"/>, until the wrapper is glossy and the
+  filling is cooked through and firm to the touch.
+</Step>

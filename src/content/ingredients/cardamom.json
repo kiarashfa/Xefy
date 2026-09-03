@@ -1,0 +1,56 @@
+{
+  "id": "cardamom",
+  "name": "Cardamom",
+  "proseName": "cardamom",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole pods",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170919",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170919/nutrients",
+      "sourceNote": "USDA's household portions for this record are for ground cardamom, so no volume conversion applies to whole pods; a per-pod weight is given instead as an editorial estimate.",
+      "nutritionPer100g": {
+        "kcal": 311,
+        "protein": 10.76,
+        "fat": 6.7,
+        "carbs": 68.47,
+        "fiber": 28,
+        "calcium": 383,
+        "iron": 13.97,
+        "magnesium": 229,
+        "phosphorus": 178,
+        "potassium": 1119,
+        "sodium": 18,
+        "zinc": 7.47,
+        "copper": 0.383,
+        "manganese": 28,
+        "vitaminC": 21,
+        "thiamin": 0.198,
+        "riboflavin": 0.182,
+        "niacin": 1.102,
+        "vitaminB6": 0.23,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.68,
+        "monounsaturatedFat": 0.87,
+        "polyunsaturatedFat": 0.43,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "cardamom pod",
+        "plural": "cardamom pods",
+        "grams": 0.4
+      }
+    }
+  ],
+  "image": "images/ingredients/cardamom-thumb.webp"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "carrot",
+  "name": "Carrot",
+  "proseName": "carrot",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170393",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170393/nutrients",
+      "nutritionPer100g": {
+        "kcal": 41,
+        "protein": 0.93,
+        "fat": 0.24,
+        "carbs": 9.58,
+        "fiber": 2.8,
+        "sugars": 4.74,
+        "calcium": 33,
+        "iron": 0.3,
+        "magnesium": 12,
+        "phosphorus": 35,
+        "potassium": 320,
+        "sodium": 69,
+        "zinc": 0.24,
+        "copper": 0.045,
+        "manganese": 0.143,
+        "seleniumMcg": 0.1,
+        "vitaminC": 5.9,
+        "thiamin": 0.066,
+        "riboflavin": 0.058,
+        "niacin": 0.983,
+        "vitaminB6": 0.138,
+        "folateMcg": 19,
+        "choline": 8.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 835,
+        "vitaminE": 0.66,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 13.2,
+        "saturatedFat": 0.032,
+        "monounsaturatedFat": 0.012,
+        "polyunsaturatedFat": 0.102,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 128,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/carrot-thumb.webp"
+}

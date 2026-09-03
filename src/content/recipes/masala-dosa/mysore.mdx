@@ -1,0 +1,190 @@
+---
+label: Mysore
+defaultServings: 4
+difficulty: Hard
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+    note: rinsed
+  - id: urad-dal
+    ingredientRef: urad-dal
+    form: dried
+    amount: 75
+    unit: g
+    note: rinsed
+  - id: fenugreek-seed
+    ingredientRef: fenugreek-seed
+    form: whole
+    amount: 3
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1780
+    unit: ml
+    consumedFraction: 0.17
+    consumedFractionNote: Blended across four uses. Most is soaking and potato-boiling water, both drained off and barely eaten; smaller portions go into the batter and the chutney, where they are fully eaten.
+    portions:
+      - { id: soak-water, amount: 500, note: for soaking }
+      - { id: grind-water, amount: 250, note: added while grinding and, after fermentation, to thin the batter to a pourable consistency }
+      - { id: boil-water, amount: 1000, note: for boiling the potatoes }
+      - { id: chutney-water, amount: 30, note: for blending the chutney }
+  - id: batter-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 500
+    unit: g
+    note: peeled and cut into chunks
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: mustard-seed
+    ingredientRef: mustard-seed
+    form: whole
+    amount: 4
+    unit: g
+  - id: curry-leaves
+    ingredientRef: curry-leaves
+    form: fresh
+    amount: 3
+    unit: g
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 2
+    unit: g
+  - id: chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 16
+    unit: g
+    note: slit lengthways
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 50
+    unit: g
+    portions:
+      - { id: temper-ghee, amount: 15, note: for the potato tempering }
+      - { id: cook-ghee, amount: 35, note: for cooking the dosas }
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 12
+    unit: g
+    note: soaked in warm water to soften
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+  - id: tamarind
+    ingredientRef: tamarind
+    form: pulp
+    amount: 8
+    unit: g
+  - id: chutney-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 10
+    unit: ml
+  - id: chutney-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+steps:
+  - { id: soak, durationMin: 240, type: passive }
+  - { id: grind, durationMin: 20, type: active, phase: prep }
+  - { id: ferment, durationMin: 600, type: passive }
+  - { id: boil-potatoes, durationMin: 20, type: passive }
+  - { id: temper, durationMin: 6, type: "parallel-with:boil-potatoes", phase: cook }
+  - { id: make-chutney, durationMin: 8, type: "parallel-with:boil-potatoes", phase: prep }
+  - { id: combine-filling, durationMin: 5, type: active, phase: cook }
+  - { id: cook-dosas, durationMin: 22, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The fermented batter keeps refrigerated for up to two days. The potato filling and the chutney can both be made a day ahead and reheated or brought back to room temperature.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat the filling gently in a pan before filling freshly cooked dosas; the dosas themselves are best cooked to order.
+notes:
+  techniqueRationale:
+    - stepId: make-chutney
+      text: The red chutney is spread on the dosa itself, under the potato, rather than served alongside — it seasons the crepe directly and is what separates a Mysore dosa from a plain masala one.
+  commonPitfalls:
+    - stepId: cook-dosas
+      text: Spreading from a puddle of batter with too many passes tears the crepe. One continuous outward spiral from the centre, made quickly before the batter sets, gives an even, unbroken sheet.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="rice"/> and, in a separate bowl, the <Qty ref="urad-dal"/> and
+  <Qty ref="fenugreek-seed"/> with the <Qty ref="soak-water"/>, dividing it between the
+  two bowls. Leave both to soak at room temperature for <Dur step="soak"/>, then drain.
+</Step>
+
+<Step id="grind">
+  Grind the drained dal and fenugreek to a smooth, light paste. Grind the drained rice
+  separately to a fine paste, using the <Qty ref="grind-water"/> as needed, then combine
+  the two with the <Qty ref="batter-salt"/> into a batter with the consistency of thin
+  double cream.
+</Step>
+
+<Step id="ferment">
+  Cover the bowl loosely and leave it somewhere warm to ferment for <Dur step="ferment"/>,
+  until risen and faintly sour-smelling. Stir in any remaining <Qty ref="grind-water"/>
+  afterwards to bring it to a thin, pourable batter.
+</Step>
+
+<Step id="boil-potatoes">
+  Put the <Qty ref="potato"/> into the <Qty ref="boil-water"/> and bring to a simmer.
+  Cook for <Dur step="boil-potatoes"/>, until completely tender, then drain and roughly
+  crush.
+</Step>
+
+<Step id="temper">
+  Meanwhile, warm the <Qty ref="temper-ghee"/> in a separate pan. Add the
+  <Qty ref="mustard-seed"/> and let it pop, then add the <Qty ref="curry-leaves"/>,
+  <Qty ref="turmeric"/> and <Qty ref="chilli"/> and fry briefly before stirring in the
+  <Qty ref="onion"/>. Cook for <Dur step="temper"/>, until the onion has softened.
+</Step>
+
+<Step id="make-chutney">
+  Blend the softened <Qty ref="dried-chilli"/>, the <Qty ref="garlic"/>, the
+  <Qty ref="tamarind"/> and the <Qty ref="chutney-salt"/> with the
+  <Qty ref="chutney-water"/> to a smooth, thick paste. Warm the <Qty ref="chutney-oil"/>
+  in a small pan and fry the paste for most of <Dur step="make-chutney"/>, until it
+  darkens slightly and smells cooked rather than raw.
+</Step>
+
+<Step id="combine-filling">
+  Fold the crushed potato and the <Qty ref="filling-salt"/> into the tempered onion and
+  cook for <Dur step="combine-filling"/>, mashing lightly so the mixture holds together
+  loosely.
+</Step>
+
+<Step id="cook-dosas">
+  Heat a flat griddle and wipe it with a little of the <Qty ref="cook-ghee"/>. Pour on a
+  ladleful of batter and spread it outward from the centre in one continuous spiral into
+  a thin, even round. Drizzle a little more of the <Qty ref="cook-ghee"/> around the edge
+  and cook for most of <Dur step="cook-dosas"/>, until the underside is golden and
+  lacy and the top has dried out — dosa is cooked on one side only. Spread the red
+  chutney thinly over the cooked surface, spoon a line of potato filling across the
+  centre, and fold the dosa over it. Repeat with the remaining batter, chutney and
+  filling.
+</Step>

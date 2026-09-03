@@ -1,0 +1,58 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2644284",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2644284/nutrients",
+  "description": "Blackeye pea, dry",
+  "category": "Legumes and Legume Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 345.57,
+    "protein": 21.225,
+    "fat": 2.419,
+    "carbs": 61.836,
+    "calcium": 71.4,
+    "iron": 5.93,
+    "magnesium": 183.9,
+    "phosphorus": 427.6,
+    "potassium": 1243,
+    "sodium": 3.458,
+    "zinc": 3.654,
+    "copper": 0.936,
+    "manganese": 1.288
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 11.01,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 3.396,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 3.51,
+      "unit": "g"
+    },
+    {
+      "number": "209",
+      "name": "Starch",
+      "amount": 37.38,
+      "unit": "g"
+    },
+    {
+      "number": "283",
+      "name": "Resistant starch",
+      "amount": 6,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

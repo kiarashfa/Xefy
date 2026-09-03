@@ -1,0 +1,50 @@
+{
+  "id": "lamb-leg",
+  "name": "Lamb Leg",
+  "proseName": "lamb leg",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, sirloin half, trimmed to 1/8\" fat",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172549",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172549/nutrients",
+      "sourceNote": "USDA's record for the sirloin half of the leg, trimmed to 1/8 inch of external fat — the tender end of the leg, suitable for cubing.",
+      "nutritionPer100g": {
+        "kcal": 261,
+        "protein": 17.21,
+        "fat": 20.8,
+        "carbs": 0,
+        "fiber": 0,
+        "calcium": 10,
+        "iron": 1.63,
+        "magnesium": 23,
+        "phosphorus": 161,
+        "potassium": 235,
+        "sodium": 56,
+        "zinc": 3.13,
+        "copper": 0.114,
+        "manganese": 0.019,
+        "seleniumMcg": 19.9,
+        "vitaminC": 0,
+        "thiamin": 0.13,
+        "riboflavin": 0.23,
+        "niacin": 6.34,
+        "vitaminB6": 0.14,
+        "folateMcg": 19,
+        "vitaminB12Mcg": 2.5,
+        "vitaminAMcg": 0,
+        "saturatedFat": 9.12,
+        "monounsaturatedFat": 8.54,
+        "polyunsaturatedFat": 1.64,
+        "cholesterol": 71
+      }
+    }
+  ],
+  "image": "images/ingredients/lamb-leg-thumb.webp"
+}

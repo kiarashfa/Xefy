@@ -1,0 +1,78 @@
+{
+  "id": "kadayif",
+  "name": "Kadayıf",
+  "proseName": "kadayıf",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Kataifi",
+        "region": "Greece",
+        "lang": "el"
+      },
+      {
+        "name": "Shredded phyllo dough",
+        "region": "United States",
+        "lang": "en"
+      }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Filo pastry",
+        "note": "The same base dough rolled into sheets rather than dripped into fine strands; the two are not interchangeable by weight in a recipe built around kadayıf's texture.",
+        "slugRef": "filo"
+      }
+    ]
+  },
+  "category": "pastry",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "shredded",
+      "label": "Shredded",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172791",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172791/nutrients",
+      "sourceNote": "USDA has no separate record for kadayıf. This is its record for phyllo dough, the same flour-and-water dough shredded into strands rather than rolled into sheets, and it is the closest composition USDA publishes.",
+      "nutritionPer100g": {
+        "kcal": 299,
+        "protein": 7.1,
+        "carbs": 52.6,
+        "fat": 6,
+        "fiber": 1.9,
+        "sugars": 0.18,
+        "saturatedFat": 1.47,
+        "monounsaturatedFat": 3.149,
+        "polyunsaturatedFat": 0.923,
+        "cholesterol": 0,
+        "sodium": 483,
+        "potassium": 74,
+        "calcium": 11,
+        "iron": 3.21,
+        "magnesium": 15,
+        "phosphorus": 75,
+        "zinc": 0.49,
+        "copper": 0.101,
+        "manganese": 0.476,
+        "seleniumMcg": 23.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.08,
+        "vitaminKMcg": 2.5,
+        "thiamin": 0.541,
+        "riboflavin": 0.341,
+        "niacin": 4.073,
+        "vitaminB6": 0.03,
+        "folateMcg": 137,
+        "vitaminB12Mcg": 0,
+        "choline": 6.9
+      }
+    }
+  ],
+  "image": "images/ingredients/kadayif-thumb.webp"
+}

@@ -1,0 +1,120 @@
+---
+title: Falafel
+subtitle: A Levantine fritter of soaked, uncooked chickpeas ground with herbs and spices to a coarse paste and deep-fried until dark and crisp outside, green and fluffy within.
+description: Dried chickpeas soaked overnight and ground raw with onion, garlic, parsley, coriander and cumin to a coarse green paste, rested with a little bicarbonate of soda, then shaped and deep-fried.
+label: Chickpea
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [levantine]
+  course: [main-course]
+  method: [deep-frying]
+names:
+  notToBeConfusedWith:
+    - name: Ta'ameya
+      note: The Egyptian version made from dried broad beans rather than chickpeas, usually coated in sesame seeds before frying — a related but different fritter, not a regional name for this one.
+ingredients:
+  - id: chickpea
+    ingredientRef: chickpea
+    form: dried
+    amount: 300
+    unit: g
+  - id: soak-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: Used only to soak the chickpeas; drained off before grinding, so only a trace clings to them.
+    note: for soaking
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: roughly chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 20
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: baking-soda
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the frying oil stays in the pot; absorption varies with the batter and the oil temperature, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: soak, durationMin: 720, type: passive }
+  - { id: grind, durationMin: 10, type: active, phase: prep }
+  - { id: rest, durationMin: 20, type: passive }
+  - { id: fry, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shaped, uncooked paste keeps refrigerated for a day. It does not keep well once fried, and is at its best eaten straight from the oil.
+  freezable: true
+  freezeInstructions: Freeze the shaped, uncooked patties in a single layer, then bag. Fry directly from frozen, adding a couple of minutes to the frying time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: soak
+      text: The chickpeas are never cooked before grinding. A raw, soaked chickpea grinds into a paste that holds together and fries firm; a cooked one turns to mush and falls apart in the oil.
+  commonPitfalls:
+    - stepId: grind
+      text: Over-processing to a smooth paste, closer to hummus, gives falafel that is dense and can disintegrate when fried. Pulsing to a coarse, slightly grainy texture is what lets it hold together while staying light.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="chickpea"/> with the <Qty ref="soak-water"/> and leave to soak for
+  <Dur step="soak"/>. The chickpeas should roughly double in size and still be raw and
+  firm, not softened.
+</Step>
+
+<Step id="grind">
+  Drain the chickpeas and pulse them in a food processor with the <Qty ref="onion"/>,
+  <Qty ref="garlic"/>, <Qty ref="parsley"/>, <Qty ref="coriander"/>, <Qty ref="cumin"/>,
+  <Qty ref="pepper"/> and <Qty ref="salt"/> for <Dur step="grind"/>, stopping while the
+  mixture is still coarse and slightly grainy rather than smooth.
+</Step>
+
+<Step id="rest">
+  Stir in the <Qty ref="baking-soda"/> and rest the mixture for <Dur step="rest"/> before
+  shaping.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> in a deep pan to a steady, gentle bubble. Shape the
+  mixture into small patties and lower them in without crowding the pan. Fry for
+  <Dur step="fry"/>, turning once, until deeply browned and firm to the touch. Lift out
+  and drain.
+</Step>

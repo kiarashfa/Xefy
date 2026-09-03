@@ -1,0 +1,85 @@
+---
+title: Adana Kebabı
+subtitle: Hand-worked lamb mince, bound with grated onion and Maraş pepper until it clings to a broad flat skewer, then grilled hard over charcoal.
+description: Adana kebab made the traditional way — fatty lamb mince kneaded with onion, garlic and Maraş pepper until it turns sticky enough to press onto wide flat skewers, then grilled over fierce direct heat. Two skewers is one serving.
+label: Hand-minced
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [turkish]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Urfa kebab
+      note: The same shape and hand-mincing technique, but seasoned without red pepper, giving a pale, mild kebab rather than Adana's deep red, chilli-forward one.
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 500
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 50
+    unit: g
+    note: grated
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: maras-pepper
+    ingredientRef: maras-pepper
+    form: flakes
+    amount: 6
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+steps:
+  - { id: knead, durationMin: 8, type: active, phase: prep }
+  - { id: chill, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shaped, unlit skewers keep, covered, in the refrigerator for up to a day before grilling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: knead
+      text: The mince is worked hard, not just mixed, until the fat binds the meat into a paste that holds its shape on the skewer without a binder such as egg or breadcrumb.
+  commonPitfalls:
+    - stepId: shape
+      text: A skewer pressed on with cold, slack hands falls apart on the grill. Wetting the hands and pressing the meat firmly and evenly along the flat blade is what keeps it in one piece.
+---
+
+<Step id="knead">
+  Combine the <Qty ref="lamb"/>, <Qty ref="onion"/>, <Qty ref="garlic"/>,
+  <Qty ref="maras-pepper"/> and <Qty ref="salt"/> in a wide bowl. Knead and squeeze the
+  mixture by hand for <Dur step="knead"/>, until it turns sticky and dense and holds
+  together in a mass rather than falling apart in loose grains.
+</Step>
+
+<Step id="chill">
+  Cover the mince and chill it for <Dur step="chill"/>, so the fat firms and the mixture
+  is easier to press onto the skewers.
+</Step>
+
+<Step id="shape">
+  Divide the mince into even portions. With wet hands, mould each portion around a
+  broad, flat metal skewer, pressing and smoothing it into a long ribbon so it grips the
+  blade and will not slip or spin. Work for <Dur step="shape"/> in total.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over fierce, direct charcoal heat, turning them often, for
+  <Dur step="grill"/>, until the outside is well charred in places and the meat is cooked
+  through with no pink remaining at the centre.
+</Step>

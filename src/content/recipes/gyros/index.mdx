@@ -1,0 +1,176 @@
+---
+title: Gyros
+subtitle: Pork shoulder marinated in lemon, garlic and oregano, stacked on a spit, roasted and shaved into warm pita with tzatziki.
+description: Greek gyros made the standard way — pork shoulder sliced thin, marinated in olive oil, lemon juice, garlic and oregano, stacked tightly onto a vertical spit, roasted until the outside crisps, shaved into ribbons and filled into warm pita with tomato, onion and tzatziki.
+label: Pork, vertical spit
+defaultServings: 2
+difficulty: Hard
+tags:
+  cuisine: [greek]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Souvlaki
+      note: Cubed pork threaded onto individual skewers and grilled, rather than thin-sliced meat stacked on a vertical spit and shaved.
+      slugRef: souvlaki
+    - name: Döner Kebap
+      note: The Ottoman dish gyros descends from — döner is Turkish, usually lamb and beef, and marinated in yoghurt and paprika rather than lemon and oregano.
+      slugRef: doner-kebab
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 350
+    unit: g
+    note: sliced thin against the grain
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 25
+    unit: ml
+    portions:
+      - { id: oil-marinade, amount: 20 }
+      - { id: oil-tzatziki, amount: 5 }
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 40
+    unit: ml
+    portions:
+      - { id: lemon-marinade, amount: 30 }
+      - { id: lemon-tzatziki, amount: 10 }
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed to a paste
+    portions:
+      - { id: garlic-marinade, amount: 10 }
+      - { id: garlic-tzatziki, amount: 5 }
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 3
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    portions:
+      - { id: salt-marinade, amount: 8 }
+      - { id: salt-tzatziki, amount: 2 }
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 120
+    unit: g
+  - id: cucumber
+    ingredientRef: cucumber
+    form: peeled
+    amount: 80
+    unit: g
+    note: grated
+    consumedFraction: 0.6
+    consumedFractionNote: Grated cucumber is squeezed to drain most of its water before it goes into the tzatziki; the water left behind carries no meaningful calories, but the weight is honestly accounted for.
+  - id: dill
+    ingredientRef: dill
+    form: fresh
+    amount: 3
+    unit: g
+    note: finely chopped
+  - id: pita
+    ingredientRef: pita-bread
+    form: white
+    amount: 140
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 80
+    unit: g
+    note: diced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 50
+    unit: g
+    note: thinly sliced
+steps:
+  - { id: slice-meat, durationMin: 12, type: active, phase: prep }
+  - { id: marinate, durationMin: 240, type: passive }
+  - { id: stack, durationMin: 10, type: active, phase: prep }
+  - { id: roast, durationMin: 70, type: active, phase: cook }
+  - { id: make-tzatziki, durationMin: 8, type: "parallel-with:roast", phase: prep }
+  - { id: shave, durationMin: 5, type: active, phase: cook }
+  - { id: warm-bread, durationMin: 3, type: "parallel-with:shave", phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The sliced pork can sit in the marinade, covered and refrigerated, for up to a day before stacking. The tzatziki keeps, covered and refrigerated, for two days.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: stack
+      text: Threading the slices into a tight, even cylinder is what lets the spit shave clean ribbons; loose or unevenly packed meat falls apart instead of holding a slicing surface.
+  commonPitfalls:
+    - stepId: make-tzatziki
+      text: Skipping the squeeze on the grated cucumber waters the tzatziki down until it slides off the meat instead of clinging to it.
+---
+
+<Step id="slice-meat">
+  Trim the <Qty ref="pork"/> of excess fat and slice it thinly against the grain.
+</Step>
+
+<Step id="marinate">
+  Whisk the <Qty ref="oil-marinade"/>, <Qty ref="lemon-marinade"/>,
+  <Qty ref="garlic-marinade"/>, <Qty ref="oregano"/>, <Qty ref="paprika"/>,
+  <Qty ref="pepper"/> and <Qty ref="salt-marinade"/> together, add the sliced pork and
+  turn to coat every piece. Cover and marinate, refrigerated, for
+  <Dur step="marinate"/>.
+</Step>
+
+<Step id="stack">
+  Thread the marinated pork tightly onto a vertical skewer, pressing each slice down
+  onto the last, building an even, dense cylinder with no gaps.
+</Step>
+
+<Step id="roast">
+  Roast the stacked pork close to a vertical heat source, turning it steadily, for
+  <Dur step="roast"/>, until the outer surface is deeply browned and crisp and the
+  centre is cooked through with no pink remaining.
+</Step>
+
+<Step id="make-tzatziki">
+  Grate the <Qty ref="cucumber"/> and squeeze it dry in a clean cloth. Stir it into the
+  <Qty ref="yoghurt"/> with the <Qty ref="dill"/>, <Qty ref="garlic-tzatziki"/>,
+  <Qty ref="lemon-tzatziki"/>, <Qty ref="oil-tzatziki"/> and <Qty ref="salt-tzatziki"/>.
+  Cover and refrigerate until needed.
+</Step>
+
+<Step id="shave">
+  Shave the roasted pork downward off the spit in thin ribbons for <Dur step="shave"/>.
+</Step>
+
+<Step id="warm-bread">
+  Warm the <Qty ref="pita"/> briefly over direct heat until soft and lightly charred in
+  spots.
+</Step>
+
+<Step id="assemble">
+  Fill the warm pita with the shaved pork, <Qty ref="tomato"/>, <Qty ref="onion"/> and a
+  spoonful of the tzatziki.
+</Step>

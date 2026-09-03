@@ -1,0 +1,114 @@
+---
+title: Suya
+subtitle: Thin-sliced beef coated in a dry, groundnut-based spice rub and grilled hard over charcoal, served with raw onion and tomato.
+description: Nigerian suya made the standard way — beef sliced thin, oiled and coated in yaji, a dry rub of ground roasted peanuts, chilli, paprika, garlic, ginger and bouillon powder, then grilled fast over fierce heat and served with sliced onion and tomato.
+label: Beef, charcoal-grilled
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [west-african]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: Tsire, region: Northern Nigeria, lang: ha }
+ingredients:
+  - id: beef
+    ingredientRef: beef
+    form: raw
+    amount: 500
+    unit: g
+    note: sliced thin against the grain
+  - id: peanuts
+    ingredientRef: peanut
+    form: roasted
+    amount: 60
+    unit: g
+    note: ground fine
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 5
+    unit: g
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 5
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: grated
+  - id: bouillon
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 5
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: thinly sliced, to serve
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: thinly sliced, to serve
+steps:
+  - { id: make-yaji, durationMin: 8, type: active, phase: prep }
+  - { id: coat, durationMin: 10, type: active, phase: prep }
+  - { id: rest, durationMin: 20, type: passive }
+  - { id: grill, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The yaji spice mix keeps in a sealed jar for weeks; the coated meat is best grilled within a day of rubbing.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-yaji
+      text: Ground roasted peanuts are what make yaji yaji rather than a plain chilli rub — they toast further on the grill and bind the spice into a dry, savoury crust.
+---
+
+<Step id="make-yaji">
+  Combine the ground <Qty ref="peanuts"/>, <Qty ref="paprika"/>, <Qty ref="chilli"/>,
+  <Qty ref="garlic"/>, <Qty ref="ginger"/>, <Qty ref="bouillon"/> and <Qty ref="salt"/>
+  in a bowl and mix into an even, dry spice rub. Work for <Dur step="make-yaji"/>.
+</Step>
+
+<Step id="coat">
+  Brush the sliced <Qty ref="beef"/> all over with the <Qty ref="oil"/>, then coat it
+  thickly and evenly in the yaji, pressing the spice onto the meat. Thread the coated
+  slices onto skewers, working for <Dur step="coat"/> in total.
+</Step>
+
+<Step id="rest">
+  Leave the skewers to rest for <Dur step="rest"/> so the rub sets against the oiled
+  meat.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over fierce, direct charcoal heat for <Dur step="grill"/>, turning
+  often, until the crust is dry and lightly charred and the beef is cooked through.
+  Serve with the sliced <Qty ref="onion"/> and <Qty ref="tomato"/> alongside.
+</Step>

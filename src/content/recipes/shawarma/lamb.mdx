@@ -1,0 +1,158 @@
+---
+label: Lamb
+defaultServings: 2
+difficulty: Hard
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 400
+    unit: g
+    note: sliced thin
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 20
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed to a paste
+    portions:
+      - { id: garlic-marinade, amount: 10 }
+      - { id: garlic-tahini, amount: 5 }
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 1
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    portions:
+      - { id: salt-marinade, amount: 8 }
+      - { id: salt-tahini, amount: 2 }
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: tahini
+    ingredientRef: tahini
+    form: light
+    amount: 80
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: ml
+  - id: pita
+    ingredientRef: pita-bread
+    form: white
+    amount: 120
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 70
+    unit: g
+    note: diced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 40
+    unit: g
+    note: thinly sliced
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 5
+    unit: g
+    note: finely chopped
+steps:
+  - { id: slice-meat, durationMin: 12, type: active, phase: prep }
+  - { id: marinate, durationMin: 240, type: passive }
+  - { id: stack, durationMin: 10, type: active, phase: prep }
+  - { id: make-tahini-sauce, durationMin: 4, type: "parallel-with:roast", phase: prep }
+  - { id: roast, durationMin: 60, type: active, phase: cook }
+  - { id: shave, durationMin: 5, type: active, phase: cook }
+  - { id: warm-bread, durationMin: 3, type: "parallel-with:shave", phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The sliced lamb can sit in the marinade, covered and refrigerated, for up to a day before stacking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: roast
+      text: Lamb carries more fat than chicken thigh, so flare-ups are common — keep the heat steady rather than fierce, or the outer layer chars before the fat has a chance to render and self-baste the stack.
+---
+
+<Step id="slice-meat">
+  Trim the <Qty ref="lamb"/> of any large pieces of sinew and slice it thinly against
+  the grain.
+</Step>
+
+<Step id="marinate">
+  Whisk the <Qty ref="oil"/>, <Qty ref="vinegar"/>, <Qty ref="garlic-marinade"/>,
+  <Qty ref="cumin"/>, <Qty ref="paprika"/>, <Qty ref="cinnamon"/>, <Qty ref="pepper"/>
+  and <Qty ref="salt-marinade"/> together, add the sliced lamb and turn to coat every
+  piece. Cover and marinate, refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="stack">
+  Thread the marinated lamb tightly onto a vertical skewer, pressing each layer down
+  onto the last, building an even, dense cylinder with no gaps.
+</Step>
+
+<Step id="make-tahini-sauce">
+  Whisk the <Qty ref="tahini"/> with the <Qty ref="lemon-juice"/> and
+  <Qty ref="garlic-tahini"/>. It will seize into a stiff, grainy paste before it does
+  anything else — keep whisking and add the <Qty ref="water"/> in a thin stream until
+  it loosens into a smooth, pourable sauce. Season with the <Qty ref="salt-tahini"/>.
+</Step>
+
+<Step id="roast">
+  Roast the stacked lamb close to a vertical heat source, turning it steadily, for
+  <Dur step="roast"/>, until the outer surface is deeply browned and crisp and the
+  centre is cooked through with no pink remaining.
+</Step>
+
+<Step id="shave">
+  Shave the roasted lamb downward off the spit in thin ribbons for <Dur step="shave"/>.
+</Step>
+
+<Step id="warm-bread">
+  Warm the <Qty ref="pita"/> briefly over direct heat until soft and pliable.
+</Step>
+
+<Step id="assemble">
+  Spread the tahini sauce over the warm pita, fill with the shaved lamb,
+  <Qty ref="tomato"/>, <Qty ref="onion"/> and <Qty ref="parsley"/>, and roll it closed.
+</Step>

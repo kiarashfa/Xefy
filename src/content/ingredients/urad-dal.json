@@ -1,0 +1,66 @@
+{
+  "id": "urad-dal",
+  "name": "Urad Dal",
+  "proseName": "urad dal",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Black gram",
+        "region": "India",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "pulse",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174259",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174259/nutrients",
+      "sourceNote": "USDA lists this pulse as \"mungo beans\" (Vigna mungo), the species urad dal is milled from. The record is for the whole raw bean; dehusking and splitting for dhuli urad removes only the thin outer skin, a small fraction of the mass, so the composition is close to what a split, dehusked dal carries.",
+      "nutritionPer100g": {
+        "kcal": 341,
+        "protein": 25.21,
+        "fat": 1.64,
+        "carbs": 58.99,
+        "fiber": 18.3,
+        "calcium": 138,
+        "iron": 7.57,
+        "magnesium": 267,
+        "phosphorus": 379,
+        "potassium": 983,
+        "sodium": 38,
+        "zinc": 3.35,
+        "copper": 0.981,
+        "manganese": 1.527,
+        "seleniumMcg": 8.2,
+        "vitaminC": 0,
+        "thiamin": 0.273,
+        "riboflavin": 0.254,
+        "niacin": 1.447,
+        "vitaminB6": 0.281,
+        "folateMcg": 216,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.114,
+        "monounsaturatedFat": 0.085,
+        "polyunsaturatedFat": 1.071,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 207,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/urad-dal-thumb.webp"
+}

@@ -1,0 +1,113 @@
+---
+title: Chelo ba Tahdig
+subtitle: Basmati rinsed, parboiled and steamed loose-grained under a cloth-wrapped lid, over a bottom layer of saffron-stained potato pressed to a golden, crisp crust.
+label: Potato tahdig
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [persian]
+  course: [side]
+  method: [steaming]
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 500
+    unit: g
+  - id: boil-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 25
+    unit: g
+    consumedFraction: 0.15
+    consumedFractionNote: This salt seasons the parboiling water; most of it drains away with the water, and only the fraction the rice itself absorbs is eaten.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2530
+    unit: ml
+    consumedFraction: 0.03
+    consumedFractionNote: Blended across two uses. Almost all of it is parboiling water, drained off and discarded but for what clings to the rinsed grains; a small remainder blooms the saffron and is fully absorbed into the rice.
+    portions:
+      - { id: boil-water, amount: 2500, note: for parboiling the rice }
+      - { id: saffron-water, amount: 30, note: to bloom the saffron }
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.3
+    unit: g
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 70
+    unit: g
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 300
+    unit: g
+    note: peeled and sliced into rounds
+steps:
+  - { id: rinse, durationMin: 6, type: active, phase: prep }
+  - { id: soak, durationMin: 45, type: passive }
+  - { id: bloom-saffron, durationMin: 5, type: "parallel-with:soak", phase: prep }
+  - { id: parboil, durationMin: 7, type: active, phase: cook }
+  - { id: assemble, durationMin: 15, type: active, phase: prep }
+  - { id: steam, durationMin: 50, type: passive }
+  - { id: unmould, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: parboil
+      text: The rice is only ever parboiled, never cooked through in the water — it finishes by steam alone, which is what keeps the grains whole and separate rather than starchy and clumped.
+  commonPitfalls:
+    - stepId: steam
+      text: A lid left bare lets condensation drip back onto the rice and turns the top layer soggy. Wrapping it in a cloth lets the steam vent while the water stays out.
+---
+
+<Step id="rinse">
+  Rinse the <Qty ref="rice"/> in several changes of cold water, swirling and draining
+  each time, for <Dur step="rinse"/>, until the water runs clear of surface starch.
+</Step>
+
+<Step id="soak">
+  Cover the rinsed rice with the <Qty ref="boil-water"/> and the <Qty ref="boil-salt"/>
+  and leave it to soak for <Dur step="soak"/>.
+</Step>
+
+<Step id="bloom-saffron">
+  Grind the <Qty ref="saffron"/> and stir it into the <Qty ref="saffron-water"/>, hot but
+  not boiling, and set it aside to steep for <Dur step="bloom-saffron"/> while the rice
+  soaks.
+</Step>
+
+<Step id="parboil">
+  Bring the rice in its soaking water to the boil and cook for <Dur step="parboil"/>,
+  until the grains have softened at the edge but are still firm at the core. Drain
+  immediately in a fine sieve.
+</Step>
+
+<Step id="assemble">
+  Melt half of the <Qty ref="ghee"/> in the base of a heavy, non-stick pot. Arrange the
+  <Qty ref="potato"/> over the base in a single, overlapping layer. Mound the drained
+  rice over the potato in a low pyramid, taking care to keep the layer of potato
+  undisturbed underneath. Drizzle over the remaining ghee and the bloomed saffron
+  water, then use the handle of a spoon to poke a few holes down through the mound
+  to let steam escape. Spend <Dur step="assemble"/> building the layers evenly.
+</Step>
+
+<Step id="steam">
+  Wrap the pot lid in a clean cloth, secure it on tightly, and set the pot over a low
+  heat for <Dur step="steam"/>, until the potato at the base has set into a firm,
+  golden crust and the rice on top is tender and separate.
+</Step>
+
+<Step id="unmould">
+  Take the pot off the heat and let it stand briefly, then invert it over a serving
+  platter in one confident motion so the crust of potato lifts free on top. This
+  takes <Dur step="unmould"/>.
+</Step>

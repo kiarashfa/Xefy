@@ -1,0 +1,83 @@
+{
+  "id": "rice",
+  "name": "Rice",
+  "proseName": "rice",
+  "category": "grain",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, white",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2512381",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2512381/nutrients",
+      "sourceNote": "Long-grain raw rice. This record publishes no household portion, so the volume conversion comes from the general uncooked-grain density class.",
+      "nutritionPer100g": {
+        "kcal": 369.637,
+        "protein": 7.039,
+        "fat": 1.033,
+        "carbs": 80.313,
+        "fiber": 0.149,
+        "calcium": 4.46,
+        "iron": 0.141,
+        "magnesium": 26.53,
+        "phosphorus": 108.2,
+        "potassium": 82.26,
+        "sodium": 0.463,
+        "zinc": 1.354,
+        "copper": 0.214,
+        "manganese": 0.981,
+        "seleniumMcg": 6.6,
+        "thiamin": 0.065,
+        "riboflavin": 0.08,
+        "niacin": 1.434,
+        "vitaminB6": 0.058
+      },
+      "density": {
+        "gPerCup": 185,
+        "densitySource": "estimated",
+        "densityClass": "grain-uncooked"
+      }
+    },
+    {
+      "id": "basmati",
+      "label": "Basmati, raw",
+      "proseQualifier": "basmati",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2512381",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2512381/nutrients",
+      "sourceNote": "USDA publishes no cultivar-specific record for basmati. Basmati is a long-grain white rice, so this is the same raw long-grain white rice record used for the plain form; the two are nutritionally interchangeable and differ in cooking behaviour and aroma rather than composition.",
+      "nutritionPer100g": {
+        "kcal": 369.637,
+        "protein": 7.039,
+        "fat": 1.033,
+        "carbs": 80.313,
+        "fiber": 0.149,
+        "calcium": 4.46,
+        "iron": 0.141,
+        "magnesium": 26.53,
+        "phosphorus": 108.2,
+        "potassium": 82.26,
+        "sodium": 0.463,
+        "zinc": 1.354,
+        "copper": 0.214,
+        "manganese": 0.981,
+        "seleniumMcg": 6.6,
+        "thiamin": 0.065,
+        "riboflavin": 0.08,
+        "niacin": 1.434,
+        "vitaminB6": 0.058
+      },
+      "density": {
+        "gPerCup": 185,
+        "densitySource": "estimated",
+        "densityClass": "grain-uncooked"
+      }
+    }
+  ],
+  "image": "images/ingredients/rice-thumb.webp"
+}

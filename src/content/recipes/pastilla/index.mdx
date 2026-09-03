@@ -1,0 +1,163 @@
+---
+title: Pastilla bil Djaj
+subtitle: Shredded chicken in a saffron-and-cinnamon sauce, layered with fried almonds inside warqa pastry and baked, then dusted sweet with cinnamon and icing sugar over a savoury filling.
+label: Fez-Style
+defaultServings: 8
+difficulty: Hard
+tags:
+  cuisine: [moroccan]
+  course: [main-course]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Bastilla, region: Morocco, lang: fr }
+    - { name: B'stilla, region: Morocco, lang: ar }
+ingredients:
+  - id: warqa
+    ingredientRef: warqa
+    form: sheet
+    amount: 320
+    unit: g
+    note: about 8 sheets
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 700
+    unit: g
+    note: boneless
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 250
+    unit: g
+    note: finely chopped
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 120
+    unit: g
+    portions:
+      - { id: cook-butter, amount: 40, note: for cooking the chicken }
+      - { id: almond-butter, amount: 20, note: for frying the almonds }
+      - { id: brushing-butter, amount: 60, note: melted, for the pastry }
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: grated
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 10
+    unit: g
+    portions:
+      - { id: filling-cinnamon, amount: 4 }
+      - { id: almond-cinnamon, amount: 3 }
+      - { id: topping-cinnamon, amount: 3, note: for dusting }
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.2
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: chopped
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: 3 eggs, beaten
+  - id: almond
+    ingredientRef: almonds
+    form: blanched
+    amount: 200
+    unit: g
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 50
+    unit: g
+    portions:
+      - { id: almond-icing-sugar, amount: 30 }
+      - { id: topping-icing-sugar, amount: 20, note: for dusting }
+steps:
+  - { id: cook-chicken, durationMin: 35, type: active, phase: cook }
+  - { id: fry-almonds, durationMin: 8, type: "parallel-with:cook-chicken", phase: cook }
+  - { id: finish-filling, durationMin: 10, type: active, phase: cook }
+  - { id: assemble, durationMin: 25, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: active, phase: cook }
+  - { id: dust, durationMin: 3, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The chicken filling and the fried almonds can both be made a day ahead and kept covered in the fridge; assemble and bake the pastry close to serving.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked pie whole, wrapped well. Bake from frozen, adding roughly half again to the baking time, and dust with sugar and cinnamon only once it comes out.
+  reheatInstructions: Reheat leftover wedges in a hot oven for a few minutes to recrisp the pastry before serving — the icing sugar on top will need dusting again afterwards.
+notes:
+  techniqueRationale:
+    - stepId: finish-filling
+      text: Stirring the beaten egg into the reduced cooking liquid off the heat, rather than into a simmering pan, sets it into a soft curd that binds the shredded chicken instead of scrambling into loose threads.
+  commonPitfalls:
+    - stepId: assemble
+      text: Warqa dries and cracks within minutes of being unwrapped. Keep the stack covered and work through it one sheet at a time, brushing each with butter the moment it is laid down rather than after the whole pie is built.
+---
+
+<Step id="cook-chicken">
+  Melt the <Qty ref="cook-butter"/> in a wide pan and cook the <Qty ref="onion"/> over a
+  low heat until soft. Add the <Qty ref="chicken"/>, <Qty ref="ginger"/>,
+  <Qty ref="filling-cinnamon"/>, <Qty ref="saffron"/>, <Qty ref="salt"/> and
+  <Qty ref="pepper"/>, cover and cook gently for <Dur step="cook-chicken"/>, until the
+  chicken is tender and surrounded by a reduced, well-flavoured sauce. Lift out the
+  chicken, shred it, and set the sauce aside in the pan.
+</Step>
+
+<Step id="fry-almonds">
+  Meanwhile, fry the <Qty ref="almond"/> in the <Qty ref="almond-butter"/> over a medium
+  heat for <Dur step="fry-almonds"/>, until golden throughout, then crush roughly and
+  toss with the <Qty ref="almond-icing-sugar"/> and <Qty ref="almond-cinnamon"/>.
+</Step>
+
+<Step id="finish-filling">
+  Off the heat, stir the <Qty ref="egg"/> into the reserved sauce, then return the pan to
+  a very low heat for <Dur step="finish-filling"/>, stirring constantly, until the egg
+  sets into a soft curd rather than a liquid. Fold this through the shredded chicken with
+  the <Qty ref="parsley"/> and <Qty ref="coriander"/>.
+</Step>
+
+<Step id="assemble">
+  Brush a round baking tin with a little of the <Qty ref="brushing-butter"/> and line it
+  with overlapping sheets of <Qty ref="warqa"/>, brushing each sheet with butter as it
+  goes down and leaving enough overhang to fold back over the top. Spread the chicken
+  filling evenly across the base, then the almond mixture on top of it. Fold the
+  overhanging pastry back over the filling to enclose it completely, brushing the final
+  layer with the last of the butter.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until the pastry is deeply golden and crisp all over.
+</Step>
+
+<Step id="dust">
+  While still warm, dust the top with the <Qty ref="topping-icing-sugar"/> and mark it
+  with the <Qty ref="topping-cinnamon"/> in a crosshatch pattern before serving.
+</Step>

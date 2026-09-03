@@ -1,0 +1,59 @@
+{
+  "id": "spinach",
+  "name": "Spinach",
+  "proseName": "spinach",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168462",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168462/nutrients",
+      "nutritionPer100g": {
+        "kcal": 23,
+        "protein": 2.86,
+        "carbs": 3.63,
+        "fat": 0.39,
+        "fiber": 2.2,
+        "sugars": 0.42,
+        "saturatedFat": 0.063,
+        "monounsaturatedFat": 0.01,
+        "polyunsaturatedFat": 0.165,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 79,
+        "potassium": 558,
+        "calcium": 99,
+        "iron": 2.71,
+        "magnesium": 79,
+        "phosphorus": 49,
+        "zinc": 0.53,
+        "copper": 0.13,
+        "manganese": 0.897,
+        "seleniumMcg": 1,
+        "vitaminAMcg": 469,
+        "vitaminC": 28.1,
+        "vitaminDMcg": 0,
+        "vitaminE": 2.03,
+        "vitaminKMcg": 482.9,
+        "thiamin": 0.078,
+        "riboflavin": 0.189,
+        "niacin": 0.724,
+        "vitaminB6": 0.195,
+        "folateMcg": 194,
+        "vitaminB12Mcg": 0,
+        "choline": 19.3
+      },
+      "density": {
+        "gPerCup": 30,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/spinach-thumb.webp"
+}

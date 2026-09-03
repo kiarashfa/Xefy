@@ -1,0 +1,40 @@
+{
+  "id": "chicken-thigh",
+  "name": "Chicken Thigh",
+  "proseName": "chicken thigh",
+  "category": "meat",
+  "animalOrigin": "poultry",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, boneless, skinless",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2646171",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646171/nutrients",
+      "nutritionPer100g": {
+        "kcal": 149.306,
+        "protein": 18.613,
+        "fat": 7.916,
+        "carbs": 0,
+        "calcium": 5.65,
+        "iron": 0.602,
+        "magnesium": 21.8,
+        "phosphorus": 178.3,
+        "potassium": 271.8,
+        "sodium": 62.33,
+        "zinc": 1.348,
+        "copper": 0.042,
+        "manganese": 0,
+        "saturatedFat": 1.658,
+        "monounsaturatedFat": 2.239,
+        "polyunsaturatedFat": 1.42,
+        "transFat": 0.024,
+        "cholesterol": 91.66
+      }
+    }
+  ],
+  "image": "images/ingredients/chicken-thigh-thumb.webp"
+}

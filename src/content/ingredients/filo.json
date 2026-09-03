@@ -1,0 +1,65 @@
+{
+  "id": "filo",
+  "name": "Filo Pastry",
+  "proseName": "filo pastry",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Phyllo pastry",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "pastry",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "sheet",
+      "label": "Sheets",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172791",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172791/nutrients",
+      "nutritionPer100g": {
+        "kcal": 299,
+        "protein": 7.1,
+        "carbs": 52.6,
+        "fat": 6,
+        "fiber": 1.9,
+        "sugars": 0.18,
+        "saturatedFat": 1.47,
+        "monounsaturatedFat": 3.149,
+        "polyunsaturatedFat": 0.923,
+        "cholesterol": 0,
+        "sodium": 483,
+        "potassium": 74,
+        "calcium": 11,
+        "iron": 3.21,
+        "magnesium": 15,
+        "phosphorus": 75,
+        "zinc": 0.49,
+        "copper": 0.101,
+        "manganese": 0.476,
+        "seleniumMcg": 23.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.08,
+        "vitaminKMcg": 2.5,
+        "thiamin": 0.541,
+        "riboflavin": 0.341,
+        "niacin": 4.073,
+        "vitaminB6": 0.03,
+        "folateMcg": 137,
+        "vitaminB12Mcg": 0,
+        "choline": 6.9
+      }
+    }
+  ],
+  "image": "images/ingredients/filo-thumb.webp"
+}

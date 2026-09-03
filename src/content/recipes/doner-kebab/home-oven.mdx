@@ -1,0 +1,128 @@
+---
+label: Home oven
+defaultServings: 2
+difficulty: Medium
+ingredients:
+  - id: beef-mince
+    ingredientRef: beef-mince
+    form: raw
+    amount: 200
+    unit: g
+  - id: lamb-mince
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 200
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 110
+    unit: g
+    portions:
+      - { id: onion-mix, amount: 60, note: grated, for the meat mixture }
+      - { id: onion-garnish, amount: 50, note: thinly sliced, for serving }
+  - id: lavash
+    ingredientRef: lavash
+    form: thin
+    amount: 140
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 80
+    unit: g
+    note: diced
+  - id: lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 30
+    unit: g
+    note: shredded
+steps:
+  - { id: mix-meat, durationMin: 10, type: active, phase: prep }
+  - { id: press-loaf, durationMin: 8, type: active, phase: prep }
+  - { id: bake, durationMin: 55, type: active, phase: cook }
+  - { id: rest, durationMin: 15, type: passive }
+  - { id: slice, durationMin: 5, type: active, phase: prep }
+  - { id: crisp, durationMin: 6, type: active, phase: cook }
+  - { id: warm-bread, durationMin: 3, type: "parallel-with:crisp", phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The raw loaf can be pressed into its tin, covered and refrigerated, up to a day before baking.
+  freezable: true
+  freezeInstructions: Freeze the baked, rested loaf whole, tightly wrapped. Thaw overnight in the fridge, then slice and crisp as below.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: press-loaf
+      text: Pressing the mince into a dense, air-free loaf is what stands in for a spit's own compaction, so the baked meat holds together in clean slices instead of falling apart as loose crumbs. It is an honest adaptation, not a reproduction — no oven replicates the continuous open-flame char of a turning spit, which is what the pan-crisping step is for.
+  commonPitfalls:
+    - stepId: bake
+      text: Baking the loaf uncovered dries it out before it is cooked through. Covering it traps the steam that keeps the mince moist while it sets.
+---
+
+<Step id="mix-meat">
+  Combine the <Qty ref="beef-mince"/>, <Qty ref="lamb-mince"/>, <Qty ref="garlic"/>,
+  <Qty ref="paprika"/>, <Qty ref="oregano"/>, <Qty ref="pepper"/>, <Qty ref="salt"/>
+  and the <Qty ref="onion-mix"/>. Work the mixture with your hands until it turns
+  sticky and slightly emulsified — this is what holds it together once sliced.
+</Step>
+
+<Step id="press-loaf">
+  Pack the mixture firmly into a loaf tin lined with baking paper, pressing out every
+  air pocket and smoothing the top.
+</Step>
+
+<Step id="bake">
+  Cover the tin tightly with foil and bake for <Dur step="bake"/>, until the centre is
+  cooked through with no pink remaining.
+</Step>
+
+<Step id="rest">
+  Leave the loaf to rest in its tin for <Dur step="rest"/> — slicing it hot breaks it
+  apart.
+</Step>
+
+<Step id="slice">
+  Turn the loaf out and slice it very thinly.
+</Step>
+
+<Step id="crisp">
+  Sear the slices in a dry, very hot pan for <Dur step="crisp"/>, until the edges
+  crisp and char in patches.
+</Step>
+
+<Step id="warm-bread">
+  Warm the <Qty ref="lavash"/> briefly over direct heat until soft and pliable.
+</Step>
+
+<Step id="assemble">
+  Fill the warmed lavash with the crisped meat, <Qty ref="tomato"/>,
+  <Qty ref="onion-garnish"/> and <Qty ref="lettuce"/>, and roll it closed.
+</Step>

@@ -1,0 +1,70 @@
+{
+  "id": "palm-oil",
+  "name": "Palm Oil",
+  "proseName": "palm oil",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Dendê oil",
+        "region": "Brazil",
+        "lang": "pt"
+      }
+    ]
+  },
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "red",
+      "label": "Red",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171015",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171015/nutrients",
+      "sourceNote": "USDA's only palm oil record is for refined, deodorised oil. Dendê, the unrefined red palm oil used in Bahian cooking, is pressed and used without the refining step, which is where its colour and much of its carotenoid content come from.",
+      "nutritionCaveat": "Cited against refined palm oil. Unrefined dendê retains far more carotenoid pigment and vitamin A than a refined oil does; USDA publishes no separate record for it, so the vitamin A figure here understates the real dish.",
+      "nutritionPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0.01,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "sodium": 0,
+        "zinc": 0,
+        "copper": 0,
+        "seleniumMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 15.94,
+        "vitaminKMcg": 8,
+        "saturatedFat": 49.3,
+        "monounsaturatedFat": 37,
+        "polyunsaturatedFat": 9.3,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 4.5,
+        "gPerCup": 216,
+        "gPerTbsp": 13.6,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/palm-oil-thumb.webp"
+}

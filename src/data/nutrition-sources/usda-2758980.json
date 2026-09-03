@@ -1,0 +1,78 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2758980",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2758980/nutrients",
+  "description": "Raisins, dark, seedless",
+  "category": "Fruits and Fruit Juices",
+  "publicationDate": "4/30/2026",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "fiber": 3.679,
+    "calcium": 51.49,
+    "iron": 1.844,
+    "magnesium": 35.54,
+    "phosphorus": 115.8,
+    "potassium": 936,
+    "sodium": 13.17,
+    "zinc": 0.176,
+    "copper": 0.327,
+    "manganese": 0.267,
+    "vitaminC": 0,
+    "thiamin": 0.064,
+    "riboflavin": 0.104,
+    "niacin": 0.653,
+    "vitaminB6": 0.234
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 15.65,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 2.066,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 66.04,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 30.58,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 35.46,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

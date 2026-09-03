@@ -1,0 +1,122 @@
+---
+label: Samarkand
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: chickpeas
+    ingredientRef: chickpea
+    form: dried
+    amount: 80
+    unit: g
+    note: soaked overnight in plenty of cold water, then drained
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 450
+    unit: g
+    note: cut into large cubes
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 45
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: sliced into rings
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 500
+    unit: g
+    note: cut into thick batons
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 60
+    unit: g
+    note: kept as whole heads, papery outer skin removed, left otherwise intact
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 5
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 12
+    unit: g
+  - id: stock-water
+    ingredientRef: water
+    form: tap
+    amount: 550
+    unit: ml
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 400
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 40
+    unit: g
+steps:
+  - { id: brown-lamb, durationMin: 10, type: active, phase: cook }
+  - { id: cook-onion, durationMin: 15, type: active, phase: cook }
+  - { id: build-zirvak, durationMin: 55, type: passive }
+  - { id: add-rice, durationMin: 10, type: active, phase: cook }
+  - { id: steam-rice, durationMin: 25, type: passive }
+  - { id: rest-and-plate, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The chickpeas need soaking in cold water for at least eight hours, or overnight, before cooking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: build-zirvak
+      text: Unsoaked chickpeas will not soften fully in the time the zirvak takes to cook. An overnight soak is what lets them turn tender in the same simmer as the lamb rather than staying chalky at the centre.
+---
+
+<Step id="brown-lamb">
+  Heat the <Qty ref="oil"/> in a heavy pot until shimmering and brown the
+  <Qty ref="lamb"/> on all sides over a high heat. This takes <Dur step="brown-lamb"/>.
+</Step>
+
+<Step id="cook-onion">
+  Add the <Qty ref="onion"/> and cook, stirring often, for <Dur step="cook-onion"/>,
+  until it has turned a deep golden-brown.
+</Step>
+
+<Step id="build-zirvak">
+  Add the <Qty ref="carrot"/> and cook briefly without much stirring, so it keeps
+  some structure. Nestle in the <Qty ref="garlic"/> heads, then add the soaked
+  <Qty ref="chickpeas"/>, the <Qty ref="cumin"/>, the <Qty ref="salt"/> and the
+  <Qty ref="stock-water"/>. Bring to a simmer, cover, and cook gently for
+  <Dur step="build-zirvak"/>, until the lamb and chickpeas are both tender and the
+  stock is richly flavoured. Lift out the garlic heads and set them aside.
+</Step>
+
+<Step id="add-rice">
+  Rinse the <Qty ref="rice"/> until the water runs clear and spread it evenly over
+  the zirvak without stirring it in. Add just enough hot water to cover the rice by
+  a fingertip's depth, and boil, uncovered, for <Dur step="add-rice"/>, until the
+  water has dropped level with the rice.
+</Step>
+
+<Step id="steam-rice">
+  Scatter the <Qty ref="raisins"/> over the rice, poke several holes down through
+  to the base of the pot, tuck the garlic heads back in, cover tightly, and cook
+  over the lowest heat for <Dur step="steam-rice"/>, undisturbed, until the rice is
+  tender and every drop of stock is gone.
+</Step>
+
+<Step id="rest-and-plate">
+  Let the pot rest off the heat, still covered, then plate in distinct layers
+  rather than mixing the pot together: rice first, spread wide over the platter,
+  then the carrot, chickpeas and raisins over that, and the lamb and whole garlic
+  heads set on top. This takes <Dur step="rest-and-plate"/>.
+</Step>

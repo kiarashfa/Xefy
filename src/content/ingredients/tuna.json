@@ -1,0 +1,62 @@
+{
+  "id": "tuna",
+  "name": "Tuna",
+  "proseName": "tuna",
+  "category": "seafood",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "tinned",
+      "label": "Tinned in water, drained",
+      "proseQualifier": "tinned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173709",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173709/nutrients",
+      "nutritionPer100g": {
+        "kcal": 86,
+        "protein": 19.44,
+        "carbs": 0,
+        "fat": 0.96,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 0.211,
+        "monounsaturatedFat": 0.107,
+        "polyunsaturatedFat": 0.277,
+        "transFat": 0.002,
+        "cholesterol": 36,
+        "sodium": 247,
+        "potassium": 179,
+        "calcium": 17,
+        "iron": 1.63,
+        "magnesium": 23,
+        "phosphorus": 139,
+        "zinc": 0.69,
+        "copper": 0.05,
+        "manganese": 0.019,
+        "seleniumMcg": 70.6,
+        "vitaminAMcg": 17,
+        "vitaminC": 0,
+        "vitaminDMcg": 1.2,
+        "vitaminE": 0.33,
+        "vitaminKMcg": 0.2,
+        "thiamin": 0.03,
+        "riboflavin": 0.084,
+        "niacin": 10.136,
+        "vitaminB6": 0.319,
+        "folateMcg": 4,
+        "vitaminB12Mcg": 2.55,
+        "choline": 29.3
+      },
+      "density": {
+        "gPerCup": 154,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/tuna-thumb.webp"
+}

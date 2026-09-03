@@ -1,0 +1,47 @@
+{
+  "id": "goat",
+  "name": "Goat",
+  "proseName": "goat",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175303",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175303/nutrients",
+      "nutritionPer100g": {
+        "kcal": 109,
+        "protein": 20.6,
+        "fat": 2.31,
+        "carbs": 0,
+        "fiber": 0,
+        "calcium": 13,
+        "iron": 2.83,
+        "phosphorus": 180,
+        "potassium": 385,
+        "sodium": 82,
+        "zinc": 4,
+        "copper": 0.256,
+        "manganese": 0.038,
+        "seleniumMcg": 8.8,
+        "vitaminC": 0,
+        "thiamin": 0.11,
+        "riboflavin": 0.49,
+        "niacin": 3.75,
+        "folateMcg": 5,
+        "vitaminB12Mcg": 1.13,
+        "vitaminAMcg": 0,
+        "saturatedFat": 0.71,
+        "monounsaturatedFat": 1.03,
+        "polyunsaturatedFat": 0.17,
+        "cholesterol": 57
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+---
+title: Anticuchos de Corazón
+subtitle: Beef heart, trimmed and cubed, marinated in ají panca and vinegar and grilled hard over charcoal until charred outside and still tender within.
+description: The Peruvian street-food skewer built on beef heart rather than steak — cubed, marinated in ají panca paste, garlic, cumin and vinegar, then grilled over fierce heat and basted as it cooks.
+label: Charcoal-grilled
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [peruvian]
+  course: [main-course]
+  method: [grilling]
+ingredients:
+  - id: heart
+    ingredientRef: beef-heart
+    form: raw
+    amount: 500
+    unit: g
+    note: trimmed of silverskin and connective tissue, cut into cubes
+  - id: aji-panca
+    ingredientRef: aji-panca
+    form: paste
+    amount: 40
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 30
+    unit: ml
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+    portions:
+      - { id: oil-marinade, amount: 10 }
+      - { id: oil-basting, amount: 10, note: for basting on the grill }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: trim-cube, durationMin: 10, type: active, phase: prep }
+  - { id: marinate, durationMin: 120, type: passive }
+  - { id: thread, durationMin: 10, type: active, phase: prep }
+  - { id: grill, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The heart can be trimmed, cubed and left in the marinade, covered and refrigerated, for up to a day before grilling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: grill
+      text: Beef heart is lean and dense muscle, not a fatty cut, so it turns dry and tough well past medium. It wants fierce, close heat for a short time rather than the slower approach suited to a fattier cut.
+---
+
+<Step id="trim-cube">
+  Trim the <Qty ref="heart"/> of any silverskin, connective tissue and visible fat, then
+  cut the meat into even cubes.
+</Step>
+
+<Step id="marinate">
+  Stir the <Qty ref="aji-panca"/>, <Qty ref="garlic"/>, <Qty ref="cumin"/>,
+  <Qty ref="vinegar"/>, <Qty ref="oil-marinade"/>, <Qty ref="salt"/> and
+  <Qty ref="pepper"/> together, coat the cubed heart in the mixture, and leave it to
+  marinate, covered and refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="thread">
+  Thread the marinated cubes tightly onto skewers, leaving as little gap between pieces
+  as the shape of the cubes allows.
+</Step>
+
+<Step id="grill">
+  Grill the skewers over fierce, direct charcoal heat for <Dur step="grill"/>, turning
+  often and brushing with the <Qty ref="oil-basting"/> as they cook, until the outside is
+  well charred and the centre is still faintly pink.
+</Step>

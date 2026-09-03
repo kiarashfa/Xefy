@@ -1,0 +1,62 @@
+{
+  "id": "turmeric",
+  "name": "Turmeric",
+  "proseName": "turmeric",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "proseQualifier": "ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172231",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172231/nutrients",
+      "nutritionPer100g": {
+        "kcal": 312,
+        "protein": 9.68,
+        "fat": 3.25,
+        "carbs": 67.14,
+        "fiber": 22.7,
+        "sugars": 3.21,
+        "calcium": 168,
+        "iron": 55,
+        "magnesium": 208,
+        "phosphorus": 299,
+        "potassium": 2080,
+        "sodium": 27,
+        "zinc": 4.5,
+        "copper": 1.3,
+        "manganese": 19.8,
+        "seleniumMcg": 6.2,
+        "vitaminC": 0.7,
+        "thiamin": 0.058,
+        "riboflavin": 0.15,
+        "niacin": 1.35,
+        "vitaminB6": 0.107,
+        "folateMcg": 20,
+        "choline": 49.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 4.43,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 13.4,
+        "saturatedFat": 1.838,
+        "monounsaturatedFat": 0.449,
+        "polyunsaturatedFat": 0.756,
+        "transFat": 0.056,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 3,
+        "gPerTbsp": 9.4,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/turmeric-thumb.webp"
+}

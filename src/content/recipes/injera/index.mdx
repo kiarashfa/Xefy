@@ -1,0 +1,79 @@
+---
+title: Injera
+subtitle: A large, spongy Ethiopian flatbread of fermented teff flour, cooked on one side only until its surface is covered in tiny open bubbles.
+description: A thin teff-and-water batter left to ferment for days on wild yeasts alone, poured onto a hot griddle in one continuous spiral and covered until it steams itself through, cooked on only one side.
+label: Traditional
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [ethiopian]
+  course: [bread]
+  method: [fermenting, pan-frying]
+ingredients:
+  - id: teff-flour
+    ingredientRef: teff-flour
+    form: whole-grain
+    amount: 500
+    unit: g
+  - id: ferment-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+    note: for the batter
+  - id: thin-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: to thin the batter after fermentation
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+steps:
+  - { id: mix-batter, durationMin: 10, type: active, phase: prep }
+  - { id: ferment, durationMin: 4320, type: passive }
+  - { id: season-batter, durationMin: 5, type: active, phase: prep }
+  - { id: cook, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The fermented batter keeps refrigerated for up to three days, becoming more sour as it goes; bring back to room temperature before cooking.
+  freezable: true
+  freezeInstructions: Cooked injera freezes well stacked between sheets of baking paper.
+  reheatInstructions: Bring frozen injera back to room temperature, still wrapped, so it does not dry out or turn brittle.
+notes:
+  techniqueRationale:
+    - stepId: ferment
+      text: The long fermentation is what makes injera injera — teff's own wild yeasts and bacteria need days, not hours, to build the sourness and the gas that riddles the batter with bubbles once it hits the hot griddle.
+  commonPitfalls:
+    - stepId: cook
+      text: Lifting the lid too soon lets steam escape before the surface has finished bubbling, leaving a patchy, half-formed set of eyes. It stays covered until the whole surface has visibly dried and set.
+---
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="teff-flour"/> and the <Qty ref="ferment-water"/> together in a
+  large bowl for <Dur step="mix-batter"/>, until completely smooth and about as thin as
+  double cream.
+</Step>
+
+<Step id="ferment">
+  Cover the bowl loosely and leave it at room temperature to ferment for
+  <Dur step="ferment"/>, stirring once a day. The batter is ready when it smells sharply
+  sour and a layer of clear liquid has separated on top.
+</Step>
+
+<Step id="season-batter">
+  Pour off the separated liquid, then stir in the <Qty ref="salt"/> and enough of the
+  <Qty ref="thin-water"/> to bring the batter back to a thin, pourable consistency,
+  working for <Dur step="season-batter"/>.
+</Step>
+
+<Step id="cook">
+  Heat a large, flat, lightly seasoned griddle over a medium-high heat. Starting from the
+  outside edge, pour the batter in one continuous thin spiral to fill the pan, without
+  smoothing or spreading it further. Cover at once and cook for a share of
+  <Dur step="cook"/> without turning, until the whole surface is covered in small open
+  bubbles, has dried out, and lifts cleanly from the pan at the edge. Repeat with the
+  remaining batter.
+</Step>

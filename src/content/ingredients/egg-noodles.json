@@ -1,0 +1,73 @@
+{
+  "id": "egg-noodles",
+  "name": "Egg Noodles",
+  "proseName": "egg noodles",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Wonton noodles",
+        "region": "Hong Kong",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "noodle",
+  "animalOrigin": "egg",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten",
+    "egg"
+  ],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, thin",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169731",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169731/nutrients",
+      "sourceNote": "USDA carries no record specific to the very thin, springy egg noodle used for wonton noodle soup. This is its general dried egg noodle record, the closest match for a wheat-and-egg noodle it publishes.",
+      "nutritionPer100g": {
+        "kcal": 384,
+        "protein": 14.16,
+        "carbs": 71.27,
+        "fat": 4.44,
+        "fiber": 3.3,
+        "sugars": 1.88,
+        "saturatedFat": 1.18,
+        "monounsaturatedFat": 1.252,
+        "polyunsaturatedFat": 1.331,
+        "transFat": 0.061,
+        "cholesterol": 84,
+        "sodium": 21,
+        "potassium": 244,
+        "calcium": 35,
+        "iron": 4.01,
+        "magnesium": 58,
+        "phosphorus": 241,
+        "zinc": 1.92,
+        "copper": 0.297,
+        "manganese": 0.855,
+        "seleniumMcg": 78.8,
+        "vitaminAMcg": 17,
+        "vitaminC": 0,
+        "vitaminDMcg": 0.3,
+        "vitaminE": 0.37,
+        "vitaminKMcg": 0.5,
+        "thiamin": 1.133,
+        "riboflavin": 0.426,
+        "niacin": 8.387,
+        "vitaminB6": 0.216,
+        "folateMcg": 370,
+        "vitaminB12Mcg": 0.29,
+        "choline": 78.7
+      },
+      "density": {
+        "gPerCup": 38,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/egg-noodles-thumb.webp"
+}

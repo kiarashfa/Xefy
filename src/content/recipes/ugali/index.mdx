@@ -1,0 +1,72 @@
+---
+title: Ugali
+subtitle: White maize meal stirred and beaten over the heat into a very stiff dough, turned out as a single mound and torn off by hand alongside a stew or greens.
+label: Kenya
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [east-african]
+  course: [side]
+  method: [simmering]
+names:
+  notToBeConfusedWith:
+    - name: Pap
+      note: South Africa's stiff maize porridge from the same maize meal and the same worked-until-smooth technique, but a separate regional dish with its own identity and a softer ratio of meal to water than ugali's.
+      slugRef: pap
+ingredients:
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 750
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: maize-meal
+    ingredientRef: maize-meal
+    form: white
+    amount: 550
+    unit: g
+steps:
+  - { id: boil-water, durationMin: 5, type: active, phase: cook }
+  - { id: add-meal, durationMin: 3, type: active, phase: cook }
+  - { id: simmer, durationMin: 12, type: passive }
+  - { id: work, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat covered over a low heat with a splash of water worked in, beating until it comes back together, since ugali stiffens considerably as it cools.
+notes:
+  techniqueRationale:
+    - stepId: work
+      text: Ugali is beaten far stiffer than most porridges get taken, to the point where the whole mass turns over as a single dome rather than sitting loose in the pot — that resistance under the spoon is what tells you it is ready.
+  commonPitfalls:
+    - stepId: add-meal
+      text: Tipping the maize meal in all at once seizes it into hard lumps that never fully break down. It goes in gradually, in a thin stream, with constant stirring.
+---
+
+<Step id="boil-water">
+  Bring the <Qty ref="water"/> and <Qty ref="salt"/> to a rolling boil in a heavy pot.
+  This takes about <Dur step="boil-water"/>.
+</Step>
+
+<Step id="add-meal">
+  Reduce the heat slightly and add the <Qty ref="maize-meal"/> in a thin, steady stream,
+  stirring constantly with a wooden spoon to stop lumps forming. This takes
+  <Dur step="add-meal"/>.
+</Step>
+
+<Step id="simmer">
+  Cover and simmer over a low heat for <Dur step="simmer"/>, stirring every so often to
+  stop the bottom catching, until the mixture has thickened into a dense mass.
+</Step>
+
+<Step id="work">
+  Uncover and beat and fold the dough hard against the side of the pot for
+  <Dur step="work"/>, over the heat the whole time, until it is very stiff, smooth and
+  turns over as one piece with no loose porridge left at the bottom. Turn out onto a
+  plate as a single mound and serve hot.
+</Step>

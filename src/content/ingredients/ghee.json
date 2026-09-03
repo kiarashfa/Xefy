@@ -1,0 +1,45 @@
+{
+  "id": "ghee",
+  "name": "Ghee",
+  "proseName": "ghee",
+  "category": "fat",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "clarified",
+      "label": "Clarified",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171314",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171314/nutrients",
+      "sourceNote": "This record publishes no household portion, so the volume conversion comes from the general solid-fat density class.",
+      "nutritionPer100g": {
+        "kcal": 900,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0,
+        "sodium": 0,
+        "vitaminC": 0,
+        "saturatedFat": 60,
+        "polyunsaturatedFat": 4,
+        "transFat": 0,
+        "cholesterol": 300
+      },
+      "density": {
+        "gPerCup": 227,
+        "densitySource": "estimated",
+        "densityClass": "solid-fat"
+      }
+    }
+  ],
+  "image": "images/ingredients/ghee-thumb.webp"
+}

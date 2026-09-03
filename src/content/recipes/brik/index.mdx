@@ -1,0 +1,110 @@
+---
+title: Brik à l'Œuf
+subtitle: A whole egg dropped onto tuna and mashed potato, folded into thin malsouka pastry and deep-fried until the pastry shatters and the yolk stays soft.
+label: Tuna and Egg
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [tunisian]
+  course: [starter]
+  method: [deep-frying]
+names:
+  alsoKnownAs:
+    - { name: Brik, lang: fr }
+ingredients:
+  - id: malsouka
+    ingredientRef: malsouka
+    form: sheet
+    amount: 120
+    unit: g
+    note: 4 sheets, about 30 g each
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 240
+    unit: g
+    note: peeled
+  - id: tuna
+    ingredientRef: tuna
+    form: tinned
+    amount: 240
+    unit: g
+    note: drained
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 15
+    unit: g
+    note: chopped
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: 4 eggs, cracked in one at a time
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most frying oil stays in the pan; a shallow, hot fry of a couple of minutes per brik absorbs only a small fraction of the litre the pan needs to cover them.
+steps:
+  - { id: boil-potato, durationMin: 12, type: active, phase: prep }
+  - { id: make-filling, durationMin: 8, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 10, type: passive }
+  - { id: assemble-and-fry, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The potato and tuna filling can be made a day ahead and kept covered in the fridge; the egg is only added at the point of frying.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Brik does not reheat well — the pastry softens and the yolk overcooks. Eat it the moment it comes out of the oil.
+notes:
+  commonPitfalls:
+    - stepId: assemble-and-fry
+      text: The egg is what separates brik from a plain fried pasty. Fry it too long and the yolk sets solid; the whole dish is timed around lowering it into hot oil and lifting it out again while the yolk is still soft.
+---
+
+<Step id="boil-potato">
+  Boil the <Qty ref="potato"/> in salted water for <Dur step="boil-potato"/>, until tender
+  all the way through, then drain and mash roughly.
+</Step>
+
+<Step id="make-filling">
+  Combine the mashed potato with the <Qty ref="tuna"/>, <Qty ref="parsley"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="salt"/> and <Qty ref="pepper"/>, breaking the tuna
+  up as you mix so the filling holds together without clumping.
+</Step>
+
+<Step id="heat-oil">
+  Pour the <Qty ref="frying-oil"/> into a wide pan to a depth that will cover a folded
+  brik and heat it for <Dur step="heat-oil"/>, until a corner of pastry dropped in sizzles
+  and colours within a few seconds.
+</Step>
+
+<Step id="assemble-and-fry">
+  Lay a sheet of <Qty ref="malsouka"/> flat and spoon a portion of the filling onto one
+  half, leaving a border clear. Make a small well in the filling and crack one
+  <Qty ref="egg"/> into it whole, keeping the yolk intact. Fold the pastry over into a
+  half-moon or a triangle, pressing the border to seal, and slide it straight into the hot
+  oil. Fry for <Dur step="assemble-and-fry"/> in total across the batch, turning once,
+  until the pastry is blistered and deep gold and the egg white has just set — lift each
+  one out the moment it is coloured, so the yolk inside is still soft and runs when the
+  brik is cut. Drain briefly and serve at once.
+</Step>

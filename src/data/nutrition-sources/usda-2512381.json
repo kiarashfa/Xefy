@@ -1,0 +1,88 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2512381",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2512381/nutrients",
+  "description": "Rice, white, long grain, unenriched, raw",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "4/20/2023",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 369.637,
+    "protein": 7.039,
+    "fat": 1.033,
+    "carbs": 80.313,
+    "fiber": 0.149,
+    "calcium": 4.46,
+    "iron": 0.141,
+    "magnesium": 26.53,
+    "phosphorus": 108.2,
+    "potassium": 82.26,
+    "sodium": 0.463,
+    "zinc": 1.354,
+    "copper": 0.214,
+    "manganese": 0.981,
+    "seleniumMcg": 6.6,
+    "thiamin": 0.065,
+    "riboflavin": 0.08,
+    "niacin": 1.434,
+    "vitaminB6": 0.058
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 11.19,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 1.183,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.425,
+      "unit": "g"
+    },
+    {
+      "number": "293",
+      "name": "Total dietary fiber (AOAC 2011.25)",
+      "amount": 2.771,
+      "unit": "g"
+    },
+    {
+      "number": "293.3",
+      "name": "High Molecular Weight Dietary Fiber (HMWDF)",
+      "amount": 1.934,
+      "unit": "g"
+    },
+    {
+      "number": "293.4",
+      "name": "Low Molecular Weight Dietary Fiber (LMWDF)",
+      "amount": 0.2963,
+      "unit": "g"
+    },
+    {
+      "number": "209",
+      "name": "Starch",
+      "amount": 74.36,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 64.18,
+      "unit": "µg"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

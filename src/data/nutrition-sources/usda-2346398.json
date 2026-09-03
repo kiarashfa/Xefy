@@ -1,0 +1,123 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346398",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346398/nutrients",
+  "description": "Pineapple, raw",
+  "category": "Fruits and Fruit Juices",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-09-03",
+  "nutritionPer100g": {
+    "kcal": 54.047,
+    "protein": 0.461,
+    "fat": 0.211,
+    "carbs": 14.091,
+    "fiber": 0.935,
+    "calcium": 12.5,
+    "iron": 0.054,
+    "magnesium": 13.38,
+    "phosphorus": 5.42,
+    "potassium": 137.1,
+    "sodium": 0,
+    "zinc": 0.107,
+    "copper": 0.095,
+    "manganese": 0.866,
+    "vitaminC": 58.61,
+    "thiamin": 0.064,
+    "niacin": 0.228,
+    "vitaminB6": 0.11
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 84.99,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.07375,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.2463,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 11.42,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 3.46,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 3.907,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 4.053,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "236",
+      "name": "Citric acid",
+      "amount": 685.4,
+      "unit": "mg"
+    },
+    {
+      "number": "243",
+      "name": "Malic acid",
+      "amount": 264.5,
+      "unit": "mg"
+    },
+    {
+      "number": "245",
+      "name": "Oxalic acid",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "247",
+      "name": "Pyruvic acid",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "248",
+      "name": "Quinic acid",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

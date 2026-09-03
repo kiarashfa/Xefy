@@ -1,0 +1,100 @@
+---
+label: Levantine
+defaultServings: 24
+difficulty: Hard
+ingredients:
+  - id: filo
+    ingredientRef: filo
+    form: sheet
+    amount: 450
+    unit: g
+    note: kept covered with a damp cloth while working so it does not dry out
+  - id: pistachio
+    ingredientRef: pistachio
+    form: raw
+    amount: 300
+    unit: g
+    portions:
+      - { id: pistachio-filling, amount: 250, note: coarsely chopped }
+      - { id: pistachio-garnish, amount: 50, note: finely chopped, for the top }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 250
+    unit: g
+    note: melted, for brushing and greasing the tray
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 400
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 240
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 10
+    unit: ml
+  - id: orange-blossom-water
+    ingredientRef: orange-blossom-water
+    form: distilled
+    amount: 15
+    unit: ml
+steps:
+  - { id: make-syrup, durationMin: 8, type: active, phase: cook }
+  - { id: layer, durationMin: 30, type: active, phase: prep }
+  - { id: score, durationMin: 3, type: active, phase: prep }
+  - { id: bake, durationMin: 40, type: passive }
+  - { id: soak, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Baked and soaked baklava keeps well at room temperature, loosely covered, and is often better a day after soaking once the syrup has settled evenly through the layers.
+  freezable: true
+  freezeInstructions: Freeze the baked, unsoaked pastry in the tray; make the ater fresh and pour it over the pastry still frozen, straight into a hot oven to recrisp before serving.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: soak
+      text: Pouring cold syrup over baklava straight from a hot oven is the whole method — the temperature gap between the two is what drives the syrup into the layers without collapsing them into a soggy mass.
+  commonPitfalls:
+    - stepId: make-syrup
+      text: Boiling the orange blossom water along with the sugar cooks off its scent. It goes in only once the syrup is off the heat and no longer boiling.
+---
+
+<Step id="make-syrup">
+  Combine the <Qty ref="sugar"/>, <Qty ref="water"/> and <Qty ref="lemon-juice"/> in a
+  small pan and bring to the boil, stirring until the sugar has dissolved. Simmer for
+  <Dur step="make-syrup"/>, then take off the heat, stir in the
+  <Qty ref="orange-blossom-water"/> and set aside to cool completely while the baklava
+  layers and bakes.
+</Step>
+
+<Step id="layer">
+  Brush the base of a baking tray with the <Qty ref="butter"/>. Lay in half of the
+  <Qty ref="filo"/>, sheet by sheet, brushing each one with butter before adding the
+  next. Scatter the <Qty ref="pistachio-filling"/> evenly over the stack, then layer
+  the remaining filo on top in the same way, brushing every sheet, finishing with a
+  well-buttered top layer. Spend the whole of <Dur step="layer"/> keeping the sheets
+  flat and the butter even, since a dry patch anywhere will not soften once baked.
+</Step>
+
+<Step id="score">
+  Using a sharp knife, cut all the way through the layered pastry into even diamonds,
+  working from one edge of the tray to the other. This takes <Dur step="score"/> done
+  carefully, and it is the last chance to fix the shape of the pieces before the oven
+  sets them.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={160}/> for <Dur step="bake"/>, until the top is deep golden and the
+  edges have pulled slightly away from the tray.
+</Step>
+
+<Step id="soak">
+  Take the tray straight from the oven and immediately pour the cooled ater evenly
+  over the hot pastry, working corner to corner so every piece gets its share. Scatter
+  over the <Qty ref="pistachio-garnish"/> and leave the tray to sit undisturbed for
+  <Dur step="soak"/> before lifting the pieces out along their cut lines.
+</Step>

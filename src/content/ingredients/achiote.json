@@ -1,0 +1,63 @@
+{
+  "id": "achiote",
+  "name": "Achiote",
+  "proseName": "achiote",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground annatto seed",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171329",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171329/nutrients",
+      "sourceNote": "USDA publishes no record for annatto seed or achiote paste. Cited against paprika, the closest ground dried-pod spice it carries: both are a dried, ground fruit used the same way, in small quantities, though the achiote's colour and earthy flavour come from annatto rather than capsicum.",
+      "nutritionPer100g": {
+        "kcal": 282,
+        "protein": 14.14,
+        "fat": 12.89,
+        "carbs": 53.99,
+        "fiber": 34.9,
+        "sugars": 10.34,
+        "calcium": 229,
+        "iron": 21.14,
+        "magnesium": 178,
+        "phosphorus": 314,
+        "potassium": 2280,
+        "sodium": 68,
+        "zinc": 4.33,
+        "copper": 0.713,
+        "manganese": 1.59,
+        "seleniumMcg": 6.3,
+        "vitaminC": 0.9,
+        "thiamin": 0.33,
+        "riboflavin": 1.23,
+        "niacin": 10.06,
+        "vitaminB6": 2.141,
+        "folateMcg": 49,
+        "choline": 51.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 2463,
+        "vitaminE": 29.1,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 80.3,
+        "saturatedFat": 2.14,
+        "monounsaturatedFat": 1.695,
+        "polyunsaturatedFat": 7.766,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 4.5,
+        "gPerTsp": 1.4,
+        "densitySource": "estimated",
+        "densityClass": "ground-spice"
+      }
+    }
+  ],
+  "image": "images/ingredients/achiote-thumb.webp"
+}

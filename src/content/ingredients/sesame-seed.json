@@ -1,0 +1,62 @@
+{
+  "id": "sesame-seed",
+  "name": "Sesame Seed",
+  "proseName": "sesame seeds",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "sesame"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole, dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170150",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170150/nutrients",
+      "nutritionPer100g": {
+        "kcal": 573,
+        "protein": 17.73,
+        "fat": 49.67,
+        "carbs": 23.45,
+        "fiber": 11.8,
+        "sugars": 0.3,
+        "calcium": 975,
+        "iron": 14.55,
+        "magnesium": 351,
+        "phosphorus": 629,
+        "potassium": 468,
+        "sodium": 11,
+        "zinc": 7.75,
+        "copper": 4.082,
+        "manganese": 2.46,
+        "seleniumMcg": 34.4,
+        "vitaminC": 0,
+        "thiamin": 0.791,
+        "riboflavin": 0.247,
+        "niacin": 4.515,
+        "vitaminB6": 0.79,
+        "folateMcg": 97,
+        "choline": 25.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.25,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 6.957,
+        "monounsaturatedFat": 18.759,
+        "polyunsaturatedFat": 21.773,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 144,
+        "gPerTbsp": 9,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/sesame-seed-thumb.webp"
+}

@@ -1,0 +1,61 @@
+{
+  "id": "walnut",
+  "name": "Walnuts",
+  "proseName": "walnuts",
+  "category": "nut",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "nuts"
+  ],
+  "forms": [
+    {
+      "id": "chopped",
+      "label": "Shelled, chopped",
+      "proseQualifier": "chopped",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170187",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170187/nutrients",
+      "nutritionPer100g": {
+        "kcal": 654,
+        "protein": 15.23,
+        "carbs": 13.71,
+        "fat": 65.21,
+        "fiber": 6.7,
+        "sugars": 2.61,
+        "saturatedFat": 6.126,
+        "monounsaturatedFat": 8.933,
+        "polyunsaturatedFat": 47.174,
+        "cholesterol": 0,
+        "sodium": 2,
+        "potassium": 441,
+        "calcium": 98,
+        "iron": 2.91,
+        "magnesium": 158,
+        "phosphorus": 346,
+        "zinc": 3.09,
+        "copper": 1.586,
+        "manganese": 3.414,
+        "seleniumMcg": 4.9,
+        "vitaminAMcg": 1,
+        "vitaminC": 1.3,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.7,
+        "vitaminKMcg": 2.7,
+        "thiamin": 0.341,
+        "riboflavin": 0.15,
+        "niacin": 1.125,
+        "vitaminB6": 0.537,
+        "folateMcg": 98,
+        "vitaminB12Mcg": 0,
+        "choline": 39.2
+      },
+      "density": {
+        "gPerCup": 117,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/walnut-thumb.webp"
+}

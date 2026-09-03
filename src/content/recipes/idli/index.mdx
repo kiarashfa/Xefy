@@ -1,0 +1,99 @@
+---
+title: Idli
+subtitle: Steamed rice-and-lentil cakes from Tamil Nadu, risen entirely by their own overnight fermentation rather than any added leavener.
+description: A soaked batter of rice and split urad dal, ground to a light paste, left to ferment overnight until it doubles, then steamed in moulds into soft, faintly sour cakes.
+label: Home-style
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [indian]
+  course: [breakfast]
+  method: [fermenting, steaming]
+names:
+  notToBeConfusedWith:
+    - name: Dosa
+      note: Made from a thinner, more rice-heavy version of the same style of batter, spread on a hot griddle rather than steamed in moulds — a pancake next to idli's steamed cake.
+      slugRef: masala-dosa
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+    note: idli or another short/medium-grain rice, rinsed
+  - id: urad-dal
+    ingredientRef: urad-dal
+    form: dried
+    amount: 100
+    unit: g
+    note: rinsed
+  - id: fenugreek-seed
+    ingredientRef: fenugreek-seed
+    form: whole
+    amount: 4
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 650
+    unit: ml
+    consumedFraction: 0.25
+    consumedFractionNote: Blended across two uses. Most is soaking water, drained off before grinding and barely eaten; a smaller portion goes into the batter itself while grinding, where it is fully eaten.
+    portions:
+      - { id: soak-water, amount: 500, note: for soaking }
+      - { id: grind-water, amount: 150, note: added gradually while grinding }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: mould-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 6
+    unit: g
+    consumedFraction: 0.4
+    consumedFractionNote: Brushed onto the idli moulds to release the cakes; most of it stays behind on the mould rather than in the idli.
+    note: for greasing the moulds
+steps:
+  - { id: soak, durationMin: 240, type: passive }
+  - { id: grind, durationMin: 25, type: active, phase: prep }
+  - { id: ferment, durationMin: 720, type: passive }
+  - { id: steam, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The fermented batter keeps refrigerated for up to two days; it slows down and stops rising further in the cold.
+  freezable: true
+  freezeInstructions: Steamed idlis freeze well once fully cooled. Freeze in a single layer, then bag.
+  reheatInstructions: Resteam frozen idlis for a few minutes, or microwave with a light splash of water so they do not dry out.
+notes:
+  techniqueRationale:
+    - stepId: ferment
+      text: Wild yeasts and bacteria on the rice and dal do the leavening. There is no added yeast or raising agent anywhere in the recipe — the fermentation is the only thing that makes the batter rise.
+  commonPitfalls:
+    - stepId: grind
+      text: Grinding the dal to a genuinely light, aerated paste is what gives idli its texture; a coarse, dense dal paste ferments the same but steams into a heavy cake.
+---
+
+<Step id="soak">
+  Cover the <Qty ref="rice"/> and, in a separate bowl, the <Qty ref="urad-dal"/> and
+  <Qty ref="fenugreek-seed"/> with the <Qty ref="soak-water"/>, dividing it between the two
+  bowls. Leave both to soak at room temperature for <Dur step="soak"/>, then drain.
+</Step>
+
+<Step id="grind">
+  Grind the drained dal and fenugreek first, adding the <Qty ref="grind-water"/> a little at
+  a time, until the paste is pale, light and roughly doubled in volume. Grind the drained
+  rice separately to a slightly grainy paste, then fold the two together with the
+  <Qty ref="salt"/> in a large bowl, leaving plenty of headroom for it to rise.
+</Step>
+
+<Step id="ferment">
+  Cover the bowl loosely and leave it somewhere warm to ferment for <Dur step="ferment"/>,
+  until the batter has visibly risen and smells faintly sour and yeasty.
+</Step>
+
+<Step id="steam">
+  Brush the idli moulds with the <Qty ref="mould-oil"/> and spoon in the batter without
+  stirring it down. Steam over boiling water for <Dur step="steam"/>, until a skewer pushed
+  into a cake comes out clean. Rest for a minute before unmoulding.
+</Step>

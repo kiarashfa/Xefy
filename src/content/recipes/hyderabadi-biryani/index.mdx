@@ -1,0 +1,213 @@
+---
+title: Hyderabadi Biryani
+subtitle: Basmati and raw, spiced lamb sealed into one pot together, so the meat finishes entirely in the steam trapped under the rice rather than in a pan of its own.
+label: Kacchi
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [indian]
+  course: [main-course]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Kacchi biryani, region: Hyderabad, lang: ur }
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 450
+    unit: g
+    note: cut into large, bite-sized pieces
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 150
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 3
+    unit: g
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 6
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 250
+    unit: g
+    note: thinly sliced
+    portions:
+      - { id: onion-marinade, amount: 100, note: fried, for the marinade }
+      - { id: onion-layer, amount: 150, note: fried, for layering and garnish }
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 50
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 400
+    unit: g
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 6
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: The whole pods flavour the parboiling water and the finished rice but are picked out on the plate rather than eaten.
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 0.6
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the parboiling water.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 6
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the parboiling water.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the parboiling water.
+  - id: shahi-jeera
+    ingredientRef: caraway
+    form: whole
+    amount: 4
+    unit: g
+  - id: boil-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+    portions:
+      - { id: marinade-salt, amount: 8 }
+      - { id: rice-salt, amount: 12 }
+    consumedFraction: 0.7
+    consumedFractionNote: The rice-parboiling portion of this salt is only partly absorbed by the grains; most of it drains away with the water.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2230
+    unit: ml
+    consumedFraction: 0.03
+    consumedFractionNote: Blended across two uses. Almost all of it is parboiling water, drained off and discarded once the rice is lifted out; a small remainder blooms the saffron and is fully absorbed into the rice.
+    portions:
+      - { id: boil-water, amount: 2200, note: for parboiling the rice }
+      - { id: saffron-water, amount: 30, note: to bloom the saffron }
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.3
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 20
+    unit: g
+    note: roughly chopped
+  - id: mint
+    ingredientRef: mint
+    form: fresh
+    amount: 15
+    unit: g
+    note: leaves picked
+steps:
+  - { id: fry-onions, durationMin: 15, type: active, phase: prep }
+  - { id: mix-marinade, durationMin: 12, type: active, phase: prep }
+  - { id: marinate, durationMin: 180, type: passive }
+  - { id: parboil-rice, durationMin: 12, type: "parallel-with:marinate", phase: cook }
+  - { id: layer-and-seal, durationMin: 15, type: active, phase: prep }
+  - { id: dum-cook, durationMin: 45, type: passive }
+  - { id: rest-and-serve, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The lamb can be marinated up to a day ahead, covered and refrigerated; this only deepens the flavour before layering and sealing.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: dum-cook
+      text: In kacchi biryani the meat goes into the pot raw. It cooks entirely inside the sealed pot, in the steam given off by the rice and its own juices, rather than in a pan beforehand — the technique that separates kacchi from a pakki biryani made with pre-cooked meat.
+  commonPitfalls:
+    - stepId: parboil-rice
+      text: Rice cooked through at this stage turns to mush once it steams again over the meat. It only needs to be parboiled to about seven-tenths done, still firm at the core, so it finishes correctly during the sealed dum cook.
+---
+
+<Step id="fry-onions">
+  Heat half of the <Qty ref="ghee"/> in a wide pan and fry the <Qty ref="onion-marinade"/>
+  and <Qty ref="onion-layer"/> together over a medium heat, stirring often, for
+  <Dur step="fry-onions"/>, until deep golden-brown. Lift out and drain, keeping the
+  two portions separate.
+</Step>
+
+<Step id="mix-marinade">
+  Combine the <Qty ref="lamb"/>, <Qty ref="yoghurt"/>, <Qty ref="ginger"/>,
+  <Qty ref="garlic"/>, <Qty ref="turmeric"/>, <Qty ref="chilli"/>,
+  <Qty ref="lemon-juice"/>, the <Qty ref="marinade-salt"/> and the fried
+  <Qty ref="onion-marinade"/> in a large bowl, working the marinade into the meat
+  by hand for <Dur step="mix-marinade"/>.
+</Step>
+
+<Step id="marinate">
+  Cover the bowl and refrigerate for <Dur step="marinate"/>, so the yoghurt and
+  spices work into the meat before it goes anywhere near heat.
+</Step>
+
+<Step id="parboil-rice">
+  Rinse the <Qty ref="rice"/> until the water runs clear, then bring the
+  <Qty ref="boil-water"/> to the boil with the <Qty ref="rice-salt"/>, the
+  <Qty ref="cardamom"/>, <Qty ref="cloves"/>, <Qty ref="cinnamon"/>,
+  <Qty ref="bay-leaf"/> and <Qty ref="shahi-jeera"/>. Add the rinsed rice and boil
+  for <Dur step="parboil-rice"/>, until the grains are still firm at the core, then
+  drain.
+</Step>
+
+<Step id="layer-and-seal">
+  Spread the marinated lamb in an even layer across the base of a heavy, wide pot.
+  Mound the drained rice on top, then scatter over the fried <Qty ref="onion-layer"/>,
+  the <Qty ref="coriander"/> and the <Qty ref="mint"/>. Bloom the <Qty ref="saffron"/>
+  in the warm <Qty ref="saffron-water"/> and drizzle it over the rice along with the
+  remaining <Qty ref="ghee"/>. Seal the lid tightly, sealing the rim with a strip of
+  dough or a double layer of foil if it does not fit snugly. This takes
+  <Dur step="layer-and-seal"/>.
+</Step>
+
+<Step id="dum-cook">
+  Set the sealed pot over the lowest possible heat, ideally on top of a heat
+  diffuser, and leave it completely undisturbed for <Dur step="dum-cook"/>. The
+  meat cooks through entirely in the steam trapped under the seal.
+</Step>
+
+<Step id="rest-and-serve">
+  Break the seal away from the heat and let the biryani rest briefly before
+  turning it out, working from the bottom up so the rice, meat and crisped onion
+  come together in each portion. This takes <Dur step="rest-and-serve"/>.
+</Step>

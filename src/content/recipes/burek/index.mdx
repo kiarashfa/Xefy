@@ -1,0 +1,89 @@
+---
+title: Burek
+subtitle: Minced beef and onion rolled in filo into a tight coil and baked until the spiral shatters — in Bosnian usage the only filling allowed to keep the name "burek", while the cheese and spinach versions of the same pastry are called sirnica and zeljanica.
+label: Meat
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [balkan]
+  course: [main-course]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Bosanski burek, region: Bosnia and Herzegovina, lang: bs }
+  notToBeConfusedWith:
+    - name: Sirnica
+      note: The same coiled filo pastry filled with cheese instead of meat. In Bosnian usage it is never called burek — only the meat filling carries that name.
+    - name: Zeljanica
+      note: The same pastry filled with spinach and cheese instead of meat. Like sirnica, it has its own name in Bosnian usage and is not called burek.
+ingredients:
+  - id: filo
+    ingredientRef: filo
+    form: sheet
+    amount: 400
+    unit: g
+    note: about 10 sheets
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 500
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: finely chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 70
+    unit: g
+    note: melted, for brushing
+steps:
+  - { id: make-filling, durationMin: 10, type: active, phase: prep }
+  - { id: roll-and-coil, durationMin: 20, type: active, phase: prep }
+  - { id: bake, durationMin: 45, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The coiled, unbaked burek can be assembled a day ahead, covered and refrigerated in its tin; brush with butter and bake straight from the fridge.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked coil in its tin, wrapped well. Bake from frozen, adding roughly a third again to the baking time.
+  reheatInstructions: Reheat leftover slices in a hot oven for a few minutes to recrisp the pastry — a microwave leaves it soft.
+notes:
+  techniqueRationale:
+    - stepId: roll-and-coil
+      text: The filling is rolled inside the filo into a long log before it is coiled, rather than spread sheet by sheet, so that every slice cut from the finished spiral carries the same ratio of pastry to meat.
+  commonPitfalls:
+    - stepId: bake
+      text: Filo left uncovered while the filling is prepared dries out and cracks instead of coiling. Keep the stack under a damp cloth and work through it quickly, sheet by sheet.
+---
+
+<Step id="make-filling">
+  Combine the <Qty ref="beef"/>, <Qty ref="onion"/>, <Qty ref="salt"/> and
+  <Qty ref="pepper"/> in a bowl and mix until evenly distributed. Do not overwork it — the
+  filling should stay loose rather than pack down like a sausage mix.
+</Step>
+
+<Step id="roll-and-coil">
+  Lay out a sheet of <Qty ref="filo"/> and brush it lightly with the <Qty ref="butter"/>.
+  Spoon a strip of the filling along one long edge and roll the sheet up around it into a
+  loose log, leaving the ends open. Coil the log into a spiral in a round, buttered
+  baking tin, joining the next log to the end of the last so the spiral grows outward,
+  until the tin is filled and all the filling is used.
+</Step>
+
+<Step id="bake">
+  Brush the top of the coil with the remaining butter and bake for
+  <Dur step="bake"/>, until the filo is deeply golden and crisp and the meat inside is
+  cooked through. Rest briefly before cutting into wedges.
+</Step>

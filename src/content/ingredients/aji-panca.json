@@ -1,0 +1,53 @@
+{
+  "id": "aji-panca",
+  "name": "Ají Panca",
+  "proseName": "ají panca",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "paste",
+      "label": "Paste",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169396",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169396/nutrients",
+      "sourceNote": "USDA has no record for ají panca. This is its record for dried ancho pepper, a comparably mild, dark, fruity dried chilli; the commercial paste is this kind of pod rehydrated and blended with a little oil, so the figures here are indicative rather than specific to the product.",
+      "nutritionPer100g": {
+        "kcal": 281,
+        "protein": 11.86,
+        "fat": 8.2,
+        "carbs": 51.42,
+        "fiber": 21.6,
+        "calcium": 61,
+        "iron": 10.93,
+        "magnesium": 113,
+        "phosphorus": 201,
+        "potassium": 2411,
+        "sodium": 43,
+        "zinc": 1.42,
+        "copper": 0.508,
+        "manganese": 1.279,
+        "seleniumMcg": 2.9,
+        "vitaminC": 2,
+        "thiamin": 0.179,
+        "riboflavin": 2.255,
+        "niacin": 6.403,
+        "vitaminB6": 3.535,
+        "folateMcg": 69,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1022,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.82,
+        "monounsaturatedFat": 0.492,
+        "polyunsaturatedFat": 4.511,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "nutritionCaveat": "Cited against dried ancho pods. Commercial ají panca paste is rehydrated with water and a little oil before jarring, which dilutes it below the concentration of the whole dried pod, so these figures likely overstate the paste's true density somewhat."
+    }
+  ],
+  "image": "images/ingredients/aji-panca-thumb.webp"
+}

@@ -15,6 +15,14 @@ import { getSite } from '../lib/content/site.ts';
 const site = await getSite();
 const base = import.meta.env.BASE_URL;
 const credits = [...site.credits].sort((a, b) => a.slug.localeCompare(b.slug));
+
+/** Credit kind -> the section that actually serves that page. */
+const SECTION: Record<string, string> = {
+  recipe: 'recipes',
+  ingredient: 'ingredients',
+  component: 'techniques',
+  technique: 'techniques',
+};
 const shareAlike = credits.filter((c) => c.shareAlike).length;
 ---
 
@@ -51,7 +59,13 @@ const shareAlike = credits.filter((c) => c.shareAlike).length;
             <img src={`${base}${c.files.thumb}`} alt="" width="56" height="56" loading="lazy" />
             <div class="meta">
               <b>
-                <a href={`${base}${c.kind === 'recipe' ? 'recipes' : 'ingredients'}/${c.slug}/`}>
+                {/*
+                 * Three kinds, three routes — and Components live under
+                 * /techniques/, which serves both. A two-way ternary sent the
+                 * first Component credit to /ingredients/<slug>/, a page that
+                 * is never built; only check:site caught it.
+                 */}
+                <a href={`${base}${SECTION[c.kind] ?? 'ingredients'}/${c.slug}/`}>
                   {c.slug}
                 </a>
               </b>

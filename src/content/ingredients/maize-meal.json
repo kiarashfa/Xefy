@@ -1,0 +1,76 @@
+{
+  "id": "maize-meal",
+  "name": "Maize Meal",
+  "proseName": "maize meal",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Mielie meal",
+        "region": "South Africa",
+        "lang": "en"
+      },
+      {
+        "name": "Cornmeal",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "white",
+      "label": "White, degermed",
+      "proseQualifier": "white",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172015",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172015/nutrients",
+      "sourceNote": "USDA's degermed white cornmeal, unenriched, is the closest published match to the finely milled white maize meal sold for pap and ugali.",
+      "nutritionPer100g": {
+        "kcal": 370,
+        "protein": 7.11,
+        "carbs": 79.45,
+        "fat": 1.75,
+        "fiber": 3.9,
+        "sugars": 1.61,
+        "saturatedFat": 0.22,
+        "monounsaturatedFat": 0.39,
+        "polyunsaturatedFat": 0.828,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 7,
+        "potassium": 142,
+        "calcium": 3,
+        "iron": 1.1,
+        "magnesium": 32,
+        "phosphorus": 99,
+        "zinc": 0.66,
+        "copper": 0.076,
+        "manganese": 0.174,
+        "seleniumMcg": 10.5,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.12,
+        "vitaminKMcg": 0,
+        "thiamin": 0.14,
+        "riboflavin": 0.05,
+        "niacin": 1,
+        "vitaminB6": 0.182,
+        "folateMcg": 30,
+        "vitaminB12Mcg": 0,
+        "choline": 8.6
+      },
+      "density": {
+        "gPerCup": 157,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/maize-meal-thumb.webp"
+}

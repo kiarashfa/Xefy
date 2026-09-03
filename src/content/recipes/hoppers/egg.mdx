@@ -1,0 +1,92 @@
+---
+label: Egg
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: rice-flour
+    ingredientRef: rice-flour
+    form: white
+    amount: 300
+    unit: g
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 300
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    note: for loosening the batter
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pan-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 8
+    unit: g
+    consumedFraction: 0.4
+    consumedFractionNote: Wiped around the hot pan before each hopper; most stays on the pan surface rather than in the batter.
+    note: for greasing the pan
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: one per hopper
+steps:
+  - { id: mix-batter, durationMin: 10, type: active, phase: prep }
+  - { id: ferment, durationMin: 240, type: passive }
+  - { id: cook-base, durationMin: 20, type: active, phase: cook }
+  - { id: add-egg, durationMin: 6, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The fermented batter keeps refrigerated for up to a day; bring back to room temperature and loosen with a little water before cooking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: add-egg
+      text: Cracking the egg in before the base has set lets it run down through the batter instead of sitting in the well at the centre. It goes in only once the rim is already lacy and crisping.
+---
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="rice-flour"/>, <Qty ref="sugar"/>, <Qty ref="yeast"/> and
+  <Qty ref="salt"/> together, then whisk in the <Qty ref="coconut-milk"/> and the
+  <Qty ref="water"/> for <Dur step="mix-batter"/>, until completely smooth and about as
+  thin as pouring cream.
+</Step>
+
+<Step id="ferment">
+  Cover the bowl and leave it somewhere warm to ferment for <Dur step="ferment"/>, until
+  bubbled and risen.
+</Step>
+
+<Step id="cook-base">
+  Heat a small curved hopper pan over a high heat and wipe it with a little of the
+  <Qty ref="pan-oil"/>. Ladle in a portion of batter and immediately swirl and tilt the
+  pan so the batter climbs partway up the sides, leaving a thin lacy edge and a pool in
+  the middle. Cook uncovered for a share of <Dur step="cook-base"/>, until the rim has
+  set and started to crisp at the edges.
+</Step>
+
+<Step id="add-egg">
+  Crack the <Qty ref="egg"/> into the pool at the centre, keeping the yolk whole. Cover
+  the pan and cook for a share of <Dur step="add-egg"/>, until the white has just set
+  and the yolk is still soft. Loosen with a thin spatula and lift out whole. Repeat with
+  the remaining batter and egg, re-oiling the pan between hoppers.
+</Step>

@@ -1,0 +1,80 @@
+---
+title: Peanut Sauce
+summary: Roasted peanuts, coconut milk, palm sugar and lime, simmered to a thick, spoonable sauce for grilled skewers.
+batchLabel: About 250 g
+standalonePage: true
+ingredients:
+  - id: peanuts
+    ingredientRef: peanut
+    form: roasted
+    amount: 60
+    unit: g
+  - id: peanut-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 10
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: finely chopped
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 80
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 50
+    unit: ml
+  - id: palm-sugar
+    ingredientRef: palm-sugar
+    form: block
+    amount: 15
+    unit: g
+    note: finely grated
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 2
+    unit: g
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: grind-peanuts, durationMin: 3, type: active, phase: prep }
+  - { id: fry-garlic, durationMin: 2, type: active, phase: cook }
+  - { id: simmer-sauce, durationMin: 8, type: active, phase: cook }
+---
+
+<Step id="grind-peanuts">
+  Grind the <Qty ref="peanuts"/> to a coarse, oily meal — short of a smooth butter.
+</Step>
+
+<Step id="fry-garlic">
+  Warm the <Qty ref="peanut-oil"/> in a small pan and fry the <Qty ref="garlic"/> until
+  it just turns golden.
+</Step>
+
+<Step id="simmer-sauce">
+  Add the ground peanuts, <Qty ref="coconut-milk"/>, <Qty ref="water"/>,
+  <Qty ref="palm-sugar"/>, <Qty ref="soy-sauce"/> and <Qty ref="chilli"/>. Simmer,
+  stirring often so the peanuts do not catch on the bottom of the pan, for
+  <Dur step="simmer-sauce"/>, until thick enough to coat the back of a spoon. Take it
+  off the heat and stir in the <Qty ref="lime-juice"/> and <Qty ref="salt"/>.
+</Step>
