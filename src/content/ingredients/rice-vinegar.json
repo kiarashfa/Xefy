@@ -1,0 +1,62 @@
+{
+  "id": "rice-vinegar",
+  "name": "Rice Vinegar",
+  "proseName": "rice vinegar",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "plain",
+      "label": "Plain",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172237",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172237/nutrients",
+      "sourceNote": "USDA has no rice vinegar record. This is its record for distilled vinegar; vinegars are overwhelmingly water and acetic acid regardless of the source grain or fruit, so the substitution carries negligible error at this dish's quantities.",
+      "nutritionPer100g": {
+        "kcal": 18,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.04,
+        "fiber": 0,
+        "sugars": 0.04,
+        "calcium": 6,
+        "iron": 0.03,
+        "magnesium": 1,
+        "phosphorus": 4,
+        "potassium": 2,
+        "sodium": 2,
+        "zinc": 0.01,
+        "copper": 0.006,
+        "manganese": 0.055,
+        "seleniumMcg": 0.5,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "choline": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 14.9,
+        "gPerTsp": 5,
+        "gPerCup": 238,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/rice-vinegar-thumb.webp"
+}

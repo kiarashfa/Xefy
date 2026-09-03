@@ -1,0 +1,67 @@
+{
+  "id": "wheat-starch",
+  "name": "Wheat Starch",
+  "proseName": "wheat starch",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Wheat flour",
+        "note": "Wheat starch has had the gluten-forming protein washed out, leaving only the starch. It behaves nothing like flour and cannot substitute for it — this is what gives har gow's wrapper its translucent, non-elastic texture."
+      }
+    ]
+  },
+  "category": "starch",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "starch",
+      "label": "Wheat starch",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169698",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169698/nutrients",
+      "sourceNote": "USDA publishes no wheat starch record. This is its record for cornstarch, the nearest refined, gluten-free cooking starch it carries; both are almost pure starch and their nutrition panels are effectively interchangeable at the resolution this site reports.",
+      "nutritionPer100g": {
+        "kcal": 381,
+        "protein": 0.26,
+        "fat": 0.05,
+        "carbs": 91.27,
+        "fiber": 0.9,
+        "sugars": 0,
+        "calcium": 2,
+        "iron": 0.47,
+        "magnesium": 3,
+        "phosphorus": 13,
+        "potassium": 3,
+        "sodium": 9,
+        "zinc": 0.06,
+        "copper": 0.05,
+        "manganese": 0.053,
+        "seleniumMcg": 2.8,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "choline": 0.4,
+        "saturatedFat": 0.009,
+        "monounsaturatedFat": 0.016,
+        "polyunsaturatedFat": 0.025,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 128,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/wheat-starch-thumb.webp"
+}

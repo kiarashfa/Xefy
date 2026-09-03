@@ -1,0 +1,173 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "1999629",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/1999629/nutrients",
+  "description": "Mushrooms, white button",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "10/28/2021",
+  "retrieved": "2026-09-02",
+  "nutritionPer100g": {
+    "kcal": 24.873,
+    "protein": 2.891,
+    "fat": 0.371,
+    "carbs": 4.079,
+    "fiber": 1.717,
+    "calcium": 5.465,
+    "iron": 0.227,
+    "magnesium": 10.16,
+    "phosphorus": 93.05,
+    "potassium": 373,
+    "sodium": 6.443,
+    "zinc": 0.511,
+    "copper": 0.389,
+    "manganese": 0.054,
+    "seleniumMcg": 20.05,
+    "thiamin": 0.065,
+    "riboflavin": 0.444,
+    "niacin": 3.883,
+    "vitaminB6": 0.077,
+    "vitaminDMcg": 0.022
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 91.83,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.4625,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.8292,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 9.067,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 34.76,
+      "unit": "µg"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0.868,
+      "unit": "IU"
+    },
+    {
+      "number": "325",
+      "name": "Vitamin D2 (ergocalciferol)",
+      "amount": 0.02167,
+      "unit": "µg"
+    },
+    {
+      "number": "961",
+      "name": "Glutathione",
+      "amount": 4.3,
+      "unit": "mg"
+    },
+    {
+      "number": "638",
+      "name": "Stigmasterol",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "639",
+      "name": "Campesterol",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "641",
+      "name": "Beta-sitosterol",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "637",
+      "name": "Ergosterol",
+      "amount": 55.6,
+      "unit": "mg"
+    },
+    {
+      "number": "647",
+      "name": "Beta-sitostanol",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "649",
+      "name": "Delta-5-avenasterol",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "501",
+      "name": "Tryptophan",
+      "amount": 0.477,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 1.408,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 1.152,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 1.878,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 1.702,
+      "unit": "g"
+    },
+    {
+      "number": "506",
+      "name": "Methionine",
+      "amount": 0.37,
+      "unit": "g"
+    },
+    {
+      "number": "508",
+      "name": "Phenylalanine",
+      "amount": 1.118,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 2.483,
+      "unit": "g"
+    },
+    {
+      "number": "512",
+      "name": "Histidine",
+      "amount": 0.655,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

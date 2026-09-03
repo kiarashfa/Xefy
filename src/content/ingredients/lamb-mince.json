@@ -1,0 +1,62 @@
+{
+  "id": "lamb-mince",
+  "name": "Lamb Mince",
+  "proseName": "lamb mince",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Ground lamb",
+        "region": "North America",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174370",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174370/nutrients",
+      "nutritionPer100g": {
+        "kcal": 282,
+        "protein": 16.56,
+        "fat": 23.41,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 16,
+        "iron": 1.55,
+        "magnesium": 21,
+        "phosphorus": 157,
+        "potassium": 222,
+        "sodium": 59,
+        "zinc": 3.41,
+        "copper": 0.101,
+        "manganese": 0.019,
+        "seleniumMcg": 18.8,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0.1,
+        "vitaminE": 0.2,
+        "vitaminKMcg": 3.6,
+        "thiamin": 0.11,
+        "riboflavin": 0.21,
+        "niacin": 5.96,
+        "vitaminB6": 0.13,
+        "folateMcg": 18,
+        "vitaminB12Mcg": 2.31,
+        "choline": 69.3,
+        "saturatedFat": 10.19,
+        "monounsaturatedFat": 9.6,
+        "polyunsaturatedFat": 1.85,
+        "cholesterol": 73
+      }
+    }
+  ]
+}

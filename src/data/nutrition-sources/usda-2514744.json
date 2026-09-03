@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2514744",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2514744/nutrients",
+  "description": "Beef, ground, 80% lean meat / 20% fat, raw",
+  "category": "Beef Products",
+  "publicationDate": "4/20/2023",
+  "retrieved": "2026-09-02",
+  "nutritionPer100g": {
+    "kcal": 247.813,
+    "protein": 17.531,
+    "fat": 19.44,
+    "carbs": 0,
+    "calcium": 6.889,
+    "iron": 1.965,
+    "magnesium": 16.41,
+    "phosphorus": 144.4,
+    "potassium": 273.3,
+    "sodium": 54.94,
+    "zinc": 3.848,
+    "copper": 0.055,
+    "manganese": 0,
+    "saturatedFat": 6.845,
+    "monounsaturatedFat": 7.247,
+    "polyunsaturatedFat": 0.485,
+    "transFat": 0.7,
+    "cholesterol": 67.74
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 62.82,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.805,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.8275,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

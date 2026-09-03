@@ -1,0 +1,61 @@
+{
+  "id": "sauerkraut",
+  "name": "Sauerkraut",
+  "proseName": "sauerkraut",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "canned",
+      "label": "Canned, drained",
+      "proseQualifier": "canned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169279",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169279/nutrients",
+      "sourceNote": "USDA's only sauerkraut record is canned, solids and liquids. It is cited here for drained sauerkraut, jarred or canned, as sold for cooking rather than fresh-fermented from a barrel.",
+      "nutritionPer100g": {
+        "kcal": 19,
+        "protein": 0.91,
+        "fat": 0.14,
+        "carbs": 4.28,
+        "fiber": 2.9,
+        "sugars": 1.78,
+        "calcium": 30,
+        "iron": 1.47,
+        "magnesium": 13,
+        "phosphorus": 20,
+        "potassium": 170,
+        "sodium": 661,
+        "zinc": 0.19,
+        "copper": 0.096,
+        "manganese": 0.151,
+        "seleniumMcg": 0.6,
+        "vitaminAMcg": 1,
+        "vitaminC": 14.7,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.14,
+        "vitaminKMcg": 13,
+        "thiamin": 0.021,
+        "riboflavin": 0.022,
+        "niacin": 0.143,
+        "vitaminB6": 0.13,
+        "folateMcg": 24,
+        "vitaminB12Mcg": 0,
+        "choline": 10.4,
+        "saturatedFat": 0.034,
+        "monounsaturatedFat": 0.013,
+        "polyunsaturatedFat": 0.067,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 142,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/sauerkraut-thumb.webp"
+}

@@ -10,6 +10,7 @@
  * pending rather than left out, so the run always reports its own coverage
  * instead of quietly checking less than it appears to.
  */
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -848,6 +849,41 @@ export async function runChecks(content: Content): Promise<CheckResult> {
       dirOf(versions),
       `has ${versions.length} versions (${labels}). Tabs are only for the same name and the same core ingredient identity — confirm these are not separate dishes`,
     );
+  }
+
+  /* --- 15. An `image` naming a file that was never built ---------------
+   *
+   * `image` is the only field the site reads for a photograph, and it is a
+   * plain string, so nothing stops it being typed by hand. An author who
+   * copies the convention from a neighbour — `images/ingredients/<slug>-thumb.webp`
+   * — produces a record that looks adopted, passes every schema rule, and
+   * renders a broken image on every page that names the ingredient.
+   *
+   * This shipped once: a batch hand-wrote the field for two new ingredients
+   * without running `images.ts adopt`, and it reached CI. `check:site` caught
+   * it, but only over `dist/`, which means only in a full build. The claim is
+   * checkable here for the cost of a stat, so it is checked here.
+   *
+   * Adopting is the fix, never deleting the file's twin: `images.ts adopt`
+   * writes the renditions AND the manifest entry AND this field together.
+   */
+  const imageClaims: { file: string; image: string }[] = [
+    ...content.ingredients.map((i) => ({ file: i.file, image: i.data.image })),
+  ].filter((c): c is { file: string; image: string } => typeof c.image === 'string');
+
+  for (const { file, image } of imageClaims) {
+    const onDisk = path.join(ROOT, 'public', image);
+    if (!existsSync(onDisk)) {
+      add(
+        'image-file-missing',
+        'fail',
+        file,
+        `names the image "${image}", and no such file exists under public/. ` +
+          `Run \`node scripts/data/images.ts adopt\` rather than writing this field by hand — ` +
+          `it writes the renditions, the credit and this field together. If the record has no ` +
+          `photograph, omit the field entirely.`,
+      );
+    }
   }
 
   return { findings, pending };

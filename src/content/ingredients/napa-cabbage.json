@@ -1,0 +1,70 @@
+{
+  "id": "napa-cabbage",
+  "name": "Napa Cabbage",
+  "proseName": "napa cabbage",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Chinese leaf",
+        "region": "United Kingdom",
+        "lang": "en"
+      },
+      {
+        "name": "Pe-tsai",
+        "region": "China",
+        "lang": "zh"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169979",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169979/nutrients",
+      "sourceNote": "USDA's record for pe-tsai, the barrel-shaped Chinese cabbage sold as napa cabbage, as distinct from its pak-choi record for the looser-leaved bok choy.",
+      "nutritionPer100g": {
+        "kcal": 16,
+        "protein": 1.2,
+        "fat": 0.2,
+        "carbs": 3.23,
+        "fiber": 1.2,
+        "sugars": 1.41,
+        "calcium": 77,
+        "iron": 0.31,
+        "magnesium": 13,
+        "phosphorus": 29,
+        "potassium": 238,
+        "sodium": 9,
+        "zinc": 0.23,
+        "copper": 0.036,
+        "manganese": 0.19,
+        "seleniumMcg": 0.6,
+        "vitaminAMcg": 16,
+        "vitaminC": 27,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.12,
+        "vitaminKMcg": 42.9,
+        "thiamin": 0.04,
+        "riboflavin": 0.05,
+        "niacin": 0.4,
+        "vitaminB6": 0.232,
+        "folateMcg": 79,
+        "vitaminB12Mcg": 0,
+        "choline": 7.6,
+        "saturatedFat": 0.043,
+        "monounsaturatedFat": 0.023,
+        "polyunsaturatedFat": 0.072,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/napa-cabbage-thumb.webp"
+}

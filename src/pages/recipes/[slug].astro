@@ -135,7 +135,9 @@ const description = identity.description ?? identity.subtitle;
   <span data-pagefind-index-attrs="data-alt-spellings" data-alt-spellings={searchOnly} hidden></span>
 
   <nav class="wrap crumb" aria-label="Breadcrumb">
-    <a href={`${base}recipes/`}>Recipes</a> /
+    {/* The separator carries its own trailing space: a newline before the next
+        element collapses away, and the crumb renders as "Recipes /Chinese". */}
+    <a href={`${base}recipes/`}>Recipes</a>{' / '}
     <a href={`${base}cuisines/${identity.tags.cuisine[0]}/`}>
       {labelFor(CUISINES, identity.tags.cuisine[0])}
     </a> / {title}

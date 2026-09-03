@@ -1,0 +1,61 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2684443",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2684443/nutrients",
+  "description": "Crustaceans, shrimp, farm raised, raw",
+  "category": "Finfish and Shellfish Products",
+  "publicationDate": "4/18/2024",
+  "retrieved": "2026-09-02",
+  "nutritionPer100g": {
+    "kcal": 75.699,
+    "protein": 15.569,
+    "fat": 0.801,
+    "carbs": 0.485,
+    "calcium": 64.63,
+    "iron": 0.522,
+    "magnesium": 22.53,
+    "phosphorus": 190.6,
+    "potassium": 145.9,
+    "sodium": 474.9,
+    "zinc": 0.937,
+    "copper": 0.208,
+    "manganese": 0.029,
+    "seleniumMcg": 19.48,
+    "vitaminB12Mcg": 0.996,
+    "cholesterol": 136
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 81.28,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.491,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.865,
+      "unit": "g"
+    },
+    {
+      "number": "314",
+      "name": "Iodine, I",
+      "amount": 13.64,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0.6478,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

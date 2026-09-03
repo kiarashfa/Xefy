@@ -1,0 +1,61 @@
+{
+  "id": "ginger",
+  "name": "Ginger",
+  "proseName": "ginger",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "root",
+      "label": "Fresh root",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169231",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169231/nutrients",
+      "nutritionPer100g": {
+        "kcal": 80,
+        "protein": 1.82,
+        "fat": 0.75,
+        "carbs": 17.77,
+        "fiber": 2,
+        "sugars": 1.7,
+        "calcium": 16,
+        "iron": 0.6,
+        "magnesium": 43,
+        "phosphorus": 34,
+        "potassium": 415,
+        "sodium": 13,
+        "zinc": 0.34,
+        "copper": 0.226,
+        "manganese": 0.229,
+        "seleniumMcg": 0.7,
+        "vitaminAMcg": 0,
+        "vitaminC": 5,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.26,
+        "vitaminKMcg": 0.1,
+        "thiamin": 0.025,
+        "riboflavin": 0.034,
+        "niacin": 0.75,
+        "vitaminB6": 0.16,
+        "folateMcg": 11,
+        "vitaminB12Mcg": 0,
+        "choline": 28.8,
+        "saturatedFat": 0.203,
+        "monounsaturatedFat": 0.154,
+        "polyunsaturatedFat": 0.154,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 96,
+        "gPerTsp": 2,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/ginger-thumb.webp"
+}

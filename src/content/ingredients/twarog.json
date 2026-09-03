@@ -1,0 +1,72 @@
+{
+  "id": "twarog",
+  "name": "Twarog",
+  "proseName": "twaróg",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Farmer's cheese",
+        "region": "North America",
+        "lang": "en"
+      },
+      {
+        "name": "Quark",
+        "region": "Germany",
+        "lang": "de"
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "dry-curd",
+      "label": "Dry curd, unsalted",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172181",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172181/nutrients",
+      "sourceNote": "USDA publishes no record for twaróg, the pressed fresh curd cheese used across Polish, Ukrainian and Russian cooking. This is its record for dry-curd cottage cheese, the nearest thing it carries to a plain, unsweetened, non-creamed curd cheese, rather than the ripened or cultured cheeses that make up the rest of its dairy list.",
+      "nutritionCaveat": "Twaróg is typically moderately higher in fat than nonfat dry-curd cottage cheese, and traditionally carries little to no added salt, so these figures likely understate energy and overstate sodium.",
+      "nutritionPer100g": {
+        "kcal": 72,
+        "protein": 10.34,
+        "fat": 0.29,
+        "carbs": 6.66,
+        "fiber": 0,
+        "sugars": 1.85,
+        "calcium": 86,
+        "iron": 0.15,
+        "magnesium": 11,
+        "phosphorus": 190,
+        "potassium": 137,
+        "sodium": 372,
+        "zinc": 0.47,
+        "copper": 0.03,
+        "manganese": 0.022,
+        "seleniumMcg": 9.4,
+        "vitaminAMcg": 2,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.01,
+        "vitaminKMcg": 0,
+        "thiamin": 0.023,
+        "riboflavin": 0.226,
+        "niacin": 0.144,
+        "vitaminB6": 0.016,
+        "folateMcg": 9,
+        "vitaminB12Mcg": 0.46,
+        "choline": 17.9,
+        "saturatedFat": 0.169,
+        "monounsaturatedFat": 0.079,
+        "polyunsaturatedFat": 0.003,
+        "cholesterol": 7
+      }
+    }
+  ],
+  "image": "images/ingredients/twarog-thumb.webp"
+}

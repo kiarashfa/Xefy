@@ -50,6 +50,50 @@
         "gPerTbsp": 5.7,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "dried",
+      "label": "Dried, crumbled",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172239",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172239/nutrients",
+      "sourceNote": "USDA's spearmint record, dried, for the crumbled mint used in Turkish and Georgian cooking.",
+      "nutritionPer100g": {
+        "kcal": 285,
+        "protein": 19.93,
+        "fat": 6.03,
+        "carbs": 52.04,
+        "fiber": 29.8,
+        "calcium": 1488,
+        "iron": 87.47,
+        "magnesium": 602,
+        "phosphorus": 276,
+        "potassium": 1924,
+        "sodium": 344,
+        "zinc": 2.41,
+        "copper": 1.542,
+        "manganese": 11.482,
+        "vitaminAMcg": 529,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "thiamin": 0.288,
+        "riboflavin": 1.421,
+        "niacin": 6.561,
+        "vitaminB6": 2.579,
+        "folateMcg": 530,
+        "vitaminB12Mcg": 0,
+        "saturatedFat": 1.577,
+        "monounsaturatedFat": 0.21,
+        "polyunsaturatedFat": 3.257,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 0.5,
+        "gPerTbsp": 1.6,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/mint-thumb.webp"

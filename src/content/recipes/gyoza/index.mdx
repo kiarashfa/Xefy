@@ -1,0 +1,171 @@
+---
+title: Gyoza
+subtitle: A thin-wrapped, garlic-heavy pork and cabbage dumpling, pan-fried in a row until the bases crisp into one sheet, and served with a soy and vinegar dip.
+description: Japan's postwar adaptation of jiaozi — a thinner, more finely rolled wrapper, a garlicky pork and cabbage filling, pleated on the front edge only, and pan-fried rather than boiled.
+label: Pan-fried
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Jiaozi
+      note: The Chinese dumpling gyoza was adapted from, with a thicker hand-rolled wrapper, less garlic, a fully sealed all-round pleat, and a boiled or steamed version as common as the fried one.
+      slugRef: jiaozi
+    - name: Guotie
+      note: A related northern Chinese pan-fried dumpling, larger and pleated along a flat, unsealed base rather than gyoza's thinner, front-pleated half-moon.
+      slugRef: guotie
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 280 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    portions:
+      - { id: dough-water, amount: 150 }
+      - { id: steam-water, amount: 50, note: for steam-frying }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 2 }
+      - { id: filling-salt, amount: 4 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 250
+    unit: g
+  - id: cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: very finely chopped
+  - id: chives
+    ingredientRef: garlic-chives
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: finely minced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 6
+    unit: g
+    note: grated
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 8
+    unit: ml
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 32
+    unit: ml
+    portions:
+      - { id: filling-soy, amount: 12 }
+      - { id: dip-soy, amount: 20, note: for the dipping sauce }
+  - id: rice-vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 15
+    unit: ml
+    note: for the dipping sauce
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+    consumedFraction: 0.4
+    consumedFractionNote: Most of the oil stays in the pan or cooks off as the water boils away; a shallow-fried batch absorbs proportionally more than a deep-fried one, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: make-dip, durationMin: 2, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 35, type: active, phase: prep }
+  - { id: sear, durationMin: 3, type: active, phase: cook }
+  - { id: steam-fry, durationMin: 5, type: active, phase: cook }
+  - { id: crisp, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled dumplings freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Fry directly from frozen, adding a couple of minutes to the steam-frying step.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: roll-and-fill
+      text: Pleating only the front edge and leaving the back seam flat is what lets gyoza sit low and even in the pan, so the whole row crisps at the same rate instead of the plumper, upright shape jiaozi is folded into.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="dough-water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a shaggy dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth and firm.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="pork"/>, <Qty ref="cabbage"/>, <Qty ref="chives"/>,
+  <Qty ref="garlic"/>, <Qty ref="ginger"/>, <Qty ref="sesame-oil"/>,
+  <Qty ref="pepper"/>, <Qty ref="filling-soy"/> and <Qty ref="filling-salt"/> in a bowl
+  and stir hard in one direction until the mixture stiffens and holds together.
+</Step>
+
+<Step id="make-dip">
+  Stir the <Qty ref="dip-soy"/> and <Qty ref="rice-vinegar"/> together in a small dish.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece with the <Qty ref="flour-bench"/> underneath into a thin
+  round about <Len cm={7}/> across — thinner than a jiaozi wrapper. Spoon filling into
+  the centre, fold in half and pleat the front edge only, leaving the back seam flat, so
+  each dumpling sits low with a straight base.
+</Step>
+
+<Step id="sear">
+  Heat the <Qty ref="frying-oil"/> in a wide, lidded pan over a high heat. Stand the
+  dumplings in base down in a tight row, and sear for <Dur step="sear"/> until the bases
+  are golden.
+</Step>
+
+<Step id="steam-fry">
+  Pour in the <Qty ref="steam-water"/>, cover at once and let the dumplings steam-fry
+  for <Dur step="steam-fry"/>, until the water has all but disappeared and the wrappers
+  have turned glossy.
+</Step>
+
+<Step id="crisp">
+  Uncover and cook for a further <Dur step="crisp"/>, letting the last of the water
+  evaporate and the bases fuse into one crisp sheet. Loosen with a wide spatula and turn
+  out in one piece, base up. Serve with the dipping sauce.
+</Step>

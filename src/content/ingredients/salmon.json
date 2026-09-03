@@ -6,7 +6,9 @@
   "animalOrigin": "fish",
   "containsGluten": false,
   "containsDairy": false,
-  "allergenTags": ["fish"],
+  "allergenTags": [
+    "fish"
+  ],
   "forms": [
     {
       "id": "raw",

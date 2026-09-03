@@ -1,0 +1,66 @@
+{
+  "id": "white-pepper",
+  "name": "White Pepper",
+  "proseName": "white pepper",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Black pepper",
+        "note": "The same fruit with the dark outer skin removed before drying, giving a hotter, more fermented flavour without the outer skin's aromatic top notes. The two are not interchangeable in a dish written around white pepper's cleaner heat."
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "proseQualifier": "ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170933",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170933/nutrients",
+      "nutritionPer100g": {
+        "kcal": 296,
+        "protein": 10.4,
+        "fat": 2.12,
+        "carbs": 68.61,
+        "fiber": 26.2,
+        "calcium": 265,
+        "iron": 14.31,
+        "magnesium": 90,
+        "phosphorus": 176,
+        "potassium": 73,
+        "sodium": 5,
+        "zinc": 1.13,
+        "copper": 0.91,
+        "manganese": 4.3,
+        "seleniumMcg": 3.1,
+        "vitaminAMcg": 0,
+        "vitaminC": 21,
+        "vitaminDMcg": 0,
+        "thiamin": 0.022,
+        "riboflavin": 0.126,
+        "niacin": 0.212,
+        "vitaminB6": 0.1,
+        "folateMcg": 10,
+        "vitaminB12Mcg": 0,
+        "saturatedFat": 0.626,
+        "monounsaturatedFat": 0.789,
+        "polyunsaturatedFat": 0.616,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 7.1,
+        "gPerTsp": 2.4,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/white-pepper-thumb.webp"
+}

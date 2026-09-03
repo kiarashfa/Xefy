@@ -1,0 +1,60 @@
+{
+  "id": "mushroom",
+  "name": "Mushroom",
+  "proseName": "mushrooms",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "White, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169251",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169251/nutrients",
+      "sourceNote": "Traditional Polish cabbage-and-mushroom fillings are built on dried wild mushrooms such as porcini, which USDA does not carry a record for. This is its record for fresh white mushroom, cited here for a filling made with fresh cultivated mushroom instead, which avoids guessing at a rehydration factor for a species USDA has no data on.",
+      "nutritionPer100g": {
+        "kcal": 22,
+        "protein": 3.09,
+        "fat": 0.34,
+        "carbs": 3.26,
+        "fiber": 1,
+        "sugars": 1.98,
+        "calcium": 3,
+        "iron": 0.5,
+        "magnesium": 9,
+        "phosphorus": 86,
+        "potassium": 318,
+        "sodium": 5,
+        "zinc": 0.52,
+        "copper": 0.318,
+        "manganese": 0.047,
+        "seleniumMcg": 9.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 2.1,
+        "vitaminDMcg": 0.2,
+        "vitaminE": 0.01,
+        "vitaminKMcg": 0,
+        "thiamin": 0.081,
+        "riboflavin": 0.402,
+        "niacin": 3.607,
+        "vitaminB6": 0.104,
+        "folateMcg": 17,
+        "vitaminB12Mcg": 0.04,
+        "choline": 17.3,
+        "saturatedFat": 0.05,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0.16,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 70,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/mushroom-thumb.webp"
+}

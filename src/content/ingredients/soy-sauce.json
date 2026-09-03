@@ -1,0 +1,66 @@
+{
+  "id": "soy-sauce",
+  "name": "Soy Sauce",
+  "proseName": "soy sauce",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "soy",
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "light",
+      "label": "Light (soy and wheat)",
+      "proseQualifier": "light",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174277",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174277/nutrients",
+      "sourceNote": "USDA's record for shoyu-style soy sauce, brewed from both soy and wheat, which is the everyday light soy sauce used for seasoning rather than the wheat-free tamari style.",
+      "nutritionPer100g": {
+        "kcal": 53,
+        "protein": 8.14,
+        "fat": 0.57,
+        "carbs": 4.93,
+        "fiber": 0.8,
+        "sugars": 0.4,
+        "calcium": 33,
+        "iron": 1.45,
+        "magnesium": 74,
+        "phosphorus": 166,
+        "potassium": 435,
+        "sodium": 5493,
+        "zinc": 0.87,
+        "copper": 0.043,
+        "manganese": 1.018,
+        "seleniumMcg": 0.5,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0.033,
+        "riboflavin": 0.165,
+        "niacin": 2.196,
+        "vitaminB6": 0.148,
+        "folateMcg": 14,
+        "vitaminB12Mcg": 0,
+        "choline": 18.3,
+        "saturatedFat": 0.073,
+        "monounsaturatedFat": 0.088,
+        "polyunsaturatedFat": 0.263,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 16,
+        "gPerTsp": 5.3,
+        "gPerCup": 255,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/soy-sauce-thumb.webp"
+}

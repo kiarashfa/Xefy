@@ -1,0 +1,134 @@
+---
+title: Jiaozi
+subtitle: Pork and napa cabbage folded into a thin unleavened wheat wrapper — the everyday Chinese dumpling, boiled, steamed or pan-fried depending on the meal.
+description: The boiled version of jiaozi, the standard everyday cooking method — a cold-water dough rolled thin, filled with pork and napa cabbage, and dropped into a rolling pot.
+label: Boiled
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [boiling, steaming, pan-frying]
+names:
+  alsoKnownAs:
+    - { name: Chinese dumplings, lang: en }
+  notToBeConfusedWith:
+    - name: Guotie
+      note: A related but distinct dumpling in northern Chinese usage — smaller, pleated only along the top, and pan-fried in a single open-ended shape rather than boiled or folded into a sealed half-moon.
+      slugRef: guotie
+    - name: Gyoza
+      note: The Japanese descendant, developed from jiaozi recipes after the Second World War, with a thinner machine-rolled wrapper, a finer mince and more garlic.
+      slugRef: gyoza
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 320
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 300 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 160
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 4 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 300
+    unit: g
+  - id: cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 300
+    unit: g
+    note: finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: grated
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 40, type: active, phase: prep }
+  - { id: boil, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled dumplings freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Boil directly from frozen, adding a couple of minutes to the cooking time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: boil
+      text: Adding cold water partway through keeps the pot at a rolling simmer rather than a hard boil, which cooks the thick folded seam through without splitting the thinner wrapper around it.
+  commonPitfalls:
+    - stepId: roll-and-fill
+      text: A wrapper rolled thicker at the centre than the edge is the standard fix for a filling that tears through — the seam is already doubled by the pleat, so the centre does not need the extra thickness.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="water"/> and <Qty ref="dough-salt"/> in
+  a bowl and bring together into a shaggy dough, then turn it out and knead for
+  <Dur step="mix-dough"/> until smooth and firm.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="pork"/>, <Qty ref="cabbage"/>, <Qty ref="ginger"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="soy-sauce"/>, <Qty ref="sesame-oil"/>,
+  <Qty ref="pepper"/> and <Qty ref="filling-salt"/> in a bowl and stir hard in one
+  direction until the mixture stiffens and holds together.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece with the <Qty ref="flour-bench"/> underneath into a thin
+  round about <Len cm={8}/> across, thicker at the centre than at the rim. Spoon
+  filling into the middle of each round and pleat the edge closed into a sealed
+  half-moon, standing it upright on its base.
+</Step>
+
+<Step id="boil">
+  Drop the dumplings into a large pot of rapidly boiling water, working in batches so
+  the pot is not crowded. Once the water returns to the boil, add a splash of cold
+  water to check it, and repeat as the water threatens to boil over. Cook for
+  <Dur step="boil"/> in total, until the dumplings float and the wrappers look
+  taut and slightly translucent.
+</Step>

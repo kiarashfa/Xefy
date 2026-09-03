@@ -1,0 +1,87 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2727583",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2727583/nutrients",
+  "description": "Cabbage, napa, leaf, destemmed, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/24/2025",
+  "retrieved": "2026-09-02",
+  "nutritionPer100g": {
+    "protein": 1.064,
+    "fiber": 1.2,
+    "calcium": 35.05,
+    "iron": 0.255,
+    "magnesium": 11.26,
+    "phosphorus": 34.38,
+    "potassium": 234.6,
+    "sodium": 12.65,
+    "zinc": 0.253,
+    "copper": 0.024,
+    "manganese": 0.201,
+    "vitaminB6": 0.086
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 94.24,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.1702,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.5563,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 2.76675,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 0.03125,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 1.45,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 1.223,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0.03125,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0.03125,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 2.725,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

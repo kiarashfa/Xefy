@@ -1,0 +1,131 @@
+---
+title: Pelmeni
+subtitle: A small, thin-skinned Siberian dumpling of beef and pork, boiled and served with soured cream or melted butter.
+label: Siberian
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [russian]
+  course: [main-course]
+  method: [boiling]
+names:
+  notToBeConfusedWith:
+    - name: Pierogi
+      note: A Polish dumpling with a much larger, thicker-doughed wrapper, most often filled with potato and cheese rather than meat, and typically pan-fried after boiling.
+      slugRef: pierogi
+    - name: Mantı
+      note: A Turkish dumpling folded smaller still, filled with lamb rather than beef and pork, and served under garlic yoghurt and paprika butter rather than soured cream.
+      slugRef: manti
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 280 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 90
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 4 }
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 150
+    unit: g
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 150
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: finely grated
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 60
+    unit: g
+    note: to serve
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+    note: melted, to serve
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 10, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 35, type: active, phase: prep }
+  - { id: boil, durationMin: 7, type: active, phase: cook }
+  - { id: serve, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled pelmeni freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Boil directly from frozen, adding a couple of minutes to the boiling time.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: roll-and-fill
+      text: A ring pinched shut only at the two corners and not along the folded seam behind them comes apart in the pot — every part of the join needs sealing, not just the tips.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="egg"/>, <Qty ref="water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth and no longer tacky.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="beef"/>, <Qty ref="pork"/>, <Qty ref="onion"/>,
+  <Qty ref="black-pepper"/> and <Qty ref="filling-salt"/> in a bowl and mix by hand
+  until evenly combined.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough out on a surface dusted with the <Qty ref="flour-bench"/> and
+  cut into small rounds about <Len cm={5}/> across. Spoon a little filling into the
+  centre of each round, fold in half and pinch the curved edge fully shut into a
+  half-moon, then bring the two pointed corners around and pinch them together to
+  close the ring into the classic ear shape.
+</Step>
+
+<Step id="boil">
+  Drop the pelmeni into a large pot of well-salted, boiling water, stirring once so
+  they do not settle on the base, and cook for <Dur step="boil"/>, until they float
+  and the dough is cooked through.
+</Step>
+
+<Step id="serve">
+  Lift the pelmeni out with a slotted spoon and serve with the <Qty ref="soured-cream"/>
+  and the <Qty ref="butter"/> spooned over.
+</Step>

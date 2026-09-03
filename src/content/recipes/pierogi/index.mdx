@@ -1,0 +1,143 @@
+---
+title: Pierogi
+subtitle: A Polish boiled dumpling in an egg dough, most often filled with potato and twaróg cheese and finished in butter.
+label: Ruskie
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [polish]
+  course: [main-course]
+  method: [boiling, pan-frying]
+names:
+  alsoKnownAs:
+    - { name: Pierogi ruskie, lang: pl }
+  notToBeConfusedWith:
+    - name: Pelmeni
+      note: A much smaller, thin-skinned Russian dumpling filled only with raw beef and pork, boiled and served plain rather than pan-fried.
+      slugRef: pelmeni
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 320
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 300 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 140
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 4 }
+      - { id: filling-salt, amount: 4 }
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 500
+    unit: g
+    note: peeled
+  - id: twarog
+    ingredientRef: twarog
+    form: dry-curd
+    amount: 200
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: finely diced
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    portions:
+      - { id: onion-butter, amount: 20, note: for frying the onion }
+      - { id: serving-butter, amount: 20, note: for pan-frying }
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 60
+    unit: g
+    note: to serve
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 25, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 40, type: active, phase: prep }
+  - { id: boil, durationMin: 5, type: active, phase: cook }
+  - { id: pan-fry, durationMin: 8, type: active, phase: cook }
+  - { id: serve, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled pierogi freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Boil directly from frozen, adding a couple of minutes to the boiling time, before pan-frying as usual.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: pan-fry
+      text: Boiling cooks the dough through, but it leaves the surface pale and slightly slick; the butter afterwards is what gives pierogi their characteristic golden, faintly crisp skin.
+  commonPitfalls:
+    - stepId: roll-and-fill
+      text: An edge crimped with wet fingers seals more reliably than one folded dry — the dough needs a little moisture along the join or it springs back open in the boiling water.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="egg"/>, <Qty ref="water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth and no longer tacky.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, boil the <Qty ref="potato"/> in salted water until tender, then drain and
+  mash while still hot. Melt the <Qty ref="onion-butter"/> and cook the
+  <Qty ref="onion"/> gently until soft and golden. Combine the mashed potato, fried
+  onion, <Qty ref="twarog"/>, <Qty ref="black-pepper"/> and <Qty ref="filling-salt"/>,
+  mixing until even, then leave to cool for <Dur step="make-filling"/> in total.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough out thinly on a surface dusted with the
+  <Qty ref="flour-bench"/> and cut into rounds about <Len cm={8}/> across. Spoon
+  filling into the centre of each round, fold in half and crimp the damp edge fully
+  shut into a sealed half-moon.
+</Step>
+
+<Step id="boil">
+  Drop the pierogi into a large pot of well-salted, boiling water and cook for
+  <Dur step="boil"/>, until they float and the dough is cooked through. Lift out with
+  a slotted spoon.
+</Step>
+
+<Step id="pan-fry">
+  Melt the <Qty ref="serving-butter"/> in a wide pan over a medium-high heat and fry
+  the boiled pierogi for <Dur step="pan-fry"/>, turning once, until golden on both
+  flat sides.
+</Step>
+
+<Step id="serve">
+  Serve at once with the <Qty ref="soured-cream"/> spooned over.
+</Step>

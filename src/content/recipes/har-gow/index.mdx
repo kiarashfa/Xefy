@@ -1,0 +1,141 @@
+---
+title: Har Gow
+subtitle: Whole shrimp and bamboo shoot wrapped in a translucent starch skin, steamed until the dough turns glassy enough to show the filling through it.
+description: Cantonese teahouse har gow — a gluten-free wheat starch and tapioca starch wrapper scalded with boiling water, filled with shrimp and bamboo shoots, pleated by hand and steamed.
+label: Steamed
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [chinese]
+  course: [starter]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Crystal shrimp dumplings, region: International, lang: en }
+ingredients:
+  - id: wheat-starch
+    ingredientRef: wheat-starch
+    form: starch
+    amount: 150
+    unit: g
+  - id: tapioca-starch
+    ingredientRef: tapioca-starch
+    form: starch
+    amount: 60
+    unit: g
+    portions:
+      - { id: dough-tapioca, amount: 50 }
+      - { id: filling-tapioca, amount: 10, note: to bind the filling }
+  - id: boiling-water
+    ingredientRef: water
+    form: tap
+    amount: 180
+    unit: ml
+    note: boiled
+  - id: dough-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 2 }
+      - { id: filling-salt, amount: 3 }
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 300
+    unit: g
+    note: peeled, roughly chopped with some pieces left whole
+  - id: bamboo-shoots
+    ingredientRef: bamboo-shoots
+    form: tinned
+    amount: 60
+    unit: g
+    note: finely diced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: white part only, finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 5
+    unit: g
+    note: grated and squeezed for its juice
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 5
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: make-dough, durationMin: 12, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 15, type: passive }
+  - { id: make-filling, durationMin: 10, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 45, type: active, phase: prep }
+  - { id: steam, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled dumplings freeze well; open-freeze them on a tray until firm before bagging, since the starch wrapper is too soft to stack while raw.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Steam directly from frozen, adding a couple of minutes to the steaming time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-dough
+      text: Scalding the starches with boiling water gelatinises them immediately, which is what makes the dough translucent once cooked. A wheat-flour dough gelatinises only under sustained heat and would stay opaque.
+  commonPitfalls:
+    - stepId: roll-and-fill
+      text: Starch dough has no gluten to hold it together, so rolling it with a pin the way a wheat dough is rolled tears it. It presses flat instead, under the broad, flat side of a knife blade.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="wheat-starch"/> and <Qty ref="dough-tapioca"/> in a heatproof
+  bowl. Pour in the <Qty ref="boiling-water"/> in a steady stream while stirring hard,
+  until the mixture turns from cloudy and loose to translucent and clumped together.
+  Once cool enough to handle, knead in the <Qty ref="dough-oil"/> and
+  <Qty ref="dough-salt"/> for <Dur step="make-dough"/>, until smooth and pliable.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough tightly with a damp cloth or clingfilm — it dries and cracks fast —
+  and rest it for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="shrimp"/>, <Qty ref="bamboo-shoots"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="ginger"/>, <Qty ref="sesame-oil"/>,
+  <Qty ref="sugar"/>, <Qty ref="pepper"/>, <Qty ref="filling-salt"/> and
+  <Qty ref="filling-tapioca"/> in a bowl and stir until the mixture turns sticky and
+  holds together.
+</Step>
+
+<Step id="roll-and-fill">
+  Pinch off small, even pieces of dough, keeping the rest covered. Press each piece
+  flat under the broad side of a wide knife blade into a thin, near-transparent round
+  about <Len cm={7}/> across. Spoon filling into the centre and pleat one edge into a
+  tight fan against the other, sealing the dumpling into a crescent that stands on its
+  flat base.
+</Step>
+
+<Step id="steam">
+  Line a steamer basket so the dumplings cannot stick to the metal or bamboo directly,
+  and set them in with space between each. Steam over rapidly boiling water for
+  <Dur step="steam"/>, until the wrapper has turned fully translucent and the shrimp
+  inside is opaque and pink.
+</Step>

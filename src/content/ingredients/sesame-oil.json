@@ -1,0 +1,64 @@
+{
+  "id": "sesame-oil",
+  "name": "Sesame Oil",
+  "proseName": "sesame oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "sesame"
+  ],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "toasted",
+      "label": "Toasted",
+      "proseQualifier": "toasted",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171016",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171016/nutrients",
+      "sourceNote": "USDA carries one sesame oil record, for the general salad-and-cooking oil rather than the darker toasted style specifically; the two are compositionally the same pressed oil and differ only in roast, which does not change the nutrition panel.",
+      "nutritionPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "sodium": 0,
+        "zinc": 0,
+        "copper": 0,
+        "seleniumMcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 1.4,
+        "vitaminKMcg": 13.6,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "choline": 0.2,
+        "saturatedFat": 14.2,
+        "monounsaturatedFat": 39.7,
+        "polyunsaturatedFat": 41.7,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 13.6,
+        "gPerTsp": 4.5,
+        "gPerCup": 218,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/sesame-oil-thumb.webp"
+}

@@ -1,0 +1,124 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346401",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346401/nutrients",
+  "description": "Potatoes, russet, without skin, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-09-02",
+  "nutritionPer100g": {
+    "kcal": 80.952,
+    "protein": 2.274,
+    "fat": 0.36,
+    "carbs": 17.771,
+    "calcium": 7.801,
+    "iron": 0.384,
+    "magnesium": 25.64,
+    "phosphorus": 55.19,
+    "potassium": 450.1,
+    "sodium": 2.743,
+    "zinc": 0.378,
+    "copper": 0.091,
+    "manganese": 0.152,
+    "seleniumMcg": 0,
+    "vitaminC": 10.9,
+    "thiamin": 0.074,
+    "niacin": 1.501,
+    "vitaminB6": 0.157,
+    "vitaminKMcg": 1.5
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 78.61,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.3638,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.985,
+      "unit": "g"
+    },
+    {
+      "number": "293",
+      "name": "Total dietary fiber (AOAC 2011.25)",
+      "amount": 14.93,
+      "unit": "g"
+    },
+    {
+      "number": "293.3",
+      "name": "High Molecular Weight Dietary Fiber (HMWDF)",
+      "amount": 13.83,
+      "unit": "g"
+    },
+    {
+      "number": "293.4",
+      "name": "Low Molecular Weight Dietary Fiber (LMWDF)",
+      "amount": 1.091,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 0.5263,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 0.0725,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 0.1613,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 0.2925,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 4.869,
+      "unit": "µg"
+    },
+    {
+      "number": "429",
+      "name": "Vitamin K (Dihydrophylloquinone)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "428",
+      "name": "Vitamin K (Menaquinone-4)",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

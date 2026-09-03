@@ -1,0 +1,114 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346387",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346387/nutrients",
+  "description": "Cream, sour, full fat",
+  "category": "Dairy and Egg Products",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-09-02",
+  "nutritionPer100g": {
+    "kcal": 192.744,
+    "protein": 3.071,
+    "fat": 17.99,
+    "carbs": 5.556,
+    "calcium": 107.2,
+    "iron": 0,
+    "magnesium": 10.11,
+    "phosphorus": 102,
+    "potassium": 153.8,
+    "sodium": 50.04,
+    "zinc": 0.392,
+    "copper": 0,
+    "manganese": 0,
+    "thiamin": 0.043,
+    "niacin": 0.1,
+    "vitaminB6": 0.039,
+    "vitaminB12Mcg": 0.062,
+    "vitaminKMcg": 1.2,
+    "saturatedFat": 10.7,
+    "monounsaturatedFat": 3.805,
+    "cholesterol": 52.69
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 72.58,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.4813,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.8038,
+      "unit": "g"
+    },
+    {
+      "number": "314",
+      "name": "Iodine, I",
+      "amount": 32.75,
+      "unit": "µg"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 1.913,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 151.5,
+      "unit": "µg"
+    },
+    {
+      "number": "429",
+      "name": "Vitamin K (Dihydrophylloquinone)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "428",
+      "name": "Vitamin K (Menaquinone-4)",
+      "amount": 5.2,
+      "unit": "µg"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.5474,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 1.746,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 5.044,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 1.605,
+      "unit": "g"
+    },
+    {
+      "number": "675",
+      "name": "PUFA 18:2 n-6 c,c",
+      "amount": 0.3849,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

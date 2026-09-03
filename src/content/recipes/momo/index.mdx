@@ -1,0 +1,138 @@
+---
+title: Momo
+subtitle: A Nepali dumpling of spiced minced meat gathered into a pleated pouch and steamed, eaten plain or set in a sesame-tomato broth.
+label: Steamed
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [nepali]
+  course: [main-course]
+  method: [steaming]
+names:
+  notToBeConfusedWith:
+    - name: Momo (Tibetan)
+      note: A closely related dumpling from the same family, usually filled with yak or beef and served without the sesame-tomato jhol that distinguishes the Nepali dish's soup version.
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 280
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 260 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 140
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 5 }
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 300
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 120
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+    note: finely minced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: grated
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: finely chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+steps:
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 40, type: active, phase: prep }
+  - { id: steam, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled momo freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Steam directly from frozen, adding a few minutes to the cooking time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-filling
+      text: Beef stands in here for the buffalo mince momo are traditionally made with in Nepal, which is not a food USDA publishes nutrition data for; beef is the common substitute outside the region and elsewhere in the region's own restaurants.
+  commonPitfalls:
+    - stepId: roll-and-fill
+      text: Pleats gathered too loosely let the twisted top spring open in the steamer, so the filling's juices leak out into the basket instead of staying inside the pouch.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="water"/> and <Qty ref="dough-salt"/> in
+  a bowl and bring together into a firm dough, then turn it out and knead for
+  <Dur step="mix-dough"/> until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="beef"/>, <Qty ref="onion"/>, <Qty ref="garlic"/>,
+  <Qty ref="ginger"/>, <Qty ref="spring-onion"/>, <Qty ref="coriander"/>,
+  <Qty ref="cumin"/>, <Qty ref="black-pepper"/>, <Qty ref="sesame-oil"/> and
+  <Qty ref="filling-salt"/> in a bowl and mix by hand until evenly combined and
+  slightly sticky.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece with the <Qty ref="flour-bench"/> underneath into a thin
+  round about <Len cm={7}/> across, thicker at the centre than at the rim. Spoon
+  filling into the middle of each round, then gather the edge up around it in fine
+  pleats, twisting them together at the top to seal the pouch shut.
+</Step>
+
+<Step id="steam">
+  Set the momo into a well-oiled or lined steamer basket, leaving space between each,
+  and steam over rapidly boiling water for <Dur step="steam"/>, until the wrappers turn
+  glossy and the filling is cooked through.
+</Step>

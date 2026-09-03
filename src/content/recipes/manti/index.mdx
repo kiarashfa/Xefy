@@ -1,0 +1,160 @@
+---
+title: Mantı
+subtitle: Tiny lamb dumplings folded small enough to fit dozens on a spoon, boiled and served under garlic yoghurt and paprika butter.
+description: Kayseri-style mantı — an egg dough cut into small squares, filled with spiced lamb and onion, boiled, and finished with garlic yoghurt, browned paprika butter and dried mint.
+label: Kayseri
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [turkish]
+  course: [main-course]
+  method: [boiling]
+names:
+  notToBeConfusedWith:
+    - name: Central Asian manti
+      note: The large, hand-sized steamed dumpling found across Central Asia. Kayseri mantı is boiled rather than steamed, folded closed rather than left open, and a fraction of the size.
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 280 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 3 }
+      - { id: sauce-salt, amount: 1 }
+  - id: lamb
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 250
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: grated
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 300
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 3
+    unit: g
+  - id: mint
+    ingredientRef: mint
+    form: dried
+    amount: 1
+    unit: g
+    note: for scattering
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 10, type: "parallel-with:rest-dough", phase: prep }
+  - { id: make-sauce, durationMin: 5, type: "parallel-with:rest-dough", phase: prep }
+  - { id: shape, durationMin: 60, type: active, phase: prep }
+  - { id: boil, durationMin: 10, type: active, phase: cook }
+  - { id: brown-butter, durationMin: 4, type: "parallel-with:boil", phase: cook }
+  - { id: assemble, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled mantı freeze well; open-freeze them on a tray until firm before bagging, since the tiny shapes stick together and to each other while raw.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Boil directly from frozen, adding a couple of minutes to the cooking time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: Kayseri mantı is judged on scale as much as flavour — folding it this small is slower, but it is what lets a single spoonful hold dozens of dumplings under the sauce rather than two or three.
+  commonPitfalls:
+    - stepId: boil
+      text: A hard, rolling boil knocks the tiny dumplings against each other and against the pot, splitting the thin corners open. It wants a gentle, steady simmer instead.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="egg"/>, <Qty ref="water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="lamb"/>, <Qty ref="onion"/>,
+  <Qty ref="black-pepper"/>, <Qty ref="parsley"/> and <Qty ref="filling-salt"/> in a
+  bowl and mix until evenly combined.
+</Step>
+
+<Step id="make-sauce">
+  Whisk the <Qty ref="yoghurt"/>, <Qty ref="garlic"/> and <Qty ref="sauce-salt"/>
+  together and set aside at room temperature.
+</Step>
+
+<Step id="shape">
+  Roll the rested dough out on a surface dusted with the <Qty ref="flour-bench"/> until
+  paper-thin, and cut it into small squares no larger than a fingernail, about
+  <Len cm={2}/> across. Place a speck of filling in the centre of each square and pinch
+  all four corners up to seal, forming a small closed pouch. Set the shaped mantı close
+  together on a floured tray as you go.
+</Step>
+
+<Step id="boil">
+  Drop the mantı into a large pot of gently boiling water and cook for
+  <Dur step="boil"/>, until they float and the dough is cooked through.
+</Step>
+
+<Step id="brown-butter">
+  Meanwhile, melt the <Qty ref="butter"/> in a small pan and stir in the
+  <Qty ref="paprika"/>. Cook for <Dur step="brown-butter"/>, until it foams and smells
+  toasted, then take off the heat.
+</Step>
+
+<Step id="assemble">
+  Spread the yoghurt sauce over warmed plates. Lift the mantı straight from the pot on
+  top, drizzle the paprika butter over, and scatter with the <Qty ref="mint"/>.
+</Step>

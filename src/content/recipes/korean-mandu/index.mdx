@@ -1,0 +1,142 @@
+---
+title: Mandu
+subtitle: A Korean dumpling of pork, tofu and garlic chives in a wheat wrapper, steamed or fried depending on the meal.
+label: Steamed
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [korean]
+  course: [main-course]
+  method: [steaming, pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Kimchi mandu
+      note: A variant filled with fermented kimchi alongside the pork and tofu, giving a sour, spicy filling quite different from the plain version described here.
+    - name: Jiaozi
+      note: The Chinese dumpling mandu is descended from — a thinner cold-water wrapper and a pork-and-cabbage filling with no tofu or garlic chives.
+      slugRef: jiaozi
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 320
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 300 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 160
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 4 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 280
+    unit: g
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 180
+    unit: g
+    note: pressed and crumbled
+  - id: cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: finely chopped
+  - id: chives
+    ingredientRef: garlic-chives
+    form: fresh
+    amount: 40
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely minced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: grated
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 12
+    unit: ml
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 40, type: active, phase: prep }
+  - { id: steam, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled dumplings freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Steam directly from frozen, adding a few minutes to the cooking time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-filling
+      text: Pressing the tofu before it goes in matters more than it looks — a wet curd loosens the whole filling and the dumplings split at the seam as the water is driven off by the steam.
+  commonPitfalls:
+    - stepId: steam
+      text: Dumplings set straight on the metal or bamboo of a steamer stick fast and tear when lifted. A base of cabbage leaf, baking paper or an oiled plate keeps them free.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="water"/> and <Qty ref="dough-salt"/> in
+  a bowl and bring together into a shaggy dough, then turn it out and knead for
+  <Dur step="mix-dough"/> until smooth and firm.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="pork"/>, <Qty ref="tofu"/>, <Qty ref="cabbage"/>,
+  <Qty ref="chives"/>, <Qty ref="garlic"/>, <Qty ref="ginger"/>,
+  <Qty ref="sesame-oil"/>, <Qty ref="soy-sauce"/>, <Qty ref="pepper"/> and
+  <Qty ref="filling-salt"/> in a bowl and mix by hand until evenly combined and the
+  mixture holds together.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece with the <Qty ref="flour-bench"/> underneath into a thin
+  round about <Len cm={8}/> across, thicker at the centre than at the rim. Spoon
+  filling into the middle of each round and pleat the edge closed into a sealed
+  half-moon, standing it upright on its base.
+</Step>
+
+<Step id="steam">
+  Line a steamer basket so the dumplings cannot touch the metal or bamboo directly,
+  and set them in with space between each. Steam over rapidly boiling water for
+  <Dur step="steam"/>, until the wrappers turn glossy and slightly translucent and the
+  filling is cooked through.
+</Step>

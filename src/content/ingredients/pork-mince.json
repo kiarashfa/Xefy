@@ -1,0 +1,64 @@
+{
+  "id": "pork-mince",
+  "name": "Pork Mince",
+  "proseName": "pork mince",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Ground pork",
+        "region": "North America",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, 84% lean",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168372",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168372/nutrients",
+      "sourceNote": "USDA's record for pork ground at 84% lean / 16% fat, a representative fattiness for mince bought for dumpling filling rather than the leanest grades sold for other uses.",
+      "nutritionPer100g": {
+        "kcal": 218,
+        "protein": 17.99,
+        "fat": 16,
+        "carbs": 0.44,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 15,
+        "iron": 0.88,
+        "magnesium": 16,
+        "phosphorus": 161,
+        "potassium": 244,
+        "sodium": 68,
+        "zinc": 1.91,
+        "copper": 0.032,
+        "manganese": 0.01,
+        "seleniumMcg": 30.2,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0.4,
+        "vitaminE": 0.45,
+        "vitaminKMcg": 0,
+        "thiamin": 0.332,
+        "riboflavin": 0.338,
+        "niacin": 6.416,
+        "vitaminB6": 0.551,
+        "folateMcg": 2,
+        "vitaminB12Mcg": 0.73,
+        "choline": 61.5,
+        "saturatedFat": 4.93,
+        "monounsaturatedFat": 6.68,
+        "polyunsaturatedFat": 2.05,
+        "transFat": 0.124,
+        "cholesterol": 68
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "beef-mince",
+  "name": "Beef Mince",
+  "proseName": "beef mince",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Ground beef",
+        "region": "North America",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, 80% lean",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174036",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174036/nutrients",
+      "sourceNote": "USDA's record for beef ground at 80% lean / 20% fat, a representative fattiness for mince bought for dumpling filling rather than the leanest grades sold for other uses.",
+      "nutritionPer100g": {
+        "kcal": 254,
+        "protein": 17.17,
+        "fat": 20,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 18,
+        "iron": 1.94,
+        "magnesium": 17,
+        "phosphorus": 158,
+        "potassium": 270,
+        "sodium": 66,
+        "zinc": 4.18,
+        "copper": 0.061,
+        "manganese": 0.01,
+        "seleniumMcg": 15,
+        "vitaminC": 0,
+        "thiamin": 0.043,
+        "riboflavin": 0.151,
+        "niacin": 4.227,
+        "vitaminB6": 0.323,
+        "folateMcg": 7,
+        "choline": 56.4,
+        "vitaminB12Mcg": 2.14,
+        "vitaminAMcg": 4,
+        "vitaminE": 0.17,
+        "vitaminDMcg": 0.1,
+        "vitaminKMcg": 1.8,
+        "saturatedFat": 7.581,
+        "monounsaturatedFat": 8.848,
+        "polyunsaturatedFat": 0.521,
+        "transFat": 1.18,
+        "cholesterol": 71
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-mince-thumb.webp"
+}

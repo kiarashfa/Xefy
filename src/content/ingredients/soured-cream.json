@@ -1,0 +1,77 @@
+{
+  "id": "soured-cream",
+  "name": "Soured Cream",
+  "proseName": "soured cream",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Sour cream",
+        "region": "North America",
+        "lang": "en"
+      },
+      {
+        "name": "Smetana",
+        "region": "Russia",
+        "lang": "ru"
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "cultured",
+      "label": "Cultured, full fat",
+      "proseQualifier": "cultured",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171257",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171257/nutrients",
+      "nutritionPer100g": {
+        "kcal": 198,
+        "protein": 2.44,
+        "fat": 19.35,
+        "carbs": 4.63,
+        "fiber": 0,
+        "sugars": 3.41,
+        "calcium": 101,
+        "iron": 0.07,
+        "magnesium": 10,
+        "phosphorus": 76,
+        "potassium": 125,
+        "sodium": 31,
+        "zinc": 0.33,
+        "copper": 0.018,
+        "manganese": 0.015,
+        "seleniumMcg": 3.7,
+        "vitaminAMcg": 124,
+        "vitaminC": 0.9,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.38,
+        "vitaminKMcg": 1.5,
+        "thiamin": 0.02,
+        "riboflavin": 0.168,
+        "niacin": 0.093,
+        "vitaminB6": 0.041,
+        "folateMcg": 6,
+        "vitaminB12Mcg": 0.21,
+        "choline": 19.2,
+        "saturatedFat": 10.14,
+        "monounsaturatedFat": 4.594,
+        "polyunsaturatedFat": 0.8,
+        "transFat": 0.796,
+        "cholesterol": 59
+      },
+      "density": {
+        "gPerCup": 230,
+        "gPerTbsp": 12,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/soured-cream-thumb.webp"
+}

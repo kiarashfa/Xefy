@@ -1,0 +1,126 @@
+---
+title: Khinkali
+subtitle: A thick-doughed Georgian dumpling gathered into a twisted topknot, boiled so the beef and pork filling forms its own broth inside.
+description: Beef and pork mince loosened with water and bound with onion, garlic, coriander and a lot of black pepper, sealed into a hand-pleated topknot and boiled, so the wrapper holds a mouthful of broth around the meat.
+label: Restaurant-style
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [georgian]
+  course: [main-course]
+  method: [boiling]
+names:
+  notToBeConfusedWith:
+    - name: Xiao long bao
+      note: A steamed Chinese dumpling whose broth comes from a jellied aspic that melts as it steams, in a thin, delicate wrapper eaten in one bite with a spoon. Khinkali is boiled rather than steamed, its broth comes from water worked directly into the raw filling rather than a set aspic, and its thick topknot is deliberately left uneaten.
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 340
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 320 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 250
+    unit: ml
+    portions:
+      - { id: dough-water, amount: 150 }
+      - { id: filling-water, amount: 100, note: worked into the filling to form broth }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 9
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 4 }
+      - { id: filling-salt, amount: 5 }
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 180
+    unit: g
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 180
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 120
+    unit: g
+    note: finely grated
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+    note: finely minced
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 12
+    unit: g
+    note: finely chopped
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 4
+    unit: g
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: shape, durationMin: 45, type: active, phase: prep }
+  - { id: boil, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled khinkali freeze well; open-freeze them on a tray until firm before bagging so the topknots do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Boil directly from frozen, adding a couple of minutes to the boiling time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-filling
+      text: Working water into the raw mince rather than adding a stock later is what fills the sealed dumpling with broth as it boils — a drier filling gives a dumpling with no soup inside.
+  commonPitfalls:
+    - stepId: shape
+      text: A twisted seam that is not pinched fully shut lets the broth leak out into the pot rather than staying inside the wrapper.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="dough-water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth and no longer tacky.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="beef"/>, <Qty ref="pork"/>, <Qty ref="onion"/>,
+  <Qty ref="garlic"/>, <Qty ref="coriander"/>, <Qty ref="black-pepper"/> and
+  <Qty ref="filling-salt"/> in a bowl. Work in the <Qty ref="filling-water"/> a little
+  at a time, mixing until the filling turns loose and wet rather than staying stiff.
+</Step>
+
+<Step id="shape">
+  Roll the rested dough out on a surface dusted with the <Qty ref="flour-bench"/> and
+  cut into rounds about <Len cm={10}/> across. Spoon filling into the centre of each
+  round, then gather the edge up around it in narrow pleats, twisting the pleats
+  together at the top into a knotted handle and pinching the join fully shut. Set the
+  shaped khinkali on a floured tray, knot up, as you go.
+</Step>
+
+<Step id="boil">
+  Drop the khinkali into a large pot of well-salted, gently boiling water, stirring
+  once so they do not settle on the base, and cook for <Dur step="boil"/>, until they
+  float and the dough is cooked through. Lift out with a slotted spoon and serve at
+  once, holding each by its knotted top to eat and setting the knot itself aside
+  uneaten.
+</Step>

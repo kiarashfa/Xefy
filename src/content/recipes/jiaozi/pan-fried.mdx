@@ -1,0 +1,135 @@
+---
+label: Pan-fried
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 320
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 300 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 220
+    unit: ml
+    portions:
+      - { id: dough-water, amount: 160 }
+      - { id: steam-water, amount: 60, note: for steam-frying }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 3 }
+      - { id: filling-salt, amount: 4 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 300
+    unit: g
+  - id: cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 300
+    unit: g
+    note: finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: grated
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: frying-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+    consumedFraction: 0.4
+    consumedFractionNote: Most of the oil stays in the pan or cooks off as the water boils away; a shallow-fried batch absorbs proportionally more than a deep-fried one, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 40, type: active, phase: prep }
+  - { id: sear, durationMin: 3, type: active, phase: cook }
+  - { id: steam-fry, durationMin: 6, type: active, phase: cook }
+  - { id: crisp, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled dumplings freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Fry directly from frozen, adding a couple of minutes to the steam-frying step.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: sear
+      text: A cold pan or a low flame lets the wrappers sit in oil instead of searing, so the base turns pale and greasy rather than crisp. The pan needs to be properly hot before the dumplings go in.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="dough-water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a shaggy dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth and firm.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="pork"/>, <Qty ref="cabbage"/>, <Qty ref="ginger"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="soy-sauce"/>, <Qty ref="sesame-oil"/>,
+  <Qty ref="pepper"/> and <Qty ref="filling-salt"/> in a bowl and stir hard in one
+  direction until the mixture stiffens and holds together.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough into a log and pinch off small, even pieces, keeping the rest
+  covered. Roll each piece with the <Qty ref="flour-bench"/> underneath into a thin
+  round about <Len cm={8}/> across, thicker at the centre than at the rim. Spoon
+  filling into the middle of each round and pleat the edge closed into a sealed
+  half-moon, standing it upright on its base.
+</Step>
+
+<Step id="sear">
+  Heat the <Qty ref="frying-oil"/> in a wide, lidded pan over a high heat. Stand the
+  dumplings in, base down, packed close together, and sear for <Dur step="sear"/>
+  until the bottoms are golden.
+</Step>
+
+<Step id="steam-fry">
+  Pour in the <Qty ref="steam-water"/>, cover at once and let the dumplings steam-fry
+  for <Dur step="steam-fry"/>, until the water has all but disappeared and the wrappers
+  have turned from opaque to glossy.
+</Step>
+
+<Step id="crisp">
+  Uncover and cook for a further <Dur step="crisp"/>, letting the last of the water
+  evaporate and the base recrisp. Loosen with a spatula and turn out base-up.
+</Step>

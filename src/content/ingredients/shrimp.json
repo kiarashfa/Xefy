@@ -1,0 +1,52 @@
+{
+  "id": "shrimp",
+  "name": "Shrimp",
+  "proseName": "shrimp",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Prawns",
+        "region": "United Kingdom",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "shellfish",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "shellfish"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, peeled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175179",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175179/nutrients",
+      "nutritionPer100g": {
+        "kcal": 85,
+        "protein": 20.1,
+        "fat": 0.51,
+        "carbs": 0,
+        "fiber": 0,
+        "calcium": 64,
+        "iron": 0.52,
+        "magnesium": 35,
+        "phosphorus": 214,
+        "potassium": 264,
+        "sodium": 119,
+        "zinc": 1.34,
+        "copper": 0.391,
+        "manganese": 0.033,
+        "saturatedFat": 0.101,
+        "monounsaturatedFat": 0.086,
+        "polyunsaturatedFat": 0.152,
+        "transFat": 0.004,
+        "cholesterol": 161
+      }
+    }
+  ],
+  "image": "images/ingredients/shrimp-thumb.webp"
+}

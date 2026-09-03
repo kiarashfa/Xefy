@@ -1,0 +1,127 @@
+---
+label: Meat
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 320
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 300 }
+      - { id: flour-bench, amount: 20, note: for rolling }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 140
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: dough-salt, amount: 4 }
+      - { id: filling-salt, amount: 4 }
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 350
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: finely diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: finely minced
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    portions:
+      - { id: filling-butter, amount: 20, note: for browning the filling }
+      - { id: serving-butter, amount: 20, note: for pan-frying }
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 60
+    unit: g
+    note: to serve
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: make-filling, durationMin: 20, type: "parallel-with:rest-dough", phase: prep }
+  - { id: roll-and-fill, durationMin: 40, type: active, phase: prep }
+  - { id: boil, durationMin: 5, type: active, phase: cook }
+  - { id: pan-fry, durationMin: 8, type: active, phase: cook }
+  - { id: serve, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The uncooked, filled pierogi freeze well; open-freeze them on a tray until firm before bagging so they do not stick together.
+  freezable: true
+  freezeInstructions: Freeze on a floured tray until solid, then transfer to a bag. Boil directly from frozen, adding a couple of minutes to the boiling time, before pan-frying as usual.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: make-filling
+      text: Filling built from meat that is still pink in the middle keeps cooking unevenly through the boil; the pork needs to be fully browned and cooled before it goes into the dough.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="egg"/>, <Qty ref="water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, then turn it
+  out and knead for <Dur step="mix-dough"/> until smooth and no longer tacky.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/> at room temperature, until it
+  has relaxed and no longer springs back when pressed.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, melt the <Qty ref="filling-butter"/> in a pan and cook the
+  <Qty ref="onion"/> until soft. Add the <Qty ref="pork"/> and <Qty ref="garlic"/> and
+  cook, breaking up the meat, until browned through and no liquid remains. Season with
+  the <Qty ref="black-pepper"/> and <Qty ref="filling-salt"/>, then spread out and
+  leave to cool for the remainder of <Dur step="make-filling"/>.
+</Step>
+
+<Step id="roll-and-fill">
+  Roll the rested dough out thinly on a surface dusted with the
+  <Qty ref="flour-bench"/> and cut into rounds about <Len cm={8}/> across. Spoon
+  filling into the centre of each round, fold in half and crimp the damp edge fully
+  shut into a sealed half-moon.
+</Step>
+
+<Step id="boil">
+  Drop the pierogi into a large pot of well-salted, boiling water and cook for
+  <Dur step="boil"/>, until they float and the dough is cooked through. Lift out with
+  a slotted spoon.
+</Step>
+
+<Step id="pan-fry">
+  Melt the <Qty ref="serving-butter"/> in a wide pan over a medium-high heat and fry
+  the boiled pierogi for <Dur step="pan-fry"/>, turning once, until golden on both
+  flat sides.
+</Step>
+
+<Step id="serve">
+  Serve at once with the <Qty ref="soured-cream"/> spooned over.
+</Step>

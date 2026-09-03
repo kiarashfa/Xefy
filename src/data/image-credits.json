@@ -46,6 +46,29 @@
     }
   },
   {
+    "slug": "bamboo-shoots",
+    "kind": "ingredient",
+    "alt": "Peeled fresh bamboo shoots on a market stall",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABamboo_Shoot.jpg",
+    "title": "File:Bamboo Shoot.jpg",
+    "author": "Gaurav Dhwaj Khadka",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/ingredients/bamboo-shoots.webp",
+      "card": "images/ingredients/bamboo-shoots-card.webp",
+      "thumb": "images/ingredients/bamboo-shoots-thumb.webp"
+    }
+  },
+  {
     "slug": "basil",
     "kind": "ingredient",
     "alt": "Fresh basil, its broad leaves growing in opposite pairs",
@@ -89,6 +112,29 @@
       "hero": "images/ingredients/bean-sprouts.webp",
       "card": "images/ingredients/bean-sprouts-card.webp",
       "thumb": "images/ingredients/bean-sprouts-thumb.webp"
+    }
+  },
+  {
+    "slug": "beef-mince",
+    "kind": "ingredient",
+    "alt": "Raw minced beef on a white plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHackfleisch-1.jpg",
+    "title": "File:Hackfleisch-1.jpg",
+    "author": "No machine-readable author provided. Rainer Zenz assumed (based on copyright claims).",
+    "credit": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2905,
+    "originalHeight": 2211,
+    "files": {
+      "hero": "images/ingredients/beef-mince.webp",
+      "card": "images/ingredients/beef-mince-card.webp",
+      "thumb": "images/ingredients/beef-mince-thumb.webp"
     }
   },
   {
@@ -341,6 +387,29 @@
     }
   },
   {
+    "slug": "dill",
+    "kind": "ingredient",
+    "alt": "Feathery dill fronds on the growing plant",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AStarr-081031-0429-Anethum_graveolens-leaves-Makawao-Maui_(24926745675).jpg",
+    "title": "File:Starr-081031-0429-Anethum graveolens-leaves-Makawao-Maui (24926745675).jpg",
+    "author": "Forest and Kim Starr",
+    "credit": "starr-081031-0429-Anethum_graveolens-leaves-Makawao-Maui",
+    "license": "CC BY 3.0 us",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2112,
+    "originalHeight": 2816,
+    "files": {
+      "hero": "images/ingredients/dill.webp",
+      "card": "images/ingredients/dill-card.webp",
+      "thumb": "images/ingredients/dill-thumb.webp"
+    }
+  },
+  {
     "slug": "dried-chilli",
     "kind": "ingredient",
     "alt": "Coarsely ground dried red chilli flakes with their seeds, and a metal scoop",
@@ -520,6 +589,29 @@
       "hero": "images/ingredients/garlic-chives.webp",
       "card": "images/ingredients/garlic-chives-card.webp",
       "thumb": "images/ingredients/garlic-chives-thumb.webp"
+    }
+  },
+  {
+    "slug": "ginger",
+    "kind": "ingredient",
+    "alt": "Two knobs of fresh ginger root on a dark board",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALiat_Portal_for_Foodie_Disorder_-_Fresh_ginger_root_from_San_Francisco_farmers_market.jpg",
+    "title": "File:Liat Portal for Foodie Disorder - Fresh ginger root from San Francisco farmers market.jpg",
+    "author": "HaJunkiyada",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/ingredients/ginger.webp",
+      "card": "images/ingredients/ginger-card.webp",
+      "thumb": "images/ingredients/ginger-thumb.webp"
     }
   },
   {
@@ -730,6 +822,52 @@
     }
   },
   {
+    "slug": "mushroom",
+    "kind": "ingredient",
+    "alt": "Raw white button mushrooms",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAgaricus_bisporus_Zuchtchampignon.JPG",
+    "title": "File:Agaricus bisporus Zuchtchampignon.JPG",
+    "author": "böhringer friedrich",
+    "credit": "Own work",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2267,
+    "originalHeight": 1413,
+    "files": {
+      "hero": "images/ingredients/mushroom.webp",
+      "card": "images/ingredients/mushroom-card.webp",
+      "thumb": "images/ingredients/mushroom-thumb.webp"
+    }
+  },
+  {
+    "slug": "napa-cabbage",
+    "kind": "ingredient",
+    "alt": "A head of napa cabbage with pale ribs and crinkled green leaves",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANapa_Cabbage.jpg",
+    "title": "File:Napa Cabbage.jpg",
+    "author": "SarKaLay စာကလေး",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 6000,
+    "originalHeight": 6950,
+    "files": {
+      "hero": "images/ingredients/napa-cabbage.webp",
+      "card": "images/ingredients/napa-cabbage-card.webp",
+      "thumb": "images/ingredients/napa-cabbage-thumb.webp"
+    }
+  },
+  {
     "slug": "olive-oil",
     "kind": "ingredient",
     "alt": "A glass carafe of green-gold olive oil",
@@ -937,6 +1075,29 @@
     }
   },
   {
+    "slug": "potato",
+    "kind": "ingredient",
+    "alt": "Raw red-skinned potatoes",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASolanum_tuberosum_Red_Scarlett20170523_7825.jpg",
+    "title": "File:Solanum tuberosum Red Scarlett20170523 7825.jpg",
+    "author": "Bff",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3300,
+    "originalHeight": 3300,
+    "files": {
+      "hero": "images/ingredients/potato.webp",
+      "card": "images/ingredients/potato-card.webp",
+      "thumb": "images/ingredients/potato-thumb.webp"
+    }
+  },
+  {
     "slug": "preserved-radish",
     "kind": "ingredient",
     "alt": "A mass of pale knobbly pieces of salted, dried radish",
@@ -1006,6 +1167,29 @@
     }
   },
   {
+    "slug": "rice-vinegar",
+    "kind": "ingredient",
+    "alt": "A bottle of Japanese rice vinegar",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARice_vinegar_(Japanese).jpg",
+    "title": "File:Rice vinegar (Japanese).jpg",
+    "author": "Susan Slater",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 1554,
+    "originalHeight": 2883,
+    "files": {
+      "hero": "images/ingredients/rice-vinegar.webp",
+      "card": "images/ingredients/rice-vinegar-card.webp",
+      "thumb": "images/ingredients/rice-vinegar-thumb.webp"
+    }
+  },
+  {
     "slug": "romaine-lettuce",
     "kind": "ingredient",
     "alt": "Long crisp romaine leaves with heavy pale ribs, loose on a plate",
@@ -1026,6 +1210,29 @@
       "hero": "images/ingredients/romaine-lettuce.webp",
       "card": "images/ingredients/romaine-lettuce-card.webp",
       "thumb": "images/ingredients/romaine-lettuce-thumb.webp"
+    }
+  },
+  {
+    "slug": "salmon",
+    "kind": "ingredient",
+    "alt": "A raw salmon fillet, skin side down",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASalmon2.jpg",
+    "title": "File:Salmon2.jpg",
+    "author": "Tiia Monto",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2985,
+    "originalHeight": 2300,
+    "files": {
+      "hero": "images/ingredients/salmon.webp",
+      "card": "images/ingredients/salmon-card.webp",
+      "thumb": "images/ingredients/salmon-thumb.webp"
     }
   },
   {
@@ -1052,6 +1259,29 @@
     }
   },
   {
+    "slug": "sauerkraut",
+    "kind": "ingredient",
+    "alt": "A bowl of sauerkraut with shredded carrot",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABelarusian-Russian_Sauerkraut-1.jpg",
+    "title": "File:Belarusian-Russian Sauerkraut-1.jpg",
+    "author": "Eugene Zelenko",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 5472,
+    "originalHeight": 3648,
+    "files": {
+      "hero": "images/ingredients/sauerkraut.webp",
+      "card": "images/ingredients/sauerkraut-card.webp",
+      "thumb": "images/ingredients/sauerkraut-thumb.webp"
+    }
+  },
+  {
     "slug": "serrano-chilli",
     "kind": "ingredient",
     "alt": "A heap of small green serrano chillies, smooth and blunt-tipped",
@@ -1075,6 +1305,52 @@
     }
   },
   {
+    "slug": "sesame-oil",
+    "kind": "ingredient",
+    "alt": "Sesame oil in a steel bowl beside a heap of sesame seeds",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASesame_oil_photo.jpg",
+    "title": "File:Sesame oil photo.jpg",
+    "author": "Dr. Satish Upalkar",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3934,
+    "originalHeight": 2547,
+    "files": {
+      "hero": "images/ingredients/sesame-oil.webp",
+      "card": "images/ingredients/sesame-oil-card.webp",
+      "thumb": "images/ingredients/sesame-oil-thumb.webp"
+    }
+  },
+  {
+    "slug": "shrimp",
+    "kind": "ingredient",
+    "alt": "Raw peeled prawns in an earthenware bowl",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APrawn_raw_cleaned_2021b.jpg",
+    "title": "File:Prawn raw cleaned 2021b.jpg",
+    "author": "Vis M",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 6944,
+    "originalHeight": 9248,
+    "files": {
+      "hero": "images/ingredients/shrimp.webp",
+      "card": "images/ingredients/shrimp-card.webp",
+      "thumb": "images/ingredients/shrimp-thumb.webp"
+    }
+  },
+  {
     "slug": "sourdough-bread",
     "kind": "ingredient",
     "alt": "A round sourdough loaf with a scored spiral crust, cut to show the open crumb",
@@ -1095,6 +1371,52 @@
       "hero": "images/ingredients/sourdough-bread.webp",
       "card": "images/ingredients/sourdough-bread-card.webp",
       "thumb": "images/ingredients/sourdough-bread-thumb.webp"
+    }
+  },
+  {
+    "slug": "soured-cream",
+    "kind": "ingredient",
+    "alt": "Soured cream in a bowl",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASour_Cream.jpg",
+    "title": "File:Sour Cream.jpg",
+    "author": "jules",
+    "credit": "https://www.flickr.com/photos/stone-soup/44211965261/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 4256,
+    "originalHeight": 2832,
+    "files": {
+      "hero": "images/ingredients/soured-cream.webp",
+      "card": "images/ingredients/soured-cream-card.webp",
+      "thumb": "images/ingredients/soured-cream-thumb.webp"
+    }
+  },
+  {
+    "slug": "soy-sauce",
+    "kind": "ingredient",
+    "alt": "A bottle of light soy sauce",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALee_Kum_Kee_soy_sauce.jpg",
+    "title": "File:Lee Kum Kee soy sauce.jpg",
+    "author": "2003 LN6",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/ingredients/soy-sauce.webp",
+      "card": "images/ingredients/soy-sauce-card.webp",
+      "thumb": "images/ingredients/soy-sauce-thumb.webp"
     }
   },
   {
@@ -1257,6 +1579,29 @@
     }
   },
   {
+    "slug": "twarog",
+    "kind": "ingredient",
+    "alt": "A block of twaróg, pressed dry-curd cheese, with potatoes and onion",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APierogi_preparation_01.JPG",
+    "title": "File:Pierogi preparation 01.JPG",
+    "author": "Kpalion",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3150,
+    "originalHeight": 2724,
+    "files": {
+      "hero": "images/ingredients/twarog.webp",
+      "card": "images/ingredients/twarog-card.webp",
+      "thumb": "images/ingredients/twarog-thumb.webp"
+    }
+  },
+  {
     "slug": "vanilla-extract",
     "kind": "ingredient",
     "alt": "A tall bottle of dark brown vanilla extract",
@@ -1349,6 +1694,50 @@
     }
   },
   {
+    "slug": "wheat-starch",
+    "kind": "ingredient",
+    "alt": "A bag of wheat starch",
+    "source": "Open Food Facts",
+    "sourceUrl": "https://world.openfoodfacts.org/product/4895072413782",
+    "title": "FLCK Wheat Starch — Foo Lung Ching Kee (4895072413782)",
+    "author": "Open Food Facts contributors",
+    "credit": "Open Food Facts",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "files": {
+      "hero": "images/ingredients/wheat-starch.webp",
+      "card": "images/ingredients/wheat-starch-card.webp",
+      "thumb": "images/ingredients/wheat-starch-thumb.webp"
+    }
+  },
+  {
+    "slug": "white-pepper",
+    "kind": "ingredient",
+    "alt": "Whole white peppercorns",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWhite_Pepper_(Piper_nigrum).jpg",
+    "title": "File:White Pepper (Piper nigrum).jpg",
+    "author": "George Muttathil Pulikurumba",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 1200,
+    "originalHeight": 1600,
+    "files": {
+      "hero": "images/ingredients/white-pepper.webp",
+      "card": "images/ingredients/white-pepper-card.webp",
+      "thumb": "images/ingredients/white-pepper-thumb.webp"
+    }
+  },
+  {
     "slug": "worcestershire-sauce",
     "kind": "ingredient",
     "alt": "A narrow bottle of dark Worcestershire sauce",
@@ -1369,6 +1758,29 @@
       "hero": "images/ingredients/worcestershire-sauce.webp",
       "card": "images/ingredients/worcestershire-sauce-card.webp",
       "thumb": "images/ingredients/worcestershire-sauce-thumb.webp"
+    }
+  },
+  {
+    "slug": "yoghurt",
+    "kind": "ingredient",
+    "alt": "Plain whole-milk yoghurt spooned onto a pale plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJoghurt.jpg",
+    "title": "File:Joghurt.jpg",
+    "author": "No machine-readable author provided. Rainer Zenz assumed (based on copyright claims).",
+    "credit": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2000,
+    "originalHeight": 1679,
+    "files": {
+      "hero": "images/ingredients/yoghurt.webp",
+      "card": "images/ingredients/yoghurt-card.webp",
+      "thumb": "images/ingredients/yoghurt-thumb.webp"
     }
   },
   {
@@ -1464,6 +1876,29 @@
     }
   },
   {
+    "slug": "gravlax",
+    "kind": "recipe",
+    "alt": "Sliced gravlax, the cure and dill visible along the edge",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGravlax_2.jpg",
+    "title": "File:Gravlax 2.jpg",
+    "author": "Tiia Monto",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3663,
+    "originalHeight": 2651,
+    "files": {
+      "hero": "images/recipes/gravlax.webp",
+      "card": "images/recipes/gravlax-card.webp",
+      "thumb": "images/recipes/gravlax-thumb.webp"
+    }
+  },
+  {
     "slug": "guacamole",
     "kind": "recipe",
     "alt": "A white bowl of guacamole, roughly mashed and flecked with tomato and onion",
@@ -1487,6 +1922,75 @@
     }
   },
   {
+    "slug": "guotie",
+    "kind": "recipe",
+    "alt": "Pan-fried guotie on a white plate, crisp golden bases uppermost",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A15_pan_fried_dumplings_of_Bafang_Yunji_20150305.jpg",
+    "title": "File:15 pan fried dumplings of Bafang Yunji 20150305.jpg",
+    "author": "a2335825",
+    "credit": "https://www.flickr.com/photos/99391753@N02/16102296783",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3648,
+    "originalHeight": 2736,
+    "files": {
+      "hero": "images/recipes/guotie.webp",
+      "card": "images/recipes/guotie-card.webp",
+      "thumb": "images/recipes/guotie-thumb.webp"
+    }
+  },
+  {
+    "slug": "gyoza",
+    "kind": "recipe",
+    "alt": "A plate of pan-fried gyoza, browned along one flat side",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGyoza_no_Antei_-_3.jpg",
+    "title": "File:Gyoza no Antei - 3.jpg",
+    "author": "Enming Yan / 闫恩铭",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/gyoza.webp",
+      "card": "images/recipes/gyoza-card.webp",
+      "thumb": "images/recipes/gyoza-thumb.webp"
+    }
+  },
+  {
+    "slug": "har-gow",
+    "kind": "recipe",
+    "alt": "Four har gow in a bamboo steamer, the translucent wrappers showing the pink shrimp inside",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHa_Gow_(Cantonese_Shrimp_Dumplings).jpeg",
+    "title": "File:Ha Gow (Cantonese Shrimp Dumplings).jpeg",
+    "author": "ZhengZhou",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/har-gow.webp",
+      "card": "images/recipes/har-gow-card.webp",
+      "thumb": "images/recipes/har-gow-thumb.webp"
+    }
+  },
+  {
     "slug": "hummus",
     "kind": "recipe",
     "alt": "A shallow plate of hummus with a hollow of olive oil in the middle, scattered with whole chickpeas and parsley",
@@ -1507,6 +2011,98 @@
       "hero": "images/recipes/hummus.webp",
       "card": "images/recipes/hummus-card.webp",
       "thumb": "images/recipes/hummus-thumb.webp"
+    }
+  },
+  {
+    "slug": "jiaozi",
+    "kind": "recipe",
+    "alt": "Boiled jiaozi in a black bowl, dressed with soy, sesame seeds and sliced spring onion",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAsian_Dumplings_(Jiaozi)_by_ArmAg.jpg",
+    "title": "File:Asian Dumplings (Jiaozi) by ArmAg.jpg",
+    "author": "Armineaghayan",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3071,
+    "originalHeight": 1914,
+    "files": {
+      "hero": "images/recipes/jiaozi.webp",
+      "card": "images/recipes/jiaozi-card.webp",
+      "thumb": "images/recipes/jiaozi-thumb.webp"
+    }
+  },
+  {
+    "slug": "khinkali",
+    "kind": "recipe",
+    "alt": "Boiled khinkali on a white platter, each gathered into a twisted topknot",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKhinkali_-_Traditional_Georgian_food.jpg",
+    "title": "File:Khinkali - Traditional Georgian food.jpg",
+    "author": "Helen Owl",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3000,
+    "originalHeight": 3586,
+    "files": {
+      "hero": "images/recipes/khinkali.webp",
+      "card": "images/recipes/khinkali-card.webp",
+      "thumb": "images/recipes/khinkali-thumb.webp"
+    }
+  },
+  {
+    "slug": "korean-mandu",
+    "kind": "recipe",
+    "alt": "Steamed mandu on a metal plate, sealed half-moon dumplings with a soy dipping sauce",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJjin-mandu_4.jpg",
+    "title": "File:Jjin-mandu 4.jpg",
+    "author": "chomjong",
+    "credit": "https://www.flickr.com/photos/112024099@N03/32246688784/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3024,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/korean-mandu.webp",
+      "card": "images/recipes/korean-mandu-card.webp",
+      "thumb": "images/recipes/korean-mandu-thumb.webp"
+    }
+  },
+  {
+    "slug": "manti",
+    "kind": "recipe",
+    "alt": "Kayseri mantı under garlic yoghurt, chilli butter and dried mint",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMant%C4%B1_of_Turkey.jpg",
+    "title": "File:Mantı of Turkey.jpg",
+    "author": "E4024",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2560,
+    "originalHeight": 1920,
+    "files": {
+      "hero": "images/recipes/manti.webp",
+      "card": "images/recipes/manti-card.webp",
+      "thumb": "images/recipes/manti-thumb.webp"
     }
   },
   {
@@ -1556,6 +2152,29 @@
     }
   },
   {
+    "slug": "momo",
+    "kind": "recipe",
+    "alt": "Steamed momo pleated into pouches, served on a plate with a red chilli achar",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMomo_2.jpg",
+    "title": "File:Momo 2.jpg",
+    "author": "Gaurav Dhwaj Khadka",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/recipes/momo.webp",
+      "card": "images/recipes/momo-card.webp",
+      "thumb": "images/recipes/momo-thumb.webp"
+    }
+  },
+  {
     "slug": "pad-thai",
     "kind": "recipe",
     "alt": "A plate of pad thai topped with bean sprouts, served with a lime wedge and crushed peanuts alongside",
@@ -1576,6 +2195,52 @@
       "hero": "images/recipes/pad-thai.webp",
       "card": "images/recipes/pad-thai-card.webp",
       "thumb": "images/recipes/pad-thai-thumb.webp"
+    }
+  },
+  {
+    "slug": "pelmeni",
+    "kind": "recipe",
+    "alt": "Boiled pelmeni on a plate with a bowl of soured cream",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APelmeni_Russian.jpg",
+    "title": "File:Pelmeni Russian.jpg",
+    "author": "Eugene Kim @ Flickr",
+    "credit": "https://www.flickr.com/photos/eekim/563156522/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 2592,
+    "originalHeight": 1760,
+    "files": {
+      "hero": "images/recipes/pelmeni.webp",
+      "card": "images/recipes/pelmeni-card.webp",
+      "thumb": "images/recipes/pelmeni-thumb.webp"
+    }
+  },
+  {
+    "slug": "pierogi",
+    "kind": "recipe",
+    "alt": "Pierogi ruskie topped with fried onion, served with a shredded cabbage salad",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APierogi_ruskie_S%C5%82upsk.jpg",
+    "title": "File:Pierogi ruskie Słupsk.jpg",
+    "author": "MOs810",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-02",
+    "originalWidth": 4608,
+    "originalHeight": 3456,
+    "files": {
+      "hero": "images/recipes/pierogi.webp",
+      "card": "images/recipes/pierogi-card.webp",
+      "thumb": "images/recipes/pierogi-thumb.webp"
     }
   },
   {
