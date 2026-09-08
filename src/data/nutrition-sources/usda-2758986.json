@@ -1,0 +1,370 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2758986",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2758986/nutrients",
+  "description": "Mayonnaise, Regular",
+  "category": "Fats and Oils",
+  "publicationDate": "4/30/2026",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "riboflavin": 0.109,
+    "vitaminB6": 0,
+    "choline": 47.49,
+    "saturatedFat": 11.3,
+    "monounsaturatedFat": 16.77,
+    "polyunsaturatedFat": 41.67,
+    "transFat": 0.213
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 16.63,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.362,
+      "unit": "g"
+    },
+    {
+      "number": "607",
+      "name": "SFA 4:0",
+      "amount": 0.0035,
+      "unit": "g"
+    },
+    {
+      "number": "632",
+      "name": "SFA 5:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "608",
+      "name": "SFA 6:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "633",
+      "name": "SFA 7:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "634",
+      "name": "SFA 9:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0.0004375,
+      "unit": "g"
+    },
+    {
+      "number": "699",
+      "name": "SFA 11:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.001938,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.05269,
+      "unit": "g"
+    },
+    {
+      "number": "652",
+      "name": "SFA 15:0",
+      "amount": 0.01219,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 7.421,
+      "unit": "g"
+    },
+    {
+      "number": "653",
+      "name": "SFA 17:0",
+      "amount": 0.06981,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 3.184,
+      "unit": "g"
+    },
+    {
+      "number": "615",
+      "name": "SFA 20:0",
+      "amount": 0.2274,
+      "unit": "g"
+    },
+    {
+      "number": "681",
+      "name": "SFA 21:0",
+      "amount": 0.02594,
+      "unit": "g"
+    },
+    {
+      "number": "624",
+      "name": "SFA 22:0",
+      "amount": 0.2212,
+      "unit": "g"
+    },
+    {
+      "number": "682",
+      "name": "SFA 23:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "654",
+      "name": "SFA 24:0",
+      "amount": 0.07781,
+      "unit": "g"
+    },
+    {
+      "number": "635",
+      "name": "MUFA 12:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "625",
+      "name": "MUFA 14:1",
+      "amount": 0.0008125,
+      "unit": "g"
+    },
+    {
+      "number": "697",
+      "name": "MUFA 15:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.09581,
+      "unit": "g"
+    },
+    {
+      "number": "687",
+      "name": "MUFA 17:1",
+      "amount": 0.03944,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 16.13,
+      "unit": "g"
+    },
+    {
+      "number": "628",
+      "name": "MUFA 20:1",
+      "amount": 0.4868,
+      "unit": "g"
+    },
+    {
+      "number": "676",
+      "name": "MUFA 22:1 c",
+      "amount": 0.01325,
+      "unit": "g"
+    },
+    {
+      "number": "676.1",
+      "name": "MUFA 22:1 n-9",
+      "amount": 0.009875,
+      "unit": "g"
+    },
+    {
+      "number": "676.2",
+      "name": "MUFA 22:1 n-11",
+      "amount": 0.003375,
+      "unit": "g"
+    },
+    {
+      "number": "671",
+      "name": "MUFA 24:1 c",
+      "amount": 0.004188,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 36.74,
+      "unit": "g"
+    },
+    {
+      "number": "831",
+      "name": "PUFA 18:2 c",
+      "amount": 36.77544,
+      "unit": "g"
+    },
+    {
+      "number": "670",
+      "name": "PUFA 18:2 CLAs",
+      "amount": 0.03544,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 4.843,
+      "unit": "g"
+    },
+    {
+      "number": "833",
+      "name": "PUFA 18:3 c",
+      "amount": 4.844063,
+      "unit": "g"
+    },
+    {
+      "number": "685",
+      "name": "PUFA 18:3 n-6 c,c,c",
+      "amount": 0.001063,
+      "unit": "g"
+    },
+    {
+      "number": "840",
+      "name": "PUFA 20:2 c",
+      "amount": 0.02506,
+      "unit": "g"
+    },
+    {
+      "number": "627",
+      "name": "PUFA 18:4",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "835",
+      "name": "PUFA 20:3 c",
+      "amount": 0.004875,
+      "unit": "g"
+    },
+    {
+      "number": "852",
+      "name": "PUFA 20:3 n-3",
+      "amount": 0.00075,
+      "unit": "g"
+    },
+    {
+      "number": "853",
+      "name": "PUFA 20:3 n-6",
+      "amount": 0.004125,
+      "unit": "g"
+    },
+    {
+      "number": "861",
+      "name": "PUFA 20:3 n-9",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "683",
+      "name": "PUFA 22:3",
+      "amount": 0.01406,
+      "unit": "g"
+    },
+    {
+      "number": "620",
+      "name": "PUFA 20:4",
+      "amount": 0.03356,
+      "unit": "g"
+    },
+    {
+      "number": "837",
+      "name": "PUFA 20:5c",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "698",
+      "name": "PUFA 22:2",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "838",
+      "name": "PUFA 22:5 c",
+      "amount": 0.001563,
+      "unit": "g"
+    },
+    {
+      "number": "858",
+      "name": "PUFA 22:4",
+      "amount": 0.00175,
+      "unit": "g"
+    },
+    {
+      "number": "839",
+      "name": "PUFA 22:6 c",
+      "amount": 0.009625,
+      "unit": "g"
+    },
+    {
+      "number": "821",
+      "name": "TFA 14:1 t",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "662",
+      "name": "TFA 16:1 t",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "663",
+      "name": "TFA 18:1 t",
+      "amount": 0.03025,
+      "unit": "g"
+    },
+    {
+      "number": "830",
+      "name": "TFA 20:1 t",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "664",
+      "name": "TFA 22:1 t",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "832",
+      "name": "TFA 18:2 t",
+      "amount": 0.1794,
+      "unit": "g"
+    },
+    {
+      "number": "834",
+      "name": "TFA 18:3 t",
+      "amount": 0,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

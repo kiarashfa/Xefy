@@ -1,0 +1,50 @@
+{
+  "id": "oyster",
+  "name": "Oyster",
+  "proseName": "oyster",
+  "category": "shellfish",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "molluscs"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, shucked",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175172",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175172/nutrients",
+      "sourceNote": "USDA's farmed eastern oyster record, raw and shucked.",
+      "nutritionPer100g": {
+        "kcal": 59,
+        "protein": 5.22,
+        "carbs": 5.53,
+        "fat": 1.55,
+        "fiber": 0,
+        "saturatedFat": 0.443,
+        "monounsaturatedFat": 0.152,
+        "polyunsaturatedFat": 0.591,
+        "cholesterol": 25,
+        "sodium": 178,
+        "potassium": 124,
+        "calcium": 44,
+        "iron": 5.78,
+        "magnesium": 33,
+        "phosphorus": 93,
+        "zinc": 37.92,
+        "copper": 0.738,
+        "manganese": 0.394,
+        "seleniumMcg": 63.7,
+        "vitaminAMcg": 8,
+        "vitaminC": 4.7,
+        "thiamin": 0.105,
+        "riboflavin": 0.065,
+        "niacin": 1.267,
+        "vitaminB6": 0.06
+      }
+    }
+  ],
+  "image": "images/ingredients/oyster-thumb.webp"
+}

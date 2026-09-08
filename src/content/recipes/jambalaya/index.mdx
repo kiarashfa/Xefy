@@ -1,0 +1,161 @@
+---
+title: Jambalaya
+subtitle: Chicken, andouille sausage and shrimp cooked with rice in a tomato-based trinity sauce until the rice is tender and red.
+description: Creole jambalaya made the standard New Orleans way — chicken, andouille sausage and shrimp browned and simmered with the trinity of onion, celery and green pepper and tinned tomatoes, then cooked together with rice in one pot until the grains are tender and stained red.
+label: Creole
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [simmering, sauteing]
+names:
+  notToBeConfusedWith:
+    - name: Gumbo
+      note: Gumbo is a soup-like stew, thickened with roux or okra and ladled over rice cooked separately; jambalaya cooks its rice inside the same pot as everything else, with no roux at all.
+image:
+  src: images/recipes/jambalaya.webp
+  alt: "A plate of orange-red jambalaya rice studded with sliced sausage, served with a side of green beans"
+ingredients:
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: sausage
+    ingredientRef: andouille
+    form: smoked
+    amount: 250
+    unit: g
+    note: sliced into rounds
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into bite-sized pieces
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: tomato
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 400
+    unit: g
+    note: chopped, with their juice
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 600
+    unit: ml
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    note: two leaves
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 3
+    unit: g
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 200
+    unit: g
+steps:
+  - { id: prep-veg, durationMin: 15, type: active, phase: prep }
+  - { id: brown-meats, durationMin: 10, type: active, phase: cook }
+  - { id: cook-trinity, durationMin: 8, type: active, phase: cook }
+  - { id: add-tomato-rice, durationMin: 3, type: active, phase: cook }
+  - { id: simmer-jambalaya, durationMin: 20, type: passive }
+  - { id: add-shrimp, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months; the rice softens further on thawing.
+  reheatInstructions: Reheat gently with a splash of water, covered, to loosen the rice without drying it out.
+notes:
+  techniqueRationale:
+    - stepId: simmer-jambalaya
+      text: Cooking the rice directly in the pot, rather than separately as gumbo does, is what lets it absorb the tomato and stock liquid and take on the dish's characteristic red colour and flavour.
+  commonPitfalls:
+    - stepId: simmer-jambalaya
+      text: Lifting the lid to stir disturbs the steam the rice needs to cook evenly and risks scorching the layer against the bottom of the pot, so the pot is left undisturbed until the liquid should be fully absorbed.
+---
+
+<Step id="prep-veg">
+  Dice the <Qty ref="onion"/>, <Qty ref="celery"/> and <Qty ref="green-pepper"/>, mince
+  the <Qty ref="garlic"/>, slice the <Qty ref="sausage"/>, and cut the
+  <Qty ref="chicken"/> into pieces.
+</Step>
+
+<Step id="brown-meats">
+  Heat the <Qty ref="oil"/> in a large, heavy pot over a medium-high heat and brown the
+  sausage and chicken for <Dur step="brown-meats"/>. Lift both out and set aside.
+</Step>
+
+<Step id="cook-trinity">
+  Add the onion, celery and green pepper to the pot and cook for
+  <Dur step="cook-trinity"/>, stirring often, until softened, adding the garlic in the
+  last minute.
+</Step>
+
+<Step id="add-tomato-rice">
+  Stir in the <Qty ref="tomato"/>, <Qty ref="rice"/>, <Qty ref="bay"/>,
+  <Qty ref="paprika"/>, <Qty ref="cayenne"/>, <Qty ref="black-pepper"/> and
+  <Qty ref="salt"/>, and return the sausage and chicken to the pot.
+</Step>
+
+<Step id="simmer-jambalaya">
+  Pour in the <Qty ref="water"/>, bring to the boil, then cover and reduce to the
+  lowest heat. Cook, undisturbed, for <Dur step="simmer-jambalaya"/>.
+</Step>
+
+<Step id="add-shrimp">
+  Nestle the <Qty ref="shrimp"/> into the rice, cover again, and cook for
+  <Dur step="add-shrimp"/>, until the shrimp are pink and the rice is tender.
+  Discard the bay leaves before serving.
+</Step>

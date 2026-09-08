@@ -1,0 +1,60 @@
+{
+  "id": "baking-powder",
+  "name": "Baking Powder",
+  "proseName": "baking powder",
+  "category": "leavening",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "double-acting",
+      "label": "Double-acting",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172804",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172804/nutrients",
+      "sourceNote": "USDA reports several baking-powder formulations separately, mainly by which acid salt they use; this is the straight-phosphate double-acting type. The formulations differ chiefly in sodium and phosphorus, both trace at the amounts a recipe uses.",
+      "nutritionPer100g": {
+        "kcal": 51,
+        "protein": 0.1,
+        "fat": 0,
+        "carbs": 24.1,
+        "fiber": 0.2,
+        "sugars": 0,
+        "calcium": 7364,
+        "iron": 11.27,
+        "magnesium": 39,
+        "phosphorus": 9918,
+        "potassium": 5,
+        "sodium": 7893,
+        "zinc": 0.02,
+        "copper": 0.013,
+        "manganese": 0.014,
+        "seleniumMcg": 0.2,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 4.6,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/baking-powder-thumb.webp"
+}

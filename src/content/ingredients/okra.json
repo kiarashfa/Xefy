@@ -1,0 +1,47 @@
+{
+  "id": "okra",
+  "name": "Okra",
+  "proseName": "okra",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169260",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169260/nutrients",
+      "nutritionPer100g": {
+        "kcal": 33,
+        "protein": 1.93,
+        "carbs": 7.45,
+        "fat": 0.19,
+        "fiber": 3.2,
+        "sugars": 1.48,
+        "saturatedFat": 0.026,
+        "monounsaturatedFat": 0.017,
+        "polyunsaturatedFat": 0.027,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 7,
+        "potassium": 299,
+        "calcium": 82,
+        "iron": 0.62,
+        "magnesium": 57,
+        "phosphorus": 61,
+        "zinc": 0.58,
+        "copper": 0.109,
+        "manganese": 0.788,
+        "seleniumMcg": 0.7,
+        "vitaminAMcg": 36,
+        "vitaminC": 23,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.27
+      }
+    }
+  ],
+  "image": "images/ingredients/okra-thumb.webp"
+}

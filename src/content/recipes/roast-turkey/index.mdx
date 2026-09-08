@@ -1,0 +1,111 @@
+---
+title: Thanksgiving Roast Turkey
+subtitle: A whole turkey, dry-salted a day ahead and roasted under foil before a final blast of heat browns the skin.
+label: Whole roasted
+defaultServings: 10
+difficulty: Hard
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [roasting]
+image:
+  src: images/recipes/roast-turkey.webp
+  alt: "A whole roast turkey with golden-brown crispy skin sprinkled with herbs, resting on a platter lined with parsley"
+ingredients:
+  - id: turkey
+    ingredientRef: whole-turkey
+    form: raw
+    amount: 3800
+    unit: g
+    note: one whole bird, giblets removed
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 40
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 150
+    unit: g
+    note: softened
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: minced
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 10
+    unit: g
+    note: leaves picked and chopped
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 6
+    unit: g
+steps:
+  - { id: dry-brine, durationMin: 10, type: active, phase: prep }
+  - { id: chill, durationMin: 720, type: passive }
+  - { id: make-butter, durationMin: 8, type: active, phase: prep }
+  - { id: butter-bird, durationMin: 10, type: active, phase: prep }
+  - { id: roast-covered, durationMin: 150, type: passive }
+  - { id: roast-uncovered, durationMin: 45, type: active, phase: cook }
+  - { id: rest, durationMin: 40, type: passive }
+  - { id: carve, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dry brine is meant to be applied a day ahead — this is not optional preparation but the method itself, and the bird needs the uncovered chilling time for the salt to season the meat and the skin to dry out.
+  freezable: true
+  freezeInstructions: Freeze the carved meat, wrapped tightly, for up to two months. The skin will not stay crisp once thawed.
+  reheatInstructions: Reheat sliced meat gently, covered, with a little stock or pan juices, in a low oven; high heat dries it out quickly.
+notes:
+  techniqueRationale:
+    - stepId: chill
+      text: Salting the bird a day ahead and leaving it uncovered in the refrigerator draws moisture to the surface and then reabsorbs it seasoned throughout the meat, while the dry surface it leaves behind is what lets the skin crisp rather than steam in the oven.
+  commonPitfalls:
+    - stepId: roast-uncovered
+      text: Leaving the foil on for the whole roast keeps the meat moist but never lets the skin brown. It comes off only for the final stretch, once the meat is nearly cooked through, so the skin does not have time to dry out before the bird is done.
+---
+
+<Step id="dry-brine">
+  Pat the <Qty ref="turkey"/> completely dry and season it all over,
+  including inside the cavity, with the <Qty ref="salt"/>.
+</Step>
+
+<Step id="chill">
+  Set the bird uncovered on a rack set in a tray and refrigerate for
+  <Dur step="chill"/>.
+</Step>
+
+<Step id="make-butter">
+  Mash the <Qty ref="butter"/> with the <Qty ref="garlic"/>, the
+  <Qty ref="thyme"/> and the <Qty ref="pepper"/> until evenly combined.
+</Step>
+
+<Step id="butter-bird">
+  Loosen the skin over the breast and legs and work most of the herb butter
+  underneath it directly against the meat, then rub whatever remains over the
+  outside of the skin.
+</Step>
+
+<Step id="roast-covered">
+  Tent the bird loosely with foil and roast at <Temp c={160}/> for
+  <Dur step="roast-covered"/>.
+</Step>
+
+<Step id="roast-uncovered">
+  Remove the foil and continue roasting for <Dur step="roast-uncovered"/> at
+  <Temp c={220}/>, until the skin is deeply golden and a thermometer in the
+  thickest part of the thigh, away from the bone, reads <Temp c={74}/>.
+</Step>
+
+<Step id="rest">
+  Transfer the bird to a board and rest, loosely tented, for
+  <Dur step="rest"/> before carving.
+</Step>
+
+<Step id="carve">
+  Carve the breast and legs away from the carcass and slice.
+</Step>

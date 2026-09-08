@@ -1,0 +1,87 @@
+---
+title: Coleslaw
+subtitle: Shredded cabbage and carrot bound in a mayonnaise dressing. One serving is a generous side portion.
+label: Creamy
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [side, salad]
+  method: [no-cook]
+image:
+  src: images/recipes/coleslaw.webp
+  alt: "A close-up bowl of coleslaw made from shredded green and red cabbage with grated carrot"
+ingredients:
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 500
+    unit: g
+    note: finely shredded
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: grated
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 30
+    unit: g
+    note: very finely chopped
+  - id: mayonnaise
+    ingredientRef: mayonnaise
+    form: regular
+    amount: 150
+    unit: g
+  - id: vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 15
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: mustard-powder
+    ingredientRef: mustard-powder
+    form: ground
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: mix-dressing, durationMin: 3, type: active, phase: prep }
+  - { id: combine, durationMin: 4, type: active, phase: prep }
+  - { id: chill, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: Improves after a short rest, as the salt draws liquid from the cabbage and it takes up the dressing; keeps well covered in the refrigerator for a couple of days, though it loses some crunch over time.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="mix-dressing">
+  Whisk the <Qty ref="mayonnaise"/>, the <Qty ref="vinegar"/>, the <Qty ref="sugar"/>,
+  the <Qty ref="mustard-powder"/>, the <Qty ref="salt"/> and the <Qty ref="pepper"/>
+  together until smooth, over <Dur step="mix-dressing"/>.
+</Step>
+
+<Step id="combine">
+  Toss the <Qty ref="cabbage"/>, the <Qty ref="carrot"/> and the <Qty ref="onion"/>
+  with the dressing until every strand is coated, over <Dur step="combine"/>.
+</Step>
+
+<Step id="chill">
+  Chill for <Dur step="chill"/> before serving.
+</Step>

@@ -1,0 +1,128 @@
+---
+title: Ceviche
+subtitle: Cubes of raw white fish firmed by a brief, sharp lime marinade, tossed with red onion and chilli and served cold with boiled sweet potato and corn.
+label: Clásico
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [peruvian]
+  course: [starter]
+  method: [curing, boiling]
+names:
+  searchOnly: ["cebiche", "seviche"]
+  notToBeConfusedWith:
+    - name: Tiradito
+      note: Thin, sashimi-style slices dressed with a citrus and ají cream and plated without onion, closer to Peruvian-Japanese carpaccio than to ceviche's cubed, onion-tossed style.
+image:
+  src: images/recipes/ceviche.webp
+  alt: "Peruvian ceviche of marinated white fish with red onion and chilli, served with sweet potato and choclo corn"
+ingredients:
+  - id: fish
+    ingredientRef: corvina
+    form: raw
+    amount: 600
+    unit: g
+    note: skinned, bloodline removed, previously frozen
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 200
+    unit: ml
+  - id: aji-limo
+    ingredientRef: aji-limo
+    form: fresh
+    amount: 15
+    unit: g
+    note: seeded and finely minced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed to a paste
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 100
+    unit: g
+    note: sliced into thin half-moons
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped
+  - id: sweet-potato
+    ingredientRef: sweet-potato
+    form: raw
+    amount: 300
+    unit: g
+    note: peeled, cut into thick rounds
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 200
+    unit: g
+    note: kernels cut from the cob
+  - id: lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 60
+    unit: g
+    note: leaves separated, for lining the plates
+steps:
+  - { id: boil-sides, durationMin: 20, type: active, phase: cook }
+  - { id: trim-fish, durationMin: 8, type: "parallel-with:boil-sides", phase: prep }
+  - { id: mix-marinade, durationMin: 3, type: "parallel-with:boil-sides", phase: prep }
+  - { id: cure-fish, durationMin: 6, type: "parallel-with:boil-sides", phase: rest }
+  - { id: finish-and-plate, durationMin: 6, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cure-fish
+      text: The lime's acidity denatures the fish's surface proteins the way heat would, firming and whitening the flesh, but it works far more gently than heat and only needs minutes rather than the long marinade older versions of this dish used.
+  commonPitfalls:
+    - stepId: trim-fish
+      text: Citrus acid does not reliably kill parasites the way cooking does, so the fish needs to have been previously frozen solid; fresh, never-frozen fish is not safe prepared raw this way.
+    - stepId: cure-fish
+      text: Left in the lime juice much beyond the given time, the fish turns tough and chalky rather than staying tender, since the acid keeps denaturing the proteins well past the point that reads as "done."
+---
+
+<Step id="boil-sides">
+  Bring a pot of salted water to the boil and cook the <Qty ref="sweet-potato"/> and
+  <Qty ref="corn"/> together until the potato is tender to a knife point, about
+  <Dur step="boil-sides"/>. Drain and set aside to cool.
+</Step>
+
+<Step id="trim-fish">
+  Cut the <Qty ref="fish"/> into small, even cubes, discarding any dark bloodline
+  or stray bones as you go. This takes <Dur step="trim-fish"/>.
+</Step>
+
+<Step id="mix-marinade">
+  Stir the <Qty ref="lime-juice"/>, <Qty ref="aji-limo"/>, <Qty ref="garlic"/> and
+  <Qty ref="salt"/> together in a wide, non-reactive bowl. This takes
+  <Dur step="mix-marinade"/>.
+</Step>
+
+<Step id="cure-fish">
+  Add the fish cubes to the marinade and toss briefly to coat every piece, then
+  leave for <Dur step="cure-fish"/>, until the flesh has turned opaque and firm
+  at the edges but still looks faintly translucent at the centre.
+</Step>
+
+<Step id="finish-and-plate">
+  Fold the <Qty ref="onion"/> and <Qty ref="coriander"/> through the cured fish and
+  its marinade. Line each plate with a <Qty ref="lettuce"/> leaf, spoon the fish and
+  its juices on top, and arrange the drained sweet potato and corn alongside. This
+  takes <Dur step="finish-and-plate"/>; serve straight away.
+</Step>

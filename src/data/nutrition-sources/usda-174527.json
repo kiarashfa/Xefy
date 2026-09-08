@@ -1,0 +1,290 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "174527",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/174527/nutrients",
+  "description": "Sauce, ready-to-serve, pepper or hot",
+  "category": "Soups, Sauces, and Gravies",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 11,
+    "protein": 0.51,
+    "fat": 0.37,
+    "carbs": 1.75,
+    "fiber": 0.3,
+    "sugars": 1.26,
+    "calcium": 8,
+    "iron": 0.48,
+    "magnesium": 5,
+    "phosphorus": 11,
+    "potassium": 144,
+    "sodium": 2643,
+    "zinc": 0.11,
+    "copper": 0.028,
+    "manganese": 0.049,
+    "seleniumMcg": 0,
+    "vitaminC": 74.8,
+    "thiamin": 0.036,
+    "riboflavin": 0.082,
+    "niacin": 0.254,
+    "vitaminB6": 0.157,
+    "folateMcg": 6,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 8,
+    "vitaminE": 0.12,
+    "vitaminKMcg": 2.4,
+    "saturatedFat": 0.052,
+    "monounsaturatedFat": 0.03,
+    "polyunsaturatedFat": 0.196,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 89.98,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 46,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 7.39,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 0.11,
+      "unit": "mg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 6,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 6,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "321",
+      "name": "Carotene, beta",
+      "amount": 91,
+      "unit": "µg"
+    },
+    {
+      "number": "322",
+      "name": "Carotene, alpha",
+      "amount": 6,
+      "unit": "µg"
+    },
+    {
+      "number": "334",
+      "name": "Cryptoxanthin, beta",
+      "amount": 7,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 162,
+      "unit": "IU"
+    },
+    {
+      "number": "337",
+      "name": "Lycopene",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "338",
+      "name": "Lutein + zeaxanthin",
+      "amount": 121,
+      "unit": "µg"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 0.044,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.007,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 0.029,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.195,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "501",
+      "name": "Tryptophan",
+      "amount": 0.007,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 0.019,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 0.017,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 0.027,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 0.023,
+      "unit": "g"
+    },
+    {
+      "number": "506",
+      "name": "Methionine",
+      "amount": 0.006,
+      "unit": "g"
+    },
+    {
+      "number": "507",
+      "name": "Cystine",
+      "amount": 0.01,
+      "unit": "g"
+    },
+    {
+      "number": "508",
+      "name": "Phenylalanine",
+      "amount": 0.016,
+      "unit": "g"
+    },
+    {
+      "number": "509",
+      "name": "Tyrosine",
+      "amount": 0.011,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 0.022,
+      "unit": "g"
+    },
+    {
+      "number": "511",
+      "name": "Arginine",
+      "amount": 0.025,
+      "unit": "g"
+    },
+    {
+      "number": "512",
+      "name": "Histidine",
+      "amount": 0.01,
+      "unit": "g"
+    },
+    {
+      "number": "513",
+      "name": "Alanine",
+      "amount": 0.021,
+      "unit": "g"
+    },
+    {
+      "number": "514",
+      "name": "Aspartic acid",
+      "amount": 0.073,
+      "unit": "g"
+    },
+    {
+      "number": "515",
+      "name": "Glutamic acid",
+      "amount": 0.067,
+      "unit": "g"
+    },
+    {
+      "number": "516",
+      "name": "Glycine",
+      "amount": 0.019,
+      "unit": "g"
+    },
+    {
+      "number": "517",
+      "name": "Proline",
+      "amount": 0.022,
+      "unit": "g"
+    },
+    {
+      "number": "518",
+      "name": "Serine",
+      "amount": 0.021,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTsp",
+      "value": 4.8,
+      "from": "0.25 tsp"
+    },
+    {
+      "measure": "gPerTsp",
+      "value": 4.7,
+      "from": "1 tsp"
+    }
+  ]
+}

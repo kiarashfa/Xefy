@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2646174",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646174/nutrients",
+  "description": "Beef, chuck, roast, boneless, choice, raw",
+  "category": "Beef Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 237.097,
+    "protein": 18.4,
+    "fat": 17.8,
+    "carbs": 0,
+    "calcium": 4.576,
+    "iron": 2.059,
+    "magnesium": 16.99,
+    "phosphorus": 151,
+    "potassium": 281.1,
+    "sodium": 48.44,
+    "zinc": 5.386,
+    "copper": 0.054,
+    "manganese": 0,
+    "saturatedFat": 6.341,
+    "monounsaturatedFat": 7.021,
+    "polyunsaturatedFat": 0.556,
+    "transFat": 0.669,
+    "cholesterol": 66.75
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 63.43,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.944,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.8938,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

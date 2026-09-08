@@ -1,0 +1,152 @@
+---
+title: Red Velvet Cake
+subtitle: A cocoa sponge coloured deep red and soured with buttermilk, layered with cream cheese frosting. One serving is one slice from a two-layer cake.
+label: Layer cake
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/red-velvet-cake.webp
+  alt: "A slice of layered red velvet cake with bright red sponge and white cream cheese frosting, garnished with white chocolate curls"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 15
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 5
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 300
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 180
+    unit: ml
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 250
+    unit: ml
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 10
+    unit: ml
+  - id: food-colouring
+    ingredientRef: food-colouring
+    form: red-liquid
+    amount: 10
+    unit: ml
+  - id: cream-cheese
+    ingredientRef: cream-cheese
+    form: regular
+    amount: 250
+    unit: g
+    note: soft
+  - id: butter-icing
+    ingredientRef: butter
+    form: unsalted
+    amount: 100
+    unit: g
+    note: soft
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 300
+    unit: g
+  - id: vanilla-icing
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+steps:
+  - { id: heat-oven, durationMin: 12, type: "parallel-with:mix-batter", phase: cook }
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 6, type: active, phase: prep }
+  - { id: bake, durationMin: 28, type: passive }
+  - { id: cool, durationMin: 60, type: passive }
+  - { id: make-frosting, durationMin: 6, type: "parallel-with:cool", phase: prep }
+  - { id: frost, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The unfrosted sponges keep well overnight, wrapped, at room temperature, and are easier to frost once fully cold.
+  freezable: true
+  freezeInstructions: Freeze the cooled, unfrosted sponge layers, well wrapped. Thaw at room temperature before frosting.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: mix-batter
+      text: The vinegar and buttermilk react with the bicarbonate of soda as soon as they meet it, so the batter goes into the oven promptly once combined, while that reaction is still lifting it.
+  commonPitfalls:
+    - stepId: bake
+      text: Opening the oven door before the sponge has set lets the layers sink in the centre, since the structure is still held up mainly by trapped gas rather than set crumb at that stage.
+---
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={175}/> and butter and line two cake tins, allowing
+  <Dur step="heat-oven"/> for the oven to come to temperature.
+</Step>
+
+<Step id="mix-dry">
+  Whisk the <Qty ref="flour"/>, <Qty ref="cocoa"/>, <Qty ref="bicarb"/> and
+  <Qty ref="salt"/> together in a bowl.
+</Step>
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="sugar"/> with the <Qty ref="oil"/> and the <Qty ref="eggs"/>
+  until smooth. Whisk in the <Qty ref="buttermilk"/>, the <Qty ref="vanilla"/>, the
+  <Qty ref="vinegar"/> and the <Qty ref="food-colouring"/>, then fold in the dry
+  ingredients over <Dur step="mix-batter"/>, mixing only until smooth. Divide the
+  batter between the prepared tins straight away.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={175}/> for <Dur step="bake"/>, until a skewer pushed into the centre
+  of each sponge comes out clean.
+</Step>
+
+<Step id="cool">
+  Cool the sponges in their tins briefly, then turn them out onto a rack and leave to
+  cool completely, for <Dur step="cool"/>.
+</Step>
+
+<Step id="make-frosting">
+  While the sponges cool, beat the <Qty ref="cream-cheese"/> with the
+  <Qty ref="butter-icing"/>, the <Qty ref="icing-sugar"/> and the <Qty ref="vanilla-icing"/>
+  until smooth and holding soft peaks, over <Dur step="make-frosting"/>.
+</Step>
+
+<Step id="frost">
+  Spread a layer of frosting over the top of one cooled sponge, set the second sponge
+  on top, and cover the top and sides with the remaining frosting, spending
+  <Dur step="frost"/> to leave an even coat.
+</Step>

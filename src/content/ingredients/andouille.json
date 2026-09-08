@@ -1,0 +1,48 @@
+{
+  "id": "andouille",
+  "name": "Andouille",
+  "proseName": "andouille",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "smoked",
+      "label": "Smoked sausage",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174584",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174584/nutrients",
+      "sourceNote": "USDA has no record for Louisiana andouille specifically. This is its record for generic smoked pork link sausage, the closest published match to a coarse-ground, heavily smoked pork sausage.",
+      "nutritionPer100g": {
+        "kcal": 309,
+        "protein": 11.98,
+        "carbs": 0.94,
+        "fat": 28.23,
+        "fiber": 0,
+        "sugars": 0.94,
+        "saturatedFat": 9.313,
+        "monounsaturatedFat": 11.212,
+        "polyunsaturatedFat": 3.626,
+        "transFat": 0.231,
+        "cholesterol": 61,
+        "sodium": 827,
+        "potassium": 483,
+        "calcium": 11,
+        "iron": 0.59,
+        "magnesium": 11,
+        "phosphorus": 157,
+        "zinc": 1.31,
+        "copper": 0.176,
+        "manganese": 0.011,
+        "seleniumMcg": 18.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 1.1,
+        "vitaminE": 0.25
+      }
+    }
+  ]
+}

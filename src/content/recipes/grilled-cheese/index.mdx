@@ -1,0 +1,65 @@
+---
+title: Grilled Cheese
+subtitle: Sliced white bread and American cheese, pressed and browned slowly in butter until the outside is crisp and the inside has fully melted.
+label: Diner-style
+defaultServings: 1
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [pan-frying]
+image:
+  src: images/recipes/grilled-cheese.webp
+  alt: "A grilled cheese sandwich cut diagonally in half, showing golden toasted bread and melted cheese inside"
+ingredients:
+  - id: bread
+    ingredientRef: sandwich-bread
+    form: white
+    amount: 90
+    unit: g
+    note: two slices
+  - id: cheese
+    ingredientRef: american-cheese
+    form: sliced
+    amount: 50
+    unit: g
+    note: two slices
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+    note: softened
+steps:
+  - { id: butter-bread, durationMin: 2, type: active, phase: prep }
+  - { id: assemble, durationMin: 1, type: active, phase: prep }
+  - { id: cook, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: A cold sandwich reheats poorly, softening before it recrisps; it is best made fresh.
+notes:
+  techniqueRationale:
+    - stepId: cook
+      text: A low, patient heat is what lets the cheese finish melting before the crust darkens past golden. Turning up the heat to save time browns the outside long before the middle is ready.
+  commonPitfalls:
+    - stepId: cook
+      text: Pressing down on the sandwich squeezes out melted cheese at the edges instead of speeding the melt in the middle. Leave it alone and let the heat do the work.
+---
+
+<Step id="butter-bread">
+  Spread the <Qty ref="butter"/> evenly over one side of each slice of the
+  <Qty ref="bread"/>, all the way to the edges.
+</Step>
+
+<Step id="assemble">
+  Lay the <Qty ref="cheese"/> between the slices, buttered sides facing
+  outward.
+</Step>
+
+<Step id="cook">
+  Set the sandwich in a cold pan over a low heat and cook for
+  <Dur step="cook"/>, turning once, until both faces are deep golden brown
+  and the cheese has melted completely through to the middle.
+</Step>

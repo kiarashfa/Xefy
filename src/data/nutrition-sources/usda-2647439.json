@@ -1,0 +1,110 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2647439",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2647439/nutrients",
+  "description": "Cheese, pasteurized process cheese food or product, American, singles",
+  "category": "Dairy and Egg Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 307.896,
+    "protein": 15.567,
+    "fat": 23.86,
+    "carbs": 8.19,
+    "calcium": 1498,
+    "iron": 1.303,
+    "magnesium": 34.6,
+    "phosphorus": 880,
+    "potassium": 211.8,
+    "sodium": 1420,
+    "zinc": 2.379,
+    "copper": 0,
+    "manganese": 0.065,
+    "vitaminDMcg": 4.42,
+    "saturatedFat": 13.7,
+    "monounsaturatedFat": 4.886,
+    "cholesterol": 73.24
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 44.78,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.44,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 7.603,
+      "unit": "g"
+    },
+    {
+      "number": "314",
+      "name": "Iodine, I",
+      "amount": 52.53,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 155.7,
+      "unit": "µg"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 177,
+      "unit": "IU"
+    },
+    {
+      "number": "325",
+      "name": "Vitamin D2 (ergocalciferol)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "326",
+      "name": "Vitamin D3 (cholecalciferol)",
+      "amount": 4.421,
+      "unit": "µg"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.7231,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 2.197,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 6.52,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 2.127,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.5584,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

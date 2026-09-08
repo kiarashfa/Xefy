@@ -1,0 +1,144 @@
+---
+label: Cake
+defaultServings: 12
+difficulty: Easy
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 480
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 12
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 2
+    unit: g
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 45
+    unit: g
+    note: melted
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 180
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the frying oil stays in the pan; a fried dough of this kind absorbs roughly a tenth of what it is fried in, and the rest goes back in the bottle or is discarded.
+  - id: glaze-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 240
+    unit: g
+  - id: glaze-milk
+    ingredientRef: milk
+    form: whole
+    amount: 45
+    unit: ml
+  - id: glaze-vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 4
+    unit: ml
+steps:
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: mix-wet, durationMin: 4, type: active, phase: prep }
+  - { id: combine-dough, durationMin: 3, type: active, phase: prep }
+  - { id: chill-dough, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 15, type: "parallel-with:chill-dough", phase: cook }
+  - { id: fry, durationMin: 10, type: active, phase: cook }
+  - { id: glaze, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Best eaten the day they are fried and glazed, while the crumb is still tender.
+  freezable: true
+  freezeInstructions: Freeze the fried, unglazed doughnuts. Thaw at room temperature and glaze just before serving.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: chill-dough
+      text: This dough is soft and sticky rather than elastic, since it has no gluten development to fall back on for structure. Chilling it firm enough to cut is what makes it workable, and skipping the rest leaves a dough that will not hold a shape.
+---
+
+<Step id="mix-dry">
+  Whisk together the <Qty ref="flour"/>, the <Qty ref="baking-powder"/>, the
+  <Qty ref="bicarb"/>, the <Qty ref="nutmeg"/> and the <Qty ref="salt"/>. This takes
+  <Dur step="mix-dry"/>.
+</Step>
+
+<Step id="mix-wet">
+  Whisk the <Qty ref="sugar"/> into the <Qty ref="butter"/>, then whisk in the
+  <Qty ref="eggs"/>, the <Qty ref="soured-cream"/> and the <Qty ref="vanilla"/>, over
+  <Dur step="mix-wet"/>, until smooth.
+</Step>
+
+<Step id="combine-dough">
+  Fold the dry ingredients into the wet ingredients over <Dur step="combine-dough"/>,
+  stopping as soon as a soft, sticky dough comes together. It will be far too soft to cut
+  yet.
+</Step>
+
+<Step id="chill-dough">
+  Cover the bowl and refrigerate the dough for <Dur step="chill-dough"/>, until firm enough
+  to roll.
+</Step>
+
+<Step id="shape">
+  Roll the chilled dough to an even thickness on a floured surface and cut rounds with a
+  doughnut cutter, cutting a hole from the centre of each. Gather and re-roll the scraps
+  once. This takes <Dur step="shape"/>.
+</Step>
+
+<Step id="heat-oil">
+  Meanwhile heat the <Qty ref="frying-oil"/> in a deep pan to <Temp c={175}/>, using
+  <Dur step="heat-oil"/> to bring it up slowly and settle at temperature — a little cooler
+  than for a yeasted dough, since this one is denser and cooks through more slowly.
+</Step>
+
+<Step id="fry">
+  Fry the doughnuts a few at a time for <Dur step="fry"/> in total, turning once, until deep
+  golden and a skewer through the centre of one comes out clean. Lift them onto a rack set
+  over paper to drain.
+</Step>
+
+<Step id="glaze">
+  Whisk the <Qty ref="glaze-sugar"/> with the <Qty ref="glaze-milk"/> and the
+  <Qty ref="glaze-vanilla"/> to a thin, pourable glaze. Dip the warm doughnuts in the glaze
+  and set them back on the rack to let it set, over <Dur step="glaze"/>.
+</Step>

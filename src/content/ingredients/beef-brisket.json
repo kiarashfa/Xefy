@@ -1,0 +1,52 @@
+{
+  "id": "beef-brisket",
+  "name": "Beef Brisket",
+  "proseName": "beef brisket",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, whole, trimmed to 1/8 inch fat",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168664",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168664/nutrients",
+      "sourceNote": "USDA's record for the whole brisket, point and flat together, trimmed to a thin fat cap — the trim a whole packer brisket is given before it goes into a smoker.",
+      "nutritionPer100g": {
+        "kcal": 253,
+        "protein": 18.42,
+        "fat": 19.06,
+        "carbs": 0.56,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 6,
+        "iron": 1.7,
+        "magnesium": 19,
+        "phosphorus": 177,
+        "potassium": 282,
+        "sodium": 69,
+        "zinc": 3.71,
+        "copper": 0.071,
+        "manganese": 0.013,
+        "seleniumMcg": 16,
+        "vitaminC": 0,
+        "thiamin": 0.09,
+        "riboflavin": 0.15,
+        "niacin": 3.48,
+        "vitaminB6": 0.38,
+        "folateMcg": 6,
+        "choline": 76.9,
+        "vitaminB12Mcg": 2.25,
+        "vitaminAMcg": 0,
+        "saturatedFat": 7.53,
+        "monounsaturatedFat": 8.52,
+        "polyunsaturatedFat": 0.66,
+        "cholesterol": 68
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-brisket-thumb.webp"
+}

@@ -1,0 +1,48 @@
+{
+  "id": "ham-hock",
+  "name": "Ham Hock",
+  "proseName": "ham hock",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "smoked",
+      "label": "Cured, smoked",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169157",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169157/nutrients",
+      "sourceNote": "USDA's closest published hock record is pickled rather than smoked; both are cured pork knuckle simmered for hours to season a pot of beans or greens, and the macro profile is a reasonable stand-in where no smoked-hock record exists.",
+      "nutritionPer100g": {
+        "kcal": 171,
+        "protein": 19.11,
+        "carbs": 0,
+        "fat": 10.54,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 3.231,
+        "monounsaturatedFat": 5.134,
+        "polyunsaturatedFat": 1.198,
+        "transFat": 0.113,
+        "cholesterol": 89,
+        "sodium": 1050,
+        "potassium": 47,
+        "calcium": 19,
+        "iron": 1.14,
+        "magnesium": 6,
+        "phosphorus": 60,
+        "zinc": 2.38,
+        "copper": 0.082,
+        "manganese": 0.022,
+        "seleniumMcg": 26.3,
+        "vitaminAMcg": 23,
+        "vitaminC": 0,
+        "vitaminE": 0.17,
+        "vitaminKMcg": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/ham-hock-thumb.webp"
+}

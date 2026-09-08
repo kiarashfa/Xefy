@@ -1,0 +1,98 @@
+---
+title: Cornbread
+subtitle: A cornmeal quick bread baked hot enough in a well-seasoned pan to form a crisp crust. One serving is one wedge from the skillet.
+label: Southern skillet
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [bread, side]
+  method: [baking]
+image:
+  src: images/recipes/cornbread.webp
+  alt: "A sliced loaf of golden cornbread on a cooling rack, with cut slices plated in front"
+ingredients:
+  - id: cornmeal
+    ingredientRef: maize-meal
+    form: yellow
+    amount: 200
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 100
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 10
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 300
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+    note: melted, plus more for the skillet
+steps:
+  - { id: heat-skillet, durationMin: 10, type: "parallel-with:mix-batter", phase: cook }
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 22, type: passive }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Wrap the fully cooled cornbread whole or in wedges and freeze. Thaw at room temperature and refresh briefly in a hot oven to bring back the crust.
+  reheatInstructions: A wedge reheats well split and toasted under a hot grill, cut side down, until the crust recrisps.
+notes:
+  techniqueRationale:
+    - stepId: heat-skillet
+      text: Pouring batter into a skillet already hot from the oven sears the base on contact, which is what gives Southern cornbread its crisp, almost fried-tasting crust rather than a soft one.
+  commonPitfalls:
+    - stepId: mix-batter
+      text: Overmixing once the buttermilk meets the flour develops gluten a cornbread has no use for, giving a tough crumb instead of the tender, crumbly one this ratio of cornmeal is meant to produce.
+---
+
+<Step id="heat-skillet">
+  Put a well-seasoned cast-iron skillet into the oven and heat it to <Temp c={220}/>,
+  letting it heat through for <Dur step="heat-skillet"/> while the batter is mixed.
+</Step>
+
+<Step id="mix-dry">
+  Whisk the <Qty ref="cornmeal"/>, <Qty ref="flour"/>, <Qty ref="baking-powder"/>,
+  <Qty ref="bicarb"/> and <Qty ref="salt"/> together in a large bowl.
+</Step>
+
+<Step id="mix-batter">
+  Beat the <Qty ref="egg"/> into the <Qty ref="buttermilk"/>, then stir this and the
+  <Qty ref="butter"/> into the dry ingredients over <Dur step="mix-batter"/>, mixing only
+  until no dry streaks remain.
+</Step>
+
+<Step id="bake">
+  Carefully remove the hot skillet from the oven, add a little more butter and swirl it
+  to coat the base and sides, then pour in the batter — it should sizzle on contact.
+  Return the skillet to the oven and bake for <Dur step="bake"/>, until the top is
+  golden and a skewer pushed into the centre comes out clean. Turn the cornbread out
+  onto a board before cutting, so the crisp base stays crisp rather than steaming
+  against the hot pan.
+</Step>

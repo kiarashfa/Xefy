@@ -1,0 +1,107 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "168579",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/168579/nutrients",
+  "description": "Peppers, pasilla, dried",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 345,
+    "protein": 12.35,
+    "fat": 15.85,
+    "carbs": 51.13,
+    "fiber": 26.8,
+    "calcium": 97,
+    "iron": 9.83,
+    "magnesium": 130,
+    "phosphorus": 267,
+    "potassium": 2222,
+    "sodium": 89,
+    "zinc": 1.4,
+    "copper": 0.423,
+    "manganese": 1.58,
+    "seleniumMcg": 3.2,
+    "vitaminC": 6.4,
+    "thiamin": 0.172,
+    "riboflavin": 3.197,
+    "niacin": 7.175,
+    "vitaminB6": 4.228,
+    "folateMcg": 170,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 1788,
+    "vitaminDMcg": 0,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 14.84,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1443,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 5.82,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 1.591,
+      "unit": "mg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 170,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 170,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 35760,
+      "unit": "IU"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "221",
+      "name": "Alcohol, ethyl",
+      "amount": 0,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

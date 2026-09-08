@@ -1,0 +1,43 @@
+{
+  "id": "american-cheese",
+  "name": "American Cheese",
+  "proseName": "American cheese",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "A processed cheese product typically set with microbial or non-animal enzymes, so it is usually vegetarian — but formulations vary by brand.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "sliced",
+      "label": "Processed, sliced",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2647439",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2647439/nutrients",
+      "sourceNote": "USDA's record for individually wrapped processed American cheese singles, the form sold for burgers and sandwiches.",
+      "nutritionPer100g": {
+        "kcal": 307.896,
+        "protein": 15.567,
+        "fat": 23.86,
+        "carbs": 8.19,
+        "calcium": 1498,
+        "iron": 1.303,
+        "magnesium": 34.6,
+        "phosphorus": 880,
+        "potassium": 211.8,
+        "sodium": 1420,
+        "zinc": 2.379,
+        "copper": 0,
+        "manganese": 0.065,
+        "vitaminDMcg": 4.42,
+        "saturatedFat": 13.7,
+        "monounsaturatedFat": 4.886,
+        "cholesterol": 73.24
+      }
+    }
+  ],
+  "image": "images/ingredients/american-cheese-thumb.webp"
+}

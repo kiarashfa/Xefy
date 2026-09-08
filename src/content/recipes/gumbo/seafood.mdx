@@ -1,0 +1,151 @@
+---
+label: Seafood
+defaultServings: 6
+difficulty: Hard
+ingredients:
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 100
+    unit: ml
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 100
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 150
+    unit: g
+    note: diced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 150
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: okra
+    ingredientRef: okra
+    form: raw
+    amount: 250
+    unit: g
+    note: sliced into rounds
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    note: two leaves
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 400
+    unit: g
+  - id: crab
+    ingredientRef: crab
+    form: cooked
+    amount: 200
+    unit: g
+  - id: oyster
+    ingredientRef: oyster
+    form: raw
+    amount: 200
+    unit: g
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+  - id: rice-water
+    ingredientRef: water
+    form: tap
+    amount: 550
+    unit: ml
+steps:
+  - { id: prep-veg, durationMin: 15, type: active, phase: prep }
+  - { id: make-roux, durationMin: 40, type: active, phase: cook }
+  - { id: cook-trinity-okra, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-gumbo, durationMin: 45, type: passive }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:simmer-gumbo", phase: cook }
+  - { id: add-seafood, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The roux-and-vegetable base can be made a day ahead; add the seafood only when reheating to serve, since shrimp, crab and oyster all turn rubbery if cooked twice.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: add-seafood
+      text: Oysters turn tough within moments of overcooking, so they go in only in the last minute, off a rolling simmer, just long enough to poach through.
+---
+
+<Step id="prep-veg">
+  Dice the <Qty ref="onion"/>, <Qty ref="celery"/> and <Qty ref="green-pepper"/>, mince
+  the <Qty ref="garlic"/>, and slice the <Qty ref="okra"/>.
+</Step>
+
+<Step id="make-roux">
+  Combine the <Qty ref="oil"/> and <Qty ref="flour"/> in a large, heavy pot and set
+  over a medium-low heat. Cook, stirring constantly, for <Dur step="make-roux"/>, until
+  the roux turns a deep, dark mahogany, close to the colour of melted chocolate.
+</Step>
+
+<Step id="cook-trinity-okra">
+  Add the onion, celery, green pepper and okra to the roux and cook for
+  <Dur step="cook-trinity-okra"/>, stirring often, until softened, adding the garlic in
+  the last minute.
+</Step>
+
+<Step id="simmer-gumbo">
+  Whisk in the <Qty ref="water"/> and add the <Qty ref="bay"/>. Bring to a simmer and
+  cook, partially covered, for <Dur step="simmer-gumbo"/>, until the roux has folded
+  fully into the liquid and the okra is tender.
+</Step>
+
+<Step id="cook-rice">
+  While the gumbo simmers, combine the <Qty ref="rice"/> and <Qty ref="rice-water"/> in
+  a covered saucepan, bring to the boil, then reduce to the lowest heat and cook for
+  <Dur step="cook-rice"/>, until the water is absorbed. Leave covered off the heat
+  until serving.
+</Step>
+
+<Step id="add-seafood">
+  Discard the bay leaves. Bring the gumbo back to a simmer and add the
+  <Qty ref="shrimp"/> and <Qty ref="crab"/>, cooking until the shrimp turn pink. Stir
+  in the <Qty ref="oyster"/> and cook for one more minute, then take off the heat and
+  season with the <Qty ref="cayenne"/>, <Qty ref="black-pepper"/> and
+  <Qty ref="salt"/>. Ladle over the rice to serve.
+</Step>

@@ -1,0 +1,133 @@
+---
+title: Pecan Pie
+subtitle: A single-crust pie of pecans set in a thick corn-syrup custard. One serving is one slice from a 23cm pie.
+label: Classic
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/pecan-pie.webp
+  alt: "A whole pecan pie with a fluted crust, topped with a dense layer of pecan halves in glossy filling"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: butter-crust
+    ingredientRef: butter
+    form: unsalted
+    amount: 90
+    unit: g
+    note: chilled and cubed
+  - id: salt-crust
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: water-crust
+    ingredientRef: water
+    form: tap
+    amount: 45
+    unit: ml
+    note: iced
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+  - id: corn-syrup
+    ingredientRef: corn-syrup
+    form: light
+    amount: 300
+    unit: g
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 100
+    unit: g
+  - id: butter-filling
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    note: melted
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: salt-filling
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pecans
+    ingredientRef: pecan
+    form: raw
+    amount: 200
+    unit: g
+    note: halves
+steps:
+  - { id: make-crust, durationMin: 6, type: active, phase: prep }
+  - { id: chill-crust, durationMin: 30, type: passive }
+  - { id: line-tin, durationMin: 8, type: active, phase: prep }
+  - { id: blind-bake, durationMin: 15, type: passive }
+  - { id: mix-filling, durationMin: 6, type: "parallel-with:blind-bake", phase: prep }
+  - { id: fill-and-bake, durationMin: 45, type: passive }
+  - { id: cool, durationMin: 120, type: passive }
+makeAhead:
+  aheadInstructions: The pie is easier to slice cleanly once fully cooled, and it keeps well at room temperature for a day, loosely covered.
+  freezable: true
+  freezeInstructions: Freeze the fully cooled, baked pie whole or in slices, well wrapped. Thaw overnight in the refrigerator.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: blind-bake
+      text: Baking the empty crust before the filling goes in sets the pastry enough that it does not turn soggy under a wet, sugar-heavy filling that spends a long time in the oven.
+  commonPitfalls:
+    - stepId: fill-and-bake
+      text: A filling pulled from the oven too soon stays runny once cool, since it thickens mostly as it cools rather than while hot. It should still have a slight, even wobble across the centre, not a liquid one, when it comes out.
+---
+
+<Step id="make-crust">
+  Rub the <Qty ref="butter-crust"/> into the <Qty ref="flour"/> and <Qty ref="salt-crust"/>
+  until the mixture looks like coarse crumbs, over <Dur step="make-crust"/>. Add the
+  <Qty ref="water-crust"/> and bring the dough together with a few strokes, without
+  overworking it.
+</Step>
+
+<Step id="chill-crust">
+  Flatten the dough into a disc, wrap it, and chill for <Dur step="chill-crust"/>.
+</Step>
+
+<Step id="line-tin">
+  Roll the chilled dough out and line a pie tin with it, trimming and crimping the
+  edge, over <Dur step="line-tin"/>. Prick the base and chill again briefly.
+</Step>
+
+<Step id="blind-bake">
+  Line the pastry case with baking paper and fill with baking beans. Blind bake at
+  <Temp c={190}/> for <Dur step="blind-bake"/>, then remove the paper and beans.
+</Step>
+
+<Step id="mix-filling">
+  While the crust bakes, whisk the <Qty ref="eggs"/> with the <Qty ref="corn-syrup"/>,
+  the <Qty ref="brown-sugar"/>, the <Qty ref="butter-filling"/>, the <Qty ref="vanilla"/>
+  and the <Qty ref="salt-filling"/> until smooth, over <Dur step="mix-filling"/>.
+</Step>
+
+<Step id="fill-and-bake">
+  Scatter the <Qty ref="pecans"/> over the base of the warm pastry case and pour the
+  filling over them; the nuts will rise to the surface as it bakes. Bake at
+  <Temp c={160}/> for <Dur step="fill-and-bake"/>, until the edges are set and the
+  centre still shows a slight, even wobble.
+</Step>
+
+<Step id="cool">
+  Leave the pie to cool completely for <Dur step="cool"/> before slicing, so the
+  filling finishes setting.
+</Step>

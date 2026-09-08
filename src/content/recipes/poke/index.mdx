@@ -1,0 +1,125 @@
+---
+title: Poke
+subtitle: Cubed raw ahi tossed with shoyu, sesame oil and a crushed roasted-nut relish, served over rice as one main-course portion.
+label: Shoyu ahi
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [no-cook, boiling]
+image:
+  src: images/recipes/poke.webp
+  alt: "Diced raw tuna over a small bed of rice, dressed in an orange-tinted sauce and topped with avocado cubes, fish roe and microgreens, plated with sliced radish, cucumber and julienned carrot"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 160
+    unit: g
+  - id: rice-water
+    ingredientRef: water
+    form: tap
+    amount: 220
+    unit: ml
+    consumedFraction: 0.95
+    consumedFractionNote: Nearly all of this water is absorbed into the cooked rice; a small amount is lost as steam.
+  - id: fish
+    ingredientRef: tuna
+    form: raw
+    amount: 400
+    unit: g
+    note: sashimi-grade ahi, previously frozen
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 40
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 8
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 50
+    unit: g
+    note: thinly sliced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced
+  - id: sesame-seed
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 5
+    unit: g
+    note: toasted
+  - id: macadamia
+    ingredientRef: macadamia
+    form: roasted
+    amount: 20
+    unit: g
+    note: crushed
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 3
+    unit: g
+    note: cut into fine strips
+steps:
+  - { id: cook-rice, durationMin: 20, type: active, phase: cook }
+  - { id: cut-fish, durationMin: 8, type: "parallel-with:cook-rice", phase: prep }
+  - { id: crush-macadamia, durationMin: 4, type: "parallel-with:cook-rice", phase: prep }
+  - { id: toss-poke, durationMin: 10, type: active, phase: prep }
+  - { id: plate, durationMin: 4, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: crush-macadamia
+      text: Roasted, crushed macadamia stands in here for ʻinamona, the roasted kukui-nut relish traditional poke is seasoned with; kukui is not sold as a food outside Hawaii, and macadamia gives a comparably rich, oily crunch.
+  commonPitfalls:
+    - stepId: cut-fish
+      text: Shoyu and sesame oil do nothing to a fish's safety the way heat would, so the ahi needs to have been previously frozen to destroy parasites; fresh, never-frozen fish is not safe to eat raw this way.
+---
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> until the water runs clear, then bring it to the boil
+  with the <Qty ref="rice-water"/>. Cover, reduce the heat to a bare simmer and cook
+  undisturbed, then rest off the heat with the lid on. This takes
+  <Dur step="cook-rice"/> in total.
+</Step>
+
+<Step id="cut-fish">
+  Cut the <Qty ref="fish"/> into small, even cubes. This takes
+  <Dur step="cut-fish"/>.
+</Step>
+
+<Step id="crush-macadamia">
+  Crush the <Qty ref="macadamia"/> coarsely with the flat of a knife or a mortar and
+  pestle, then stir in the <Qty ref="salt"/>. This takes <Dur step="crush-macadamia"/>.
+</Step>
+
+<Step id="toss-poke">
+  Combine the fish, the <Qty ref="soy-sauce"/>, <Qty ref="sesame-oil"/>,
+  <Qty ref="onion"/>, <Qty ref="spring-onion"/>, <Qty ref="sesame-seed"/> and the
+  crushed macadamia in a bowl and toss gently to coat every piece. Leave to sit for
+  <Dur step="toss-poke"/> so the seasoning draws into the fish.
+</Step>
+
+<Step id="plate">
+  Divide the rice between plates, spoon the poke and its juices over the top, and
+  scatter with the <Qty ref="nori"/>. This takes <Dur step="plate"/>; serve at once.
+</Step>

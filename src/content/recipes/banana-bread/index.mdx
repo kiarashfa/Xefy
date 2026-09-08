@@ -1,0 +1,124 @@
+---
+title: Banana Bread
+subtitle: A butter-creamed quick bread leavened with bicarbonate rather than yeast, built around bananas ripened well past eating.
+label: Classic
+defaultServings: 12
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [breakfast, snack]
+  method: [baking]
+image:
+  src: images/recipes/banana-bread.webp
+  alt: "A loaf of banana bread with several slices cut, showing the moist crumb"
+ingredients:
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 115
+    unit: g
+    note: soft
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 200
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: bananas
+    ingredientRef: banana
+    form: raw
+    amount: 350
+    unit: g
+    note: very ripe, mashed
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 280
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 4
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 5
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: walnuts
+    ingredientRef: walnut
+    form: chopped
+    amount: 100
+    unit: g
+steps:
+  - { id: cream, durationMin: 4, type: active, phase: prep }
+  - { id: beat-in-eggs, durationMin: 2, type: active, phase: prep }
+  - { id: mash-in-banana, durationMin: 2, type: active, phase: prep }
+  - { id: fold-dry, durationMin: 3, type: active, phase: prep }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:fold-dry", phase: cook }
+  - { id: bake, durationMin: 60, type: passive }
+  - { id: cool-in-tin, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: Keeps three days at room temperature, well wrapped, and is if anything better on the second day once the crumb has settled.
+  freezable: true
+  freezeInstructions: Wrap the cooled loaf whole, or in slices, and freeze. Thaw at room temperature still wrapped, which keeps the crumb from drying out as it comes back to temperature.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cream
+      text: Creaming butter and sugar is the only aeration this batter gets before the bicarbonate takes over — there is no whisked egg foam or separately beaten white to lean on.
+  commonPitfalls:
+    - stepId: fold-dry
+      text: Overworking the batter once the flour goes in develops gluten that a quick bread has no use for, giving a tough, tunnelled crumb instead of a tender one.
+---
+
+<Step id="cream">
+  Beat the <Qty ref="butter"/> with the <Qty ref="brown-sugar"/> for <Dur step="cream"/>,
+  until pale and fluffy.
+</Step>
+
+<Step id="beat-in-eggs">
+  Beat in the <Qty ref="eggs"/> and the <Qty ref="vanilla"/>, taking <Dur step="beat-in-eggs"/>
+  and stopping as soon as the mixture looks smooth again.
+</Step>
+
+<Step id="mash-in-banana">
+  Stir the <Qty ref="bananas"/> through, using <Dur step="mash-in-banana"/>. A few small
+  lumps left in the mash are no fault; they turn to soft pockets in the baked loaf.
+</Step>
+
+<Step id="fold-dry">
+  Sift the <Qty ref="flour"/> together with the <Qty ref="baking-powder"/>, the
+  <Qty ref="bicarb"/> and the <Qty ref="salt"/>, and fold them into the banana mixture with
+  the <Qty ref="walnuts"/> over <Dur step="fold-dry"/>, stopping the moment no dry flour
+  is visible.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile heat the oven to <Temp c={170}/>, allowing <Dur step="heat-oven"/> for it to
+  settle, and butter and line a loaf tin.
+</Step>
+
+<Step id="bake">
+  Turn the batter into the tin and bake for <Dur step="bake"/>, until a skewer pushed into
+  the centre comes out clean and the top has split along its length.
+</Step>
+
+<Step id="cool-in-tin">
+  Leave the loaf in its tin for <Dur step="cool-in-tin"/> before turning it out onto a rack,
+  where the crumb finishes setting as it cools the rest of the way.
+</Step>

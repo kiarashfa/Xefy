@@ -1,0 +1,55 @@
+{
+  "id": "thyme",
+  "name": "Thyme",
+  "proseName": "thyme",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173470",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173470/nutrients",
+      "nutritionPer100g": {
+        "kcal": 101,
+        "protein": 5.56,
+        "fat": 1.68,
+        "carbs": 24.45,
+        "fiber": 14,
+        "calcium": 405,
+        "iron": 17.45,
+        "magnesium": 160,
+        "phosphorus": 106,
+        "potassium": 609,
+        "sodium": 9,
+        "zinc": 1.81,
+        "copper": 0.555,
+        "manganese": 1.719,
+        "vitaminC": 160.1,
+        "thiamin": 0.048,
+        "riboflavin": 0.471,
+        "niacin": 1.824,
+        "vitaminB6": 0.348,
+        "folateMcg": 45,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 238,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.467,
+        "monounsaturatedFat": 0.081,
+        "polyunsaturatedFat": 0.532,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 0.8,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/thyme-thumb.webp"
+}

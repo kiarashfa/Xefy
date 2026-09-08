@@ -1,0 +1,108 @@
+---
+title: Sourdough Bread
+subtitle: A naturally leavened loaf raised entirely by a mature flour-and-water starter, its long fermentation done mostly overnight in the refrigerator. One serving is one slice.
+label: Country loaf
+defaultServings: 12
+difficulty: Hard
+tags:
+  cuisine: [american]
+  course: [bread]
+  method: [baking, fermenting]
+image:
+  src: images/recipes/sourdough-bread.webp
+  alt: "A round sourdough loaf with a deeply browned, scored crust cooling on a wire rack"
+ingredients:
+  - id: starter
+    ingredientRef: sourdough-starter
+    form: active
+    amount: 100
+    unit: g
+    note: fed and risen to its peak before use
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 350
+    unit: ml
+    note: room temperature
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+steps:
+  - { id: feed-starter, durationMin: 480, type: passive }
+  - { id: autolyse, durationMin: 60, type: passive }
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: bulk-ferment, durationMin: 240, type: passive }
+  - { id: fold-dough, durationMin: 10, type: "parallel-with:bulk-ferment", phase: prep }
+  - { id: shape, durationMin: 6, type: active, phase: prep }
+  - { id: cold-retard, durationMin: 720, type: passive }
+  - { id: bake, durationMin: 45, type: passive }
+makeAhead:
+  aheadInstructions: "The whole point of the schedule is make-ahead: shaped dough sits in the refrigerator overnight and bakes the next day directly from cold."
+  freezable: true
+  freezeInstructions: Freeze the fully baked and cooled loaf whole or sliced. Thaw sliced bread straight from frozen in a toaster; thaw a whole loaf wrapped at room temperature, then refresh it in a hot oven to bring back the crust.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cold-retard
+      text: A long, cold overnight rise develops flavour that a fast, warm rise cannot — the yeast slows down while the bacteria that produce sourdough's characteristic acidity keep working, and the cold dough is also far easier to score cleanly.
+  commonPitfalls:
+    - stepId: mix-dough
+      text: Starter added before it has risen to its peak leavens the dough too slowly and gives it too little time to develop structure. It should float when a small spoonful is dropped in water; if it sinks, it needs longer to feed.
+---
+
+<Step id="feed-starter">
+  The evening or morning before baking, feed the starter with fresh flour and water and
+  leave it at room temperature for <Dur step="feed-starter"/>, until it has visibly
+  doubled and looks domed and bubbled across the top.
+</Step>
+
+<Step id="autolyse">
+  Stir the <Qty ref="flour"/> and the <Qty ref="water"/> together into a shaggy, floury
+  dough, with no dry patches left. Cover and leave it to rest for <Dur step="autolyse"/>,
+  which lets the flour hydrate fully before any mixing begins.
+</Step>
+
+<Step id="mix-dough">
+  Add the <Qty ref="starter"/> and the <Qty ref="salt"/> to the rested dough and work
+  them in by hand, pinching and folding the dough over itself for
+  <Dur step="mix-dough"/>, until both are fully incorporated and the dough feels smooth
+  enough to hold together.
+</Step>
+
+<Step id="bulk-ferment">
+  Cover the dough and leave it to rise at room temperature for <Dur step="bulk-ferment"/>,
+  until it looks noticeably fuller and slightly domed.
+</Step>
+
+<Step id="fold-dough">
+  During the bulk rise, reach into the bowl, stretch one side of the dough up and fold
+  it over onto itself, turn the bowl a quarter turn and repeat around all sides. Do this
+  a few times at evenly spaced intervals across the rise, spending
+  <Dur step="fold-dough"/> in total; each round of folding tightens the dough's
+  structure without ever needing to knead it.
+</Step>
+
+<Step id="shape">
+  Turn the dough out onto a lightly floured surface and shape it into a tight round by
+  dragging it against the surface with cupped hands, over <Dur step="shape"/>. Set it
+  seam-side up in a floured proving basket.
+</Step>
+
+<Step id="cold-retard">
+  Cover the basket and refrigerate the shaped dough for <Dur step="cold-retard"/>,
+  ideally overnight, so it finishes proving slowly in the cold.
+</Step>
+
+<Step id="bake">
+  Heat a covered heavy pot in the oven to <Temp c={240}/>. Turn the cold dough out onto
+  a sheet of baking paper, score the top with a sharp blade, and lower it into the hot
+  pot using the paper as a sling. Bake covered for most of <Dur step="bake"/>, then
+  uncover for the final stretch to let the crust brown and turn deep golden.
+</Step>

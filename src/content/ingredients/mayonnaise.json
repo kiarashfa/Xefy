@@ -1,0 +1,64 @@
+{
+  "id": "mayonnaise",
+  "name": "Mayonnaise",
+  "proseName": "mayonnaise",
+  "category": "condiment",
+  "animalOrigin": "egg",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "egg"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "regular",
+      "label": "Regular",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171009",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171009/nutrients",
+      "sourceNote": "USDA's Foundation record for plain mayonnaise carries no energy or macro values, so this cites the complete SR Legacy record for regular mayonnaise dressing instead.",
+      "nutritionPer100g": {
+        "kcal": 680,
+        "protein": 0.96,
+        "fat": 74.85,
+        "carbs": 0.57,
+        "fiber": 0,
+        "sugars": 0.57,
+        "calcium": 8,
+        "iron": 0.21,
+        "magnesium": 1,
+        "phosphorus": 21,
+        "potassium": 20,
+        "sodium": 635,
+        "zinc": 0.15,
+        "copper": 0.019,
+        "manganese": 0.007,
+        "seleniumMcg": 2.3,
+        "vitaminC": 0,
+        "thiamin": 0.01,
+        "riboflavin": 0.019,
+        "niacin": 0,
+        "vitaminB6": 0.008,
+        "folateMcg": 5,
+        "choline": 34.2,
+        "vitaminB12Mcg": 0.12,
+        "vitaminAMcg": 16,
+        "vitaminE": 3.28,
+        "vitaminDMcg": 0.2,
+        "vitaminKMcg": 163,
+        "saturatedFat": 11.703,
+        "monounsaturatedFat": 16.843,
+        "polyunsaturatedFat": 44.69,
+        "transFat": 0.187,
+        "cholesterol": 42
+      },
+      "density": {
+        "gPerTbsp": 13.8,
+        "gPerCup": 220,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/mayonnaise-thumb.webp"
+}

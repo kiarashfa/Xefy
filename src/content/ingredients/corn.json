@@ -1,0 +1,59 @@
+{
+  "id": "corn",
+  "name": "Corn",
+  "proseName": "corn",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, yellow, kernels",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169998",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169998/nutrients",
+      "sourceNote": "USDA has no cultivar-specific record for choclo, the large-kernelled Peruvian corn served alongside ceviche. This is its record for ordinary fresh sweet corn, the closest composition it publishes.",
+      "nutritionPer100g": {
+        "kcal": 86,
+        "protein": 3.27,
+        "carbs": 18.7,
+        "fat": 1.35,
+        "fiber": 2,
+        "sugars": 6.26,
+        "saturatedFat": 0.325,
+        "monounsaturatedFat": 0.432,
+        "polyunsaturatedFat": 0.487,
+        "cholesterol": 0,
+        "sodium": 15,
+        "potassium": 270,
+        "calcium": 2,
+        "iron": 0.52,
+        "magnesium": 37,
+        "phosphorus": 89,
+        "zinc": 0.46,
+        "copper": 0.054,
+        "manganese": 0.163,
+        "seleniumMcg": 0.6,
+        "vitaminAMcg": 9,
+        "vitaminC": 6.8,
+        "vitaminE": 0.07,
+        "vitaminKMcg": 0.3,
+        "thiamin": 0.155,
+        "riboflavin": 0.055,
+        "niacin": 1.77,
+        "vitaminB6": 0.093,
+        "folateMcg": 42,
+        "vitaminB12Mcg": 0,
+        "choline": 23
+      },
+      "density": {
+        "gPerCup": 145,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/corn-thumb.webp"
+}

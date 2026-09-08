@@ -1,0 +1,57 @@
+{
+  "id": "english-muffins",
+  "name": "English Muffins",
+  "proseName": "English muffins",
+  "category": "bread",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "plain",
+      "label": "Plain",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175063",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175063/nutrients",
+      "nutritionPer100g": {
+        "kcal": 235,
+        "protein": 7.7,
+        "fat": 1.8,
+        "carbs": 46,
+        "fiber": 2.7,
+        "sugars": 0,
+        "calcium": 52,
+        "iron": 2.5,
+        "magnesium": 21,
+        "phosphorus": 133,
+        "potassium": 131,
+        "sodium": 464,
+        "zinc": 0.7,
+        "copper": 0.129,
+        "manganese": 0.357,
+        "vitaminC": 0,
+        "thiamin": 0.442,
+        "riboflavin": 0.281,
+        "niacin": 3.884,
+        "vitaminB6": 0.043,
+        "folateMcg": 100,
+        "vitaminB12Mcg": 0.04,
+        "vitaminAMcg": 0,
+        "saturatedFat": 0.259,
+        "monounsaturatedFat": 0.302,
+        "polyunsaturatedFat": 0.888,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "English muffin",
+        "plural": "English muffins",
+        "grams": 57
+      }
+    }
+  ],
+  "image": "images/ingredients/english-muffins-thumb.webp"
+}

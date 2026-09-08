@@ -1,0 +1,57 @@
+{
+  "id": "corvina",
+  "name": "Corvina",
+  "proseName": "corvina",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, fillet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174192",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174192/nutrients",
+      "sourceNote": "USDA has no record for corvina, the lean white croaker-family fish standard in Peruvian ceviche. This is its record for Atlantic croaker, a fish of the same family (Sciaenidae) with a comparably lean, mild, white flesh.",
+      "nutritionPer100g": {
+        "kcal": 104,
+        "protein": 17.78,
+        "carbs": 0,
+        "fat": 3.17,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 1.088,
+        "monounsaturatedFat": 1.149,
+        "polyunsaturatedFat": 0.464,
+        "cholesterol": 61,
+        "sodium": 56,
+        "potassium": 345,
+        "calcium": 15,
+        "iron": 0.37,
+        "magnesium": 40,
+        "phosphorus": 210,
+        "zinc": 0.42,
+        "copper": 0.042,
+        "manganese": 0.025,
+        "seleniumMcg": 36.5,
+        "vitaminAMcg": 12,
+        "vitaminC": 0,
+        "vitaminDMcg": 0.7,
+        "vitaminE": 1.29,
+        "vitaminKMcg": 0.1,
+        "thiamin": 0.075,
+        "riboflavin": 0.095,
+        "niacin": 4.2,
+        "vitaminB6": 0.3,
+        "folateMcg": 15,
+        "vitaminB12Mcg": 2.5,
+        "choline": 67
+      }
+    }
+  ],
+  "image": "images/ingredients/corvina-thumb.webp"
+}

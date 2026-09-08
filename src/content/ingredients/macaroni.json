@@ -1,0 +1,63 @@
+{
+  "id": "macaroni",
+  "name": "Macaroni",
+  "proseName": "macaroni",
+  "category": "pasta",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "dry",
+      "label": "Dry, elbow",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169736",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169736/nutrients",
+      "sourceNote": "USDA's generic enriched dry pasta record; the household measure taken is its elbow-macaroni cup weight.",
+      "nutritionPer100g": {
+        "kcal": 371,
+        "protein": 13.04,
+        "fat": 1.51,
+        "carbs": 74.67,
+        "fiber": 3.2,
+        "sugars": 2.67,
+        "calcium": 21,
+        "iron": 3.3,
+        "magnesium": 53,
+        "phosphorus": 189,
+        "potassium": 223,
+        "sodium": 6,
+        "zinc": 1.41,
+        "copper": 0.289,
+        "manganese": 0.917,
+        "seleniumMcg": 63.2,
+        "vitaminC": 0,
+        "thiamin": 0.891,
+        "riboflavin": 0.4,
+        "niacin": 7.177,
+        "vitaminB6": 0.142,
+        "folateMcg": 391,
+        "choline": 15.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.11,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.277,
+        "monounsaturatedFat": 0.171,
+        "polyunsaturatedFat": 0.564,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 122,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/macaroni-thumb.webp"
+}

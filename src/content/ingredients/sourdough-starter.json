@@ -1,0 +1,60 @@
+{
+  "id": "sourdough-starter",
+  "name": "Sourdough Starter",
+  "proseName": "sourdough starter",
+  "category": "leavening",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "active",
+      "label": "Active, fed",
+      "proseQualifier": "active",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168896",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168896/nutrients",
+      "sourceNote": "USDA publishes no record for sourdough starter itself. A mature starter maintained at roughly equal parts flour and water by weight is approximated here as half the nutrition of bread flour, diluted with water; the figures are computed from USDA's bread flour record on that basis rather than measured directly.",
+      "nutritionCaveat": "Computed by halving USDA's bread flour figures to approximate a 100%-hydration starter, not measured from an actual starter culture. Fermentation itself changes the sugar and organic-acid profile in ways this estimate does not capture.",
+      "nutritionPer100g": {
+        "kcal": 180.5,
+        "protein": 5.99,
+        "fat": 0.83,
+        "carbs": 36.27,
+        "fiber": 1.2,
+        "sugars": 0.16,
+        "calcium": 7.5,
+        "iron": 2.21,
+        "magnesium": 12.5,
+        "phosphorus": 48.5,
+        "potassium": 50,
+        "sodium": 1,
+        "zinc": 0.43,
+        "copper": 0.091,
+        "manganese": 0.4,
+        "seleniumMcg": 19.9,
+        "vitaminC": 0,
+        "thiamin": 0.41,
+        "riboflavin": 0.26,
+        "niacin": 3.78,
+        "vitaminB6": 0.02,
+        "folateMcg": 144,
+        "choline": 5.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.2,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.15,
+        "saturatedFat": 0.12,
+        "monounsaturatedFat": 0.07,
+        "polyunsaturatedFat": 0.36,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/sourdough-starter-thumb.webp"
+}

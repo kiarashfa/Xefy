@@ -1,0 +1,69 @@
+{
+  "id": "tomato-ketchup",
+  "name": "Tomato Ketchup",
+  "proseName": "tomato ketchup",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Catsup",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "bottled",
+      "label": "Bottled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168556",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168556/nutrients",
+      "nutritionPer100g": {
+        "kcal": 101,
+        "protein": 1.04,
+        "fat": 0.1,
+        "carbs": 27.4,
+        "fiber": 0.3,
+        "sugars": 21.27,
+        "calcium": 15,
+        "iron": 0.35,
+        "magnesium": 13,
+        "phosphorus": 26,
+        "potassium": 281,
+        "sodium": 907,
+        "zinc": 0.17,
+        "copper": 0.085,
+        "manganese": 0.084,
+        "seleniumMcg": 0.7,
+        "vitaminC": 4.1,
+        "thiamin": 0.011,
+        "riboflavin": 0.166,
+        "niacin": 1.434,
+        "vitaminB6": 0.158,
+        "folateMcg": 9,
+        "choline": 12.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 26,
+        "vitaminE": 1.46,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 3,
+        "saturatedFat": 0.014,
+        "monounsaturatedFat": 0.015,
+        "polyunsaturatedFat": 0.041,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 17,
+        "gPerCup": 240,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/tomato-ketchup-thumb.webp"
+}

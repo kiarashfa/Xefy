@@ -1,0 +1,162 @@
+---
+title: Red Beans and Rice
+subtitle: Dried kidney beans simmered for hours with a smoked ham hock and andouille sausage until creamy, spooned over steamed rice.
+description: New Orleans red beans and rice made the standard Monday way — kidney beans simmered slowly with the trinity of onion, celery and green pepper, a smoked ham hock and andouille sausage, mashed to a creamy gravy and served over steamed white rice.
+label: New Orleans
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [simmering, sauteing]
+image:
+  src: images/recipes/red-beans-and-rice.webp
+  alt: "A plate of creamy red beans stewed with a mound of white rice, garnished with parsley"
+ingredients:
+  - id: beans
+    ingredientRef: kidney-beans
+    form: dried
+    amount: 450
+    unit: g
+  - id: hock
+    ingredientRef: ham-hock
+    form: smoked
+    amount: 300
+    unit: g
+    consumedFraction: 0.35
+    consumedFractionNote: The hock simmers mainly to season the pot. Most of its bone, skin and rendered fat are discarded once the meat is picked off and returned to the pot.
+  - id: sausage
+    ingredientRef: andouille
+    form: smoked
+    amount: 300
+    unit: g
+    note: sliced into rounds
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    note: two leaves
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1800
+    unit: ml
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+  - id: rice-water
+    ingredientRef: water
+    form: tap
+    amount: 550
+    unit: ml
+steps:
+  - { id: prep-veg, durationMin: 15, type: active, phase: prep }
+  - { id: brown-sausage, durationMin: 8, type: active, phase: cook }
+  - { id: cook-trinity, durationMin: 8, type: active, phase: cook }
+  - { id: simmer-beans, durationMin: 150, type: passive }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:simmer-beans", phase: cook }
+  - { id: finish, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Improves overnight in the refrigerator, as is traditional — it is often made the day before and reheated.
+  freezable: true
+  freezeInstructions: Freeze the beans, without the rice, for up to three months.
+  reheatInstructions: Reheat gently over a low heat, loosening with a splash of water, and cook fresh rice to serve alongside.
+substitutions:
+  - lineRef: sausage
+    substitute: smoked pork sausage
+    ratio: "1:1"
+    note: Any coarse, well-smoked pork sausage stands in where andouille is unavailable, though the flavour will be milder and less peppery.
+    impact: { flavor: moderate change, texture: minor }
+notes:
+  techniqueRationale:
+    - stepId: finish
+      text: Mashing a portion of the beans against the side of the pot releases their starch and is what turns the cooking liquid into a thick, creamy gravy rather than a thin broth.
+  commonPitfalls:
+    - stepId: simmer-beans
+      text: Salting the pot too early toughens the bean skins before they have softened; the deliberate seasoning is held back until the beans are already tender in the finishing step.
+---
+
+<Step id="prep-veg">
+  Dice the <Qty ref="onion"/>, <Qty ref="celery"/> and <Qty ref="green-pepper"/>, and
+  mince the <Qty ref="garlic"/>.
+</Step>
+
+<Step id="brown-sausage">
+  Heat the <Qty ref="oil"/> in a large, heavy pot over a medium-high heat and brown the
+  <Qty ref="sausage"/> for <Dur step="brown-sausage"/>. Lift it out and set aside.
+</Step>
+
+<Step id="cook-trinity">
+  Add the onion, celery and green pepper to the fat left in the pot and cook for
+  <Dur step="cook-trinity"/>, stirring often, until softened. Add the garlic in the
+  last minute.
+</Step>
+
+<Step id="simmer-beans">
+  Return the sausage to the pot along with the <Qty ref="beans"/>, <Qty ref="hock"/>,
+  <Qty ref="bay"/> and <Qty ref="water"/>. Bring to the boil, then reduce to a simmer
+  and cook, partially covered, for <Dur step="simmer-beans"/>, until the beans are
+  tender and the hock meat is falling from the bone.
+</Step>
+
+<Step id="cook-rice">
+  While the beans simmer, combine the <Qty ref="rice"/> and <Qty ref="rice-water"/> in
+  a covered saucepan, bring to the boil, then reduce to the lowest heat and cook for
+  <Dur step="cook-rice"/>, until the water is absorbed. Leave covered off the heat
+  until serving.
+</Step>
+
+<Step id="finish">
+  Lift out the hock, discard the bay leaf, and pick the meat from the bone, discarding
+  the skin and excess fat; return the meat to the pot. Mash a few spoonfuls of beans
+  against the side of the pot to thicken the liquid, then stir in the
+  <Qty ref="cayenne"/>, <Qty ref="black-pepper"/> and <Qty ref="salt"/>. Serve ladled
+  over the rice.
+</Step>

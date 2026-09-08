@@ -1,0 +1,139 @@
+---
+title: New York Cheesecake
+subtitle: A dense, tangy cream cheese filling on a buttered biscuit-crumb base, baked slowly in a water bath so it sets without cracking.
+label: Baked
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/new-york-cheesecake.webp
+  alt: "A whole plain New York-style cheesecake with a deeply browned top"
+ingredients:
+  - id: crumbs
+    ingredientRef: graham-crackers
+    form: crumbs
+    amount: 200
+    unit: g
+  - id: crust-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 90
+    unit: g
+    note: melted
+  - id: crust-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+  - id: cream-cheese
+    ingredientRef: cream-cheese
+    form: regular
+    amount: 900
+    unit: g
+    note: at room temperature
+  - id: filling-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 220
+    unit: g
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 20
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: at room temperature
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 120
+    unit: ml
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+steps:
+  - { id: make-crust, durationMin: 8, type: active, phase: prep }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:make-crust", phase: cook }
+  - { id: par-bake-crust, durationMin: 10, type: passive }
+  - { id: beat-cream-cheese, durationMin: 4, type: active, phase: prep }
+  - { id: add-eggs, durationMin: 4, type: active, phase: prep }
+  - { id: finish-batter, durationMin: 2, type: active, phase: prep }
+  - { id: bake, durationMin: 70, type: passive }
+  - { id: rest-in-oven, durationMin: 60, type: passive }
+  - { id: chill, durationMin: 360, type: passive }
+makeAhead:
+  aheadInstructions: Cheesecake is better made a day ahead — it needs the long chill to slice cleanly, and the flavour rounds out overnight. Keeps four days refrigerated, well covered.
+  freezable: true
+  freezeInstructions: Freeze the fully chilled, unmoulded cheesecake whole or in slices, well wrapped. Thaw overnight in the fridge, still wrapped, to keep condensation off the surface.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: A water bath surrounds the tin with steady, moist heat well below the oven's own temperature, which is what lets the custard-like filling set slowly and evenly rather than puffing up at the edges before the centre is done.
+  commonPitfalls:
+    - stepId: add-eggs
+      text: Beating air into the batter once the eggs go in is what causes a baked cheesecake to crack, since that trapped air expands in the oven and then collapses as it cools. Eggs are mixed in on the lowest speed, just until combined.
+---
+
+<Step id="make-crust">
+  Stir the <Qty ref="crumbs"/> into the <Qty ref="crust-butter"/> and the
+  <Qty ref="crust-sugar"/> until every crumb is coated, then press the mixture firmly into
+  the base of a springform tin. This takes <Dur step="make-crust"/>.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile heat the oven to <Temp c={170}/>, giving it <Dur step="heat-oven"/> to settle,
+  and wrap the outside of the tin in foil to keep water from the later bath seeping in.
+</Step>
+
+<Step id="par-bake-crust">
+  Bake the crust for <Dur step="par-bake-crust"/>, until just set, then leave it to cool
+  while the filling is made. Lower the oven to <Temp c={150}/>.
+</Step>
+
+<Step id="beat-cream-cheese">
+  Beat the <Qty ref="cream-cheese"/> until perfectly smooth, then beat in the
+  <Qty ref="filling-sugar"/> and the <Qty ref="cornflour"/>, over <Dur step="beat-cream-cheese"/>,
+  scraping down the bowl so no lumps of cheese are left at the base.
+</Step>
+
+<Step id="add-eggs">
+  Beat in the <Qty ref="eggs"/> one at a time on the lowest speed, over <Dur step="add-eggs"/>,
+  mixing each just until it disappears before adding the next.
+</Step>
+
+<Step id="finish-batter">
+  Stir in the <Qty ref="cream"/>, the <Qty ref="lemon-juice"/> and the <Qty ref="vanilla"/>
+  by hand, using <Dur step="finish-batter"/>, until just combined.
+</Step>
+
+<Step id="bake">
+  Pour the batter over the crust, set the tin in a larger roasting pan and pour boiling
+  water into the pan to come partway up the sides of the foil. Bake for <Dur step="bake"/>,
+  until the edges are set and the centre still holds a slight wobble.
+</Step>
+
+<Step id="rest-in-oven">
+  Turn off the oven and leave the cheesecake inside with the door ajar for
+  <Dur step="rest-in-oven"/>, so it finishes setting gradually rather than meeting cold air
+  all at once.
+</Step>
+
+<Step id="chill">
+  Lift the cheesecake out of the water bath, remove the foil and refrigerate it, uncovered
+  at first, for <Dur step="chill"/> or overnight, before unmoulding and slicing.
+</Step>

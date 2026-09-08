@@ -1,0 +1,83 @@
+---
+label: Northern sweet
+defaultServings: 9
+difficulty: Easy
+ingredients:
+  - id: cornmeal
+    ingredientRef: maize-meal
+    form: yellow
+    amount: 150
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 12
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 250
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 75
+    unit: g
+    note: melted, plus more for the tin
+steps:
+  - { id: heat-oven, durationMin: 12, type: "parallel-with:mix-batter", phase: cook }
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 25, type: passive }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Wrap the fully cooled cornbread whole or in squares and freeze. Thaw at room temperature.
+  reheatInstructions: A square warms well, loosely wrapped, in a low oven.
+notes:
+  commonPitfalls:
+    - stepId: mix-batter
+      text: This batter takes more sugar and flour than the skillet version and behaves more like a cake batter — treat it the same way, stopping as soon as the dry ingredients disappear rather than beating it smooth.
+---
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={190}/> and butter a square baking tin, allowing
+  <Dur step="heat-oven"/> for the oven to come to temperature.
+</Step>
+
+<Step id="mix-dry">
+  Whisk the <Qty ref="cornmeal"/>, <Qty ref="flour"/>, <Qty ref="baking-powder"/>,
+  <Qty ref="salt"/> and <Qty ref="sugar"/> together in a large bowl.
+</Step>
+
+<Step id="mix-batter">
+  Beat the <Qty ref="egg"/> into the <Qty ref="milk"/>, then stir this and the
+  <Qty ref="butter"/> into the dry ingredients over <Dur step="mix-batter"/>, mixing
+  only until smooth and no dry streaks remain.
+</Step>
+
+<Step id="bake">
+  Pour the batter into the prepared tin and bake for <Dur step="bake"/>, until golden
+  and a skewer pushed into the centre comes out clean. Cool in the tin a little before
+  cutting into squares.
+</Step>

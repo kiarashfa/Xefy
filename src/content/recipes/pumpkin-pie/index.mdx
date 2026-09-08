@@ -1,0 +1,140 @@
+---
+title: Pumpkin Pie
+subtitle: A single-crust custard pie of spiced pumpkin puree, baked just until set. One serving is one slice from a 23cm pie.
+label: Classic
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/pumpkin-pie.webp
+  alt: "A whole pumpkin pie with a fluted golden crust and smooth orange-brown filling, cooling on a wire rack"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: butter-crust
+    ingredientRef: butter
+    form: unsalted
+    amount: 90
+    unit: g
+    note: chilled and cubed
+  - id: salt-crust
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: water-crust
+    ingredientRef: water
+    form: tap
+    amount: 45
+    unit: ml
+    note: iced
+  - id: pumpkin
+    ingredientRef: pumpkin-puree
+    form: canned
+    amount: 425
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 150
+    unit: g
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 250
+    unit: ml
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 4
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 3
+    unit: g
+    note: ground
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 1
+    unit: g
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 1
+    unit: g
+    note: ground
+  - id: salt-filling
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: make-crust, durationMin: 6, type: active, phase: prep }
+  - { id: chill-crust, durationMin: 30, type: passive }
+  - { id: line-tin, durationMin: 8, type: active, phase: prep }
+  - { id: blind-bake, durationMin: 15, type: passive }
+  - { id: mix-filling, durationMin: 6, type: "parallel-with:blind-bake", phase: prep }
+  - { id: fill-and-bake, durationMin: 50, type: passive }
+  - { id: cool, durationMin: 120, type: passive }
+makeAhead:
+  aheadInstructions: The pie slices most cleanly once fully cooled and can be made a day ahead, kept loosely covered in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze the fully cooled, baked pie whole or in slices, well wrapped. Thaw overnight in the refrigerator.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: fill-and-bake
+      text: An overbaked custard filling cracks across the top as it cools. It is done once the outer few centimetres are set and only a small circle at the centre still wobbles; that centre firms up entirely as the pie cools.
+---
+
+<Step id="make-crust">
+  Rub the <Qty ref="butter-crust"/> into the <Qty ref="flour"/> and <Qty ref="salt-crust"/>
+  until the mixture looks like coarse crumbs, over <Dur step="make-crust"/>. Add the
+  <Qty ref="water-crust"/> and bring the dough together with a few strokes, without
+  overworking it.
+</Step>
+
+<Step id="chill-crust">
+  Flatten the dough into a disc, wrap it, and chill for <Dur step="chill-crust"/>.
+</Step>
+
+<Step id="line-tin">
+  Roll the chilled dough out and line a pie tin with it, trimming and crimping the
+  edge, over <Dur step="line-tin"/>. Prick the base and chill again briefly.
+</Step>
+
+<Step id="blind-bake">
+  Line the pastry case with baking paper and fill with baking beans. Blind bake at
+  <Temp c={190}/> for <Dur step="blind-bake"/>, then remove the paper and beans.
+</Step>
+
+<Step id="mix-filling">
+  While the crust bakes, whisk the <Qty ref="pumpkin"/> with the <Qty ref="eggs"/>, the
+  <Qty ref="brown-sugar"/>, the <Qty ref="cream"/>, the <Qty ref="cinnamon"/>, the
+  <Qty ref="ginger"/>, the <Qty ref="nutmeg"/>, the <Qty ref="cloves"/> and the
+  <Qty ref="salt-filling"/> until smooth, over <Dur step="mix-filling"/>.
+</Step>
+
+<Step id="fill-and-bake">
+  Pour the filling into the warm pastry case. Bake at <Temp c={180}/> for
+  <Dur step="fill-and-bake"/>, until the outer edges are set and only a small circle at
+  the very centre still wobbles.
+</Step>
+
+<Step id="cool">
+  Leave the pie to cool completely for <Dur step="cool"/>, so the centre finishes
+  setting, before slicing.
+</Step>

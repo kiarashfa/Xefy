@@ -1,0 +1,100 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "1750342",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/1750342/nutrients",
+  "description": "Apples, granny smith, with skin, raw",
+  "category": "Fruits and Fruit Juices",
+  "publicationDate": "10/30/2020",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 52.958,
+    "protein": 0.266,
+    "fat": 0.138,
+    "carbs": 14.143,
+    "fiber": 2.514,
+    "sugars": 10.65,
+    "calcium": 5.483,
+    "iron": 0.07,
+    "magnesium": 5.055,
+    "phosphorus": 9.859,
+    "potassium": 115.9,
+    "sodium": 0,
+    "zinc": 0.023,
+    "copper": 0.035,
+    "manganese": 0.039,
+    "thiamin": 0.017,
+    "riboflavin": 0.075,
+    "niacin": 0.11,
+    "vitaminB6": 0.028
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 85.14,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.0425,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.3139,
+      "unit": "g"
+    },
+    {
+      "number": "205.2",
+      "name": "Carbohydrate, by summation",
+      "amount": 13.164,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 10.651,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 1.611,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 2.678,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 6.362,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

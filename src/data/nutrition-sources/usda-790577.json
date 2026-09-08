@@ -1,0 +1,103 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "790577",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/790577/nutrients",
+  "description": "Onions, red, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/1/2020",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 44,
+    "protein": 0.94,
+    "fat": 0.1,
+    "carbs": 9.93,
+    "fiber": 2.2,
+    "calcium": 17,
+    "iron": 0.24,
+    "magnesium": 11.4,
+    "phosphorus": 41,
+    "potassium": 197,
+    "sodium": 1,
+    "zinc": 0.17,
+    "copper": 0.058,
+    "manganese": 0.119,
+    "seleniumMcg": 0.5,
+    "vitaminC": 8.1
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 88.6,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 186,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.43,
+      "unit": "g"
+    },
+    {
+      "number": "293",
+      "name": "Total dietary fiber (AOAC 2011.25)",
+      "amount": 3.97,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 5.76,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 1.68,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 2.29,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 1.79,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "314",
+      "name": "Iodine, I",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

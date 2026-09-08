@@ -1,0 +1,74 @@
+---
+title: Hot Dog
+subtitle: A beef frankfurter, split and browned, in a steamed bun with onion and relish.
+label: Street cart
+defaultServings: 1
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [pan-frying]
+image:
+  src: images/recipes/hot-dog.webp
+  alt: "A grilled hot dog in a poppy seed bun, topped with a pickle spear, chopped onion and green relish"
+ingredients:
+  - id: frankfurter
+    ingredientRef: frankfurters
+    form: raw
+    amount: 57
+    unit: g
+    note: one frankfurter
+  - id: bun
+    ingredientRef: hot-dog-buns
+    form: plain
+    amount: 43
+    unit: g
+    note: one bun
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 20
+    unit: g
+    note: finely diced
+  - id: relish
+    ingredientRef: relish
+    form: sweet
+    amount: 15
+    unit: g
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 15
+    unit: g
+    optional: true
+steps:
+  - { id: sear, durationMin: 6, type: active, phase: cook }
+  - { id: steam-bun, durationMin: 2, type: "parallel-with:sear", phase: cook }
+  - { id: assemble, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: sear
+      text: A frankfurter left whole and unscored splits its casing unevenly over direct heat. A shallow scoring cut first lets it colour without bursting open.
+---
+
+<Step id="sear">
+  Score the <Qty ref="frankfurter"/> lightly along one side and cook it in a
+  dry pan over a medium heat for <Dur step="sear"/>, turning often, until the
+  casing is browned and blistered on all sides.
+</Step>
+
+<Step id="steam-bun">
+  Meanwhile, split the <Qty ref="bun"/> without cutting all the way through
+  and warm it over the same pan or in a low oven for <Dur step="steam-bun"/>,
+  until soft and heated through.
+</Step>
+
+<Step id="assemble">
+  Set the frankfurter into the bun and top with the <Qty ref="onion"/>, the
+  <Qty ref="relish"/> and, if using, the <Qty ref="ketchup"/>.
+</Step>

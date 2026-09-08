@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2758993",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2758993/nutrients",
+  "description": "Bread, white, commercial",
+  "category": "Baked Products",
+  "publicationDate": "4/30/2026",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "calcium": 288.4,
+    "iron": 4.065,
+    "magnesium": 22.37,
+    "phosphorus": 86.67,
+    "potassium": 115.2,
+    "sodium": 419.7,
+    "zinc": 0.769,
+    "copper": 0.124,
+    "manganese": 0.519,
+    "thiamin": 0.478,
+    "riboflavin": 0.299,
+    "niacin": 6.032
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 35.61,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 2.078,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 2.483,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 156.9,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

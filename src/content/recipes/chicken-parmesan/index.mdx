@@ -1,0 +1,144 @@
+---
+title: Chicken Parmesan
+subtitle: Breaded chicken breast fried until crisp, then baked under tomato sauce and melted mozzarella.
+label: Italian-American
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [pan-frying, baking]
+names:
+  alsoKnownAs:
+    - { name: Chicken parmigiana, region: United States, lang: en }
+  notToBeConfusedWith:
+    - name: Melanzane alla parmigiana
+      note: The Italian dish it is modelled on uses fried aubergine in place of chicken, and has no breaded cutlet at all.
+image:
+  src: images/recipes/chicken-parmesan.webp
+  alt: "A breaded chicken parmesan cutlet smothered in marinara sauce and melted cheese, served on a bed of spaghetti"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-breast
+    form: raw
+    amount: 340
+    unit: g
+    note: two breasts, halved and pounded thin
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 40
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: one egg, beaten
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 65
+    unit: g
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 100
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the shallow-frying oil stays in the pan; the rest clings to the crust of the cutlets.
+  - id: tomatoes
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 300
+    unit: g
+    note: crushed
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 6
+    unit: g
+    note: minced
+  - id: sauce-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 15
+    unit: ml
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 1
+    unit: g
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 4
+    unit: g
+    note: torn
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 100
+    unit: g
+    note: sliced
+  - id: parmesan
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 20
+    unit: g
+    note: finely grated
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+steps:
+  - { id: make-sauce, durationMin: 15, type: active, phase: prep }
+  - { id: bread-chicken, durationMin: 10, type: "parallel-with:make-sauce", phase: prep }
+  - { id: fry, durationMin: 8, type: active, phase: cook }
+  - { id: assemble, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The tomato sauce can be made up to three days ahead and kept covered in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze the fried, unsauced cutlets flat on a tray, then bagged once solid, for up to two months. Thaw before saucing and baking.
+  reheatInstructions: Reheat, uncovered, in a moderate oven until the sauce bubbles and the crust re-crisps; a microwave leaves the crust soft.
+notes:
+  techniqueRationale:
+    - stepId: fry
+      text: Frying the cutlets before the sauce goes anywhere near them is what keeps the crust crisp under the bake. A crumb coating added straight to raw chicken in the sauce would turn to paste.
+  commonPitfalls:
+    - stepId: bake
+      text: Baking too long after the crust is already set just dries the chicken out. The oven time here is only enough to melt the cheese and heat the sauce through — the chicken is already cooked from frying.
+---
+
+<Step id="make-sauce">
+  Warm the <Qty ref="sauce-oil"/> and cook the <Qty ref="garlic"/> briefly
+  until fragrant, then add the <Qty ref="tomatoes"/> and <Qty ref="oregano"/>.
+  Simmer for the remainder of <Dur step="make-sauce"/>, until slightly
+  thickened, and season with half the <Qty ref="salt"/>.
+</Step>
+
+<Step id="bread-chicken">
+  Season the <Qty ref="chicken"/> with the remaining salt. Dredge each piece
+  in the <Qty ref="flour"/>, dip in the <Qty ref="egg"/>, then coat evenly in
+  the <Qty ref="breadcrumbs"/>.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> in a wide pan over a medium-high heat and
+  fry the cutlets for <Dur step="fry"/>, turning once, until deep golden and
+  cooked through. Drain on a rack.
+</Step>
+
+<Step id="assemble">
+  Spoon a little of the sauce into a baking dish, lay the cutlets on top,
+  cover with the remaining sauce, then the <Qty ref="mozzarella"/> and the
+  <Qty ref="parmesan"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the cheese has melted
+  and turned golden in patches. Scatter over the <Qty ref="basil"/> before
+  serving.
+</Step>

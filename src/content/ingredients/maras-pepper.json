@@ -4,7 +4,11 @@
   "proseName": "Maraş pepper",
   "names": {
     "alsoKnownAs": [
-      { "name": "Maraş biber", "region": "Turkey", "lang": "tr" }
+      {
+        "name": "Maraş biber",
+        "region": "Turkey",
+        "lang": "tr"
+      }
     ],
     "notToBeConfusedWith": [
       {
@@ -59,5 +63,6 @@
         "cholesterol": 0
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/maras-pepper-thumb.webp"
 }

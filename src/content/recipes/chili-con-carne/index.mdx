@@ -1,0 +1,130 @@
+---
+title: Chili con Carne
+subtitle: A thick, dark stew of beef in a sauce built from toasted, soaked dried chillies rather than a spoonful of powder — no beans and no tomato, in the Texas style.
+label: Texas
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [stewing]
+names:
+  alsoKnownAs:
+    - { name: Bowl of red, region: Texas, lang: en }
+  notToBeConfusedWith:
+    - name: Cincinnati chili
+      note: A cinnamon-and-cocoa-spiced meat sauce ladled over spaghetti and sold by the "way" — unrelated to Texas chili beyond the shared name and chilli seasoning.
+image:
+  src: images/recipes/chili-con-carne.webp
+  alt: "Chili con carne in a pot, with chunks of beef, kidney beans and corn in a tomato sauce"
+ingredients:
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 1200
+    unit: g
+    note: coarsely ground
+  - id: ancho
+    ingredientRef: ancho-chilli
+    form: dried
+    amount: 40
+    unit: g
+    note: stemmed and seeded
+  - id: guajillo
+    ingredientRef: guajillo-chilli
+    form: dried
+    amount: 25
+    unit: g
+    note: stemmed and seeded
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 6
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: bouillon
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 15
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: ml
+  - id: beer
+    ingredientRef: beer
+    form: lager
+    amount: 350
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+steps:
+  - { id: toast-chillies, durationMin: 5, type: active, phase: prep }
+  - { id: soak-chillies, durationMin: 20, type: passive }
+  - { id: blend-chillies, durationMin: 5, type: active, phase: prep }
+  - { id: brown-beef, durationMin: 15, type: active, phase: cook }
+  - { id: simmer, durationMin: 150, type: passive }
+makeAhead:
+  aheadInstructions: The chilli paste can be blended up to three days ahead and refrigerated; the finished chili itself improves overnight in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze in airtight containers for up to three months.
+  reheatInstructions: Reheat gently on the stove with a splash of water or stock, stirring, until it is hot through.
+notes:
+  techniqueRationale:
+    - stepId: blend-chillies
+      text: Toasting the dried chillies before they soak wakes up oils that plain rehydration leaves dormant, and blending them into a paste rather than adding chilli powder is what gives the stew its body without any flour or masa.
+  commonPitfalls:
+    - stepId: toast-chillies
+      text: Toasting the chillies past a shade too dark turns their bitterness sharp and irreversible. They come out of the pan as soon as they smell fragrant and have blistered slightly, well short of scorching.
+---
+
+<Step id="toast-chillies">
+  Toast the <Qty ref="ancho"/> and <Qty ref="guajillo"/> in a dry pan over a
+  medium heat for <Dur step="toast-chillies"/>, pressing them flat and turning
+  often, until they are fragrant and slightly blistered.
+</Step>
+
+<Step id="soak-chillies">
+  Cover the toasted chillies with the <Qty ref="water"/>, brought to a boil,
+  and leave them to soften for <Dur step="soak-chillies"/>.
+</Step>
+
+<Step id="blend-chillies">
+  Blend the soaked chillies with their soaking liquid, the <Qty ref="garlic"/>
+  and the <Qty ref="cumin"/> into a smooth, thick paste.
+</Step>
+
+<Step id="brown-beef">
+  Heat the <Qty ref="oil"/> in a heavy pot and brown the <Qty ref="beef"/> hard
+  over a high heat, breaking it into small pieces, for
+  <Dur step="brown-beef"/>. Add the <Qty ref="onion"/> and cook until it has
+  softened.
+</Step>
+
+<Step id="simmer">
+  Stir in the chilli paste, the <Qty ref="bouillon"/>, the <Qty ref="beer"/>
+  and the <Qty ref="salt"/>, bring to a boil, then reduce to a bare simmer and
+  cook uncovered for <Dur step="simmer"/>, stirring occasionally, until the
+  fat has separated to the surface and the sauce has thickened enough to coat
+  the back of a spoon.
+</Step>

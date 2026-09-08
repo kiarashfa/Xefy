@@ -1,0 +1,61 @@
+{
+  "id": "nori",
+  "name": "Nori",
+  "proseName": "nori",
+  "category": "seaweed",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried sheets",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168458",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168458/nutrients",
+      "sourceNote": "USDA publishes no record for nori itself. Nori is the dried, toasted sheet form of laver (Porphyra); this is its record for raw laver, the same seaweed before drying.",
+      "nutritionCaveat": "Cited against raw laver. Dried nori has almost all of that water removed, so it is many times as concentrated by weight as these figures show; USDA publishes no dried-laver record.",
+      "nutritionPer100g": {
+        "kcal": 35,
+        "protein": 5.81,
+        "carbs": 5.11,
+        "fat": 0.28,
+        "fiber": 0.3,
+        "sugars": 0.49,
+        "saturatedFat": 0.061,
+        "monounsaturatedFat": 0.025,
+        "polyunsaturatedFat": 0.11,
+        "cholesterol": 0,
+        "sodium": 48,
+        "potassium": 356,
+        "calcium": 70,
+        "iron": 1.8,
+        "magnesium": 2,
+        "phosphorus": 58,
+        "zinc": 1.05,
+        "copper": 0.264,
+        "manganese": 0.988,
+        "seleniumMcg": 0.7,
+        "vitaminAMcg": 260,
+        "vitaminC": 39,
+        "vitaminE": 1,
+        "vitaminKMcg": 4,
+        "thiamin": 0.098,
+        "riboflavin": 0.446,
+        "niacin": 1.47,
+        "vitaminB6": 0.159,
+        "folateMcg": 146,
+        "vitaminB12Mcg": 0,
+        "choline": 10.4
+      },
+      "countUnit": {
+        "singular": "nori sheet",
+        "plural": "nori sheets",
+        "grams": 3
+      }
+    }
+  ],
+  "image": "images/ingredients/nori-thumb.webp"
+}

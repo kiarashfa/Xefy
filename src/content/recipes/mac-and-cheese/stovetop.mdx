@@ -1,0 +1,102 @@
+---
+label: Stovetop
+defaultServings: 6
+difficulty: Easy
+ingredients:
+  - id: pasta-water
+    ingredientRef: water
+    form: tap
+    amount: 3000
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 22
+    unit: g
+    consumedFraction: 0.18
+    consumedFractionNote: Most of this is pasta-cooking salt, almost all of which drains away with the water; only the smaller portion stirred straight into the sauce is fully eaten. The figure blends both uses.
+    portions:
+      - { id: macaroni-salt, amount: 20, note: for the pasta water }
+      - { id: salt-sauce, amount: 2, note: for the sauce }
+  - id: macaroni
+    ingredientRef: macaroni
+    form: dry
+    amount: 300
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 30
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 500
+    unit: ml
+  - id: mustard-powder
+    ingredientRef: mustard-powder
+    form: ground
+    amount: 3
+    unit: g
+  - id: cheddar
+    ingredientRef: cheddar
+    form: sharp
+    amount: 280
+    unit: g
+    note: grated
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: boil-water, durationMin: 10, type: active, phase: cook }
+  - { id: cook-pasta, durationMin: 11, type: active, phase: cook }
+  - { id: make-roux, durationMin: 3, type: "parallel-with:cook-pasta", phase: cook }
+  - { id: make-sauce, durationMin: 8, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: A portion reheats gently on the stovetop with a splash of milk stirred in to loosen the sauce, which tightens as it cools.
+notes:
+  commonPitfalls:
+    - stepId: combine
+      text: Sauce that looks right in the pan tightens noticeably once the macaroni sits, so it is stirred through and served straight away rather than left to stand.
+---
+
+<Step id="boil-water">
+  Bring the <Qty ref="pasta-water"/> to a rolling boil in a large pot, then add the
+  <Qty ref="macaroni-salt"/>.
+</Step>
+
+<Step id="cook-pasta">
+  Add the <Qty ref="macaroni"/> and cook fully through, until tender rather than firm to
+  the bite, over <Dur step="cook-pasta"/>, since this version has no second cooking
+  stage in the oven. Drain well.
+</Step>
+
+<Step id="make-roux">
+  While the pasta cooks, melt the <Qty ref="butter"/> in a separate pan and whisk in
+  the <Qty ref="flour"/>, cooking over a low heat for <Dur step="make-roux"/> until
+  smooth and no longer smelling raw.
+</Step>
+
+<Step id="make-sauce">
+  Whisk the <Qty ref="milk"/> into the roux gradually, working out any lumps, and cook
+  over a medium heat for <Dur step="make-sauce"/>, until thickened enough to coat the
+  back of a spoon. Off the heat, stir in the <Qty ref="mustard-powder"/>, the
+  <Qty ref="cheddar"/>, the <Qty ref="salt-sauce"/> and the <Qty ref="pepper"/> until
+  melted into a smooth sauce.
+</Step>
+
+<Step id="combine">
+  Stir the drained macaroni through the sauce until every piece is coated, over
+  <Dur step="combine"/>, and serve at once.
+</Step>

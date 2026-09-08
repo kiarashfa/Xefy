@@ -1,0 +1,61 @@
+{
+  "id": "nutmeg",
+  "name": "Nutmeg",
+  "proseName": "nutmeg",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "proseQualifier": "ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171326",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171326/nutrients",
+      "nutritionPer100g": {
+        "kcal": 525,
+        "protein": 5.84,
+        "fat": 36.31,
+        "carbs": 49.29,
+        "fiber": 20.8,
+        "sugars": 2.99,
+        "calcium": 184,
+        "iron": 3.04,
+        "magnesium": 183,
+        "phosphorus": 213,
+        "potassium": 350,
+        "sodium": 16,
+        "zinc": 2.15,
+        "copper": 1.027,
+        "manganese": 2.9,
+        "seleniumMcg": 1.6,
+        "vitaminC": 3,
+        "thiamin": 0.346,
+        "riboflavin": 0.057,
+        "niacin": 1.299,
+        "vitaminB6": 0.16,
+        "folateMcg": 76,
+        "choline": 8.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 5,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 25.94,
+        "monounsaturatedFat": 3.22,
+        "polyunsaturatedFat": 0.35,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 7,
+        "gPerTsp": 2.2,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/nutmeg-thumb.webp"
+}

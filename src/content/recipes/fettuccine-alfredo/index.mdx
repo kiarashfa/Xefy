@@ -1,0 +1,104 @@
+---
+title: Fettuccine Alfredo
+subtitle: Fettuccine tossed in a sauce of butter, cream and Parmigiano-Reggiano until it clings to every strand.
+label: American
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [boiling, sauteing]
+names:
+  notToBeConfusedWith:
+    - name: Fettuccine al burro
+      note: The Roman original — butter and Parmigiano-Reggiano melted by the heat of the pasta alone, with no cream anywhere in it.
+image:
+  src: images/recipes/fettuccine-alfredo.webp
+  alt: "A bowl of fettuccine alfredo coated in creamy white sauce with diced tomato mixed through"
+ingredients:
+  - id: fettuccine
+    ingredientRef: fettuccine
+    form: dried
+    amount: 200
+    unit: g
+  - id: pasta-water
+    ingredientRef: water
+    form: tap
+    amount: 2500
+    unit: ml
+  - id: pasta-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the salt in the pan drains away with the water; only what the pasta absorbs is eaten.
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 120
+    unit: ml
+  - id: parmesan
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 60
+    unit: g
+    note: finely grated
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 4
+    unit: g
+    note: chopped, for finishing
+steps:
+  - { id: boil-water, durationMin: 10, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 5, type: "parallel-with:boil-water", phase: prep }
+  - { id: cook-pasta, durationMin: 9, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: The sauce splits on reheating and is not worth saving; this dish is meant to be made and eaten at once.
+notes:
+  techniqueRationale:
+    - stepId: combine
+      text: A splash of the reserved starchy pasta water lets the butter and cream bind into a smooth sauce that coats the noodles, instead of pooling loose at the bottom of the bowl.
+  commonPitfalls:
+    - stepId: combine
+      text: Adding all the parmesan at once over high heat can make the sauce seize into strings. Off the heat, tossed in gradually, it melts smoothly instead.
+---
+
+<Step id="boil-water">
+  Bring the <Qty ref="pasta-water"/> to a rolling boil in a wide pan, then add
+  the <Qty ref="pasta-salt"/>.
+</Step>
+
+<Step id="make-sauce">
+  Meanwhile melt the <Qty ref="butter"/> in a wide pan over a low heat and
+  stir in the <Qty ref="cream"/>. Keep it warm without letting it boil.
+</Step>
+
+<Step id="cook-pasta">
+  Add the <Qty ref="fettuccine"/> to the boiling water and cook for
+  <Dur step="cook-pasta"/>, or two minutes short of whatever the packet
+  claims. Before draining, lift out a mugful of the cooking water, then drain
+  the pasta while the centre still resists a bite.
+</Step>
+
+<Step id="combine">
+  Add the pasta to the butter and cream, take the pan off the heat, and toss
+  in the <Qty ref="parmesan"/> a little at a time, loosening with splashes of
+  the reserved pasta water until the sauce coats every strand. Finish with the
+  <Qty ref="pepper"/> and the <Qty ref="parsley"/>.
+</Step>

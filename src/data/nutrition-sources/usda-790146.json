@@ -1,0 +1,69 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "790146",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/790146/nutrients",
+  "description": "Flour, bread, white, enriched, unbleached",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "4/1/2020",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 363,
+    "protein": 14.3,
+    "fat": 1.65,
+    "carbs": 72.8,
+    "calcium": 19,
+    "iron": 5.55,
+    "magnesium": 35.9,
+    "phosphorus": 124,
+    "potassium": 127,
+    "sodium": 3,
+    "zinc": 1.06,
+    "copper": 0.194,
+    "manganese": 0.751,
+    "seleniumMcg": 33.3,
+    "thiamin": 0.953,
+    "riboflavin": 0.436,
+    "niacin": 6.56,
+    "vitaminB6": 0.079
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 10.7,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1520,
+      "unit": "kJ"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.29,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.5,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 36.6,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 145,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

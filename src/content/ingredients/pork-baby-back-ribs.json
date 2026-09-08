@@ -1,0 +1,71 @@
+{
+  "id": "pork-baby-back-ribs",
+  "name": "Pork Baby Back Ribs",
+  "proseName": "pork baby back ribs",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Loin back ribs",
+        "region": "United States",
+        "lang": "en"
+      }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Spare ribs",
+        "note": "Cut from the belly side of the rib cage rather than against the loin — longer, flatter and considerably fattier than baby back ribs."
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, whole rack, bone-in",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167895",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167895/nutrients",
+      "sourceNote": "USDA has no separate record for baby back (loin back) ribs. This is its record for country-style ribs, cut from the same rib end of the loin and the closest published lean-to-fat profile; true baby back ribs run a little leaner still.",
+      "nutritionPer100g": {
+        "kcal": 189,
+        "protein": 19.34,
+        "fat": 11.82,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 22,
+        "iron": 0.85,
+        "magnesium": 21,
+        "phosphorus": 193,
+        "potassium": 318,
+        "sodium": 63,
+        "zinc": 2.78,
+        "copper": 0.078,
+        "manganese": 0.011,
+        "seleniumMcg": 32.3,
+        "vitaminC": 0,
+        "thiamin": 0.375,
+        "riboflavin": 0.253,
+        "niacin": 3.082,
+        "vitaminB6": 0.539,
+        "folateMcg": 0,
+        "choline": 81.4,
+        "vitaminB12Mcg": 1,
+        "vitaminAMcg": 2,
+        "vitaminE": 0.23,
+        "vitaminDMcg": 0.7,
+        "vitaminKMcg": 0,
+        "saturatedFat": 2.37,
+        "monounsaturatedFat": 2.762,
+        "polyunsaturatedFat": 0.966,
+        "transFat": 0.067,
+        "cholesterol": 74
+      }
+    }
+  ],
+  "image": "images/ingredients/pork-baby-back-ribs-thumb.webp"
+}

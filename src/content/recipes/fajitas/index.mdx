@@ -1,0 +1,144 @@
+---
+title: Fajitas
+subtitle: Skirt steak marinated in lime and garlic, seared hard and sliced thin against the grain, served sizzling with griddled peppers and onion and warm flour tortillas.
+label: Tex-Mex
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: Tacos al carbón, region: Texas, lang: es }
+  notToBeConfusedWith:
+    - name: Chicken fajitas
+      note: A later, widely sold adaptation using chicken breast rather than skirt steak, which is the cut the dish's name and marinade were originally built around.
+image:
+  src: images/recipes/fajitas.webp
+  alt: "Sizzling skillet of chicken fajita strips with charred bell peppers and onions"
+ingredients:
+  - id: skirt
+    ingredientRef: beef-skirt-steak
+    form: raw
+    amount: 800
+    unit: g
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 60
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 45
+    unit: ml
+    portions:
+      - { id: oil-marinade, amount: 20, note: for the marinade }
+      - { id: oil-vegetables, amount: 25, note: for the vegetables }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    portions:
+      - { id: salt-marinade, amount: 6, note: for the marinade }
+      - { id: salt-vegetables, amount: 4, note: for the vegetables }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: sliced
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 150
+    unit: g
+    note: sliced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 150
+    unit: g
+    note: sliced
+  - id: tortillas
+    ingredientRef: flour-tortilla
+    form: ready-made
+    amount: 240
+    unit: g
+steps:
+  - { id: marinate, durationMin: 60, type: passive }
+  - { id: sear-steak, durationMin: 8, type: active, phase: cook }
+  - { id: rest-steak, durationMin: 5, type: passive }
+  - { id: saute-vegetables, durationMin: 10, type: "parallel-with:rest-steak", phase: cook }
+  - { id: warm-tortillas, durationMin: 5, type: "parallel-with:saute-vegetables", phase: cook }
+  - { id: slice-and-serve, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The steak can be marinated up to a day ahead, covered, in the refrigerator.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: slice-and-serve
+      text: Skirt steak has long, visible muscle fibres running the length of the cut. Slicing along them rather than sharply across gives long, stringy pieces instead of tender strips.
+---
+
+<Step id="marinate">
+  Combine the <Qty ref="lime-juice"/>, <Qty ref="garlic"/>,
+  <Qty ref="oregano"/>, <Qty ref="cumin"/>, the <Qty ref="oil-marinade"/>, the
+  <Qty ref="salt-marinade"/> and the <Qty ref="pepper"/>. Coat the
+  <Qty ref="skirt"/> in the mixture and leave it to marinate, covered and
+  refrigerated, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="sear-steak">
+  Lift the steak from the marinade, pat it dry, and sear it in a very hot,
+  dry pan or on a hot grill for <Dur step="sear-steak"/>, turning once, until
+  it is well charred outside and still pink within.
+</Step>
+
+<Step id="rest-steak">
+  Rest the steak on a board for <Dur step="rest-steak"/> before slicing.
+</Step>
+
+<Step id="saute-vegetables">
+  While the steak rests, heat the <Qty ref="oil-vegetables"/> in the same pan
+  and cook the <Qty ref="onion"/>, <Qty ref="red-pepper"/> and
+  <Qty ref="green-pepper"/> with the <Qty ref="salt-vegetables"/> for
+  <Dur step="saute-vegetables"/>, until softened and lightly charred at the
+  edges.
+</Step>
+
+<Step id="warm-tortillas">
+  At the same time, warm the <Qty ref="tortillas"/> in a dry pan or directly
+  over a flame for <Dur step="warm-tortillas"/>, until soft and lightly
+  spotted, then wrap them to keep warm.
+</Step>
+
+<Step id="slice-and-serve">
+  Slice the steak thinly across the grain and serve it at once alongside the
+  peppers, onion and warm tortillas, for diners to assemble themselves.
+</Step>

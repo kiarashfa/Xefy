@@ -1,0 +1,123 @@
+---
+title: Macaroni and Cheese
+subtitle: Boiled macaroni bound in a mustard-sharpened cheddar sauce, topped with more cheese and baked until the top browns. One serving is a generous side portion.
+label: Baked
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [side, main-course]
+  method: [boiling, baking]
+image:
+  src: images/recipes/mac-and-cheese.webp
+  alt: "A bowl of macaroni and cheese, creamy and cheese-coated, sprinkled with chopped herbs"
+ingredients:
+  - id: pasta-water
+    ingredientRef: water
+    form: tap
+    amount: 3000
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 22
+    unit: g
+    consumedFraction: 0.18
+    consumedFractionNote: Most of this is pasta-cooking salt, almost all of which drains away with the water; only the smaller portion stirred straight into the sauce is fully eaten. The figure blends both uses.
+    portions:
+      - { id: macaroni-salt, amount: 20, note: for the pasta water }
+      - { id: salt-sauce, amount: 2, note: for the sauce }
+  - id: macaroni
+    ingredientRef: macaroni
+    form: dry
+    amount: 300
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 35
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 450
+    unit: ml
+  - id: mustard-powder
+    ingredientRef: mustard-powder
+    form: ground
+    amount: 3
+    unit: g
+  - id: cheddar
+    ingredientRef: cheddar
+    form: sharp
+    amount: 280
+    unit: g
+    note: grated
+    portions:
+      - { id: cheddar-sauce, amount: 220 }
+      - { id: cheddar-topping, amount: 60, note: for the top }
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: boil-water, durationMin: 10, type: active, phase: cook }
+  - { id: cook-pasta, durationMin: 9, type: active, phase: cook }
+  - { id: make-roux, durationMin: 3, type: "parallel-with:cook-pasta", phase: cook }
+  - { id: make-sauce, durationMin: 8, type: active, phase: cook }
+  - { id: combine-and-top, durationMin: 5, type: active, phase: prep }
+  - { id: bake, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: The assembled, unbaked dish can be covered and refrigerated for a day; bring it back to room temperature before baking, or add a few extra minutes if baking from cold.
+  freezable: true
+  freezeInstructions: Freeze the fully baked and cooled dish, covered. Thaw overnight in the refrigerator and reheat covered in a low oven until hot through.
+  reheatInstructions: A portion reheats well covered in a low oven, with a splash of milk stirred through the sauce to loosen it.
+notes:
+  techniqueRationale:
+    - stepId: make-roux
+      text: Cooking the butter and flour together before the milk goes in is what stops the finished sauce tasting of raw flour, and it is the same principle behind any roux-based sauce.
+  commonPitfalls:
+    - stepId: cook-pasta
+      text: Macaroni cooked fully soft before it meets the oven turns to mush once baked in sauce. It should still have a firm bite when drained, since the bake finishes cooking it through.
+---
+
+<Step id="boil-water">
+  Bring the <Qty ref="pasta-water"/> to a rolling boil in a large pot, then add the
+  <Qty ref="macaroni-salt"/>.
+</Step>
+
+<Step id="cook-pasta">
+  Add the <Qty ref="macaroni"/> and cook for <Dur step="cook-pasta"/>, two minutes short
+  of whatever the packet suggests, so it still has a firm bite. Drain well.
+</Step>
+
+<Step id="make-roux">
+  While the pasta cooks, melt the <Qty ref="butter"/> in a separate pan and whisk in
+  the <Qty ref="flour"/>, cooking over a low heat for <Dur step="make-roux"/> until
+  smooth and no longer smelling raw.
+</Step>
+
+<Step id="make-sauce">
+  Whisk the <Qty ref="milk"/> into the roux gradually, working out any lumps, and cook
+  over a medium heat for <Dur step="make-sauce"/>, until thickened enough to coat the
+  back of a spoon. Off the heat, stir in the <Qty ref="mustard-powder"/>, the
+  <Qty ref="cheddar-sauce"/>, the <Qty ref="salt-sauce"/> and the <Qty ref="pepper"/>
+  until the cheese has melted into a smooth sauce.
+</Step>
+
+<Step id="combine-and-top">
+  Stir the drained macaroni through the cheese sauce and turn it into a buttered baking
+  dish. Scatter the <Qty ref="cheddar-topping"/> evenly over the top, over
+  <Dur step="combine-and-top"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the top is golden and bubbling
+  at the edges.
+</Step>

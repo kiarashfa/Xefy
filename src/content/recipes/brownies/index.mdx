@@ -1,0 +1,117 @@
+---
+title: Brownies
+subtitle: A dense, low-flour chocolate square baked just until it sets, with no leavening to lighten it.
+label: Fudgy
+defaultServings: 16
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [dessert, snack]
+  method: [baking]
+image:
+  src: images/recipes/brownies.webp
+  alt: "Fudgy chocolate brownies cut into squares with a glossy chocolate glaze, stacked on a plate"
+ingredients:
+  - id: chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 200
+    unit: g
+    note: chopped
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 170
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 300
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: at room temperature
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 90
+    unit: g
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 30
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+steps:
+  - { id: melt-chocolate, durationMin: 5, type: active, phase: prep }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:melt-chocolate", phase: cook }
+  - { id: beat-sugar-eggs, durationMin: 5, type: active, phase: prep }
+  - { id: combine, durationMin: 3, type: active, phase: prep }
+  - { id: fold-dry, durationMin: 3, type: active, phase: prep }
+  - { id: bake, durationMin: 25, type: passive }
+  - { id: cool-in-tin, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: Keeps four days at room temperature in an airtight tin, and cuts more cleanly on the second day once fully set.
+  freezable: true
+  freezeInstructions: Freeze whole or already cut into squares, layered with baking paper. Thaw at room temperature still wrapped.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: beat-sugar-eggs
+      text: Whisking sugar into egg until it lightens and thickens is what gives a fudgy brownie its thin, crackled top crust — that surface is dissolved sugar, not a separate glaze.
+  commonPitfalls:
+    - stepId: bake
+      text: A skewer test written for cake fails a fudgy brownie, since the right texture still looks under-set at the centre. Pull the tin when the edges are firm and the middle only just stops looking wet.
+---
+
+<Step id="melt-chocolate">
+  Melt the <Qty ref="chocolate"/> with the <Qty ref="butter"/> together over a low heat or
+  in short bursts in a microwave, stirring until smooth. This takes <Dur step="melt-chocolate"/>;
+  let it cool slightly while the oven heats.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={175}/>, giving it <Dur step="heat-oven"/> to settle, and line a
+  square baking tin with paper, leaving an overhang on two sides to lift the brownies out
+  later.
+</Step>
+
+<Step id="beat-sugar-eggs">
+  Whisk the <Qty ref="sugar"/> into the <Qty ref="eggs"/> and the <Qty ref="vanilla"/> for
+  the whole of <Dur step="beat-sugar-eggs"/>, until the mixture is pale, thick and holds a
+  ribbon briefly when the whisk is lifted.
+</Step>
+
+<Step id="combine">
+  Fold the cooled chocolate mixture into the egg mixture over <Dur step="combine"/>, mixing
+  just until the streaks disappear.
+</Step>
+
+<Step id="fold-dry">
+  Sift the <Qty ref="flour"/>, the <Qty ref="cocoa"/> and the <Qty ref="salt"/> over the
+  batter and fold them through with <Dur step="fold-dry"/>, stopping the moment no dry
+  patches remain — overworking it here is what turns a fudgy brownie cakey.
+</Step>
+
+<Step id="bake">
+  Pour into the lined tin and bake for <Dur step="bake"/>, until the top has set to a thin,
+  crackled crust and a skewer pushed into the centre comes out with a little wet batter
+  still clinging to it.
+</Step>
+
+<Step id="cool-in-tin">
+  Leave the tray to cool completely, for <Dur step="cool-in-tin"/>, before lifting out and
+  cutting into squares. Cutting warm brownies tears the crumb rather than slicing it.
+</Step>

@@ -1,0 +1,137 @@
+---
+title: New England Clam Chowder
+subtitle: Clams and potato in a milk-and-cream broth, thickened lightly with a butter roux and salted with rendered bacon.
+label: New England
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [soup]
+  method: [simmering]
+names:
+  notToBeConfusedWith:
+    - name: Manhattan clam chowder
+      note: A tomato-based, cream-free version from further down the coast — no milk or cream at all, and closer to a light vegetable soup studded with clams.
+image:
+  src: images/recipes/new-england-clam-chowder.webp
+  alt: "A bowl of creamy white clam chowder garnished with chopped parsley, served with a spoon and packaged saltine crackers"
+ingredients:
+  - id: bacon
+    ingredientRef: streaky-bacon
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 30
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 400
+    unit: g
+    note: peeled and diced
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.2
+    unit: g
+  - id: clams
+    ingredientRef: quahog-clams
+    form: raw
+    amount: 500
+    unit: g
+    note: shucked, roughly chopped
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 500
+    unit: ml
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 150
+    unit: ml
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+steps:
+  - { id: render-bacon, durationMin: 8, type: active, phase: cook }
+  - { id: soften-veg, durationMin: 6, type: active, phase: cook }
+  - { id: make-roux, durationMin: 3, type: active, phase: cook }
+  - { id: simmer-potatoes, durationMin: 15, type: passive }
+  - { id: add-clams-dairy, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The base can be made through the potato simmer a day ahead and kept covered in the refrigerator; add the clams and dairy only when reheating to serve.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat gently over a low heat, stirring often, and do not let it boil — a hard boil toughens the clams and can split the dairy.
+notes:
+  techniqueRationale:
+    - stepId: add-clams-dairy
+      text: The clams and dairy go in only at the end, over gentle heat. Clams simmered from the start turn rubbery long before the potatoes are tender, and milk added too early or boiled too hard can split.
+  commonPitfalls:
+    - stepId: add-clams-dairy
+      text: Letting the chowder reach a full boil after the milk and cream go in risks curdling it. It only needs to come back up to a gentle heat, not a simmer.
+---
+
+<Step id="render-bacon">
+  Render the <Qty ref="bacon"/> in a heavy pot over a medium heat for
+  <Dur step="render-bacon"/>, until crisp. Lift out with a slotted spoon,
+  leaving the fat behind.
+</Step>
+
+<Step id="soften-veg">
+  Add the <Qty ref="onion"/> and <Qty ref="celery"/> to the fat and cook for
+  <Dur step="soften-veg"/>, until softened.
+</Step>
+
+<Step id="make-roux">
+  Stir in the <Qty ref="butter"/> and, once melted, the <Qty ref="flour"/>,
+  cooking for <Dur step="make-roux"/> to remove the raw taste.
+</Step>
+
+<Step id="simmer-potatoes">
+  Whisk in the <Qty ref="water"/> until smooth, add the <Qty ref="potato"/>
+  and the <Qty ref="bay"/>, and simmer for <Dur step="simmer-potatoes"/>,
+  until the potato is tender.
+</Step>
+
+<Step id="add-clams-dairy">
+  Stir in the <Qty ref="clams"/>, the <Qty ref="milk"/> and the
+  <Qty ref="cream"/>, and warm through gently for
+  <Dur step="add-clams-dairy"/> without letting it boil. Season with the
+  <Qty ref="pepper"/> and the <Qty ref="salt"/>, and finish with the reserved
+  bacon scattered over each bowl.
+</Step>

@@ -1,0 +1,33 @@
+{
+  "id": "food-colouring",
+  "name": "Food Colouring",
+  "proseName": "food colouring",
+  "category": "pantry",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "red-liquid",
+      "label": "Red, liquid",
+      "proseQualifier": "red",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168837",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168837/nutrients",
+      "sourceNote": "USDA publishes no record for liquid food colouring. It is used a few drops to a teaspoon at a time and its nutrition is nutritionally negligible; figures are set to zero rather than borrowed from an unrelated food, and the cited record is retained only to satisfy the schema's source fields.",
+      "nutritionCaveat": "Set to zero rather than measured: liquid food colouring is used in drops, and no USDA record describes it.",
+      "nutritionPer100g": {
+        "kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "sodium": 0
+      },
+      "density": { "gPerTsp": 5, "densitySource": "estimated", "densityClass": "liquid-water-like" }
+    }
+  ]
+}

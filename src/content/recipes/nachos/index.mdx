@@ -1,0 +1,57 @@
+---
+title: Nachos
+subtitle: Tortilla chips layered with melted cheddar and sliced jalapeño, baked until the cheese is fully melted between every chip.
+label: Loaded
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [snack]
+  method: [baking]
+image:
+  src: images/recipes/nachos.webp
+  alt: "A tray of loaded tortilla chip nachos topped with melted cheese, black olives, diced peppers, sweetcorn and jalapenos"
+ingredients:
+  - id: chips
+    ingredientRef: tortilla-chips
+    form: fried
+    amount: 200
+    unit: g
+  - id: cheddar
+    ingredientRef: cheddar
+    form: sharp
+    amount: 160
+    unit: g
+    note: grated
+  - id: jalapeno
+    ingredientRef: jalapeno
+    form: fresh
+    amount: 30
+    unit: g
+    note: sliced into rings
+steps:
+  - { id: layer, durationMin: 5, type: active, phase: prep }
+  - { id: bake, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: layer
+      text: Piling all the cheese on top of one thick heap of chips leaves the chips underneath bare. Two overlapping layers of chips and cheese cover far more of the surface than one deep pile.
+---
+
+<Step id="layer">
+  Spread half the <Qty ref="chips"/> over a baking tray, scatter over half
+  the <Qty ref="cheddar"/>, then repeat with the remaining chips and cheddar
+  so every layer of chips carries its own cheese.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the cheese has
+  melted completely and started to bubble at the edges. Scatter the
+  <Qty ref="jalapeno"/> over the top as soon as the tray comes out and serve
+  immediately.
+</Step>

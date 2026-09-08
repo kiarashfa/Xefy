@@ -1,0 +1,67 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346407",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346407/nutrients",
+  "description": "Cabbage, green, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 27.87,
+    "protein": 0.961,
+    "fat": 0.228,
+    "carbs": 6.384,
+    "calcium": 41.84,
+    "iron": 0.066,
+    "magnesium": 13.86,
+    "phosphorus": 26.93,
+    "potassium": 207.1,
+    "sodium": 16.1,
+    "zinc": 0.211,
+    "copper": 0,
+    "manganese": 0.248,
+    "vitaminC": 40.34,
+    "vitaminB6": 0.138,
+    "vitaminKMcg": 59.4
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 91.87,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.1538,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.5575,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 6.943,
+      "unit": "µg"
+    },
+    {
+      "number": "429",
+      "name": "Vitamin K (Dihydrophylloquinone)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "428",
+      "name": "Vitamin K (Menaquinone-4)",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

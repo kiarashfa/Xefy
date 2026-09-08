@@ -1,0 +1,63 @@
+{
+  "id": "cream-cheese",
+  "name": "Cream Cheese",
+  "proseName": "cream cheese",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "regular",
+      "label": "Full fat",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173418",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173418/nutrients",
+      "nutritionPer100g": {
+        "kcal": 350,
+        "protein": 6.15,
+        "fat": 34.44,
+        "carbs": 5.52,
+        "fiber": 0,
+        "sugars": 3.76,
+        "calcium": 97,
+        "iron": 0.11,
+        "magnesium": 9,
+        "phosphorus": 107,
+        "potassium": 132,
+        "sodium": 314,
+        "zinc": 0.5,
+        "copper": 0.018,
+        "manganese": 0.011,
+        "seleniumMcg": 8.6,
+        "vitaminC": 0,
+        "thiamin": 0.023,
+        "riboflavin": 0.23,
+        "niacin": 0.091,
+        "vitaminB6": 0.056,
+        "folateMcg": 9,
+        "choline": 26.8,
+        "vitaminB12Mcg": 0.22,
+        "vitaminAMcg": 308,
+        "vitaminE": 0.86,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.1,
+        "saturatedFat": 20.213,
+        "monounsaturatedFat": 8.907,
+        "polyunsaturatedFat": 1.483,
+        "transFat": 1.173,
+        "cholesterol": 101
+      },
+      "density": {
+        "gPerCup": 232,
+        "gPerTbsp": 14.5,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/cream-cheese-thumb.webp"
+}

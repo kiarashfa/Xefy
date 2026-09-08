@@ -1,0 +1,73 @@
+{
+  "id": "double-cream",
+  "name": "Double Cream",
+  "proseName": "double cream",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Heavy cream",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "heavy",
+      "label": "Thirty-six per cent fat",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170859",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170859/nutrients",
+      "sourceNote": "USDA also publishes a household portion for this cream whipped, at roughly half the weight by volume; the figure used here is the fluid cup, which is how it is measured before whipping.",
+      "nutritionPer100g": {
+        "kcal": 340,
+        "protein": 2.84,
+        "fat": 36.08,
+        "carbs": 2.84,
+        "fiber": 0,
+        "sugars": 2.92,
+        "calcium": 66,
+        "iron": 0.1,
+        "magnesium": 7,
+        "phosphorus": 58,
+        "potassium": 95,
+        "sodium": 27,
+        "zinc": 0.24,
+        "copper": 0.011,
+        "manganese": 0.006,
+        "seleniumMcg": 3,
+        "vitaminC": 0.6,
+        "thiamin": 0.02,
+        "riboflavin": 0.188,
+        "niacin": 0.064,
+        "vitaminB6": 0.035,
+        "folateMcg": 4,
+        "choline": 16.8,
+        "vitaminB12Mcg": 0.16,
+        "vitaminAMcg": 411,
+        "vitaminE": 0.92,
+        "vitaminDMcg": 1.6,
+        "vitaminKMcg": 3.2,
+        "saturatedFat": 23.032,
+        "monounsaturatedFat": 9.101,
+        "polyunsaturatedFat": 1.57,
+        "transFat": 1.236,
+        "cholesterol": 113
+      },
+      "density": {
+        "gPerCup": 238,
+        "gPerTbsp": 15,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/double-cream-thumb.webp"
+}

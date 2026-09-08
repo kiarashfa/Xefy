@@ -1,0 +1,101 @@
+---
+label: Cakey
+defaultServings: 16
+difficulty: Easy
+ingredients:
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 140
+    unit: g
+    note: soft
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 250
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: at room temperature
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 60
+    unit: ml
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 180
+    unit: g
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 40
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 6
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+steps:
+  - { id: cream, durationMin: 4, type: active, phase: prep }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:cream", phase: cook }
+  - { id: beat-in-eggs, durationMin: 3, type: active, phase: prep }
+  - { id: alternate-dry-milk, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: passive }
+  - { id: cool-in-tin, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: Keeps four days at room temperature in an airtight tin.
+  freezable: true
+  freezeInstructions: Freeze whole or already cut into squares, layered with baking paper. Thaw at room temperature still wrapped.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: bake
+      text: This crumb bakes more like a cake than the fudgy version, so a skewer really should come out clean here — pulling it early on the assumption that all brownies stay wet in the centre leaves this version gluey rather than fudgy.
+---
+
+<Step id="cream">
+  Beat the <Qty ref="butter"/> with the <Qty ref="sugar"/> for <Dur step="cream"/>, until
+  pale and fluffy.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile heat the oven to <Temp c={175}/>, giving it <Dur step="heat-oven"/> to settle,
+  and line a square baking tin with paper, leaving an overhang on two sides.
+</Step>
+
+<Step id="beat-in-eggs">
+  Beat in the <Qty ref="eggs"/> and the <Qty ref="vanilla"/> a little at a time over
+  <Dur step="beat-in-eggs"/>, letting each addition disappear before the next goes in.
+</Step>
+
+<Step id="alternate-dry-milk">
+  Sift the <Qty ref="flour"/>, the <Qty ref="cocoa"/>, the <Qty ref="baking-powder"/> and the
+  <Qty ref="salt"/> together. Fold them into the batter in two additions, alternating with
+  the <Qty ref="milk"/>, over <Dur step="alternate-dry-milk"/>, finishing on the dry
+  ingredients and stopping as soon as the batter is smooth.
+</Step>
+
+<Step id="bake">
+  Pour into the lined tin and bake for <Dur step="bake"/>, until a skewer pushed into the
+  centre comes out clean and the top springs back when pressed lightly.
+</Step>
+
+<Step id="cool-in-tin">
+  Leave the tray to cool for <Dur step="cool-in-tin"/> before lifting out and cutting into
+  squares.
+</Step>

@@ -1,0 +1,107 @@
+---
+label: Everyday, with Beans
+defaultServings: 6
+difficulty: Easy
+ingredients:
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 800
+    unit: g
+  - id: kidney-beans
+    ingredientRef: kidney-beans
+    form: dried
+    amount: 200
+    unit: g
+  - id: ancho
+    ingredientRef: ancho-chilli
+    form: dried
+    amount: 20
+    unit: g
+    note: stemmed, seeded and ground
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 6
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 10
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: chopped
+  - id: tomato
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 400
+    unit: g
+  - id: bouillon
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 10
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: ml
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: brown-beef, durationMin: 10, type: active, phase: cook }
+  - { id: saute-aromatics, durationMin: 8, type: active, phase: cook }
+  - { id: bloom-spices, durationMin: 3, type: active, phase: cook }
+  - { id: simmer, durationMin: 150, type: passive }
+makeAhead:
+  aheadInstructions: The finished chili keeps, covered, in the refrigerator for up to four days and improves by the second day.
+  freezable: true
+  freezeInstructions: Freeze in airtight containers for up to three months.
+  reheatInstructions: Reheat gently on the stove with a splash of water, stirring, until hot through.
+notes:
+  commonPitfalls:
+    - stepId: simmer
+      text: Dried kidney beans carry a natural toxin that only a full, sustained boil destroys. The pot is brought fully to the boil before it is dropped to a simmer, and never held at a gentle heat throughout, so the beans pass safely through a hard boil early on.
+---
+
+<Step id="brown-beef">
+  Heat the <Qty ref="oil"/> in a heavy pot and brown the <Qty ref="beef"/> over
+  a high heat, breaking it into small pieces, for <Dur step="brown-beef"/>.
+</Step>
+
+<Step id="saute-aromatics">
+  Add the <Qty ref="onion"/> and <Qty ref="garlic"/> and cook for
+  <Dur step="saute-aromatics"/>, until the onion has softened and turned
+  translucent.
+</Step>
+
+<Step id="bloom-spices">
+  Stir in the <Qty ref="ancho"/>, <Qty ref="cumin"/> and <Qty ref="paprika"/>
+  and cook for <Dur step="bloom-spices"/>, until the spices smell toasted.
+</Step>
+
+<Step id="simmer">
+  Add the <Qty ref="kidney-beans"/>, <Qty ref="tomato"/>, <Qty ref="bouillon"/>,
+  <Qty ref="water"/> and <Qty ref="salt"/>. Bring to a full rolling boil for a
+  few minutes, then reduce to a simmer and cook uncovered for
+  <Dur step="simmer"/>, stirring occasionally and topping up with water if it
+  gets too thick, until the beans are fully tender.
+</Step>

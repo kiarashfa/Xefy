@@ -1,0 +1,83 @@
+---
+title: French Fries
+subtitle: Potato batons double-fried, once to cook through and once to crisp the outside. One serving is one portion.
+label: Double-fried
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [side]
+  method: [deep-frying]
+image:
+  src: images/recipes/french-fries.webp
+  alt: "A close-up pile of golden, crispy french fries garnished with chopped parsley"
+ingredients:
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 800
+    unit: g
+    note: peeled and cut into even batons
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the frying oil stays in the pot; only what clings to the fries after draining is eaten.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+steps:
+  - { id: soak-potato, durationMin: 30, type: passive }
+  - { id: heat-oil-low, durationMin: 10, type: "parallel-with:soak-potato", phase: cook }
+  - { id: first-fry, durationMin: 8, type: active, phase: cook }
+  - { id: rest-fries, durationMin: 15, type: passive }
+  - { id: heat-oil-high, durationMin: 8, type: "parallel-with:rest-fries", phase: cook }
+  - { id: second-fry, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The par-fried, unrested batons can be cooled and refrigerated for a day between the two fries, which suits cooking the first stage well ahead of serving.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: first-fry
+      text: Frying at a low temperature first cooks the potato through without colouring the surface; a single hot fry would brown the outside long before the centre softened.
+  commonPitfalls:
+    - stepId: second-fry
+      text: Skipping the rest between fries leaves the batons too hot and moist inside to crisp properly on the second pass. Letting them cool first is what gives the second fry a shatteringly crisp shell.
+---
+
+<Step id="soak-potato">
+  Rinse the cut <Qty ref="potato"/> and soak it in cold water for <Dur step="soak-potato"/>,
+  which draws out surface starch and helps the fries crisp rather than stick together.
+  Drain and pat completely dry before frying.
+</Step>
+
+<Step id="heat-oil-low">
+  Heat the <Qty ref="frying-oil"/> in a deep, heavy pot to <Temp c={130}/>, allowing
+  <Dur step="heat-oil-low"/> for it to come to temperature.
+</Step>
+
+<Step id="first-fry">
+  Fry the potato in batches at this lower temperature for <Dur step="first-fry"/>,
+  until softened through but still pale, then lift out and drain.
+</Step>
+
+<Step id="rest-fries">
+  Spread the par-fried batons out and let them cool and dry for <Dur step="rest-fries"/>.
+</Step>
+
+<Step id="heat-oil-high">
+  Raise the oil to <Temp c={190}/>, allowing <Dur step="heat-oil-high"/> to reach the
+  higher temperature.
+</Step>
+
+<Step id="second-fry">
+  Fry the rested batons again, in batches, for <Dur step="second-fry"/>, until deep
+  golden and crisp. Drain well and season immediately with the <Qty ref="salt"/> while
+  still hot.
+</Step>

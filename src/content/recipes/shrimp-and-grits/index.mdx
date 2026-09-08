@@ -1,0 +1,142 @@
+---
+title: Shrimp and Grits
+subtitle: Peeled shrimp and andouille sausage in a garlicky pan sauce, spooned over slow-cooked cheddar grits.
+description: Lowcountry-and-Louisiana shrimp and grits made the standard way — coarse grits simmered until creamy and enriched with butter and cheddar, topped with shrimp and andouille sausage finished in a garlic, lemon and butter pan sauce.
+label: Cheddar Grits
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [simmering, sauteing]
+image:
+  src: images/recipes/shrimp-and-grits.webp
+  alt: "Sautéed shrimp in a creamy sauce with bacon and scallions over cheese grits"
+ingredients:
+  - id: grits
+    ingredientRef: maize-meal
+    form: grits
+    amount: 200
+    unit: g
+  - id: grits-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    portions:
+      - { id: butter-grits, amount: 20 }
+      - { id: butter-sauce, amount: 20 }
+  - id: cheddar
+    ingredientRef: cheddar
+    form: sharp
+    amount: 80
+    unit: g
+    note: grated
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 500
+    unit: g
+  - id: sausage
+    ingredientRef: andouille
+    form: smoked
+    amount: 150
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: thinly sliced
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: sauce-water
+    ingredientRef: water
+    form: tap
+    amount: 100
+    unit: ml
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: start-grits, durationMin: 5, type: active, phase: prep }
+  - { id: simmer-grits, durationMin: 25, type: passive }
+  - { id: prep-shrimp, durationMin: 10, type: "parallel-with:simmer-grits", phase: prep }
+  - { id: enrich-grits, durationMin: 3, type: active, phase: cook }
+  - { id: cook-andouille, durationMin: 5, type: active, phase: cook }
+  - { id: cook-shrimp, durationMin: 7, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: The grits stiffen on cooling; reheat gently with a splash of water, whisking, to loosen them back to a pourable consistency.
+notes:
+  techniqueRationale:
+    - stepId: simmer-grits
+      text: Grits need a long, gentle simmer to hydrate the coarse grind evenly. Rushing the heat leaves gritty, undercooked centres inside a paste that looks done on top.
+  commonPitfalls:
+    - stepId: cook-shrimp
+      text: Shrimp go from translucent to rubbery within a minute or two of full heat, so they come off the heat the moment they turn pink and curl rather than being left to firm up further.
+---
+
+<Step id="start-grits">
+  Bring the <Qty ref="grits-water"/> to the boil in a heavy saucepan. Whisk in the
+  <Qty ref="grits"/> in a steady stream, whisking constantly to stop it clumping.
+</Step>
+
+<Step id="simmer-grits">
+  Reduce the heat to the lowest setting and cook for <Dur step="simmer-grits"/>,
+  stirring every few minutes, until the grits are thick, creamy and no longer gritty
+  on the tongue.
+</Step>
+
+<Step id="prep-shrimp">
+  While the grits cook, dice the <Qty ref="sausage"/>, mince the <Qty ref="garlic"/> and
+  thinly slice the <Qty ref="spring-onion"/>.
+</Step>
+
+<Step id="enrich-grits">
+  Off the heat, stir the <Qty ref="butter-grits"/>, <Qty ref="cheddar"/> and
+  <Qty ref="salt"/> into the grits until melted and smooth. Cover and keep warm.
+</Step>
+
+<Step id="cook-andouille">
+  Heat a large skillet over a medium-high heat and cook the sausage for
+  <Dur step="cook-andouille"/>, until browned and much of its fat has rendered.
+</Step>
+
+<Step id="cook-shrimp">
+  Add the <Qty ref="shrimp"/> and garlic to the skillet and cook for
+  <Dur step="cook-shrimp"/>, turning once, until the shrimp are pink and just cooked
+  through. Add the <Qty ref="sauce-water"/>, <Qty ref="lemon-juice"/>,
+  <Qty ref="butter-sauce"/>, <Qty ref="cayenne"/> and <Qty ref="black-pepper"/>, and
+  swirl the pan until the butter melts into a light sauce. Spoon the shrimp, sausage
+  and sauce over the grits and scatter with the spring onion.
+</Step>

@@ -1,0 +1,91 @@
+---
+title: Kansas City Barbecue Sauce
+subtitle: A thick, tomato-based sauce sweetened with molasses and brown sugar and sharpened with vinegar and mustard — the sweet, dark sauce most Americans picture when they hear the word "barbecue."
+label: Classic
+defaultServings: 20
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [condiment]
+  method: [simmering]
+image:
+  src: images/recipes/barbecue-sauce.webp
+  alt: "Thick reddish-brown barbecue sauce in an open glass jar"
+ingredients:
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 400
+    unit: g
+  - id: molasses
+    ingredientRef: molasses
+    form: unsulphured
+    amount: 60
+    unit: g
+  - id: vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 45
+    unit: ml
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 40
+    unit: g
+  - id: worcestershire
+    ingredientRef: worcestershire-sauce
+    form: bottled
+    amount: 15
+    unit: ml
+  - id: mustard-powder
+    ingredientRef: mustard-powder
+    form: ground
+    amount: 8
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: smoked
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+steps:
+  - { id: combine, durationMin: 5, type: active, phase: prep }
+  - { id: simmer, durationMin: 20, type: active, phase: cook }
+  - { id: cool, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: This sauce is meant to be made well ahead of when it is needed and keeps, covered, in the refrigerator for up to a month.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to six months; thaw in the refrigerator before using.
+  reheatInstructions: Warm it gently on the stove if a thinner, pourable consistency is wanted; it is otherwise used cold or at room temperature.
+notes:
+  techniqueRationale:
+    - stepId: simmer
+      text: A slow simmer rather than a hard boil lets the vinegar's sharpness mellow and the sugars concentrate without catching on the base of the pan, where a tomato-and-sugar sauce this thick scorches easily.
+---
+
+<Step id="combine">
+  Combine the <Qty ref="ketchup"/>, <Qty ref="molasses"/>,
+  <Qty ref="vinegar"/>, <Qty ref="brown-sugar"/>, <Qty ref="worcestershire"/>,
+  <Qty ref="mustard-powder"/>, <Qty ref="paprika"/>, <Qty ref="pepper"/> and
+  <Qty ref="salt"/> in a heavy saucepan and whisk until smooth.
+</Step>
+
+<Step id="simmer">
+  Bring the sauce to a bare simmer and cook, stirring often, for
+  <Dur step="simmer"/>, until it has thickened enough to hold a trail when a
+  spoon is drawn through it.
+</Step>
+
+<Step id="cool">
+  Take the sauce off the heat and let it cool for <Dur step="cool"/> before
+  bottling or serving; it will thicken further as it cools.
+</Step>

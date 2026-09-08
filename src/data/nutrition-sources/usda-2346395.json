@@ -1,0 +1,192 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346395",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346395/nutrients",
+  "description": "Nuts, pecans, halves, raw",
+  "category": "Nut and Seed Products",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 699.596,
+    "protein": 9.959,
+    "fat": 73.28,
+    "carbs": 12.699,
+    "fiber": 5.793,
+    "calcium": 54.83,
+    "iron": 2.371,
+    "magnesium": 102.9,
+    "phosphorus": 252.7,
+    "potassium": 360.3,
+    "sodium": 0,
+    "zinc": 3.93,
+    "copper": 0.907,
+    "manganese": 2.28,
+    "thiamin": 0.548,
+    "niacin": 0.946,
+    "vitaminB6": 0.171,
+    "vitaminKMcg": 4.1,
+    "saturatedFat": 6.465,
+    "monounsaturatedFat": 39.282,
+    "polyunsaturatedFat": 22.924
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 2.623,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 1.879,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.439,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 15.57,
+      "unit": "µg"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 22.66,
+      "unit": "µg"
+    },
+    {
+      "number": "429",
+      "name": "Vitamin K (Dihydrophylloquinone)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "428",
+      "name": "Vitamin K (Menaquinone-4)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "501",
+      "name": "Tryptophan",
+      "amount": 0.115,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 0.3025,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 0.365,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 0.67,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 0.32,
+      "unit": "g"
+    },
+    {
+      "number": "506",
+      "name": "Methionine",
+      "amount": 0.1675,
+      "unit": "g"
+    },
+    {
+      "number": "508",
+      "name": "Phenylalanine",
+      "amount": 0.4625,
+      "unit": "g"
+    },
+    {
+      "number": "509",
+      "name": "Tyrosine",
+      "amount": 0.3125,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 0.435,
+      "unit": "g"
+    },
+    {
+      "number": "511",
+      "name": "Arginine",
+      "amount": 1.363,
+      "unit": "g"
+    },
+    {
+      "number": "512",
+      "name": "Histidine",
+      "amount": 0.2625,
+      "unit": "g"
+    },
+    {
+      "number": "513",
+      "name": "Alanine",
+      "amount": 0.4375,
+      "unit": "g"
+    },
+    {
+      "number": "514",
+      "name": "Aspartic acid",
+      "amount": 0.87,
+      "unit": "g"
+    },
+    {
+      "number": "515",
+      "name": "Glutamic acid",
+      "amount": 2.498,
+      "unit": "g"
+    },
+    {
+      "number": "516",
+      "name": "Glycine",
+      "amount": 0.4925,
+      "unit": "g"
+    },
+    {
+      "number": "517",
+      "name": "Proline",
+      "amount": 0.61,
+      "unit": "g"
+    },
+    {
+      "number": "518",
+      "name": "Serine",
+      "amount": 0.54,
+      "unit": "g"
+    },
+    {
+      "number": "521",
+      "name": "Hydroxyproline",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "526",
+      "name": "Cysteine",
+      "amount": 0.305,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

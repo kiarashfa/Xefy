@@ -1,0 +1,41 @@
+{
+  "id": "ribeye",
+  "name": "Ribeye",
+  "proseName": "ribeye",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, boneless ribeye steak, choice",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2646172",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646172/nutrients",
+      "sourceNote": "USDA's record for a boneless, choice-grade ribeye steak.",
+      "nutritionPer100g": {
+        "kcal": 259.611,
+        "protein": 18.744,
+        "fat": 20.04,
+        "carbs": 0,
+        "calcium": 4.173,
+        "iron": 1.641,
+        "magnesium": 16.68,
+        "phosphorus": 149.7,
+        "potassium": 288,
+        "sodium": 42.54,
+        "zinc": 4.063,
+        "copper": 0.043,
+        "manganese": 0,
+        "saturatedFat": 7.966,
+        "monounsaturatedFat": 7.731,
+        "polyunsaturatedFat": 0.629,
+        "transFat": 0.974,
+        "cholesterol": 62.66
+      }
+    }
+  ],
+  "image": "images/ingredients/ribeye-thumb.webp"
+}

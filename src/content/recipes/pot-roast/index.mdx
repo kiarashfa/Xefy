@@ -1,0 +1,165 @@
+---
+title: Pot Roast
+subtitle: Beef chuck seared hard, then braised low and slow with root vegetables until it falls apart under a fork.
+label: Home-style
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [braising]
+image:
+  src: images/recipes/pot-roast.webp
+  alt: "A whole braised beef pot roast in a Dutch oven, surrounded by carrots and celery, herb-crusted and glossy"
+ingredients:
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 1400
+    unit: g
+    note: one boneless roast, tied
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 30
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: quartered
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 400
+    unit: g
+    portions:
+      - { id: carrot-braise, amount: 200, note: roughly chopped, for the braising liquid }
+      - { id: carrot-chunks, amount: 200, note: cut into large chunks, added later }
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 150
+    unit: g
+    note: roughly chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 40
+    unit: g
+  - id: bouillon
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 15
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 500
+    unit: g
+    note: peeled and cut into large chunks, added later
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 4
+    unit: g
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 12
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+steps:
+  - { id: dredge, durationMin: 5, type: active, phase: prep }
+  - { id: sear, durationMin: 12, type: active, phase: cook }
+  - { id: soften-veg, durationMin: 8, type: active, phase: cook }
+  - { id: braise-first, durationMin: 150, type: passive }
+  - { id: add-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: braise-second, durationMin: 45, type: passive }
+  - { id: rest, durationMin: 15, type: passive }
+  - { id: carve, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Pot roast improves overnight in the refrigerator, once cooled, as the flavour settles into the meat and the fat rises for easy skimming.
+  freezable: true
+  freezeInstructions: Freeze the sliced meat and vegetables together in their braising liquid for up to three months.
+  reheatInstructions: Reheat gently, covered, in a low oven or a pan over a low heat, with a splash of water or stock if the liquid has thickened too far.
+notes:
+  techniqueRationale:
+    - stepId: sear
+      text: A hard sear before the liquid goes in builds a deep, browned crust on the meat that the braise itself cannot produce — a roast lowered straight into liquid never develops the same flavour.
+  commonPitfalls:
+    - stepId: add-vegetables
+      text: Adding the potatoes and the larger carrot chunks at the start of the braise leaves them broken down and waterlogged by the time the beef is tender. They go in only for the final stretch.
+---
+
+<Step id="dredge">
+  Season the <Qty ref="beef"/> with half the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>, then dust it all over with the <Qty ref="flour"/>,
+  patting off the excess.
+</Step>
+
+<Step id="sear">
+  Heat the <Qty ref="oil"/> in a heavy pot over a high heat and sear the beef
+  for <Dur step="sear"/>, turning to brown every side. Remove and set aside.
+</Step>
+
+<Step id="soften-veg">
+  Lower the heat and cook the <Qty ref="onion"/>, the <Qty ref="carrot-braise"/>,
+  the <Qty ref="celery"/> and the <Qty ref="garlic"/> for
+  <Dur step="soften-veg"/>, stirring, until softened. Stir in the
+  <Qty ref="tomato-puree"/> and cook briefly.
+</Step>
+
+<Step id="braise-first">
+  Dissolve the <Qty ref="bouillon"/> in the <Qty ref="water"/> and pour it
+  over the vegetables. Return the beef to the pot along with the
+  <Qty ref="thyme"/> and the <Qty ref="bay"/>, bring to a bare simmer, cover
+  and transfer to a low oven at <Temp c={150}/> for
+  <Dur step="braise-first"/>.
+</Step>
+
+<Step id="add-vegetables">
+  Tuck the <Qty ref="potato"/> and the <Qty ref="carrot-chunks"/> into the
+  liquid around the beef, seasoning with the remaining salt.
+</Step>
+
+<Step id="braise-second">
+  Cover and return to the oven for a further <Dur step="braise-second"/>,
+  until the beef is fork-tender and the vegetables are cooked through.
+</Step>
+
+<Step id="rest">
+  Lift the beef onto a board and rest for <Dur step="rest"/>, loosely tented,
+  before carving.
+</Step>
+
+<Step id="carve">
+  Slice the beef against the grain and serve with the vegetables and the
+  braising liquid spooned over as a gravy.
+</Step>

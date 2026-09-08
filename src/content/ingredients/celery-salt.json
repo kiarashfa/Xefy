@@ -1,0 +1,64 @@
+{
+  "id": "celery-salt",
+  "name": "Celery Salt",
+  "proseName": "celery salt",
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "celery"
+  ],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170920",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170920/nutrients",
+      "sourceNote": "USDA carries no record for celery salt, a retail blend of ground celery seed and table salt. This is its record for celery seed alone, the flavouring component of the blend.",
+      "nutritionCaveat": "Cited against pure ground celery seed. Retail celery salt is diluted with a large proportion of table salt, so its sodium content is far higher than this record shows, and its other figures per gram are correspondingly lower.",
+      "nutritionPer100g": {
+        "kcal": 392,
+        "protein": 18.07,
+        "fat": 25.27,
+        "carbs": 41.35,
+        "fiber": 11.8,
+        "sugars": 0.67,
+        "calcium": 1767,
+        "iron": 44.9,
+        "magnesium": 440,
+        "phosphorus": 547,
+        "potassium": 1400,
+        "sodium": 160,
+        "zinc": 6.93,
+        "copper": 1.37,
+        "manganese": 7.567,
+        "seleniumMcg": 12.1,
+        "vitaminC": 17.1,
+        "thiamin": 0.34,
+        "riboflavin": 0.29,
+        "niacin": 3.06,
+        "vitaminB6": 0.89,
+        "folateMcg": 10,
+        "choline": 24.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 3,
+        "vitaminE": 1.07,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 2.19,
+        "monounsaturatedFat": 15.93,
+        "polyunsaturatedFat": 3.72,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 2,
+        "gPerTbsp": 6.5,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/celery-salt-thumb.webp"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "cocoa-powder",
+  "name": "Cocoa Powder",
+  "proseName": "cocoa powder",
+  "category": "confectionery",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "unsweetened",
+      "label": "Unsweetened",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169593",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169593/nutrients",
+      "nutritionPer100g": {
+        "kcal": 228,
+        "protein": 19.6,
+        "fat": 13.7,
+        "carbs": 57.9,
+        "fiber": 37,
+        "sugars": 1.75,
+        "calcium": 128,
+        "iron": 13.86,
+        "magnesium": 499,
+        "phosphorus": 734,
+        "potassium": 1524,
+        "sodium": 21,
+        "zinc": 6.81,
+        "copper": 3.788,
+        "manganese": 3.837,
+        "seleniumMcg": 14.3,
+        "vitaminC": 0,
+        "thiamin": 0.078,
+        "riboflavin": 0.241,
+        "niacin": 2.185,
+        "vitaminB6": 0.118,
+        "folateMcg": 32,
+        "choline": 12,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.1,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.5,
+        "saturatedFat": 8.07,
+        "monounsaturatedFat": 4.57,
+        "polyunsaturatedFat": 0.44,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 5.4,
+        "gPerCup": 86,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/cocoa-powder-thumb.webp"
+}

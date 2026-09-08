@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2758996",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2758996/nutrients",
+  "description": "Tortilla, wheat flour, shelf stable",
+  "category": "Baked Products",
+  "publicationDate": "4/30/2026",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "calcium": 137.7,
+    "iron": 3.429,
+    "magnesium": 19.85,
+    "phosphorus": 226.7,
+    "potassium": 135.6,
+    "sodium": 730.5,
+    "zinc": 0.497,
+    "copper": 0.103,
+    "manganese": 0.484,
+    "thiamin": 0.418,
+    "riboflavin": 0.229,
+    "niacin": 5.319
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 31.79,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 2.671,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 1.357,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 127.9,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

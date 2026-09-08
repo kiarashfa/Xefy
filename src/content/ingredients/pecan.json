@@ -1,0 +1,61 @@
+{
+  "id": "pecan",
+  "name": "Pecans",
+  "proseName": "pecans",
+  "category": "nut",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "nuts"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, chopped",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170182",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170182/nutrients",
+      "nutritionPer100g": {
+        "kcal": 691,
+        "protein": 9.17,
+        "fat": 71.97,
+        "carbs": 13.86,
+        "fiber": 9.6,
+        "sugars": 3.97,
+        "calcium": 70,
+        "iron": 2.53,
+        "magnesium": 121,
+        "phosphorus": 277,
+        "potassium": 410,
+        "sodium": 0,
+        "zinc": 4.53,
+        "copper": 1.2,
+        "manganese": 4.5,
+        "seleniumMcg": 3.8,
+        "vitaminC": 1.1,
+        "thiamin": 0.66,
+        "riboflavin": 0.13,
+        "niacin": 1.167,
+        "vitaminB6": 0.21,
+        "folateMcg": 22,
+        "choline": 40.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 3,
+        "vitaminE": 1.4,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 3.5,
+        "saturatedFat": 6.18,
+        "monounsaturatedFat": 40.801,
+        "polyunsaturatedFat": 21.614,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 109,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/pecan-thumb.webp"
+}

@@ -1,0 +1,105 @@
+---
+title: Barbecue Ribs
+subtitle: Pork ribs rubbed with spice and smoked low over wood — dry and unsauced in Memphis, thick and sweet in Kansas City, or tangy over the trimmed St. Louis cut.
+label: Memphis
+defaultServings: 5
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [smoking]
+image:
+  src: images/recipes/bbq-ribs.webp
+  alt: "Cut smoked pork ribs plated together, showing the dark bark and glaze"
+ingredients:
+  - id: ribs
+    ingredientRef: pork-baby-back-ribs
+    form: raw
+    amount: 2000
+    unit: g
+    note: about two racks
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 16
+    unit: g
+    note: coarsely cracked
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 30
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 30
+    unit: g
+  - id: mustard-powder
+    ingredientRef: mustard-powder
+    form: ground
+    amount: 8
+    unit: g
+  - id: celery-salt
+    ingredientRef: celery-salt
+    form: ground
+    amount: 8
+    unit: g
+  - id: vinegar-mop
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 60
+    unit: ml
+    note: for basting
+steps:
+  - { id: season, durationMin: 10, type: active, phase: prep }
+  - { id: smoke, durationMin: 240, type: passive }
+  - { id: mop, durationMin: 5, type: active, phase: cook }
+  - { id: rest, durationMin: 10, type: passive }
+  - { id: serve, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The racks can be rubbed a day ahead and left uncovered on a rack in the refrigerator so the surface dries before smoking.
+  freezable: true
+  freezeInstructions: Freeze the cooked ribs whole or portioned, wrapped tightly, for up to three months.
+  reheatInstructions: Reheat, loosely covered, in a low oven until warmed through; a microwave leaves the bark soft.
+notes:
+  techniqueRationale:
+    - stepId: mop
+      text: The vinegar wash cuts through the richness of the pork and helps a final scattering of rub cling to the surface, without turning the ribs into a sauced style.
+  commonPitfalls:
+    - stepId: smoke
+      text: Wrapping or brushing sauce onto the racks partway through, the way spare ribs are often treated, washes out the whole point of a dry rub. They stay uncovered and unsauced for the entire smoke.
+---
+
+<Step id="season">
+  Peel the thin membrane from the underside of the <Qty ref="ribs"/> and pat
+  the racks dry. Combine the <Qty ref="salt"/>, <Qty ref="pepper"/>,
+  <Qty ref="brown-sugar"/>, <Qty ref="paprika"/>, <Qty ref="mustard-powder"/>
+  and <Qty ref="celery-salt"/>, then coat both racks evenly on all sides.
+</Step>
+
+<Step id="smoke">
+  Smoke the racks bone side down at a steady <Temp c={110}/> for
+  <Dur step="smoke"/>, without opening the smoker more than occasionally,
+  until the meat has pulled back from the ends of the bones and a rack lifted
+  at one end bends and just begins to crack across the surface.
+</Step>
+
+<Step id="mop">
+  Brush the racks all over with the <Qty ref="vinegar-mop"/> and dust them
+  with a last light scattering of any rub left on the board, then set them
+  aside off the heat.
+</Step>
+
+<Step id="rest">
+  Rest the ribs, loosely tented, for <Dur step="rest"/> before cutting.
+</Step>
+
+<Step id="serve">
+  Cut the racks into individual ribs and serve them dry, with no sauce added
+  at the table.
+</Step>

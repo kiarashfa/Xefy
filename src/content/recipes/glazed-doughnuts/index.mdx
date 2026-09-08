@@ -1,0 +1,140 @@
+---
+title: Glazed Doughnuts
+subtitle: An enriched yeast dough proved twice, fried in deep fat and dipped warm in a thin sugar glaze that sets to a shine.
+label: Yeast-raised
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert, breakfast]
+  method: [deep-frying, baking]
+image:
+  src: images/recipes/glazed-doughnuts.webp
+  alt: "A box of glazed ring doughnuts with a glossy sugar glaze"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 7
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 240
+    unit: ml
+    note: warmed to just above body temperature
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 50
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+    note: soft
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the frying oil stays in the pan; a fried dough of this kind absorbs roughly a tenth of what it is fried in, and the rest goes back in the bottle or is discarded.
+  - id: glaze-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 240
+    unit: g
+  - id: glaze-milk
+    ingredientRef: milk
+    form: whole
+    amount: 45
+    unit: ml
+  - id: glaze-vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 4
+    unit: ml
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 8, type: active, phase: prep }
+  - { id: first-prove, durationMin: 75, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: second-prove, durationMin: 40, type: passive }
+  - { id: heat-oil, durationMin: 15, type: "parallel-with:second-prove", phase: cook }
+  - { id: fry, durationMin: 10, type: active, phase: cook }
+  - { id: glaze, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Best eaten within a few hours of glazing, while the crust is still tender. The shaped, unproved dough can be refrigerated overnight for its second prove, then brought back to room temperature before frying.
+  freezable: true
+  freezeInstructions: Freeze the fried, unglazed doughnuts. Thaw at room temperature and glaze just before serving, since the glaze does not survive freezing well.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: first-prove
+      text: The long first prove is where the yeast does most of its work and the dough builds the structure that will trap gas during frying — a dough proved too briefly here fries dense no matter how well it is shaped afterwards.
+  commonPitfalls:
+    - stepId: fry
+      text: Oil that is too hot browns the crust before the centre cooks through, leaving a doughnut that looks done and is not. Oil that is too cool lets the dough soak up far more fat than it should. A thermometer is the only reliable check.
+---
+
+<Step id="make-dough">
+  Warm the <Qty ref="milk"/> and stir in the <Qty ref="yeast"/> and a little of the
+  <Qty ref="sugar"/>; leave it until foaming. Combine the <Qty ref="flour"/>, the remaining
+  sugar and the <Qty ref="salt"/> in a large bowl, then work in the milk mixture, the
+  <Qty ref="egg"/> and the <Qty ref="butter"/> to a rough dough. This takes
+  <Dur step="make-dough"/>.
+</Step>
+
+<Step id="knead">
+  Knead the dough for <Dur step="knead"/>, until it is smooth, elastic and no longer sticks
+  to the sides of the bowl.
+</Step>
+
+<Step id="first-prove">
+  Cover the bowl and leave the dough somewhere warm for <Dur step="first-prove"/>, until it
+  has roughly doubled.
+</Step>
+
+<Step id="shape">
+  Turn the dough out and roll it to an even thickness. Cut rounds with a doughnut cutter,
+  and cut a hole from the centre of each. Set the rings and holes apart on trays lined with
+  paper, using <Dur step="shape"/>.
+</Step>
+
+<Step id="second-prove">
+  Cover the trays loosely and leave the shaped dough to prove again for
+  <Dur step="second-prove"/>, until visibly puffed.
+</Step>
+
+<Step id="heat-oil">
+  Meanwhile heat the <Qty ref="frying-oil"/> in a deep pan to <Temp c={180}/>, using
+  <Dur step="heat-oil"/> to bring it up slowly and settle at temperature.
+</Step>
+
+<Step id="fry">
+  Fry the doughnuts a few at a time for <Dur step="fry"/> in total, turning once, until
+  deep golden on both sides. Lift them onto a rack set over paper to drain.
+</Step>
+
+<Step id="glaze">
+  Whisk the <Qty ref="glaze-sugar"/> with the <Qty ref="glaze-milk"/> and the
+  <Qty ref="glaze-vanilla"/> to a thin, pourable glaze. Dip the warm doughnuts in the glaze
+  and set them back on the rack to let it set, over <Dur step="glaze"/>.
+</Step>

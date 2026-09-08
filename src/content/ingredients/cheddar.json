@@ -1,0 +1,55 @@
+{
+  "id": "cheddar",
+  "name": "Cheddar",
+  "proseName": "cheddar",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "sharp",
+      "label": "Sharp, grated",
+      "proseQualifier": "sharp",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170899",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170899/nutrients",
+      "nutritionPer100g": {
+        "kcal": 410,
+        "protein": 24.25,
+        "carbs": 2.13,
+        "fat": 33.82,
+        "fiber": 0,
+        "sugars": 0.27,
+        "saturatedFat": 19.368,
+        "monounsaturatedFat": 8.428,
+        "polyunsaturatedFat": 1.433,
+        "transFat": 1.179,
+        "cholesterol": 99,
+        "sodium": 644,
+        "potassium": 76,
+        "calcium": 711,
+        "iron": 0.16,
+        "magnesium": 27,
+        "phosphorus": 460,
+        "zinc": 3.74,
+        "copper": 0.035,
+        "manganese": 0.024,
+        "seleniumMcg": 28.3,
+        "vitaminAMcg": 263,
+        "vitaminC": 0,
+        "vitaminDMcg": 1,
+        "vitaminE": 0.78
+      },
+      "density": {
+        "gPerCup": 113,
+        "densitySource": "estimated",
+        "densityClass": "hard-cheese-grated"
+      }
+    }
+  ],
+  "image": "images/ingredients/cheddar-thumb.webp"
+}

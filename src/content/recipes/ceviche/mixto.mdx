@@ -1,0 +1,127 @@
+---
+label: Mixto
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: fish
+    ingredientRef: corvina
+    form: raw
+    amount: 400
+    unit: g
+    note: skinned, bloodline removed, previously frozen
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and deveined
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 220
+    unit: ml
+  - id: aji-limo
+    ingredientRef: aji-limo
+    form: fresh
+    amount: 15
+    unit: g
+    note: seeded and finely minced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed to a paste
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: shrimp-salt, amount: 2, note: for the poaching water }
+      - { id: marinade-salt, amount: 5, note: for the marinade }
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 100
+    unit: g
+    note: sliced into thin half-moons
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped
+  - id: sweet-potato
+    ingredientRef: sweet-potato
+    form: raw
+    amount: 300
+    unit: g
+    note: peeled, cut into thick rounds
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 200
+    unit: g
+    note: kernels cut from the cob
+  - id: lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 60
+    unit: g
+    note: leaves separated, for lining the plates
+steps:
+  - { id: boil-sides, durationMin: 20, type: active, phase: cook }
+  - { id: blanch-shrimp, durationMin: 3, type: "parallel-with:boil-sides", phase: cook }
+  - { id: trim-fish, durationMin: 8, type: "parallel-with:boil-sides", phase: prep }
+  - { id: mix-marinade, durationMin: 3, type: "parallel-with:boil-sides", phase: prep }
+  - { id: cure-fish, durationMin: 6, type: "parallel-with:boil-sides", phase: rest }
+  - { id: finish-and-plate, durationMin: 6, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: blanch-shrimp
+      text: Shrimp left in the hot water any longer than the given time turns rubbery well before the fish beside it is ready, since shrimp firms with heat far faster than the fish firms with acid.
+---
+
+<Step id="boil-sides">
+  Bring a pot of salted water to the boil and cook the <Qty ref="sweet-potato"/> and
+  <Qty ref="corn"/> together until the potato is tender to a knife point, about
+  <Dur step="boil-sides"/>. Drain and set aside to cool.
+</Step>
+
+<Step id="blanch-shrimp">
+  Bring a small pan of water to the boil with the <Qty ref="shrimp-salt"/> and drop
+  in the <Qty ref="shrimp"/>. Cook for <Dur step="blanch-shrimp"/>, until just pink
+  and opaque, then drain and plunge into iced water to stop the cooking. Drain again
+  and halve each shrimp lengthways.
+</Step>
+
+<Step id="trim-fish">
+  Cut the <Qty ref="fish"/> into small, even cubes, discarding any dark bloodline
+  or stray bones as you go. This takes <Dur step="trim-fish"/>.
+</Step>
+
+<Step id="mix-marinade">
+  Stir the <Qty ref="lime-juice"/>, <Qty ref="aji-limo"/>, <Qty ref="garlic"/> and
+  <Qty ref="marinade-salt"/> together in a wide, non-reactive bowl. This takes
+  <Dur step="mix-marinade"/>.
+</Step>
+
+<Step id="cure-fish">
+  Add the fish cubes to the marinade and toss briefly to coat every piece, then
+  leave for <Dur step="cure-fish"/>, until the flesh has turned opaque and firm
+  at the edges but still looks faintly translucent at the centre.
+</Step>
+
+<Step id="finish-and-plate">
+  Fold the blanched shrimp, <Qty ref="onion"/> and <Qty ref="coriander"/> through
+  the cured fish and its marinade. Line each plate with a <Qty ref="lettuce"/>
+  leaf, spoon the fish, shrimp and their juices on top, and arrange the drained
+  sweet potato and corn alongside. This takes <Dur step="finish-and-plate"/>;
+  serve straight away.
+</Step>

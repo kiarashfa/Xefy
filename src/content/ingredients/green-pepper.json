@@ -1,0 +1,47 @@
+{
+  "id": "green-pepper",
+  "name": "Green Pepper",
+  "proseName": "green pepper",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170427",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170427/nutrients",
+      "nutritionPer100g": {
+        "kcal": 20,
+        "protein": 0.86,
+        "carbs": 4.64,
+        "fat": 0.17,
+        "fiber": 1.7,
+        "sugars": 2.4,
+        "saturatedFat": 0.058,
+        "monounsaturatedFat": 0.008,
+        "polyunsaturatedFat": 0.062,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 3,
+        "potassium": 175,
+        "calcium": 10,
+        "iron": 0.34,
+        "magnesium": 10,
+        "phosphorus": 20,
+        "zinc": 0.13,
+        "copper": 0.066,
+        "manganese": 0.122,
+        "seleniumMcg": 0,
+        "vitaminAMcg": 18,
+        "vitaminC": 80.4,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.37
+      }
+    }
+  ],
+  "image": "images/ingredients/green-pepper-thumb.webp"
+}

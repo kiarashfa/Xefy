@@ -1,0 +1,52 @@
+{
+  "id": "file-powder",
+  "name": "Filé Powder",
+  "proseName": "filé powder",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170917",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170917/nutrients",
+      "sourceNote": "USDA publishes no record for filé powder (ground dried sassafras leaf). This is its record for ground bay leaf, the closest dried-leaf spice powder it carries, used only to keep the required macro fields non-empty for an ingredient used in gram amounts smaller than a single serving of most foods.",
+      "nutritionCaveat": "Cited against ground bay leaf, not sassafras leaf; the true composition of filé powder is not published by USDA. It is used in such small quantity per serving that the effect on any dish's nutrition is negligible either way.",
+      "nutritionPer100g": {
+        "kcal": 313,
+        "protein": 7.61,
+        "carbs": 74.97,
+        "fat": 8.36,
+        "fiber": 26.3,
+        "saturatedFat": 2.28,
+        "monounsaturatedFat": 1.64,
+        "polyunsaturatedFat": 2.29,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 23,
+        "potassium": 529,
+        "calcium": 834,
+        "iron": 43,
+        "magnesium": 120,
+        "phosphorus": 113,
+        "zinc": 3.7,
+        "copper": 0.416,
+        "manganese": 8.167,
+        "seleniumMcg": 2.8,
+        "vitaminAMcg": 309,
+        "vitaminC": 46.5,
+        "vitaminDMcg": 0
+      },
+      "density": {
+        "gPerTsp": 0.7,
+        "densitySource": "estimated",
+        "densityClass": "leafy-dried-herb"
+      }
+    }
+  ]
+}

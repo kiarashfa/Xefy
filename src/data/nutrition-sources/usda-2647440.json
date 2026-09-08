@@ -1,0 +1,110 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2647440",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2647440/nutrients",
+  "description": "Cheese, provolone, sliced",
+  "category": "Dairy and Egg Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 356.9,
+    "protein": 23.453,
+    "fat": 28.13,
+    "carbs": 2.453,
+    "calcium": 748.8,
+    "iron": 0,
+    "magnesium": 29.5,
+    "phosphorus": 494.1,
+    "potassium": 94.84,
+    "sodium": 600.9,
+    "zinc": 3.89,
+    "copper": 0,
+    "manganese": 0.03,
+    "vitaminDMcg": 0,
+    "saturatedFat": 16.24,
+    "monounsaturatedFat": 5.738,
+    "cholesterol": 85.43
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 42.34,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 3.676,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 3.624,
+      "unit": "g"
+    },
+    {
+      "number": "314",
+      "name": "Iodine, I",
+      "amount": 64.27,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 200,
+      "unit": "µg"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "325",
+      "name": "Vitamin D2 (ergocalciferol)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "326",
+      "name": "Vitamin D3 (cholecalciferol)",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.8364,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 2.635,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 8.017,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 2.288,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.571,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

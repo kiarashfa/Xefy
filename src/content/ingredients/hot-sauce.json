@@ -1,0 +1,63 @@
+{
+  "id": "hot-sauce",
+  "name": "Cayenne Hot Sauce",
+  "proseName": "hot sauce",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Louisiana-style hot sauce",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "bottled",
+      "label": "Bottled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174527",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174527/nutrients",
+      "sourceNote": "USDA's generic ready-to-serve pepper/hot sauce record — an aged cayenne mash thinned with vinegar and salt, the profile of the Louisiana-style bottled sauces this ingredient represents.",
+      "nutritionPer100g": {
+        "kcal": 11,
+        "protein": 0.51,
+        "carbs": 1.75,
+        "fat": 0.37,
+        "fiber": 0.3,
+        "sugars": 1.26,
+        "saturatedFat": 0.052,
+        "monounsaturatedFat": 0.03,
+        "polyunsaturatedFat": 0.196,
+        "cholesterol": 0,
+        "sodium": 2643,
+        "potassium": 144,
+        "calcium": 8,
+        "iron": 0.48,
+        "magnesium": 5,
+        "phosphorus": 11,
+        "zinc": 0.11,
+        "copper": 0.028,
+        "manganese": 0.049,
+        "seleniumMcg": 0,
+        "vitaminAMcg": 8,
+        "vitaminC": 74.8,
+        "vitaminE": 0.12,
+        "vitaminKMcg": 2.4,
+        "thiamin": 0.036
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/hot-sauce-thumb.webp"
+}

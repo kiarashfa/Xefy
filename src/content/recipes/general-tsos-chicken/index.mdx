@@ -1,0 +1,137 @@
+---
+title: General Tso's Chicken
+subtitle: Cornflour-dredged, deep-fried chicken thigh tossed in a sweet, sharp, glossy soy and vinegar glaze.
+label: American-Chinese
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [american, chinese]
+  course: [main-course]
+  method: [deep-frying, stir-frying]
+names:
+  notToBeConfusedWith:
+    - name: Hunanese cooking
+      note: The dish is named for a nineteenth-century Hunanese general but bears little resemblance to the sour, hot, salty cooking of his home province — it was invented later, in Taiwan, and sweetened further for American diners.
+image:
+  src: images/recipes/general-tsos-chicken.webp
+  alt: "Crispy chicken pieces coated in glossy dark sauce with dried red chilies, served over rice with broccoli"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 450
+    unit: g
+    note: boneless, skinless, cut into bite-sized pieces
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: one egg, beaten
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 50
+    unit: g
+    portions:
+      - { id: cornflour-dredge, amount: 35, note: for coating the chicken }
+      - { id: cornflour-sauce, amount: 15, note: to thicken the sauce }
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 800
+    unit: ml
+    consumedFraction: 0.05
+    consumedFractionNote: Most of the deep-frying oil is strained off and reused or discarded; only what clings to the crust is eaten.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: minced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: minced
+  - id: chilli
+    ingredientRef: dried-chilli
+    form: whole
+    amount: 4
+    unit: g
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 45
+    unit: ml
+  - id: vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 30
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+  - id: sauce-water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 5
+    unit: ml
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: sliced, for finishing
+steps:
+  - { id: mix-sauce, durationMin: 5, type: active, phase: prep }
+  - { id: dredge, durationMin: 8, type: active, phase: prep }
+  - { id: fry, durationMin: 10, type: active, phase: cook }
+  - { id: glaze, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The sauce can be mixed a day ahead and kept covered in the refrigerator.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat gently in a pan rather than a microwave, which turns the coating soft; the crust will not fully recover its original crispness.
+notes:
+  techniqueRationale:
+    - stepId: fry
+      text: A cornflour coating rather than a batter is what gives the chicken its dry, craggy crust — the same starch that lets the sauce cling to it afterwards instead of sliding off.
+  commonPitfalls:
+    - stepId: glaze
+      text: Tossing the chicken in the sauce too far ahead of serving softens the crust within minutes. It goes in only at the very end, for just long enough to coat.
+---
+
+<Step id="mix-sauce">
+  Combine the <Qty ref="soy-sauce"/>, <Qty ref="vinegar"/>, <Qty ref="sugar"/>
+  and <Qty ref="sauce-water"/> with the <Qty ref="cornflour-sauce"/>, stirring
+  until the cornflour is fully dissolved.
+</Step>
+
+<Step id="dredge">
+  Toss the <Qty ref="chicken"/> in the <Qty ref="egg"/>, then coat each piece
+  evenly in the <Qty ref="cornflour-dredge"/>, shaking off the excess.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> until shimmering and fry the chicken in
+  batches for <Dur step="fry"/>, until deeply golden and cooked through.
+  Drain on a rack.
+</Step>
+
+<Step id="glaze">
+  Pour off all but a thin film of the frying oil and stir-fry the
+  <Qty ref="garlic"/>, <Qty ref="ginger"/> and <Qty ref="chilli"/> briefly
+  until fragrant. Pour in the sauce mixture and cook for
+  <Dur step="glaze"/>, stirring, until thickened and glossy. Return the fried
+  chicken to the pan and toss to coat, then finish with the
+  <Qty ref="sesame-oil"/> and the <Qty ref="spring-onion"/>.
+</Step>

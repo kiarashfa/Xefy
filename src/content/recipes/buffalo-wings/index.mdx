@@ -1,0 +1,95 @@
+---
+title: Buffalo Wings
+subtitle: Chicken wings deep-fried unbreaded until crisp, then tossed in a hot cayenne pepper sauce and butter.
+description: Buffalo-style chicken wings made the standard Anchor Bar way — whole wings deep-fried plain, with no breading or batter, then tossed hot in a sauce of melted butter and bottled cayenne pepper sauce.
+label: Anchor Bar Style
+defaultServings: 5
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [snack]
+  method: [deep-frying]
+names:
+  alsoKnownAs:
+    - { name: "Hot wings", region: United States, lang: en }
+image:
+  src: images/recipes/buffalo-wings.webp
+  alt: "A tray of orange buffalo chicken wings coated in hot sauce"
+ingredients:
+  - id: wings
+    ingredientRef: chicken-wing
+    form: raw
+    amount: 1000
+    unit: g
+    note: cut into flats and drumettes at the joints, tips discarded or reserved for stock
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pot; a deep-fried food absorbs only a fraction of what it is fried in, and the rest is reused or discarded.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+  - id: hot-sauce
+    ingredientRef: hot-sauce
+    form: bottled
+    amount: 120
+    unit: ml
+steps:
+  - { id: prep-wings, durationMin: 10, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 12, type: passive }
+  - { id: fry-wings, durationMin: 12, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 3, type: "parallel-with:fry-wings", phase: cook }
+  - { id: toss, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-wings
+      text: Leaving the wings unbreaded is what lets the skin itself go crisp and lets it soak up the sauce afterwards rather than shedding a separate coating.
+  commonPitfalls:
+    - stepId: toss
+      text: Sauced wings left to sit lose their crispness within minutes as the sauce softens the skin, so they go from fryer to sauce to table with no pause in between.
+---
+
+<Step id="prep-wings">
+  Pat the <Qty ref="wings"/> completely dry with paper towels and season all over with
+  the <Qty ref="salt"/> and <Qty ref="black-pepper"/>.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a deep, heavy pot or a deep-fat fryer to
+  <Temp c={190}/>.
+</Step>
+
+<Step id="fry-wings">
+  Fry the wings in batches for <Dur step="fry-wings"/>, turning occasionally, until deep
+  golden and cooked through. Lift out onto a wire rack to drain.
+</Step>
+
+<Step id="make-sauce">
+  While the wings fry, melt the <Qty ref="butter"/> with the <Qty ref="hot-sauce"/> in a
+  small saucepan over a low heat, stirring until smooth.
+</Step>
+
+<Step id="toss">
+  Tip the hot wings into a large bowl, pour over the sauce, and toss to coat evenly.
+  Serve at once.
+</Step>

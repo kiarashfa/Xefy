@@ -1,0 +1,59 @@
+---
+label: Philadelphia style
+defaultServings: 8
+difficulty: Easy
+ingredients:
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 500
+    unit: ml
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 250
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 15
+    unit: ml
+steps:
+  - { id: mix-base, durationMin: 5, type: active, phase: prep }
+  - { id: chill-base, durationMin: 120, type: passive }
+  - { id: churn, durationMin: 25, type: active, phase: cook }
+  - { id: freeze, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: The mixed base can be made a day ahead and kept covered in the refrigerator until ready to churn.
+  freezable: true
+  freezeInstructions: The churned ice cream itself is the finished, frozen product; keep it in an airtight container in the freezer.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: mix-base
+      text: With no egg yolks to cook, the whole base is simply whisked cold rather than heated, which is what makes this style faster and lighter than a custard base — nothing here needs to thicken before it is chilled.
+---
+
+<Step id="mix-base">
+  Whisk the <Qty ref="cream"/>, the <Qty ref="milk"/>, the <Qty ref="sugar"/> and the
+  <Qty ref="vanilla"/> together until the sugar has dissolved, over <Dur step="mix-base"/>.
+</Step>
+
+<Step id="chill-base">
+  Cover and chill the base for <Dur step="chill-base"/>, until thoroughly cold.
+</Step>
+
+<Step id="churn">
+  Churn the chilled base in an ice cream machine for <Dur step="churn"/>, until it holds
+  a soft, spoonable shape.
+</Step>
+
+<Step id="freeze">
+  Transfer to a container and freeze for <Dur step="freeze"/>, until firm enough to
+  scoop.
+</Step>

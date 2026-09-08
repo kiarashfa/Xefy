@@ -1,0 +1,84 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2685580",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2685580/nutrients",
+  "description": "Tomato, paste, canned, without salt added",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/18/2024",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 88.535,
+    "protein": 4.234,
+    "fat": 0.733,
+    "carbs": 20.188,
+    "fiber": 4.704,
+    "calcium": 36.85,
+    "iron": 3.185,
+    "magnesium": 49.61,
+    "phosphorus": 91.16,
+    "potassium": 971.6,
+    "sodium": 61.15,
+    "zinc": 0.511,
+    "copper": 0.295,
+    "manganese": 0.332,
+    "vitaminC": 18.4
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 71.93,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.6775,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 2.915,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 11.693,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 5.685,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 6.008,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

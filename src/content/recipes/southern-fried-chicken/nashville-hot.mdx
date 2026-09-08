@@ -1,0 +1,128 @@
+---
+label: Nashville Hot
+defaultServings: 6
+difficulty: Hard
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 1200
+    unit: g
+    note: a whole chicken jointed into pieces
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 700
+    unit: ml
+    consumedFraction: 0.15
+    consumedFractionNote: Most of the marinade is poured away before dredging; only the thin layer clinging to the chicken, which helps the flour adhere, is actually eaten.
+  - id: brine-hot-sauce
+    ingredientRef: hot-sauce
+    form: bottled
+    amount: 30
+    unit: ml
+    consumedFraction: 0.15
+    consumedFractionNote: Discarded with the buttermilk it is mixed into; only the residue clinging to the chicken remains.
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: A shallow dredge sheds a good part of the seasoned flour back into the bowl; what clings on becomes the crust.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: Mixed into the dredge flour, so it is lost at the same rate the flour itself is.
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: Mixed into the dredge flour, so it is lost at the same rate the flour itself is.
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 1020
+    unit: ml
+    consumedFraction: 0.22
+    consumedFractionNote: Most of this line fries the chicken, and only what the crust absorbs is eaten from it; a smaller portion is ladled out hot at the end to build the paste, where it is eaten in full. Blended across the two uses, about a fifth of the total is retained.
+    portions:
+      - { id: frying-oil, amount: 900 }
+      - { id: paste-oil, amount: 120, note: ladled out hot after frying }
+  - id: paste-cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 15
+    unit: g
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 15
+    unit: g
+  - id: paste-paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 5
+    unit: g
+steps:
+  - { id: brine, durationMin: 480, type: passive }
+  - { id: prep-dredge, durationMin: 5, type: "parallel-with:brine", phase: prep }
+  - { id: dredge-chicken, durationMin: 10, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 12, type: passive }
+  - { id: fry-chicken, durationMin: 24, type: active, phase: cook }
+  - { id: make-paste, durationMin: 5, type: "parallel-with:fry-chicken", phase: cook }
+  - { id: brush, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The buttermilk marinade can be started up to a day ahead; the chicken should not be dredged or fried until just before cooking.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: make-paste
+      text: Whisking the cayenne into oil that has cooled brings its raw, bitter edge forward; the oil needs to still be near frying temperature to bloom the spice properly.
+---
+
+<Step id="brine">
+  Combine the <Qty ref="buttermilk"/> and <Qty ref="brine-hot-sauce"/> in a large bowl
+  or dish, submerge the <Qty ref="chicken"/> in it, cover, and refrigerate for
+  <Dur step="brine"/>.
+</Step>
+
+<Step id="prep-dredge">
+  Whisk the <Qty ref="flour"/>, <Qty ref="salt"/> and <Qty ref="black-pepper"/> together
+  in a wide shallow dish.
+</Step>
+
+<Step id="dredge-chicken">
+  Lift each piece of chicken from the buttermilk, letting the excess drip off, and
+  press it into the seasoned flour, turning to coat evenly on all sides. Set the
+  dredged pieces on a rack.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="frying-oil"/> in a heavy skillet over a medium heat until it
+  reaches <Temp c={165}/>.
+</Step>
+
+<Step id="fry-chicken">
+  Fry the chicken in batches for <Dur step="fry-chicken"/>, turning occasionally and
+  adjusting the heat to hold the oil near <Temp c={165}/>, until the crust is deep
+  golden and the meat is cooked through to the bone.
+</Step>
+
+<Step id="make-paste">
+  While the chicken fries, ladle the <Qty ref="paste-oil"/> from the frying skillet
+  into a heatproof bowl and whisk in the <Qty ref="paste-cayenne"/>,
+  <Qty ref="brown-sugar"/> and <Qty ref="paste-paprika"/> until smooth.
+</Step>
+
+<Step id="brush">
+  Brush the hot paste generously over both sides of the fried chicken while it is
+  still warm, then serve at once.
+</Step>

@@ -1,0 +1,41 @@
+{
+  "id": "chicken-breast",
+  "name": "Chicken Breast",
+  "proseName": "chicken breast",
+  "category": "meat",
+  "animalOrigin": "poultry",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, boneless, skinless",
+      "proseQualifier": "boneless, skinless",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2646170",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646170/nutrients",
+      "nutritionPer100g": {
+        "kcal": 112.202,
+        "protein": 22.525,
+        "fat": 1.934,
+        "carbs": 0,
+        "calcium": 3.939,
+        "iron": 0.354,
+        "magnesium": 26.2,
+        "phosphorus": 214.9,
+        "potassium": 330.1,
+        "sodium": 65.75,
+        "zinc": 0.655,
+        "copper": 0.004,
+        "manganese": 0,
+        "saturatedFat": 0.349,
+        "monounsaturatedFat": 0.369,
+        "polyunsaturatedFat": 0.296,
+        "transFat": 0.009,
+        "cholesterol": 72.73
+      }
+    }
+  ],
+  "image": "images/ingredients/chicken-breast-thumb.webp"
+}

@@ -1,0 +1,178 @@
+---
+label: Lattice
+defaultServings: 8
+difficulty: Hard
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 310
+    unit: g
+  - id: pastry-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pastry-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 12
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 227
+    unit: g
+    note: cold, cut into small cubes
+  - id: ice-water
+    ingredientRef: water
+    form: tap
+    amount: 90
+    unit: ml
+    note: iced
+  - id: apples
+    ingredientRef: apple
+    form: raw
+    amount: 1000
+    unit: g
+    note: peeled, cored and sliced
+  - id: filling-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 50
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 3
+    unit: g
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 1
+    unit: g
+  - id: filling-lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 25
+    unit: g
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: dotting-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+    note: cut into small pieces
+  - id: egg-wash
+    ingredientRef: egg
+    form: whole
+    amount: 25
+    unit: g
+    note: beaten
+  - id: egg-wash-milk
+    ingredientRef: milk
+    form: whole
+    amount: 15
+    unit: ml
+  - id: topping-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+    note: for scattering over the lattice
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: chill-dough, durationMin: 60, type: passive }
+  - { id: make-filling, durationMin: 10, type: "parallel-with:chill-dough", phase: prep }
+  - { id: roll-bottom, durationMin: 8, type: active, phase: prep }
+  - { id: fill-pie, durationMin: 5, type: active, phase: prep }
+  - { id: weave-lattice, durationMin: 18, type: active, phase: prep }
+  - { id: chill-shaped, durationMin: 20, type: passive }
+  - { id: bake, durationMin: 55, type: passive }
+  - { id: cool, durationMin: 120, type: passive }
+makeAhead:
+  aheadInstructions: The dough keeps three days in the fridge, well wrapped, and rolls more easily once it has had a night to relax. The baked pie keeps two days at room temperature under a loose cover.
+  freezable: true
+  freezeInstructions: Freeze the woven, unbaked pie whole. Bake it from frozen, adding a good stretch of time at the lower temperature until the centre is bubbling through the open strips.
+  reheatInstructions: A cut pie freshens in a moderate oven for a few minutes, which recrisps a crust that has softened under cover.
+notes:
+  techniqueRationale:
+    - stepId: weave-lattice
+      text: An open lattice lets far more steam escape than the slit vents of a full top crust, so the filling reduces and thickens rather than staying loose under a sealed lid.
+  commonPitfalls:
+    - stepId: cool
+      text: A pie cut while hot runs thin and watery, because the cornflour has not finished setting the juices. Left to cool fully, the same filling slices cleanly.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="pastry-salt"/> and <Qty ref="pastry-sugar"/>
+  in a large bowl. Add the <Qty ref="butter"/> and rub or cut it into the flour until the
+  largest pieces are the size of small peas. Sprinkle in the <Qty ref="ice-water"/> a
+  little at a time, turning the mixture with a fork until it holds together when pressed,
+  then divide it into two discs. The whole of <Dur step="make-dough"/> should leave streaks
+  of butter still visible rather than a smooth paste.
+</Step>
+
+<Step id="chill-dough">
+  Wrap both discs and refrigerate them for <Dur step="chill-dough"/>, until firm but not
+  hard.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile toss the <Qty ref="apples"/> with the <Qty ref="filling-sugar"/>, the
+  <Qty ref="brown-sugar"/>, the <Qty ref="cinnamon"/>, the <Qty ref="nutmeg"/>, the
+  <Qty ref="filling-lemon-juice"/>, the <Qty ref="cornflour"/> and the
+  <Qty ref="filling-salt"/> in a large bowl, and leave it to stand while the dough
+  finishes chilling.
+</Step>
+
+<Step id="roll-bottom">
+  Roll one disc of dough into a round wide enough to line a pie dish with an overhang all
+  round, using <Dur step="roll-bottom"/>. Ease it into the dish without stretching it, which
+  only pulls the pastry back as it bakes.
+</Step>
+
+<Step id="fill-pie">
+  Spoon the apple filling into the lined dish, piling it slightly domed in the centre, and
+  scatter the <Qty ref="dotting-butter"/> over the top. This takes <Dur step="fill-pie"/>.
+</Step>
+
+<Step id="weave-lattice">
+  Roll the second disc and cut it into even strips. Lay half of them across the filling in
+  one direction, evenly spaced, then weave the remaining strips through them at a right
+  angle, lifting alternate strips as each cross strip goes in. Trim the ends, fold the
+  overhang from the bottom crust up and over them to seal, and crimp the rim. Brush the
+  strips with the <Qty ref="egg-wash"/> beaten with the <Qty ref="egg-wash-milk"/> and
+  scatter over the <Qty ref="topping-sugar"/>. The weave itself is the slow part of
+  <Dur step="weave-lattice"/>; keep the strips straight rather than rushing them into place.
+</Step>
+
+<Step id="chill-shaped">
+  Rest the assembled pie in the fridge for <Dur step="chill-shaped"/> so the crust firms
+  back up before it meets the oven.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={220}/> for twenty minutes, then lower the oven to <Temp c={190}/> and
+  continue for the remainder of <Dur step="bake"/>, until the strips are deep golden and the
+  filling bubbles up between them.
+</Step>
+
+<Step id="cool">
+  Leave the pie to cool completely, for <Dur step="cool"/>, before cutting. The filling
+  keeps setting as it cools, and a warm pie will not hold a slice.
+</Step>

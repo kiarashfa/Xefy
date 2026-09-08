@@ -1,0 +1,59 @@
+{
+  "id": "cider-vinegar",
+  "name": "Cider Vinegar",
+  "proseName": "cider vinegar",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173469",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173469/nutrients",
+      "nutritionPer100g": {
+        "kcal": 21,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.93,
+        "fiber": 0,
+        "sugars": 0.4,
+        "calcium": 7,
+        "iron": 0.2,
+        "magnesium": 5,
+        "phosphorus": 8,
+        "potassium": 73,
+        "sodium": 5,
+        "zinc": 0.04,
+        "copper": 0.008,
+        "manganese": 0.249,
+        "seleniumMcg": 0.1,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 5,
+        "gPerTbsp": 14.9,
+        "gPerCup": 239,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/cider-vinegar-thumb.webp"
+}

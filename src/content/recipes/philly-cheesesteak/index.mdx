@@ -1,0 +1,106 @@
+---
+title: Philly Cheesesteak
+subtitle: Thin-sliced ribeye chopped fine on a griddle with onion, melted under provolone in a split hoagie roll.
+label: Philadelphia
+defaultServings: 1
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Italian beef
+      note: Chicago's own thin-sliced beef sandwich — simmered in jus rather than griddled, and served without cheese as standard.
+image:
+  src: images/recipes/philly-cheesesteak.webp
+  alt: "A Philly cheesesteak sandwich in a hoagie roll, filled with sliced steak, melted cheese and caramelized onions"
+ingredients:
+  - id: ribeye
+    ingredientRef: ribeye
+    form: raw
+    amount: 130
+    unit: g
+    note: sliced paper-thin against the grain, partially frozen first
+  - id: roll
+    ingredientRef: hoagie-roll
+    form: plain
+    amount: 80
+    unit: g
+    note: one roll
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 50
+    unit: g
+    note: sliced thin
+  - id: provolone
+    ingredientRef: provolone
+    form: sliced
+    amount: 30
+    unit: g
+    note: two slices
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 10
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: cook-onion, durationMin: 10, type: active, phase: cook }
+  - { id: cook-steak, durationMin: 4, type: active, phase: cook }
+  - { id: melt-cheese, durationMin: 2, type: active, phase: cook }
+  - { id: toast-roll, durationMin: 2, type: "parallel-with:melt-cheese", phase: cook }
+  - { id: assemble, durationMin: 1, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-steak
+      text: Chopping the meat into the griddle as it cooks, rather than lifting whole slices, is what gives a cheesesteak its characteristic loose, shredded texture rather than the intact strips of a steak sandwich.
+  commonPitfalls:
+    - stepId: cook-steak
+      text: Slicing the ribeye at room temperature makes paper-thin cuts nearly impossible. Partially freezing it first firms the meat enough to slice thin and even.
+---
+
+<Step id="cook-onion">
+  Heat half the <Qty ref="oil"/> in a flat pan or griddle over a medium heat
+  and cook the <Qty ref="onion"/> for <Dur step="cook-onion"/>, stirring
+  occasionally, until soft and lightly browned. Push it to one side of the
+  griddle.
+</Step>
+
+<Step id="cook-steak">
+  Add the remaining <Qty ref="oil"/> and lay the <Qty ref="ribeye"/> across
+  the hot surface. Season with the <Qty ref="salt"/> and <Qty ref="pepper"/>
+  and cook for <Dur step="cook-steak"/>, chopping and turning it with two
+  spatulas as it browns until it is in loose, shredded pieces mixed through
+  the onion.
+</Step>
+
+<Step id="melt-cheese">
+  Gather the meat and onion into a mound and lay the <Qty ref="provolone"/>
+  over the top. Let it stand for <Dur step="melt-cheese"/> until fully melted,
+  then fold it through.
+</Step>
+
+<Step id="toast-roll">
+  Meanwhile split the <Qty ref="roll"/> and toast the cut faces on the
+  griddle for <Dur step="toast-roll"/>, until golden.
+</Step>
+
+<Step id="assemble">
+  Pile the meat, onion and cheese into the toasted roll.
+</Step>

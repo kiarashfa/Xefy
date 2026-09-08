@@ -1,0 +1,65 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2258588",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2258588/nutrients",
+  "description": "Peppers, bell, green, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/28/2022",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 19.692,
+    "protein": 0.715,
+    "fat": 0.106,
+    "carbs": 4.778,
+    "fiber": 0.942,
+    "calcium": 7.496,
+    "iron": 0.186,
+    "magnesium": 9.004,
+    "phosphorus": 16.75,
+    "potassium": 163.1,
+    "sodium": 0,
+    "zinc": 0.126,
+    "copper": 0.058,
+    "manganese": 0.1,
+    "seleniumMcg": 0,
+    "vitaminC": 99.51,
+    "thiamin": 0.039,
+    "riboflavin": 0.089,
+    "niacin": 0.636,
+    "vitaminB6": 0.247
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 94.12,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.1144,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.2806,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 22.21,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

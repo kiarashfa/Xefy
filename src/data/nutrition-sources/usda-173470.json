@@ -1,0 +1,210 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "173470",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/173470/nutrients",
+  "description": "Thyme, fresh",
+  "category": "Spices and Herbs",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 101,
+    "protein": 5.56,
+    "fat": 1.68,
+    "carbs": 24.45,
+    "fiber": 14,
+    "calcium": 405,
+    "iron": 17.45,
+    "magnesium": 160,
+    "phosphorus": 106,
+    "potassium": 609,
+    "sodium": 9,
+    "zinc": 1.81,
+    "copper": 0.555,
+    "manganese": 1.719,
+    "vitaminC": 160.1,
+    "thiamin": 0.048,
+    "riboflavin": 0.471,
+    "niacin": 1.824,
+    "vitaminB6": 0.348,
+    "folateMcg": 45,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 238,
+    "vitaminDMcg": 0,
+    "saturatedFat": 0.467,
+    "monounsaturatedFat": 0.081,
+    "polyunsaturatedFat": 0.532,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 65.11,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 423,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 3.2,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 0.409,
+      "unit": "mg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 45,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 45,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "321",
+      "name": "Carotene, beta",
+      "amount": 2851,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 4751,
+      "unit": "IU"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0.041,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0.021,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.039,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.026,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 0.293,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.047,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 0.081,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.085,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0.447,
+      "unit": "g"
+    },
+    {
+      "number": "501",
+      "name": "Tryptophan",
+      "amount": 0.114,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 0.154,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 0.285,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 0.262,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 0.126,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 0.307,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTsp",
+      "value": 0.8,
+      "from": "1 tsp"
+    },
+    {
+      "measure": "gPerTsp",
+      "value": 0.8,
+      "from": "0.5 tsp"
+    }
+  ]
+}

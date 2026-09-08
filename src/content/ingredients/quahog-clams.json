@@ -1,0 +1,62 @@
+{
+  "id": "quahog-clams",
+  "name": "Quahog Clams",
+  "proseName": "clams",
+  "category": "shellfish",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "molluscs"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, shucked",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174214",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174214/nutrients",
+      "sourceNote": "USDA carries clams as a mixed-species record rather than specifically the hard-shell quahog used for chowder; the two are close enough in composition that this is the closest real record.",
+      "nutritionPer100g": {
+        "kcal": 86,
+        "protein": 14.67,
+        "fat": 0.96,
+        "carbs": 3.57,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 39,
+        "iron": 1.62,
+        "magnesium": 19,
+        "phosphorus": 198,
+        "potassium": 46,
+        "sodium": 601,
+        "zinc": 0.51,
+        "copper": 0.053,
+        "manganese": 0.085,
+        "seleniumMcg": 30.6,
+        "vitaminC": 0,
+        "thiamin": 0.015,
+        "riboflavin": 0.04,
+        "niacin": 0.35,
+        "vitaminB6": 0.01,
+        "folateMcg": 5,
+        "choline": 65,
+        "vitaminB12Mcg": 11.28,
+        "vitaminAMcg": 90,
+        "vitaminE": 0.68,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.2,
+        "saturatedFat": 0.187,
+        "monounsaturatedFat": 0.12,
+        "polyunsaturatedFat": 0.192,
+        "transFat": 0.015,
+        "cholesterol": 30
+      },
+      "density": {
+        "gPerCup": 227,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/quahog-clams-thumb.webp"
+}

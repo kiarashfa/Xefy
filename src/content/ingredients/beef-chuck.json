@@ -1,0 +1,41 @@
+{
+  "id": "beef-chuck",
+  "name": "Beef Chuck",
+  "proseName": "chuck",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, boneless chuck roast, choice",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2646174",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646174/nutrients",
+      "sourceNote": "USDA's record for a boneless choice-grade chuck roast — the well-marbled shoulder cut braised whole for pot roast.",
+      "nutritionPer100g": {
+        "kcal": 237.097,
+        "protein": 18.4,
+        "fat": 17.8,
+        "carbs": 0,
+        "calcium": 4.576,
+        "iron": 2.059,
+        "magnesium": 16.99,
+        "phosphorus": 151,
+        "potassium": 281.1,
+        "sodium": 48.44,
+        "zinc": 5.386,
+        "copper": 0.054,
+        "manganese": 0,
+        "saturatedFat": 6.341,
+        "monounsaturatedFat": 7.021,
+        "polyunsaturatedFat": 0.556,
+        "transFat": 0.669,
+        "cholesterol": 66.75
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-chuck-thumb.webp"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "jalapeno",
+  "name": "Jalapeño",
+  "proseName": "jalapeño",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Serrano chilli",
+        "note": "Smaller, thinner-walled and noticeably hotter than a jalapeño, which is milder and thick-fleshed enough to stuff or grill whole."
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, whole",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168576",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168576/nutrients",
+      "nutritionPer100g": {
+        "kcal": 29,
+        "protein": 0.91,
+        "fat": 0.37,
+        "carbs": 6.5,
+        "fiber": 2.8,
+        "sugars": 4.12,
+        "calcium": 12,
+        "iron": 0.25,
+        "magnesium": 15,
+        "phosphorus": 26,
+        "potassium": 248,
+        "sodium": 3,
+        "zinc": 0.14,
+        "copper": 0.046,
+        "manganese": 0.097,
+        "seleniumMcg": 0.4,
+        "vitaminC": 118.6,
+        "thiamin": 0.04,
+        "riboflavin": 0.07,
+        "niacin": 1.28,
+        "vitaminB6": 0.419,
+        "folateMcg": 27,
+        "choline": 7.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 54,
+        "vitaminE": 3.58,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 18.5,
+        "saturatedFat": 0.092,
+        "monounsaturatedFat": 0.029,
+        "polyunsaturatedFat": 0.112,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 90,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "jalapeño",
+        "plural": "jalapeños",
+        "grams": 14
+      }
+    }
+  ],
+  "image": "images/ingredients/jalapeno-thumb.webp"
+}

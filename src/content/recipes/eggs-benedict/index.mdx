@@ -1,0 +1,122 @@
+---
+title: Eggs Benedict
+subtitle: A toasted English muffin topped with ham, a poached egg and hollandaise sauce. One serving is one whole muffin, split into two halves.
+label: Classic
+defaultServings: 2
+difficulty: Hard
+tags:
+  cuisine: [american]
+  course: [breakfast]
+  method: [poaching]
+image:
+  src: images/recipes/eggs-benedict.webp
+  alt: "Two poached eggs on slices of ham, covered in hollandaise sauce and topped with rocket leaves, on a grey plate"
+ingredients:
+  - id: muffins
+    ingredientRef: english-muffins
+    form: plain
+    amount: 228
+    unit: g
+    note: split into halves
+  - id: ham
+    ingredientRef: ham
+    form: sliced
+    amount: 160
+    unit: g
+  - id: poaching-eggs
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: as fresh as possible, for a tight poach
+  - id: poaching-vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 15
+    unit: ml
+    consumedFraction: 0.05
+    consumedFractionNote: Only a trace clings to the poached egg; almost all of it stays in the poaching water and is drained away.
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 75
+    unit: g
+    note: melted and skimmed of its milky solids
+  - id: egg-yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 51
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: melt-butter, durationMin: 5, type: active, phase: prep }
+  - { id: make-hollandaise, durationMin: 8, type: active, phase: cook }
+  - { id: warm-ham, durationMin: 4, type: "parallel-with:make-hollandaise", phase: cook }
+  - { id: toast-muffins, durationMin: 4, type: "parallel-with:make-hollandaise", phase: cook }
+  - { id: poach-eggs, durationMin: 4, type: active, phase: cook }
+  - { id: assemble, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-hollandaise
+      text: Whisking the yolks over gentle, indirect heat before the butter goes in cooks them just enough to thicken and stabilise the sauce; direct heat or butter added too fast splits the emulsion instead of building it.
+  commonPitfalls:
+    - stepId: poach-eggs
+      text: Water at a rolling boil tears a poached egg into ragged strands. It should be barely trembling, with the vinegar and a gentle whirlpool doing the work of holding the white together.
+---
+
+<Step id="melt-butter">
+  Melt the <Qty ref="butter"/> gently and skim off the pale, milky solids that rise to
+  the top, leaving the clear golden fat. This takes <Dur step="melt-butter"/> and keeps
+  the finished sauce from tasting of raw milk solids.
+</Step>
+
+<Step id="make-hollandaise">
+  Whisk the <Qty ref="egg-yolks"/> with the <Qty ref="lemon-juice"/> in a heatproof bowl
+  set over a pan of barely simmering water, without letting the bowl touch the water.
+  Whisk constantly for <Dur step="make-hollandaise"/>, until the mixture is thick, pale
+  and doubled in volume, then take the bowl off the heat and trickle in the warm
+  clarified butter, whisking constantly, until fully emulsified. Season with the
+  <Qty ref="cayenne"/> and the <Qty ref="salt"/> and keep warm.
+</Step>
+
+<Step id="warm-ham">
+  Warm the <Qty ref="ham"/> in a dry pan over a medium heat for <Dur step="warm-ham"/>,
+  turning once, until heated through and lightly coloured at the edges.
+</Step>
+
+<Step id="toast-muffins">
+  Toast the <Qty ref="muffins"/>, cut sides up, until golden, over <Dur step="toast-muffins"/>.
+</Step>
+
+<Step id="poach-eggs">
+  Bring a wide pan of water to a bare simmer and add the <Qty ref="poaching-vinegar"/>.
+  Crack the <Qty ref="poaching-eggs"/> one at a time into a cup and slide each gently
+  into the water, holding the white close to the yolk with a spoon for the first few
+  seconds. Poach for <Dur step="poach-eggs"/>, until the white is set and the yolk still
+  soft, then lift out with a slotted spoon onto kitchen paper.
+</Step>
+
+<Step id="assemble">
+  Top each toasted muffin half with a piece of the warm ham, then a poached egg, and
+  spoon the hollandaise generously over the top. Serve immediately, over
+  <Dur step="assemble"/>, while the sauce is still warm and the yolk still runs.
+</Step>

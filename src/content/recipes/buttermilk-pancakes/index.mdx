@@ -1,0 +1,96 @@
+---
+title: Buttermilk Pancakes
+subtitle: A chemically leavened griddle batter soured with buttermilk, cooked in small rounds. One serving is three pancakes.
+label: Griddle
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [breakfast]
+  method: [pan-frying]
+image:
+  src: images/recipes/buttermilk-pancakes.webp
+  alt: "Thick golden-brown buttermilk pancakes cooking on a dark griddle"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 8
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 25
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 400
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    note: melted, plus more for the griddle
+steps:
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 3, type: active, phase: prep }
+  - { id: rest-batter, durationMin: 5, type: passive }
+  - { id: cook-pancakes, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze cooked, cooled pancakes with baking paper between them, then bag them. Reheat from frozen in a toaster or a hot oven.
+  reheatInstructions: A day-old pancake reheats well in a dry pan or a toaster; a microwave leaves it soft rather than fresh.
+notes:
+  techniqueRationale:
+    - stepId: rest-batter
+      text: A short rest lets the baking powder and soda begin working and the flour fully hydrate before the batter meets the griddle, giving a taller, more even pancake than one cooked straight away.
+  commonPitfalls:
+    - stepId: mix-batter
+      text: Overmixing once the buttermilk meets the flour develops gluten the batter has no use for, giving a tough, rubbery pancake instead of a tender one. Stop as soon as the dry flour disappears.
+---
+
+<Step id="mix-dry">
+  Whisk the <Qty ref="flour"/>, <Qty ref="baking-powder"/>, <Qty ref="bicarb"/>,
+  <Qty ref="salt"/> and <Qty ref="sugar"/> together in a large bowl.
+</Step>
+
+<Step id="mix-batter">
+  Beat the <Qty ref="egg"/> into the <Qty ref="buttermilk"/> along with the
+  <Qty ref="butter"/>, then pour this into the dry ingredients and stir over
+  <Dur step="mix-batter"/>, mixing only until no dry streaks remain; the batter should
+  still look a little lumpy.
+</Step>
+
+<Step id="rest-batter">
+  Leave the batter to stand for <Dur step="rest-batter"/> before cooking.
+</Step>
+
+<Step id="cook-pancakes">
+  Ladle small rounds of batter onto a hot, lightly buttered griddle. Cook until bubbles
+  rise steadily to the surface and the edges look set, then flip and cook the second
+  side until golden. Repeat with the remaining batter, spending <Dur step="cook-pancakes"/>
+  in total, keeping cooked pancakes warm as they come off the griddle.
+</Step>

@@ -1,0 +1,106 @@
+---
+title: Hamburger
+subtitle: Beef mince, cooked hard and fast on a scorching griddle to build a deep crust while the inside stays barely done.
+label: Smash
+defaultServings: 1
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Sloppy joe
+      note: Loose spiced ground beef served open on a bun rather than a formed patty — a different dish built from the same mince.
+image:
+  src: images/recipes/hamburger.webp
+  alt: "A smash burger on a toasted bun with lettuce, tomato and onion, served with a side of crinkle-cut fries and a dipping sauce"
+ingredients:
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 170
+    unit: g
+    note: two equal balls
+  - id: bun
+    ingredientRef: burger-buns
+    form: plain
+    amount: 43
+    unit: g
+    note: one bun
+  - id: cheese
+    ingredientRef: american-cheese
+    form: sliced
+    amount: 40
+    unit: g
+    note: two slices
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 15
+    unit: g
+    note: sliced paper-thin
+  - id: pickles
+    ingredientRef: pickles
+    form: dill
+    amount: 15
+    unit: g
+    note: sliced into rounds
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 15
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: heat-griddle, durationMin: 5, type: active, phase: prep }
+  - { id: shape, durationMin: 3, type: "parallel-with:heat-griddle", phase: prep }
+  - { id: smash, durationMin: 4, type: active, phase: cook }
+  - { id: toast-bun, durationMin: 2, type: "parallel-with:smash", phase: cook }
+  - { id: assemble, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: smash
+      text: Flattening the ball the instant it hits the griddle maximises the surface touching hot metal, which is what builds the lacy, deeply browned crust a thicker patty cannot form in the same time.
+  commonPitfalls:
+    - stepId: smash
+      text: Pressing the patty more than once, or moving it before the crust has set, tears the meat away from the crust instead of releasing cleanly.
+---
+
+<Step id="heat-griddle">
+  Heat a flat griddle or heavy pan over a high heat for
+  <Dur step="heat-griddle"/>, until a drop of water skitters and evaporates
+  on contact.
+</Step>
+
+<Step id="shape">
+  Meanwhile divide the <Qty ref="beef"/> into two loose, equal balls without
+  compacting them.
+</Step>
+
+<Step id="smash">
+  Set the balls on the griddle and immediately press each flat with a heavy
+  spatula, holding the pressure for a few seconds before letting go. Season
+  with the <Qty ref="salt"/>, cook for <Dur step="smash"/>, then flip once,
+  laying the <Qty ref="cheese"/> over the patties as soon as they turn so it
+  melts before the second side is done.
+</Step>
+
+<Step id="toast-bun">
+  While the patties cook, toast the cut faces of the <Qty ref="bun"/> on the
+  edge of the griddle for <Dur step="toast-bun"/>, until golden.
+</Step>
+
+<Step id="assemble">
+  Stack both patties on the toasted bun with the <Qty ref="onion"/>, the
+  <Qty ref="pickles"/> and the <Qty ref="ketchup"/>.
+</Step>

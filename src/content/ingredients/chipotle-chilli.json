@@ -1,0 +1,62 @@
+{
+  "id": "chipotle-chilli",
+  "name": "Chipotle Chilli",
+  "proseName": "chipotle chillies",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Ancho chilli",
+        "note": "A dried poblano, sun-dried rather than smoked, with a mild raisiny sweetness instead of chipotle's smoke."
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, whole",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168579",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168579/nutrients",
+      "sourceNote": "USDA has no chipotle-specific record — a chipotle is a jalapeño that is smoked and dried rather than sun-dried. This is its record for dried pasilla chilli, the closest medium-heat dried-chile profile it publishes; the smoking is a flavour this table cannot capture.",
+      "nutritionPer100g": {
+        "kcal": 345,
+        "protein": 12.35,
+        "fat": 15.85,
+        "carbs": 51.13,
+        "fiber": 26.8,
+        "calcium": 97,
+        "iron": 9.83,
+        "magnesium": 130,
+        "phosphorus": 267,
+        "potassium": 2222,
+        "sodium": 89,
+        "zinc": 1.4,
+        "copper": 0.423,
+        "manganese": 1.58,
+        "seleniumMcg": 3.2,
+        "vitaminC": 6.4,
+        "thiamin": 0.172,
+        "riboflavin": 3.197,
+        "niacin": 7.175,
+        "vitaminB6": 4.228,
+        "folateMcg": 170,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1788,
+        "vitaminDMcg": 0,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "dried chipotle chilli",
+        "plural": "dried chipotle chillies",
+        "grams": 4
+      }
+    }
+  ],
+  "image": "images/ingredients/chipotle-chilli-thumb.webp"
+}

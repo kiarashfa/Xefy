@@ -1,0 +1,176 @@
+---
+title: Gumbo
+subtitle: A dark roux, the trinity of onion, celery and pepper, chicken and smoked andouille simmered into a thick stew and served over rice.
+description: Louisiana chicken and andouille gumbo made the standard way — a chocolate-dark flour-and-oil roux built into a stew with the trinity of onion, celery and green pepper, chicken and smoked andouille sausage, finished off the heat with filé powder and served over steamed rice.
+label: Chicken and Andouille
+defaultServings: 8
+difficulty: Hard
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [simmering, sauteing]
+names:
+  notToBeConfusedWith:
+    - name: Jambalaya
+      note: Jambalaya cooks its rice inside the pot with the other ingredients; gumbo is a soup-like stew that stays separate from the rice and is ladled over it at the table.
+image:
+  src: images/recipes/gumbo.webp
+  alt: "A large pot of gumbo simmering, with sausage rounds visible in the dark roux-based broth"
+ingredients:
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 120
+    unit: ml
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 120
+    unit: g
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 800
+    unit: g
+    note: cut into pieces
+  - id: sausage
+    ingredientRef: andouille
+    form: smoked
+    amount: 300
+    unit: g
+    note: sliced into rounds
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 150
+    unit: g
+    note: diced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 150
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    note: two leaves
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: file-powder
+    ingredientRef: file-powder
+    form: ground
+    amount: 3
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+  - id: rice-water
+    ingredientRef: water
+    form: tap
+    amount: 550
+    unit: ml
+steps:
+  - { id: prep-veg, durationMin: 15, type: active, phase: prep }
+  - { id: brown-meats, durationMin: 12, type: active, phase: cook }
+  - { id: make-roux, durationMin: 40, type: active, phase: cook }
+  - { id: cook-trinity, durationMin: 8, type: active, phase: cook }
+  - { id: simmer-gumbo, durationMin: 60, type: passive }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:simmer-gumbo", phase: cook }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Gumbo is often made a day ahead; the flavour deepens overnight in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze without the rice for up to three months.
+  reheatInstructions: Reheat gently over a low heat, loosening with a little water if the roux has thickened further in storage.
+substitutions:
+  - lineRef: sausage
+    substitute: smoked pork sausage
+    ratio: "1:1"
+    note: Any coarse, well-smoked pork sausage stands in where andouille is unavailable, though the flavour will be milder and less peppery.
+    impact: { flavor: moderate change, texture: minor }
+notes:
+  techniqueRationale:
+    - stepId: make-roux
+      text: The roux is cooked far past the pale, thickening stage used for a béchamel — carried to a dark mahogany, it trades most of its thickening power for a deep, toasted flavour that is the backbone of the dish.
+  commonPitfalls:
+    - stepId: finish
+      text: Filé powder turns stringy and gluey if it boils, so it is always stirred in after the pot is off the heat rather than simmered with the rest of the gumbo.
+---
+
+<Step id="prep-veg">
+  Dice the <Qty ref="onion"/>, <Qty ref="celery"/> and <Qty ref="green-pepper"/>, mince
+  the <Qty ref="garlic"/>, and slice the <Qty ref="sausage"/>.
+</Step>
+
+<Step id="brown-meats">
+  Heat half the <Qty ref="oil"/> in a large, heavy pot over a medium-high heat and
+  brown the <Qty ref="chicken"/> and sausage for <Dur step="brown-meats"/>. Lift both
+  out and set aside.
+</Step>
+
+<Step id="make-roux">
+  Add the remaining oil to the pot along with the <Qty ref="flour"/> and set over a
+  medium-low heat. Cook, stirring constantly, for <Dur step="make-roux"/>, until the
+  roux turns a deep, dark mahogany, close to the colour of melted chocolate.
+</Step>
+
+<Step id="cook-trinity">
+  Add the onion, celery and green pepper to the roux and cook for
+  <Dur step="cook-trinity"/>, stirring often, until softened, adding the garlic in the
+  last minute.
+</Step>
+
+<Step id="simmer-gumbo">
+  Whisk in the <Qty ref="water"/> and add the <Qty ref="bay"/>. Return the chicken and
+  sausage to the pot, bring to a simmer, and cook, partially covered, for
+  <Dur step="simmer-gumbo"/>, until the chicken is tender and the roux has folded
+  fully into the liquid.
+</Step>
+
+<Step id="cook-rice">
+  While the gumbo simmers, combine the <Qty ref="rice"/> and <Qty ref="rice-water"/> in
+  a covered saucepan, bring to the boil, then reduce to the lowest heat and cook for
+  <Dur step="cook-rice"/>, until the water is absorbed. Leave covered off the heat
+  until serving.
+</Step>
+
+<Step id="finish">
+  Take the pot off the heat and discard the bay leaves. Stir in the
+  <Qty ref="cayenne"/>, <Qty ref="black-pepper"/>, <Qty ref="salt"/> and
+  <Qty ref="file-powder"/>. Ladle over the rice to serve.
+</Step>

@@ -1,0 +1,53 @@
+{
+  "id": "apple",
+  "name": "Apple",
+  "proseName": "apple",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, with skin",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168202",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168202/nutrients",
+      "sourceNote": "USDA reports by cultivar; this is its Golden Delicious record, used as a generic baking apple. Firmer, tarter cultivars such as Granny Smith or Bramley are usual for pie and cobbler, but their nutrient profiles are close enough to make one record a reasonable stand-in.",
+      "nutritionPer100g": {
+        "kcal": 57,
+        "protein": 0.28,
+        "fat": 0.15,
+        "carbs": 13.6,
+        "fiber": 2.4,
+        "sugars": 10.04,
+        "calcium": 6,
+        "iron": 0.13,
+        "magnesium": 5,
+        "phosphorus": 10,
+        "potassium": 100,
+        "sodium": 2,
+        "zinc": 0.04,
+        "copper": 0.03,
+        "manganese": 0.035,
+        "seleniumMcg": 0,
+        "thiamin": 0.018,
+        "riboflavin": 0.026,
+        "niacin": 0.094,
+        "vitaminB6": 0.051,
+        "choline": 5.1,
+        "vitaminAMcg": 3,
+        "vitaminE": 0.18,
+        "vitaminKMcg": 1.8,
+        "transFat": 0
+      },
+      "density": {
+        "gPerCup": 109,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/apple-thumb.webp"
+}

@@ -1,0 +1,130 @@
+---
+title: Peach Cobbler
+subtitle: Sliced peaches baked under a buttery batter that rises up around the fruit as it bakes, rather than a rolled crust laid over it.
+label: Self-rising crust
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/peach-cobbler.webp
+  alt: "Peach cobbler with drop-biscuit dough baked over juicy sliced peaches"
+ingredients:
+  - id: peaches
+    ingredientRef: peach
+    form: raw
+    amount: 900
+    unit: g
+    note: peeled and sliced
+  - id: filling-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 15
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: ml
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 2
+    unit: g
+  - id: dotting-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+    note: cut into small pieces
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 8
+    unit: g
+  - id: batter-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: batter-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 240
+    unit: ml
+  - id: batter-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 85
+    unit: g
+    note: melted
+steps:
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:make-filling", phase: cook }
+  - { id: make-filling, durationMin: 8, type: active, phase: prep }
+  - { id: make-batter, durationMin: 6, type: active, phase: prep }
+  - { id: assemble, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 45, type: passive }
+  - { id: rest, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: Best baked and served the same day, while the crust is still crisp on top. The peaches can be sliced and tossed with the sugar and cornflour up to a day ahead and refrigerated.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Warms well in a moderate oven for a few minutes, which restores some crispness the top loses under cover.
+notes:
+  techniqueRationale:
+    - stepId: assemble
+      text: Pouring the batter into the dish first and spooning the fruit on top, rather than the other way round, is what lets the batter rise up around and through the peaches as it bakes, giving the crust its characteristic uneven, self-forming top.
+  commonPitfalls:
+    - stepId: rest
+      text: Cut straight from the oven, the fruit's juices are still thin and run everywhere. A short rest lets the cornflour finish thickening them so a spoonful holds together.
+---
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={180}/>, giving it <Dur step="heat-oven"/> to settle, and put a
+  deep baking dish inside to warm while the oven comes up.
+</Step>
+
+<Step id="make-filling">
+  Toss the <Qty ref="peaches"/> with the <Qty ref="filling-sugar"/>, the <Qty ref="cornflour"/>,
+  the <Qty ref="lemon-juice"/> and the <Qty ref="cinnamon"/>, and dot with the
+  <Qty ref="dotting-butter"/>. This takes <Dur step="make-filling"/>.
+</Step>
+
+<Step id="make-batter">
+  Whisk together the <Qty ref="flour"/>, the <Qty ref="baking-powder"/>, the
+  <Qty ref="batter-salt"/> and the <Qty ref="batter-sugar"/>, then whisk in the
+  <Qty ref="milk"/> and the <Qty ref="batter-butter"/> to a smooth, thin batter, over
+  <Dur step="make-batter"/>.
+</Step>
+
+<Step id="assemble">
+  Pour the batter into the warm dish, then spoon the peaches and their juices evenly over
+  the top without stirring them in. This takes <Dur step="assemble"/>.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until the top is deep golden and risen unevenly around the
+  fruit, and a skewer pushed into the crust comes out clean.
+</Step>
+
+<Step id="rest">
+  Leave the cobbler to settle for <Dur step="rest"/> before serving, so the fruit's juices
+  finish thickening.
+</Step>

@@ -1,0 +1,47 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2727568",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2727568/nutrients",
+  "description": "Chicken, wing, meat and skin, raw",
+  "category": "Poultry Products",
+  "publicationDate": "4/24/2025",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 172.792,
+    "protein": 18.406,
+    "fat": 10.64,
+    "carbs": -0.459,
+    "calcium": 13.55,
+    "iron": 0.511,
+    "magnesium": 16.53,
+    "phosphorus": 132.8,
+    "potassium": 194,
+    "sodium": 84.14,
+    "zinc": 1.179,
+    "copper": 0.011,
+    "manganese": 0.003,
+    "cholesterol": 98.88
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 70.66,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.945,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.7525,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

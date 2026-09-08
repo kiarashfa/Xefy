@@ -1,0 +1,84 @@
+---
+label: Vinegar
+defaultServings: 6
+difficulty: Easy
+ingredients:
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 500
+    unit: g
+    note: finely shredded
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: grated
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 30
+    unit: g
+    note: very finely chopped
+  - id: vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 60
+    unit: ml
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 45
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 40
+    unit: g
+  - id: mustard-seed
+    ingredientRef: mustard-seed
+    form: whole
+    amount: 4
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: make-dressing, durationMin: 4, type: active, phase: prep }
+  - { id: combine, durationMin: 4, type: active, phase: prep }
+  - { id: rest, durationMin: 60, type: passive }
+notes:
+  techniqueRationale:
+    - stepId: make-dressing
+      text: Warming the vinegar, oil, sugar and mustard seed briefly dissolves the sugar fully and blooms the mustard seed, instead of leaving grains and an unmixed slick sitting on top of the cabbage.
+makeAhead:
+  aheadInstructions: This slaw keeps and improves over several days in the refrigerator, since the cabbage softens gradually in the vinegar rather than turning watery the way a mayonnaise dressing can.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="make-dressing">
+  Warm the <Qty ref="vinegar"/>, the <Qty ref="oil"/>, the <Qty ref="sugar"/> and the
+  <Qty ref="mustard-seed"/> together in a small pan just until the sugar dissolves,
+  over <Dur step="make-dressing"/>, then stir in the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/> and let it cool.
+</Step>
+
+<Step id="combine">
+  Toss the <Qty ref="cabbage"/>, the <Qty ref="carrot"/> and the <Qty ref="onion"/>
+  with the cooled dressing until evenly coated, over <Dur step="combine"/>.
+</Step>
+
+<Step id="rest">
+  Leave to rest, covered, for <Dur step="rest"/> before serving, so the cabbage begins
+  to soften in the vinegar.
+</Step>

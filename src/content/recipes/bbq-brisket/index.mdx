@@ -1,0 +1,97 @@
+---
+title: Texas Brisket
+subtitle: A whole beef brisket, seasoned with nothing but salt and pepper and smoked low over wood for the better part of a day until it shreds under a fork.
+label: Central Texas
+defaultServings: 20
+difficulty: Hard
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [smoking]
+names:
+  notToBeConfusedWith:
+    - name: Jewish-style braised brisket
+      note: A pot-roasted, oven-braised dish finished in its own liquid rather than smoked — a different cooking method on the same cut, and the two traditions are historically related but not interchangeable.
+image:
+  src: images/recipes/bbq-brisket.webp
+  alt: "Sliced smoked beef brisket showing a pink smoke ring beneath a dark bark"
+ingredients:
+  - id: brisket
+    ingredientRef: beef-brisket
+    form: raw
+    amount: 4800
+    unit: g
+    note: whole packer brisket, point and flat together, fat cap left on
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 55
+    unit: g
+    note: coarse, for the rub
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 40
+    unit: g
+    note: coarsely cracked, for the rub
+steps:
+  - { id: season, durationMin: 10, type: active, phase: prep }
+  - { id: smoke-unwrapped, durationMin: 360, type: passive }
+  - { id: wrap, durationMin: 5, type: active, phase: cook }
+  - { id: smoke-wrapped, durationMin: 300, type: passive }
+  - { id: rest, durationMin: 60, type: passive }
+  - { id: slice, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The brisket can be trimmed and seasoned up to a day ahead and left uncovered on a rack in the refrigerator, which dries the surface and helps the bark form once it is in the smoker.
+  freezable: true
+  freezeInstructions: Slice the cooked brisket, portion it with a little of its own juices, and freeze in airtight bags for up to three months.
+  reheatInstructions: Reheat gently, covered, in a low oven with a splash of the reserved juices or stock, so the slices steam back to tenderness instead of drying out further.
+notes:
+  techniqueRationale:
+    - stepId: wrap
+      text: Wrapping the brisket partway through the cook pushes it through the long temperature stall where evaporative cooling can hold the internal temperature still for hours. Butcher paper does this without steaming the bark soft the way foil does.
+  commonPitfalls:
+    - stepId: slice
+      text: The point and the flat are two separate muscles running in different directions. Slicing straight across the whole brisket at one angle cuts the flat correctly and the point against its own grain; they are separated and sliced individually instead.
+---
+
+<Step id="season">
+  Trim the <Qty ref="brisket"/> so the fat cap is an even layer rather than
+  removing it, then coat the whole surface with the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>, pressing it on so it holds.
+</Step>
+
+<Step id="smoke-unwrapped">
+  Set the brisket fat side up in a smoker running at a steady <Temp c={110}/>
+  over post oak or another mild hardwood, and leave it undisturbed for
+  <Dur step="smoke-unwrapped"/>, until a dark, firm bark has formed on the
+  surface and the internal temperature has climbed into the stall, where it
+  will hold roughly steady for a long stretch.
+</Step>
+
+<Step id="wrap">
+  Lift the brisket onto a large sheet of butcher paper and wrap it tightly,
+  sealing the seams underneath, to carry it through the rest of the stall
+  without softening the bark.
+</Step>
+
+<Step id="smoke-wrapped">
+  Return the wrapped brisket to the smoker at the same temperature for
+  <Dur step="smoke-wrapped"/>, until a probe pushed into the thickest part of
+  the flat meets no resistance at all and the internal temperature reads
+  close to <Temp c={95}/>.
+</Step>
+
+<Step id="rest">
+  Leave the brisket wrapped and rest it in a dry cooler or a switched-off
+  oven for <Dur step="rest"/> before opening the paper. This is not optional —
+  the meat is far too hot to hold together if it is cut straight away, and it
+  finishes tenderising as it cools.
+</Step>
+
+<Step id="slice">
+  Unwrap the brisket and separate the point from the flat where the seam of
+  fat runs between them. Slice each piece on its own, cutting straight across
+  its own grain into slices about the width of a pencil, for
+  <Dur step="slice"/>.
+</Step>

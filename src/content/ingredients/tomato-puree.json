@@ -1,0 +1,69 @@
+{
+  "id": "tomato-puree",
+  "name": "Tomato Purée",
+  "proseName": "tomato purée",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Tomato paste",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "concentrated",
+      "label": "Canned, concentrated, no added salt",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170459",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170459/nutrients",
+      "nutritionPer100g": {
+        "kcal": 82,
+        "protein": 4.32,
+        "fat": 0.47,
+        "carbs": 18.91,
+        "fiber": 4.1,
+        "sugars": 12.18,
+        "calcium": 36,
+        "iron": 2.98,
+        "magnesium": 42,
+        "phosphorus": 83,
+        "potassium": 1014,
+        "sodium": 59,
+        "zinc": 0.63,
+        "copper": 0.365,
+        "manganese": 0.302,
+        "seleniumMcg": 5.3,
+        "vitaminC": 21.9,
+        "thiamin": 0.06,
+        "riboflavin": 0.153,
+        "niacin": 3.076,
+        "vitaminB6": 0.216,
+        "folateMcg": 12,
+        "choline": 38.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 76,
+        "vitaminE": 4.3,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 11.4,
+        "saturatedFat": 0.1,
+        "monounsaturatedFat": 0.067,
+        "polyunsaturatedFat": 0.16,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 16,
+        "gPerCup": 262,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/tomato-puree-thumb.webp"
+}

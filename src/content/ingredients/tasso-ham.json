@@ -1,0 +1,47 @@
+{
+  "id": "tasso-ham",
+  "name": "Tasso Ham",
+  "proseName": "tasso",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "cured",
+      "label": "Cured and smoked",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167880",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167880/nutrients",
+      "sourceNote": "USDA has no record for tasso, a heavily spiced and smoked Cajun cure. This is its record for cured, roasted pork shoulder (arm picnic), the closest published cured-pork-shoulder profile — tasso is cut from the same primal, more heavily seasoned and smoked rather than roasted, and used in small, intensely flavoured amounts.",
+      "nutritionPer100g": {
+        "kcal": 170,
+        "protein": 24.94,
+        "carbs": 0,
+        "fat": 7.04,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 2.36,
+        "monounsaturatedFat": 3.23,
+        "polyunsaturatedFat": 0.81,
+        "cholesterol": 48,
+        "sodium": 1231,
+        "potassium": 292,
+        "calcium": 11,
+        "iron": 1.08,
+        "magnesium": 16,
+        "phosphorus": 243,
+        "zinc": 2.94,
+        "copper": 0.128,
+        "manganese": 0.03,
+        "seleniumMcg": 41.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0.9,
+        "vitaminE": 0.26,
+        "vitaminKMcg": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+---
+title: American Waffles
+subtitle: A baking-powder batter cooked in a deep-pocketed iron, in the American style commercially renamed "Belgian" in the 1960s. One serving is one waffle.
+label: Deep-pocket
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [breakfast]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Belgian waffles, region: United States, lang: en }
+image:
+  src: images/recipes/belgian-style-waffles.webp
+  alt: "A Belgian waffle on a dark plate, topped with sliced strawberries and bananas, with a small pot of syrup on the side"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 25
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 400
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+    note: melted, plus more for the iron
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+steps:
+  - { id: heat-iron, durationMin: 5, type: "parallel-with:mix-batter", phase: cook }
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 4, type: active, phase: prep }
+  - { id: cook-waffles, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze cooked, cooled waffles in a single layer, then bag them. Reheat from frozen directly in a toaster or hot oven, without thawing first.
+  reheatInstructions: A day-old waffle recrisps well in a toaster or a hot oven; a microwave will only soften it.
+notes:
+  commonPitfalls:
+    - stepId: mix-batter
+      text: Overmixing once the wet and dry ingredients meet develops gluten the batter has no use for, giving a dense, chewy waffle instead of a light one with a crisp shell.
+---
+
+<Step id="heat-iron">
+  Heat the waffle iron and brush it lightly with butter, allowing <Dur step="heat-iron"/>
+  for it to come fully up to temperature.
+</Step>
+
+<Step id="mix-dry">
+  Whisk the <Qty ref="flour"/>, <Qty ref="baking-powder"/>, <Qty ref="salt"/> and
+  <Qty ref="sugar"/> together in a large bowl.
+</Step>
+
+<Step id="mix-batter">
+  Beat the <Qty ref="egg"/> with the <Qty ref="milk"/>, the <Qty ref="butter"/> and the
+  <Qty ref="vanilla"/>, then pour this into the dry ingredients and stir over
+  <Dur step="mix-batter"/>, mixing only until the last streaks of flour disappear; a
+  few small lumps are no fault.
+</Step>
+
+<Step id="cook-waffles">
+  Ladle batter into the hot iron and cook until deep golden and crisp, releasing easily
+  from the plates. Repeat with the remaining batter, spending <Dur step="cook-waffles"/>
+  in total, and serve each waffle as soon as it is done.
+</Step>

@@ -36,6 +36,33 @@
       }
     },
     {
+      "id": "red",
+      "label": "Red",
+      "proseQualifier": "red",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "790577",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/790577/nutrients",
+      "sourceNote": "The Foundation record publishes no household portion, so this form carries no volume conversion.",
+      "nutritionPer100g": {
+        "kcal": 44,
+        "protein": 0.94,
+        "fat": 0.1,
+        "carbs": 9.93,
+        "fiber": 2.2,
+        "calcium": 17,
+        "iron": 0.24,
+        "magnesium": 11.4,
+        "phosphorus": 41,
+        "potassium": 197,
+        "sodium": 1,
+        "zinc": 0.17,
+        "copper": 0.058,
+        "manganese": 0.119,
+        "seleniumMcg": 0.5,
+        "vitaminC": 8.1
+      }
+    },
+    {
       "id": "yellow",
       "label": "Yellow",
       "proseQualifier": "yellow",

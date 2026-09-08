@@ -1,0 +1,102 @@
+---
+label: Spatchcocked
+defaultServings: 10
+difficulty: Hard
+ingredients:
+  - id: turkey
+    ingredientRef: whole-turkey
+    form: raw
+    amount: 3800
+    unit: g
+    note: one whole bird, backbone removed and flattened, giblets removed
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 40
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 150
+    unit: g
+    note: softened
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: minced
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 10
+    unit: g
+    note: leaves picked and chopped
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 6
+    unit: g
+steps:
+  - { id: spatchcock, durationMin: 15, type: active, phase: prep }
+  - { id: dry-brine, durationMin: 10, type: active, phase: prep }
+  - { id: chill, durationMin: 720, type: passive }
+  - { id: make-butter, durationMin: 8, type: active, phase: prep }
+  - { id: butter-bird, durationMin: 10, type: active, phase: prep }
+  - { id: roast, durationMin: 80, type: active, phase: cook }
+  - { id: rest, durationMin: 25, type: passive }
+  - { id: carve, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The bird can be spatchcocked and dry-brined a day ahead, the same as the whole-roasted version — the flattened shape only changes the roast itself.
+  freezable: true
+  freezeInstructions: Freeze the carved meat, wrapped tightly, for up to two months. The skin will not stay crisp once thawed.
+  reheatInstructions: Reheat sliced meat gently, covered, with a little stock or pan juices, in a low oven; high heat dries it out quickly.
+notes:
+  techniqueRationale:
+    - stepId: spatchcock
+      text: Removing the backbone and pressing the bird flat puts the breast and legs at roughly the same thickness and the same distance from the heat, which is what lets both finish together in under a third of the whole bird's roasting time.
+  commonPitfalls:
+    - stepId: roast
+      text: Roasting a flattened bird at the same moderate heat used for a whole one leaves the skin pale, since there is no long covered stage to render the fat first. A single hotter roast is what browns it in the shorter time available.
+---
+
+<Step id="spatchcock">
+  Turn the <Qty ref="turkey"/> breast side down and cut along both sides of
+  the backbone to remove it. Turn the bird over and press down firmly on the
+  breastbone until it cracks and the bird lies flat.
+</Step>
+
+<Step id="dry-brine">
+  Pat the bird completely dry and season it all over, including under the
+  legs, with the <Qty ref="salt"/>.
+</Step>
+
+<Step id="chill">
+  Set the bird uncovered, skin side up, on a rack set in a tray and
+  refrigerate for <Dur step="chill"/>.
+</Step>
+
+<Step id="make-butter">
+  Mash the <Qty ref="butter"/> with the <Qty ref="garlic"/>, the
+  <Qty ref="thyme"/> and the <Qty ref="pepper"/> until evenly combined.
+</Step>
+
+<Step id="butter-bird">
+  Loosen the skin over the breast and legs and work most of the herb butter
+  underneath it directly against the meat, then rub whatever remains over the
+  outside of the skin.
+</Step>
+
+<Step id="roast">
+  Roast flat, skin side up, at <Temp c={220}/> for <Dur step="roast"/>, until
+  the skin is deeply golden and a thermometer in the thickest part of the
+  thigh, away from the bone, reads <Temp c={74}/>.
+</Step>
+
+<Step id="rest">
+  Transfer to a board and rest for <Dur step="rest"/> before carving.
+</Step>
+
+<Step id="carve">
+  Carve the breast and legs away from the carcass and slice.
+</Step>

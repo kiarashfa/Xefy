@@ -1,0 +1,96 @@
+---
+title: Ranch Dressing
+subtitle: A buttermilk-and-mayonnaise dressing seasoned with garlic, onion and fresh herbs. The batch dresses a large salad or a platter of vegetables for a group.
+label: Classic
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [condiment]
+  method: [no-cook]
+image:
+  src: images/recipes/ranch-dressing.webp
+  alt: "A mason jar filled with creamy white ranch dressing flecked with chopped herbs"
+ingredients:
+  - id: mayonnaise
+    ingredientRef: mayonnaise
+    form: regular
+    amount: 200
+    unit: g
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 150
+    unit: ml
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 60
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 5
+    unit: g
+    note: finely grated
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 20
+    unit: g
+    note: very finely chopped
+  - id: dill
+    ingredientRef: dill
+    form: fresh
+    amount: 5
+    unit: g
+    note: finely chopped
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 5
+    unit: g
+    note: finely chopped
+  - id: chives
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 10
+    unit: g
+    note: green tops only, finely chopped
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 10
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: combine, durationMin: 5, type: active, phase: prep }
+  - { id: rest, durationMin: 60, type: passive }
+makeAhead:
+  aheadInstructions: The dressing improves after a rest, as the garlic and onion mellow into the buttermilk, and keeps well covered in the refrigerator for about a week.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="combine">
+  Whisk the <Qty ref="mayonnaise"/>, the <Qty ref="buttermilk"/> and the
+  <Qty ref="soured-cream"/> together until smooth. Stir in the <Qty ref="garlic"/>,
+  the <Qty ref="onion"/>, the <Qty ref="dill"/>, the <Qty ref="parsley"/>, the
+  <Qty ref="chives"/>, the <Qty ref="lemon-juice"/>, the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>, over <Dur step="combine"/>.
+</Step>
+
+<Step id="rest">
+  Cover and refrigerate for <Dur step="rest"/> before serving, to let the flavours
+  come together.
+</Step>

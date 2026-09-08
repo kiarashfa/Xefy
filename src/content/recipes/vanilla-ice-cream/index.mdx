@@ -1,0 +1,96 @@
+---
+title: Vanilla Ice Cream
+subtitle: Cream and milk thickened with an egg-yolk custard before churning, in the French style. One serving is one generous scoop.
+label: Custard base
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [simmering, no-cook]
+names:
+  notToBeConfusedWith:
+    - name: Philadelphia-style vanilla ice cream
+      note: Made from cream, milk and sugar alone, with no egg yolks or cooked custard — see the second version of this page.
+image:
+  src: images/recipes/vanilla-ice-cream.webp
+  alt: "A single scoop of vanilla ice cream with visible vanilla bean flecks, on a wooden board with a sprig of mint"
+ingredients:
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 350
+    unit: ml
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 350
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 130
+    unit: g
+  - id: egg-yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 90
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 15
+    unit: ml
+steps:
+  - { id: heat-cream, durationMin: 6, type: active, phase: cook }
+  - { id: temper-yolks, durationMin: 5, type: active, phase: cook }
+  - { id: cook-custard, durationMin: 6, type: active, phase: cook }
+  - { id: chill-custard, durationMin: 240, type: passive }
+  - { id: churn, durationMin: 25, type: active, phase: cook }
+  - { id: freeze, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: The custard base can be made up to two days ahead and kept covered in the refrigerator until ready to churn.
+  freezable: true
+  freezeInstructions: The churned ice cream itself is the finished, frozen product; keep it in an airtight container in the freezer.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: temper-yolks
+      text: Whisking warm cream into the yolks gradually, rather than the reverse, raises their temperature slowly enough that they thicken the custard instead of scrambling in it.
+  commonPitfalls:
+    - stepId: cook-custard
+      text: A custard taken above a bare simmer curdles almost instantly. It is ready once it coats the back of a spoon and holds a line drawn through it with a finger, which happens well below boiling point.
+---
+
+<Step id="heat-cream">
+  Warm the <Qty ref="milk"/> and the <Qty ref="cream"/> together with half of the
+  <Qty ref="sugar"/> in a pan over a medium heat until steaming, over <Dur step="heat-cream"/>,
+  without letting it boil.
+</Step>
+
+<Step id="temper-yolks">
+  Whisk the <Qty ref="egg-yolks"/> with the remaining sugar until pale, then whisk in a
+  ladleful of the hot cream at a time to bring the yolks up to temperature gradually,
+  over <Dur step="temper-yolks"/>.
+</Step>
+
+<Step id="cook-custard">
+  Pour the tempered yolks back into the pan and cook over a low heat, stirring
+  constantly, for <Dur step="cook-custard"/>, until the custard thickens enough to coat
+  the back of a spoon. Strain immediately into a clean bowl and stir in the
+  <Qty ref="vanilla"/>.
+</Step>
+
+<Step id="chill-custard">
+  Cover and chill the custard for <Dur step="chill-custard"/>, until thoroughly cold.
+</Step>
+
+<Step id="churn">
+  Churn the chilled custard in an ice cream machine for <Dur step="churn"/>, until it
+  holds a soft, spoonable shape.
+</Step>
+
+<Step id="freeze">
+  Transfer to a container and freeze for <Dur step="freeze"/>, until firm enough to
+  scoop.
+</Step>

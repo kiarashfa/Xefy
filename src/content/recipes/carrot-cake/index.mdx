@@ -1,0 +1,175 @@
+---
+title: Carrot Cake
+subtitle: An oil-based, spiced cake built on grated carrot rather than creamed butter, finished with a cream cheese icing.
+label: Layer cake
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/carrot-cake.webp
+  alt: "A slice of carrot cake with cream cheese frosting, topped with a walnut half"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 280
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 8
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 4
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 6
+    unit: g
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 180
+    unit: g
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 100
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 200
+    unit: ml
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 8
+    unit: ml
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 300
+    unit: g
+    note: finely grated
+  - id: pecans
+    ingredientRef: pecan
+    form: raw
+    amount: 100
+    unit: g
+    note: chopped
+    portions:
+      - { id: pecans-batter, amount: 70 }
+      - { id: pecans-garnish, amount: 30, note: for the top }
+  - id: cream-cheese
+    ingredientRef: cream-cheese
+    form: regular
+    amount: 250
+    unit: g
+    note: at room temperature
+  - id: frosting-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+    note: soft
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 180
+    unit: g
+  - id: frosting-vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 4
+    unit: ml
+steps:
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:mix-dry", phase: cook }
+  - { id: whisk-wet, durationMin: 4, type: active, phase: prep }
+  - { id: combine-batter, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 35, type: passive }
+  - { id: cool, durationMin: 60, type: passive }
+  - { id: make-frosting, durationMin: 6, type: "parallel-with:cool", phase: prep }
+  - { id: frost, durationMin: 8, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The unfrosted cake keeps two days at room temperature, well wrapped. Frosted, it keeps three days under refrigeration, brought back to room temperature before serving.
+  freezable: true
+  freezeInstructions: Freeze the unfrosted layers, well wrapped. Thaw fully before frosting, since a cold, damp cake will not take the icing evenly.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: whisk-wet
+      text: An oil-based batter has no butter to cream for aeration, so the lift here comes entirely from the baking powder and bicarbonate — the eggs and sugar are whisked mainly to dissolve and combine, not to trap air.
+  commonPitfalls:
+    - stepId: frost
+      text: Cream cheese frosting softens quickly at room temperature and slides off a warm cake. The layers need to be fully cool before frosting, not merely cool to the touch on the outside.
+---
+
+<Step id="mix-dry">
+  Whisk together the <Qty ref="flour"/>, the <Qty ref="baking-powder"/>, the
+  <Qty ref="bicarb"/>, the <Qty ref="cinnamon"/>, the <Qty ref="nutmeg"/> and the
+  <Qty ref="salt"/>. This takes <Dur step="mix-dry"/>.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile heat the oven to <Temp c={175}/>, giving it <Dur step="heat-oven"/> to settle,
+  and butter and line two round cake tins.
+</Step>
+
+<Step id="whisk-wet">
+  Whisk the <Qty ref="sugar"/> and the <Qty ref="brown-sugar"/> into the <Qty ref="oil"/>,
+  then whisk in the <Qty ref="eggs"/> and the <Qty ref="vanilla"/>, over
+  <Dur step="whisk-wet"/>, until smooth and glossy.
+</Step>
+
+<Step id="combine-batter">
+  Fold the dry ingredients into the wet ingredients, then fold through the
+  <Qty ref="carrot"/> and the <Qty ref="pecans-batter"/>, using <Dur step="combine-batter"/>
+  and stopping as soon as no dry flour is visible.
+</Step>
+
+<Step id="bake">
+  Divide the batter between the tins and bake for <Dur step="bake"/>, until a skewer pushed
+  into the centre of each comes out clean and the tops spring back when pressed lightly.
+</Step>
+
+<Step id="cool">
+  Turn the layers out onto a rack and leave them to cool completely, for
+  <Dur step="cool"/>, before frosting.
+</Step>
+
+<Step id="make-frosting">
+  Meanwhile beat the <Qty ref="cream-cheese"/> with the <Qty ref="frosting-butter"/> until
+  smooth, then beat in the <Qty ref="icing-sugar"/> and the <Qty ref="frosting-vanilla"/>
+  over <Dur step="make-frosting"/>, stopping as soon as the frosting is thick and holds its
+  shape.
+</Step>
+
+<Step id="frost">
+  Set one cooled layer on a stand and spread a third of the frosting over the top. Set the
+  second layer on top and cover the whole cake with the remaining frosting, using
+  <Dur step="frost"/> to keep the sides even. Scatter the <Qty ref="pecans-garnish"/> over
+  the top to finish.
+</Step>

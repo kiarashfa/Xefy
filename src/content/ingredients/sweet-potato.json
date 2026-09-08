@@ -1,0 +1,43 @@
+{
+  "id": "sweet-potato",
+  "name": "Sweet Potato",
+  "proseName": "sweet potato",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, orange flesh, without skin",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2346404",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346404/nutrients",
+      "sourceNote": "The Foundation record publishes no household portion, so this form carries no volume conversion.",
+      "nutritionPer100g": {
+        "kcal": 77.357,
+        "protein": 1.578,
+        "carbs": 17.328,
+        "fat": 0.375,
+        "sodium": 0,
+        "potassium": 486.4,
+        "calcium": 22.33,
+        "iron": 0.398,
+        "magnesium": 19.14,
+        "phosphorus": 36.73,
+        "zinc": 0.337,
+        "copper": 0.187,
+        "manganese": 0.417,
+        "seleniumMcg": 0,
+        "vitaminC": 14.84,
+        "thiamin": 0.045,
+        "niacin": 0.433,
+        "vitaminB6": 0.124,
+        "vitaminKMcg": 0.2
+      }
+    }
+  ],
+  "image": "images/ingredients/sweet-potato-thumb.webp"
+}

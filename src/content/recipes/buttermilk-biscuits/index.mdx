@@ -1,0 +1,98 @@
+---
+title: Buttermilk Biscuits
+subtitle: A quick bread leavened by baking powder and soda rather than yeast, laminated cold so it bakes into visible, flaky layers.
+label: Southern
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [bread, side, breakfast]
+  method: [baking]
+image:
+  src: images/recipes/buttermilk-biscuits.webp
+  alt: "A close pile of golden-brown, flaky buttermilk biscuits in a round baking dish"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 12
+    unit: g
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 100
+    unit: g
+    note: chilled
+    portions:
+      - { id: butter-cut, amount: 85, note: cut into small cubes }
+      - { id: butter-brush, amount: 15, note: melted, for brushing }
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 210
+    unit: ml
+    note: cold
+steps:
+  - { id: mix-dry, durationMin: 3, type: active, phase: prep }
+  - { id: cut-butter, durationMin: 5, type: active, phase: prep }
+  - { id: fold-dough, durationMin: 6, type: active, phase: prep }
+  - { id: cut-rounds, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 16, type: passive }
+makeAhead:
+  aheadInstructions: The cut, unbaked rounds freeze well laid flat on a tray; bake from frozen, allowing a few extra minutes.
+  freezable: true
+  freezeInstructions: Freeze the cut rounds on a tray until solid, then transfer to a bag. Bake directly from frozen on a lined tray.
+  reheatInstructions: A split, cooled biscuit can be warmed briefly in a low oven; it will not regain the fresh crust, but the crumb softens rather than dries further.
+notes:
+  techniqueRationale:
+    - stepId: fold-dough
+      text: Folding the dough over itself rather than kneading it builds thin sheets of butter between thin sheets of dough, and it is those sheets, not the raising agents alone, that give the baked biscuit its visible layers.
+  commonPitfalls:
+    - stepId: cut-butter
+      text: Butter that softens before it reaches the oven melts into the dough instead of staying as distinct flecks, and the biscuit rises far less for it. Keep it cold at every stage, including a short rest before baking if the kitchen is warm.
+---
+
+<Step id="mix-dry">
+  Whisk the <Qty ref="flour"/>, <Qty ref="baking-powder"/>, <Qty ref="bicarb"/> and
+  <Qty ref="salt"/> together in a wide bowl.
+</Step>
+
+<Step id="cut-butter">
+  Rub or cut the <Qty ref="butter-cut"/> into the flour for <Dur step="cut-butter"/>,
+  until the largest pieces are the size of small peas. Keep the mixture cold throughout.
+</Step>
+
+<Step id="fold-dough">
+  Pour in the <Qty ref="buttermilk"/> and bring the dough together with a few strokes,
+  stopping while it still looks shaggy. Turn it onto a floured surface and pat it into a
+  rectangle, then fold it into thirds like a letter. Repeat this fold twice more over
+  <Dur step="fold-dough"/>, patting the dough back out each time, before patting it to
+  its final thickness.
+</Step>
+
+<Step id="cut-rounds">
+  Cut rounds straight down without twisting the cutter, which would seal the cut edge and
+  blunt the rise. Gather the scraps, pat them back together once, and cut the rest. Set
+  the rounds close together on a lined tray, touching at the edges, over
+  <Dur step="cut-rounds"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={220}/> for <Dur step="bake"/>, until well risen and golden on top.
+  Brush the tops with the <Qty ref="butter-brush"/> as soon as they come out of the oven.
+</Step>

@@ -1,0 +1,62 @@
+{
+  "id": "buttermilk",
+  "name": "Buttermilk",
+  "proseName": "buttermilk",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "cultured",
+      "label": "Cultured, low-fat",
+      "proseQualifier": "cultured",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170874",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170874/nutrients",
+      "sourceNote": "USDA's cultured low-fat buttermilk record, the type sold in US and UK supermarkets under that name.",
+      "nutritionPer100g": {
+        "kcal": 40,
+        "protein": 3.31,
+        "carbs": 4.79,
+        "fat": 1.07,
+        "fiber": 0,
+        "sugars": 5.36,
+        "saturatedFat": 0.66,
+        "monounsaturatedFat": 0.254,
+        "polyunsaturatedFat": 0.033,
+        "cholesterol": 4,
+        "sodium": 148,
+        "potassium": 151,
+        "calcium": 116,
+        "iron": 0.05,
+        "magnesium": 11,
+        "phosphorus": 89,
+        "zinc": 0.42,
+        "copper": 0.011,
+        "manganese": 0.002,
+        "seleniumMcg": 2,
+        "vitaminAMcg": 14,
+        "vitaminC": 1,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.05,
+        "vitaminKMcg": 0.1,
+        "thiamin": 0.034,
+        "riboflavin": 0.154,
+        "niacin": 0.058,
+        "vitaminB6": 0.034,
+        "folateMcg": 5,
+        "vitaminB12Mcg": 0.22,
+        "choline": 17.7
+      },
+      "density": {
+        "gPerCup": 245,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/buttermilk-thumb.webp"
+}

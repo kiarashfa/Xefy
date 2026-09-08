@@ -1,0 +1,59 @@
+{
+  "id": "white-cabbage",
+  "name": "White Cabbage",
+  "proseName": "white cabbage",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169975",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169975/nutrients",
+      "nutritionPer100g": {
+        "kcal": 25,
+        "protein": 1.28,
+        "fat": 0.1,
+        "carbs": 5.8,
+        "fiber": 2.5,
+        "sugars": 3.2,
+        "calcium": 40,
+        "iron": 0.47,
+        "magnesium": 12,
+        "phosphorus": 26,
+        "potassium": 170,
+        "sodium": 18,
+        "zinc": 0.18,
+        "copper": 0.019,
+        "manganese": 0.16,
+        "seleniumMcg": 0.3,
+        "vitaminC": 36.6,
+        "thiamin": 0.061,
+        "riboflavin": 0.04,
+        "niacin": 0.234,
+        "vitaminB6": 0.124,
+        "folateMcg": 43,
+        "choline": 10.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 5,
+        "vitaminE": 0.15,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 76,
+        "saturatedFat": 0.034,
+        "monounsaturatedFat": 0.017,
+        "polyunsaturatedFat": 0.017,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 89,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/white-cabbage-thumb.webp"
+}

@@ -1,0 +1,128 @@
+---
+label: Cajun
+defaultServings: 6
+difficulty: Medium
+ingredients:
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: sausage
+    ingredientRef: andouille
+    form: smoked
+    amount: 250
+    unit: g
+    note: sliced into rounds
+  - id: tasso
+    ingredientRef: tasso-ham
+    form: cured
+    amount: 150
+    unit: g
+    note: diced
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into bite-sized pieces
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 750
+    unit: ml
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+    note: two leaves
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+steps:
+  - { id: prep-veg, durationMin: 15, type: active, phase: prep }
+  - { id: brown-meats, durationMin: 15, type: active, phase: cook }
+  - { id: cook-trinity, durationMin: 8, type: active, phase: cook }
+  - { id: add-rice, durationMin: 3, type: active, phase: cook }
+  - { id: simmer-jambalaya, durationMin: 25, type: passive }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months; the rice softens further on thawing.
+  reheatInstructions: Reheat gently with a splash of water, covered, to loosen the rice without drying it out.
+notes:
+  techniqueRationale:
+    - stepId: brown-meats
+      text: With no tomato in the pot, the dish's colour and most of its savour come entirely from how hard the meat is browned and the dark fond it leaves behind, which the trinity is then cooked in.
+---
+
+<Step id="prep-veg">
+  Dice the <Qty ref="onion"/>, <Qty ref="celery"/> and <Qty ref="green-pepper"/>, mince
+  the <Qty ref="garlic"/>, slice the <Qty ref="sausage"/>, and dice the
+  <Qty ref="tasso"/> and <Qty ref="chicken"/>.
+</Step>
+
+<Step id="brown-meats">
+  Heat the <Qty ref="oil"/> in a large, heavy pot over a medium-high heat and brown the
+  sausage, tasso and chicken hard for <Dur step="brown-meats"/>, until a deep brown
+  fond builds up on the bottom of the pot. Lift the meats out and set aside.
+</Step>
+
+<Step id="cook-trinity">
+  Add the onion, celery and green pepper to the pot and cook for
+  <Dur step="cook-trinity"/>, scraping up the fond as they release their liquid, and
+  adding the garlic in the last minute.
+</Step>
+
+<Step id="add-rice">
+  Stir in the <Qty ref="rice"/>, <Qty ref="bay"/>, <Qty ref="cayenne"/>,
+  <Qty ref="black-pepper"/> and <Qty ref="salt"/>, and return the meats to the pot.
+</Step>
+
+<Step id="simmer-jambalaya">
+  Pour in the <Qty ref="water"/>, bring to the boil, then cover and reduce to the
+  lowest heat. Cook, undisturbed, for <Dur step="simmer-jambalaya"/>, until the rice is
+  tender and the liquid is absorbed. Discard the bay leaves before serving.
+</Step>

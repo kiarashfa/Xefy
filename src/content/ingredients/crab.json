@@ -1,0 +1,55 @@
+{
+  "id": "crab",
+  "name": "Crab",
+  "proseName": "crab",
+  "category": "shellfish",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "shellfish"
+  ],
+  "forms": [
+    {
+      "id": "cooked",
+      "label": "Cooked, picked meat",
+      "proseQualifier": "cooked",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174205",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174205/nutrients",
+      "sourceNote": "USDA's blue crab record, moist-heat cooked — blue crab is the species used in Louisiana crab dishes.",
+      "nutritionPer100g": {
+        "kcal": 83,
+        "protein": 17.88,
+        "carbs": 0,
+        "fat": 0.74,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 0.09,
+        "monounsaturatedFat": 0.11,
+        "polyunsaturatedFat": 0.26,
+        "cholesterol": 78,
+        "sodium": 293,
+        "potassium": 275,
+        "calcium": 89,
+        "iron": 0.77,
+        "magnesium": 41,
+        "phosphorus": 238,
+        "zinc": 4.03,
+        "copper": 0.83,
+        "manganese": 0.028,
+        "seleniumMcg": 39.2,
+        "vitaminAMcg": 3,
+        "vitaminC": 3.7,
+        "thiamin": 0.1,
+        "riboflavin": 0.065,
+        "niacin": 2.849,
+        "vitaminB6": 0.192,
+        "folateMcg": 43,
+        "vitaminB12Mcg": 9.78,
+        "choline": 78.7
+      }
+    }
+  ],
+  "image": "images/ingredients/crab-thumb.webp"
+}

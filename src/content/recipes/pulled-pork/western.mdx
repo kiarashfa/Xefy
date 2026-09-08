@@ -1,0 +1,116 @@
+---
+label: Western
+defaultServings: 12
+difficulty: Medium
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 3300
+    unit: g
+    note: bone-in
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 38
+    unit: g
+    portions:
+      - { id: salt-rub, amount: 30, note: for the rub }
+      - { id: salt-sauce, amount: 8, note: for the sauce }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 28
+    unit: g
+    note: coarsely cracked
+    portions:
+      - { id: pepper-rub, amount: 22, note: for the rub }
+      - { id: pepper-sauce, amount: 6, note: for the sauce }
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 55
+    unit: g
+    portions:
+      - { id: brown-sugar-rub, amount: 45, note: for the rub }
+      - { id: brown-sugar-sauce, amount: 10, note: for the sauce }
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 50
+    unit: g
+  - id: mustard-powder
+    ingredientRef: mustard-powder
+    form: ground
+    amount: 13
+    unit: g
+  - id: celery-salt
+    ingredientRef: celery-salt
+    form: ground
+    amount: 13
+    unit: g
+  - id: vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 150
+    unit: ml
+    note: for the sauce
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 80
+    unit: g
+    note: for the sauce
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 5
+    unit: g
+    note: for the sauce
+steps:
+  - { id: season, durationMin: 10, type: active, phase: prep }
+  - { id: smoke, durationMin: 600, type: passive }
+  - { id: rest, durationMin: 30, type: passive }
+  - { id: shred, durationMin: 15, type: active, phase: cook }
+  - { id: sauce, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shoulder can be rubbed a day ahead and refrigerated uncovered; the sauce can be mixed and kept, covered, for up to a week.
+  freezable: true
+  freezeInstructions: Freeze the shredded pork in its sauce in airtight bags for up to three months.
+  reheatInstructions: Reheat gently in a covered pan with a splash of extra sauce, so the meat does not dry out.
+notes:
+  commonPitfalls:
+    - stepId: shred
+      text: Pulling the pork before it has rested loses most of its juice to the board. It rests, still wrapped, until it is cool enough to handle rather than being torn apart straight from the smoker.
+---
+
+<Step id="season">
+  Combine the <Qty ref="salt-rub"/>, <Qty ref="pepper-rub"/>, the
+  <Qty ref="brown-sugar-rub"/>, <Qty ref="paprika"/>,
+  <Qty ref="mustard-powder"/> and <Qty ref="celery-salt"/>, then coat the
+  <Qty ref="pork"/> evenly all over.
+</Step>
+
+<Step id="smoke">
+  Smoke the shoulder at a steady <Temp c={110}/> for <Dur step="smoke"/>,
+  until a probe pushed into the thickest part meets no resistance and the
+  internal temperature reads close to <Temp c={95}/>.
+</Step>
+
+<Step id="rest">
+  Wrap the shoulder loosely and rest it for <Dur step="rest"/>, until it is
+  cool enough to handle without burning your hands.
+</Step>
+
+<Step id="shred">
+  Pull the meat apart into shreds by hand or with two forks, discarding any
+  large pieces of fat and the bone, for <Dur step="shred"/>.
+</Step>
+
+<Step id="sauce">
+  Whisk together the <Qty ref="vinegar"/>, the <Qty ref="ketchup"/>, the
+  <Qty ref="brown-sugar-sauce"/>, the <Qty ref="salt-sauce"/>, the
+  <Qty ref="pepper-sauce"/> and the <Qty ref="chilli-flakes"/>, then toss it
+  through the warm pork until it is evenly coated — a thin, sharp dip rather
+  than a heavy glaze.
+</Step>

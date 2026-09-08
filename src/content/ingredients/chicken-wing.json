@@ -1,0 +1,37 @@
+{
+  "id": "chicken-wing",
+  "name": "Chicken Wing",
+  "proseName": "chicken wing",
+  "category": "meat",
+  "animalOrigin": "poultry",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, bone-in, skin-on",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2727568",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2727568/nutrients",
+      "sourceNote": "USDA's Foundation record for whole raw wing, meat and skin, carries no fibre or fat-breakdown fields, but a raw poultry cut genuinely has none of the first and the full panel is not essential to represent it; the macro figures themselves are the most recently sampled the database publishes for wing.",
+      "nutritionPer100g": {
+        "kcal": 172.792,
+        "protein": 18.406,
+        "carbs": 0,
+        "fat": 10.64,
+        "cholesterol": 98.88,
+        "sodium": 84.14,
+        "potassium": 194,
+        "calcium": 13.55,
+        "iron": 0.511,
+        "magnesium": 16.53,
+        "phosphorus": 132.8,
+        "zinc": 1.179,
+        "copper": 0.011,
+        "manganese": 0.003
+      }
+    }
+  ],
+  "image": "images/ingredients/chicken-wing-thumb.webp"
+}

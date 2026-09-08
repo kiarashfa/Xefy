@@ -1,0 +1,61 @@
+{
+  "id": "guajillo-chilli",
+  "name": "Guajillo Chilli",
+  "proseName": "guajillo chillies",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, whole",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168570",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168570/nutrients",
+      "sourceNote": "USDA has no guajillo-specific record — guajillo is the dried form of the mirasol chilli, not covered separately. This is its generic sun-dried hot chile profile, the closest dried-chile nutrient set it publishes.",
+      "nutritionPer100g": {
+        "kcal": 324,
+        "protein": 10.58,
+        "fat": 5.81,
+        "carbs": 69.86,
+        "fiber": 28.7,
+        "sugars": 41.06,
+        "calcium": 45,
+        "iron": 6.04,
+        "magnesium": 88,
+        "phosphorus": 159,
+        "potassium": 1870,
+        "sodium": 91,
+        "zinc": 1.02,
+        "copper": 0.228,
+        "manganese": 0.821,
+        "seleniumMcg": 3.5,
+        "vitaminC": 31.4,
+        "thiamin": 0.081,
+        "riboflavin": 1.205,
+        "niacin": 8.669,
+        "vitaminB6": 0.81,
+        "folateMcg": 51,
+        "choline": 84.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1324,
+        "vitaminE": 3.14,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 108.2,
+        "saturatedFat": 0.813,
+        "monounsaturatedFat": 0.468,
+        "polyunsaturatedFat": 3.079,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "dried guajillo chilli",
+        "plural": "dried guajillo chillies",
+        "grams": 5
+      }
+    }
+  ],
+  "image": "images/ingredients/guajillo-chilli-thumb.webp"
+}

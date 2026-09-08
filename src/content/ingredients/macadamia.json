@@ -1,0 +1,61 @@
+{
+  "id": "macadamia",
+  "name": "Macadamia",
+  "proseName": "macadamia",
+  "category": "nut",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "nuts"
+  ],
+  "forms": [
+    {
+      "id": "roasted",
+      "label": "Dry-roasted, unsalted",
+      "proseQualifier": "roasted",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170179",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170179/nutrients",
+      "sourceNote": "Modern poke crushes roasted macadamia as a stand-in for the kukui (candlenut) traditionally roasted and pounded into ʻinamona; kukui is not a commercial food crop outside Hawaii and carries no USDA record.",
+      "nutritionPer100g": {
+        "kcal": 718,
+        "protein": 7.79,
+        "carbs": 13.38,
+        "fat": 76.08,
+        "fiber": 8,
+        "sugars": 4.14,
+        "saturatedFat": 11.947,
+        "monounsaturatedFat": 59.275,
+        "polyunsaturatedFat": 1.498,
+        "cholesterol": 0,
+        "sodium": 4,
+        "potassium": 363,
+        "calcium": 70,
+        "iron": 2.65,
+        "magnesium": 118,
+        "phosphorus": 198,
+        "zinc": 1.29,
+        "copper": 0.57,
+        "manganese": 3.036,
+        "seleniumMcg": 11.7,
+        "vitaminAMcg": 0,
+        "vitaminC": 0.7,
+        "vitaminE": 0.57,
+        "vitaminKMcg": 0,
+        "thiamin": 0.71,
+        "riboflavin": 0.087,
+        "niacin": 2.274,
+        "vitaminB6": 0.359,
+        "folateMcg": 10,
+        "vitaminB12Mcg": 0,
+        "choline": 44.6
+      },
+      "density": {
+        "gPerCup": 132,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/macadamia-thumb.webp"
+}

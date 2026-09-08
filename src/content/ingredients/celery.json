@@ -1,0 +1,49 @@
+{
+  "id": "celery",
+  "name": "Celery",
+  "proseName": "celery",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "celery"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169988",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169988/nutrients",
+      "nutritionPer100g": {
+        "kcal": 14,
+        "protein": 0.69,
+        "carbs": 2.97,
+        "fat": 0.17,
+        "fiber": 1.6,
+        "sugars": 1.34,
+        "saturatedFat": 0.042,
+        "monounsaturatedFat": 0.032,
+        "polyunsaturatedFat": 0.079,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 80,
+        "potassium": 260,
+        "calcium": 40,
+        "iron": 0.2,
+        "magnesium": 11,
+        "phosphorus": 24,
+        "zinc": 0.13,
+        "copper": 0.035,
+        "manganese": 0.103,
+        "seleniumMcg": 0.4,
+        "vitaminAMcg": 22,
+        "vitaminC": 3.1,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.27
+      }
+    }
+  ],
+  "image": "images/ingredients/celery-thumb.webp"
+}

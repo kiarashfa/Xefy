@@ -1,0 +1,42 @@
+{
+  "id": "provolone",
+  "name": "Provolone",
+  "proseName": "provolone",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Traditional provolone is set with animal rennet and is not vegetarian.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "sliced",
+      "label": "Sliced",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2647440",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2647440/nutrients",
+      "nutritionPer100g": {
+        "kcal": 356.9,
+        "protein": 23.453,
+        "fat": 28.13,
+        "carbs": 2.453,
+        "calcium": 748.8,
+        "iron": 0,
+        "magnesium": 29.5,
+        "phosphorus": 494.1,
+        "potassium": 94.84,
+        "sodium": 600.9,
+        "zinc": 3.89,
+        "copper": 0,
+        "manganese": 0.03,
+        "vitaminDMcg": 0,
+        "saturatedFat": 16.24,
+        "monounsaturatedFat": 5.738,
+        "cholesterol": 85.43
+      }
+    }
+  ],
+  "image": "images/ingredients/provolone-thumb.webp"
+}

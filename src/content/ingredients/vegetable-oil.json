@@ -1,0 +1,61 @@
+{
+  "id": "vegetable-oil",
+  "name": "Vegetable Oil",
+  "proseName": "vegetable oil",
+  "category": "oil",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "refined",
+      "label": "Refined",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172370",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172370/nutrients",
+      "sourceNote": "USDA's record for refined soybean oil, the commodity blend usually sold as plain \"vegetable oil\" in the United States.",
+      "nutritionPer100g": {
+        "kcal": 884,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0.02,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "sodium": 0,
+        "zinc": 0,
+        "copper": 0,
+        "seleniumMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 8.18,
+        "vitaminKMcg": 183.9,
+        "saturatedFat": 15.251,
+        "monounsaturatedFat": 22.727,
+        "polyunsaturatedFat": 57.333,
+        "transFat": 0.678,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 13.6,
+        "gPerTsp": 4.5,
+        "gPerCup": 218,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/vegetable-oil-thumb.webp"
+}

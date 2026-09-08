@@ -1,0 +1,156 @@
+---
+title: Chicago Deep Dish Pizza
+subtitle: A cornmeal-enriched dough pressed high up the sides of a deep pan, filled with mozzarella and toppings, and covered rather than topped with tomato sauce.
+label: Chicago
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Pizza pie
+      note: A generic American term for a round flat pizza — deep dish is a distinct, pan-baked construction rather than just a regional name for pizza.
+image:
+  src: images/recipes/chicago-deep-dish.webp
+  alt: "A whole Chicago deep-dish pizza in its pan, showing a tall golden crust and melted cheese topped with pepperoni"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 300
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 280 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: cornmeal
+    ingredientRef: maize-meal
+    form: white
+    amount: 20
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 110
+    unit: ml
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 45
+    unit: ml
+    portions:
+      - { id: oil-dough, amount: 35, note: for the dough }
+      - { id: oil-pan, amount: 10, note: for the pan }
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 340
+    unit: g
+    note: sliced and drained on paper
+  - id: tomatoes
+    ingredientRef: san-marzano-tomato
+    form: canned-whole
+    amount: 400
+    unit: g
+    note: crushed by hand
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 6
+    unit: g
+    note: minced
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: parmesan
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 20
+    unit: g
+    note: finely grated
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 4
+    unit: g
+    note: torn, for finishing
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: bulk-ferment, durationMin: 90, type: passive }
+  - { id: make-sauce, durationMin: 15, type: "parallel-with:bulk-ferment", phase: prep }
+  - { id: press-pan, durationMin: 8, type: active, phase: prep }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 35, type: active, phase: cook }
+  - { id: rest, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made a day ahead and kept, well oiled and covered, in the refrigerator; bring it back to room temperature before pressing it into the pan.
+  freezable: true
+  freezeInstructions: Freeze the fully baked pizza in slices, wrapped tightly, for up to two months.
+  reheatInstructions: Reheat slices in a moderate oven directly on the rack until the crust re-crisps; a microwave leaves it soft.
+notes:
+  techniqueRationale:
+    - stepId: assemble
+      text: Cheese goes directly against the dough and the sauce goes on last, unlike a thin-crust pizza. A long bake under a wet tomato layer would turn the crust soggy, but a wall of melted cheese underneath it protects the dough for the whole cook.
+  commonPitfalls:
+    - stepId: bake
+      text: Cutting into the pizza straight from the oven collapses the layers into a puddle. It has to rest so the cheese and sauce firm up enough to hold a slice together.
+---
+
+<Step id="mix-dough">
+  Dissolve the <Qty ref="yeast"/> in the <Qty ref="water"/>. Combine the
+  <Qty ref="flour-dough"/> and <Qty ref="cornmeal"/> in a bowl, pour in the
+  yeast mixture and the <Qty ref="oil-dough"/>, and mix until a shaggy dough
+  forms. Add the <Qty ref="salt"/> and continue mixing.
+</Step>
+
+<Step id="knead">
+  Knead for <Dur step="knead"/>, until smooth and only slightly tacky.
+</Step>
+
+<Step id="bulk-ferment">
+  Cover and leave at room temperature for <Dur step="bulk-ferment"/>, until
+  roughly doubled.
+</Step>
+
+<Step id="make-sauce">
+  While the dough ferments, crush the <Qty ref="tomatoes"/> and combine with
+  the <Qty ref="garlic"/> and <Qty ref="oregano"/>. Leave uncooked; the sauce
+  finishes in the oven.
+</Step>
+
+<Step id="press-pan">
+  Coat a deep, straight-sided pan with the <Qty ref="oil-pan"/>. Using the
+  <Qty ref="flour-bench"/> to keep the dough from sticking, press it out and
+  up the sides of the pan so the rim stands proud of the filling to come.
+</Step>
+
+<Step id="assemble">
+  Lay the <Qty ref="mozzarella"/> directly over the base of the dough, right
+  to the edges, then spoon the tomato sauce evenly over the cheese and finish
+  with the <Qty ref="parmesan"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={230}/> for <Dur step="bake"/>, until the crust is deeply
+  browned at the rim and the sauce has thickened and started to char in
+  patches.
+</Step>
+
+<Step id="rest">
+  Rest the pizza in the pan for <Dur step="rest"/> before slicing, then
+  scatter over the <Qty ref="basil"/>.
+</Step>

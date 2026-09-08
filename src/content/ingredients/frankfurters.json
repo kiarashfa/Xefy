@@ -1,0 +1,61 @@
+{
+  "id": "frankfurters",
+  "name": "Frankfurters",
+  "proseName": "frankfurters",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Beef, unheated",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173862",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173862/nutrients",
+      "sourceNote": "USDA's record for an unheated beef frankfurter, the all-beef sausage as sold rather than as served.",
+      "countUnit": {
+        "singular": "frankfurter",
+        "plural": "frankfurters",
+        "grams": 57
+      },
+      "nutritionPer100g": {
+        "kcal": 315,
+        "protein": 11.69,
+        "fat": 28.1,
+        "carbs": 2.97,
+        "fiber": 0,
+        "sugars": 1.17,
+        "calcium": 14,
+        "iron": 1.12,
+        "magnesium": 11,
+        "phosphorus": 134,
+        "potassium": 364,
+        "sodium": 865,
+        "zinc": 2.01,
+        "copper": 0.044,
+        "manganese": 0.029,
+        "seleniumMcg": 10.3,
+        "vitaminC": 0,
+        "thiamin": 0.032,
+        "riboflavin": 0.151,
+        "niacin": 2.218,
+        "vitaminB6": 0.127,
+        "folateMcg": 0,
+        "choline": 31.9,
+        "vitaminB12Mcg": 0.96,
+        "vitaminAMcg": 3,
+        "vitaminE": 0.5,
+        "vitaminDMcg": 0.9,
+        "vitaminKMcg": 1.8,
+        "saturatedFat": 11.46,
+        "monounsaturatedFat": 13.552,
+        "polyunsaturatedFat": 1.098,
+        "transFat": 1.66,
+        "cholesterol": 58
+      }
+    }
+  ],
+  "image": "images/ingredients/frankfurters-thumb.webp"
+}

@@ -1,0 +1,130 @@
+---
+title: Southern Fried Chicken
+subtitle: Chicken pieces marinated in seasoned buttermilk, dredged in seasoned flour and shallow-fried in a heavy skillet until deeply crisp.
+description: Southern fried chicken made the standard way — bone-in, skin-on chicken pieces marinated for hours in buttermilk and hot sauce, dredged in seasoned flour, and shallow-fried in a heavy skillet until the crust is deep golden and the meat inside is juicy.
+label: Buttermilk Brine
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [deep-frying]
+image:
+  src: images/recipes/southern-fried-chicken.webp
+  alt: "A tray of golden, crispy fried chicken pieces"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 1200
+    unit: g
+    note: a whole chicken jointed into pieces
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 700
+    unit: ml
+    consumedFraction: 0.15
+    consumedFractionNote: Most of the marinade is poured away before dredging; only the thin layer clinging to the chicken, which helps the flour adhere, is actually eaten.
+  - id: brine-hot-sauce
+    ingredientRef: hot-sauce
+    form: bottled
+    amount: 30
+    unit: ml
+    consumedFraction: 0.15
+    consumedFractionNote: Discarded with the buttermilk it is mixed into; only the residue clinging to the chicken remains.
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: A shallow dredge sheds a good part of the seasoned flour back into the bowl; what clings on becomes the crust.
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 3
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: Mixed into the dredge flour, so it is lost at the same rate the flour itself is.
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: Mixed into the dredge flour, so it is lost at the same rate the flour itself is.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: Mixed into the dredge flour, so it is lost at the same rate the flour itself is.
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+    consumedFraction: 0.6
+    consumedFractionNote: Mixed into the dredge flour, so it is lost at the same rate the flour itself is.
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 900
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Shallow-frying leaves most of the oil in the skillet; only what the crust absorbs during cooking is eaten.
+steps:
+  - { id: brine, durationMin: 480, type: passive }
+  - { id: prep-dredge, durationMin: 5, type: "parallel-with:brine", phase: prep }
+  - { id: dredge-chicken, durationMin: 10, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 12, type: passive }
+  - { id: fry-chicken, durationMin: 24, type: active, phase: cook }
+  - { id: rest, durationMin: 5, type: passive }
+makeAhead:
+  aheadInstructions: The buttermilk marinade can be started up to a day ahead; the chicken should not be dredged or fried until just before cooking.
+  freezable: true
+  freezeInstructions: Freeze the fried and cooled chicken for up to two months.
+  reheatInstructions: Reheat from frozen or chilled in a hot oven on a wire rack, uncovered, so the crust can recrisp rather than steam.
+notes:
+  techniqueRationale:
+    - stepId: brine
+      text: The buttermilk's acid and its cultured bacteria both tenderise the meat over the long soak, while its proteins help the seasoned flour cling far more evenly than a dry-brined piece of chicken would allow.
+  commonPitfalls:
+    - stepId: fry-chicken
+      text: Crowding the skillet or letting the oil temperature drift too high blisters the crust before the thick end of a thigh or breast is cooked through, so pieces are fried in batches with the temperature checked between them.
+---
+
+<Step id="brine">
+  Combine the <Qty ref="buttermilk"/> and <Qty ref="brine-hot-sauce"/> in a large bowl
+  or dish, submerge the <Qty ref="chicken"/> in it, cover, and refrigerate for
+  <Dur step="brine"/>.
+</Step>
+
+<Step id="prep-dredge">
+  Whisk the <Qty ref="flour"/>, <Qty ref="cayenne"/>, <Qty ref="paprika"/>,
+  <Qty ref="salt"/> and <Qty ref="black-pepper"/> together in a wide shallow dish.
+</Step>
+
+<Step id="dredge-chicken">
+  Lift each piece of chicken from the buttermilk, letting the excess drip off, and
+  press it into the seasoned flour, turning to coat evenly on all sides. Set the
+  dredged pieces on a rack.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a heavy skillet over a medium heat until it reaches
+  <Temp c={165}/>.
+</Step>
+
+<Step id="fry-chicken">
+  Fry the chicken in batches for <Dur step="fry-chicken"/>, turning occasionally and
+  adjusting the heat to hold the oil near <Temp c={165}/>, until the crust is deep
+  golden and the meat is cooked through to the bone.
+</Step>
+
+<Step id="rest">
+  Drain the fried chicken on a wire rack and let it rest for <Dur step="rest"/> before
+  serving, so the crust can set.
+</Step>

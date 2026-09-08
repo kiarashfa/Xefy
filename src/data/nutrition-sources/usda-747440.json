@@ -1,0 +1,68 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "747440",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/747440/nutrients",
+  "description": "Beans, Dry, Dark Red Kidney (0% moisture)",
+  "category": "Legumes and Legume Products",
+  "publicationDate": "12/16/2019",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "protein": 25.9,
+    "fat": 1.31,
+    "fiber": 4.3,
+    "calcium": 98,
+    "iron": 6.58,
+    "magnesium": 164,
+    "phosphorus": 612,
+    "potassium": 1490,
+    "zinc": 3.29,
+    "copper": 0.865,
+    "manganese": 1.67
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "209",
+      "name": "Starch",
+      "amount": 36.7,
+      "unit": "g"
+    },
+    {
+      "number": "308",
+      "name": "Sulfur, S",
+      "amount": 241,
+      "unit": "mg"
+    },
+    {
+      "number": "371",
+      "name": "Nickel, Ni",
+      "amount": 79,
+      "unit": "µg"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 572,
+      "unit": "µg"
+    },
+    {
+      "number": "311",
+      "name": "Cobalt, Co",
+      "amount": 30,
+      "unit": "µg"
+    },
+    {
+      "number": "354",
+      "name": "Boron, B",
+      "amount": 1100,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

@@ -1,0 +1,60 @@
+---
+title: Lemonade
+subtitle: Fresh lemon juice, sugar and water, mixed as a syrup and diluted to taste-balancing strength. One serving is one glass.
+label: Classic
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [drink]
+  method: [no-cook]
+image:
+  src: images/recipes/lemonade.webp
+  alt: "A mason jar filled with iced lemonade and a clear straw"
+ingredients:
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: hot-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: hot, for dissolving the sugar
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 200
+    unit: ml
+  - id: cold-water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+    note: cold
+steps:
+  - { id: make-syrup, durationMin: 3, type: active, phase: prep }
+  - { id: combine, durationMin: 2, type: active, phase: prep }
+  - { id: chill, durationMin: 60, type: passive }
+makeAhead:
+  aheadInstructions: Lemonade keeps well, covered, in the refrigerator for several days; stir before serving, since the sharpest flavour can settle slightly.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="make-syrup">
+  Stir the <Qty ref="sugar"/> into the <Qty ref="hot-water"/> until fully dissolved,
+  over <Dur step="make-syrup"/>.
+</Step>
+
+<Step id="combine">
+  Stir the <Qty ref="lemon-juice"/> and the <Qty ref="cold-water"/> into the syrup,
+  over <Dur step="combine"/>.
+</Step>
+
+<Step id="chill">
+  Chill for <Dur step="chill"/> before serving over ice.
+</Step>

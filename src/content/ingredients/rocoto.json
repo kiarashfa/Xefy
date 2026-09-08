@@ -1,0 +1,64 @@
+{
+  "id": "rocoto",
+  "name": "Rocoto",
+  "proseName": "rocoto",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, whole",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170106",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170106/nutrients",
+      "sourceNote": "USDA has no record for rocoto, the thick-fleshed, apple-shaped Andean chilli. This is its generic record for a raw hot chilli pepper, the closest composition it publishes.",
+      "nutritionPer100g": {
+        "kcal": 40,
+        "protein": 1.87,
+        "carbs": 8.81,
+        "fat": 0.44,
+        "fiber": 1.5,
+        "sugars": 5.3,
+        "saturatedFat": 0.042,
+        "monounsaturatedFat": 0.024,
+        "polyunsaturatedFat": 0.239,
+        "cholesterol": 0,
+        "sodium": 9,
+        "potassium": 322,
+        "calcium": 14,
+        "iron": 1.03,
+        "magnesium": 23,
+        "phosphorus": 43,
+        "zinc": 0.26,
+        "copper": 0.129,
+        "manganese": 0.187,
+        "seleniumMcg": 0.5,
+        "vitaminAMcg": 48,
+        "vitaminC": 143.7,
+        "vitaminE": 0.69,
+        "vitaminKMcg": 14,
+        "thiamin": 0.072,
+        "riboflavin": 0.086,
+        "niacin": 1.244,
+        "vitaminB6": 0.506,
+        "folateMcg": 23,
+        "vitaminB12Mcg": 0,
+        "choline": 10.9
+      },
+      "density": {
+        "gPerCup": 150,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "rocoto",
+        "plural": "rocotos",
+        "grams": 60
+      }
+    }
+  ],
+  "image": "images/ingredients/rocoto-thumb.webp"
+}

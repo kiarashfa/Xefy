@@ -1,0 +1,112 @@
+---
+title: Collard Greens
+subtitle: Tough leafy greens simmered for hours in a smoked pork broth until silky, the broth itself served alongside as pot likker.
+description: Southern collard greens simmered low and slow with a smoked ham hock, onion and garlic until the leaves turn tender and the cooking liquid becomes a broth worth spooning up on its own.
+label: Smoked Ham Hock
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [american]
+  course: [side]
+  method: [simmering]
+image:
+  src: images/recipes/collard-greens.webp
+  alt: "Braised collard greens with smoky pork simmering in a pan on the stovetop"
+ingredients:
+  - id: greens
+    ingredientRef: collard-greens
+    form: raw
+    amount: 700
+    unit: g
+    note: stems removed, leaves stacked and sliced into ribbons
+  - id: hock
+    ingredientRef: ham-hock
+    form: smoked
+    amount: 300
+    unit: g
+    consumedFraction: 0.35
+    consumedFractionNote: The hock simmers mainly to season the pot. Most of its bone, skin and rendered fat are discarded once the meat is picked off and returned to the pot.
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: minced
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1200
+    unit: ml
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 15
+    unit: ml
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: build-broth, durationMin: 5, type: active, phase: prep }
+  - { id: simmer-hock, durationMin: 90, type: passive }
+  - { id: prep-greens, durationMin: 20, type: "parallel-with:simmer-hock", phase: prep }
+  - { id: cook-greens, durationMin: 60, type: passive }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The flavour improves overnight in the refrigerator as the leaves continue to absorb the pot likker.
+  freezable: true
+  freezeInstructions: Freeze in the cooking liquid for up to three months.
+  reheatInstructions: Reheat gently in a covered pot, adding a splash of water if the liquid has thickened.
+notes:
+  techniqueRationale:
+    - stepId: cook-greens
+      text: Collard leaves are tough and fibrous raw. A long, low simmer is what breaks down their cell walls into something silky rather than merely wilted.
+  commonPitfalls:
+    - stepId: finish
+      text: Adding the vinegar early stalls the greens from softening — acid firms up the cell walls it should be seasoning, so it goes in only once the leaves are already tender.
+---
+
+<Step id="build-broth">
+  Combine the <Qty ref="hock"/> and the <Qty ref="water"/> in a large pot and bring to
+  the boil.
+</Step>
+
+<Step id="simmer-hock">
+  Reduce the heat to a bare simmer and cook, partially covered, for
+  <Dur step="simmer-hock"/>, until the meat is tender enough to fall from the bone.
+</Step>
+
+<Step id="prep-greens">
+  While the hock simmers, strip the stems from the <Qty ref="greens"/> and slice the
+  leaves into ribbons. Slice the <Qty ref="onion"/> and mince the <Qty ref="garlic"/>.
+</Step>
+
+<Step id="cook-greens">
+  Lift out the hock and set it aside. Add the greens, onion and garlic to the pot,
+  return to a simmer, and cook partially covered for <Dur step="cook-greens"/>,
+  stirring occasionally, until the leaves are tender and silky.
+</Step>
+
+<Step id="finish">
+  Pick the meat from the hock, discarding the bone, skin and excess fat, and stir the
+  meat back into the pot along with the <Qty ref="vinegar"/>, <Qty ref="cayenne"/>,
+  <Qty ref="salt"/> and <Qty ref="pepper"/>. Serve the greens in bowls with plenty of
+  the broth.
+</Step>

@@ -1,0 +1,134 @@
+---
+title: New York Pizza
+subtitle: A wide, thin, hand-stretched pizza given a long cold ferment for flavour, baked hot enough to blister but sturdy enough to fold.
+label: New York
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [baking, fermenting]
+names:
+  notToBeConfusedWith:
+    - name: Neapolitan pizza
+      note: Smaller, wetter and baked in under two minutes at far higher heat. New York pizza is a distinct, sturdier descendant built for slicing and folding rather than eating with a knife and fork.
+image:
+  src: images/recipes/new-york-pizza.webp
+  alt: "A large thin-crust New York-style pizza slice on a paper plate, topped with cheese, oregano and chili flakes"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 550
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 520 }
+      - { id: flour-bench, amount: 30, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 350
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 14
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 25
+    unit: ml
+    portions:
+      - { id: oil-dough, amount: 15, note: for the dough }
+      - { id: oil-finish, amount: 10, note: to finish the pizzas }
+  - id: tomatoes
+    ingredientRef: san-marzano-tomato
+    form: canned-whole
+    amount: 350
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 3
+    unit: g
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 300
+    unit: g
+    note: grated, well drained
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: cold-ferment, durationMin: 1440, type: passive }
+  - { id: divide, durationMin: 8, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 60, type: passive }
+  - { id: heat-oven, durationMin: 45, type: "parallel-with:rest-dough", phase: cook }
+  - { id: stretch, durationMin: 6, type: active, phase: prep }
+  - { id: top, durationMin: 6, type: active, phase: prep }
+  - { id: bake, durationMin: 14, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough is meant to be made a day ahead — the cold ferment is where most of the flavour comes from, and it will hold safely in the refrigerator for up to three days.
+  freezable: true
+  freezeInstructions: Freeze the divided dough balls, well oiled and wrapped individually. Thaw overnight in the refrigerator and let them warm at room temperature before stretching.
+  reheatInstructions: Reheat slices in a hot oven directly on the rack, or in a dry pan over a medium heat, until the base recrisps.
+notes:
+  techniqueRationale:
+    - stepId: cold-ferment
+      text: A long, slow rise in the refrigerator develops the sourness and depth of a proper New York crust in a way an hour or two at room temperature cannot; the yeast works too fast at room temperature to build the same flavour.
+  commonPitfalls:
+    - stepId: stretch
+      text: Rolling the dough with a pin pushes out the gas built up over the long ferment and leaves a dense, cracker-like base. It is stretched by hand, working from the centre outward, to keep that structure.
+---
+
+<Step id="mix-dough">
+  Dissolve the <Qty ref="yeast"/> in the <Qty ref="water"/>, then work in the
+  <Qty ref="flour-dough"/> and the <Qty ref="oil-dough"/> until a shaggy dough
+  forms. Add the <Qty ref="salt"/> and mix until no dry flour remains.
+</Step>
+
+<Step id="knead">
+  Knead for <Dur step="knead"/>, until smooth and elastic.
+</Step>
+
+<Step id="cold-ferment">
+  Cover and refrigerate for <Dur step="cold-ferment"/>.
+</Step>
+
+<Step id="divide">
+  Turn the dough out and divide it into two equal pieces, shaping each into a
+  tight ball.
+</Step>
+
+<Step id="rest-dough">
+  Let the balls come back to room temperature over <Dur step="rest-dough"/>,
+  covered, until soft and relaxed.
+</Step>
+
+<Step id="heat-oven">
+  Meanwhile heat the oven as high as it will go, with a stone or steel in
+  place, for <Dur step="heat-oven"/> to saturate fully.
+</Step>
+
+<Step id="stretch">
+  Using the <Qty ref="flour-bench"/> as needed, stretch each ball by hand from
+  the centre outward into a wide, thin round, leaving a slightly thicker rim.
+</Step>
+
+<Step id="top">
+  Crush the <Qty ref="tomatoes"/> and spread a thin layer over each round,
+  scatter with the <Qty ref="oregano"/>, cover with the <Qty ref="mozzarella"/>
+  and finish with the <Qty ref="oil-finish"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={260}/> for <Dur step="bake"/>, until the crust is well
+  browned with charred spots and the cheese is fully melted and beginning to
+  colour.
+</Step>

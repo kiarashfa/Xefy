@@ -1,0 +1,64 @@
+{
+  "id": "hot-dog-buns",
+  "name": "Hot Dog Buns",
+  "proseName": "hot dog bun",
+  "category": "grain",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "plain",
+      "label": "Plain",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172796",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172796/nutrients",
+      "sourceNote": "USDA publishes hamburger and hot-dog rolls as a single record, since the dough is the same and only the shape differs.",
+      "countUnit": {
+        "singular": "bun",
+        "plural": "buns",
+        "grams": 43
+      },
+      "nutritionPer100g": {
+        "kcal": 279,
+        "protein": 9.77,
+        "fat": 3.91,
+        "carbs": 50.12,
+        "fiber": 1.8,
+        "sugars": 7.28,
+        "calcium": 144,
+        "iron": 3.43,
+        "magnesium": 23,
+        "phosphorus": 101,
+        "potassium": 122,
+        "sodium": 494,
+        "zinc": 0.73,
+        "copper": 0.109,
+        "manganese": 0.512,
+        "seleniumMcg": 27.2,
+        "vitaminC": 1.3,
+        "thiamin": 0.543,
+        "riboflavin": 0.297,
+        "niacin": 4.18,
+        "vitaminB6": 0.063,
+        "folateMcg": 131,
+        "choline": 14.6,
+        "vitaminB12Mcg": 0.2,
+        "vitaminAMcg": 29,
+        "vitaminE": 0.27,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 4.8,
+        "saturatedFat": 0.842,
+        "monounsaturatedFat": 0.748,
+        "polyunsaturatedFat": 1.78,
+        "transFat": 0.027,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/hot-dog-buns-thumb.webp"
+}

@@ -1,0 +1,93 @@
+---
+label: Thick patty
+defaultServings: 1
+difficulty: Easy
+ingredients:
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 170
+    unit: g
+    note: formed into one thick patty
+  - id: bun
+    ingredientRef: burger-buns
+    form: plain
+    amount: 43
+    unit: g
+    note: one bun
+  - id: cheese
+    ingredientRef: american-cheese
+    form: sliced
+    amount: 20
+    unit: g
+    note: one slice
+  - id: lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 20
+    unit: g
+    note: shredded
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 30
+    unit: g
+    note: sliced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 15
+    unit: g
+    note: sliced into rings
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 15
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: shape, durationMin: 3, type: active, phase: prep }
+  - { id: sear, durationMin: 8, type: active, phase: cook }
+  - { id: rest, durationMin: 3, type: passive }
+  - { id: toast-bun, durationMin: 2, type: "parallel-with:rest", phase: cook }
+  - { id: assemble, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: sear
+      text: Pressing a thick patty flat with the spatula while it cooks only pushes the juice out into the pan. Once it is shaped, it is left alone until it is time to flip.
+---
+
+<Step id="shape">
+  Shape the <Qty ref="beef"/> into a single patty a little wider than the
+  <Qty ref="bun"/>, pressing a shallow dimple into the centre so it cooks flat
+  rather than doming.
+</Step>
+
+<Step id="sear">
+  Season with the <Qty ref="salt"/> and sear over a medium-high heat for
+  <Dur step="sear"/>, turning once, laying the <Qty ref="cheese"/> over the
+  patty after the flip so it melts as the second side finishes.
+</Step>
+
+<Step id="rest">
+  Rest the patty for <Dur step="rest"/> before building the burger.
+</Step>
+
+<Step id="toast-bun">
+  Meanwhile toast the cut faces of the <Qty ref="bun"/> for
+  <Dur step="toast-bun"/>, until golden.
+</Step>
+
+<Step id="assemble">
+  Build the burger on the toasted bun with the <Qty ref="lettuce"/>, the
+  <Qty ref="tomato"/>, the <Qty ref="onion"/> and the <Qty ref="ketchup"/>.
+</Step>

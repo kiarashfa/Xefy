@@ -1,0 +1,153 @@
+---
+title: Spaghetti and Meatballs
+subtitle: Beef meatballs, softened with a milk-soaked breadcrumb panade, simmered in tomato sauce and served over spaghetti.
+label: Italian-American
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [american]
+  course: [main-course]
+  method: [simmering, boiling]
+names:
+  notToBeConfusedWith:
+    - name: Polpette al sugo
+      note: Italian meatball dishes exist, but meatballs are served as their own course, never piled on top of a plate of pasta the way this dish serves them.
+image:
+  src: images/recipes/spaghetti-and-meatballs.webp
+  alt: "A plate of spaghetti in tomato sauce topped with meatballs and grated cheese"
+ingredients:
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 500
+    unit: g
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 60
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 60
+    unit: ml
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: one egg
+  - id: parmesan
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 40
+    unit: g
+    note: finely grated
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: minced
+    portions:
+      - { id: garlic-meatballs, amount: 10, note: for the meatballs }
+      - { id: garlic-sauce, amount: 10, note: for the sauce }
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 8
+    unit: g
+    note: chopped
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+    portions:
+      - { id: oil-brown, amount: 20, note: for browning the meatballs }
+      - { id: oil-sauce, amount: 10, note: for the sauce }
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: tomatoes
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 800
+    unit: g
+    note: crushed by hand
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 6
+    unit: g
+    note: torn
+steps:
+  - { id: soak-panade, durationMin: 5, type: active, phase: prep }
+  - { id: make-meatballs, durationMin: 12, type: active, phase: prep }
+  - { id: brown-meatballs, durationMin: 10, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 8, type: active, phase: cook }
+  - { id: simmer, durationMin: 25, type: passive }
+  - { componentRef: boil-pasta-al-dente, multiplier: 2 }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The meatballs and sauce can be made up to two days ahead and kept covered in the refrigerator; reheat gently before boiling the pasta.
+  freezable: true
+  freezeInstructions: Freeze the meatballs in their sauce, without the pasta, for up to three months.
+  reheatInstructions: Reheat the meatballs and sauce gently in a covered pan over a low heat, adding a splash of water if the sauce has thickened too far, and boil fresh pasta to serve with them.
+notes:
+  techniqueRationale:
+    - stepId: soak-panade
+      text: Soaking the breadcrumbs in milk before they go into the mince, rather than adding them dry, is what keeps the meatballs tender rather than dense once they are cooked through.
+  commonPitfalls:
+    - stepId: make-meatballs
+      text: Overworking the mince as it is mixed compacts the proteins and produces a tough, springy meatball. It is combined only until the ingredients are evenly distributed.
+---
+
+<Step id="soak-panade">
+  Stir the <Qty ref="breadcrumbs"/> into the <Qty ref="milk"/> and set aside
+  to soften for <Dur step="soak-panade"/>.
+</Step>
+
+<Step id="make-meatballs">
+  Combine the <Qty ref="beef"/>, the soaked breadcrumbs, the <Qty ref="egg"/>,
+  the <Qty ref="parmesan"/>, the <Qty ref="garlic-meatballs"/>, the
+  <Qty ref="parsley"/> and the <Qty ref="pepper"/>,
+  mixing only until combined. Shape into evenly sized balls.
+</Step>
+
+<Step id="brown-meatballs">
+  Heat the <Qty ref="oil-brown"/> in a wide pot over a medium-high heat and
+  brown the meatballs on all sides for <Dur step="brown-meatballs"/>. They do
+  not need to be cooked through yet. Remove and set aside.
+</Step>
+
+<Step id="make-sauce">
+  Add the <Qty ref="oil-sauce"/> to the same pot and cook the
+  <Qty ref="onion"/> and the <Qty ref="garlic-sauce"/> for
+  <Dur step="make-sauce"/>, until softened. Add the <Qty ref="tomatoes"/> and
+  the <Qty ref="oregano"/>.
+</Step>
+
+<Step id="simmer">
+  Return the meatballs to the sauce and simmer gently, partly covered, for
+  <Dur step="simmer"/>, until the meatballs are cooked through and the sauce
+  has thickened.
+</Step>
+
+<Step id="combine">
+  Divide the drained spaghetti among bowls, top with the meatballs and sauce,
+  and finish with the <Qty ref="basil"/>.
+</Step>

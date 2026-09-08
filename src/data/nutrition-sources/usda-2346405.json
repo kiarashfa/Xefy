@@ -1,0 +1,54 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2346405",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346405/nutrients",
+  "description": "Celery, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "10/28/2022",
+  "retrieved": "2026-09-07",
+  "nutritionPer100g": {
+    "kcal": 14.832,
+    "protein": 0.492,
+    "fat": 0.163,
+    "carbs": 3.317,
+    "calcium": 46.28,
+    "iron": 0,
+    "magnesium": 10.93,
+    "phosphorus": 21.6,
+    "potassium": 265.2,
+    "sodium": 97.21,
+    "zinc": 0.093,
+    "copper": 0,
+    "manganese": 0.076,
+    "seleniumMcg": 0,
+    "vitaminB6": 0.052
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 95.2,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.07875,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.8288,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 0,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}
