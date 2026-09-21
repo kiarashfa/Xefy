@@ -1,0 +1,157 @@
+---
+title: Montreal Smoked Meat
+subtitle: A whole beef brisket dry-cured for a week, coated in a coarse pepper and coriander crust, cold-smoked, then steamed until fork-tender.
+label: Deli-style, home smoker
+defaultServings: 12
+difficulty: Hard
+tags:
+  cuisine: [canadian]
+  course: [main-course]
+  method: [curing, smoking, steaming]
+names:
+  notToBeConfusedWith:
+    - name: Pastrami
+      note: The closest relative, also cured, spiced and smoked beef, but pastrami is usually cut from the navel and cured with more sugar, while Montreal smoked meat is whole brisket with a more savoury cure.
+image:
+  src: images/recipes/montreal-smoked-meat.webp
+  alt: "A Montreal smoked meat sandwich, thick-sliced peppery smoked beef piled high on rye bread with mustard"
+ingredients:
+  - id: brisket
+    ingredientRef: beef-brisket
+    form: raw
+    amount: 2000
+    unit: g
+    note: whole, untrimmed
+  - id: cure-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 60
+    unit: g
+    consumedFraction: 0.4
+    consumedFractionNote: A dry cure draws much of its salt out with the moisture it pulls from the meat, and the rest is rinsed off before smoking; roughly two-fifths is a reasonable estimate of what stays behind.
+  - id: cure-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 30
+    unit: g
+    consumedFraction: 0.3
+    consumedFractionNote: Most of the cure's sugar is rinsed away with the surface brine before smoking.
+  - id: cure-garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+    consumedFraction: 0.2
+    consumedFractionNote: Crushed garlic in a dry cure flavours the surface but is mostly rinsed off with the rest of the cure before smoking.
+  - id: cure-bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 2
+    unit: g
+    note: crumbled
+    consumedFraction: 0.2
+    consumedFractionNote: Crumbled bay in a dry cure flavours the surface but is mostly rinsed off with the rest of the cure before smoking.
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 25
+    unit: g
+    note: coarsely cracked
+    portions:
+      - { id: pepper-cure, amount: 10 }
+      - { id: pepper-crust, amount: 15 }
+  - id: coriander-seed
+    ingredientRef: coriander-seed
+    form: ground
+    amount: 20
+    unit: g
+    note: coarsely crushed
+    portions:
+      - { id: coriander-cure, amount: 8 }
+      - { id: coriander-crust, amount: 12 }
+  - id: mustard-seed
+    ingredientRef: mustard-seed
+    form: whole
+    amount: 10
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: smoked
+    amount: 10
+    unit: g
+  - id: rye-bread
+    ingredientRef: rye-bread
+    form: sliced
+    amount: 160
+    unit: g
+    note: for serving
+  - id: mustard
+    ingredientRef: mustard
+    form: yellow
+    amount: 40
+    unit: g
+    note: for serving
+steps:
+  - { id: mix-cure, durationMin: 5, type: active, phase: prep }
+  - { id: cure-brisket, durationMin: 10080, type: passive }
+  - { id: rinse-brisket, durationMin: 10, type: active, phase: prep }
+  - { id: coat-crust, durationMin: 8, type: active, phase: prep }
+  - { id: smoke-brisket, durationMin: 360, type: passive }
+  - { id: steam-brisket, durationMin: 180, type: passive }
+  - { id: rest, durationMin: 15, type: passive }
+  - { id: slice-and-serve, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The whole point of the dish is advance preparation — the brisket must be dry-cured for about a week before it is smoked, and this cannot be rushed. Once smoked, it keeps well and is meant to be steamed fresh just before serving.
+  freezable: true
+  freezeInstructions: Freeze the smoked, unsteamed brisket, wrapped tightly, for up to two months; thaw fully in the refrigerator before steaming.
+  reheatInstructions: Re-steam sliced meat gently over simmering water until hot through and tender again; a microwave dries it out badly.
+notes:
+  techniqueRationale:
+    - stepId: cure-brisket
+      text: A week of dry curing gives the salt and sugar time to penetrate the full thickness of a whole brisket, not just its surface — a shorter cure seasons the outside and leaves the centre bland.
+  commonPitfalls:
+    - stepId: steam-brisket
+      text: Skipping the steam and eating the brisket straight from the smoker leaves it too firm to slice cleanly and too salty to eat in quantity. The steam is what finishes the cooking and drives out enough salt to make it a sandwich meat rather than a cured joint.
+---
+
+<Step id="mix-cure">
+  Combine the <Qty ref="cure-salt"/>, the <Qty ref="cure-sugar"/>, the
+  <Qty ref="cure-garlic"/>, the <Qty ref="cure-bay"/>, the <Qty ref="pepper-cure"/> and
+  the <Qty ref="coriander-cure"/>, and rub the mixture all over the <Qty ref="brisket"/>.
+</Step>
+
+<Step id="cure-brisket">
+  Seal the brisket in a bag or covered container and refrigerate for
+  <Dur step="cure-brisket"/>, turning it over once a day.
+</Step>
+
+<Step id="rinse-brisket">
+  Rinse the cure off the brisket under cold water and pat completely dry.
+</Step>
+
+<Step id="coat-crust">
+  Press the <Qty ref="pepper-crust"/>, the <Qty ref="coriander-crust"/>, the
+  <Qty ref="mustard-seed"/> and the <Qty ref="paprika"/> firmly over the whole
+  surface of the brisket.
+</Step>
+
+<Step id="smoke-brisket">
+  Cold-smoke the brisket over hardwood at a low temperature of around
+  <Temp c={100}/> for <Dur step="smoke-brisket"/>, until deeply coloured and smoky
+  throughout.
+</Step>
+
+<Step id="steam-brisket">
+  Steam the brisket over simmering water for <Dur step="steam-brisket"/>, until fully
+  tender and easily pierced with a fork.
+</Step>
+
+<Step id="rest">
+  Rest for <Dur step="rest"/> before slicing.
+</Step>
+
+<Step id="slice-and-serve">
+  Slice thinly against the grain and pile onto the <Qty ref="rye-bread"/> with the
+  <Qty ref="mustard"/>.
+</Step>

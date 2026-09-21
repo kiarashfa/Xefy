@@ -1,0 +1,104 @@
+---
+title: Churrasco Brasileiro
+subtitle: Beef ribs, rump cap and sausage, salted plainly and grilled together over an open wood or charcoal fire, gaúcho style.
+label: Mixed grill, open fire
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [brazilian]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Picanha
+      note: One specific cut, grilled whole in a fat-capped crescent and sliced against the grain to serve, rather than the wider mixed-cut, open-fire method churrasco describes.
+      slugRef: picanha
+    - name: Asado
+      note: The Argentine parrilla tradition, cooked on a grate over a banked fire with its own ordered sequence of achuras and cuts, distinct from the Brazilian gaúcho practice of skewering meat directly over open coals.
+      slugRef: asado-argentino
+image:
+  src: images/recipes/churrasco.webp
+  alt: "Skewers of beef and sausage grilled over charcoal, coated in coarse salt, alongside chicken thighs and cheese on a Brazilian churrasco grill"
+ingredients:
+  - id: short-rib
+    ingredientRef: beef-short-rib
+    form: raw
+    amount: 600
+    unit: g
+    note: left on the bone
+  - id: picanha
+    ingredientRef: picanha
+    form: raw
+    amount: 500
+    unit: g
+    note: fat cap left on, cut into thick crescents
+  - id: sausage
+    ingredientRef: linguica
+    form: smoked
+    amount: 300
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 15
+    unit: g
+steps:
+  - { id: season, durationMin: 15, type: active, phase: prep }
+  - { id: light-fire, durationMin: 30, type: passive }
+  - { id: grill-ribs, durationMin: 90, type: passive }
+  - { id: grill-picanha, durationMin: 25, type: "parallel-with:grill-ribs", phase: cook }
+  - { id: grill-sausage, durationMin: 20, type: "parallel-with:grill-ribs", phase: cook }
+  - { id: rest, durationMin: 10, type: passive }
+  - { id: serve, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: grill-picanha
+      text: The picanha goes on fat side down first and stays there until the fat has rendered and browned, before it is turned to finish the lean side. Starting lean side down renders none of the fat into the meat and leaves the crust pale.
+  commonPitfalls:
+    - stepId: serve
+      text: Slicing picanha with the grain, the way a long roast is often carved, leaves it noticeably chewier than the cut needs to be. It is sliced across the grain, against the direction the fibres run.
+---
+
+<Step id="season">
+  Season the <Qty ref="short-rib"/>, <Qty ref="picanha"/> and
+  <Qty ref="sausage"/> all over with the <Qty ref="salt"/>. Thread each onto
+  its own skewer, or leave the ribs whole to sit directly on the grate.
+</Step>
+
+<Step id="light-fire">
+  Light a wood or charcoal fire and let it burn for <Dur step="light-fire"/>,
+  until it has settled into a steady bed of glowing coals rather than open
+  flame.
+</Step>
+
+<Step id="grill-ribs">
+  Set the ribs over the fire, not too close to the coals, and cook for
+  <Dur step="grill-ribs"/>, turning occasionally, until the outside is deeply
+  browned and the meat pulls easily from the bone.
+</Step>
+
+<Step id="grill-picanha">
+  Partway through, set the picanha over the fire fat side down and grill for
+  <Dur step="grill-picanha"/>, turning once the fat has rendered and
+  browned, until the meat is cooked through to a firm medium.
+</Step>
+
+<Step id="grill-sausage">
+  Add the sausage to the fire and grill for <Dur step="grill-sausage"/>,
+  turning occasionally, until the casing is deeply coloured and it is cooked
+  through.
+</Step>
+
+<Step id="rest">
+  Move everything to a board and rest for <Dur step="rest"/>.
+</Step>
+
+<Step id="serve">
+  Slice the picanha thinly across the grain, cut the ribs apart along the
+  bones and slice the sausage, then serve everything together.
+</Step>

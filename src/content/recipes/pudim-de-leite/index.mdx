@@ -1,0 +1,92 @@
+---
+title: Pudim de Leite Condensado
+subtitle: A dense, egg-set caramel custard made with condensed milk in place of most of the sugar and cream a French crème caramel would use.
+label: Classic
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [brazilian]
+  course: [dessert]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: "Crème caramel"
+      note: The French dessert it descends from is set with milk or cream, egg and a smaller amount of sugar; pudim's defining ingredient, condensed milk, makes it denser, sweeter and richer than its European relative.
+image:
+  src: images/recipes/pudim-de-leite.webp
+  alt: "A whole ring-shaped pudim de leite, unmoulded onto a plate and pooled with liquid caramel"
+ingredients:
+  - id: caramel-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: caramel-water
+    ingredientRef: water
+    form: tap
+    amount: 45
+    unit: ml
+  - id: condensed-milk
+    ingredientRef: condensed-milk
+    form: sweetened
+    amount: 395
+    unit: g
+    note: one tin
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 300
+    unit: ml
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+steps:
+  - { id: make-caramel, durationMin: 8, type: active, phase: cook }
+  - { id: blend-custard, durationMin: 5, type: active, phase: prep }
+  - { id: bake, durationMin: 60, type: passive }
+  - { id: chill, durationMin: 240, type: passive }
+  - { id: unmould, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Best made a day ahead — it needs a long, full chill to set firmly enough to unmould cleanly, and the flavour rounds out overnight.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: Baking the custard standing in a tray of hot water insulates it from the oven's direct heat, so it sets gently and evenly. Baked without the water bath, the outside overcooks and turns rubbery and pitted long before the centre sets.
+  commonPitfalls:
+    - stepId: chill
+      text: Unmoulding before the custard is fully cold makes it collapse rather than hold its shape, and the caramel does not release cleanly from the mould while still warm. It wants the full chill before it is turned out.
+---
+
+<Step id="make-caramel">
+  Melt the <Qty ref="caramel-sugar"/> with the <Qty ref="caramel-water"/> in
+  a saucepan over a medium heat, swirling occasionally, until it turns a deep
+  amber. Immediately pour it into a metal ring mould, tilting to coat the
+  base and lower sides, then set aside to harden.
+</Step>
+
+<Step id="blend-custard">
+  Blend the <Qty ref="condensed-milk"/>, <Qty ref="milk"/> and
+  <Qty ref="eggs"/> together until smooth, then pour over the set caramel in
+  the mould.
+</Step>
+
+<Step id="bake">
+  Set the mould in a deep tray and pour in hot water to come halfway up its
+  sides. Bake at <Temp c={180}/> for <Dur step="bake"/>, until the custard is
+  set at the edges but still holds a gentle wobble at the centre.
+</Step>
+
+<Step id="chill">
+  Lift the mould from the water bath, cool to room temperature, then
+  refrigerate for <Dur step="chill"/>, until completely cold and firm.
+</Step>
+
+<Step id="unmould">
+  Run a knife around the edge, invert a serving plate over the mould and turn
+  out in one motion, letting the liquid caramel run down over the custard.
+</Step>

@@ -1,0 +1,90 @@
+---
+title: Dulce de Leche
+subtitle: Whole milk and sugar reduced slowly for hours to a thick, caramel-brown spread, the base of alfajores and a dozen other South American sweets.
+label: Stovetop, from whole milk
+defaultServings: 14
+difficulty: Medium
+tags:
+  cuisine: [argentine]
+  course: [condiment]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: "Manjar", region: "Chile", lang: es }
+    - { name: "Doce de leite", region: "Brazil", lang: pt }
+image:
+  src: images/recipes/dulce-de-leche.webp
+  alt: "A glass jar filled with thick, glossy, caramel-brown dulce de leche"
+ingredients:
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 1000
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 300
+    unit: g
+  - id: bicarbonate
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 4
+    unit: g
+steps:
+  - { id: combine, durationMin: 3, type: active, phase: prep }
+  - { id: reduce, durationMin: 120, type: passive }
+  - { id: thicken, durationMin: 20, type: active, phase: cook }
+  - { id: finish, durationMin: 2, type: active, phase: cook }
+  - { id: cool, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: Keeps, covered, in the refrigerator for up to three weeks; it thickens further once cold.
+  freezable: true
+  freezeInstructions: Freeze in a sealed container for up to three months; thaw in the refrigerator and stir before use.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: combine
+      text: A pinch of bicarbonate of soda raises the pH of the milk slightly, which speeds the browning reaction between the milk proteins and sugar and produces a deeper colour and rounder flavour than sugar and milk alone would develop in the same time.
+  commonPitfalls:
+    - stepId: thicken
+      text: Leaving the pan untended over anything but the lowest heat once it has reduced and thickened lets sugar solids catch on the base, and once it has caught the whole batch tastes of it. The last stretch wants a low, steady heat and a whisk run continuously over the base and corners.
+---
+
+<Step id="combine">
+  Whisk the <Qty ref="milk"/>, <Qty ref="sugar"/>, <Qty ref="bicarbonate"/>
+  and <Qty ref="salt"/> together in a wide, heavy-based pot until the sugar
+  and bicarbonate are fully dissolved.
+</Step>
+
+<Step id="reduce">
+  Set the pot over a low heat and simmer gently for <Dur step="reduce"/>,
+  stirring every few minutes and scraping the base, until the milk has
+  reduced by roughly half and turned a pale gold.
+</Step>
+
+<Step id="thicken">
+  Continue simmering for <Dur step="thicken"/>, whisking constantly now,
+  until the mixture has turned a deep caramel-brown and coats the back of a
+  spoon thickly. It will bubble and rise as it thickens, so keep the heat low
+  and stay at the pan for this stretch, when it is most likely to catch.
+</Step>
+
+<Step id="finish">
+  Take the pot off the heat and stir in the <Qty ref="vanilla"/>.
+</Step>
+
+<Step id="cool">
+  Pour into a jar and let it cool fully, uncovered, for <Dur step="cool"/>
+  before sealing — it will continue to thicken as it cools.
+</Step>

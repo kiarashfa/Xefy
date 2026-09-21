@@ -1,0 +1,60 @@
+{
+  "id": "malt-vinegar",
+  "name": "Malt Vinegar",
+  "proseName": "malt vinegar",
+  "category": "vinegar",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": ["gluten"],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "malt",
+      "label": "Malt",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172237",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172237/nutrients",
+      "sourceNote": "USDA has no record for malt vinegar specifically. This is its record for distilled vinegar; both are dilute acetic acid solutions with negligible calories, so the figures are a reasonable stand-in even though malt vinegar is brewed from malted barley rather than distilled.",
+      "nutritionPer100g": {
+        "kcal": 18,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0.04,
+        "fiber": 0,
+        "sugars": 0.04,
+        "calcium": 6,
+        "iron": 0.03,
+        "magnesium": 1,
+        "phosphorus": 4,
+        "potassium": 2,
+        "sodium": 2,
+        "zinc": 0.01,
+        "copper": 0.006,
+        "manganese": 0.055,
+        "seleniumMcg": 0.5,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 14.9,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

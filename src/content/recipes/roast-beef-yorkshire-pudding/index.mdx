@@ -1,0 +1,141 @@
+---
+title: Roast Beef and Yorkshire Pudding
+subtitle: A bone-in rib roast, its resting time used to bake puddings from the same batter of flour, egg and milk in the meat's own hot fat.
+label: Sunday roast, gravy from the pan
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [british]
+  course: [main-course]
+  method: [roasting, baking]
+image:
+  src: images/recipes/roast-beef-yorkshire-pudding.webp
+  alt: "Slices of roast beef with a Yorkshire pudding, roast potatoes and a carrot, covered in gravy on a plate"
+ingredients:
+  - id: beef
+    ingredientRef: beef-rib
+    form: raw
+    amount: 2000
+    unit: g
+    note: bone-in rib roast
+    consumedFraction: 0.85
+    consumedFractionNote: The weight includes the rib bones, which are carved away and not eaten; the nutrition record describes the lean and fat alone.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    portions:
+      - { id: salt-beef, amount: 6 }
+      - { id: salt-batter, amount: 2 }
+      - { id: salt-gravy, amount: 2 }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 4
+    unit: g
+  - id: dripping
+    ingredientRef: beef-dripping
+    form: rendered
+    amount: 45
+    unit: g
+    portions:
+      - { id: dripping-beef, amount: 15 }
+      - { id: dripping-tins, amount: 30, note: for the pudding tins }
+  - id: batter-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 140
+    unit: g
+  - id: batter-egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: three eggs
+  - id: batter-milk
+    ingredientRef: milk
+    form: whole
+    amount: 200
+    unit: g
+  - id: gravy-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 20
+    unit: g
+  - id: gravy-stock
+    ingredientRef: stock
+    form: beef
+    amount: 400
+    unit: g
+steps:
+  - { id: season-beef, durationMin: 5, type: active, phase: prep }
+  - { id: roast-beef-high, durationMin: 20, type: active, phase: cook }
+  - { id: roast-beef-low, durationMin: 75, type: passive }
+  - { id: make-batter, durationMin: 5, type: "parallel-with:roast-beef-low", phase: prep }
+  - { id: rest-batter, durationMin: 30, type: "parallel-with:roast-beef-low", phase: rest }
+  - { id: rest-beef, durationMin: 25, type: passive }
+  - { id: cook-puddings, durationMin: 25, type: "parallel-with:rest-beef", phase: cook }
+  - { id: make-gravy, durationMin: 10, type: "parallel-with:cook-puddings", phase: cook }
+  - { id: carve, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The pudding batter can be mixed up to a day ahead and kept covered in the refrigerator; bring it back to room temperature before it meets the hot fat.
+  freezable: true
+  freezeInstructions: Baked puddings freeze well on their own for up to a month and recrisp from frozen in a hot oven; the beef and gravy are best eaten fresh.
+  reheatInstructions: Reheat sliced beef gently, covered, with a little of the gravy, in a low oven, to avoid drying it out further past its resting doneness.
+notes:
+  techniqueRationale:
+    - stepId: cook-puddings
+      text: The fat has to be smoking hot before the batter goes in — that first violent contact is what sets the outside instantly and traps the steam that pushes the puddings up. A cool tin gives flat, dense puddings instead.
+  commonPitfalls:
+    - stepId: carve
+      text: Carving straight from the oven pushes out the juices that resting redistributes through the meat. The rest is not optional time to fill with the puddings — it is what keeps the beef from bleeding out onto the board.
+---
+
+<Step id="season-beef">
+  Season the <Qty ref="beef"/> all over with the <Qty ref="salt-beef"/> and the
+  <Qty ref="pepper"/>, and rub with the <Qty ref="dripping-beef"/>.
+</Step>
+
+<Step id="roast-beef-high">
+  Roast at <Temp c={230}/> for <Dur step="roast-beef-high"/>, to sear the outside and
+  start the crust.
+</Step>
+
+<Step id="roast-beef-low">
+  Reduce the heat to <Temp c={160}/> and continue roasting for
+  <Dur step="roast-beef-low"/>, until a thermometer in the thickest part of the meat
+  reads <Temp c={54}/> for medium-rare.
+</Step>
+
+<Step id="make-batter">
+  Whisk the <Qty ref="batter-flour"/> and the <Qty ref="salt-batter"/> with the
+  <Qty ref="batter-egg"/> and the <Qty ref="batter-milk"/> until completely smooth.
+</Step>
+
+<Step id="rest-batter">
+  Leave the batter to stand at room temperature for <Dur step="rest-batter"/>.
+</Step>
+
+<Step id="rest-beef">
+  Transfer the beef to a board, tent loosely with foil, and rest for
+  <Dur step="rest-beef"/>, reserving the pan and its juices.
+</Step>
+
+<Step id="cook-puddings">
+  Divide the <Qty ref="dripping-tins"/> between the cups of a pudding tin and heat in
+  the oven at <Temp c={230}/> until smoking hot. Pour in the batter and bake for
+  <Dur step="cook-puddings"/>, without opening the door, until well risen, deeply
+  golden and crisp.
+</Step>
+
+<Step id="make-gravy">
+  Set the roasting pan over a medium heat, stir the <Qty ref="gravy-flour"/> into the
+  juices left behind, and cook briefly before whisking in the <Qty ref="gravy-stock"/>
+  and the <Qty ref="salt-gravy"/>. Simmer for <Dur step="make-gravy"/>, until thickened,
+  scraping up any browned bits from the base of the pan.
+</Step>
+
+<Step id="carve">
+  Carve the beef against the grain and serve with the puddings and the gravy.
+</Step>

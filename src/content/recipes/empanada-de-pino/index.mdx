@@ -1,0 +1,181 @@
+---
+title: Empanada de Pino
+subtitle: A large Chilean pastry of butter-rich dough filled with onion-heavy minced beef, a wedge of hard-boiled egg, a whole black olive and raisins.
+label: Baked
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [chilean]
+  course: [main-course]
+  method: [baking, sauteing]
+names:
+  alsoKnownAs:
+    - { name: "Empanada chilena", region: Chile, lang: es }
+  notToBeConfusedWith:
+    - name: Empanadas Argentinas
+      note: Smaller, thinner-doughed and usually made without raisins; the Argentine styles favour a decorative crimped repulgue over the deep, folded seal typical of the Chilean pastry.
+      slugRef: empanadas-argentinas
+image:
+  src: images/recipes/empanada-de-pino.webp
+  alt: "Several baked, golden-brown Chilean empanadas de pino, crimped at the edge, stacked on a plate"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: dough-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 90
+    unit: g
+    note: melted
+  - id: dough-egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 170
+    unit: ml
+    note: hot
+  - id: cook-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 500
+    unit: g
+    note: finely diced
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 450
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: smoked
+    amount: 4
+    unit: g
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 2
+    unit: g
+  - id: flour-thickener
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 15
+    unit: g
+  - id: braising-water
+    ingredientRef: water
+    form: tap
+    amount: 100
+    unit: ml
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 60
+    unit: g
+  - id: boiled-egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: hard-boiled, quartered
+  - id: olives
+    ingredientRef: olives
+    form: black
+    amount: 40
+    unit: g
+    note: whole, with the pit
+  - id: egg-wash
+    ingredientRef: egg
+    form: whole
+    amount: 25
+    unit: g
+    note: beaten, for brushing
+steps:
+  - { id: make-dough, durationMin: 12, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 20, type: passive }
+  - { id: cook-filling, durationMin: 30, type: "parallel-with:rest-dough", phase: cook }
+  - { id: cool-filling, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 35, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling can be made up to two days ahead and kept covered in the refrigerator; the shaped, unbaked pastries can be frozen on a tray and baked from frozen, allowing extra time.
+  freezable: true
+  freezeInstructions: Freeze the shaped, unbaked pastries on a tray until solid, then bag them for up to two months.
+  reheatInstructions: Reheat in a hot oven rather than a microwave, which softens the pastry.
+notes:
+  techniqueRationale:
+    - stepId: cook-filling
+      text: Chilean pino is built on far more onion than meat, cooked down slowly until it collapses into the mince rather than staying distinct. That long, gentle cooking is what gives the filling its characteristic sweetness and body, not the beef alone.
+  commonPitfalls:
+    - stepId: shape
+      text: The egg wedge, olive and raisins go in last, on top of the cooled meat, so they keep their own texture rather than being stirred through and crushed. Mixing them into the pino loses the point of including them at all.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/> and <Qty ref="dough-salt"/> in a bowl. Add
+  the <Qty ref="dough-butter"/>, <Qty ref="dough-egg"/> and the
+  <Qty ref="dough-water"/>, mixing until a smooth, pliable dough comes
+  together.
+</Step>
+
+<Step id="rest-dough">
+  Wrap the dough and rest it for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="cook-filling">
+  While the dough rests, melt the <Qty ref="cook-butter"/> in a wide pan and
+  cook the <Qty ref="onion"/> over a low heat, stirring often, until fully
+  soft and collapsing rather than crisp. Add the <Qty ref="beef"/>,
+  <Qty ref="cumin"/>, <Qty ref="paprika"/> and <Qty ref="chilli-flakes"/> and
+  cook until the meat is no longer pink. Stir the <Qty ref="flour-thickener"/>
+  through, then add the <Qty ref="braising-water"/> and the
+  <Qty ref="filling-salt"/> and <Qty ref="pepper"/>. Simmer for
+  <Dur step="cook-filling"/>, until thickened and glossy rather than wet.
+</Step>
+
+<Step id="cool-filling">
+  Spread the filling on a tray and cool completely, for
+  <Dur step="cool-filling"/>.
+</Step>
+
+<Step id="shape">
+  Roll the dough and cut into large rounds. Spoon the cooled pino onto one
+  half of each round, then top with the <Qty ref="raisins"/>, a wedge of the
+  <Qty ref="boiled-egg"/> and a whole <Qty ref="olives"/>. Fold the dough
+  over, press the edges firmly together and fold the sealed edge over on
+  itself along its length. Brush with the <Qty ref="egg-wash"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until deep golden.
+</Step>

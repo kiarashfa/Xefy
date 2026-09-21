@@ -1,0 +1,140 @@
+---
+title: Cou-Cou and Flying Fish
+subtitle: Barbados' national dish — a smooth cornmeal and okra mash served against flying fish fillets steamed in a light onion, tomato and lime gravy.
+label: Barbados
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [steaming, simmering]
+ingredients:
+  - id: fish
+    ingredientRef: flying-fish
+    form: fillet
+    amount: 480
+    unit: g
+    note: boned
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 15
+    unit: ml
+    note: for seasoning the fish
+  - id: cornmeal
+    ingredientRef: maize-meal
+    form: yellow
+    amount: 220
+    unit: g
+  - id: okra
+    ingredientRef: okra
+    form: raw
+    amount: 200
+    unit: g
+    note: topped, tailed and sliced
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+    portions:
+      - { id: water-okra, amount: 500, note: for boiling the okra and cornmeal }
+      - { id: water-gravy, amount: 200, note: for the gravy }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    note: for the cou-cou
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: thinly sliced, for the gravy
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: chopped, for the gravy
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 5
+    unit: g
+    note: pierced whole, for the gravy
+    consumedFraction: 0.2
+    consumedFractionNote: The pepper is pierced whole to flavour the gravy and lifted out before serving, so only what leaches into the liquid is eaten.
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+    note: for the gravy
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+    note: for the gravy
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    portions:
+      - { id: salt-fish, amount: 2, note: for seasoning the fish }
+      - { id: salt-coucou, amount: 4, note: for the cou-cou }
+steps:
+  - { id: season-fish, durationMin: 10, type: active, phase: prep }
+  - { id: boil-okra, durationMin: 10, type: active, phase: cook }
+  - { id: work-coucou, durationMin: 12, type: active, phase: cook }
+  - { id: gravy-base, durationMin: 8, type: "parallel-with:work-coucou", phase: cook }
+  - { id: steam-fish, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat the cou-cou gently in a covered pan with a splash of water, stirring to loosen it; reheat the fish and gravy separately over a low heat so the fillets do not overcook.
+notes:
+  techniqueRationale:
+    - stepId: work-coucou
+      text: Beating the cornmeal into the okra water in stages, rather than all at once, is what keeps it smooth instead of lumped — each addition has to be fully worked in before the next goes in.
+  commonPitfalls:
+    - stepId: steam-fish
+      text: Fish this thin overcooks in minutes; it is done as soon as it turns opaque and flakes, and any longer in the gravy dries it out.
+---
+
+<Step id="season-fish">
+  Rub the <Qty ref="fish"/> with the <Qty ref="lime-juice"/> and
+  <Qty ref="salt-fish"/> and set aside while the cou-cou is made.
+</Step>
+
+<Step id="boil-okra">
+  Bring the <Qty ref="water-okra"/> to a boil with the <Qty ref="okra"/> and
+  cook for <Dur step="boil-okra"/>, until the okra is fully tender and the
+  water has turned slick.
+</Step>
+
+<Step id="work-coucou">
+  Reduce the heat to low. Sprinkle in the <Qty ref="cornmeal"/> a little at a
+  time, beating constantly with a wooden spoon so no lumps form, then work in
+  the <Qty ref="butter"/> and the <Qty ref="salt-coucou"/> and keep beating
+  for <Dur step="work-coucou"/>, until the mixture pulls cleanly away from the
+  side of the pot.
+</Step>
+
+<Step id="gravy-base">
+  Meanwhile, heat the <Qty ref="vegetable-oil"/> in a separate pan and cook
+  the <Qty ref="onion"/> for <Dur step="gravy-base"/>, until softened, then
+  add the <Qty ref="tomato"/>, <Qty ref="scotch-bonnet"/>,
+  <Qty ref="thyme"/> and the <Qty ref="water-gravy"/> and bring to a simmer.
+</Step>
+
+<Step id="steam-fish">
+  Lay the seasoned <Qty ref="fish"/> into the simmering gravy, cover and cook
+  for <Dur step="steam-fish"/>, until the fillets are opaque and flake
+  easily. Remove the whole scotch bonnet before serving the fish and gravy
+  spooned over the cou-cou.
+</Step>

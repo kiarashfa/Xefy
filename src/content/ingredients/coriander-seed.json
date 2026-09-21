@@ -1,0 +1,63 @@
+{
+  "id": "coriander-seed",
+  "name": "Coriander Seed",
+  "proseName": "ground coriander",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Coriander",
+        "note": "The fresh leaf of the same plant, tasting bright and soapy-citrus rather than warm and nutty; the two are not interchangeable.",
+        "slugRef": "coriander"
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170922",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170922/nutrients",
+      "nutritionPer100g": {
+        "kcal": 298,
+        "protein": 12.37,
+        "fat": 17.77,
+        "carbs": 54.99,
+        "fiber": 41.9,
+        "calcium": 709,
+        "iron": 16.32,
+        "magnesium": 330,
+        "phosphorus": 409,
+        "potassium": 1267,
+        "sodium": 35,
+        "zinc": 4.7,
+        "copper": 0.975,
+        "manganese": 1.9,
+        "seleniumMcg": 26.2,
+        "vitaminC": 21,
+        "thiamin": 0.239,
+        "riboflavin": 0.29,
+        "niacin": 2.13,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.99,
+        "monounsaturatedFat": 13.58,
+        "polyunsaturatedFat": 1.75,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 5,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/coriander-seed-thumb.webp"
+}

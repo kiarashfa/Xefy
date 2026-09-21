@@ -1,0 +1,106 @@
+---
+title: Wiener Schnitzel
+subtitle: Veal escalope pounded thin, coated loosely in egg and breadcrumbs, and fried in clarified butter until the crust puffs away from the meat.
+label: Veal, shallow-fried
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [austrian]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Schnitzel Wiener Art
+      note: A breaded, fried cutlet made the same way but from pork rather than veal; by Austrian definition only the veal version may be called Wiener Schnitzel.
+    - name: Milanesa
+      note: Argentina's breaded, fried cutlet, descended from the Milanese cotoletta rather than from Vienna, and usually made from beef rather than veal.
+      slugRef: milanesa
+image:
+  src: images/recipes/wiener-schnitzel.webp
+  alt: "A golden breaded wiener schnitzel on a plate, garnished with rosemary and parsley, beside a lemon wedge and a bowl of cranberry sauce"
+ingredients:
+  - id: veal
+    ingredientRef: veal
+    form: cutlet
+    amount: 600
+    unit: g
+    note: four cutlets, pounded thin
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 60
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: two eggs, beaten
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 100
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 150
+    unit: g
+    consumedFraction: 0.3
+    consumedFractionNote: Shallow-frying uses far more fat than ends up in the finished schnitzel; most is left behind in the pan.
+  - id: lemon
+    ingredientRef: lemon
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into wedges, for serving
+steps:
+  - { id: pound-veal, durationMin: 10, type: active, phase: prep }
+  - { id: season, durationMin: 2, type: active, phase: prep }
+  - { id: coat, durationMin: 8, type: active, phase: prep }
+  - { id: fry, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cutlets can be pounded and coated up to a few hours ahead and kept chilled on a tray, uncovered, so the crust does not turn soggy; they are always fried and eaten fresh rather than made in advance.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: coat
+      text: Pressing the crumbs on firmly is exactly what a proper schnitzel avoids — a loose, un-pressed coating is what lets the crust puff away from the meat into the characteristic light, wavy crust, rather than fusing flat against it.
+  commonPitfalls:
+    - stepId: fry
+      text: A pan too crowded or too cool drops the fat's temperature and lets the coating soak up oil instead of crisping. The schnitzels need to float rather than sit on the base, which means shallow enough fat and a pan hot enough to keep it there.
+---
+
+<Step id="pound-veal">
+  Pound the <Qty ref="veal"/> between sheets of baking paper to an even thickness of
+  about half a centimetre.
+</Step>
+
+<Step id="season">
+  Season the cutlets on both sides with the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>.
+</Step>
+
+<Step id="coat">
+  Dredge each cutlet in the <Qty ref="flour"/>, dip in the <Qty ref="egg"/>, and coat
+  in the <Qty ref="breadcrumbs"/> without pressing the crumbs on.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="ghee"/> in a wide pan until shimmering and fry the schnitzels for
+  <Dur step="fry"/> in total, turning once and shaking the pan gently so the fat
+  washes up over the crust, until golden on both sides. Drain briefly and serve with
+  the <Qty ref="lemon"/>.
+</Step>

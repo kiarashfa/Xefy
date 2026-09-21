@@ -1,0 +1,66 @@
+{
+  "id": "picanha",
+  "name": "Picanha",
+  "proseName": "picanha",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Rump steak",
+        "note": "Cut from the rump proper rather than the fat-capped triangular muscle sitting on top of it; picanha keeps a thick layer of fat that rump steak does not."
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "generalSubstitutes": [
+    {
+      "substitute": "beef rump cap (culotte) or, failing that, sirloin cap",
+      "note": "Picanha is the Brazilian name for the same muscle sold in other countries as rump cap or culotte."
+    }
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174750",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174750/nutrients",
+      "sourceNote": "USDA publishes no picanha/rump-cap record. This is its record for New Zealand rump centre, separable lean and fat — the closest whole rump-muscle profile it carries.",
+      "nutritionPer100g": {
+        "kcal": 145,
+        "protein": 21.65,
+        "fat": 6.5,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 4,
+        "iron": 2.29,
+        "magnesium": 22,
+        "phosphorus": 190,
+        "potassium": 341,
+        "sodium": 49,
+        "zinc": 3.43,
+        "copper": 0.106,
+        "manganese": 0.009,
+        "seleniumMcg": 1.5,
+        "vitaminC": 0,
+        "thiamin": 0.067,
+        "riboflavin": 0.117,
+        "niacin": 2.716,
+        "vitaminB6": 0.274,
+        "vitaminB12Mcg": 2.13,
+        "vitaminAMcg": 7,
+        "vitaminE": 0.31,
+        "vitaminDMcg": 0.1,
+        "saturatedFat": 2.2,
+        "monounsaturatedFat": 2.199,
+        "polyunsaturatedFat": 0.304,
+        "transFat": 0.15,
+        "cholesterol": 55
+      }
+    }
+  ]
+}

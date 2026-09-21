@@ -1,0 +1,182 @@
+---
+title: Empanadas Argentinas
+subtitle: Hand-sealed pastries of wheat and lard filled with braised beef, baked until the crimped edge crisps — the everyday version comes from Salta, with a juicy, well-spiced filling.
+label: Salteña
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [argentine]
+  course: [snack]
+  method: [baking, braising]
+names:
+  notToBeConfusedWith:
+    - name: Empanada de pino
+      note: The Chilean empanada — larger, made with a plainer beef and onion filling, always with a whole olive and a wedge of hard-boiled egg, and a different dough proportion.
+      slugRef: empanada-de-pino
+image:
+  src: images/recipes/empanadas-argentinas.webp
+  alt: "Two baked Argentine empanadas with a rope-braided crimped edge, served on a plate beside a folded omelette"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: dough-lard
+    ingredientRef: lard
+    form: standard
+    amount: 90
+    unit: g
+    note: melted
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    note: warm
+  - id: cook-lard
+    ingredientRef: lard
+    form: standard
+    amount: 20
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: finely diced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: sliced
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into small dice, not minced
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled, cut into small dice
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 2
+    unit: g
+  - id: bouillon
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 5
+    unit: g
+  - id: braising-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: hard-boiled, chopped
+  - id: olives
+    ingredientRef: olives
+    form: green
+    amount: 60
+    unit: g
+    note: pitted, chopped
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: cook-filling, durationMin: 35, type: "parallel-with:rest-dough", phase: cook }
+  - { id: cool-filling, durationMin: 20, type: passive }
+  - { id: finish-filling, durationMin: 5, type: active, phase: prep }
+  - { id: shape, durationMin: 30, type: active, phase: prep }
+  - { id: bake, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling can be made up to two days ahead and kept covered in the refrigerator; the raw, shaped empanadas can be frozen on a tray and baked from frozen, allowing extra time.
+  freezable: true
+  freezeInstructions: Freeze the shaped, unbaked empanadas on a tray until solid, then bag them for up to two months.
+  reheatInstructions: Reheat in a hot oven rather than a microwave, which softens the pastry.
+notes:
+  techniqueRationale:
+    - stepId: cool-filling
+      text: A warm filling melts the lard in the dough on contact and makes the pastry impossible to seal cleanly. Cooling it fully first is what lets the crimped edge hold its shape in the oven.
+  commonPitfalls:
+    - stepId: shape
+      text: Overfilling the rounds, or sealing them with wet or greasy fingers, is the usual reason an empanada splits open in the oven. The edge is pressed and folded dry, and the filling sits well clear of it.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/> and <Qty ref="dough-salt"/> in a bowl. Add
+  the melted <Qty ref="dough-lard"/> and the <Qty ref="dough-water"/>, mixing
+  until a smooth, firm dough comes together.
+</Step>
+
+<Step id="rest-dough">
+  Wrap the dough and let it rest for <Dur step="rest-dough"/> at room
+  temperature.
+</Step>
+
+<Step id="cook-filling">
+  While the dough rests, melt the <Qty ref="cook-lard"/> in a wide pan and
+  cook the <Qty ref="onion"/> and <Qty ref="spring-onion"/> over a medium
+  heat until soft. Add the <Qty ref="beef"/>, <Qty ref="potato"/>,
+  <Qty ref="cumin"/>, <Qty ref="paprika"/> and <Qty ref="chilli-flakes"/>,
+  then stir in the <Qty ref="bouillon"/> dissolved in the
+  <Qty ref="braising-water"/>. Season with the <Qty ref="filling-salt"/> and
+  <Qty ref="pepper"/> and simmer for <Dur step="cook-filling"/>, until the
+  beef and potato are tender and the liquid has reduced to a thick, spoonable
+  sauce rather than a dry mixture.
+</Step>
+
+<Step id="cool-filling">
+  Spread the filling on a tray and cool completely, for
+  <Dur step="cool-filling"/>, before using.
+</Step>
+
+<Step id="finish-filling">
+  Stir the <Qty ref="egg"/> and <Qty ref="olives"/> through the cooled
+  filling.
+</Step>
+
+<Step id="shape">
+  Roll the dough thin and cut into rounds. Spoon filling onto one half of
+  each round, fold over and press the edges together, then crimp the sealed
+  edge by folding it over on itself in a repeating fold along its length.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until deep golden and
+  crisp.
+</Step>

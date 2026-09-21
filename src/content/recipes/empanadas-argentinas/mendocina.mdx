@@ -1,0 +1,142 @@
+---
+label: Mendocina
+defaultServings: 12
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: dough-lard
+    ingredientRef: lard
+    form: standard
+    amount: 90
+    unit: g
+    note: melted
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    note: warm
+  - id: cook-lard
+    ingredientRef: lard
+    form: standard
+    amount: 20
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 220
+    unit: g
+    note: finely diced
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 70
+    unit: g
+    note: finely diced
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 420
+    unit: g
+    note: hand-cut into small dice, not minced
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 5
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 1
+    unit: g
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: hard-boiled, chopped
+  - id: olives
+    ingredientRef: olives
+    form: green
+    amount: 80
+    unit: g
+    note: pitted, chopped
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: cook-filling, durationMin: 25, type: "parallel-with:rest-dough", phase: cook }
+  - { id: cool-filling, durationMin: 20, type: passive }
+  - { id: finish-filling, durationMin: 5, type: active, phase: prep }
+  - { id: shape, durationMin: 30, type: active, phase: prep }
+  - { id: bake, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling can be made up to two days ahead and kept covered in the refrigerator; the raw, shaped empanadas can be frozen on a tray and baked from frozen, allowing extra time.
+  freezable: true
+  freezeInstructions: Freeze the shaped, unbaked empanadas on a tray until solid, then bag them for up to two months.
+  reheatInstructions: Reheat in a hot oven rather than a microwave, which softens the pastry.
+notes:
+  commonPitfalls:
+    - stepId: cook-filling
+      text: This filling is meant to stay dry rather than saucy, unlike the juicier Salta style — adding stock or water to loosen it turns it into a different empanada. The dice of beef releases enough of its own moisture to bind the mixture on its own.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/> and <Qty ref="dough-salt"/> in a bowl. Add
+  the melted <Qty ref="dough-lard"/> and the <Qty ref="dough-water"/>, mixing
+  until a smooth, firm dough comes together.
+</Step>
+
+<Step id="rest-dough">
+  Wrap the dough and let it rest for <Dur step="rest-dough"/> at room
+  temperature.
+</Step>
+
+<Step id="cook-filling">
+  While the dough rests, melt the <Qty ref="cook-lard"/> in a wide pan and
+  cook the <Qty ref="onion"/> and <Qty ref="red-pepper"/> over a medium heat
+  until soft. Add the <Qty ref="beef"/>, <Qty ref="paprika"/> and
+  <Qty ref="cumin"/>, season with the <Qty ref="filling-salt"/> and
+  <Qty ref="pepper"/>, and cook for <Dur step="cook-filling"/>, stirring
+  often, until the beef is cooked through and the mixture is dry rather than
+  saucy, with no free liquid left in the pan.
+</Step>
+
+<Step id="cool-filling">
+  Spread the filling on a tray and cool completely, for
+  <Dur step="cool-filling"/>, before using.
+</Step>
+
+<Step id="finish-filling">
+  Stir the <Qty ref="egg"/> and <Qty ref="olives"/> through the cooled
+  filling.
+</Step>
+
+<Step id="shape">
+  Roll the dough thin and cut into rounds. Spoon filling onto one half of
+  each round, fold over and press the edges together, then crimp the sealed
+  edge by folding it over on itself in a repeating fold along its length.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until deep golden and
+  crisp.
+</Step>

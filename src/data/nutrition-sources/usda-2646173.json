@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2646173",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646173/nutrients",
+  "description": "Beef, round, top round, boneless, choice, raw",
+  "category": "Beef Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 146.437,
+    "protein": 21.475,
+    "fat": 5.703,
+    "carbs": 0.852,
+    "calcium": 4.07,
+    "iron": 1.901,
+    "magnesium": 22.08,
+    "phosphorus": 192.3,
+    "potassium": 351.5,
+    "sodium": 45.54,
+    "zinc": 3.778,
+    "copper": 0.055,
+    "manganese": 0.003,
+    "saturatedFat": 1.695,
+    "monounsaturatedFat": 1.7,
+    "polyunsaturatedFat": 0.238,
+    "transFat": 0.228,
+    "cholesterol": 59.26
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 70.88,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 3.436,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.09,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

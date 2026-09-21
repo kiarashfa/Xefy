@@ -1,0 +1,56 @@
+{
+  "id": "haddock",
+  "name": "Haddock",
+  "proseName": "haddock",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "generalSubstitutes": [
+    {
+      "substitute": "cod",
+      "note": "The other standard chip-shop white fish; slightly firmer and more neutral in flavour."
+    }
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "333374",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/333374/nutrients",
+      "nutritionPer100g": {
+        "kcal": 74,
+        "protein": 16.3,
+        "fat": 0.45,
+        "carbs": 0,
+        "calcium": 11,
+        "iron": 0.17,
+        "magnesium": 21.1,
+        "phosphorus": 227,
+        "potassium": 286,
+        "sodium": 213,
+        "zinc": 0.32,
+        "copper": 0.021,
+        "manganese": 0.011,
+        "seleniumMcg": 25.9,
+        "thiamin": 0.02,
+        "riboflavin": 0.057,
+        "niacin": 3.36,
+        "vitaminB6": 0.281,
+        "vitaminB12Mcg": 1.83,
+        "vitaminE": 0.45,
+        "vitaminDMcg": 0.5,
+        "saturatedFat": 0.093,
+        "monounsaturatedFat": 0.057,
+        "polyunsaturatedFat": 0.163,
+        "transFat": 0.004,
+        "cholesterol": 54
+      }
+    }
+  ],
+  "image": "images/ingredients/haddock-thumb.webp"
+}

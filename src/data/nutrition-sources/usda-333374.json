@@ -1,0 +1,443 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "333374",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/333374/nutrients",
+  "description": "Fish, haddock, raw",
+  "category": "Finfish and Shellfish Products",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 74,
+    "protein": 16.3,
+    "fat": 0.45,
+    "carbs": 0,
+    "calcium": 11,
+    "iron": 0.17,
+    "magnesium": 21.1,
+    "phosphorus": 227,
+    "potassium": 286,
+    "sodium": 213,
+    "zinc": 0.32,
+    "copper": 0.021,
+    "manganese": 0.011,
+    "seleniumMcg": 25.9,
+    "thiamin": 0.02,
+    "riboflavin": 0.057,
+    "niacin": 3.36,
+    "vitaminB6": 0.281,
+    "vitaminB12Mcg": 1.83,
+    "vitaminE": 0.45,
+    "vitaminDMcg": 0.5,
+    "saturatedFat": 0.093,
+    "monounsaturatedFat": 0.057,
+    "polyunsaturatedFat": 0.163,
+    "transFat": 0.004,
+    "cholesterol": 54
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 83.4,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 308,
+      "unit": "kJ"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.61,
+      "unit": "g"
+    },
+    {
+      "number": "298",
+      "name": "Total fat (NLEA)",
+      "amount": 0.32,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.28,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 0.403,
+      "unit": "mg"
+    },
+    {
+      "number": "341",
+      "name": "Tocopherol, beta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "342",
+      "name": "Tocopherol, gamma",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "343",
+      "name": "Tocopherol, delta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "344",
+      "name": "Tocotrienol, alpha",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "345",
+      "name": "Tocotrienol, beta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "346",
+      "name": "Tocotrienol, gamma",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "347",
+      "name": "Tocotrienol, delta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 18,
+      "unit": "IU"
+    },
+    {
+      "number": "326",
+      "name": "Vitamin D3 (cholecalciferol)",
+      "amount": 0.5,
+      "unit": "µg"
+    },
+    {
+      "number": "607",
+      "name": "SFA 4:0",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "608",
+      "name": "SFA 6:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "699",
+      "name": "SFA 11:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.004,
+      "unit": "g"
+    },
+    {
+      "number": "652",
+      "name": "SFA 15:0",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 0.063,
+      "unit": "g"
+    },
+    {
+      "number": "653",
+      "name": "SFA 17:0",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.02,
+      "unit": "g"
+    },
+    {
+      "number": "615",
+      "name": "SFA 20:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "624",
+      "name": "SFA 22:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "654",
+      "name": "SFA 24:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "822",
+      "name": "MUFA 14:1 c",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "697",
+      "name": "MUFA 15:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "673",
+      "name": "MUFA 16:1 c",
+      "amount": 0.003,
+      "unit": "g"
+    },
+    {
+      "number": "687",
+      "name": "MUFA 17:1",
+      "amount": 0.006,
+      "unit": "g"
+    },
+    {
+      "number": "825",
+      "name": "MUFA 17:1 c",
+      "amount": 0.006,
+      "unit": "g"
+    },
+    {
+      "number": "674",
+      "name": "MUFA 18:1 c",
+      "amount": 0.036,
+      "unit": "g"
+    },
+    {
+      "number": "628",
+      "name": "MUFA 20:1",
+      "amount": 0.005,
+      "unit": "g"
+    },
+    {
+      "number": "829",
+      "name": "MUFA 20:1 c",
+      "amount": 0.005,
+      "unit": "g"
+    },
+    {
+      "number": "676",
+      "name": "MUFA 22:1 c",
+      "amount": 0.002,
+      "unit": "g"
+    },
+    {
+      "number": "671",
+      "name": "MUFA 24:1 c",
+      "amount": 0.004,
+      "unit": "g"
+    },
+    {
+      "number": "831",
+      "name": "PUFA 18:2 c",
+      "amount": 0.014,
+      "unit": "g"
+    },
+    {
+      "number": "675",
+      "name": "PUFA 18:2 n-6 c,c",
+      "amount": 0.014,
+      "unit": "g"
+    },
+    {
+      "number": "670",
+      "name": "PUFA 18:2 CLAs",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "833",
+      "name": "PUFA 18:3 c",
+      "amount": 0.002,
+      "unit": "g"
+    },
+    {
+      "number": "851",
+      "name": "PUFA 18:3 n-3 c,c,c (ALA)",
+      "amount": 0.002,
+      "unit": "g"
+    },
+    {
+      "number": "685",
+      "name": "PUFA 18:3 n-6 c,c,c",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "840",
+      "name": "PUFA 20:2 c",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "627",
+      "name": "PUFA 18:4",
+      "amount": 0.002,
+      "unit": "g"
+    },
+    {
+      "number": "672",
+      "name": "PUFA 20:2 n-6 c,c",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "835",
+      "name": "PUFA 20:3 c",
+      "amount": 0.002,
+      "unit": "g"
+    },
+    {
+      "number": "852",
+      "name": "PUFA 20:3 n-3",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "853",
+      "name": "PUFA 20:3 n-6",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "620",
+      "name": "PUFA 20:4",
+      "amount": 0.009,
+      "unit": "g"
+    },
+    {
+      "number": "836",
+      "name": "PUFA 20:4c",
+      "amount": 0.009,
+      "unit": "g"
+    },
+    {
+      "number": "837",
+      "name": "PUFA 20:5c",
+      "amount": 0.042,
+      "unit": "g"
+    },
+    {
+      "number": "629",
+      "name": "PUFA 20:5 n-3 (EPA)",
+      "amount": 0.042,
+      "unit": "g"
+    },
+    {
+      "number": "698",
+      "name": "PUFA 22:2",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "838",
+      "name": "PUFA 22:5 c",
+      "amount": 0.005,
+      "unit": "g"
+    },
+    {
+      "number": "858",
+      "name": "PUFA 22:4",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "631",
+      "name": "PUFA 22:5 n-3 (DPA)",
+      "amount": 0.005,
+      "unit": "g"
+    },
+    {
+      "number": "839",
+      "name": "PUFA 22:6 c",
+      "amount": 0.089,
+      "unit": "g"
+    },
+    {
+      "number": "621",
+      "name": "PUFA 22:6 n-3 (DHA)",
+      "amount": 0.089,
+      "unit": "g"
+    },
+    {
+      "number": "693",
+      "name": "Fatty acids, total trans-monoenoic",
+      "amount": 0.003,
+      "unit": "g"
+    },
+    {
+      "number": "662",
+      "name": "TFA 16:1 t",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "663",
+      "name": "TFA 18:1 t",
+      "amount": 0.002,
+      "unit": "g"
+    },
+    {
+      "number": "664",
+      "name": "TFA 22:1 t",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "694",
+      "name": "Fatty acids, total trans-dienoic",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "665",
+      "name": "TFA 18:2 t not further defined",
+      "amount": 0.001,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

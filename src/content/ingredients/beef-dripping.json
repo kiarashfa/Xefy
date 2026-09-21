@@ -1,0 +1,73 @@
+{
+  "id": "beef-dripping",
+  "name": "Beef Dripping",
+  "proseName": "beef dripping",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Beef tallow",
+        "region": "International",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "fat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "generalSubstitutes": [
+    {
+      "substitute": "goose fat",
+      "note": "The other classic British roasting fat; slightly lower smoking point but a similarly high, savoury richness."
+    }
+  ],
+  "forms": [
+    {
+      "id": "rendered",
+      "label": "Rendered",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171400",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171400/nutrients",
+      "sourceNote": "USDA's record for beef tallow, rendered beef fat — the same product British cooks call dripping.",
+      "nutritionPer100g": {
+        "kcal": 902,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "sodium": 0,
+        "zinc": 0,
+        "copper": 0,
+        "seleniumMcg": 0.2,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 79.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 2.7,
+        "vitaminDMcg": 0.7,
+        "vitaminKMcg": 0,
+        "saturatedFat": 49.8,
+        "monounsaturatedFat": 41.8,
+        "polyunsaturatedFat": 4,
+        "cholesterol": 109
+      },
+      "density": {
+        "gPerTbsp": 12.8,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-dripping-thumb.webp"
+}

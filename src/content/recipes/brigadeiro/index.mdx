@@ -1,0 +1,74 @@
+---
+title: Brigadeiro
+subtitle: Condensed milk cooked down with cocoa and butter to a thick fudge, rolled into balls and coated in chocolate sprinkles.
+label: Classic
+defaultServings: 20
+difficulty: Easy
+tags:
+  cuisine: [brazilian]
+  course: [dessert]
+  method: [simmering]
+image:
+  src: images/recipes/brigadeiro.webp
+  alt: "Chocolate brigadeiros in gold paper cases, rolled in chocolate sprinkles"
+ingredients:
+  - id: condensed-milk
+    ingredientRef: condensed-milk
+    form: sweetened
+    amount: 395
+    unit: g
+    note: one tin
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 30
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+  - id: sprinkles
+    ingredientRef: chocolate-sprinkles
+    form: standard
+    amount: 120
+    unit: g
+    note: for coating
+    consumedFraction: 0.5
+    consumedFractionNote: Only what sticks to the rolled ball is eaten; a good portion of the sprinkles poured out for rolling ends up left over in the dish.
+steps:
+  - { id: cook, durationMin: 15, type: active, phase: cook }
+  - { id: chill, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 20, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The cooked, unshaped fudge keeps covered in the refrigerator for up to three days before rolling.
+  freezable: true
+  freezeInstructions: Freeze the rolled, coated balls in a single layer until solid, then box them for up to two months; thaw in the refrigerator.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook
+      text: The mixture is done when a spoon dragged through it briefly exposes the bottom of the pan before the fudge flows back over. Stopping earlier leaves it too soft to roll once cool; stopping later makes it stiff and hard to shape.
+  commonPitfalls:
+    - stepId: cook
+      text: Leaving the pan unstirred for more than a few seconds lets the milk solids catch on the base, and a scorched batch tastes of it right through. It wants a low heat and a spatula moving constantly, scraping the bottom and corners.
+---
+
+<Step id="cook">
+  Combine the <Qty ref="condensed-milk"/>, <Qty ref="cocoa"/> and
+  <Qty ref="butter"/> in a heavy-based saucepan over a low heat. Cook for
+  <Dur step="cook"/>, stirring constantly, until the mixture thickens enough
+  that a spoon dragged across the bottom of the pan briefly leaves it
+  visible before the fudge flows back together.
+</Step>
+
+<Step id="chill">
+  Scrape the fudge onto a plate, smooth it out and chill for
+  <Dur step="chill"/>, until firm enough to roll without sticking to your
+  hands.
+</Step>
+
+<Step id="shape">
+  Roll the fudge into small balls between lightly buttered palms, then roll
+  each ball in the <Qty ref="sprinkles"/> to coat completely.
+</Step>

@@ -1,0 +1,74 @@
+{
+  "id": "kashmiri-chilli",
+  "name": "Kashmiri Chilli",
+  "proseName": "Kashmiri chilli powder",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Cayenne pepper",
+        "note": "Cayenne is considerably hotter. Kashmiri chilli is prized for its deep red colour and mild heat, and is not a substitute where heat is the point."
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "generalSubstitutes": [
+    {
+      "substitute": "sweet paprika with a pinch of cayenne",
+      "note": "Gets closer to Kashmiri chilli's colour and mild heat than cayenne or standard chilli powder alone."
+    }
+  ],
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171329",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171329/nutrients",
+      "sourceNote": "USDA has no record for Kashmiri chilli specifically. This is its record for paprika, a similarly mild, deep-red ground chilli, and the closest match it publishes.",
+      "nutritionPer100g": {
+        "kcal": 282,
+        "protein": 14.14,
+        "fat": 12.89,
+        "carbs": 53.99,
+        "fiber": 34.9,
+        "sugars": 10.34,
+        "calcium": 229,
+        "iron": 21.14,
+        "magnesium": 178,
+        "phosphorus": 314,
+        "potassium": 2280,
+        "sodium": 68,
+        "zinc": 4.33,
+        "copper": 0.713,
+        "manganese": 1.59,
+        "seleniumMcg": 6.3,
+        "vitaminC": 0.9,
+        "thiamin": 0.33,
+        "riboflavin": 1.23,
+        "niacin": 10.06,
+        "vitaminB6": 2.141,
+        "folateMcg": 49,
+        "choline": 51.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 2463,
+        "vitaminE": 29.1,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 80.3,
+        "saturatedFat": 2.14,
+        "monounsaturatedFat": 1.695,
+        "polyunsaturatedFat": 7.766,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 6.8,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

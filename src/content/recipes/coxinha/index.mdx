@@ -1,0 +1,157 @@
+---
+title: Coxinha
+subtitle: A teardrop-shaped, breaded and fried snack of shredded chicken wrapped in a dough enriched with the poaching broth itself.
+label: Classic
+defaultServings: 20
+difficulty: Hard
+tags:
+  cuisine: [brazilian]
+  course: [snack]
+  method: [deep-frying, poaching]
+names:
+  alsoKnownAs:
+    - { name: "Coxinha de galinha", region: Brazil, lang: pt }
+image:
+  src: images/recipes/coxinha.webp
+  alt: "A whole and a halved coxinha, teardrop-shaped breaded and fried croquettes, showing the shredded chicken filling inside"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 500
+    unit: g
+    note: boneless, skinless
+  - id: poach-water
+    ingredientRef: water
+    form: tap
+    amount: 1000
+    unit: ml
+  - id: bouillon
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 8
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: quartered
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+  - id: cream-cheese
+    ingredientRef: cream-cheese
+    form: regular
+    amount: 80
+    unit: g
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: dough-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+  - id: dough-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: egg-wash
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 200
+    unit: g
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.08
+    consumedFractionNote: Most of the deep-frying oil stays in the pot; only a thin film clinging to the fried crust is eaten.
+steps:
+  - { id: poach-chicken, durationMin: 25, type: active, phase: cook }
+  - { id: make-filling, durationMin: 10, type: active, phase: prep }
+  - { id: make-dough, durationMin: 15, type: active, phase: cook }
+  - { id: rest-dough, durationMin: 20, type: passive }
+  - { id: shape, durationMin: 35, type: active, phase: prep }
+  - { id: crumb, durationMin: 15, type: active, phase: prep }
+  - { id: fry, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shaped, uncrumbed coxinhas can be refrigerated, covered, for up to a day before crumbing and frying.
+  freezable: true
+  freezeInstructions: Freeze the crumbed, unfried coxinhas on a tray until solid, then bag them for up to two months. Fry from frozen, allowing extra time.
+  reheatInstructions: Reheat in a hot oven rather than a microwave, to keep the crust crisp.
+notes:
+  techniqueRationale:
+    - stepId: make-dough
+      text: Cooking the flour directly into the hot poaching broth, the way a choux paste is made, is what lets the dough hold a sculpted teardrop shape without cracking or tearing — a dough mixed cold from the same ingredients is too short and crumbly to shape by hand.
+  commonPitfalls:
+    - stepId: fry
+      text: Frying at too low a temperature lets the dough absorb oil before the crust sets, giving a heavy, greasy result rather than a crisp one. The oil needs to be hot enough that a scrap of dough sizzles immediately on contact.
+---
+
+<Step id="poach-chicken">
+  Dissolve the <Qty ref="bouillon"/> in the <Qty ref="poach-water"/> in a
+  saucepan and bring to a simmer with the <Qty ref="onion"/> and
+  <Qty ref="garlic"/>. Add the <Qty ref="chicken"/> and poach for
+  <Dur step="poach-chicken"/>, until cooked through. Lift out the chicken,
+  strain and reserve the broth.
+</Step>
+
+<Step id="make-filling">
+  Shred the poached chicken finely and mix with the <Qty ref="cream-cheese"/>,
+  <Qty ref="filling-salt"/> and <Qty ref="pepper"/>.
+</Step>
+
+<Step id="make-dough">
+  Melt the <Qty ref="dough-butter"/> in the reserved broth and bring to a
+  boil. Tip in the <Qty ref="dough-flour"/> and <Qty ref="dough-salt"/> all
+  at once and stir vigorously over the heat for <Dur step="make-dough"/>,
+  until the mixture forms a smooth, heavy dough that pulls cleanly away from
+  the sides of the pan.
+</Step>
+
+<Step id="rest-dough">
+  Turn the dough out and let it cool for <Dur step="rest-dough"/>, until cool
+  enough to handle.
+</Step>
+
+<Step id="shape">
+  Take portions of the dough and flatten each into a disc in your palm. Place
+  a spoonful of the chicken filling in the centre, gather the dough around
+  it and shape into a teardrop, smoothing the surface as you go, for
+  <Dur step="shape"/> in total.
+</Step>
+
+<Step id="crumb">
+  Dip each shaped coxinha in the <Qty ref="egg-wash"/>, then roll in the
+  <Qty ref="breadcrumbs"/> until fully coated.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> and fry the coxinhas in batches for
+  <Dur step="fry"/>, until deep golden and crisp. Drain briefly before
+  serving.
+</Step>

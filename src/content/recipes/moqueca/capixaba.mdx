@@ -1,0 +1,108 @@
+---
+label: Capixaba
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: fish
+    ingredientRef: corvina
+    form: raw
+    amount: 700
+    unit: g
+    note: cut into thick pieces
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: fish-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 220
+    unit: g
+    note: sliced
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 4
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+  - id: finishing-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: roughly chopped
+steps:
+  - { id: marinate, durationMin: 5, type: active, phase: prep }
+  - { id: rest-fish, durationMin: 15, type: passive }
+  - { id: build-base, durationMin: 10, type: "parallel-with:rest-fish", phase: cook }
+  - { id: simmer, durationMin: 15, type: active, phase: cook }
+  - { id: finish, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: build-base
+      text: Reaching for dendê oil or coconut milk here folds the Bahian version into this one. The capixaba sauce gets its colour from annatto and its richness from olive oil alone, which is exactly what keeps the fish flavour in front rather than behind a heavier sauce.
+---
+
+<Step id="marinate">
+  Toss the <Qty ref="fish"/> with the <Qty ref="lime-juice"/>,
+  <Qty ref="fish-salt"/> and <Qty ref="garlic"/>.
+</Step>
+
+<Step id="rest-fish">
+  Set the fish aside to cure for <Dur step="rest-fish"/>.
+</Step>
+
+<Step id="build-base">
+  While the fish rests, warm the <Qty ref="olive-oil"/> in a clay pot or wide
+  shallow pan and stir in the <Qty ref="achiote"/> until it colours the oil
+  deep red. Add the <Qty ref="onion"/> and <Qty ref="tomato"/> and cook for
+  <Dur step="build-base"/>, until softened.
+</Step>
+
+<Step id="simmer">
+  Lay the marinated fish over the vegetables, pour in the <Qty ref="water"/>
+  and season with the <Qty ref="finishing-salt"/>. Simmer gently, without
+  stirring, for <Dur step="simmer"/>, until the fish is just cooked through.
+</Step>
+
+<Step id="finish">
+  Scatter over the <Qty ref="coriander"/> and serve at once, in the pot it
+  cooked in.
+</Step>

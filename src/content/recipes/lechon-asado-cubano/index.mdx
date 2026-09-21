@@ -1,0 +1,125 @@
+---
+title: Lechón Asado
+subtitle: Bone-in pork shoulder marinated overnight in mojo — sour orange, garlic, oregano and cumin — then roasted slow until the meat pulls apart and the skin cracks.
+label: Cuba
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [roasting]
+names:
+  notToBeConfusedWith:
+    - name: Pernil
+      note: Puerto Rico's roast pork shoulder, seasoned with a drier garlic-and-oregano adobo pressed into deep cuts in the meat rather than a wet, sour-orange-heavy mojo the pork is bathed and basted in throughout.
+      slugRef: pernil
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 2200
+    unit: g
+    note: bone-in, skin on
+    consumedFraction: 0.85
+    consumedFractionNote: A bone-in shoulder loses roughly a sixth of its raw weight to bone once carved; the figure here reflects the meat and skin actually eaten.
+  - id: sour-orange-juice
+    ingredientRef: orange
+    form: sour
+    amount: 250
+    unit: ml
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 40
+    unit: g
+    note: crushed
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 4
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 6
+    unit: g
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: sliced, for the roasting bed
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 15
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+steps:
+  - { id: blend-mojo, durationMin: 8, type: active, phase: prep }
+  - { id: marinate, durationMin: 1080, type: passive }
+  - { id: slow-roast, durationMin: 240, type: passive }
+  - { id: crisp, durationMin: 25, type: active, phase: cook }
+  - { id: rest, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: The mojo can be blended up to three days ahead and refrigerated; the pork should be marinated at least overnight and can be left for up to two days.
+  freezable: true
+  freezeInstructions: Freeze the cooked, shredded pork in its juices for up to three months.
+  reheatInstructions: Reheat covered in a low oven with a splash of the reserved pan juices, so the meat does not dry out.
+notes:
+  techniqueRationale:
+    - stepId: crisp
+      text: Roasting at a low temperature until the meat is fully tender, then finishing at a high heat only at the very end, renders and crisps the skin without drying out meat that is already cooked through.
+  commonPitfalls:
+    - stepId: marinate
+      text: A short marinade only seasons the surface; the sour orange needs the full overnight soak to work all the way into a cut this size, which is what gives the meat its flavour through to the centre once carved.
+---
+
+<Step id="blend-mojo">
+  Blend the <Qty ref="sour-orange-juice"/>, <Qty ref="lime-juice"/>,
+  <Qty ref="garlic"/>, <Qty ref="oregano"/>, <Qty ref="cumin"/>,
+  <Qty ref="olive-oil"/>, <Qty ref="salt"/> and <Qty ref="black-pepper"/>
+  into the mojo.
+</Step>
+
+<Step id="marinate">
+  Pierce the <Qty ref="pork"/> all over and place it in a deep dish with the
+  mojo and the <Qty ref="bay-leaf"/>, turning to coat completely. Cover and
+  refrigerate for <Dur step="marinate"/>, turning occasionally.
+</Step>
+
+<Step id="slow-roast">
+  Scatter the <Qty ref="onion"/> in a roasting tray, set the pork on top
+  skin-side up with its marinade poured around it, and roast at
+  <Temp c={150}/> for <Dur step="slow-roast"/>, basting occasionally, until
+  the meat is fully tender.
+</Step>
+
+<Step id="crisp">
+  Raise the oven to <Temp c={220}/> and roast for a further
+  <Dur step="crisp"/>, until the skin is deeply browned and crackling.
+</Step>
+
+<Step id="rest">
+  Rest the pork loosely covered for <Dur step="rest"/> before carving or
+  pulling it apart.
+</Step>

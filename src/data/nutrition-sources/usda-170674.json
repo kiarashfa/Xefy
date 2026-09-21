@@ -1,0 +1,94 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "170674",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/170674/nutrients",
+  "description": "Sugar, turbinado",
+  "category": "Sweets",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 399,
+    "protein": 0,
+    "fat": 0,
+    "carbs": 99.8,
+    "sugars": 99.19,
+    "calcium": 12,
+    "iron": 0.37,
+    "magnesium": 2,
+    "phosphorus": 1,
+    "potassium": 29,
+    "sodium": 3,
+    "zinc": 0.03,
+    "copper": 0.009,
+    "manganese": 0.046
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 0.03,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1670,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.17,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 99.19,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "287",
+      "name": "Galactose",
+      "amount": 0,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTsp",
+      "value": 4.6,
+      "from": "1 tsp"
+    },
+    {
+      "measure": "gPerCup",
+      "value": 202,
+      "from": "1 cup"
+    }
+  ]
+}

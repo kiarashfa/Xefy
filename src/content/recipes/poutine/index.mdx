@@ -1,0 +1,108 @@
+---
+title: Poutine
+subtitle: Twice-fried chips, fresh cheese curds and hot gravy, poured over at once so the curds soften without fully melting.
+label: Quebec, chicken gravy
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [canadian]
+  course: [main-course]
+  method: [deep-frying, simmering]
+names:
+  notToBeConfusedWith:
+    - name: Disco fries
+      note: An American diner dish of fries under gravy and melted mozzarella or cheddar; it uses a shredded, fully melting cheese rather than curds, which are meant to stay distinct and squeaky.
+image:
+  src: images/recipes/poutine.webp
+  alt: "A dish of poutine, twice-fried chips topped with cheese curds and hot brown gravy"
+ingredients:
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 800
+    unit: g
+    note: cut into thick chips
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1500
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the deep-frying oil stays in the pan; this covers what clings to the fries on the way out.
+  - id: gravy-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+  - id: gravy-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 25
+    unit: g
+  - id: gravy-stock
+    ingredientRef: stock
+    form: chicken
+    amount: 400
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: curds
+    ingredientRef: cheese-curds
+    form: fresh
+    amount: 250
+    unit: g
+    note: at room temperature
+steps:
+  - { id: par-fry-chips, durationMin: 8, type: active, phase: cook }
+  - { id: rest-chips, durationMin: 15, type: passive }
+  - { id: make-gravy, durationMin: 12, type: "parallel-with:rest-chips", phase: cook }
+  - { id: crisp-chips, durationMin: 7, type: active, phase: cook }
+  - { id: assemble, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The gravy can be made up to two days ahead and reheated gently; the chips are best par-fried in advance and finished with the second fry just before serving.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: assemble
+      text: The gravy has to be genuinely hot and poured on immediately before serving — it is what softens the curds' surface into a slight melt while the cold centre stays intact, which is the texture the dish is built around.
+  commonPitfalls:
+    - stepId: assemble
+      text: Cold, fridge-hard curds refuse to soften properly even under hot gravy. They want to come up to room temperature first, so the gravy's heat is enough to reach a proper half-melt.
+---
+
+<Step id="par-fry-chips">
+  Heat the <Qty ref="frying-oil"/> to a moderate <Temp c={130}/> and fry the
+  <Qty ref="potato"/> in batches for <Dur step="par-fry-chips"/>, until soft through
+  but still pale. Drain.
+</Step>
+
+<Step id="rest-chips">
+  Leave the chips to cool and dry out on a wire rack for <Dur step="rest-chips"/>.
+</Step>
+
+<Step id="make-gravy">
+  Melt the <Qty ref="gravy-butter"/> in a saucepan, whisk in the <Qty ref="gravy-flour"/>
+  and cook briefly, then whisk in the <Qty ref="gravy-stock"/>, the <Qty ref="salt"/> and
+  the <Qty ref="pepper"/>. Simmer for <Dur step="make-gravy"/>, until thickened enough to
+  coat the back of a spoon.
+</Step>
+
+<Step id="crisp-chips">
+  Raise the oil to <Temp c={190}/> and fry the chips again for
+  <Dur step="crisp-chips"/>, until deep golden and crisp. Drain well.
+</Step>
+
+<Step id="assemble">
+  Pile the chips into bowls, scatter over the <Qty ref="curds"/> and pour the hot
+  gravy over immediately. Serve at once.
+</Step>

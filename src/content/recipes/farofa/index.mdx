@@ -1,0 +1,85 @@
+---
+title: Farofa
+subtitle: Cassava flour toasted with bacon, onion and butter until dry and golden — the standing side dish of the Brazilian table.
+label: With bacon
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [brazilian]
+  course: [side]
+  method: [sauteing]
+image:
+  src: images/recipes/farofa.webp
+  alt: "A bowl of golden toasted farofa, cassava flour with visible flecks of onion, beside a bowl of white rice"
+ingredients:
+  - id: bacon
+    ingredientRef: streaky-bacon
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into small pieces
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: finely diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: cassava-flour
+    ingredientRef: cassava
+    form: flour
+    amount: 250
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: render-bacon, durationMin: 8, type: active, phase: cook }
+  - { id: cook-aromatics, durationMin: 5, type: active, phase: cook }
+  - { id: toast-flour, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Keeps well for up to three days in an airtight container at room temperature and is often made ahead for exactly that reason.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Warm briefly in a dry pan, tossing, to bring back some crispness; it is also good served at room temperature.
+notes:
+  techniqueRationale:
+    - stepId: toast-flour
+      text: The flour is already cooked when it is sold, so this step is toasting rather than cooking it through. Constant tossing over a moderate heat colours it evenly and keeps individual grains separate instead of a few catching and burning while the rest stays pale.
+---
+
+<Step id="render-bacon">
+  Cook the <Qty ref="bacon"/> in a wide, dry pan over a medium heat for
+  <Dur step="render-bacon"/>, until crisp, then lift out and set aside,
+  leaving the fat in the pan.
+</Step>
+
+<Step id="cook-aromatics">
+  Add the <Qty ref="butter"/> to the pan and cook the <Qty ref="onion"/> and
+  <Qty ref="garlic"/> for <Dur step="cook-aromatics"/>, until soft and
+  golden.
+</Step>
+
+<Step id="toast-flour">
+  Return the bacon to the pan and stir in the <Qty ref="cassava-flour"/>,
+  <Qty ref="salt"/> and <Qty ref="pepper"/>. Toast, stirring constantly, for
+  <Dur step="toast-flour"/>, until the flour is evenly golden and smells
+  toasted rather than raw.
+</Step>

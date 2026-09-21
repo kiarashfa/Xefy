@@ -1,0 +1,63 @@
+{
+  "id": "cod",
+  "name": "Cod",
+  "proseName": "cod",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "generalSubstitutes": [
+    {
+      "substitute": "haddock",
+      "note": "The other standard chip-shop white fish; slightly sweeter and softer-flaked."
+    }
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171955",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171955/nutrients",
+      "sourceNote": "USDA's record for raw Atlantic cod fillet.",
+      "nutritionPer100g": {
+        "kcal": 82,
+        "protein": 17.81,
+        "fat": 0.67,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 16,
+        "iron": 0.38,
+        "magnesium": 32,
+        "phosphorus": 203,
+        "potassium": 413,
+        "sodium": 54,
+        "zinc": 0.45,
+        "copper": 0.028,
+        "manganese": 0.015,
+        "seleniumMcg": 33.1,
+        "vitaminC": 1,
+        "thiamin": 0.076,
+        "riboflavin": 0.065,
+        "niacin": 2.063,
+        "vitaminB6": 0.245,
+        "folateMcg": 7,
+        "choline": 65.2,
+        "vitaminB12Mcg": 0.91,
+        "vitaminAMcg": 12,
+        "vitaminE": 0.64,
+        "vitaminDMcg": 0.9,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.131,
+        "monounsaturatedFat": 0.094,
+        "polyunsaturatedFat": 0.231,
+        "cholesterol": 43
+      }
+    }
+  ],
+  "image": "images/ingredients/cod-thumb.webp"
+}

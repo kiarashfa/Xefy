@@ -1,0 +1,67 @@
+{
+  "id": "pigeon-peas",
+  "name": "Pigeon Peas",
+  "proseName": "pigeon peas",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Gandules",
+        "region": "Puerto Rico",
+        "lang": "es"
+      }
+    ]
+  },
+  "category": "legume",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "canned",
+      "label": "Canned",
+      "proseQualifier": "canned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172472",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172472/nutrients",
+      "sourceNote": "USDA publishes no record specifically for canned pigeon peas. This is its record for pigeon peas cooked, boiled and salted, the closest match to the pre-cooked, brined product sold tinned as gandules.",
+      "nutritionPer100g": {
+        "kcal": 121,
+        "protein": 6.76,
+        "fat": 0.38,
+        "carbs": 23.25,
+        "fiber": 6.7,
+        "calcium": 43,
+        "iron": 1.11,
+        "magnesium": 46,
+        "phosphorus": 119,
+        "potassium": 384,
+        "sodium": 241,
+        "zinc": 0.9,
+        "copper": 0.269,
+        "manganese": 0.501,
+        "seleniumMcg": 2.9,
+        "vitaminC": 0,
+        "thiamin": 0.146,
+        "riboflavin": 0.059,
+        "niacin": 0.781,
+        "vitaminB6": 0.05,
+        "folateMcg": 111,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.083,
+        "monounsaturatedFat": 0.003,
+        "polyunsaturatedFat": 0.205,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 168,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/pigeon-peas-thumb.webp"
+}

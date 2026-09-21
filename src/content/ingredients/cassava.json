@@ -66,6 +66,40 @@
         "gPerCup": 206,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "flour",
+      "label": "Flour (farinha de mandioca)",
+      "proseName": "cassava flour",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2512377",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2512377/nutrients",
+      "nutritionPer100g": {
+        "kcal": 358.557,
+        "protein": 0.918,
+        "fat": 0.494,
+        "carbs": 87.313,
+        "fiber": 4.834,
+        "calcium": 74.55,
+        "iron": 3.988,
+        "magnesium": 33.56,
+        "phosphorus": 39.24,
+        "potassium": 197.6,
+        "sodium": 13.08,
+        "zinc": 0.41,
+        "copper": 0.077,
+        "manganese": 0.395,
+        "seleniumMcg": 0,
+        "thiamin": 0.051,
+        "riboflavin": 0.068,
+        "niacin": 0.6,
+        "vitaminB6": 0.05
+      },
+      "density": {
+        "gPerCup": 125,
+        "densitySource": "estimated",
+        "densityClass": "flour-like"
+      }
     }
   ],
   "image": "images/ingredients/cassava-thumb.webp"

@@ -1,0 +1,163 @@
+---
+title: Arroz con Gandules
+subtitle: Puerto Rican rice cooked in one pot with pigeon peas, diced ham and a sofrito base, coloured and seasoned with achiote.
+label: Puerto Rico
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [sauteing, simmering]
+image:
+  src: images/recipes/arroz-con-gandules.webp
+  alt: "A bowl of arroz con gandules, orange-tinted sofrito rice with pigeon peas, olives and capers, topped with a piece of grilled chicken and shredded lettuce"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 380
+    unit: g
+  - id: pigeon-peas
+    ingredientRef: pigeon-peas
+    form: canned
+    amount: 400
+    unit: g
+    note: drained
+  - id: ham
+    ingredientRef: ham
+    form: sliced
+    amount: 100
+    unit: g
+    note: diced
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 5
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 90
+    unit: g
+    note: finely chopped, for the sofrito
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 70
+    unit: g
+    note: finely chopped, for the sofrito
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+    note: crushed, for the sofrito
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: finely chopped, for the sofrito
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 30
+    unit: g
+  - id: olives
+    ingredientRef: olives
+    form: green
+    amount: 30
+    unit: g
+    note: pitted and roughly chopped
+  - id: capers
+    ingredientRef: capers
+    form: brined
+    amount: 10
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 480
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: sofrito, durationMin: 10, type: active, phase: prep }
+  - { id: render-ham, durationMin: 6, type: active, phase: cook }
+  - { id: bloom-achiote, durationMin: 3, type: active, phase: cook }
+  - { id: build-sauce, durationMin: 6, type: active, phase: cook }
+  - { id: add-rice, durationMin: 5, type: active, phase: cook }
+  - { id: simmer, durationMin: 25, type: passive }
+  - { id: rest, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The sofrito can be made up to three days ahead and refrigerated, or frozen for up to three months.
+  freezable: true
+  freezeInstructions: Freeze the finished rice in an airtight container for up to two months; the peas and ham hold up well.
+  reheatInstructions: Reheat covered in a pan with a splash of water, stirring occasionally, until steaming through.
+notes:
+  techniqueRationale:
+    - stepId: bloom-achiote
+      text: Blooming the ground achiote in hot fat before anything else goes in dissolves its colour into the oil, so the whole pot turns an even orange-red rather than showing streaks of unmixed spice.
+  commonPitfalls:
+    - stepId: simmer
+      text: Lifting the lid to check on the rice lets steam escape that the grains need to finish cooking, and can leave the bottom layer underdone while the top dries out.
+---
+
+<Step id="sofrito">
+  Finely chop the <Qty ref="onion"/>, <Qty ref="green-pepper"/>,
+  <Qty ref="garlic"/> and <Qty ref="coriander"/> and combine them in a bowl;
+  this is the sofrito.
+</Step>
+
+<Step id="render-ham">
+  Heat the <Qty ref="olive-oil"/> in a heavy pot over a medium heat and cook
+  the <Qty ref="ham"/> for <Dur step="render-ham"/>, until it colours lightly
+  at the edges.
+</Step>
+
+<Step id="bloom-achiote">
+  Stir in the <Qty ref="achiote"/> and cook for <Dur step="bloom-achiote"/>,
+  until the oil turns a deep orange-red.
+</Step>
+
+<Step id="build-sauce">
+  Add the sofrito to the pot and cook for <Dur step="build-sauce"/>, until the
+  vegetables soften, then stir in the <Qty ref="tomato-puree"/>,
+  <Qty ref="olives"/>, <Qty ref="capers"/>, <Qty ref="oregano"/> and
+  <Qty ref="bay-leaf"/>.
+</Step>
+
+<Step id="add-rice">
+  Add the <Qty ref="pigeon-peas"/>, <Qty ref="rice"/>, <Qty ref="stock"/> and
+  <Qty ref="salt"/>, stirring once to distribute the peas evenly, and bring to
+  a boil for <Dur step="add-rice"/>.
+</Step>
+
+<Step id="simmer">
+  Cover, reduce the heat to its lowest setting and cook undisturbed for
+  <Dur step="simmer"/>, until the liquid is fully absorbed and the rice is
+  tender.
+</Step>
+
+<Step id="rest">
+  Take the pot off the heat and leave it covered for <Dur step="rest"/> before
+  fluffing the rice with a fork.
+</Step>

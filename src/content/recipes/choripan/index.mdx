@@ -1,0 +1,92 @@
+---
+title: Choripán
+subtitle: A grilled chorizo split and pressed flat, tucked into a crusty roll with a vinegary parsley dressing — Argentina's standard grill-side sandwich.
+label: Classic
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [argentine]
+  course: [main-course]
+  method: [grilling]
+names:
+  searchOnly: ["chori pan", "choripan argentino"]
+image:
+  src: images/recipes/choripan.webp
+  alt: "A hand holding a choripan, a grilled butterflied chorizo sausage in a crusty bread roll, topped with chopped onion and pepper salsa criolla"
+ingredients:
+  - id: chorizo
+    ingredientRef: chorizo
+    form: raw
+    amount: 400
+    unit: g
+    note: four sausages, split lengthwise almost through
+  - id: roll
+    ingredientRef: crusty-roll
+    form: plain
+    amount: 280
+    unit: g
+    note: four rolls, split
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 6
+    unit: g
+    note: finely chopped
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 1
+    unit: g
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 20
+    unit: ml
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 40
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: make-dressing, durationMin: 8, type: "parallel-with:grill-chorizo", phase: prep }
+  - { id: grill-chorizo, durationMin: 15, type: active, phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dressing can be made up to a day ahead and kept covered at room temperature.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="make-dressing">
+  While the chorizo grills, combine the <Qty ref="parsley"/>, <Qty ref="garlic"/>,
+  <Qty ref="oregano"/> and <Qty ref="chilli-flakes"/> in a bowl, then stir in
+  the <Qty ref="vinegar"/>, <Qty ref="oil"/> and <Qty ref="salt"/>.
+</Step>
+
+<Step id="grill-chorizo">
+  Grill the <Qty ref="chorizo"/> split side down first, then turn and cook
+  for <Dur step="grill-chorizo"/> in total, until the casing is well coloured
+  and the sausages are cooked through and opened out flat.
+</Step>
+
+<Step id="assemble">
+  Warm the <Qty ref="roll"/> briefly on the grill, cut side down. Lay a
+  split chorizo inside each roll and spoon over the dressing.
+</Step>

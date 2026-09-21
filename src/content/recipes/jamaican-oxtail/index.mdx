@@ -1,0 +1,166 @@
+---
+title: Jamaican Oxtail Stew
+subtitle: Oxtail browned in caramelised sugar and braised for hours with butter beans, allspice, thyme and scotch bonnet until the meat falls from the bone.
+label: Jamaica
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [braising]
+ingredients:
+  - id: oxtail
+    ingredientRef: oxtail
+    form: raw
+    amount: 1600
+    unit: g
+    note: bone-in, cut into segments
+    consumedFraction: 0.55
+    consumedFractionNote: Oxtail is cross-cut through the bone, and a large share of its raw weight is bone and connective tissue left on the plate once the meat is eaten.
+  - id: broad-beans
+    ingredientRef: dried-broad-beans
+    form: dried
+    amount: 150
+    unit: g
+    note: soaked overnight, standing in for the butter beans traditionally used
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: grated
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 6
+    unit: g
+    note: pierced whole
+    consumedFraction: 0.3
+    consumedFractionNote: The pepper is pierced whole to season the braise and lifted out before serving; most of it is discarded rather than eaten.
+  - id: allspice
+    ingredientRef: allspice
+    form: ground
+    amount: 4
+    unit: g
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 25
+    unit: g
+    note: sliced
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into chunks
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 15
+    unit: g
+    note: for browning
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 700
+    unit: ml
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: season, durationMin: 10, type: active, phase: prep }
+  - { id: marinate, durationMin: 480, type: passive }
+  - { id: brown-sugar-step, durationMin: 3, type: active, phase: cook }
+  - { id: sear, durationMin: 15, type: active, phase: cook }
+  - { id: aromatics, durationMin: 6, type: active, phase: cook }
+  - { id: braise, durationMin: 180, type: passive }
+  - { id: reduce, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The oxtail can be seasoned and marinated up to a day ahead. The finished stew is better the next day, once the fat has had time to set and be lifted off.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to three months; the beans and sauce freeze well alongside the meat.
+  reheatInstructions: Reheat gently in a covered pot over a low heat, adding a splash of stock or water if the sauce has thickened too far.
+notes:
+  techniqueRationale:
+    - stepId: brown-sugar-step
+      text: Caramelising the sugar to the edge of burning before the meat goes in gives the stew its traditional dark colour and a bitter-sweet depth that plain browning from searing alone does not produce.
+  commonPitfalls:
+    - stepId: braise
+      text: Oxtail carries more connective tissue than most cuts and stays chewy if the braise is cut short; the collagen only fully breaks down once the meat is at the point of falling off the bone.
+---
+
+<Step id="season">
+  Season the <Qty ref="oxtail"/> with the <Qty ref="salt"/> and
+  <Qty ref="black-pepper"/>.
+</Step>
+
+<Step id="marinate">
+  Cover and refrigerate for <Dur step="marinate"/>.
+</Step>
+
+<Step id="brown-sugar-step">
+  Heat the <Qty ref="vegetable-oil"/> in a heavy pot over a medium-high heat
+  and stir in the <Qty ref="brown-sugar"/>, cooking for
+  <Dur step="brown-sugar-step"/> until it darkens and turns syrupy.
+</Step>
+
+<Step id="sear">
+  Add the oxtail to the pot in batches and brown on all sides for
+  <Dur step="sear"/> in total, turning to coat each piece in the caramelised
+  sugar.
+</Step>
+
+<Step id="aromatics">
+  Return all the oxtail to the pot with the <Qty ref="onion"/>,
+  <Qty ref="garlic"/>, <Qty ref="ginger"/>, <Qty ref="scotch-bonnet"/>,
+  <Qty ref="allspice"/>, <Qty ref="thyme"/> and <Qty ref="spring-onion"/>,
+  and cook for <Dur step="aromatics"/>, stirring, until fragrant.
+</Step>
+
+<Step id="braise">
+  Pour in the <Qty ref="soy-sauce"/> and <Qty ref="stock"/>, add the
+  drained <Qty ref="broad-beans"/>, and bring to a simmer. Cover and cook at a
+  bare simmer for <Dur step="braise"/>, until the meat is tender enough to
+  fall from the bone.
+</Step>
+
+<Step id="reduce">
+  Stir in the <Qty ref="carrot"/> and simmer uncovered for
+  <Dur step="reduce"/>, until the carrot is tender and the sauce has thickened
+  to coat the back of a spoon. Discard the whole scotch bonnet before serving.
+</Step>

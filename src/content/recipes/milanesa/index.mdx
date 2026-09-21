@@ -1,0 +1,100 @@
+---
+title: Milanesa
+subtitle: Thin beef cutlets pounded flat, breaded and fried, Argentina's most-cooked weeknight dish.
+label: Beef, pan-fried
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [argentine]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Wiener schnitzel
+      note: A veal cutlet fried in clarified butter or lard and served with lemon and typically potato salad or parsley potatoes; milanesa is beef, fried in a neutral oil, and just as often eaten with a fried egg on top or piled with tomato, ham and cheese.
+      slugRef: wiener-schnitzel
+    - name: Cotoletta alla milanese
+      note: The Milanese original is a bone-in veal rib fried in clarified butter; Argentine milanesa uses a boneless, lean cut and a plain frying oil.
+  searchOnly: ["milanesa de carne", "milanesa argentina"]
+image:
+  src: images/recipes/milanesa.webp
+  alt: "A breaded and fried beef milanesa on a plate with a fried egg and chips"
+ingredients:
+  - id: beef
+    ingredientRef: beef-topside
+    form: raw
+    amount: 480
+    unit: g
+    note: cut into four cutlets and pounded thin
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: finely chopped
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 5
+    unit: g
+    note: finely chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten, for the crumb coating
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 150
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 300
+    unit: ml
+    note: for shallow-frying
+    consumedFraction: 0.2
+    consumedFractionNote: Shallow-frying leaves most of the oil in the pan; only what clings to the crust is eaten.
+steps:
+  - { id: season, durationMin: 10, type: active, phase: prep }
+  - { id: crumb, durationMin: 10, type: active, phase: prep }
+  - { id: fry, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cutlets can be crumbed up to a day ahead and kept in a single layer, covered, in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze the crumbed, uncooked cutlets in a single layer until firm, then stack with baking paper between them for up to three months. Fry from frozen, allowing extra time.
+  reheatInstructions: Reheat in a dry pan or a hot oven rather than a microwave, to keep the crumb crisp.
+notes:
+  commonPitfalls:
+    - stepId: fry
+      text: Crowding the pan or frying at too low a heat lets the crumb soak up oil instead of sealing quickly, giving a soggy, greasy coating rather than a crisp one. The oil needs to be hot enough that the crumb sizzles the instant the cutlet goes in.
+---
+
+<Step id="season">
+  Season the <Qty ref="beef"/> on both sides with the <Qty ref="garlic"/>,
+  <Qty ref="parsley"/>, <Qty ref="salt"/> and <Qty ref="pepper"/>.
+</Step>
+
+<Step id="crumb">
+  Dip each cutlet in the <Qty ref="egg"/>, letting the excess drip off, then
+  press it into the <Qty ref="breadcrumbs"/> on both sides until fully
+  coated.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="oil"/> in a wide pan until shimmering. Fry the cutlets
+  for <Dur step="fry"/> in total, turning once, until deep golden and crisp
+  on both sides. Drain briefly on paper before serving.
+</Step>

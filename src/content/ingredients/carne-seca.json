@@ -1,0 +1,64 @@
+{
+  "id": "carne-seca",
+  "name": "Carne Seca",
+  "proseName": "carne seca",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Charque",
+        "region": "Brazil",
+        "lang": "pt"
+      }
+    ]
+  },
+  "category": "cured meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Cured and dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170604",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170604/nutrients",
+      "sourceNote": "USDA has no record for carne seca/charque specifically. This is its record for cured, dried beef — the closest salted-and-dried beef profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 153,
+        "protein": 31.1,
+        "fat": 1.94,
+        "carbs": 2.76,
+        "fiber": 0,
+        "sugars": 2.7,
+        "calcium": 8,
+        "iron": 2.42,
+        "magnesium": 19,
+        "phosphorus": 181,
+        "potassium": 235,
+        "sodium": 2790,
+        "zinc": 4.93,
+        "copper": 0.074,
+        "manganese": 0.017,
+        "seleniumMcg": 32.4,
+        "vitaminC": 0,
+        "thiamin": 0.065,
+        "riboflavin": 0.163,
+        "niacin": 5.164,
+        "vitaminB6": 0.386,
+        "folateMcg": 10,
+        "choline": 0,
+        "vitaminB12Mcg": 1.59,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.38,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1.3,
+        "saturatedFat": 0.95,
+        "monounsaturatedFat": 0.84,
+        "polyunsaturatedFat": 0.07,
+        "cholesterol": 79
+      }
+    }
+  ],
+  "image": "images/ingredients/carne-seca-thumb.webp"
+}

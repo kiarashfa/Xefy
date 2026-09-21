@@ -1,0 +1,143 @@
+---
+title: Alfajores de Maicena
+subtitle: Cornflour shortbread rounds sandwiched with dulce de leche and rolled at the edge in coconut.
+label: Classic
+defaultServings: 18
+difficulty: Medium
+tags:
+  cuisine: [argentine]
+  course: [dessert]
+  method: [baking]
+names:
+  searchOnly: ["alfajor de maicena", "alfajores maicena", "cornstarch alfajores"]
+image:
+  src: images/recipes/alfajores.webp
+  alt: "A stack of alfajores, shortbread sandwich cookies filled with dulce de leche and rolled in shredded coconut"
+ingredients:
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 200
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 100
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 5
+    unit: g
+  - id: bicarbonate
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 150
+    unit: g
+    note: softened
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 90
+    unit: g
+  - id: egg-yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 56
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 6
+    unit: g
+  - id: dulce-de-leche
+    ingredientRef: dulce-de-leche
+    form: standard
+    amount: 280
+    unit: g
+  - id: coconut
+    ingredientRef: desiccated-coconut
+    form: desiccated
+    amount: 120
+    unit: g
+    note: for rolling the edges
+    consumedFraction: 0.35
+    consumedFractionNote: Only what sticks to the dulce de leche around the edge of each sandwiched cookie is eaten; most of the bowl of coconut is left over.
+steps:
+  - { id: cream, durationMin: 5, type: active, phase: prep }
+  - { id: add-yolks, durationMin: 3, type: active, phase: prep }
+  - { id: add-dry, durationMin: 5, type: active, phase: prep }
+  - { id: chill, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: bake, durationMin: 12, type: active, phase: cook }
+  - { id: cool, durationMin: 15, type: passive }
+  - { id: assemble, durationMin: 15, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The dough can be made up to two days ahead and kept chilled, wrapped, until ready to roll. The baked, unfilled rounds keep in an airtight tin for up to three days.
+  freezable: true
+  freezeInstructions: Freeze the baked, unfilled rounds layered with baking paper for up to two months; thaw before filling, since the dulce de leche does not freeze well between the layers.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: chill
+      text: The dough is soft from the high proportion of cornflour and butter to gluten-forming flour. Chilling it firms the butter enough to roll and cut cleanly without the rounds spreading and losing their shape in the oven.
+  commonPitfalls:
+    - stepId: bake
+      text: These are pale cookies by design — cornflour does not brown the way wheat flour does, so colour is not a useful guide to doneness. They are done when the tops look dry and set rather than when they take on colour, and a batch left in until it looks golden is already overbaked and crumbly instead of tender.
+---
+
+<Step id="cream">
+  Beat the <Qty ref="butter"/> and <Qty ref="sugar"/> together until pale and
+  fluffy.
+</Step>
+
+<Step id="add-yolks">
+  Beat in the <Qty ref="egg-yolks"/> and <Qty ref="vanilla"/> until fully
+  combined.
+</Step>
+
+<Step id="add-dry">
+  Sift the <Qty ref="cornflour"/>, <Qty ref="flour"/>, <Qty ref="baking-powder"/>,
+  <Qty ref="bicarbonate"/> and <Qty ref="salt"/> together, then fold into the
+  butter mixture just until a soft dough comes together. Avoid overworking it.
+</Step>
+
+<Step id="chill">
+  Wrap the dough and chill it for <Dur step="chill"/>, until firm enough to
+  roll.
+</Step>
+
+<Step id="shape">
+  Roll the dough between two sheets of baking paper to the thickness of a
+  coin and cut into small rounds, gathering and re-rolling the scraps. Set
+  the rounds on lined trays, spaced well apart, since they spread very little
+  and are cut close together to keep an even thickness.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={170}/> for <Dur step="bake"/>, until the tops look dry
+  and set rather than coloured. The rounds will still feel soft in the
+  centre; they firm up entirely as they cool.
+</Step>
+
+<Step id="cool">
+  Slide the rounds onto a rack and cool completely, for <Dur step="cool"/>,
+  before filling — a warm cookie melts the dulce de leche straight through it.
+</Step>
+
+<Step id="assemble">
+  Spread half the rounds generously with the <Qty ref="dulce-de-leche"/> and
+  sandwich with the remaining rounds, pressing gently so the filling meets
+  the edge all the way round. Roll the exposed rim of filling in the
+  <Qty ref="coconut"/> to coat it.
+</Step>

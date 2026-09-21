@@ -1,0 +1,162 @@
+---
+title: Tourtière
+subtitle: A double-crust pastry pie of spiced minced pork and beef, bound with mashed potato and baked until the crust is deep gold.
+label: Quebec, pork and beef
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [canadian]
+  course: [main-course]
+  method: [baking, braising]
+image:
+  src: images/recipes/tourtiere.webp
+  alt: "A whole tourtière, a golden-baked meat pie with a decorative pastry lid cut into maple leaf shapes"
+ingredients:
+  - id: pastry-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: pastry-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: lard
+    ingredientRef: lard
+    form: standard
+    amount: 100
+    unit: g
+    note: cold, cubed
+  - id: pastry-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+    note: cold, cubed
+  - id: ice-water
+    ingredientRef: water
+    form: tap
+    amount: 90
+    unit: g
+    note: iced
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 500
+    unit: g
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 250
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and finely diced
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 150
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 2
+    unit: g
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 1
+    unit: g
+    note: ground
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 1
+    unit: g
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: egg-wash
+    ingredientRef: egg
+    form: whole
+    amount: 20
+    unit: g
+    note: beaten, for glazing
+steps:
+  - { id: make-pastry, durationMin: 12, type: active, phase: prep }
+  - { id: chill-pastry, durationMin: 45, type: passive }
+  - { id: cook-filling, durationMin: 30, type: "parallel-with:chill-pastry", phase: cook }
+  - { id: cool-filling, durationMin: 20, type: passive }
+  - { id: assemble-pie, durationMin: 15, type: active, phase: prep }
+  - { id: bake, durationMin: 45, type: passive }
+makeAhead:
+  aheadInstructions: The filling can be made up to two days ahead and kept covered in the refrigerator; the pastry also benefits from resting overnight. Tourtière is traditionally made ahead and reheated, so baking it a day early and warming it through is entirely standard.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked pie for up to three months and bake from frozen, allowing significantly more time and covering loosely with foil until the last stretch.
+  reheatInstructions: Reheat, covered loosely with foil, in a moderate oven until hot through, uncovering for the last stretch to recrisp the crust.
+notes:
+  techniqueRationale:
+    - stepId: cook-filling
+      text: The diced potato is cooked directly into the meat rather than added as a separate mash, so it breaks down and binds the filling into slices rather than leaving it loose and crumbly once cut.
+  commonPitfalls:
+    - stepId: cool-filling
+      text: Filling a pastry case with hot filling melts the fat in the crust before it reaches the oven, and the base turns soggy rather than short. The filling needs to come down close to room temperature first.
+---
+
+<Step id="make-pastry">
+  Rub the <Qty ref="lard"/> and the <Qty ref="pastry-butter"/> into the
+  <Qty ref="pastry-flour"/> and the <Qty ref="pastry-salt"/> until the mixture looks
+  like coarse crumbs, then mix in the <Qty ref="ice-water"/> just until the dough comes
+  together. Divide in two, one piece slightly larger, flatten into discs and wrap.
+</Step>
+
+<Step id="chill-pastry">
+  Chill the pastry for <Dur step="chill-pastry"/>.
+</Step>
+
+<Step id="cook-filling">
+  Cook the <Qty ref="pork"/> and the <Qty ref="beef"/> in a wide pan over a medium
+  heat, breaking them up, until no longer pink. Add the <Qty ref="onion"/>, the
+  <Qty ref="garlic"/> and the <Qty ref="potato"/>, then the <Qty ref="stock"/>, the
+  <Qty ref="cinnamon"/>, the <Qty ref="cloves"/>, the <Qty ref="nutmeg"/>, the
+  <Qty ref="filling-salt"/> and the <Qty ref="pepper"/>. Simmer for
+  <Dur step="cook-filling"/>, until the potato has broken down and the mixture holds
+  together.
+</Step>
+
+<Step id="cool-filling">
+  Spread the filling on a tray and leave to cool for <Dur step="cool-filling"/>.
+</Step>
+
+<Step id="assemble-pie">
+  Roll out the larger disc of pastry and line a pie dish. Fill with the cooled
+  filling, roll out the second disc for the lid, seal the edges and cut a small vent.
+  Brush with the <Qty ref="egg-wash"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={190}/> for <Dur step="bake"/>, until the crust is deep golden.
+</Step>

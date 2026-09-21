@@ -1,0 +1,67 @@
+{
+  "id": "minas-cheese",
+  "name": "Minas Cheese",
+  "proseName": "Minas cheese",
+  "category": "cheese",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Rennet type varies by producer, animal or microbial, so whether a given cheese is vegetarian depends on its label.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "generalSubstitutes": [
+    {
+      "substitute": "queso blanco or a mild, low-melt fresh white cheese",
+      "note": "Any fresh, mild, rennet-set white cheese that softens without fully melting works in its place."
+    }
+  ],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172224",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172224/nutrients",
+      "sourceNote": "USDA has no record for queijo minas specifically. This is its record for queso blanco, the closest fresh, mild white-cheese profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 310,
+        "protein": 20.38,
+        "fat": 24.31,
+        "carbs": 2.53,
+        "sugars": 1.76,
+        "calcium": 690,
+        "iron": 0.18,
+        "magnesium": 29,
+        "phosphorus": 467,
+        "potassium": 126,
+        "sodium": 704,
+        "zinc": 3.06,
+        "copper": 0.025,
+        "manganese": 0.021,
+        "seleniumMcg": 13.8,
+        "thiamin": 0.048,
+        "riboflavin": 0.23,
+        "niacin": 0.035,
+        "vitaminB6": 0.086,
+        "choline": 15.4,
+        "vitaminB12Mcg": 1.75,
+        "vitaminAMcg": 157,
+        "vitaminE": 0.47,
+        "vitaminDMcg": 0.7,
+        "vitaminKMcg": 1.6,
+        "saturatedFat": 13.661,
+        "monounsaturatedFat": 6.459,
+        "polyunsaturatedFat": 1.149,
+        "transFat": 0.89,
+        "cholesterol": 70
+      },
+      "density": {
+        "gPerCup": 118,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/minas-cheese-thumb.webp"
+}

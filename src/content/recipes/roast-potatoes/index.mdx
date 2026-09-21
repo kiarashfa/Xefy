@@ -1,0 +1,78 @@
+---
+title: Roast Potatoes
+subtitle: Potatoes parboiled, roughed up at the edges and roasted hard in hot fat until the outside shatters.
+label: Goose fat, parboiled
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [british]
+  course: [side]
+  method: [boiling, roasting]
+image:
+  src: images/recipes/roast-potatoes.webp
+  alt: "Halved potatoes roasted until golden brown and crisp at the edges, in a baking tray"
+ingredients:
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 1200
+    unit: g
+    note: peeled and cut into large chunks
+  - id: fat
+    ingredientRef: goose-fat
+    form: rendered
+    amount: 80
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 15
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: salt-water, amount: 5 }
+      - { id: salt-serve, amount: 3 }
+steps:
+  - { id: parboil, durationMin: 12, type: passive }
+  - { id: heat-fat, durationMin: 10, type: "parallel-with:parboil", phase: cook }
+  - { id: rough-up, durationMin: 5, type: active, phase: prep }
+  - { id: roast, durationMin: 45, type: passive }
+makeAhead:
+  aheadInstructions: The potatoes can be parboiled and roughed up several hours ahead and left to cool completely and dry out on a tray; roast from cold, allowing a few extra minutes.
+  freezable: true
+  freezeInstructions: Freeze the roughed-up, uncooked potatoes on a tray until solid, then bag them; roast from frozen at the same temperature, allowing significantly more time.
+  reheatInstructions: Reheat in a hot oven, uncovered, until recrisped; they do not recover well from a microwave.
+notes:
+  techniqueRationale:
+    - stepId: rough-up
+      text: Shaking the drained potatoes in the pan roughs up the surface into a mass of small starchy ridges, which is what catches and crisps in the hot fat — a smooth-edged potato browns evenly but never shatters.
+  commonPitfalls:
+    - stepId: roast
+      text: Adding the potatoes to fat that is not yet properly hot lets them sit and steam instead of searing on contact, and they never fully crisp afterwards. The fat needs to be visibly shimmering before they go in.
+---
+
+<Step id="parboil">
+  Cover the <Qty ref="potato"/> with cold water, add the <Qty ref="salt-water"/>,
+  bring to the boil and cook for <Dur step="parboil"/>, until the edges are just
+  starting to soften.
+</Step>
+
+<Step id="heat-fat">
+  Put the <Qty ref="fat"/> into a large roasting tin and heat in the oven at
+  <Temp c={220}/> for <Dur step="heat-fat"/>, until shimmering hot.
+</Step>
+
+<Step id="rough-up">
+  Drain the potatoes well, return them to the dry pan, sprinkle over the
+  <Qty ref="flour"/>, and shake hard with the lid on to rough up and coat the edges.
+</Step>
+
+<Step id="roast">
+  Tip the potatoes carefully into the hot fat, turning to coat, and roast at
+  <Temp c={220}/> for <Dur step="roast"/>, turning once or twice, until deep golden
+  and crisp all over. Season with the <Qty ref="salt-serve"/> and serve at once.
+</Step>

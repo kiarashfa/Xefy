@@ -1,0 +1,171 @@
+---
+title: Shepherd's Pie
+subtitle: Minced lamb braised with vegetables in a thickened stock, baked under a layer of buttery mashed potato.
+label: Baked, one dish
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [british]
+  course: [main-course]
+  method: [braising, baking]
+names:
+  notToBeConfusedWith:
+    - name: Cottage pie
+      note: The same dish made with minced beef rather than lamb; the name shepherd's pie is reserved for the lamb version.
+image:
+  src: images/recipes/shepherds-pie.webp
+  alt: "A slice of shepherd's pie, minced lamb and vegetables under a ridged layer of golden baked mashed potato, served with salad"
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 600
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: diced
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 150
+    unit: g
+    note: diced
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 100
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 30
+    unit: g
+  - id: worcestershire
+    ingredientRef: worcestershire-sauce
+    form: bottled
+    amount: 15
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 15
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 300
+    unit: g
+  - id: saute-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 1000
+    unit: g
+    note: peeled and chopped
+  - id: mash-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+  - id: mash-milk
+    ingredientRef: milk
+    form: whole
+    amount: 100
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: salt-filling, amount: 4 }
+      - { id: salt-mash, amount: 4 }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+    portions:
+      - { id: pepper-filling, amount: 2 }
+      - { id: pepper-mash, amount: 1 }
+steps:
+  - { id: boil-potatoes, durationMin: 20, type: passive }
+  - { id: brown-lamb, durationMin: 10, type: "parallel-with:boil-potatoes", phase: cook }
+  - { id: soften-vegetables, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-filling, durationMin: 25, type: passive }
+  - { id: mash-potatoes, durationMin: 8, type: "parallel-with:simmer-filling", phase: cook }
+  - { id: assemble, durationMin: 8, type: active, phase: prep }
+  - { id: bake, durationMin: 25, type: passive }
+makeAhead:
+  aheadInstructions: The pie can be fully assembled a day ahead and kept covered in the refrigerator; bake straight from cold, allowing extra time until the filling is bubbling at the edges.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked pie for up to three months; bake from frozen, allowing significantly more time and covering loosely with foil until the last stretch.
+  reheatInstructions: Reheat portions in a moderate oven, covered, until hot through, uncovering briefly to recrisp the top.
+notes:
+  techniqueRationale:
+    - stepId: brown-lamb
+      text: Browning the lamb hard in a separate pan before it joins the vegetables builds the fond and savoury depth that a pot simply simmered from raw never develops.
+  commonPitfalls:
+    - stepId: assemble
+      text: Spreading a thin mash straight over a hot, loose filling lets it sink in rather than sealing the top. The filling wants to have cooled and thickened first, and the mash goes on thick enough to hold its own layer.
+---
+
+<Step id="boil-potatoes">
+  Cover the <Qty ref="potato"/> with cold salted water, bring to the boil and cook for
+  <Dur step="boil-potatoes"/>, until completely tender.
+</Step>
+
+<Step id="brown-lamb">
+  Brown the <Qty ref="lamb"/> hard in a dry pan over a high heat for
+  <Dur step="brown-lamb"/>, breaking it up as it cooks, then set aside.
+</Step>
+
+<Step id="soften-vegetables">
+  Melt the <Qty ref="saute-butter"/> in the same pan and cook the <Qty ref="onion"/>,
+  the <Qty ref="carrot"/> and the <Qty ref="celery"/> for <Dur step="soften-vegetables"/>,
+  until softened, then stir in the <Qty ref="garlic"/> and the <Qty ref="flour"/> and
+  cook briefly.
+</Step>
+
+<Step id="simmer-filling">
+  Return the lamb to the pan with the <Qty ref="thyme"/>, the <Qty ref="tomato-puree"/>,
+  the <Qty ref="worcestershire"/>, the <Qty ref="stock"/>, the <Qty ref="salt-filling"/>
+  and the <Qty ref="pepper-filling"/>. Simmer for <Dur step="simmer-filling"/>, until
+  thickened and no longer watery, then spread into a baking dish and leave to cool
+  slightly.
+</Step>
+
+<Step id="mash-potatoes">
+  Drain the potatoes and mash with the <Qty ref="mash-butter"/>, the
+  <Qty ref="mash-milk"/>, the <Qty ref="salt-mash"/> and the <Qty ref="pepper-mash"/>
+  until smooth.
+</Step>
+
+<Step id="assemble">
+  Spread the mash evenly over the filling, right to the edges of the dish, and rough up
+  the surface with a fork.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the top is golden and the
+  filling bubbles up at the edges.
+</Step>

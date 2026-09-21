@@ -1,0 +1,63 @@
+{
+  "id": "british-sausages",
+  "name": "British Sausages",
+  "proseName": "sausages",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172934",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172934/nutrients",
+      "sourceNote": "USDA has no record for British pork sausages specifically, which are bulked with rusk rather than being pure meat. This is its record for unprepared pork link sausage, the closest fresh raw pork sausage it publishes.",
+      "nutritionPer100g": {
+        "kcal": 288,
+        "protein": 15.39,
+        "fat": 24.8,
+        "carbs": 0.93,
+        "fiber": 0,
+        "sugars": 0.93,
+        "calcium": 8,
+        "iron": 1.02,
+        "magnesium": 15,
+        "phosphorus": 133,
+        "potassium": 307,
+        "sodium": 739,
+        "zinc": 2.01,
+        "copper": 0.057,
+        "manganese": 0.017,
+        "seleniumMcg": 17.8,
+        "vitaminC": 0,
+        "thiamin": 0.223,
+        "riboflavin": 0.147,
+        "niacin": 5.418,
+        "vitaminB6": 0.174,
+        "folateMcg": 2,
+        "choline": 52.5,
+        "vitaminB12Mcg": 0.92,
+        "vitaminAMcg": 27,
+        "vitaminE": 0.99,
+        "vitaminDMcg": 1.4,
+        "vitaminKMcg": 0.3,
+        "saturatedFat": 7.57,
+        "monounsaturatedFat": 9.844,
+        "polyunsaturatedFat": 4.432,
+        "transFat": 0.101,
+        "cholesterol": 70
+      },
+      "countUnit": {
+        "singular": "sausage",
+        "plural": "sausages",
+        "grams": 60
+      }
+    }
+  ],
+  "image": "images/ingredients/british-sausages-thumb.webp"
+}

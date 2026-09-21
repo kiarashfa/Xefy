@@ -1,0 +1,80 @@
+---
+title: Picanha
+subtitle: A whole beef rump cap, its fat scored and left on, grilled over live coals and carved into thin slices against the grain.
+label: Whole, grilled
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [brazilian]
+  course: [main-course]
+  method: [grilling]
+names:
+  notToBeConfusedWith:
+    - name: Churrasco
+      note: Churrasco is the wider mixed-grill method that picanha is often cooked within, alongside ribs and sausage; this entry is the single cut, grilled and carved on its own.
+      slugRef: churrasco
+image:
+  src: images/recipes/picanha.webp
+  alt: "A whole picanha, its scored fat cap browned and blistered, grilling over live charcoal"
+ingredients:
+  - id: picanha
+    ingredientRef: picanha
+    form: raw
+    amount: 900
+    unit: g
+    note: whole piece, fat cap left on
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 12
+    unit: g
+steps:
+  - { id: prep, durationMin: 10, type: active, phase: prep }
+  - { id: light-fire, durationMin: 30, type: passive }
+  - { id: sear-fat, durationMin: 15, type: active, phase: cook }
+  - { id: finish-grill, durationMin: 15, type: active, phase: cook }
+  - { id: rest, durationMin: 10, type: passive }
+  - { id: slice, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: prep
+      text: Curving the piece into a loose crescent before it goes on the fire, rather than leaving it flat, is what gives every slice cut from it an even edge of fat once it is carved — a flat piece grills unevenly across its width.
+  commonPitfalls:
+    - stepId: sear-fat
+      text: Starting the lean side down instead of the fat renders very little of the fat into the meat and leaves it a pale, unrendered layer rather than the deeply browned crust the cut is known for. The fat side always goes down first.
+---
+
+<Step id="prep">
+  Score the fat cap of the <Qty ref="picanha"/> in a shallow crosshatch,
+  without cutting into the meat beneath it, and curve the piece into a loose
+  crescent. Season all over with the <Qty ref="salt"/>.
+</Step>
+
+<Step id="light-fire">
+  Light a wood or charcoal fire and let it burn for <Dur step="light-fire"/>,
+  until it has settled into a steady bed of glowing coals.
+</Step>
+
+<Step id="sear-fat">
+  Set the picanha fat side down over the fire and cook for
+  <Dur step="sear-fat"/>, until the fat has rendered and turned deeply
+  browned and crisp.
+</Step>
+
+<Step id="finish-grill">
+  Turn the picanha and continue grilling for <Dur step="finish-grill"/>,
+  turning as needed, until it reaches a firm medium throughout.
+</Step>
+
+<Step id="rest">
+  Move the picanha to a board and rest for <Dur step="rest"/>.
+</Step>
+
+<Step id="slice">
+  Slice thinly across the grain and serve at once.
+</Step>

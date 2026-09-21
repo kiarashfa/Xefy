@@ -1,0 +1,153 @@
+---
+title: Sachertorte
+subtitle: A dense chocolate sponge, split and coated with warm apricot jam, then glazed with a poured chocolate icing that sets to a hard shine.
+label: Classic, apricot and chocolate glaze
+defaultServings: 12
+difficulty: Hard
+tags:
+  cuisine: [austrian]
+  course: [dessert]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Chocolate fudge cake
+      note: A softer, more heavily iced cake with buttercream or ganache throughout; Sachertorte is a dense sponge with a thin apricot layer under a single hard, thin chocolate shell.
+image:
+  src: images/recipes/sachertorte.webp
+  alt: "A slice of sachertorte, dense chocolate cake glazed in dark chocolate, served with a mound of unsweetened whipped cream"
+ingredients:
+  - id: cake-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 100
+    unit: g
+    note: softened
+  - id: cake-icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: egg-yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 120
+    unit: g
+    note: six yolks
+  - id: cake-chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 100
+    unit: g
+    note: melted
+  - id: egg-white
+    ingredientRef: egg
+    form: white
+    amount: 200
+    unit: g
+    note: six whites
+  - id: meringue-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 100
+    unit: g
+  - id: apricot-jam
+    ingredientRef: jam
+    form: apricot
+    amount: 150
+    unit: g
+  - id: glaze-chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 150
+    unit: g
+  - id: glaze-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: glaze-water
+    ingredientRef: water
+    form: tap
+    amount: 100
+    unit: g
+steps:
+  - { id: melt-chocolate, durationMin: 5, type: active, phase: prep }
+  - { id: cream-butter, durationMin: 5, type: active, phase: prep }
+  - { id: whisk-meringue, durationMin: 6, type: "parallel-with:cream-butter", phase: prep }
+  - { id: fold-together, durationMin: 6, type: active, phase: prep }
+  - { id: bake, durationMin: 50, type: passive }
+  - { id: cool, durationMin: 30, type: passive }
+  - { id: glaze-jam, durationMin: 8, type: active, phase: prep }
+  - { id: make-icing, durationMin: 10, type: active, phase: cook }
+  - { id: pour-icing, durationMin: 5, type: active, phase: prep }
+  - { id: set, durationMin: 60, type: passive }
+makeAhead:
+  aheadInstructions: The torte keeps well for several days once glazed and is traditionally made a day ahead, since the icing needs time to set completely and the flavour settles overnight.
+  freezable: true
+  freezeInstructions: Freeze the sponge on its own, before glazing, wrapped tightly, for up to two months; glaze after thawing.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: glaze-jam
+      text: The apricot jam layer is warmed and strained before it goes on so it spreads into a thin, even film rather than a lumpy one — that thin layer is also what seals the crumb and stops the poured icing from soaking into the sponge.
+  commonPitfalls:
+    - stepId: pour-icing
+      text: Icing that has cooled too far sets in dull, streaky ridges instead of one smooth shell. It needs to be poured while still warm and fluid, in one motion, over a cake set on a rack with a tray beneath to catch the drips.
+---
+
+<Step id="melt-chocolate">
+  Melt the <Qty ref="cake-chocolate"/> gently over a pan of simmering water and set
+  aside to cool slightly.
+</Step>
+
+<Step id="cream-butter">
+  Beat the <Qty ref="cake-butter"/> and the <Qty ref="cake-icing-sugar"/> together
+  until pale, then beat in the <Qty ref="egg-yolk"/> and the melted chocolate.
+</Step>
+
+<Step id="whisk-meringue">
+  Whisk the <Qty ref="egg-white"/> to soft peaks, then whisk in the
+  <Qty ref="meringue-sugar"/> a little at a time until glossy and firm.
+</Step>
+
+<Step id="fold-together">
+  Fold a third of the meringue into the chocolate mixture to loosen it, then fold in
+  the rest along with the <Qty ref="flour"/>, keeping as much air in as possible. Pour
+  into a lined tin.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={170}/> for <Dur step="bake"/>, until a skewer comes out with a few
+  moist crumbs.
+</Step>
+
+<Step id="cool">
+  Cool in the tin for <Dur step="cool"/>, then turn out onto a rack.
+</Step>
+
+<Step id="glaze-jam">
+  Warm the <Qty ref="apricot-jam"/>, strain it, and brush it in a thin, even layer over
+  the top and sides of the cooled cake.
+</Step>
+
+<Step id="make-icing">
+  Heat the <Qty ref="glaze-sugar"/> and the <Qty ref="glaze-water"/> together until
+  the sugar dissolves and the syrup thickens slightly, then take off the heat and stir
+  in the <Qty ref="glaze-chocolate"/> until completely smooth. Cook for
+  <Dur step="make-icing"/> in total.
+</Step>
+
+<Step id="pour-icing">
+  Set the cake on a rack over a tray and pour the warm icing over in one motion,
+  tilting to coat the top and sides completely.
+</Step>
+
+<Step id="set">
+  Leave undisturbed at room temperature for <Dur step="set"/>, until the icing has set
+  to a firm, glossy shell.
+</Step>

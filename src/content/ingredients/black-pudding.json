@@ -1,0 +1,65 @@
+{
+  "id": "black-pudding",
+  "name": "Black Pudding",
+  "proseName": "black pudding",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Blood sausage",
+        "region": "International",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "cured meat",
+  "animalOrigin": "meat",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171618",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171618/nutrients",
+      "sourceNote": "USDA's general record for blood sausage, which British black pudding is a version of, made with pork blood, oats or barley, and back fat.",
+      "nutritionPer100g": {
+        "kcal": 379,
+        "protein": 14.6,
+        "fat": 34.5,
+        "carbs": 1.29,
+        "fiber": 0,
+        "sugars": 1.29,
+        "calcium": 6,
+        "iron": 6.4,
+        "magnesium": 8,
+        "phosphorus": 22,
+        "potassium": 38,
+        "sodium": 680,
+        "zinc": 1.3,
+        "copper": 0.04,
+        "manganese": 0.01,
+        "seleniumMcg": 15.5,
+        "vitaminC": 0,
+        "thiamin": 0.07,
+        "riboflavin": 0.13,
+        "niacin": 1.2,
+        "vitaminB6": 0.04,
+        "folateMcg": 5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.13,
+        "vitaminDMcg": 1.3,
+        "vitaminKMcg": 0,
+        "saturatedFat": 13.4,
+        "monounsaturatedFat": 15.9,
+        "polyunsaturatedFat": 3.46,
+        "cholesterol": 120
+      }
+    }
+  ],
+  "image": "images/ingredients/black-pudding-thumb.webp"
+}

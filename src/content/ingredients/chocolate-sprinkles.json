@@ -1,0 +1,68 @@
+{
+  "id": "chocolate-sprinkles",
+  "name": "Chocolate Sprinkles",
+  "proseName": "chocolate sprinkles",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Granulado",
+        "region": "Brazil",
+        "lang": "pt"
+      }
+    ]
+  },
+  "category": "confectionery",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167976",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167976/nutrients",
+      "sourceNote": "USDA has no record for chocolate sprinkles (granulado). This is its record for semisweet chocolate — sprinkles are the same chocolate formed into small rods, so the composition is representative.",
+      "nutritionPer100g": {
+        "kcal": 480,
+        "protein": 4.2,
+        "fat": 30,
+        "carbs": 63.9,
+        "fiber": 5.9,
+        "sugars": 54.5,
+        "calcium": 32,
+        "iron": 3.13,
+        "magnesium": 115,
+        "phosphorus": 132,
+        "potassium": 365,
+        "sodium": 11,
+        "zinc": 1.62,
+        "copper": 0.7,
+        "manganese": 0.8,
+        "seleniumMcg": 4.2,
+        "vitaminC": 0,
+        "thiamin": 0.055,
+        "riboflavin": 0.09,
+        "niacin": 0.427,
+        "vitaminB6": 0.035,
+        "folateMcg": 13,
+        "choline": 22,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.26,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 5.6,
+        "saturatedFat": 17.75,
+        "monounsaturatedFat": 9.966,
+        "polyunsaturatedFat": 0.966,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 173,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/chocolate-sprinkles-thumb.webp"
+}

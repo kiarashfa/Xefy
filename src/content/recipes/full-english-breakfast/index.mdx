@@ -1,0 +1,150 @@
+---
+title: Full English Breakfast
+subtitle: A cooked plate of bacon, sausage, egg, black pudding, beans, grilled tomato, mushrooms and fried bread, for one.
+label: Fried, one plate
+defaultServings: 1
+difficulty: Medium
+tags:
+  cuisine: [british]
+  course: [breakfast]
+  method: [pan-frying, grilling]
+image:
+  src: images/recipes/full-english-breakfast.webp
+  alt: "A full English breakfast plate with bacon, two fried eggs, baked beans in tomato sauce, sausages and toast"
+ingredients:
+  - id: bacon
+    ingredientRef: back-bacon
+    form: raw
+    amount: 70
+    unit: g
+    note: two rashers
+  - id: sausages
+    ingredientRef: british-sausages
+    form: raw
+    amount: 120
+    unit: g
+  - id: black-pudding
+    ingredientRef: black-pudding
+    form: raw
+    amount: 50
+    unit: g
+    note: sliced
+  - id: beans
+    ingredientRef: baked-beans
+    form: tinned
+    amount: 130
+    unit: g
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: halved
+  - id: mushroom
+    ingredientRef: mushroom
+    form: raw
+    amount: 60
+    unit: g
+    note: sliced
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: bread
+    ingredientRef: sandwich-bread
+    form: white
+    amount: 35
+    unit: g
+    note: one slice
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+    portions:
+      - { id: butter-mushroom, amount: 8 }
+      - { id: butter-bread, amount: 12 }
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: g
+    portions:
+      - { id: oil-sausages, amount: 5 }
+      - { id: oil-bacon, amount: 3 }
+      - { id: oil-egg, amount: 4 }
+      - { id: oil-pudding, amount: 3 }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: cook-sausages, durationMin: 12, type: active, phase: cook }
+  - { id: cook-bacon, durationMin: 6, type: "parallel-with:cook-sausages", phase: cook }
+  - { id: cook-pudding, durationMin: 6, type: "parallel-with:cook-sausages", phase: cook }
+  - { id: grill-tomato-mushroom, durationMin: 8, type: "parallel-with:cook-sausages", phase: cook }
+  - { id: warm-beans, durationMin: 6, type: "parallel-with:cook-sausages", phase: cook }
+  - { id: fry-bread, durationMin: 3, type: active, phase: cook }
+  - { id: fry-egg, durationMin: 3, type: "parallel-with:fry-bread", phase: cook }
+  - { id: plate, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: fry-egg
+      text: Adding the egg to a pan still crowded with the other items overcooks it before the white has set. It goes into its own space, or its own pan, once everything else is nearly done.
+---
+
+<Step id="cook-sausages">
+  Set the <Qty ref="sausages"/> in a frying pan with the <Qty ref="oil-sausages"/> over a
+  medium heat and cook for <Dur step="cook-sausages"/>, turning regularly, until browned
+  on all sides and cooked through.
+</Step>
+
+<Step id="cook-bacon">
+  In a second pan, fry the <Qty ref="bacon"/> in the <Qty ref="oil-bacon"/> for
+  <Dur step="cook-bacon"/>, turning once, until browned at the edges.
+</Step>
+
+<Step id="cook-pudding">
+  In the same pan once the bacon is out, fry the <Qty ref="black-pudding"/> in the
+  <Qty ref="oil-pudding"/> for <Dur step="cook-pudding"/>, turning once, until crisp at
+  the edges and heated through.
+</Step>
+
+<Step id="grill-tomato-mushroom">
+  Season the <Qty ref="tomato"/> with the <Qty ref="salt"/> and half the <Qty ref="pepper"/>
+  and grill cut side up, and cook the <Qty ref="mushroom"/> in the <Qty ref="butter-mushroom"/>
+  in a small pan, both for <Dur step="grill-tomato-mushroom"/>, until the tomato has softened
+  and the mushroom has released its liquid and browned.
+</Step>
+
+<Step id="warm-beans">
+  Heat the <Qty ref="beans"/> in a small saucepan over a low heat for
+  <Dur step="warm-beans"/>, stirring occasionally, until hot through.
+</Step>
+
+<Step id="fry-bread">
+  Fry the <Qty ref="bread"/> in the <Qty ref="butter-bread"/> in a clean pan for
+  <Dur step="fry-bread"/> a side, until golden and crisp.
+</Step>
+
+<Step id="fry-egg">
+  At the same time, fry the <Qty ref="egg"/> in the <Qty ref="oil-egg"/> in a separate pan
+  for <Dur step="fry-egg"/>, until the white is fully set and the yolk is still soft.
+  Season with the rest of the <Qty ref="pepper"/>.
+</Step>
+
+<Step id="plate">
+  Arrange everything on a warmed plate together and serve at once.
+</Step>

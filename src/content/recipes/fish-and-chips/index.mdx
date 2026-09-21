@@ -1,0 +1,158 @@
+---
+title: Fish and Chips
+subtitle: Battered, deep-fried white fish with thick-cut, twice-fried chips and mashed marrowfat peas.
+label: Beer batter
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [british]
+  course: [main-course]
+  method: [deep-frying]
+names:
+  notToBeConfusedWith:
+    - name: American fish fry
+      note: Usually made with cracker meal or cornmeal breading rather than a wet batter, and served without chips or mushy peas.
+image:
+  src: images/recipes/fish-and-chips.webp
+  alt: "A plate of battered fried fish and chunky chips, served with mushy peas, tartar sauce and a lemon wedge"
+ingredients:
+  - id: fish
+    ingredientRef: cod
+    form: raw
+    amount: 400
+    unit: g
+    note: two fillets
+  - id: batter-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 5
+    unit: g
+  - id: beer
+    ingredientRef: beer
+    form: lager
+    amount: 220
+    unit: g
+    note: cold
+  - id: chip-potato
+    ingredientRef: potato
+    form: raw
+    amount: 700
+    unit: g
+    note: cut into thick chips
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1500
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the deep-frying oil stays in the pan; this covers what clings to the chips and fish batter on the way out.
+  - id: peas
+    ingredientRef: peas
+    form: marrowfat-dried
+    amount: 150
+    unit: g
+  - id: pea-water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: g
+    portions:
+      - { id: pea-soak-water, amount: 400 }
+      - { id: pea-cook-water, amount: 100 }
+  - id: pea-bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    portions:
+      - { id: salt-batter, amount: 3 }
+      - { id: salt-peas, amount: 2 }
+      - { id: salt-serve, amount: 5, note: for the chips }
+  - id: vinegar
+    ingredientRef: malt-vinegar
+    form: malt
+    amount: 20
+    unit: g
+    note: for serving
+steps:
+  - { id: soak-peas, durationMin: 480, type: passive }
+  - { id: cut-chips, durationMin: 10, type: "parallel-with:soak-peas", phase: prep }
+  - { id: cook-peas, durationMin: 45, type: passive }
+  - { id: par-fry-chips, durationMin: 8, type: active, phase: cook }
+  - { id: rest-chips, durationMin: 15, type: passive }
+  - { id: make-batter, durationMin: 5, type: "parallel-with:rest-chips", phase: prep }
+  - { id: crisp-chips, durationMin: 7, type: active, phase: cook }
+  - { id: fry-fish, durationMin: 9, type: active, phase: cook }
+  - { id: serve, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The marrowfat peas need an overnight soak in cold water before cooking, and this is the one part of the dish worth doing well ahead; the chips can be cut and par-fried a few hours ahead and left to cool completely before the second fry.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: rest-chips
+      text: Frying the chips twice, with a rest in between, is what gives a soft interior and a shatter-crisp outside — the first fry cooks them through at a lower temperature, and the rest lets the surface dry before a much hotter second fry crisps it.
+  commonPitfalls:
+    - stepId: fry-fish
+      text: A batter mixed too far ahead, or overworked, loses the carbonation that keeps it light and develops gluten that makes it chewy. It is mixed just before frying and left a little lumpy.
+---
+
+<Step id="soak-peas">
+  Cover the <Qty ref="peas"/> with the <Qty ref="pea-soak-water"/> and leave to soak for
+  <Dur step="soak-peas"/>.
+</Step>
+
+<Step id="cut-chips">
+  Peel the <Qty ref="chip-potato"/> and cut into thick batons.
+</Step>
+
+<Step id="cook-peas">
+  Drain the soaked peas, cover with the <Qty ref="pea-cook-water"/>, add the
+  <Qty ref="pea-bicarb"/> and the <Qty ref="salt-peas"/>, and simmer for
+  <Dur step="cook-peas"/>, until completely soft, then mash roughly with a fork or
+  potato masher, leaving some texture.
+</Step>
+
+<Step id="par-fry-chips">
+  Heat the <Qty ref="frying-oil"/> to a moderate temperature of about <Temp c={130}/>
+  and fry the chips in batches for <Dur step="par-fry-chips"/>, until soft all the way
+  through but still pale. Lift out and drain.
+</Step>
+
+<Step id="rest-chips">
+  Leave the chips to cool and dry out on a wire rack for <Dur step="rest-chips"/>.
+</Step>
+
+<Step id="make-batter">
+  Whisk the <Qty ref="batter-flour"/>, the <Qty ref="baking-powder"/> and the
+  <Qty ref="salt-batter"/> together, then whisk in the <Qty ref="beer"/> until just
+  combined into a thick, slightly lumpy batter.
+</Step>
+
+<Step id="crisp-chips">
+  Raise the oil to <Temp c={190}/> and fry the chips a second time, in batches, for
+  <Dur step="crisp-chips"/>, until deep golden and crisp. Drain and season with the
+  <Qty ref="salt-serve"/>.
+</Step>
+
+<Step id="fry-fish">
+  Pat the <Qty ref="fish"/> dry, dip each fillet in the batter to coat completely, and
+  lower into the <Temp c={190}/> oil. Fry for <Dur step="fry-fish"/>, until the batter is
+  deep golden and crisp and the fish is opaque all the way through.
+</Step>
+
+<Step id="serve">
+  Serve the fish and chips at once with the mashed peas and the <Qty ref="vinegar"/>
+  alongside.
+</Step>

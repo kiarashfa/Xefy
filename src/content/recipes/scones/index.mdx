@@ -1,0 +1,113 @@
+---
+title: Scones
+subtitle: A quick self-raising dough, barely handled and cut into rounds, baked until well risen with a pale, floury top.
+label: Plain, for a cream tea
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [british]
+  course: [breakfast]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: American biscuit
+      note: A savoury, usually unsweetened counterpart made the same rubbed-fat way, eaten with butter or gravy rather than split with jam and cream.
+      slugRef: buttermilk-biscuits
+image:
+  src: images/recipes/scones.webp
+  alt: "Two fruit scones on a plate beside dishes of whipped cream and strawberry jam"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: self-raising
+    amount: 350
+    unit: g
+    note: plus more for dusting
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 85
+    unit: g
+    note: cold, cubed
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 40
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 130
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    portions:
+      - { id: egg-dough, amount: 35 }
+      - { id: egg-glaze, amount: 15, note: beaten, for brushing }
+  - id: jam
+    ingredientRef: jam
+    form: raspberry
+    amount: 120
+    unit: g
+    note: for serving
+  - id: clotted-cream
+    ingredientRef: clotted-cream
+    form: clotted
+    amount: 120
+    unit: g
+    note: for serving
+steps:
+  - { id: rub-butter, durationMin: 6, type: active, phase: prep }
+  - { id: mix-dough, durationMin: 4, type: active, phase: prep }
+  - { id: cut-scones, durationMin: 5, type: active, phase: prep }
+  - { id: glaze, durationMin: 2, type: active, phase: prep }
+  - { id: bake, durationMin: 14, type: passive }
+makeAhead:
+  aheadInstructions: The cut, unglazed scones freeze well raw; bake straight from frozen, adding a few extra minutes.
+  freezable: true
+  freezeInstructions: Open-freeze the cut rounds on a tray, then bag them once solid; glaze just before baking, not before freezing.
+  reheatInstructions: Warm briefly in a low oven; scones are otherwise eaten the day they are baked.
+notes:
+  techniqueRationale:
+    - stepId: mix-dough
+      text: The dough is brought together only until it holds — overworking develops gluten that this bake has no proving time to relax, and the result turns tough rather than staying short.
+  commonPitfalls:
+    - stepId: cut-scones
+      text: Twisting the cutter as it goes down seals the edges and stops the dough rising evenly. It goes straight down and straight back up, with a clean push, and any offcuts are pressed rather than rerolled hard.
+---
+
+<Step id="rub-butter">
+  Rub the <Qty ref="butter"/> into the <Qty ref="flour"/> and the <Qty ref="salt"/> with the
+  fingertips until the mixture looks like fine breadcrumbs, then stir in the
+  <Qty ref="sugar"/>.
+</Step>
+
+<Step id="mix-dough">
+  Make a well in the centre and add the <Qty ref="milk"/> and the <Qty ref="egg-dough"/>.
+  Mix with a table knife and then bring together briefly by hand into a soft, slightly
+  sticky dough.
+</Step>
+
+<Step id="cut-scones">
+  Turn the dough out onto a floured surface and pat gently to a thickness of about
+  <Len cm={2}/>. Cut into rounds and set them on a lined tray, spaced well apart.
+</Step>
+
+<Step id="glaze">
+  Brush the tops with the <Qty ref="egg-glaze"/>, taking care not to let it run down the
+  cut sides, which would stop them rising evenly.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={220}/> for <Dur step="bake"/>, until well risen and golden on top.
+  Cool on a wire rack and split to serve with the <Qty ref="clotted-cream"/> and the
+  <Qty ref="jam"/>.
+</Step>

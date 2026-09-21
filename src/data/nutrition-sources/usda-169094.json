@@ -1,0 +1,486 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "169094",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/169094/nutrients",
+  "description": "Olives, ripe, canned (small-extra large)",
+  "category": "Fruits and Fruit Juices",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 116,
+    "protein": 0.84,
+    "fat": 10.9,
+    "carbs": 6.04,
+    "fiber": 1.6,
+    "sugars": 0,
+    "calcium": 88,
+    "iron": 6.28,
+    "magnesium": 4,
+    "phosphorus": 3,
+    "potassium": 8,
+    "sodium": 735,
+    "zinc": 0.22,
+    "copper": 0.251,
+    "manganese": 0.02,
+    "seleniumMcg": 0.9,
+    "vitaminC": 0.9,
+    "thiamin": 0.003,
+    "riboflavin": 0,
+    "niacin": 0.037,
+    "vitaminB6": 0.009,
+    "folateMcg": 0,
+    "choline": 10.3,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 17,
+    "vitaminE": 1.65,
+    "vitaminDMcg": 0,
+    "vitaminKMcg": 1.4,
+    "saturatedFat": 2.279,
+    "monounsaturatedFat": 7.652,
+    "polyunsaturatedFat": 0.629,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 79.99,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 485,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 2.23,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 0.015,
+      "unit": "mg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "578",
+      "name": "Vitamin B-12, added",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "321",
+      "name": "Carotene, beta",
+      "amount": 198,
+      "unit": "µg"
+    },
+    {
+      "number": "322",
+      "name": "Carotene, alpha",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "334",
+      "name": "Cryptoxanthin, beta",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 330,
+      "unit": "IU"
+    },
+    {
+      "number": "337",
+      "name": "Lycopene",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "338",
+      "name": "Lutein + zeaxanthin",
+      "amount": 510,
+      "unit": "µg"
+    },
+    {
+      "number": "573",
+      "name": "Vitamin E, added",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "341",
+      "name": "Tocopherol, beta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "342",
+      "name": "Tocopherol, gamma",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "343",
+      "name": "Tocopherol, delta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "344",
+      "name": "Tocotrienol, alpha",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "345",
+      "name": "Tocotrienol, beta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "346",
+      "name": "Tocotrienol, gamma",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "347",
+      "name": "Tocotrienol, delta",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "607",
+      "name": "SFA 4:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "608",
+      "name": "SFA 6:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "652",
+      "name": "SFA 15:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 1.73,
+      "unit": "g"
+    },
+    {
+      "number": "653",
+      "name": "SFA 17:0",
+      "amount": 0.15,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.318,
+      "unit": "g"
+    },
+    {
+      "number": "615",
+      "name": "SFA 20:0",
+      "amount": 0.055,
+      "unit": "g"
+    },
+    {
+      "number": "624",
+      "name": "SFA 22:0",
+      "amount": 0.015,
+      "unit": "g"
+    },
+    {
+      "number": "654",
+      "name": "SFA 24:0",
+      "amount": 0.011,
+      "unit": "g"
+    },
+    {
+      "number": "625",
+      "name": "MUFA 14:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "697",
+      "name": "MUFA 15:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.15,
+      "unit": "g"
+    },
+    {
+      "number": "687",
+      "name": "MUFA 17:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 7.47,
+      "unit": "g"
+    },
+    {
+      "number": "628",
+      "name": "MUFA 20:1",
+      "amount": 0.032,
+      "unit": "g"
+    },
+    {
+      "number": "630",
+      "name": "MUFA 22:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.629,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "627",
+      "name": "PUFA 18:4",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "672",
+      "name": "PUFA 20:2 n-6 c,c",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "620",
+      "name": "PUFA 20:4",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "855",
+      "name": "PUFA 20:4 n-6",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "629",
+      "name": "PUFA 20:5 n-3 (EPA)",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "631",
+      "name": "PUFA 22:5 n-3 (DPA)",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "621",
+      "name": "PUFA 22:6 n-3 (DHA)",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 0.026,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 0.031,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 0.05,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 0.032,
+      "unit": "g"
+    },
+    {
+      "number": "506",
+      "name": "Methionine",
+      "amount": 0.012,
+      "unit": "g"
+    },
+    {
+      "number": "508",
+      "name": "Phenylalanine",
+      "amount": 0.029,
+      "unit": "g"
+    },
+    {
+      "number": "509",
+      "name": "Tyrosine",
+      "amount": 0.023,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 0.038,
+      "unit": "g"
+    },
+    {
+      "number": "511",
+      "name": "Arginine",
+      "amount": 0.067,
+      "unit": "g"
+    },
+    {
+      "number": "512",
+      "name": "Histidine",
+      "amount": 0.023,
+      "unit": "g"
+    },
+    {
+      "number": "513",
+      "name": "Alanine",
+      "amount": 0.043,
+      "unit": "g"
+    },
+    {
+      "number": "514",
+      "name": "Aspartic acid",
+      "amount": 0.092,
+      "unit": "g"
+    },
+    {
+      "number": "515",
+      "name": "Glutamic acid",
+      "amount": 0.093,
+      "unit": "g"
+    },
+    {
+      "number": "516",
+      "name": "Glycine",
+      "amount": 0.049,
+      "unit": "g"
+    },
+    {
+      "number": "517",
+      "name": "Proline",
+      "amount": 0.04,
+      "unit": "g"
+    },
+    {
+      "number": "518",
+      "name": "Serine",
+      "amount": 0.031,
+      "unit": "g"
+    },
+    {
+      "number": "221",
+      "name": "Alcohol, ethyl",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "262",
+      "name": "Caffeine",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "263",
+      "name": "Theobromine",
+      "amount": 0,
+      "unit": "mg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTbsp",
+      "value": 8.4,
+      "from": "1 tbsp"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": "baked-beans",
+  "name": "Baked Beans",
+  "proseName": "baked beans",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "American baked beans",
+        "note": "Usually sweeter and smokier, cooked with molasses and salt pork or bacon; the British tinned version is haricot beans in a thinner tomato sauce."
+      }
+    ]
+  },
+  "category": "tinned vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "tinned",
+      "label": "Tinned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175182",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175182/nutrients",
+      "sourceNote": "USDA's record for plain or vegetarian canned baked beans, the closest match to the British tinned haricot beans in tomato sauce.",
+      "nutritionPer100g": {
+        "kcal": 94,
+        "protein": 4.75,
+        "fat": 0.37,
+        "carbs": 21.14,
+        "fiber": 4.1,
+        "sugars": 7.96,
+        "calcium": 34,
+        "iron": 1.19,
+        "magnesium": 27,
+        "phosphorus": 74,
+        "potassium": 224,
+        "sodium": 343,
+        "zinc": 2.28,
+        "copper": 0.145,
+        "manganese": 0.109,
+        "seleniumMcg": 5,
+        "vitaminC": 0,
+        "thiamin": 0.096,
+        "riboflavin": 0.039,
+        "niacin": 0.428,
+        "vitaminB6": 0.084,
+        "saturatedFat": 0.071,
+        "monounsaturatedFat": 0.095,
+        "polyunsaturatedFat": 0.121,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/baked-beans-thumb.webp"
+}

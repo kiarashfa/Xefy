@@ -1,0 +1,130 @@
+---
+title: Sarmale
+subtitle: Small rolls of pork and rice wrapped in soured cabbage leaves, layered with smoked bacon and braised slowly until the leaves turn tender.
+label: Pork and rice, braised
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [romanian]
+  course: [main-course]
+  method: [braising]
+names:
+  notToBeConfusedWith:
+    - name: Golubtsy
+      note: The Russian and Ukrainian relative, usually wrapped in fresh rather than soured cabbage and simmered in a plain tomato sauce rather than braised with smoked pork and whole soured leaves.
+image:
+  src: images/recipes/sarmale.webp
+  alt: "Three Romanian sarmale, cabbage leaves rolled around a meat filling, topped with dollops of sour cream"
+ingredients:
+  - id: cabbage-leaves
+    ingredientRef: sauerkraut
+    form: whole-leaf
+    amount: 800
+    unit: g
+    note: whole soured cabbage leaves, separated
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 600
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 150
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: dill
+    ingredientRef: dill
+    form: fresh
+    amount: 10
+    unit: g
+    note: chopped
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 40
+    unit: g
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: bacon
+    ingredientRef: streaky-bacon
+    form: raw
+    amount: 100
+    unit: g
+    note: chopped
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 500
+    unit: g
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 100
+    unit: g
+    note: for serving
+steps:
+  - { id: rinse-leaves, durationMin: 10, type: active, phase: prep }
+  - { id: make-filling, durationMin: 12, type: "parallel-with:rinse-leaves", phase: prep }
+  - { id: roll-sarmale, durationMin: 30, type: active, phase: prep }
+  - { id: layer-pot, durationMin: 8, type: active, phase: prep }
+  - { id: braise, durationMin: 150, type: passive }
+makeAhead:
+  aheadInstructions: Sarmale are traditionally made a day ahead and reheated, since the flavour deepens overnight; the rolls can also be assembled a day ahead of braising and kept covered in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze the cooked rolls in their braising liquid for up to three months; thaw fully before reheating gently on the stove.
+  reheatInstructions: Reheat covered, on the stove or in a low oven, with a splash of extra stock or water so the rolls do not dry out.
+notes:
+  techniqueRationale:
+    - stepId: braise
+      text: A long, low braise is what softens the soured cabbage leaf from tough and chewy to tender enough to cut with a spoon; rushed at a higher heat, the leaves stay leathery while the filling inside overcooks.
+  commonPitfalls:
+    - stepId: roll-sarmale
+      text: Overfilling each leaf keeps it from wrapping tightly, and a loose roll falls apart in the pot. Sarmale are kept deliberately small and rolled firm, with the raw rice given room inside the leaf to swell as it cooks.
+---
+
+<Step id="rinse-leaves">
+  Rinse the <Qty ref="cabbage-leaves"/> under cold water to remove excess salt, and
+  trim away any thick centre rib.
+</Step>
+
+<Step id="make-filling">
+  Combine the <Qty ref="pork"/>, the <Qty ref="rice"/>, the <Qty ref="onion"/>, the
+  <Qty ref="dill"/>, half the <Qty ref="tomato-puree"/>, the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>.
+</Step>
+
+<Step id="roll-sarmale">
+  Place a small spoonful of filling on each leaf, fold in the sides, and roll into a
+  tight, compact parcel.
+</Step>
+
+<Step id="layer-pot">
+  Scatter half the <Qty ref="bacon"/> over the base of a heavy pot, pack in the
+  sarmale in tight layers with the <Qty ref="bay-leaf"/> tucked between them, and
+  scatter over the rest of the bacon.
+</Step>
+
+<Step id="braise">
+  Pour over the <Qty ref="stock"/> mixed with the rest of the <Qty ref="tomato-puree"/>,
+  cover, and braise at <Temp c={160}/> for <Dur step="braise"/>, until the leaves are
+  completely tender. Serve with the <Qty ref="soured-cream"/>.
+</Step>

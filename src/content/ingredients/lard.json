@@ -1,0 +1,60 @@
+{
+  "id": "lard",
+  "name": "Lard",
+  "proseName": "lard",
+  "category": "fat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171401",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171401/nutrients",
+      "nutritionPer100g": {
+        "kcal": 902,
+        "protein": 0,
+        "fat": 100,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0,
+        "magnesium": 0,
+        "phosphorus": 0,
+        "potassium": 0,
+        "sodium": 0,
+        "zinc": 0.11,
+        "copper": 0,
+        "manganese": 0,
+        "seleniumMcg": 0.2,
+        "vitaminC": 0,
+        "thiamin": 0,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 49.7,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.6,
+        "vitaminDMcg": 2.5,
+        "vitaminKMcg": 0,
+        "saturatedFat": 39.2,
+        "monounsaturatedFat": 45.1,
+        "polyunsaturatedFat": 11.2,
+        "cholesterol": 95
+      },
+      "density": {
+        "gPerTbsp": 12.8,
+        "gPerCup": 205,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/lard-thumb.webp"
+}

@@ -1,0 +1,350 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "169534",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/169534/nutrients",
+  "description": "Beef, round, top round, separable lean and fat, trimmed to 1/8\" fat, prime, raw",
+  "category": "Beef Products",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 173,
+    "protein": 22.24,
+    "fat": 8.67,
+    "carbs": 0,
+    "fiber": 0,
+    "sugars": 0,
+    "calcium": 3,
+    "iron": 2.04,
+    "magnesium": 24,
+    "phosphorus": 213,
+    "potassium": 371,
+    "sodium": 51,
+    "zinc": 2.8,
+    "copper": 0.08,
+    "manganese": 0.014,
+    "seleniumMcg": 20.5,
+    "vitaminC": 0,
+    "thiamin": 0.1,
+    "riboflavin": 0.18,
+    "niacin": 4.25,
+    "vitaminB6": 0.5,
+    "folateMcg": 9,
+    "choline": 92.9,
+    "vitaminB12Mcg": 2.79,
+    "vitaminAMcg": 0,
+    "saturatedFat": 3.3,
+    "monounsaturatedFat": 3.59,
+    "polyunsaturatedFat": 0.38,
+    "cholesterol": 59
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 68.73,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 724,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.07,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 0.35,
+      "unit": "mg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 9,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 9,
+      "unit": "µg"
+    },
+    {
+      "number": "454",
+      "name": "Betaine",
+      "amount": 13.7,
+      "unit": "mg"
+    },
+    {
+      "number": "578",
+      "name": "Vitamin B-12, added",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "321",
+      "name": "Carotene, beta",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "322",
+      "name": "Carotene, alpha",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "334",
+      "name": "Cryptoxanthin, beta",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "337",
+      "name": "Lycopene",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "338",
+      "name": "Lutein + zeaxanthin",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "607",
+      "name": "SFA 4:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "608",
+      "name": "SFA 6:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0.01,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.01,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.23,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 1.95,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.99,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.34,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 3.16,
+      "unit": "g"
+    },
+    {
+      "number": "628",
+      "name": "MUFA 20:1",
+      "amount": 0.01,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.27,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0.05,
+      "unit": "g"
+    },
+    {
+      "number": "627",
+      "name": "PUFA 18:4",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "620",
+      "name": "PUFA 20:4",
+      "amount": 0.05,
+      "unit": "g"
+    },
+    {
+      "number": "501",
+      "name": "Tryptophan",
+      "amount": 0.249,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 0.971,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 1,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 1.758,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 1.85,
+      "unit": "g"
+    },
+    {
+      "number": "506",
+      "name": "Methionine",
+      "amount": 0.569,
+      "unit": "g"
+    },
+    {
+      "number": "507",
+      "name": "Cystine",
+      "amount": 0.249,
+      "unit": "g"
+    },
+    {
+      "number": "508",
+      "name": "Phenylalanine",
+      "amount": 0.868,
+      "unit": "g"
+    },
+    {
+      "number": "509",
+      "name": "Tyrosine",
+      "amount": 0.747,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 1.082,
+      "unit": "g"
+    },
+    {
+      "number": "511",
+      "name": "Arginine",
+      "amount": 1.405,
+      "unit": "g"
+    },
+    {
+      "number": "512",
+      "name": "Histidine",
+      "amount": 0.761,
+      "unit": "g"
+    },
+    {
+      "number": "513",
+      "name": "Alanine",
+      "amount": 1.341,
+      "unit": "g"
+    },
+    {
+      "number": "514",
+      "name": "Aspartic acid",
+      "amount": 2.032,
+      "unit": "g"
+    },
+    {
+      "number": "515",
+      "name": "Glutamic acid",
+      "amount": 3.341,
+      "unit": "g"
+    },
+    {
+      "number": "516",
+      "name": "Glycine",
+      "amount": 1.213,
+      "unit": "g"
+    },
+    {
+      "number": "517",
+      "name": "Proline",
+      "amount": 0.982,
+      "unit": "g"
+    },
+    {
+      "number": "518",
+      "name": "Serine",
+      "amount": 0.85,
+      "unit": "g"
+    },
+    {
+      "number": "221",
+      "name": "Alcohol, ethyl",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "262",
+      "name": "Caffeine",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "263",
+      "name": "Theobromine",
+      "amount": 0,
+      "unit": "mg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

@@ -1,0 +1,142 @@
+---
+title: Feijoada
+subtitle: A long-simmered black bean stew built on dried, salted and smoked pork and beef, served with rice, couve and orange.
+label: Classic
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [brazilian]
+  course: [main-course]
+  method: [simmering, sauteing]
+image:
+  src: images/recipes/feijoada.webp
+  alt: "A cast-iron pot of feijoada, black beans simmered with pieces of pork and sausage in a thick dark broth"
+ingredients:
+  - id: beans
+    ingredientRef: black-beans
+    form: dried
+    amount: 500
+    unit: g
+  - id: carne-seca
+    ingredientRef: carne-seca
+    form: dried
+    amount: 200
+    unit: g
+    note: soaked and rinsed
+  - id: salt-pork
+    ingredientRef: salt-pork
+    form: raw
+    amount: 150
+    unit: g
+    note: soaked and rinsed, cut into chunks
+  - id: sausage
+    ingredientRef: linguica
+    form: smoked
+    amount: 200
+    unit: g
+    note: sliced
+  - id: lard
+    ingredientRef: lard
+    form: standard
+    amount: 20
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: finely chopped
+    portions:
+      - { id: garlic-beans, amount: 10, note: for the beans }
+      - { id: garlic-couve, amount: 5, note: for the greens }
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 1
+    unit: g
+    note: two leaves
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: greens
+    ingredientRef: collard-greens
+    form: raw
+    amount: 200
+    unit: g
+    note: shredded very thinly
+  - id: greens-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 15
+    unit: ml
+  - id: orange
+    ingredientRef: orange
+    form: raw
+    amount: 260
+    unit: g
+    note: two oranges, sliced, to serve
+steps:
+  - { id: soak, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 150, type: passive }
+  - { id: saute-aromatics, durationMin: 10, type: "parallel-with:cook-beans", phase: prep }
+  - { id: add-sausage, durationMin: 20, type: active, phase: cook }
+  - { id: cook-couve, durationMin: 8, type: active, phase: cook }
+  - { id: serve, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Feijoada is better a day or two after cooking, kept covered in the refrigerator, once the beans have absorbed more of the meat's flavour.
+  freezable: true
+  freezeInstructions: Freeze the finished bean and meat stew, without the greens, in a sealed container for up to three months.
+  reheatInstructions: Reheat gently on the stovetop, adding a splash of water if it has thickened too much in storage.
+notes:
+  techniqueRationale:
+    - stepId: soak
+      text: The carne seca and salt pork are both preserved with a heavy cure. An overnight soak, with the water changed at least once, draws out enough of that salt that the finished stew is seasoned rather than inedibly salty.
+  commonPitfalls:
+    - stepId: cook-beans
+      text: Salting the pot again before tasting is an easy mistake, since the cured meats already carry a great deal of salt into the beans as they render. It is seasoned only at the end, once the meat's own salt has had time to spread through the pot.
+---
+
+<Step id="soak">
+  Soak the <Qty ref="beans"/>, <Qty ref="carne-seca"/> and
+  <Qty ref="salt-pork"/> separately in plenty of cold water for
+  <Dur step="soak"/>, changing the water for the meats at least once. Drain
+  and rinse all three before cooking.
+</Step>
+
+<Step id="cook-beans">
+  Put the beans, carne seca and salt pork into a large pot with the
+  <Qty ref="water"/> and the <Qty ref="bay-leaf"/>. Bring to a simmer and
+  cook for <Dur step="cook-beans"/>, partially covered, until the beans are
+  fully tender and the meats fall apart easily.
+</Step>
+
+<Step id="saute-aromatics">
+  While the pot simmers, melt the <Qty ref="lard"/> in a small pan and cook
+  the <Qty ref="onion"/> and <Qty ref="garlic-beans"/> until soft and
+  golden, then stir them into the pot.
+</Step>
+
+<Step id="add-sausage">
+  Stir the <Qty ref="sausage"/> into the pot and simmer for
+  <Dur step="add-sausage"/>, until the sausage is cooked through and the stew
+  has thickened to a dark, glossy consistency.
+</Step>
+
+<Step id="cook-couve">
+  Heat the <Qty ref="greens-oil"/> in a wide pan over a high heat and
+  stir-fry the <Qty ref="greens"/> and <Qty ref="garlic-couve"/> for
+  <Dur step="cook-couve"/>, just until wilted and still bright green.
+</Step>
+
+<Step id="serve">
+  Serve the stew with the couve alongside and the <Qty ref="orange"/>
+  slices on the side.
+</Step>

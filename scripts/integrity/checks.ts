@@ -289,6 +289,13 @@ export async function runChecks(content: Content): Promise<CheckResult> {
 
   /* --- 6. No hand-typed numbers in step prose -------------------------- */
   const allowlist = await loadLiteralAllowlist();
+  const wikipediaBacklog = new Set(
+    (
+      JSON.parse(
+        await readFile(path.join(ROOT, 'scripts', 'integrity', 'wikipedia-backlog.json'), 'utf8'),
+      ) as { files: string[] }
+    ).files,
+  );
   const allowed = new Set(allowlist.map((e) => `${e.file}::${e.stepId}::${e.text}`));
   for (const unit of authored) {
     for (const prose of unit.prose) {
@@ -630,6 +637,47 @@ export async function runChecks(content: Content): Promise<CheckResult> {
           : `${about.data.sources.length} sources, all from one publisher ` +
             `("${[...publishers][0]}"). Pages from one publisher corroborate nothing — ` +
             `the floor is two independent sources`,
+      );
+    }
+
+    /* Wikipedia may corroborate a claim but never carry it alone. The
+     * publisher count above is satisfied by "Wikipedia plus one", which is how
+     * whole batches came to rest their load-bearing claims on the encyclopedia
+     * while the second source decorated — and when those claims were finally
+     * given a real second source, five of eight broke. A claim's citation is the
+     * run of adjacent <Cite/> tags that ends it; a run whose every ref is a
+     * Wikipedia source is a claim nothing else supports. It fails, except on the
+     * files in wikipedia-backlog.json, which predate the rule and only warn.
+     */
+    const wikipedia = new Set(
+      about.data.sources
+        .filter((s) => /wikipedia/i.test(s.publisher ?? '') || /wikipedia\.org/i.test(s.url ?? ''))
+        .map((s) => s.id),
+    );
+    const grandfathered = wikipediaBacklog.has(about.file);
+    let wikipediaAlone = 0;
+    if (wikipedia.size > 0) {
+      const RUN = /(?:<Cite\b[^>]*?\/?>[\s.,;:]*)+/g;
+      for (const run of about.body.matchAll(RUN)) {
+        const refs = [...run[0].matchAll(CITE)].map((m) => m[1] ?? '');
+        if (refs.length > 0 && refs.every((r) => wikipedia.has(r))) {
+          wikipediaAlone++;
+          const before = about.body.slice(Math.max(0, (run.index ?? 0) - 70), run.index).replace(/\s+/g, ' ');
+          add(
+            'about-wikipedia-alone',
+            grandfathered ? 'warn' : 'fail',
+            about.file,
+            `a claim is cited to Wikipedia alone ("…${before.trim()}"). Wikipedia may corroborate a claim, never carry it — cite an independent source beside it, or cut the claim`,
+          );
+        }
+      }
+    }
+    if (grandfathered && wikipediaAlone === 0) {
+      add(
+        'about-wikipedia-alone',
+        'warn',
+        about.file,
+        'no longer cites Wikipedia alone — remove it from scripts/integrity/wikipedia-backlog.json',
       );
     }
 

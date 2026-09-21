@@ -1,0 +1,127 @@
+---
+title: Moqueca
+subtitle: White fish simmered with onion, tomato and pepper — in Bahia, in a rich sauce of dendê oil and coconut milk, the version most associated with the name outside Brazil.
+label: Baiana
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [brazilian]
+  course: [main-course]
+  method: [simmering]
+image:
+  src: images/recipes/moqueca.webp
+  alt: "A clay pot of moqueca, fish in an orange coconut and palm oil broth topped with coriander, served with rice and pirão"
+ingredients:
+  - id: fish
+    ingredientRef: corvina
+    form: raw
+    amount: 700
+    unit: g
+    note: cut into thick pieces
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: fish-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 200
+    unit: g
+    note: sliced
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 100
+    unit: g
+    note: thinly sliced
+  - id: chilli
+    ingredientRef: malagueta
+    form: fresh
+    amount: 4
+    unit: g
+    note: thinly sliced
+  - id: palm-oil
+    ingredientRef: palm-oil
+    form: red
+    amount: 30
+    unit: ml
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 300
+    unit: ml
+  - id: finishing-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: roughly chopped
+steps:
+  - { id: marinate, durationMin: 5, type: active, phase: prep }
+  - { id: rest-fish, durationMin: 15, type: passive }
+  - { id: build-base, durationMin: 10, type: "parallel-with:rest-fish", phase: cook }
+  - { id: simmer, durationMin: 15, type: active, phase: cook }
+  - { id: finish, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: marinate
+      text: A short cure in lime juice and salt firms the fish's surface before it hits the sauce, which is what keeps the pieces intact through simmering rather than flaking apart into the liquid.
+  commonPitfalls:
+    - stepId: simmer
+      text: Stirring the fish once it is in the sauce breaks the pieces apart. The pan is shaken gently by the handle to move things around instead, and the fish is otherwise left alone until it is done.
+---
+
+<Step id="marinate">
+  Toss the <Qty ref="fish"/> with the <Qty ref="lime-juice"/>,
+  <Qty ref="fish-salt"/> and <Qty ref="garlic"/>.
+</Step>
+
+<Step id="rest-fish">
+  Set the fish aside to cure for <Dur step="rest-fish"/>.
+</Step>
+
+<Step id="build-base">
+  While the fish rests, layer the <Qty ref="onion"/>, <Qty ref="tomato"/>,
+  <Qty ref="red-pepper"/> and <Qty ref="chilli"/> in a wide, shallow pan and
+  pour over the <Qty ref="palm-oil"/>. Cook over a medium heat for
+  <Dur step="build-base"/>, until the vegetables have softened at the edges.
+</Step>
+
+<Step id="simmer">
+  Lay the marinated fish over the vegetables, pour in the
+  <Qty ref="coconut-milk"/> and season with the <Qty ref="finishing-salt"/>.
+  Simmer gently, without stirring, for <Dur step="simmer"/>, until the fish
+  is just cooked through and the sauce has taken on the oil's deep colour.
+</Step>
+
+<Step id="finish">
+  Scatter over the <Qty ref="coriander"/> and serve at once.
+</Step>

@@ -1,0 +1,247 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "171315",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/171315/nutrients",
+  "description": "Spices, allspice, ground",
+  "category": "Spices and Herbs",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 263,
+    "protein": 6.09,
+    "fat": 8.69,
+    "carbs": 72.12,
+    "fiber": 21.6,
+    "calcium": 661,
+    "iron": 7.06,
+    "magnesium": 135,
+    "phosphorus": 113,
+    "potassium": 1044,
+    "sodium": 77,
+    "zinc": 1.01,
+    "copper": 0.553,
+    "manganese": 2.943,
+    "seleniumMcg": 2.7,
+    "vitaminC": 39.2,
+    "thiamin": 0.101,
+    "riboflavin": 0.063,
+    "niacin": 2.86,
+    "vitaminB6": 0.21,
+    "folateMcg": 36,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 27,
+    "vitaminDMcg": 0,
+    "saturatedFat": 2.55,
+    "monounsaturatedFat": 0.66,
+    "polyunsaturatedFat": 2.36,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 8.46,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1099,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 4.65,
+      "unit": "g"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 36,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 36,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 540,
+      "unit": "IU"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "607",
+      "name": "SFA 4:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "608",
+      "name": "SFA 6:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.02,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 0.49,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 1.99,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 0.66,
+      "unit": "g"
+    },
+    {
+      "number": "628",
+      "name": "MUFA 20:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "630",
+      "name": "MUFA 22:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 2.29,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0.07,
+      "unit": "g"
+    },
+    {
+      "number": "627",
+      "name": "PUFA 18:4",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "620",
+      "name": "PUFA 20:4",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "629",
+      "name": "PUFA 20:5 n-3 (EPA)",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "631",
+      "name": "PUFA 22:5 n-3 (DPA)",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "621",
+      "name": "PUFA 22:6 n-3 (DHA)",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "636",
+      "name": "Phytosterols",
+      "amount": 61,
+      "unit": "mg"
+    },
+    {
+      "number": "221",
+      "name": "Alcohol, ethyl",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "262",
+      "name": "Caffeine",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "263",
+      "name": "Theobromine",
+      "amount": 0,
+      "unit": "mg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTsp",
+      "value": 1.9,
+      "from": "1 tsp"
+    },
+    {
+      "measure": "gPerTbsp",
+      "value": 6,
+      "from": "1 tbsp"
+    }
+  ]
+}

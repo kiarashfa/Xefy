@@ -1,0 +1,109 @@
+---
+title: Pernil
+subtitle: Bone-in pork shoulder cut deep and packed with a garlic-and-oregano adobo, then roasted slow until the skin cracks and the meat falls from the bone.
+label: Puerto Rico
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [roasting]
+names:
+  notToBeConfusedWith:
+    - name: Lechón Asado
+      note: Cuba's roast pork shoulder, bathed and basted throughout in a wet, sour-orange-heavy mojo rather than packed with the drier garlic-and-oregano adobo pressed into deep cuts here.
+      slugRef: lechon-asado-cubano
+image:
+  src: images/recipes/pernil.webp
+  alt: "A whole roasted pernil, bone-in pork shoulder with dark, crackling skin, on a wooden board"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 2500
+    unit: g
+    note: bone-in, skin on
+    consumedFraction: 0.85
+    consumedFractionNote: A bone-in shoulder loses roughly a sixth of its raw weight to bone once carved; the figure here reflects the meat and skin actually eaten.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 50
+    unit: g
+    note: crushed
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 6
+    unit: g
+  - id: cider-vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 20
+    unit: ml
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 22
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 5
+    unit: g
+steps:
+  - { id: make-adobo, durationMin: 8, type: active, phase: prep }
+  - { id: cut-and-pack, durationMin: 15, type: active, phase: prep }
+  - { id: marinate, durationMin: 720, type: passive }
+  - { id: slow-roast, durationMin: 270, type: passive }
+  - { id: crisp, durationMin: 25, type: active, phase: cook }
+  - { id: rest, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: The adobo can be made up to three days ahead and refrigerated. The pork should be packed with it at least overnight and can be left for up to two days.
+  freezable: true
+  freezeInstructions: Freeze the cooked, shredded pork in its juices for up to three months.
+  reheatInstructions: Reheat covered in a low oven with a splash of the reserved pan juices, so the meat does not dry out.
+notes:
+  techniqueRationale:
+    - stepId: cut-and-pack
+      text: Cutting deep pockets into the meat and packing the adobo directly inside them seasons the pork through its thickest parts rather than only at the surface, which a shoulder this size needs given how little marinade actually penetrates skin and fat by soaking alone.
+  commonPitfalls:
+    - stepId: slow-roast
+      text: Roasting hot from the start renders the skin before the meat underneath has had time to tenderise; the long, low roast is what breaks down the connective tissue, and only the final blast of heat is for the skin.
+---
+
+<Step id="make-adobo">
+  Mash the <Qty ref="garlic"/> with the <Qty ref="oregano"/>,
+  <Qty ref="cider-vinegar"/>, <Qty ref="olive-oil"/>, <Qty ref="salt"/> and
+  <Qty ref="black-pepper"/> into a coarse paste.
+</Step>
+
+<Step id="cut-and-pack">
+  Cut deep pockets all over the <Qty ref="pork"/>, avoiding the skin, and
+  pack the adobo into each one, then rub any remaining paste over the
+  surface.
+</Step>
+
+<Step id="marinate">
+  Cover and refrigerate for <Dur step="marinate"/>.
+</Step>
+
+<Step id="slow-roast">
+  Set the pork skin-side up in a roasting tray and roast at <Temp c={150}/>
+  for <Dur step="slow-roast"/>, until the meat is fully tender.
+</Step>
+
+<Step id="crisp">
+  Raise the oven to <Temp c={220}/> and roast for a further
+  <Dur step="crisp"/>, until the skin is deeply browned and crackling.
+</Step>
+
+<Step id="rest">
+  Rest the pork loosely covered for <Dur step="rest"/> before carving or
+  pulling it apart.
+</Step>

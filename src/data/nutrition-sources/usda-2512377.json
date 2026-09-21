@@ -1,0 +1,88 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2512377",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2512377/nutrients",
+  "description": "Flour, cassava",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/20/2023",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 358.557,
+    "protein": 0.918,
+    "fat": 0.494,
+    "carbs": 87.313,
+    "fiber": 4.834,
+    "calcium": 74.55,
+    "iron": 3.988,
+    "magnesium": 33.56,
+    "phosphorus": 39.24,
+    "potassium": 197.6,
+    "sodium": 13.08,
+    "zinc": 0.41,
+    "copper": 0.077,
+    "manganese": 0.395,
+    "seleniumMcg": 0,
+    "thiamin": 0.051,
+    "riboflavin": 0.068,
+    "niacin": 0.6,
+    "vitaminB6": 0.05
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 10.56,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.1575,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.715,
+      "unit": "g"
+    },
+    {
+      "number": "293",
+      "name": "Total dietary fiber (AOAC 2011.25)",
+      "amount": 7.655,
+      "unit": "g"
+    },
+    {
+      "number": "293.3",
+      "name": "High Molecular Weight Dietary Fiber (HMWDF)",
+      "amount": 6.266,
+      "unit": "g"
+    },
+    {
+      "number": "293.4",
+      "name": "Low Molecular Weight Dietary Fiber (LMWDF)",
+      "amount": 1.394,
+      "unit": "g"
+    },
+    {
+      "number": "209",
+      "name": "Starch",
+      "amount": 79.72,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 2.534,
+      "unit": "µg"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 0.5188,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

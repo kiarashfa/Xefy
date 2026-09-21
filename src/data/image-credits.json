@@ -160,6 +160,29 @@
     }
   },
   {
+    "slug": "allspice",
+    "kind": "ingredient",
+    "alt": "A close view of dried whole allspice berries, small round and dark brown",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWholeAllspice.JPG",
+    "title": "File:WholeAllspice.JPG",
+    "author": "Jonathunder",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1639,
+    "originalHeight": 1639,
+    "files": {
+      "hero": "images/ingredients/allspice.webp",
+      "card": "images/ingredients/allspice-card.webp",
+      "thumb": "images/ingredients/allspice-thumb.webp"
+    }
+  },
+  {
     "slug": "almonds",
     "kind": "ingredient",
     "alt": "A pile of whole raw almonds on a plate",
@@ -295,6 +318,52 @@
       "hero": "images/ingredients/avocado.webp",
       "card": "images/ingredients/avocado-card.webp",
       "thumb": "images/ingredients/avocado-thumb.webp"
+    }
+  },
+  {
+    "slug": "back-bacon",
+    "kind": "ingredient",
+    "alt": "A raw back bacon rasher, a round eye of pink meat with a streaky fat tail, on a plate alongside other raw Irish breakfast ingredients",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AIrish_breakfast%2C_uncooked.JPG",
+    "title": "File:Irish breakfast, uncooked.JPG",
+    "author": "O'Dea",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2560,
+    "originalHeight": 1920,
+    "files": {
+      "hero": "images/ingredients/back-bacon.webp",
+      "card": "images/ingredients/back-bacon-card.webp",
+      "thumb": "images/ingredients/back-bacon-thumb.webp"
+    }
+  },
+  {
+    "slug": "baked-beans",
+    "kind": "ingredient",
+    "alt": "A bowl of baked beans in orange tomato sauce, with a spoon",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABaked_beans_in_tomato_sauce.jpg",
+    "title": "File:Baked beans in tomato sauce.jpg",
+    "author": "Mk2010",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2248,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/ingredients/baked-beans.webp",
+      "card": "images/ingredients/baked-beans-card.webp",
+      "thumb": "images/ingredients/baked-beans-thumb.webp"
     }
   },
   {
@@ -504,6 +573,29 @@
     }
   },
   {
+    "slug": "beef-dripping",
+    "kind": "ingredient",
+    "alt": "A tub of solidified beef dripping, pale fat with dark meat juices settled at the bottom",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMucky_fat_(dripping).jpg",
+    "title": "File:Mucky fat (dripping).jpg",
+    "author": "naughty architect",
+    "credit": "https://www.flickr.com/photos/james_lumb/3214791711/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1200,
+    "originalHeight": 1600,
+    "files": {
+      "hero": "images/ingredients/beef-dripping.webp",
+      "card": "images/ingredients/beef-dripping-card.webp",
+      "thumb": "images/ingredients/beef-dripping-thumb.webp"
+    }
+  },
+  {
     "slug": "beef-heart",
     "kind": "ingredient",
     "alt": "A whole raw beef heart, showing its dark red muscle and pale interior chambers, on a white surface",
@@ -550,6 +642,52 @@
     }
   },
   {
+    "slug": "beef-rib",
+    "kind": "ingredient",
+    "alt": "A raw, seasoned bone-in beef rib roast, resting over a bed of potatoes and shallots",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARaw_Beef_Prime_Rib_on_Potatoes%2C_and_Shallots.jpg",
+    "title": "File:Raw Beef Prime Rib on Potatoes, and Shallots.jpg",
+    "author": "Michael J. Bennett",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3456,
+    "originalHeight": 5184,
+    "files": {
+      "hero": "images/ingredients/beef-rib.webp",
+      "card": "images/ingredients/beef-rib-card.webp",
+      "thumb": "images/ingredients/beef-rib-thumb.webp"
+    }
+  },
+  {
+    "slug": "beef-short-rib",
+    "kind": "ingredient",
+    "alt": "Thin, marbled slices of raw beef short rib fanned out on a plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARaw_Beef_Short_Ribs_Slices.jpg",
+    "title": "File:Raw Beef Short Ribs Slices.jpg",
+    "author": "Ceeseven",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/ingredients/beef-short-rib.webp",
+      "card": "images/ingredients/beef-short-rib-card.webp",
+      "thumb": "images/ingredients/beef-short-rib-thumb.webp"
+    }
+  },
+  {
     "slug": "beef-skirt-steak",
     "kind": "ingredient",
     "alt": "Grilled skirt steak sliced on a wooden board, showing its long muscle grain",
@@ -570,6 +708,29 @@
       "hero": "images/ingredients/beef-skirt-steak.webp",
       "card": "images/ingredients/beef-skirt-steak-card.webp",
       "thumb": "images/ingredients/beef-skirt-steak-thumb.webp"
+    }
+  },
+  {
+    "slug": "beef-topside",
+    "kind": "ingredient",
+    "alt": "A raw, lean beef topside roasting joint with a thin cap of fat, on a wooden board",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A-2022-02-06_Topside_of_beef_roasting_joint%2C_Trimingham%2C_Norfolk.JPG",
+    "title": "File:-2022-02-06 Topside of beef roasting joint, Trimingham, Norfolk.JPG",
+    "author": "Kolforn (Kolforn) I'd appreciate if you could mail me (Kolforn@gmail.com) if you want to use this picture out of the Wikimedia project scope. This file is licensed under the Creative Commons Attribution-Share Alike 4.0 International license. You are free: to share – to copy, distribute and transmit the work to remix – to adapt the work Under the following conditions: attribution – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. share alike – If you remix, transform, or build upon the material, you must distribute your contributions under the same or compatible license as the original.https://creativecommons.org/licenses/by-sa/4.0CC BY-SA 4.0 Creative Commons Attribution-Share Alike 4.0 truetrue",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3599,
+    "originalHeight": 2637,
+    "files": {
+      "hero": "images/ingredients/beef-topside.webp",
+      "card": "images/ingredients/beef-topside-card.webp",
+      "thumb": "images/ingredients/beef-topside-thumb.webp"
     }
   },
   {
@@ -615,6 +776,29 @@
       "hero": "images/ingredients/bicarbonate-of-soda.webp",
       "card": "images/ingredients/bicarbonate-of-soda-card.webp",
       "thumb": "images/ingredients/bicarbonate-of-soda-thumb.webp"
+    }
+  },
+  {
+    "slug": "black-beans",
+    "kind": "ingredient",
+    "alt": "A close view of dried black turtle beans",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABLACK_TURTLE_BEANS.jpg",
+    "title": "File:BLACK TURTLE BEANS.jpg",
+    "author": "Ranjithkumar Murugesan",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1840,
+    "originalHeight": 2453,
+    "files": {
+      "hero": "images/ingredients/black-beans.webp",
+      "card": "images/ingredients/black-beans-card.webp",
+      "thumb": "images/ingredients/black-beans-thumb.webp"
     }
   },
   {
@@ -664,6 +848,29 @@
     }
   },
   {
+    "slug": "black-pudding",
+    "kind": "ingredient",
+    "alt": "A round cross-section slice of black pudding, dark and dense with visible flecks of fat",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AStornoway_Black_Pudding.jpg",
+    "title": "File:Stornoway Black Pudding.jpg",
+    "author": "Alexbrn",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1600,
+    "originalHeight": 1600,
+    "files": {
+      "hero": "images/ingredients/black-pudding.webp",
+      "card": "images/ingredients/black-pudding-card.webp",
+      "thumb": "images/ingredients/black-pudding-thumb.webp"
+    }
+  },
+  {
     "slug": "breadcrumbs",
     "kind": "ingredient",
     "alt": "A plate of loose, fine golden-brown dried breadcrumbs",
@@ -684,6 +891,29 @@
       "hero": "images/ingredients/breadcrumbs.webp",
       "card": "images/ingredients/breadcrumbs-card.webp",
       "thumb": "images/ingredients/breadcrumbs-thumb.webp"
+    }
+  },
+  {
+    "slug": "british-sausages",
+    "kind": "ingredient",
+    "alt": "Three plump British pork sausages, browned and glazed with onion gravy, on mashed potato",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACharlecote_Park_Sausage_and_Mash_Warwickshire_England_03.jpg",
+    "title": "File:Charlecote Park Sausage and Mash Warwickshire England 03.jpg",
+    "author": "Acabashi",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3869,
+    "originalHeight": 3635,
+    "files": {
+      "hero": "images/ingredients/british-sausages.webp",
+      "card": "images/ingredients/british-sausages-card.webp",
+      "thumb": "images/ingredients/british-sausages-thumb.webp"
     }
   },
   {
@@ -802,6 +1032,29 @@
     }
   },
   {
+    "slug": "capers",
+    "kind": "ingredient",
+    "alt": "A bowl of small green pickled capers with a spoon",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACapers_textures.jpg",
+    "title": "File:Capers textures.jpg",
+    "author": "CNEcija12345",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3400,
+    "originalHeight": 2880,
+    "files": {
+      "hero": "images/ingredients/capers.webp",
+      "card": "images/ingredients/capers-card.webp",
+      "thumb": "images/ingredients/capers-thumb.webp"
+    }
+  },
+  {
     "slug": "caraway",
     "kind": "ingredient",
     "alt": "A glass jar of whole caraway seed, the seeds visible through the glass behind the label",
@@ -843,6 +1096,29 @@
       "hero": "images/ingredients/cardamom.webp",
       "card": "images/ingredients/cardamom-card.webp",
       "thumb": "images/ingredients/cardamom-thumb.webp"
+    }
+  },
+  {
+    "slug": "carne-seca",
+    "kind": "ingredient",
+    "alt": "Strips of sun-dried beef, carne seca, hanging to cure outdoors",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACarne_Seca.jpg",
+    "title": "File:Carne Seca.jpg",
+    "author": "Otávio Nogueira from Fortaleza, BR",
+    "credit": "Carne Seca",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3872,
+    "originalHeight": 2592,
+    "files": {
+      "hero": "images/ingredients/carne-seca.webp",
+      "card": "images/ingredients/carne-seca-card.webp",
+      "thumb": "images/ingredients/carne-seca-thumb.webp"
     }
   },
   {
@@ -1006,6 +1282,29 @@
     }
   },
   {
+    "slug": "cheese-curds",
+    "kind": "ingredient",
+    "alt": "A bowl of fresh, irregular-shaped pale yellow cheese curds",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACheese_curds_2.jpg",
+    "title": "File:Cheese curds 2.jpg",
+    "author": "TShilo12 at English Wikipedia",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2048,
+    "originalHeight": 1536,
+    "files": {
+      "hero": "images/ingredients/cheese-curds.webp",
+      "card": "images/ingredients/cheese-curds-card.webp",
+      "thumb": "images/ingredients/cheese-curds-thumb.webp"
+    }
+  },
+  {
     "slug": "chicken",
     "kind": "ingredient",
     "alt": "A whole roasted chicken, browned and garnished with chopped herbs",
@@ -1144,6 +1443,51 @@
     }
   },
   {
+    "slug": "chocolate-sprinkles",
+    "kind": "ingredient",
+    "alt": "A close view of chocolate sprinkles, small rod-shaped pieces piled together",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHagelslag.jpg",
+    "title": "File:Hagelslag.jpg",
+    "author": "No machine-readable author provided. DennisM assumed (based on copyright claims).",
+    "credit": "No machine-readable source provided. Own work assumed (based on copyright claims).",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2048,
+    "originalHeight": 1536,
+    "files": {
+      "hero": "images/ingredients/chocolate-sprinkles.webp",
+      "card": "images/ingredients/chocolate-sprinkles-card.webp",
+      "thumb": "images/ingredients/chocolate-sprinkles-thumb.webp"
+    }
+  },
+  {
+    "slug": "chorizo",
+    "kind": "ingredient",
+    "alt": "A coiled raw chorizo sausage in its casing, red-orange from paprika",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChorizo_sausage.JPG",
+    "title": "File:Chorizo sausage.JPG",
+    "author": "Jaydoo",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/ingredients/chorizo.webp",
+      "card": "images/ingredients/chorizo-card.webp",
+      "thumb": "images/ingredients/chorizo-thumb.webp"
+    }
+  },
+  {
     "slug": "cider-vinegar",
     "kind": "ingredient",
     "alt": "A glass decanter of amber apple cider vinegar beside several whole red and yellow apples on a wooden table",
@@ -1187,6 +1531,29 @@
       "hero": "images/ingredients/cinnamon.webp",
       "card": "images/ingredients/cinnamon-card.webp",
       "thumb": "images/ingredients/cinnamon-thumb.webp"
+    }
+  },
+  {
+    "slug": "clotted-cream",
+    "kind": "ingredient",
+    "alt": "A close view of thick, pale yellow clotted cream with its characteristic crusted surface",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AClotted_cream.jpg",
+    "title": "File:Clotted cream.jpg",
+    "author": "Kai Hendry",
+    "credit": "originally posted to Flickr as Clotted cream",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1600,
+    "originalHeight": 1200,
+    "files": {
+      "hero": "images/ingredients/clotted-cream.webp",
+      "card": "images/ingredients/clotted-cream-card.webp",
+      "thumb": "images/ingredients/clotted-cream-thumb.webp"
     }
   },
   {
@@ -1281,6 +1648,29 @@
     }
   },
   {
+    "slug": "cod",
+    "kind": "ingredient",
+    "alt": "Two raw cod fillets, pale flesh with visible flake lines",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACod_fillet.jpg",
+    "title": "File:Cod fillet.jpg",
+    "author": "Tiia Monto",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2253,
+    "originalHeight": 2843,
+    "files": {
+      "hero": "images/ingredients/cod.webp",
+      "card": "images/ingredients/cod-card.webp",
+      "thumb": "images/ingredients/cod-thumb.webp"
+    }
+  },
+  {
     "slug": "collard-greens",
     "kind": "ingredient",
     "alt": "Raw collard greens, shredded into ribbons, in a bowl",
@@ -1304,6 +1694,29 @@
     }
   },
   {
+    "slug": "condensed-milk",
+    "kind": "ingredient",
+    "alt": "A glass of Vietnamese iced coffee with a visible pooled layer of thick white condensed milk at the bottom",
+    "source": "Openverse",
+    "provider": "rawpixel",
+    "sourceUrl": "https://www.rawpixel.com/image/5974809/photo-image-public-domain-coffee-food",
+    "title": "Vietnamese coffee condensed milk Ca",
+    "credit": "\"Vietnamese coffee condensed milk Ca\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5215,
+    "originalHeight": 3477,
+    "files": {
+      "hero": "images/ingredients/condensed-milk.webp",
+      "card": "images/ingredients/condensed-milk-card.webp",
+      "thumb": "images/ingredients/condensed-milk-thumb.webp"
+    }
+  },
+  {
     "slug": "coriander",
     "kind": "ingredient",
     "alt": "Bunches of fresh coriander, their flat leaves deeply lobed",
@@ -1324,6 +1737,29 @@
       "hero": "images/ingredients/coriander.webp",
       "card": "images/ingredients/coriander-card.webp",
       "thumb": "images/ingredients/coriander-thumb.webp"
+    }
+  },
+  {
+    "slug": "coriander-seed",
+    "kind": "ingredient",
+    "alt": "Whole dried coriander seeds piled in a stone mortar",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWhole_Coriander.jpg",
+    "title": "File:Whole Coriander.jpg",
+    "author": "Misterneedlemouse",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3024,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/ingredients/coriander-seed.webp",
+      "card": "images/ingredients/coriander-seed-card.webp",
+      "thumb": "images/ingredients/coriander-seed-thumb.webp"
     }
   },
   {
@@ -1465,6 +1901,29 @@
     }
   },
   {
+    "slug": "crusty-roll",
+    "kind": "ingredient",
+    "alt": "Two oblong crusty bread rolls with a golden-brown baked crust",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlmtaler_Zwieballen_Mittermair_Scharnstein-3374.jpg",
+    "title": "File:Almtaler Zwieballen Mittermair Scharnstein-3374.jpg",
+    "author": "Isiwal",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5387,
+    "originalHeight": 4040,
+    "files": {
+      "hero": "images/ingredients/crusty-roll.webp",
+      "card": "images/ingredients/crusty-roll-card.webp",
+      "thumb": "images/ingredients/crusty-roll-thumb.webp"
+    }
+  },
+  {
     "slug": "cucumber",
     "kind": "ingredient",
     "alt": "A close pile of whole green cucumbers",
@@ -1553,6 +2012,73 @@
       "hero": "images/ingredients/dark-chocolate.webp",
       "card": "images/ingredients/dark-chocolate-card.webp",
       "thumb": "images/ingredients/dark-chocolate-thumb.webp"
+    }
+  },
+  {
+    "slug": "dates",
+    "kind": "ingredient",
+    "alt": "A small pile of dried dates, dark brown and wrinkled",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADried_dates.jpg",
+    "title": "File:Dried dates.jpg",
+    "author": "stu_spivack",
+    "credit": "dates",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2560,
+    "originalHeight": 1920,
+    "files": {
+      "hero": "images/ingredients/dates.webp",
+      "card": "images/ingredients/dates-card.webp",
+      "thumb": "images/ingredients/dates-thumb.webp"
+    }
+  },
+  {
+    "slug": "demerara-sugar",
+    "kind": "ingredient",
+    "alt": "A close view of demerara sugar, large golden-brown sugar crystals",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADemerara_sugar_crystals.jpg",
+    "title": "File:Demerara sugar crystals.jpg",
+    "author": "Ervins Strauhmanis",
+    "credit": "Demerara sugar crystals",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4752,
+    "originalHeight": 3168,
+    "files": {
+      "hero": "images/ingredients/demerara-sugar.webp",
+      "card": "images/ingredients/demerara-sugar-card.webp",
+      "thumb": "images/ingredients/demerara-sugar-thumb.webp"
+    }
+  },
+  {
+    "slug": "desiccated-coconut",
+    "kind": "ingredient",
+    "alt": "A bowl of white desiccated coconut flakes",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADesicated_coconut_soloA.jpg",
+    "title": "File:Desicated coconut soloA.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4096,
+    "originalHeight": 3072,
+    "files": {
+      "hero": "images/ingredients/desiccated-coconut.webp",
+      "card": "images/ingredients/desiccated-coconut-card.webp",
+      "thumb": "images/ingredients/desiccated-coconut-thumb.webp"
     }
   },
   {
@@ -2173,6 +2699,29 @@
     }
   },
   {
+    "slug": "haddock",
+    "kind": "ingredient",
+    "alt": "A live haddock resting on the seabed, showing its dark lateral line and the dark blotch behind its gill",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMelanogrammus_aeglefinus_318932194.jpg",
+    "title": "File:Melanogrammus aeglefinus 318932194.jpg",
+    "author": "Vsevolod Rudyi",
+    "credit": "https://www.inaturalist.org/photos/318932194",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2048,
+    "originalHeight": 1536,
+    "files": {
+      "hero": "images/ingredients/haddock.webp",
+      "card": "images/ingredients/haddock-card.webp",
+      "thumb": "images/ingredients/haddock-thumb.webp"
+    }
+  },
+  {
     "slug": "ham",
     "kind": "ingredient",
     "alt": "Slices of pale pink cooked ham",
@@ -2331,6 +2880,29 @@
     }
   },
   {
+    "slug": "jam",
+    "kind": "ingredient",
+    "alt": "Jars of deep red homemade strawberry jam, freshly filled and sealed",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJam_created_from_gelling_sugar.jpg",
+    "title": "File:Jam created from gelling sugar.jpg",
+    "author": "Chris Bohn from Gainesville, FL, USA",
+    "credit": "My Strawberry Jam is Scrumptious !!",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3648,
+    "originalHeight": 2736,
+    "files": {
+      "hero": "images/ingredients/jam.webp",
+      "card": "images/ingredients/jam-card.webp",
+      "thumb": "images/ingredients/jam-thumb.webp"
+    }
+  },
+  {
     "slug": "kadayif",
     "kind": "ingredient",
     "alt": "Baskets piled with raw, shredded white kadayıf pastry strands",
@@ -2469,6 +3041,29 @@
     }
   },
   {
+    "slug": "lard",
+    "kind": "ingredient",
+    "alt": "A small bowl of melted lard, a pale golden rendered pork fat, with a spoon",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALard_in_black_bowls.jpg",
+    "title": "File:Lard in black bowls.jpg",
+    "author": "Peachyeung316",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4896,
+    "originalHeight": 3672,
+    "files": {
+      "hero": "images/ingredients/lard.webp",
+      "card": "images/ingredients/lard-card.webp",
+      "thumb": "images/ingredients/lard-thumb.webp"
+    }
+  },
+  {
     "slug": "lavash",
     "kind": "ingredient",
     "alt": "A thin, bubbled sheet of lavash bread resting beside a traditional tonir oven pit",
@@ -2489,6 +3084,29 @@
       "hero": "images/ingredients/lavash.webp",
       "card": "images/ingredients/lavash-card.webp",
       "thumb": "images/ingredients/lavash-thumb.webp"
+    }
+  },
+  {
+    "slug": "lemon",
+    "kind": "ingredient",
+    "alt": "A whole lemon beside a lemon half showing its juicy segmented flesh",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALemon_-_whole_and_split.jpg",
+    "title": "File:Lemon - whole and split.jpg",
+    "author": "Ivar Leidus",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "files": {
+      "hero": "images/ingredients/lemon.webp",
+      "card": "images/ingredients/lemon-card.webp",
+      "thumb": "images/ingredients/lemon-thumb.webp"
     }
   },
   {
@@ -2558,6 +3176,29 @@
       "hero": "images/ingredients/lime-juice.webp",
       "card": "images/ingredients/lime-juice-card.webp",
       "thumb": "images/ingredients/lime-juice-thumb.webp"
+    }
+  },
+  {
+    "slug": "linguica",
+    "kind": "ingredient",
+    "alt": "A pile of linguiça sausages, reddish-brown smoked pork links in natural casing",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALingui%C3%A7a_calabresa%2C_S%C3%A3o_Paulo_(3243_12).jpg",
+    "title": "File:Linguiça calabresa, São Paulo (3243 12).jpg",
+    "author": "Wilfredor",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3264,
+    "originalHeight": 2448,
+    "files": {
+      "hero": "images/ingredients/linguica.webp",
+      "card": "images/ingredients/linguica-card.webp",
+      "thumb": "images/ingredients/linguica-thumb.webp"
     }
   },
   {
@@ -2720,6 +3361,28 @@
     }
   },
   {
+    "slug": "minas-cheese",
+    "kind": "ingredient",
+    "alt": "A whole round of fresh minas cheese, pale white with a slightly rough surface",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AQueijo_Minas_Frescal.JPG",
+    "title": "File:Queijo Minas Frescal.JPG",
+    "author": "The original uploader was Hellkt at German Wikipedia. (Original text: de:Benutzer:Hellkt)",
+    "credit": "Transferred from de.wikipedia to Commons. (Original text: Selbst gemacht)",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1600,
+    "originalHeight": 1200,
+    "files": {
+      "hero": "images/ingredients/minas-cheese.webp",
+      "card": "images/ingredients/minas-cheese-card.webp",
+      "thumb": "images/ingredients/minas-cheese-thumb.webp"
+    }
+  },
+  {
     "slug": "mint",
     "kind": "ingredient",
     "alt": "A dense bunch of fresh spearmint, deeply veined and bright green",
@@ -2855,6 +3518,29 @@
       "hero": "images/ingredients/mushroom.webp",
       "card": "images/ingredients/mushroom-card.webp",
       "thumb": "images/ingredients/mushroom-thumb.webp"
+    }
+  },
+  {
+    "slug": "mustard",
+    "kind": "ingredient",
+    "alt": "A dollop of yellow prepared mustard on paper, beside a grilled sausage and bread roll",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A20240429_Sausage_with_mustard_in_the_Silesian_Park.jpg",
+    "title": "File:20240429 Sausage with mustard in the Silesian Park.jpg",
+    "author": "Abraham",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3000,
+    "originalHeight": 4000,
+    "files": {
+      "hero": "images/ingredients/mustard.webp",
+      "card": "images/ingredients/mustard-card.webp",
+      "thumb": "images/ingredients/mustard-thumb.webp"
     }
   },
   {
@@ -2996,6 +3682,29 @@
     }
   },
   {
+    "slug": "olives",
+    "kind": "ingredient",
+    "alt": "A close pile of pitted green olives with smooth, glossy skins",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADFC_3933_A_close-up_of_a_pile_of_pitted_green_olives_showing_their_smooth_glossy_skins_and_hollow_centers.jpg",
+    "title": "File:DFC 3933 A close-up of a pile of pitted green olives showing their smooth glossy skins and hollow centers.jpg",
+    "author": "PattayaPatrol",
+    "credit": "Flickr",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5568,
+    "originalHeight": 3712,
+    "files": {
+      "hero": "images/ingredients/olives.webp",
+      "card": "images/ingredients/olives-card.webp",
+      "thumb": "images/ingredients/olives-thumb.webp"
+    }
+  },
+  {
     "slug": "onion",
     "kind": "ingredient",
     "alt": "Red, white and brown onions, some halved to show their rings",
@@ -3016,6 +3725,29 @@
       "hero": "images/ingredients/onion.webp",
       "card": "images/ingredients/onion-card.webp",
       "thumb": "images/ingredients/onion-thumb.webp"
+    }
+  },
+  {
+    "slug": "orange",
+    "kind": "ingredient",
+    "alt": "A whole orange beside a halved orange showing its juicy segmented flesh, with a peeled segment in front",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOranges_-_whole-halved-segment.jpg",
+    "title": "File:Oranges - whole-halved-segment.jpg",
+    "author": "Ivar Leidus",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 6000,
+    "originalHeight": 4000,
+    "files": {
+      "hero": "images/ingredients/orange.webp",
+      "card": "images/ingredients/orange-card.webp",
+      "thumb": "images/ingredients/orange-thumb.webp"
     }
   },
   {
@@ -3062,6 +3794,29 @@
       "hero": "images/ingredients/oregano.webp",
       "card": "images/ingredients/oregano-card.webp",
       "thumb": "images/ingredients/oregano-thumb.webp"
+    }
+  },
+  {
+    "slug": "oxtail",
+    "kind": "ingredient",
+    "alt": "A raw piece of oxtail, a cross-section of dark red meat around a central bone",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOxtail-93256.jpg",
+    "title": "File:Oxtail-93256.jpg",
+    "author": "Raimond Spekking",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4927,
+    "originalHeight": 3695,
+    "files": {
+      "hero": "images/ingredients/oxtail.webp",
+      "card": "images/ingredients/oxtail-card.webp",
+      "thumb": "images/ingredients/oxtail-thumb.webp"
     }
   },
   {
@@ -3272,6 +4027,29 @@
     }
   },
   {
+    "slug": "peas",
+    "kind": "ingredient",
+    "alt": "A close view of fresh shelled green peas",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGreen_peas_closeup.jpg",
+    "title": "File:Green peas closeup.jpg",
+    "author": "Fd52",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3000,
+    "originalHeight": 4000,
+    "files": {
+      "hero": "images/ingredients/peas.webp",
+      "card": "images/ingredients/peas-card.webp",
+      "thumb": "images/ingredients/peas-thumb.webp"
+    }
+  },
+  {
     "slug": "pecan",
     "kind": "ingredient",
     "alt": "A plastic punnet piled with shelled pecan halves, showing their ridged brown shells and pale flesh",
@@ -3338,6 +4116,28 @@
       "hero": "images/ingredients/pickles.webp",
       "card": "images/ingredients/pickles-card.webp",
       "thumb": "images/ingredients/pickles-thumb.webp"
+    }
+  },
+  {
+    "slug": "pigeon-peas",
+    "kind": "ingredient",
+    "alt": "Open pigeon pea pods showing rows of pale green and cream-coloured peas inside",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGandul_Cuban_2.jpg",
+    "title": "File:Gandul Cuban 2.jpg",
+    "author": "Sarang",
+    "credit": "Own work",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4608,
+    "originalHeight": 3456,
+    "files": {
+      "hero": "images/ingredients/pigeon-peas.webp",
+      "card": "images/ingredients/pigeon-peas-card.webp",
+      "thumb": "images/ingredients/pigeon-peas-thumb.webp"
     }
   },
   {
@@ -3893,6 +4693,29 @@
     }
   },
   {
+    "slug": "rye-bread",
+    "kind": "ingredient",
+    "alt": "A sliced loaf of dark rye bread on a cloth",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADark_rye_bread.JPG",
+    "title": "File:Dark rye bread.JPG",
+    "author": "Glane23",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2188,
+    "originalHeight": 1284,
+    "files": {
+      "hero": "images/ingredients/rye-bread.webp",
+      "card": "images/ingredients/rye-bread-card.webp",
+      "thumb": "images/ingredients/rye-bread-thumb.webp"
+    }
+  },
+  {
     "slug": "saffron",
     "kind": "ingredient",
     "alt": "A pile of dried red saffron threads",
@@ -4027,6 +4850,29 @@
       "hero": "images/ingredients/sauerkraut.webp",
       "card": "images/ingredients/sauerkraut-card.webp",
       "thumb": "images/ingredients/sauerkraut-thumb.webp"
+    }
+  },
+  {
+    "slug": "scotch-bonnet",
+    "kind": "ingredient",
+    "alt": "A single orange scotch bonnet pepper with its characteristic squat, lobed shape",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AA_Scotch_Bonnet.jpg",
+    "title": "File:A Scotch Bonnet.jpg",
+    "author": "Thegeeb",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2061,
+    "originalHeight": 2949,
+    "files": {
+      "hero": "images/ingredients/scotch-bonnet.webp",
+      "card": "images/ingredients/scotch-bonnet-card.webp",
+      "thumb": "images/ingredients/scotch-bonnet-thumb.webp"
     }
   },
   {
@@ -4301,6 +5147,29 @@
       "hero": "images/ingredients/spring-onion.webp",
       "card": "images/ingredients/spring-onion-card.webp",
       "thumb": "images/ingredients/spring-onion-thumb.webp"
+    }
+  },
+  {
+    "slug": "stock",
+    "kind": "ingredient",
+    "alt": "A large steel pot of amber-coloured stock simmering on a stove",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APot_of_chicken_broth.jpg",
+    "title": "File:Pot of chicken broth.jpg",
+    "author": "Welches2012",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/ingredients/stock.webp",
+      "card": "images/ingredients/stock-card.webp",
+      "thumb": "images/ingredients/stock-thumb.webp"
     }
   },
   {
@@ -4993,6 +5862,29 @@
     }
   },
   {
+    "slug": "alfajores",
+    "kind": "recipe",
+    "alt": "A stack of alfajores, shortbread sandwich cookies filled with dulce de leche and rolled in shredded coconut",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAlfajorartes.JPG",
+    "title": "File:Alfajorartes.JPG",
+    "author": "קרלוס הגדול",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5184,
+    "originalHeight": 3456,
+    "files": {
+      "hero": "images/recipes/alfajores.webp",
+      "card": "images/recipes/alfajores-card.webp",
+      "thumb": "images/recipes/alfajores-thumb.webp"
+    }
+  },
+  {
     "slug": "anticuchos",
     "kind": "recipe",
     "alt": "Marinated beef heart skewers grilling over glowing charcoal",
@@ -5016,6 +5908,52 @@
     }
   },
   {
+    "slug": "apfelstrudel",
+    "kind": "recipe",
+    "alt": "A cross-section slice of apfelstrudel dusted with icing sugar, showing thin layers of pastry wrapped around sliced apple filling",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACaf%C3%A9_Sperl_Apfelstrudel.jpg",
+    "title": "File:Café Sperl Apfelstrudel.jpg",
+    "author": "Geolina163",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3616,
+    "originalHeight": 2748,
+    "files": {
+      "hero": "images/recipes/apfelstrudel.webp",
+      "card": "images/recipes/apfelstrudel-card.webp",
+      "thumb": "images/recipes/apfelstrudel-thumb.webp"
+    }
+  },
+  {
+    "slug": "apple-crumble",
+    "kind": "recipe",
+    "alt": "A baked apple crumble in a glass dish, its top covered in golden, clumped crumble topping",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABritish_apple_crumble_02.jpg",
+    "title": "File:British apple crumble 02.jpg",
+    "author": "Jonathan Harker",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4640,
+    "originalHeight": 3472,
+    "files": {
+      "hero": "images/recipes/apple-crumble.webp",
+      "card": "images/recipes/apple-crumble-card.webp",
+      "thumb": "images/recipes/apple-crumble-thumb.webp"
+    }
+  },
+  {
     "slug": "apple-pie",
     "kind": "recipe",
     "alt": "A whole apple pie with a decorative pastry-leaf top and crimped edge, on a wooden board",
@@ -5036,6 +5974,75 @@
       "hero": "images/recipes/apple-pie.webp",
       "card": "images/recipes/apple-pie-card.webp",
       "thumb": "images/recipes/apple-pie-thumb.webp"
+    }
+  },
+  {
+    "slug": "arroz-con-gandules",
+    "kind": "recipe",
+    "alt": "A bowl of arroz con gandules, orange-tinted sofrito rice with pigeon peas, olives and capers, topped with a piece of grilled chicken and shredded lettuce",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AArroz_con_gandules_y_pollo.jpg",
+    "title": "File:Arroz con gandules y pollo.jpg",
+    "author": "Ted Murphy",
+    "credit": "https://www.flickr.com/photos/tedmurphy/4487108110/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1365,
+    "originalHeight": 2048,
+    "files": {
+      "hero": "images/recipes/arroz-con-gandules.webp",
+      "card": "images/recipes/arroz-con-gandules-card.webp",
+      "thumb": "images/recipes/arroz-con-gandules-thumb.webp"
+    }
+  },
+  {
+    "slug": "arroz-e-feijao",
+    "kind": "recipe",
+    "alt": "A plate of white rice beside a bowl of black beans, part of a Brazilian meal also including roast pork and farofa",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APernil%2C_arroz_e_feijao_(6892496251).jpg",
+    "title": "File:Pernil, arroz e feijao (6892496251).jpg",
+    "author": "Monica Kaneko from Sao Paulo, Brasil",
+    "credit": "Pernil, arroz e feijao",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1536,
+    "originalHeight": 2048,
+    "files": {
+      "hero": "images/recipes/arroz-e-feijao.webp",
+      "card": "images/recipes/arroz-e-feijao-card.webp",
+      "thumb": "images/recipes/arroz-e-feijao-thumb.webp"
+    }
+  },
+  {
+    "slug": "asado-argentino",
+    "kind": "recipe",
+    "alt": "A wooden board of grilled Argentine asado, sliced pork ribs and whole chorizo sausages, glistening from the grill",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAsado_de_cerdo_con_costillas_y_chorizos_al_estilo_argentino_(presentaci%C3%B3n).jpg",
+    "title": "File:Asado de cerdo con costillas y chorizos al estilo argentino (presentación).jpg",
+    "author": "Horacio Cambeiro",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/recipes/asado-argentino.webp",
+      "card": "images/recipes/asado-argentino-card.webp",
+      "thumb": "images/recipes/asado-argentino-thumb.webp"
     }
   },
   {
@@ -5177,6 +6184,29 @@
     }
   },
   {
+    "slug": "brigadeiro",
+    "kind": "recipe",
+    "alt": "Chocolate brigadeiros in gold paper cases, rolled in chocolate sprinkles",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABrigadeiro.jpg",
+    "title": "File:Brigadeiro.jpg",
+    "author": "User Mayra (Maych) on Flickr",
+    "credit": "Flickr",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2272,
+    "originalHeight": 1704,
+    "files": {
+      "hero": "images/recipes/brigadeiro.webp",
+      "card": "images/recipes/brigadeiro-card.webp",
+      "thumb": "images/recipes/brigadeiro-thumb.webp"
+    }
+  },
+  {
     "slug": "brik",
     "kind": "recipe",
     "alt": "Folded, fried brik pastries filled with egg on a plate",
@@ -5266,6 +6296,29 @@
       "hero": "images/recipes/burek.webp",
       "card": "images/recipes/burek-card.webp",
       "thumb": "images/recipes/burek-thumb.webp"
+    }
+  },
+  {
+    "slug": "butter-tarts",
+    "kind": "recipe",
+    "alt": "A batch of Canadian butter tarts on a wooden board, their pastry shells filled with glossy, caramelised sugar filling",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AButter_tarts_on_cutting_board(8293490785).jpg",
+    "title": "File:Butter tarts on cutting board(8293490785).jpg",
+    "author": "Rob Campbell from Toronto, ON, Canada",
+    "credit": "butter tarts",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4592,
+    "originalHeight": 3448,
+    "files": {
+      "hero": "images/recipes/butter-tarts.webp",
+      "card": "images/recipes/butter-tarts-card.webp",
+      "thumb": "images/recipes/butter-tarts-thumb.webp"
     }
   },
   {
@@ -5522,6 +6575,29 @@
     }
   },
   {
+    "slug": "chicken-tikka-masala",
+    "kind": "recipe",
+    "alt": "A plate of chicken tikka masala, charred pieces of tandoori chicken in a bright orange creamy tomato sauce, scattered with chopped coriander",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChicken_Tikka_Masala_on_White_Plate_with_Spoon.jpg",
+    "title": "File:Chicken Tikka Masala on White Plate with Spoon.jpg",
+    "author": "Lance Vanlewen",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2060,
+    "originalHeight": 1902,
+    "files": {
+      "hero": "images/recipes/chicken-tikka-masala.webp",
+      "card": "images/recipes/chicken-tikka-masala-card.webp",
+      "thumb": "images/recipes/chicken-tikka-masala-thumb.webp"
+    }
+  },
+  {
     "slug": "chili-con-carne",
     "kind": "recipe",
     "alt": "Chili con carne in a pot, with chunks of beef, kidney beans and corn in a tomato sauce",
@@ -5545,6 +6621,29 @@
     }
   },
   {
+    "slug": "chimichurri",
+    "kind": "recipe",
+    "alt": "A close view of chimichurri sauce, finely chopped parsley, garlic and chilli flakes mixed together in a jar",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChimichurri_Sauce_Recipe_(13294405363).jpg",
+    "title": "File:Chimichurri Sauce Recipe (13294405363).jpg",
+    "author": "Dominic Lockyer",
+    "credit": "Chimichurri Sauce Recipe",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2318,
+    "originalHeight": 3799,
+    "files": {
+      "hero": "images/recipes/chimichurri.webp",
+      "card": "images/recipes/chimichurri-card.webp",
+      "thumb": "images/recipes/chimichurri-thumb.webp"
+    }
+  },
+  {
     "slug": "chocolate-chip-cookies",
     "kind": "recipe",
     "alt": "A batch of chocolate chip cookies cooling on a board, their surfaces cracked and spread",
@@ -5565,6 +6664,52 @@
       "hero": "images/recipes/chocolate-chip-cookies.webp",
       "card": "images/recipes/chocolate-chip-cookies-card.webp",
       "thumb": "images/recipes/chocolate-chip-cookies-thumb.webp"
+    }
+  },
+  {
+    "slug": "choripan",
+    "kind": "recipe",
+    "alt": "A hand holding a choripan, a grilled butterflied chorizo sausage in a crusty bread roll, topped with chopped onion and pepper salsa criolla",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChorip%C3%A1n_mariposa.jpg",
+    "title": "File:Choripán mariposa.jpg",
+    "author": "David",
+    "credit": "Choripan",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2874,
+    "originalHeight": 2053,
+    "files": {
+      "hero": "images/recipes/choripan.webp",
+      "card": "images/recipes/choripan-card.webp",
+      "thumb": "images/recipes/choripan-thumb.webp"
+    }
+  },
+  {
+    "slug": "churrasco",
+    "kind": "recipe",
+    "alt": "Skewers of beef and sausage grilled over charcoal, coated in coarse salt, alongside chicken thighs and cheese on a Brazilian churrasco grill",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChurrasco_carioca.jpg",
+    "title": "File:Churrasco carioca.jpg",
+    "author": "Leonardo \"Leguas\" Carvalho",
+    "credit": "Own work",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3008,
+    "originalHeight": 2000,
+    "files": {
+      "hero": "images/recipes/churrasco.webp",
+      "card": "images/recipes/churrasco-card.webp",
+      "thumb": "images/recipes/churrasco-thumb.webp"
     }
   },
   {
@@ -5660,6 +6805,52 @@
     }
   },
   {
+    "slug": "coxinha",
+    "kind": "recipe",
+    "alt": "A whole and a halved coxinha, teardrop-shaped breaded and fried croquettes, showing the shredded chicken filling inside",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACoxinha_-_iguaria_brasileira_01.jpg",
+    "title": "File:Coxinha - iguaria brasileira 01.jpg",
+    "author": "Sintegrity",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3468,
+    "originalHeight": 4624,
+    "files": {
+      "hero": "images/recipes/coxinha.webp",
+      "card": "images/recipes/coxinha-card.webp",
+      "thumb": "images/recipes/coxinha-thumb.webp"
+    }
+  },
+  {
+    "slug": "curry-goat",
+    "kind": "recipe",
+    "alt": "Bone-in curry goat pieces in a thick brown sauce, served over Jamaican rice and peas",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACurry_Goat_and_Rice.jpg",
+    "title": "File:Curry Goat and Rice.jpg",
+    "author": "Leon Brocard from London, UK",
+    "credit": "DSC05666",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2816,
+    "originalHeight": 2112,
+    "files": {
+      "hero": "images/recipes/curry-goat.webp",
+      "card": "images/recipes/curry-goat-card.webp",
+      "thumb": "images/recipes/curry-goat-thumb.webp"
+    }
+  },
+  {
     "slug": "doner-kebab",
     "kind": "recipe",
     "alt": "Vertical lamb doner spit being sliced by a kebab shop worker, with a shaved doner spit beside it",
@@ -5683,6 +6874,29 @@
     }
   },
   {
+    "slug": "dulce-de-leche",
+    "kind": "recipe",
+    "alt": "A glass jar filled with thick, glossy, caramel-brown dulce de leche",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADulceDeLeche.jpg",
+    "title": "File:DulceDeLeche.jpg",
+    "author": "audinou from Paris, France",
+    "credit": "Flickr",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2136,
+    "originalHeight": 2848,
+    "files": {
+      "hero": "images/recipes/dulce-de-leche.webp",
+      "card": "images/recipes/dulce-de-leche-card.webp",
+      "thumb": "images/recipes/dulce-de-leche-thumb.webp"
+    }
+  },
+  {
     "slug": "eggs-benedict",
     "kind": "recipe",
     "alt": "Two poached eggs on slices of ham, covered in hollandaise sauce and topped with rocket leaves, on a grey plate",
@@ -5703,6 +6917,52 @@
       "hero": "images/recipes/eggs-benedict.webp",
       "card": "images/recipes/eggs-benedict-card.webp",
       "thumb": "images/recipes/eggs-benedict-thumb.webp"
+    }
+  },
+  {
+    "slug": "empanada-de-pino",
+    "kind": "recipe",
+    "alt": "Several baked, golden-brown Chilean empanadas de pino, crimped at the edge, stacked on a plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEmpanada_Chilena.JPG",
+    "title": "File:Empanada Chilena.JPG",
+    "author": "Ranstevens",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3264,
+    "originalHeight": 4352,
+    "files": {
+      "hero": "images/recipes/empanada-de-pino.webp",
+      "card": "images/recipes/empanada-de-pino-card.webp",
+      "thumb": "images/recipes/empanada-de-pino-thumb.webp"
+    }
+  },
+  {
+    "slug": "empanadas-argentinas",
+    "kind": "recipe",
+    "alt": "Two baked Argentine empanadas with a rope-braided crimped edge, served on a plate beside a folded omelette",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AEmpanadas_argentinas_al_horno_con_omelete.jpg",
+    "title": "File:Empanadas argentinas al horno con omelete.jpg",
+    "author": "Horacio Cambeiro",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/recipes/empanadas-argentinas.webp",
+      "card": "images/recipes/empanadas-argentinas-card.webp",
+      "thumb": "images/recipes/empanadas-argentinas-thumb.webp"
     }
   },
   {
@@ -5752,6 +7012,52 @@
     }
   },
   {
+    "slug": "farofa",
+    "kind": "recipe",
+    "alt": "A bowl of golden toasted farofa, cassava flour with visible flecks of onion, beside a bowl of white rice",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFarofa_de_cebola.jpg",
+    "title": "File:Farofa de cebola.jpg",
+    "author": "Melsj",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2575,
+    "originalHeight": 2226,
+    "files": {
+      "hero": "images/recipes/farofa.webp",
+      "card": "images/recipes/farofa-card.webp",
+      "thumb": "images/recipes/farofa-thumb.webp"
+    }
+  },
+  {
+    "slug": "feijoada",
+    "kind": "recipe",
+    "alt": "A cast-iron pot of feijoada, black beans simmered with pieces of pork and sausage in a thick dark broth",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFeijoada_%C3%A0_brasileira_1.jpg",
+    "title": "File:Feijoada à brasileira 1.jpg",
+    "author": "Melsj",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3213,
+    "originalHeight": 2268,
+    "files": {
+      "hero": "images/recipes/feijoada.webp",
+      "card": "images/recipes/feijoada-card.webp",
+      "thumb": "images/recipes/feijoada-thumb.webp"
+    }
+  },
+  {
     "slug": "fettuccine-alfredo",
     "kind": "recipe",
     "alt": "A bowl of fettuccine alfredo coated in creamy white sauce with diced tomato mixed through",
@@ -5772,6 +7078,29 @@
       "hero": "images/recipes/fettuccine-alfredo.webp",
       "card": "images/recipes/fettuccine-alfredo-card.webp",
       "thumb": "images/recipes/fettuccine-alfredo-thumb.webp"
+    }
+  },
+  {
+    "slug": "fish-and-chips",
+    "kind": "recipe",
+    "alt": "A plate of battered fried fish and chunky chips, served with green peas, tartar sauce and a lemon wedge",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFish_and_chips_plate_with_peas.jpg",
+    "title": "File:Fish and chips plate with peas.jpg",
+    "author": "Grendelkhan",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4048,
+    "originalHeight": 3036,
+    "files": {
+      "hero": "images/recipes/fish-and-chips.webp",
+      "card": "images/recipes/fish-and-chips-card.webp",
+      "thumb": "images/recipes/fish-and-chips-thumb.webp"
     }
   },
   {
@@ -5818,6 +7147,29 @@
       "hero": "images/recipes/fufu.webp",
       "card": "images/recipes/fufu-card.webp",
       "thumb": "images/recipes/fufu-thumb.webp"
+    }
+  },
+  {
+    "slug": "full-english-breakfast",
+    "kind": "recipe",
+    "alt": "A full English breakfast plate with bacon, two fried eggs, baked beans in tomato sauce, sausages and toast",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFull_English_breakfast_at_the_Chalet_Cafe%2C_Cowfold%2C_West_Sussex%2C_England.jpg",
+    "title": "File:Full English breakfast at the Chalet Cafe, Cowfold, West Sussex, England.jpg",
+    "author": "Acabashi",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4208,
+    "originalHeight": 3366,
+    "files": {
+      "hero": "images/recipes/full-english-breakfast.webp",
+      "card": "images/recipes/full-english-breakfast-card.webp",
+      "thumb": "images/recipes/full-english-breakfast-thumb.webp"
     }
   },
   {
@@ -5910,6 +7262,29 @@
       "hero": "images/recipes/grilled-cheese.webp",
       "card": "images/recipes/grilled-cheese-card.webp",
       "thumb": "images/recipes/grilled-cheese-thumb.webp"
+    }
+  },
+  {
+    "slug": "griot",
+    "kind": "recipe",
+    "alt": "A plate of Haitian griot, fried marinated pork chunks, served with golden tostones and a slaw of cabbage, tomato and pepper",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGriot_ha%C3%AFtien.jpg",
+    "title": "File:Griot haïtien.jpg",
+    "author": "Lëa-Kim Châteauneuf",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5105,
+    "originalHeight": 3403,
+    "files": {
+      "hero": "images/recipes/griot.webp",
+      "card": "images/recipes/griot-card.webp",
+      "thumb": "images/recipes/griot-thumb.webp"
     }
   },
   {
@@ -6232,6 +7607,27 @@
       "hero": "images/recipes/jambalaya.webp",
       "card": "images/recipes/jambalaya-card.webp",
       "thumb": "images/recipes/jambalaya-thumb.webp"
+    }
+  },
+  {
+    "slug": "jerk-chicken",
+    "kind": "recipe",
+    "alt": "Charred jerk chicken pieces in a wire grilling basket over a street-side barbecue",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJerk_chicken_july_05.jpg",
+    "title": "File:Jerk chicken july 05.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2272,
+    "originalHeight": 1704,
+    "files": {
+      "hero": "images/recipes/jerk-chicken.webp",
+      "card": "images/recipes/jerk-chicken-card.webp",
+      "thumb": "images/recipes/jerk-chicken-thumb.webp"
     }
   },
   {
@@ -6580,6 +7976,29 @@
     }
   },
   {
+    "slug": "milanesa",
+    "kind": "recipe",
+    "alt": "A breaded and fried beef milanesa on a plate with a fried egg and chips",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMilanesa_argentina_con_huevo_frito_y_papas_fritas.jpg",
+    "title": "File:Milanesa argentina con huevo frito y papas fritas.jpg",
+    "author": "Horacio Cambeiro",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3810,
+    "originalHeight": 2826,
+    "files": {
+      "hero": "images/recipes/milanesa.webp",
+      "card": "images/recipes/milanesa-card.webp",
+      "thumb": "images/recipes/milanesa-thumb.webp"
+    }
+  },
+  {
     "slug": "miso-soup",
     "kind": "recipe",
     "alt": "A lacquer bowl of miso soup seen from above, with cubes of tofu, wakame and a green herb garnish",
@@ -6626,6 +8045,29 @@
     }
   },
   {
+    "slug": "montreal-smoked-meat",
+    "kind": "recipe",
+    "alt": "A Montreal smoked meat sandwich, thick-sliced peppery smoked beef piled high on rye bread with mustard",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASmoked_Meat_Sandwich_%40_Schwartz's_Deli_%40_Le_Plateau_%40_Montr%C3%A9al_(30506717566).jpg",
+    "title": "File:Smoked Meat Sandwich @ Schwartz's Deli @ Le Plateau @ Montréal (30506717566).jpg",
+    "author": "Guilhem Vellut from Annecy, France",
+    "credit": "Smoked Meat Sandwich @ Schwartz's Deli @ Le Plateau @ Montréal",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5472,
+    "originalHeight": 3648,
+    "files": {
+      "hero": "images/recipes/montreal-smoked-meat.webp",
+      "card": "images/recipes/montreal-smoked-meat-card.webp",
+      "thumb": "images/recipes/montreal-smoked-meat-thumb.webp"
+    }
+  },
+  {
     "slug": "moo-ping",
     "kind": "recipe",
     "alt": "Sticky, charred moo ping pork skewers on a grill grate",
@@ -6646,6 +8088,29 @@
       "hero": "images/recipes/moo-ping.webp",
       "card": "images/recipes/moo-ping-card.webp",
       "thumb": "images/recipes/moo-ping-thumb.webp"
+    }
+  },
+  {
+    "slug": "moqueca",
+    "kind": "recipe",
+    "alt": "A clay pot of moqueca, fish in an orange coconut and palm oil broth topped with coriander, served with rice and pirão",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMoqueca_(Brazilian_fish_stew)_(20326498234).jpg",
+    "title": "File:Moqueca (Brazilian fish stew) (20326498234).jpg",
+    "author": "Under the same moon...",
+    "credit": "Moqueca (Brazilian fish stew)",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3382,
+    "originalHeight": 3383,
+    "files": {
+      "hero": "images/recipes/moqueca.webp",
+      "card": "images/recipes/moqueca-card.webp",
+      "thumb": "images/recipes/moqueca-thumb.webp"
     }
   },
   {
@@ -6787,6 +8252,29 @@
     }
   },
   {
+    "slug": "pao-de-queijo",
+    "kind": "recipe",
+    "alt": "A basket of golden pão de queijo, Brazilian cheese bread rolls with a crisp browned crust",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACheesebread.jpg",
+    "title": "File:Cheesebread.jpg",
+    "author": "Murilo manzini",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3008,
+    "originalHeight": 2000,
+    "files": {
+      "hero": "images/recipes/pao-de-queijo.webp",
+      "card": "images/recipes/pao-de-queijo-card.webp",
+      "thumb": "images/recipes/pao-de-queijo-thumb.webp"
+    }
+  },
+  {
     "slug": "pap",
     "kind": "recipe",
     "alt": "A mound of stiff white maize pap topped with tomato relish, served with grilled sausage and a mutton chop",
@@ -6902,6 +8390,29 @@
     }
   },
   {
+    "slug": "pernil",
+    "kind": "recipe",
+    "alt": "A whole roasted pernil, bone-in pork shoulder with dark, crackling skin, on a wooden board",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APernil.2.jpg",
+    "title": "File:Pernil.2.jpg",
+    "author": "Ekem",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/recipes/pernil.webp",
+      "card": "images/recipes/pernil-card.webp",
+      "thumb": "images/recipes/pernil-thumb.webp"
+    }
+  },
+  {
     "slug": "philly-cheesesteak",
     "kind": "recipe",
     "alt": "A Philly cheesesteak sandwich in a hoagie roll, filled with sliced steak, melted cheese and caramelized onions",
@@ -6922,6 +8433,29 @@
       "hero": "images/recipes/philly-cheesesteak.webp",
       "card": "images/recipes/philly-cheesesteak-card.webp",
       "thumb": "images/recipes/philly-cheesesteak-thumb.webp"
+    }
+  },
+  {
+    "slug": "picanha",
+    "kind": "recipe",
+    "alt": "A whole picanha, its scored fat cap browned and blistered, grilling over live charcoal",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGrilledPicanha.jpg",
+    "title": "File:GrilledPicanha.jpg",
+    "author": "Darubrub",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/recipes/picanha.webp",
+      "card": "images/recipes/picanha-card.webp",
+      "thumb": "images/recipes/picanha-thumb.webp"
     }
   },
   {
@@ -7014,6 +8548,52 @@
       "hero": "images/recipes/pot-roast.webp",
       "card": "images/recipes/pot-roast-card.webp",
       "thumb": "images/recipes/pot-roast-thumb.webp"
+    }
+  },
+  {
+    "slug": "poutine",
+    "kind": "recipe",
+    "alt": "A dish of poutine, twice-fried chips topped with cheese curds and hot brown gravy",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APoutine.JPG",
+    "title": "File:Poutine.JPG",
+    "author": "Jonathunder",
+    "credit": "Own work",
+    "license": "GFDL 1.2",
+    "licenseUrl": "http://www.gnu.org/licenses/old-licenses/fdl-1.2.html",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2500,
+    "originalHeight": 2136,
+    "files": {
+      "hero": "images/recipes/poutine.webp",
+      "card": "images/recipes/poutine-card.webp",
+      "thumb": "images/recipes/poutine-thumb.webp"
+    }
+  },
+  {
+    "slug": "pudim-de-leite",
+    "kind": "recipe",
+    "alt": "A whole ring-shaped pudim de leite, unmoulded onto a plate and pooled with liquid caramel",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APudim_de_leite_(3544235183).jpg",
+    "title": "File:Pudim de leite (3544235183).jpg",
+    "author": "Marcelo Träsel from Porto Alegre, Brasil",
+    "credit": "Pudim de leite",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3072,
+    "originalHeight": 2304,
+    "files": {
+      "hero": "images/recipes/pudim-de-leite.webp",
+      "card": "images/recipes/pudim-de-leite-card.webp",
+      "thumb": "images/recipes/pudim-de-leite-thumb.webp"
     }
   },
   {
@@ -7132,6 +8712,52 @@
     }
   },
   {
+    "slug": "roast-beef-yorkshire-pudding",
+    "kind": "recipe",
+    "alt": "Slices of roast beef with a Yorkshire pudding, roast potatoes and a carrot, covered in gravy on a plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARoast_beef_Sunday_roast_at_The_Stag%2C_Little_Easton%2C_Essex%2C_England.jpg",
+    "title": "File:Roast beef Sunday roast at The Stag, Little Easton, Essex, England.jpg",
+    "author": "Acabashi",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5200,
+    "originalHeight": 4160,
+    "files": {
+      "hero": "images/recipes/roast-beef-yorkshire-pudding.webp",
+      "card": "images/recipes/roast-beef-yorkshire-pudding-card.webp",
+      "thumb": "images/recipes/roast-beef-yorkshire-pudding-thumb.webp"
+    }
+  },
+  {
+    "slug": "roast-potatoes",
+    "kind": "recipe",
+    "alt": "Halved potatoes roasted until golden brown and crisp at the edges, in a baking tray",
+    "source": "Openverse",
+    "provider": "rawpixel",
+    "sourceUrl": "https://www.rawpixel.com/image/5917456/image-public-domain-nature-food",
+    "title": "Free roast potatoes pan image",
+    "credit": "\"Free roast potatoes pan image\" is marked with CC0 1.0. To view the terms, visit https://creativecommons.org/publicdomain/zero/1.0/.",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 5127,
+    "originalHeight": 3418,
+    "files": {
+      "hero": "images/recipes/roast-potatoes.webp",
+      "card": "images/recipes/roast-potatoes-card.webp",
+      "thumb": "images/recipes/roast-potatoes-thumb.webp"
+    }
+  },
+  {
     "slug": "roast-turkey",
     "kind": "recipe",
     "alt": "A whole roast turkey with golden-brown crispy skin sprinkled with herbs, resting on a platter lined with parsley",
@@ -7155,6 +8781,74 @@
     }
   },
   {
+    "slug": "ropa-vieja",
+    "kind": "recipe",
+    "alt": "A mound of shredded ropa vieja beef in tomato sauce, topped with raw onion slices, served on a bed of lettuce beside rice and beans",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARopa_viecha_2.jpg",
+    "title": "File:Ropa viecha 2.jpg",
+    "author": "Sarang",
+    "credit": "Own work",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2048,
+    "originalHeight": 1232,
+    "files": {
+      "hero": "images/recipes/ropa-vieja.webp",
+      "card": "images/recipes/ropa-vieja-card.webp",
+      "thumb": "images/recipes/ropa-vieja-thumb.webp"
+    }
+  },
+  {
+    "slug": "sachertorte",
+    "kind": "recipe",
+    "alt": "A slice of sachertorte, dense chocolate cake glazed in dark chocolate, served with a mound of unsweetened whipped cream",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASachertorte_in_Vienna.jpg",
+    "title": "File:Sachertorte in Vienna.jpg",
+    "author": "Rizka",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3843,
+    "originalHeight": 2972,
+    "files": {
+      "hero": "images/recipes/sachertorte.webp",
+      "card": "images/recipes/sachertorte-card.webp",
+      "thumb": "images/recipes/sachertorte-thumb.webp"
+    }
+  },
+  {
+    "slug": "sarmale",
+    "kind": "recipe",
+    "alt": "Three Romanian sarmale, cabbage leaves rolled around a meat filling, topped with dollops of sour cream",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASarmale_Romania.jpg",
+    "title": "File:Sarmale Romania.jpg",
+    "author": "Andrei",
+    "credit": "Bacau, Romania",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3785,
+    "originalHeight": 2819,
+    "files": {
+      "hero": "images/recipes/sarmale.webp",
+      "card": "images/recipes/sarmale-card.webp",
+      "thumb": "images/recipes/sarmale-thumb.webp"
+    }
+  },
+  {
     "slug": "satay",
     "kind": "recipe",
     "alt": "Grilled chicken satay skewers on a plate with sliced cucumber and onion",
@@ -7175,6 +8869,29 @@
       "hero": "images/recipes/satay.webp",
       "card": "images/recipes/satay-card.webp",
       "thumb": "images/recipes/satay-thumb.webp"
+    }
+  },
+  {
+    "slug": "scones",
+    "kind": "recipe",
+    "alt": "Two fruit scones on a plate beside dishes of whipped cream and strawberry jam",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AScones_cream_jam.jpg",
+    "title": "File:Scones cream jam.jpg",
+    "author": "Takeaway",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2500,
+    "originalHeight": 1875,
+    "files": {
+      "hero": "images/recipes/scones.webp",
+      "card": "images/recipes/scones-card.webp",
+      "thumb": "images/recipes/scones-thumb.webp"
     }
   },
   {
@@ -7267,6 +8984,52 @@
       "hero": "images/recipes/shawarma.webp",
       "card": "images/recipes/shawarma-card.webp",
       "thumb": "images/recipes/shawarma-thumb.webp"
+    }
+  },
+  {
+    "slug": "shepherds-pie",
+    "kind": "recipe",
+    "alt": "A slice of shepherd's pie, minced lamb and vegetables under a ridged layer of golden baked mashed potato, served with salad",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AShepherds_pie_-_The_Kew_Greenhouse_Cafe_2025-05-14.jpg",
+    "title": "File:Shepherds pie - The Kew Greenhouse Cafe 2025-05-14.jpg",
+    "author": "Andy Li",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 8160,
+    "originalHeight": 6144,
+    "files": {
+      "hero": "images/recipes/shepherds-pie.webp",
+      "card": "images/recipes/shepherds-pie-card.webp",
+      "thumb": "images/recipes/shepherds-pie-thumb.webp"
+    }
+  },
+  {
+    "slug": "shortbread",
+    "kind": "recipe",
+    "alt": "Pale golden shortbread fingers dusted with granulated sugar, stacked on a plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AScottish_Shortbread_(10513569756).jpg",
+    "title": "File:Scottish Shortbread (10513569756).jpg",
+    "author": "Luca Nebuloni",
+    "credit": "https://www.flickr.com/photos/nebulux/10513569756/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 2048,
+    "originalHeight": 1365,
+    "files": {
+      "hero": "images/recipes/shortbread.webp",
+      "card": "images/recipes/shortbread-card.webp",
+      "thumb": "images/recipes/shortbread-thumb.webp"
     }
   },
   {
@@ -7431,6 +9194,29 @@
     }
   },
   {
+    "slug": "sticky-toffee-pudding",
+    "kind": "recipe",
+    "alt": "An individual sticky toffee pudding drenched in toffee sauce, topped with a scoop of ice cream",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASticky_Toffee_Pudding_(4935903321).jpg",
+    "title": "File:Sticky Toffee Pudding (4935903321).jpg",
+    "author": "Neil Conway from Oakland, USA",
+    "credit": "Sticky Toffee Pudding",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 4272,
+    "originalHeight": 2798,
+    "files": {
+      "hero": "images/recipes/sticky-toffee-pudding.webp",
+      "card": "images/recipes/sticky-toffee-pudding-card.webp",
+      "thumb": "images/recipes/sticky-toffee-pudding-thumb.webp"
+    }
+  },
+  {
     "slug": "suya",
     "kind": "recipe",
     "alt": "Spice-crusted grilled suya beef pieces served with sliced raw onion and a red pepper sauce",
@@ -7500,6 +9286,29 @@
     }
   },
   {
+    "slug": "tourtiere",
+    "kind": "recipe",
+    "alt": "A whole tourtière, a golden-baked meat pie with a decorative pastry lid cut into maple leaf shapes",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATourtiere_table.jpg",
+    "title": "File:Tourtiere table.jpg",
+    "author": "George Showman",
+    "credit": "https://www.flickr.com/photos/gshowman/3203138258/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 1536,
+    "originalHeight": 2048,
+    "files": {
+      "hero": "images/recipes/tourtiere.webp",
+      "card": "images/recipes/tourtiere-card.webp",
+      "thumb": "images/recipes/tourtiere-thumb.webp"
+    }
+  },
+  {
     "slug": "ugali",
     "kind": "recipe",
     "alt": "A single mound of stiff white maize-meal ugali on a plate beside sautéed cabbage and carrot",
@@ -7543,6 +9352,52 @@
       "hero": "images/recipes/vanilla-ice-cream.webp",
       "card": "images/recipes/vanilla-ice-cream-card.webp",
       "thumb": "images/recipes/vanilla-ice-cream-thumb.webp"
+    }
+  },
+  {
+    "slug": "victoria-sponge",
+    "kind": "recipe",
+    "alt": "A Victoria sponge cake, two golden sponge layers sandwiched with raspberry jam and whipped cream",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AVictoria_sponge.jpg",
+    "title": "File:Victoria sponge.jpg",
+    "author": "Gordonplant",
+    "credit": "https://www.flickr.com/photos/gordonplant/5003941627",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3799,
+    "originalHeight": 2523,
+    "files": {
+      "hero": "images/recipes/victoria-sponge.webp",
+      "card": "images/recipes/victoria-sponge-card.webp",
+      "thumb": "images/recipes/victoria-sponge-thumb.webp"
+    }
+  },
+  {
+    "slug": "wiener-schnitzel",
+    "kind": "recipe",
+    "alt": "A golden breaded wiener schnitzel on a plate, garnished with rosemary and parsley, beside a lemon wedge and a bowl of cranberry sauce",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWiener_Schnitzel%2C_Aachen.jpg",
+    "title": "File:Wiener Schnitzel, Aachen.jpg",
+    "author": "Gerda Arendt",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-21",
+    "originalWidth": 3743,
+    "originalHeight": 2807,
+    "files": {
+      "hero": "images/recipes/wiener-schnitzel.webp",
+      "card": "images/recipes/wiener-schnitzel-card.webp",
+      "thumb": "images/recipes/wiener-schnitzel-thumb.webp"
     }
   },
   {

@@ -1,0 +1,146 @@
+---
+title: Apfelstrudel
+subtitle: A hand-stretched dough, pulled paper-thin, rolled around spiced apples, raisins and buttered breadcrumbs.
+label: Hand-stretched dough
+defaultServings: 8
+difficulty: Hard
+tags:
+  cuisine: [austrian]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/apfelstrudel.webp
+  alt: "A cross-section slice of apfelstrudel dusted with icing sugar, showing thin layers of pastry wrapped around sliced apple filling"
+ingredients:
+  - id: dough-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+  - id: dough-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 25
+    unit: g
+  - id: dough-egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 100
+    unit: g
+    note: warm
+  - id: dough-vinegar
+    ingredientRef: cider-vinegar
+    form: standard
+    amount: 5
+    unit: g
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: apple
+    ingredientRef: apple
+    form: raw
+    amount: 900
+    unit: g
+    note: peeled, cored and thinly sliced
+  - id: filling-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 3
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 60
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: g
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 40
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 70
+    unit: g
+    portions:
+      - { id: butter-crumbs, amount: 25 }
+      - { id: butter-brushing, amount: 45 }
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 10
+    unit: g
+    note: for dusting
+steps:
+  - { id: make-dough, durationMin: 12, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: prepare-filling, durationMin: 15, type: "parallel-with:rest-dough", phase: prep }
+  - { id: stretch-dough, durationMin: 15, type: active, phase: prep }
+  - { id: fill-and-roll, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 35, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made and rested up to a day ahead, wrapped tightly so it does not dry out; the strudel itself is at its best eaten the day it is baked, while the pastry is still crisp.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked strudel for up to two months and bake from frozen, allowing extra time.
+  reheatInstructions: Reheat briefly in a hot oven to recrisp; a microwave turns the pastry soft.
+notes:
+  techniqueRationale:
+    - stepId: stretch-dough
+      text: The dough is pulled, not rolled, from the centre outward until it is thin enough to read newsprint through — a strudel dough is elastic enough to stretch to almost nothing without tearing, which a rolling pin alone cannot achieve.
+  commonPitfalls:
+    - stepId: prepare-filling
+      text: Buttered, toasted breadcrumbs scattered under the apples are what keep the pastry from turning soggy where it meets the fruit's juice — skipping them leaves a wet, collapsed layer at the base of the roll.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="dough-flour"/> and the <Qty ref="dough-salt"/>, then work in the
+  <Qty ref="dough-oil"/>, the <Qty ref="dough-egg"/>, the <Qty ref="dough-water"/> and
+  the <Qty ref="dough-vinegar"/> and knead until smooth, soft and elastic.
+</Step>
+
+<Step id="rest-dough">
+  Shape into a ball, brush with a little oil, cover and rest at room temperature for
+  <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="prepare-filling">
+  Toss the <Qty ref="apple"/> with the <Qty ref="filling-sugar"/>, the
+  <Qty ref="cinnamon"/>, the <Qty ref="raisins"/> and the <Qty ref="lemon-juice"/>.
+  Fry the <Qty ref="breadcrumbs"/> in the <Qty ref="butter-crumbs"/> until golden and
+  set aside.
+</Step>
+
+<Step id="stretch-dough">
+  On a large floured cloth, stretch the dough from the centre outward with the backs
+  of the hands until it is paper-thin and almost translucent, trimming away the
+  thicker edge.
+</Step>
+
+<Step id="fill-and-roll">
+  Scatter the buttered breadcrumbs over two-thirds of the dough, top with the apple
+  mixture, and use the cloth to roll the strudel up over the filling into a tight log.
+  Transfer to a lined tray, seam side down, and brush all over with the
+  <Qty ref="butter-brushing"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={190}/> for <Dur step="bake"/>, until deep golden and crisp. Dust
+  with the <Qty ref="icing-sugar"/> once cooled slightly.
+</Step>

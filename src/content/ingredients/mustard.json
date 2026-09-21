@@ -1,0 +1,57 @@
+{
+  "id": "mustard",
+  "name": "Mustard",
+  "proseName": "mustard",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "mustard"
+  ],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "yellow",
+      "label": "Prepared, yellow",
+      "proseQualifier": "yellow",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "326698",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/326698/nutrients",
+      "nutritionPer100g": {
+        "kcal": 61,
+        "protein": 4.25,
+        "fat": 3.38,
+        "carbs": 5.3,
+        "fiber": 4.3,
+        "calcium": 63,
+        "iron": 1.59,
+        "magnesium": 47.7,
+        "phosphorus": 108,
+        "potassium": 150,
+        "sodium": 1100,
+        "zinc": 0.64,
+        "copper": 0.074,
+        "manganese": 0.42,
+        "seleniumMcg": 34,
+        "vitaminC": 0.4,
+        "thiamin": 0.189,
+        "riboflavin": 0.066,
+        "niacin": 0.561,
+        "vitaminB6": 0.069,
+        "vitaminAMcg": 4,
+        "vitaminE": 0.35,
+        "vitaminKMcg": 1.5,
+        "saturatedFat": 0.252,
+        "monounsaturatedFat": 2.59,
+        "polyunsaturatedFat": 0.903,
+        "transFat": 0.01
+      },
+      "density": {
+        "gPerTsp": 5,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/mustard-thumb.webp"
+}

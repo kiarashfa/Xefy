@@ -53,6 +53,53 @@
         "gPerCup": 152,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "sour",
+      "label": "Sour, fermented (polvilho azedo)",
+      "proseQualifier": "sour",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169717",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169717/nutrients",
+      "sourceNote": "USDA publishes no record for sour (fermented) tapioca starch. Fermentation changes the starch's gelling behaviour, which is why Brazilian recipes call for it by name, but not its macronutrient composition, so this reuses the sweet starch's record.",
+      "nutritionPer100g": {
+        "kcal": 358,
+        "protein": 0.19,
+        "fat": 0.02,
+        "carbs": 88.69,
+        "fiber": 0.9,
+        "sugars": 3.35,
+        "calcium": 20,
+        "iron": 1.58,
+        "magnesium": 1,
+        "phosphorus": 7,
+        "potassium": 11,
+        "sodium": 1,
+        "zinc": 0.12,
+        "copper": 0.02,
+        "manganese": 0.11,
+        "seleniumMcg": 0.8,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0.004,
+        "riboflavin": 0,
+        "niacin": 0,
+        "vitaminB6": 0.008,
+        "folateMcg": 4,
+        "vitaminB12Mcg": 0,
+        "choline": 1.2,
+        "saturatedFat": 0.005,
+        "monounsaturatedFat": 0.005,
+        "polyunsaturatedFat": 0.003,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 152,
+        "densitySource": "measured"
+      }
     }
   ]
 }

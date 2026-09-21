@@ -1,0 +1,63 @@
+{
+  "id": "veal",
+  "name": "Veal",
+  "proseName": "veal",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Pork",
+        "note": "A breaded and fried pork cutlet made the same way is \"Schnitzel Wiener Art\" (Vienna-style schnitzel), not Wiener Schnitzel, which by Austrian definition is veal."
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "cutlet",
+      "label": "Cutlet, boneless",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172643",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172643/nutrients",
+      "sourceNote": "USDA's record for boneless veal leg cutlet — the top round, cap removed — which is the traditional cut for Wiener Schnitzel.",
+      "nutritionPer100g": {
+        "kcal": 107,
+        "protein": 22.07,
+        "fat": 2.07,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 4,
+        "iron": 0.81,
+        "magnesium": 30,
+        "phosphorus": 212,
+        "potassium": 273,
+        "sodium": 86,
+        "zinc": 1.97,
+        "copper": 0.089,
+        "manganese": 0.017,
+        "seleniumMcg": 16,
+        "vitaminC": 0,
+        "thiamin": 0.1,
+        "riboflavin": 0.34,
+        "niacin": 9.28,
+        "vitaminB6": 0.599,
+        "folateMcg": 4,
+        "choline": 120,
+        "vitaminB12Mcg": 2.08,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.31,
+        "vitaminDMcg": 0.6,
+        "vitaminKMcg": 1.1,
+        "saturatedFat": 0.805,
+        "monounsaturatedFat": 0.986,
+        "polyunsaturatedFat": 0.107,
+        "transFat": 0.09,
+        "cholesterol": 56
+      }
+    }
+  ]
+}

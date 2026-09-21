@@ -1,0 +1,55 @@
+{
+  "id": "clotted-cream",
+  "name": "Clotted Cream",
+  "proseName": "clotted cream",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Double cream",
+        "note": "Double cream is pourable and roughly 48 per cent fat; clotted cream is scalded and settled into a thick, spoonable crust closer to 55–65 per cent fat."
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "clotted",
+      "label": "Clotted",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2346386",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2346386/nutrients",
+      "sourceNote": "USDA has no record for clotted cream. This is its record for heavy cream, the closest dairy fat profile it publishes.",
+      "nutritionCaveat": "Cited against heavy cream at roughly 36 per cent fat. Clotted cream is scalded and settled to 55–65 per cent fat, so its true energy and fat figures run substantially higher than shown here; USDA publishes no clotted-cream record.",
+      "nutritionPer100g": {
+        "kcal": 335.893,
+        "protein": 2.018,
+        "fat": 35.56,
+        "carbs": 3.8,
+        "calcium": 61.21,
+        "iron": 0,
+        "magnesium": 5.974,
+        "phosphorus": 57.03,
+        "potassium": 96.94,
+        "sodium": 20.61,
+        "zinc": 0.223,
+        "copper": 0,
+        "manganese": 0,
+        "thiamin": 0.032,
+        "niacin": 0.061,
+        "vitaminB6": 0.031,
+        "vitaminB12Mcg": 0,
+        "vitaminKMcg": 2.4,
+        "saturatedFat": 20.45,
+        "monounsaturatedFat": 7.339,
+        "cholesterol": 103.1
+      }
+    }
+  ],
+  "image": "images/ingredients/clotted-cream-thumb.webp"
+}

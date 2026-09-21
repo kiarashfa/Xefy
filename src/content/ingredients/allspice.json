@@ -1,0 +1,107 @@
+{
+  "id": "allspice",
+  "name": "Allspice",
+  "proseName": "allspice",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Pimento",
+        "region": "Jamaica",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "proseQualifier": "ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171315",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171315/nutrients",
+      "nutritionPer100g": {
+        "kcal": 263,
+        "protein": 6.09,
+        "fat": 8.69,
+        "carbs": 72.12,
+        "fiber": 21.6,
+        "saturatedFat": 2.55,
+        "monounsaturatedFat": 0.66,
+        "polyunsaturatedFat": 2.36,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 77,
+        "potassium": 1044,
+        "calcium": 661,
+        "iron": 7.06,
+        "magnesium": 135,
+        "phosphorus": 113,
+        "zinc": 1.01,
+        "copper": 0.553,
+        "manganese": 2.943,
+        "seleniumMcg": 2.7,
+        "vitaminAMcg": 27,
+        "vitaminC": 39.2,
+        "vitaminDMcg": 0,
+        "thiamin": 0.101,
+        "riboflavin": 0.063,
+        "niacin": 2.86,
+        "vitaminB6": 0.21,
+        "folateMcg": 36,
+        "vitaminB12Mcg": 0
+      },
+      "density": {
+        "gPerTsp": 1.9,
+        "gPerTbsp": 6,
+        "densitySource": "measured"
+      }
+    },
+    {
+      "id": "whole",
+      "label": "Whole, dried berries",
+      "proseName": "whole allspice berries",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171315",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171315/nutrients",
+      "sourceNote": "USDA publishes no separate record for whole allspice berries; this is its ground-allspice record, which is the closest composition it carries for the same dried fruit.",
+      "nutritionPer100g": {
+        "kcal": 263,
+        "protein": 6.09,
+        "fat": 8.69,
+        "carbs": 72.12,
+        "fiber": 21.6,
+        "saturatedFat": 2.55,
+        "monounsaturatedFat": 0.66,
+        "polyunsaturatedFat": 2.36,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 77,
+        "potassium": 1044,
+        "calcium": 661,
+        "iron": 7.06,
+        "magnesium": 135,
+        "phosphorus": 113,
+        "zinc": 1.01,
+        "copper": 0.553,
+        "manganese": 2.943,
+        "seleniumMcg": 2.7,
+        "vitaminAMcg": 27,
+        "vitaminC": 39.2,
+        "vitaminDMcg": 0,
+        "thiamin": 0.101,
+        "riboflavin": 0.063,
+        "niacin": 2.86,
+        "vitaminB6": 0.21,
+        "folateMcg": 36,
+        "vitaminB12Mcg": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/allspice-thumb.webp"
+}

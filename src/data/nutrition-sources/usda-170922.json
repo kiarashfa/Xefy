@@ -1,0 +1,149 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "170922",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/170922/nutrients",
+  "description": "Spices, coriander seed",
+  "category": "Spices and Herbs",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 298,
+    "protein": 12.37,
+    "fat": 17.77,
+    "carbs": 54.99,
+    "fiber": 41.9,
+    "calcium": 709,
+    "iron": 16.32,
+    "magnesium": 330,
+    "phosphorus": 409,
+    "potassium": 1267,
+    "sodium": 35,
+    "zinc": 4.7,
+    "copper": 0.975,
+    "manganese": 1.9,
+    "seleniumMcg": 26.2,
+    "vitaminC": 21,
+    "thiamin": 0.239,
+    "riboflavin": 0.29,
+    "niacin": 2.13,
+    "folateMcg": 0,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 0,
+    "vitaminDMcg": 0,
+    "saturatedFat": 0.99,
+    "monounsaturatedFat": 13.58,
+    "polyunsaturatedFat": 1.75,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 8.86,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1245,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 6.02,
+      "unit": "g"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.02,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 0.81,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.11,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.1,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 13.48,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 1.75,
+      "unit": "g"
+    },
+    {
+      "number": "636",
+      "name": "Phytosterols",
+      "amount": 46,
+      "unit": "mg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTbsp",
+      "value": 5,
+      "from": "1 tbsp"
+    },
+    {
+      "measure": "gPerTsp",
+      "value": 1.8,
+      "from": "1 tsp"
+    }
+  ]
+}

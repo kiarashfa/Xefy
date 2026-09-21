@@ -1,0 +1,138 @@
+---
+title: Ropa Vieja
+subtitle: Skirt steak braised until tender, shredded into fine strands, and simmered in a sofrito of peppers, onion, tomato, olives and capers.
+label: Cuba
+defaultServings: 5
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [braising, simmering]
+image:
+  src: images/recipes/ropa-vieja.webp
+  alt: "A mound of shredded ropa vieja beef in tomato sauce, topped with raw onion slices, served on a bed of lettuce beside rice and beans"
+ingredients:
+  - id: beef
+    ingredientRef: beef-skirt-steak
+    form: raw
+    amount: 900
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 600
+    unit: ml
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 25
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 120
+    unit: g
+    note: sliced
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 80
+    unit: g
+    note: sliced
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 80
+    unit: g
+    note: sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: tinned-tomato
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 250
+    unit: g
+    note: crushed by hand
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: olives
+    ingredientRef: olives
+    form: green
+    amount: 40
+    unit: g
+    note: pitted and roughly chopped
+  - id: capers
+    ingredientRef: capers
+    form: brined
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: braise-beef, durationMin: 150, type: passive }
+  - { id: shred, durationMin: 15, type: active, phase: cook }
+  - { id: sofrito, durationMin: 10, type: "parallel-with:braise-beef", phase: prep }
+  - { id: simmer, durationMin: 25, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The beef can be braised and shredded up to two days ahead and refrigerated in its braising liquid.
+  freezable: true
+  freezeInstructions: Freeze the finished stew in an airtight container for up to three months.
+  reheatInstructions: Reheat gently in a covered pan over a low heat, adding a splash of the reserved braising liquid if the sauce has thickened too far.
+notes:
+  techniqueRationale:
+    - stepId: shred
+      text: Pulling the beef with the grain, once it is fully tender, is what gives ropa vieja its characteristic fine, ragged strands; cutting it with a knife instead produces chunks rather than the shredded texture the dish is named for.
+  commonPitfalls:
+    - stepId: braise-beef
+      text: Skirt steak is a working muscle with a lot of connective tissue, and it stays tough if the braise is rushed; it needs the full time at a bare simmer to become tender enough to pull apart by hand.
+---
+
+<Step id="braise-beef">
+  Put the <Qty ref="beef"/> in a pot with the <Qty ref="stock"/> and
+  <Qty ref="bay-leaf"/>, bring to a simmer, then cover and cook at a bare
+  simmer for <Dur step="braise-beef"/>, until fully tender.
+</Step>
+
+<Step id="shred">
+  Lift the beef out, reserving the braising liquid, and pull it apart into
+  fine strands with two forks for <Dur step="shred"/>. Discard the bay leaf.
+</Step>
+
+<Step id="sofrito">
+  Meanwhile, heat the <Qty ref="olive-oil"/> in a wide pan and cook the
+  <Qty ref="onion"/>, <Qty ref="green-pepper"/>, <Qty ref="red-pepper"/> and
+  <Qty ref="garlic"/> for <Dur step="sofrito"/>, until softened.
+</Step>
+
+<Step id="simmer">
+  Stir the <Qty ref="tinned-tomato"/>, <Qty ref="cumin"/>,
+  <Qty ref="oregano"/>, <Qty ref="salt"/> and <Qty ref="black-pepper"/> into
+  the sofrito, then add the shredded beef with enough of the reserved
+  braising liquid to keep it moist. Simmer for <Dur step="simmer"/>, then stir
+  in the <Qty ref="olives"/> and <Qty ref="capers"/> just before serving.
+</Step>

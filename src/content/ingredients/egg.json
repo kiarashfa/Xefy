@@ -108,6 +108,58 @@
         "plural": "egg yolks",
         "grams": 17
       }
+    },
+    {
+      "id": "white",
+      "label": "White, raw",
+      "purchasedAs": {
+        "form": "whole",
+        "ratio": 1.515,
+        "note": "Whites are separated from whole eggs; a large egg gives about two-thirds of its weight in white."
+      },
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172183",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172183/nutrients",
+      "nutritionPer100g": {
+        "kcal": 52,
+        "protein": 10.9,
+        "fat": 0.17,
+        "carbs": 0.73,
+        "fiber": 0,
+        "sugars": 0.71,
+        "calcium": 7,
+        "iron": 0.08,
+        "magnesium": 11,
+        "phosphorus": 15,
+        "potassium": 163,
+        "sodium": 166,
+        "zinc": 0.03,
+        "copper": 0.023,
+        "manganese": 0.011,
+        "seleniumMcg": 20,
+        "vitaminC": 0,
+        "thiamin": 0.004,
+        "riboflavin": 0.439,
+        "niacin": 0.105,
+        "vitaminB6": 0.005,
+        "folateMcg": 4,
+        "choline": 1.1,
+        "vitaminB12Mcg": 0.09,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "proseName": "egg white",
+      "countUnit": {
+        "singular": "egg white",
+        "plural": "egg whites",
+        "grams": 33
+      }
     }
   ],
   "image": "images/ingredients/egg-thumb.webp"

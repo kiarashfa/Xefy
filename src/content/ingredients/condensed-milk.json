@@ -1,0 +1,61 @@
+{
+  "id": "condensed-milk",
+  "name": "Sweetened Condensed Milk",
+  "proseName": "condensed milk",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "sweetened",
+      "label": "Sweetened",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171275",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171275/nutrients",
+      "nutritionPer100g": {
+        "kcal": 321,
+        "protein": 7.91,
+        "fat": 8.7,
+        "carbs": 54.4,
+        "fiber": 0,
+        "sugars": 54.4,
+        "calcium": 284,
+        "iron": 0.19,
+        "magnesium": 26,
+        "phosphorus": 253,
+        "potassium": 371,
+        "sodium": 127,
+        "zinc": 0.94,
+        "copper": 0.015,
+        "manganese": 0.006,
+        "seleniumMcg": 14.8,
+        "vitaminC": 2.6,
+        "thiamin": 0.09,
+        "riboflavin": 0.416,
+        "niacin": 0.21,
+        "vitaminB6": 0.051,
+        "folateMcg": 11,
+        "choline": 89.1,
+        "vitaminB12Mcg": 0.44,
+        "vitaminAMcg": 74,
+        "vitaminE": 0.16,
+        "vitaminDMcg": 0.2,
+        "vitaminKMcg": 0.6,
+        "saturatedFat": 5.486,
+        "monounsaturatedFat": 2.427,
+        "polyunsaturatedFat": 0.337,
+        "cholesterol": 34
+      },
+      "density": {
+        "gPerCup": 306,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/condensed-milk-thumb.webp"
+}

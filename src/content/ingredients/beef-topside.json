@@ -1,0 +1,67 @@
+{
+  "id": "beef-topside",
+  "name": "Beef Topside",
+  "proseName": "beef topside",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Veal",
+        "note": "A cut from an adult animal, not a calf. Milanesa is traditionally made from beef in Argentina, though veal versions exist elsewhere."
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "generalSubstitutes": [
+    {
+      "substitute": "eye of round or top sirloin",
+      "note": "Any lean, close-grained roasting cut that slices thinly and pounds out evenly works in its place."
+    }
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "proseQualifier": "raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169534",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169534/nutrients",
+      "sourceNote": "USDA has no record for topside (nalga/bola de lomo) specifically. This is its record for beef top round, separable lean and fat, trimmed to 1/8\" fat — the closest lean roasting-cut profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 173,
+        "protein": 22.24,
+        "fat": 8.67,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 3,
+        "iron": 2.04,
+        "magnesium": 24,
+        "phosphorus": 213,
+        "potassium": 371,
+        "sodium": 51,
+        "zinc": 2.8,
+        "copper": 0.08,
+        "manganese": 0.014,
+        "seleniumMcg": 20.5,
+        "vitaminC": 0,
+        "thiamin": 0.1,
+        "riboflavin": 0.18,
+        "niacin": 4.25,
+        "vitaminB6": 0.5,
+        "folateMcg": 9,
+        "choline": 92.9,
+        "vitaminB12Mcg": 2.79,
+        "vitaminAMcg": 0,
+        "saturatedFat": 3.3,
+        "monounsaturatedFat": 3.59,
+        "polyunsaturatedFat": 0.38,
+        "cholesterol": 59
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-topside-thumb.webp"
+}

@@ -1,0 +1,100 @@
+---
+title: Apple Crumble
+subtitle: Baked spiced apples under a loose, buttery topping of flour, sugar and butter rubbed to coarse crumbs.
+label: Baked, family dish
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [british]
+  course: [dessert]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Apple pie
+      note: Pie encloses the apples in rolled pastry, top and often bottom; crumble is topped only, with a loose rubbed mixture rather than a rolled sheet of dough.
+      slugRef: apple-pie
+image:
+  src: images/recipes/apple-crumble.webp
+  alt: "A baked apple crumble in a glass dish, its top covered in golden, clumped crumble topping"
+ingredients:
+  - id: apple
+    ingredientRef: apple
+    form: raw
+    amount: 900
+    unit: g
+    note: peeled, cored and sliced
+  - id: filling-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 60
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 3
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 180
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 90
+    unit: g
+    note: cold, cubed
+  - id: topping-sugar
+    ingredientRef: demerara-sugar
+    form: raw
+    amount: 80
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+steps:
+  - { id: toss-apples, durationMin: 8, type: active, phase: prep }
+  - { id: rub-topping, durationMin: 10, type: "parallel-with:toss-apples", phase: prep }
+  - { id: assemble, durationMin: 3, type: active, phase: prep }
+  - { id: bake, durationMin: 40, type: passive }
+makeAhead:
+  aheadInstructions: The topping can be rubbed together and kept, covered, in the refrigerator up to two days ahead; the apples are best tossed and baked the same day, before they brown.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked crumble for up to two months and bake from frozen, allowing extra time until the topping is golden and the filling bubbles at the edges.
+  reheatInstructions: Reheat, covered loosely with foil, in a moderate oven until hot through, uncovering for the last few minutes to recrisp the top.
+notes:
+  techniqueRationale:
+    - stepId: rub-topping
+      text: Keeping the butter cold and rubbing it only to coarse crumbs, rather than a smooth paste, is what gives the topping its open, crumbly texture instead of baking into a solid biscuit layer.
+  commonPitfalls:
+    - stepId: bake
+      text: Cutting the apples too thickly leaves them underdone by the time the topping browns. Even, moderately thin slices cook through in the same time the top needs to colour.
+---
+
+<Step id="toss-apples">
+  Toss the <Qty ref="apple"/> with the <Qty ref="filling-sugar"/>, the <Qty ref="cinnamon"/>
+  and the <Qty ref="lemon-juice"/> and tip into a baking dish.
+</Step>
+
+<Step id="rub-topping">
+  Rub the <Qty ref="butter"/> into the <Qty ref="flour"/> and the <Qty ref="salt"/> with
+  the fingertips until the mixture looks like coarse crumbs, then stir in the
+  <Qty ref="topping-sugar"/>.
+</Step>
+
+<Step id="assemble">
+  Scatter the topping evenly over the apples, right to the edges of the dish, without
+  pressing it down.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={190}/> for <Dur step="bake"/>, until the top is deep golden and the
+  filling bubbles up around the edges.
+</Step>

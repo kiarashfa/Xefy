@@ -1,0 +1,64 @@
+{
+  "id": "lemon",
+  "name": "Lemon",
+  "proseName": "lemon",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167746",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167746/nutrients",
+      "nutritionPer100g": {
+        "kcal": 29,
+        "protein": 1.1,
+        "fat": 0.3,
+        "carbs": 9.32,
+        "fiber": 2.8,
+        "sugars": 2.5,
+        "calcium": 26,
+        "iron": 0.6,
+        "magnesium": 8,
+        "phosphorus": 16,
+        "potassium": 138,
+        "sodium": 2,
+        "zinc": 0.06,
+        "copper": 0.037,
+        "manganese": 0.03,
+        "seleniumMcg": 0.4,
+        "vitaminC": 53,
+        "thiamin": 0.04,
+        "riboflavin": 0.02,
+        "niacin": 0.1,
+        "vitaminB6": 0.08,
+        "folateMcg": 11,
+        "choline": 5.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminE": 0.15,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.039,
+        "monounsaturatedFat": 0.011,
+        "polyunsaturatedFat": 0.089,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 212,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "lemon",
+        "plural": "lemons",
+        "grams": 100
+      }
+    }
+  ],
+  "image": "images/ingredients/lemon-thumb.webp"
+}

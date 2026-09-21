@@ -1,0 +1,103 @@
+---
+title: Pão de Queijo
+subtitle: Small, chewy cassava-starch rolls bound with cheese, with no wheat flour at all.
+label: Classic
+defaultServings: 24
+difficulty: Easy
+tags:
+  cuisine: [brazilian]
+  course: [snack]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: "Brazilian cheese bread", region: International, lang: en }
+image:
+  src: images/recipes/pao-de-queijo.webp
+  alt: "A basket of golden pão de queijo, Brazilian cheese bread rolls with a crisp browned crust"
+ingredients:
+  - id: starch-sour
+    ingredientRef: tapioca-starch
+    form: sour
+    amount: 250
+    unit: g
+  - id: starch-sweet
+    ingredientRef: tapioca-starch
+    form: starch
+    amount: 250
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 250
+    unit: ml
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 120
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: cheese
+    ingredientRef: minas-cheese
+    form: fresh
+    amount: 250
+    unit: g
+    note: grated
+steps:
+  - { id: heat-liquid, durationMin: 5, type: active, phase: prep }
+  - { id: scald-starch, durationMin: 10, type: active, phase: prep }
+  - { id: cool, durationMin: 15, type: passive }
+  - { id: add-eggs-cheese, durationMin: 10, type: active, phase: prep }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: bake, durationMin: 25, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shaped, unbaked dough balls can be refrigerated, covered, for up to a day.
+  freezable: true
+  freezeInstructions: Freeze the shaped, unbaked balls on a tray until solid, then bag them for up to three months. Bake from frozen, allowing extra time.
+  reheatInstructions: A short spell in a hot oven brings a cooled roll back to its chewy best; a microwave turns it rubbery.
+notes:
+  techniqueRationale:
+    - stepId: scald-starch
+      text: Pouring the hot milk and oil straight over the raw starch partially cooks it, which is what gives the dough its stretch and the baked roll its characteristic chew — a dough mixed cold from the same ingredients bakes up dense and short instead.
+  commonPitfalls:
+    - stepId: add-eggs-cheese
+      text: Adding the eggs while the scalded starch is still hot cooks them on contact and streaks the dough. It needs to cool until only warm before the eggs go in.
+---
+
+<Step id="heat-liquid">
+  Bring the <Qty ref="milk"/>, <Qty ref="oil"/> and <Qty ref="salt"/> to a
+  full boil in a saucepan.
+</Step>
+
+<Step id="scald-starch">
+  Combine the <Qty ref="starch-sour"/> and <Qty ref="starch-sweet"/> in a
+  large bowl. Pour over the hot liquid and stir until it forms a rough,
+  sticky, partially cooked dough.
+</Step>
+
+<Step id="cool">
+  Let the dough cool for <Dur step="cool"/>, until only warm to the touch.
+</Step>
+
+<Step id="add-eggs-cheese">
+  Knead in the <Qty ref="eggs"/> and the <Qty ref="cheese"/> until the dough
+  is smooth, glossy and elastic — it will look loose at first and come
+  together as the eggs are absorbed.
+</Step>
+
+<Step id="shape">
+  Roll the dough into small balls and space them on lined trays.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={180}/> for <Dur step="bake"/>, until puffed and golden,
+  with a firm crust over a chewy centre.
+</Step>

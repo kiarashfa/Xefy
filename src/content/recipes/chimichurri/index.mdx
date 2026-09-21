@@ -1,0 +1,86 @@
+---
+title: Chimichurri
+subtitle: An uncooked sauce of parsley, oregano, garlic and vinegar, spooned over grilled beef across Argentina and Uruguay.
+label: Classic
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [argentine]
+  course: [condiment]
+  method: [no-cook]
+image:
+  src: images/recipes/chimichurri.webp
+  alt: "A close view of chimichurri sauce, finely chopped parsley, garlic and chilli flakes mixed together in a jar"
+ingredients:
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 40
+    unit: g
+    note: finely chopped
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 6
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: finely chopped
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 2
+    unit: g
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 80
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 30
+    unit: ml
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 150
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: combine, durationMin: 10, type: active, phase: prep }
+  - { id: rest, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: Improves after a rest of half an hour and keeps well made a day ahead, covered, at room temperature.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: rest
+      text: Chimichurri is not cooked, so the only way the garlic and dried oregano soften and the flavours combine is time steeped in the vinegar and oil; used immediately it tastes sharp and disjointed rather than rounded.
+---
+
+<Step id="combine">
+  Combine the <Qty ref="parsley"/>, <Qty ref="oregano"/>, <Qty ref="garlic"/>
+  and <Qty ref="chilli-flakes"/> in a bowl. Stir in the <Qty ref="vinegar"/>
+  and <Qty ref="water"/>, then whisk in the <Qty ref="oil"/> along with the
+  <Qty ref="salt"/> and <Qty ref="pepper"/>.
+</Step>
+
+<Step id="rest">
+  Let the sauce stand, covered, at room temperature for <Dur step="rest"/>
+  before serving, so the garlic and herbs mellow into the vinegar and oil.
+</Step>

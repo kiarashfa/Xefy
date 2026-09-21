@@ -1,0 +1,60 @@
+{
+  "id": "dates",
+  "name": "Dates",
+  "proseName": "dates",
+  "category": "dried fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "pitted",
+      "label": "Pitted",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171726",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171726/nutrients",
+      "sourceNote": "USDA's record for deglet noor dates, the common variety used in baking, as distinct from the larger, softer medjool eaten fresh.",
+      "nutritionPer100g": {
+        "kcal": 282,
+        "protein": 2.45,
+        "fat": 0.39,
+        "carbs": 75.03,
+        "fiber": 8,
+        "sugars": 63.35,
+        "calcium": 39,
+        "iron": 1.02,
+        "magnesium": 43,
+        "phosphorus": 62,
+        "potassium": 656,
+        "sodium": 2,
+        "zinc": 0.29,
+        "copper": 0.206,
+        "manganese": 0.262,
+        "seleniumMcg": 3,
+        "vitaminC": 0.4,
+        "thiamin": 0.052,
+        "riboflavin": 0.066,
+        "niacin": 1.274,
+        "vitaminB6": 0.165,
+        "folateMcg": 19,
+        "choline": 6.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.05,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.7,
+        "saturatedFat": 0.032,
+        "monounsaturatedFat": 0.036,
+        "polyunsaturatedFat": 0.019,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 147,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/dates-thumb.webp"
+}

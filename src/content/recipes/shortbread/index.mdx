@@ -1,0 +1,88 @@
+---
+title: Shortbread
+subtitle: Butter, sugar and flour in a three-two-one ratio, worked to a short dough and baked slowly until pale gold.
+label: Traditional fingers
+defaultServings: 16
+difficulty: Easy
+tags:
+  cuisine: [british]
+  course: [dessert]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Petticoat tails, region: Scotland, lang: en, note: A round, wedge-cut form of the same dough rather than a different recipe. }
+image:
+  src: images/recipes/shortbread.webp
+  alt: "Pale golden shortbread fingers dusted with granulated sugar, stacked on a plate"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 200
+    unit: g
+    note: softened
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: cream-butter, durationMin: 4, type: active, phase: prep }
+  - { id: bring-together, durationMin: 5, type: active, phase: prep }
+  - { id: press-and-score, durationMin: 6, type: active, phase: prep }
+  - { id: chill, durationMin: 20, type: passive }
+  - { id: bake, durationMin: 40, type: passive }
+  - { id: cool, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: The pressed, scored dough can be covered and refrigerated up to two days before baking.
+  freezable: true
+  freezeInstructions: Freeze the baked, cooled fingers in an airtight container for up to two months.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: A low, slow oven is what keeps shortbread pale rather than browned — the point is a short, sandy crumb from the fat and slow-cooked starch, not colour from the Maillard reaction a hotter bake would bring.
+  commonPitfalls:
+    - stepId: bring-together
+      text: Working the flour in too vigorously develops gluten, which toughens what should be a crumbly, short dough. It is brought together only until it holds, never kneaded.
+---
+
+<Step id="cream-butter">
+  Beat the <Qty ref="butter"/> and the <Qty ref="sugar"/> together until smooth and
+  pale, without beating in excess air.
+</Step>
+
+<Step id="bring-together">
+  Add the <Qty ref="flour"/> and the <Qty ref="salt"/> and work them in with a wooden
+  spoon and then by hand, just until the mixture comes together into a smooth,
+  short dough.
+</Step>
+
+<Step id="press-and-score">
+  Press the dough evenly into a lined tin, prick all over with a fork, and score into
+  fingers without cutting all the way through.
+</Step>
+
+<Step id="chill">
+  Chill for <Dur step="chill"/>, to firm the butter before it meets the oven.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={150}/> for <Dur step="bake"/>, until pale gold and firm at the
+  edges but still soft in the centre.
+</Step>
+
+<Step id="cool">
+  Recut along the scored lines while still warm, then leave in the tin to cool
+  completely for <Dur step="cool"/> before turning out.
+</Step>

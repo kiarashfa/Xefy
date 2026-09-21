@@ -1,0 +1,136 @@
+---
+title: Butter Tarts
+subtitle: Small lard pastry shells filled with a runny brown sugar and butter custard, baked until the edges are set and the centre still wobbles.
+label: With raisins
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [canadian]
+  course: [dessert]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Pecan pie
+      note: A related American dessert with a similar sugar-and-egg filling, baked as one large pie and packed with pecans; butter tarts are individual tarts with a runnier filling, often with raisins.
+      slugRef: pecan-pie
+image:
+  src: images/recipes/butter-tarts.webp
+  alt: "A batch of Canadian butter tarts on a wooden board, their pastry shells filled with glossy, caramelised sugar filling"
+ingredients:
+  - id: pastry-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+  - id: pastry-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: lard
+    ingredientRef: lard
+    form: standard
+    amount: 80
+    unit: g
+    note: cold, cubed
+  - id: pastry-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    note: cold, cubed
+  - id: ice-water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: g
+    note: iced
+  - id: filling-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+    note: melted
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 150
+    unit: g
+  - id: corn-syrup
+    ingredientRef: corn-syrup
+    form: light
+    amount: 120
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: two eggs, lightly beaten
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 100
+    unit: g
+steps:
+  - { id: make-pastry, durationMin: 10, type: active, phase: prep }
+  - { id: chill-pastry, durationMin: 30, type: passive }
+  - { id: line-tins, durationMin: 15, type: active, phase: prep }
+  - { id: make-filling, durationMin: 8, type: "parallel-with:chill-pastry", phase: prep }
+  - { id: fill-tarts, durationMin: 8, type: active, phase: prep }
+  - { id: bake, durationMin: 18, type: passive }
+  - { id: cool, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: The pastry can be made up to two days ahead and kept chilled; the filling is best mixed just before the tarts are filled and baked.
+  freezable: true
+  freezeInstructions: Freeze the baked, cooled tarts in a single layer, then bag them, for up to two months; thaw at room temperature.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: Pulling the tarts while the centre still wobbles is what keeps the filling runny rather than set solid — carryover heat firms the edges further as they cool, and a fully set centre in the oven means an overbaked, candy-hard tart once cold.
+  commonPitfalls:
+    - stepId: fill-tarts
+      text: Filling the shells too close to the rim lets the filling boil over and glue the tarts into the tin as they bake. Leaving a visible gap below the rim keeps the bubbling filling inside the shell.
+---
+
+<Step id="make-pastry">
+  Rub the <Qty ref="lard"/> and the <Qty ref="pastry-butter"/> into the
+  <Qty ref="pastry-flour"/> and the <Qty ref="pastry-salt"/> until the mixture looks
+  like coarse crumbs, then mix in the <Qty ref="ice-water"/> just until the dough
+  comes together.
+</Step>
+
+<Step id="chill-pastry">
+  Chill the pastry for <Dur step="chill-pastry"/>.
+</Step>
+
+<Step id="line-tins">
+  Roll the pastry thin and cut rounds to line the cups of a muffin tin, pressing them
+  in gently.
+</Step>
+
+<Step id="make-filling">
+  Whisk the <Qty ref="filling-butter"/>, the <Qty ref="brown-sugar"/>, the
+  <Qty ref="corn-syrup"/>, the <Qty ref="egg"/> and the <Qty ref="vanilla"/> together
+  until smooth.
+</Step>
+
+<Step id="fill-tarts">
+  Scatter a few <Qty ref="raisins"/> into each pastry shell and pour over the filling,
+  leaving a small gap below the rim.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the pastry is golden and the
+  filling has puffed at the edges but still wobbles gently in the centre.
+</Step>
+
+<Step id="cool">
+  Cool in the tin for <Dur step="cool"/> before lifting out.
+</Step>

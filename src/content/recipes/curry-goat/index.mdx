@@ -1,0 +1,167 @@
+---
+title: Curry Goat
+subtitle: Bone-in goat browned in a blend of turmeric, cumin, coriander and fenugreek, then braised with scotch bonnet, thyme and coconut milk until the meat falls from the bone.
+label: Jamaica
+defaultServings: 5
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [braising]
+image:
+  src: images/recipes/curry-goat.webp
+  alt: "Bone-in curry goat pieces in a thick brown sauce, served over Jamaican rice and peas"
+ingredients:
+  - id: goat
+    ingredientRef: goat
+    form: raw
+    amount: 1400
+    unit: g
+    note: bone-in, cut into chunks
+    consumedFraction: 0.78
+    consumedFractionNote: Bone-in goat is cut across the bone for the curry pot; roughly a fifth of the raw weight is bone left on the plate once the meat is eaten.
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 8
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 6
+    unit: g
+  - id: coriander-seed
+    ingredientRef: coriander-seed
+    form: ground
+    amount: 6
+    unit: g
+  - id: fenugreek
+    ingredientRef: fenugreek-seed
+    form: whole
+    amount: 3
+    unit: g
+    note: toasted and ground
+  - id: allspice
+    ingredientRef: allspice
+    form: ground
+    amount: 3
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 18
+    unit: g
+    note: crushed
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: grated
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 8
+    unit: g
+    note: pierced whole
+    consumedFraction: 0.3
+    consumedFractionNote: The pepper is pierced whole to season the braise and lifted out before serving; most of it is discarded rather than eaten.
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: chopped
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: sliced
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 300
+    unit: g
+    note: peeled and cut into chunks
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 300
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 300
+    unit: ml
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: season, durationMin: 15, type: active, phase: prep }
+  - { id: marinate, durationMin: 720, type: passive }
+  - { id: sear, durationMin: 12, type: active, phase: cook }
+  - { id: braise, durationMin: 90, type: passive }
+  - { id: add-potato, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The goat can be seasoned with the spice paste up to a day ahead and refrigerated. The finished curry improves overnight in the refrigerator, once cool.
+  freezable: true
+  freezeInstructions: Freeze the finished curry, without the potatoes if possible, in an airtight container for up to three months; potatoes turn grainy after freezing.
+  reheatInstructions: Reheat gently in a covered pan over a low heat, adding a splash of water if the sauce has thickened, until piping hot throughout.
+notes:
+  techniqueRationale:
+    - stepId: sear
+      text: Browning the goat in the same spices it was marinated in, rather than wiping them off first, toasts the curry powder directly in fat and deepens its flavour before any liquid goes in.
+  commonPitfalls:
+    - stepId: braise
+      text: Goat is a working muscle and stays tough if rushed; the braise needs the full time at a bare simmer for the collagen to break down; boiling hard toughens the meat instead of tenderising it.
+---
+
+<Step id="season">
+  Combine the <Qty ref="turmeric"/>, <Qty ref="cumin"/>,
+  <Qty ref="coriander-seed"/>, <Qty ref="fenugreek"/>,
+  <Qty ref="allspice"/>, <Qty ref="garlic"/> and <Qty ref="ginger"/> into a
+  paste and rub it all over the <Qty ref="goat"/>.
+</Step>
+
+<Step id="marinate">
+  Cover and refrigerate the goat for <Dur step="marinate"/>.
+</Step>
+
+<Step id="sear">
+  Heat the <Qty ref="vegetable-oil"/> in a heavy pot over a high heat and
+  brown the goat on all sides in batches, for <Dur step="sear"/> in total,
+  then return all the meat to the pot with the <Qty ref="onion"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="thyme"/>,
+  <Qty ref="scotch-bonnet"/>, <Qty ref="salt"/> and
+  <Qty ref="black-pepper"/>.
+</Step>
+
+<Step id="braise">
+  Pour in the <Qty ref="coconut-milk"/> and <Qty ref="water"/>, bring to a
+  simmer, then cover and cook at a bare simmer for <Dur step="braise"/>,
+  until the meat is tender enough to pull from the bone.
+</Step>
+
+<Step id="add-potato">
+  Stir in the <Qty ref="potato"/> and continue simmering, uncovered, for
+  <Dur step="add-potato"/>, until the potato is tender and the sauce has
+  thickened. Discard the whole scotch bonnet before serving.
+</Step>

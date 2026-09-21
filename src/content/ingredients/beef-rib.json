@@ -1,0 +1,76 @@
+{
+  "id": "beef-rib",
+  "name": "Beef Rib",
+  "proseName": "beef rib roast",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Forerib",
+        "region": "Britain",
+        "lang": "en"
+      },
+      {
+        "name": "Standing rib roast",
+        "region": "United States",
+        "lang": "en"
+      }
+    ],
+    "notToBeConfusedWith": [
+      {
+        "name": "Beef topside",
+        "note": "A leaner, boneless roasting joint from the round rather than the rib; it roasts faster and dries out more easily, without the rib bones' insulation or the marbling of this cut."
+      }
+    ]
+  },
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, bone-in",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172152",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172152/nutrients",
+      "sourceNote": "USDA's record for bone-in rib eye steak/roast, lip-on, trimmed to 1/8 inch fat — the American cut corresponding to a British forerib joint.",
+      "nutritionPer100g": {
+        "kcal": 260,
+        "protein": 17.92,
+        "fat": 20.96,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 10,
+        "iron": 1.73,
+        "magnesium": 18,
+        "phosphorus": 131,
+        "potassium": 231,
+        "sodium": 57,
+        "zinc": 4.04,
+        "copper": 0.064,
+        "manganese": 0.064,
+        "seleniumMcg": 18.6,
+        "vitaminC": 0,
+        "thiamin": 0.084,
+        "riboflavin": 0.244,
+        "niacin": 4.153,
+        "vitaminB6": 0.397,
+        "folateMcg": 3,
+        "choline": 44.1,
+        "vitaminB12Mcg": 1.74,
+        "vitaminAMcg": 5,
+        "vitaminE": 0.15,
+        "vitaminDMcg": 0.2,
+        "vitaminKMcg": 1.5,
+        "saturatedFat": 9.265,
+        "monounsaturatedFat": 9.929,
+        "polyunsaturatedFat": 0.921,
+        "transFat": 1.324,
+        "cholesterol": 70
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-rib-thumb.webp"
+}

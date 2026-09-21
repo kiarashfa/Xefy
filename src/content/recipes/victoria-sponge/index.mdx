@@ -1,0 +1,108 @@
+---
+title: Victoria Sponge
+subtitle: Two equal-weight sponge layers, sandwiched with jam and dusted with sugar, with no icing to cover the crumb.
+label: Classic, jam-filled
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [british]
+  course: [dessert]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Victoria sandwich, region: Britain, lang: en }
+image:
+  src: images/recipes/victoria-sponge.webp
+  alt: "A Victoria sponge cake, two golden sponge layers sandwiched with raspberry jam and whipped cream"
+ingredients:
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 200
+    unit: g
+    note: softened
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 200
+    unit: g
+    portions:
+      - { id: sugar-batter, amount: 190 }
+      - { id: sugar-dust, amount: 10, note: for dusting }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: four eggs
+  - id: flour
+    ingredientRef: wheat-flour
+    form: self-raising
+    amount: 200
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 4
+    unit: g
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: g
+  - id: jam
+    ingredientRef: jam
+    form: raspberry
+    amount: 150
+    unit: g
+steps:
+  - { id: cream-butter, durationMin: 5, type: active, phase: prep }
+  - { id: beat-in-eggs, durationMin: 5, type: active, phase: prep }
+  - { id: fold-flour, durationMin: 3, type: active, phase: prep }
+  - { id: divide-and-bake, durationMin: 25, type: passive }
+  - { id: cool, durationMin: 20, type: passive }
+  - { id: fill, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The two sponges can be baked a day ahead and kept wrapped at room temperature; fill with jam only shortly before serving, as the crumb softens once cut and filled.
+  freezable: true
+  freezeInstructions: Freeze the unfilled, cooled sponges, wrapped tightly, for up to two months; thaw fully before filling.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cream-butter
+      text: Creaming the butter and sugar until genuinely pale and fluffy beats air into the fat in tiny bubbles, which is most of the sponge's rise; the raising agent only holds open what creaming has already put there.
+  commonPitfalls:
+    - stepId: fold-flour
+      text: Stirring the flour in briskly knocks out the air just beaten in and develops gluten, leaving a dense, tough crumb. It is folded in gently, in as few strokes as it takes to disappear.
+---
+
+<Step id="cream-butter">
+  Beat the <Qty ref="butter"/> and the <Qty ref="sugar-batter"/> together until pale,
+  light and fluffy.
+</Step>
+
+<Step id="beat-in-eggs">
+  Beat in the <Qty ref="egg"/> a little at a time, along with the <Qty ref="vanilla"/>,
+  beating well between additions.
+</Step>
+
+<Step id="fold-flour">
+  Sift the <Qty ref="flour"/> and the <Qty ref="baking-powder"/> over the mixture and
+  fold in gently with a large metal spoon until just combined.
+</Step>
+
+<Step id="divide-and-bake">
+  Divide the batter evenly between two lined sandwich tins and bake at <Temp c={180}/>
+  for <Dur step="divide-and-bake"/>, until well risen, golden, and springing back when
+  pressed lightly in the centre.
+</Step>
+
+<Step id="cool">
+  Turn out onto a wire rack and leave to cool completely, for <Dur step="cool"/>,
+  before filling.
+</Step>
+
+<Step id="fill">
+  Spread the <Qty ref="jam"/> over the flat side of one sponge, set the second sponge
+  on top, and dust with the <Qty ref="sugar-dust"/>.
+</Step>

@@ -1,0 +1,138 @@
+---
+title: Griot
+subtitle: Cubes of pork shoulder marinated in sour orange and epis, simmered until tender, then fried until the surface crisps and browns.
+label: Haiti
+defaultServings: 5
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [braising, pan-frying]
+image:
+  src: images/recipes/griot.webp
+  alt: "A plate of Haitian griot, fried marinated pork chunks, served with golden tostones and a slaw of cabbage, tomato and pepper"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 1100
+    unit: g
+    note: boneless, cut into large cubes
+  - id: sour-orange-juice
+    ingredientRef: orange
+    form: sour
+    amount: 90
+    unit: ml
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed, for the epis
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 6
+    unit: g
+    note: finely chopped, for the epis
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 40
+    unit: g
+    note: chopped, for the epis
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 60
+    unit: g
+    note: chopped, for the epis
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: chopped, for the epis
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 6
+    unit: g
+    note: for the epis
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 350
+    unit: ml
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 45
+    unit: ml
+    note: for frying
+    consumedFraction: 0.5
+    consumedFractionNote: A shallow fry in a wide pan leaves a meaningful share of the oil behind in the pan rather than absorbed into the meat.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: epis, durationMin: 8, type: active, phase: prep }
+  - { id: marinate, durationMin: 480, type: passive }
+  - { id: simmer, durationMin: 60, type: passive }
+  - { id: fry, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The epis can be made up to five days ahead and refrigerated, or frozen for up to three months. The pork can be marinated up to a day ahead.
+  freezable: true
+  freezeInstructions: Freeze the simmered, unfried pork in its reduced liquid for up to three months; fry from thawed.
+  reheatInstructions: Reheat briefly in a hot, dry pan to recrisp the surface rather than in the microwave, which softens it.
+notes:
+  techniqueRationale:
+    - stepId: simmer
+      text: Simmering the pork in its own marinade before frying tenderises it fully first, so the frying step only has to brown and crisp the surface rather than cook the meat through.
+  commonPitfalls:
+    - stepId: fry
+      text: Crowding the pan drops the oil temperature and steams the pork instead of browning it; the cubes are fried in batches with space between them.
+---
+
+<Step id="epis">
+  Blend the <Qty ref="garlic"/>, <Qty ref="scotch-bonnet"/>,
+  <Qty ref="green-pepper"/>, <Qty ref="onion"/>, <Qty ref="spring-onion"/>,
+  <Qty ref="parsley"/> and <Qty ref="thyme"/> to a coarse paste; this is the
+  epis.
+</Step>
+
+<Step id="marinate">
+  Toss the <Qty ref="pork"/> with the epis, the <Qty ref="sour-orange-juice"/>,
+  the <Qty ref="lime-juice"/> and the <Qty ref="salt"/>, then cover and
+  refrigerate for <Dur step="marinate"/>.
+</Step>
+
+<Step id="simmer">
+  Tip the pork and its marinade into a pot with the <Qty ref="water"/> and the
+  <Qty ref="black-pepper"/>, bring to a boil, then reduce to a simmer and cook
+  uncovered for <Dur step="simmer"/>, until the pork is tender and the liquid
+  has almost entirely reduced away.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="vegetable-oil"/> in a wide pan over a high heat and fry
+  the pork cubes in batches for <Dur step="fry"/>, turning occasionally,
+  until deeply browned and crisp on the outside.
+</Step>

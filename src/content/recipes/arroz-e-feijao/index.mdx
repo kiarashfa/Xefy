@@ -1,0 +1,113 @@
+---
+title: Arroz e Feijão
+subtitle: White rice sautéed in garlic and oil, served beside a pot of simmered black beans — the pairing eaten daily at most Brazilian tables.
+label: Everyday
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [brazilian]
+  course: [side]
+  method: [simmering, sauteing]
+image:
+  src: images/recipes/arroz-e-feijao.webp
+  alt: "A plate of white rice beside a bowl of black beans, part of a Brazilian meal also including roast pork and farofa"
+ingredients:
+  - id: beans
+    ingredientRef: black-beans
+    form: dried
+    amount: 250
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 250
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: finely diced
+    portions:
+      - { id: onion-beans, amount: 50, note: for the beans }
+      - { id: onion-rice, amount: 50, note: for the rice }
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 16
+    unit: g
+    note: finely chopped
+    portions:
+      - { id: garlic-beans, amount: 8, note: for the beans }
+      - { id: garlic-rice, amount: 8, note: for the rice }
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+    portions:
+      - { id: oil-beans, amount: 15, note: for the beans }
+      - { id: oil-rice, amount: 15, note: for the rice }
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.5
+    unit: g
+    note: one leaf
+  - id: bean-water
+    ingredientRef: water
+    form: tap
+    amount: 900
+    unit: ml
+  - id: rice-water
+    ingredientRef: water
+    form: tap
+    amount: 450
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: salt-beans, amount: 5, note: for the beans }
+      - { id: salt-rice, amount: 3, note: for the rice }
+steps:
+  - { id: soak-beans, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 60, type: passive }
+  - { id: cook-rice, durationMin: 18, type: "parallel-with:cook-beans", phase: cook }
+makeAhead:
+  aheadInstructions: The beans can be cooked up to three days ahead and kept covered in the refrigerator, reheated gently to serve; the rice is best cooked fresh.
+  freezable: true
+  freezeInstructions: Freeze the cooked beans, with their liquid, in a sealed container for up to three months.
+  reheatInstructions: Reheat the beans on the stovetop with a splash of water; reheat rice covered, with a spoonful of water, to keep it from drying out.
+notes:
+  techniqueRationale:
+    - stepId: cook-rice
+      text: Sautéing the rice grains in oil with the onion and garlic before the water goes in coats each grain and lightly toasts it, which is what keeps the cooked rice separate and fluffy rather than starchy and clumped.
+---
+
+<Step id="soak-beans">
+  Soak the <Qty ref="beans"/> in plenty of cold water for
+  <Dur step="soak-beans"/>, then drain.
+</Step>
+
+<Step id="cook-beans">
+  Warm the <Qty ref="oil-beans"/> in a pot and cook the
+  <Qty ref="onion-beans"/> and <Qty ref="garlic-beans"/> until soft. Add the
+  drained beans, the <Qty ref="bay-leaf"/> and the <Qty ref="bean-water"/>.
+  Bring to a simmer and cook for <Dur step="cook-beans"/>, partially covered,
+  until the beans are fully tender and the liquid has thickened slightly.
+  Stir in the <Qty ref="salt-beans"/> once tender.
+</Step>
+
+<Step id="cook-rice">
+  While the beans simmer, warm the <Qty ref="oil-rice"/> in a separate pot
+  and cook the <Qty ref="onion-rice"/> and <Qty ref="garlic-rice"/> until
+  soft. Add the <Qty ref="rice"/> and stir for a minute to coat the grains
+  in the oil, then pour in the <Qty ref="rice-water"/> and the
+  <Qty ref="salt-rice"/>. Bring to a boil, then cover and cook over the
+  lowest heat for <Dur step="cook-rice"/>, until the water is fully absorbed
+  and the rice is tender. Rest, covered and off the heat, for a few minutes,
+  then fluff with a fork.
+</Step>

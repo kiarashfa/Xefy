@@ -1,0 +1,417 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2758990",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2758990/nutrients",
+  "description": "Sweetened condensed milk",
+  "category": "Dairy and Egg Products",
+  "publicationDate": "4/30/2026",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "riboflavin": 0.47,
+    "vitaminB6": 0.039,
+    "saturatedFat": 4.816,
+    "monounsaturatedFat": 1.899,
+    "polyunsaturatedFat": 0.301,
+    "transFat": 0.259
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 24.82,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.527,
+      "unit": "g"
+    },
+    {
+      "number": "269.3",
+      "name": "Sugars, Total",
+      "amount": 54.082,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 44.85,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 9.232,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 59.96,
+      "unit": "µg"
+    },
+    {
+      "number": "607",
+      "name": "SFA 4:0",
+      "amount": 0.1792,
+      "unit": "g"
+    },
+    {
+      "number": "632",
+      "name": "SFA 5:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "608",
+      "name": "SFA 6:0",
+      "amount": 0.1457,
+      "unit": "g"
+    },
+    {
+      "number": "633",
+      "name": "SFA 7:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "609",
+      "name": "SFA 8:0",
+      "amount": 0.08843,
+      "unit": "g"
+    },
+    {
+      "number": "634",
+      "name": "SFA 9:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "610",
+      "name": "SFA 10:0",
+      "amount": 0.2078,
+      "unit": "g"
+    },
+    {
+      "number": "699",
+      "name": "SFA 11:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "611",
+      "name": "SFA 12:0",
+      "amount": 0.2395,
+      "unit": "g"
+    },
+    {
+      "number": "612",
+      "name": "SFA 14:0",
+      "amount": 0.7567,
+      "unit": "g"
+    },
+    {
+      "number": "652",
+      "name": "SFA 15:0",
+      "amount": 0.07979,
+      "unit": "g"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 2.188,
+      "unit": "g"
+    },
+    {
+      "number": "653",
+      "name": "SFA 17:0",
+      "amount": 0.04571,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 0.8659,
+      "unit": "g"
+    },
+    {
+      "number": "615",
+      "name": "SFA 20:0",
+      "amount": 0.01036,
+      "unit": "g"
+    },
+    {
+      "number": "681",
+      "name": "SFA 21:0",
+      "amount": 0.0015,
+      "unit": "g"
+    },
+    {
+      "number": "624",
+      "name": "SFA 22:0",
+      "amount": 0.005071,
+      "unit": "g"
+    },
+    {
+      "number": "682",
+      "name": "SFA 23:0",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "654",
+      "name": "SFA 24:0",
+      "amount": 0.003,
+      "unit": "g"
+    },
+    {
+      "number": "635",
+      "name": "MUFA 12:1",
+      "amount": 0.005429,
+      "unit": "g"
+    },
+    {
+      "number": "625",
+      "name": "MUFA 14:1",
+      "amount": 0.06,
+      "unit": "g"
+    },
+    {
+      "number": "697",
+      "name": "MUFA 15:1",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "626",
+      "name": "MUFA 16:1",
+      "amount": 0.116,
+      "unit": "g"
+    },
+    {
+      "number": "687",
+      "name": "MUFA 17:1",
+      "amount": 0.01286,
+      "unit": "g"
+    },
+    {
+      "number": "617",
+      "name": "MUFA 18:1",
+      "amount": 1.692,
+      "unit": "g"
+    },
+    {
+      "number": "628",
+      "name": "MUFA 20:1",
+      "amount": 0.01107,
+      "unit": "g"
+    },
+    {
+      "number": "676",
+      "name": "MUFA 22:1 c",
+      "amount": 0.001,
+      "unit": "g"
+    },
+    {
+      "number": "676.1",
+      "name": "MUFA 22:1 n-9",
+      "amount": 0.0008571,
+      "unit": "g"
+    },
+    {
+      "number": "676.2",
+      "name": "MUFA 22:1 n-11",
+      "amount": 0.0001429,
+      "unit": "g"
+    },
+    {
+      "number": "671",
+      "name": "MUFA 24:1 c",
+      "amount": 0.0001429,
+      "unit": "g"
+    },
+    {
+      "number": "618",
+      "name": "PUFA 18:2",
+      "amount": 0.2331,
+      "unit": "g"
+    },
+    {
+      "number": "831",
+      "name": "PUFA 18:2 c",
+      "amount": 0.27096,
+      "unit": "g"
+    },
+    {
+      "number": "670",
+      "name": "PUFA 18:2 CLAs",
+      "amount": 0.03786,
+      "unit": "g"
+    },
+    {
+      "number": "619",
+      "name": "PUFA 18:3",
+      "amount": 0.03186,
+      "unit": "g"
+    },
+    {
+      "number": "833",
+      "name": "PUFA 18:3 c",
+      "amount": 0.034574,
+      "unit": "g"
+    },
+    {
+      "number": "685",
+      "name": "PUFA 18:3 n-6 c,c,c",
+      "amount": 0.002714,
+      "unit": "g"
+    },
+    {
+      "number": "840",
+      "name": "PUFA 20:2 c",
+      "amount": 0.001643,
+      "unit": "g"
+    },
+    {
+      "number": "627",
+      "name": "PUFA 18:4",
+      "amount": 0.000156,
+      "unit": "g"
+    },
+    {
+      "number": "835",
+      "name": "PUFA 20:3 c",
+      "amount": 0.0104329,
+      "unit": "g"
+    },
+    {
+      "number": "852",
+      "name": "PUFA 20:3 n-3",
+      "amount": 0.0001429,
+      "unit": "g"
+    },
+    {
+      "number": "853",
+      "name": "PUFA 20:3 n-6",
+      "amount": 0.01029,
+      "unit": "g"
+    },
+    {
+      "number": "861",
+      "name": "PUFA 20:3 n-9",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "683",
+      "name": "PUFA 22:3",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "620",
+      "name": "PUFA 20:4",
+      "amount": 0.01193,
+      "unit": "g"
+    },
+    {
+      "number": "837",
+      "name": "PUFA 20:5c",
+      "amount": 0.001857,
+      "unit": "g"
+    },
+    {
+      "number": "698",
+      "name": "PUFA 22:2",
+      "amount": 0.0005714,
+      "unit": "g"
+    },
+    {
+      "number": "838",
+      "name": "PUFA 22:5 c",
+      "amount": 0.004857,
+      "unit": "g"
+    },
+    {
+      "number": "858",
+      "name": "PUFA 22:4",
+      "amount": 0.001929,
+      "unit": "g"
+    },
+    {
+      "number": "839",
+      "name": "PUFA 22:6 c",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "693",
+      "name": "Fatty acids, total trans-monoenoic",
+      "amount": 0.208551,
+      "unit": "g"
+    },
+    {
+      "number": "821",
+      "name": "TFA 14:1 t",
+      "amount": 0.01379,
+      "unit": "g"
+    },
+    {
+      "number": "662",
+      "name": "TFA 16:1 t",
+      "amount": 0.02329,
+      "unit": "g"
+    },
+    {
+      "number": "663",
+      "name": "TFA 18:1 t",
+      "amount": 0.1704,
+      "unit": "g"
+    },
+    {
+      "number": "830",
+      "name": "TFA 20:1 t",
+      "amount": 0.001071,
+      "unit": "g"
+    },
+    {
+      "number": "664",
+      "name": "TFA 22:1 t",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "832",
+      "name": "TFA 18:2 t",
+      "amount": 0.04757,
+      "unit": "g"
+    },
+    {
+      "number": "834",
+      "name": "TFA 18:3 t",
+      "amount": 0.0008571,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

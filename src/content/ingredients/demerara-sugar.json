@@ -1,0 +1,50 @@
+{
+  "id": "demerara-sugar",
+  "name": "Demerara Sugar",
+  "proseName": "demerara sugar",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Brown sugar",
+        "note": "Brown sugar is fine-grained and moist, molasses worked through soft crystals. Demerara is large, dry, amber crystals with a light molasses coating, and keeps its crunch when baked."
+      }
+    ]
+  },
+  "category": "seasoning",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170674",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170674/nutrients",
+      "sourceNote": "USDA's record for turbinado sugar, a large-crystal, partially refined cane sugar in the same family as demerara and the closest match it publishes.",
+      "nutritionPer100g": {
+        "kcal": 399,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 99.8,
+        "sugars": 99.19,
+        "calcium": 12,
+        "iron": 0.37,
+        "magnesium": 2,
+        "phosphorus": 1,
+        "potassium": 29,
+        "sodium": 3,
+        "zinc": 0.03,
+        "copper": 0.009,
+        "manganese": 0.046
+      },
+      "density": {
+        "gPerCup": 202,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/demerara-sugar-thumb.webp"
+}

@@ -1,0 +1,137 @@
+---
+title: Jerk Chicken
+subtitle: Chicken marinated in scotch bonnet, allspice and thyme, charred hard over direct heat, then finished through gently in the oven.
+label: Home oven and grill
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [grilling, roasting]
+image:
+  src: images/recipes/jerk-chicken.webp
+  alt: "Charred jerk chicken pieces in a wire grilling basket over a street-side barbecue"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 1200
+    unit: g
+    note: a whole chicken jointed into pieces
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 20
+    unit: g
+    note: roughly chopped, for the marinade
+  - id: allspice
+    ingredientRef: allspice
+    form: ground
+    amount: 8
+    unit: g
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 4
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: roughly chopped, for the marinade
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 20
+    unit: g
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 1
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: blend-marinade, durationMin: 8, type: active, phase: prep }
+  - { id: marinate, durationMin: 720, type: passive }
+  - { id: char, durationMin: 12, type: active, phase: cook }
+  - { id: finish, durationMin: 35, type: passive }
+makeAhead:
+  aheadInstructions: The marinade can be blended up to three days ahead and refrigerated; the chicken can be marinated up to a day ahead.
+  freezable: true
+  freezeInstructions: Freeze the cooked chicken in an airtight container for up to three months.
+  reheatInstructions: Reheat in a hot oven, uncovered, until piping hot through, to keep the skin from turning soft.
+notes:
+  techniqueRationale:
+    - stepId: char
+      text: Charring the chicken hard over direct heat first, before it goes into the oven to finish, is what gives jerk chicken its blackened, slightly bitter crust; a milder heat throughout leaves the skin merely browned.
+  commonPitfalls:
+    - stepId: finish
+      text: Pulling the chicken as soon as the crust looks done leaves the thickest pieces undercooked near the bone; the oven finish needs the full time regardless of how dark the surface already is.
+---
+
+<Step id="blend-marinade">
+  Blend the <Qty ref="scotch-bonnet"/>, <Qty ref="allspice"/>,
+  <Qty ref="thyme"/>, <Qty ref="garlic"/>, <Qty ref="ginger"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="soy-sauce"/>,
+  <Qty ref="brown-sugar"/>, <Qty ref="lime-juice"/>,
+  <Qty ref="vegetable-oil"/>, <Qty ref="nutmeg"/>, <Qty ref="cinnamon"/>,
+  <Qty ref="salt"/> and <Qty ref="black-pepper"/> to a smooth paste.
+</Step>
+
+<Step id="marinate">
+  Rub the paste all over the <Qty ref="chicken"/>, working it under the
+  skin where possible, then cover and refrigerate for
+  <Dur step="marinate"/>.
+</Step>
+
+<Step id="char">
+  Sear the chicken over direct high heat on a grill or ridged grill pan for
+  <Dur step="char"/>, turning occasionally, until the surface is
+  well-blackened in patches on all sides.
+</Step>
+
+<Step id="finish">
+  Transfer the chicken to a tray and finish in an oven preheated to
+  <Temp c={180}/> for <Dur step="finish"/>, until the thickest pieces are
+  cooked through and the juices run clear.
+</Step>

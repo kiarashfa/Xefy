@@ -1,0 +1,64 @@
+{
+  "id": "chorizo",
+  "name": "Chorizo",
+  "proseName": "chorizo",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Mexican chorizo",
+        "note": "Sold raw and loose rather than in a firm cured link, and seasoned with chilli; the Argentine grilling sausage referenced here is a fresh pork link, closer to a coarse fresh Spanish-style chorizo."
+      }
+    ]
+  },
+  "category": "cured meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "proseQualifier": "raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173859",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173859/nutrients",
+      "nutritionPer100g": {
+        "kcal": 296,
+        "protein": 13.63,
+        "fat": 25.1,
+        "carbs": 3.78,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 19,
+        "iron": 1.41,
+        "magnesium": 20,
+        "phosphorus": 149,
+        "potassium": 308,
+        "sodium": 788,
+        "zinc": 1.68,
+        "copper": 0.084,
+        "manganese": 0.093,
+        "seleniumMcg": 18.6,
+        "vitaminC": 0,
+        "thiamin": 0.207,
+        "riboflavin": 0.31,
+        "niacin": 5.47,
+        "vitaminB6": 0.313,
+        "folateMcg": 0,
+        "choline": 96.7,
+        "vitaminB12Mcg": 2,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.22,
+        "vitaminDMcg": 1.5,
+        "vitaminKMcg": 0,
+        "saturatedFat": 8.595,
+        "monounsaturatedFat": 10.603,
+        "polyunsaturatedFat": 4.296,
+        "transFat": 0.123,
+        "cholesterol": 63
+      }
+    }
+  ],
+  "image": "images/ingredients/chorizo-thumb.webp"
+}

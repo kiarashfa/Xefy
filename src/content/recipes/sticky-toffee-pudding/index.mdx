@@ -1,0 +1,126 @@
+---
+title: Sticky Toffee Pudding
+subtitle: A moist date sponge, its sweetness and colour built into the batter itself, served warm under a hot butterscotch sauce.
+label: Baked, one tray
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [british]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/sticky-toffee-pudding.webp
+  alt: "An individual sticky toffee pudding drenched in toffee sauce, topped with a scoop of ice cream"
+ingredients:
+  - id: dates
+    ingredientRef: dates
+    form: pitted
+    amount: 250
+    unit: g
+    note: roughly chopped
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 250
+    unit: g
+    note: boiling
+  - id: bicarb
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 5
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: self-raising
+    amount: 225
+    unit: g
+  - id: sponge-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 75
+    unit: g
+    note: softened
+  - id: sponge-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 175
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: three eggs, beaten
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: g
+  - id: sauce-butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 100
+    unit: g
+  - id: sauce-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 150
+    unit: g
+  - id: sauce-cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 150
+    unit: g
+steps:
+  - { id: soak-dates, durationMin: 15, type: passive }
+  - { id: cream-butter, durationMin: 5, type: "parallel-with:soak-dates", phase: prep }
+  - { id: make-batter, durationMin: 6, type: active, phase: prep }
+  - { id: bake, durationMin: 35, type: passive }
+  - { id: make-sauce, durationMin: 8, type: "parallel-with:bake", phase: cook }
+  - { id: assemble, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The sponge can be baked up to two days ahead and reheated whole or in portions before saucing; the sauce keeps, covered, in the refrigerator for the same time and reheats gently on the stove.
+  freezable: true
+  freezeInstructions: Freeze the baked sponge, wrapped tightly, for up to two months; the sauce also freezes separately.
+  reheatInstructions: Reheat portions in a low oven or microwave until hot through, then pour over freshly warmed sauce.
+notes:
+  techniqueRationale:
+    - stepId: soak-dates
+      text: The bicarbonate of soda softens the dates further and raises the soaking water's pH, which browns and breaks the dates down into the batter rather than leaving distinct chewy pieces.
+  commonPitfalls:
+    - stepId: make-sauce
+      text: Boiling the sauce hard rather than letting it simmer gently can split the cream out of the butter and sugar. It wants steady, moderate heat until it thickens, not a hard boil.
+---
+
+<Step id="soak-dates">
+  Put the <Qty ref="dates"/> and the <Qty ref="bicarb"/> in a bowl, pour over the
+  <Qty ref="water"/> and leave to stand for <Dur step="soak-dates"/>, until softened.
+</Step>
+
+<Step id="cream-butter">
+  Beat the <Qty ref="sponge-butter"/> and the <Qty ref="sponge-sugar"/> together until
+  pale and fluffy.
+</Step>
+
+<Step id="make-batter">
+  Beat the <Qty ref="egg"/> and the <Qty ref="vanilla"/> into the creamed butter, then
+  fold in the <Qty ref="flour"/> along with the soaked dates and their liquid until
+  just combined. Pour into a lined baking dish.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={180}/> for <Dur step="bake"/>, until risen and a skewer pushed into
+  the centre comes out clean.
+</Step>
+
+<Step id="make-sauce">
+  Melt the <Qty ref="sauce-butter"/> with the <Qty ref="sauce-sugar"/> in a saucepan
+  over a medium heat, then stir in the <Qty ref="sauce-cream"/> and simmer for
+  <Dur step="make-sauce"/>, until glossy and thickened enough to coat the back of a
+  spoon.
+</Step>
+
+<Step id="assemble">
+  Cut the warm sponge into portions and pour the hot sauce generously over each before
+  serving.
+</Step>

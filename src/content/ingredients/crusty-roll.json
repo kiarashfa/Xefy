@@ -1,0 +1,63 @@
+{
+  "id": "crusty-roll",
+  "name": "Crusty Bread Roll",
+  "proseName": "crusty roll",
+  "category": "bread",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "plain",
+      "label": "Plain",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175031",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175031/nutrients",
+      "sourceNote": "USDA has no record for the Argentine pan francés roll used for choripán. This is its record for a hard (kaiser-type) roll — the closest crusty white-roll profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 293,
+        "protein": 9.9,
+        "fat": 4.3,
+        "carbs": 52.7,
+        "fiber": 2.3,
+        "sugars": 1.77,
+        "calcium": 95,
+        "iron": 3.28,
+        "magnesium": 27,
+        "phosphorus": 100,
+        "potassium": 108,
+        "sodium": 544,
+        "zinc": 0.94,
+        "copper": 0.163,
+        "manganese": 0.46,
+        "seleniumMcg": 39.1,
+        "vitaminC": 0,
+        "thiamin": 0.478,
+        "riboflavin": 0.336,
+        "niacin": 4.239,
+        "vitaminB6": 0.035,
+        "folateMcg": 151,
+        "choline": 14.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.42,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.6,
+        "saturatedFat": 0.606,
+        "monounsaturatedFat": 1.133,
+        "polyunsaturatedFat": 1.719,
+        "cholesterol": 0
+      },
+      "countUnit": {
+        "singular": "roll",
+        "plural": "rolls",
+        "grams": 70
+      }
+    }
+  ],
+  "image": "images/ingredients/crusty-roll-thumb.webp"
+}

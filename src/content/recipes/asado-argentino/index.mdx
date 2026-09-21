@@ -1,0 +1,97 @@
+---
+title: Asado
+subtitle: Beef short ribs and chorizo cooked slowly over live coals, seasoned with nothing but salt, in the sequence of an Argentine parrilla.
+label: Parrilla, short ribs and chorizo
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [argentine]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: "Asado criollo", region: Argentina, lang: es }
+  notToBeConfusedWith:
+    - name: Churrasco
+      note: The Brazilian gaúcho method of skewering meat over an open fire or rotating it on a spit, usually with just rock salt, rather than the Argentine parrilla grate and its ordered sequence of achuras then cuts.
+      slugRef: churrasco
+    - name: Picanha
+      note: A specific cut of beef rump cap, most often grilled whole and sliced against the grain to serve, not the wider live-fire cooking sequence asado describes.
+      slugRef: picanha
+  searchOnly: ["argentinian barbecue", "asado argentino"]
+image:
+  src: images/recipes/asado-argentino.webp
+  alt: "A wooden board of grilled Argentine asado, sliced pork ribs and whole chorizo sausages, glistening from the grill"
+ingredients:
+  - id: short-ribs
+    ingredientRef: beef-short-rib
+    form: raw
+    amount: 900
+    unit: g
+    consumedFraction: 0.75
+    consumedFractionNote: Asado de tira is cut across the ribs, so the weight includes the bone discs, which are not eaten; the nutrition record describes the boneless meat.
+    note: cross-cut asado de tira, or a whole rack left on the bone
+  - id: chorizo
+    ingredientRef: chorizo
+    form: raw
+    amount: 300
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+steps:
+  - { id: light-fire, durationMin: 40, type: passive }
+  - { id: season, durationMin: 5, type: active, phase: prep }
+  - { id: grill-chorizo, durationMin: 20, type: "parallel-with:grill-ribs", phase: cook }
+  - { id: grill-ribs, durationMin: 90, type: passive }
+  - { id: rest, durationMin: 10, type: passive }
+  - { id: serve, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: grill-ribs
+      text: Ribs go bone side down over a fire banked to one side rather than direct, fierce heat. The long, slow exposure renders the fat and softens the connective tissue between the bones without drying the meat, which a hot, fast grill cannot do.
+  commonPitfalls:
+    - stepId: grill-ribs
+      text: Turning the ribs often, or moving them over the hottest part of the fire to hurry them along, sears the surface before the inside has rendered and dries the meat out. An asado is tended by adjusting the coals under the meat, not by moving the meat.
+---
+
+<Step id="light-fire">
+  Light a wood or charcoal fire at one side of the grill and let it burn down
+  for <Dur step="light-fire"/>, until it has stopped flaming and the coals
+  are covered in grey ash. Rake a portion of the coals under the cooking
+  grate to give a steady, moderate heat rather than a fierce one.
+</Step>
+
+<Step id="season">
+  Season the <Qty ref="short-ribs"/> and <Qty ref="chorizo"/> all over with
+  the <Qty ref="salt"/>.
+</Step>
+
+<Step id="grill-chorizo">
+  Set the chorizo over the fire once the ribs are underway and grill for
+  <Dur step="grill-chorizo"/>, turning occasionally, until the casing is
+  deeply coloured and the sausage is cooked through. Move it to a board and
+  serve it first, sliced, while the ribs continue.
+</Step>
+
+<Step id="grill-ribs">
+  Set the short ribs bone side down over the fire and cook for
+  <Dur step="grill-ribs"/>, without turning more than once or twice, until
+  the fat has rendered, the surface is deeply browned and the meat between
+  the bones is tender enough to pull away easily.
+</Step>
+
+<Step id="rest">
+  Move the ribs to a board and rest for <Dur step="rest"/> before cutting.
+</Step>
+
+<Step id="serve">
+  Cut the rack into individual ribs along the bones and serve at once.
+</Step>

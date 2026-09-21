@@ -1,0 +1,199 @@
+---
+title: Chicken Tikka Masala
+subtitle: Yoghurt-marinated chicken, seared hard and finished in a spiced, buttery tomato and cream sauce.
+label: Home stovetop
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [indian, british]
+  course: [main-course]
+  method: [pan-frying, simmering]
+names:
+  notToBeConfusedWith:
+    - name: Chicken tikka
+      note: The marinated, grilled chicken alone, without the tomato and cream sauce that defines the masala.
+    - name: Butter chicken
+      note: A related but separate North Indian dish with a milder, less acidic sauce; tikka masala is generally spicier and more heavily tomato-forward.
+image:
+  src: images/recipes/chicken-tikka-masala.webp
+  alt: "A plate of chicken tikka masala, charred pieces of tandoori chicken in a bright orange creamy tomato sauce, scattered with chopped coriander"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 700
+    unit: g
+    note: boneless and skinless, cut into large cubes
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 150
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 15
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 25
+    unit: g
+    note: crushed to a paste
+    portions:
+      - { id: garlic-marinade, amount: 15 }
+      - { id: garlic-sauce, amount: 10 }
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 25
+    unit: g
+    note: grated to a paste
+    portions:
+      - { id: ginger-marinade, amount: 15 }
+      - { id: ginger-sauce, amount: 10 }
+  - id: kashmiri-chilli
+    ingredientRef: kashmiri-chilli
+    form: ground
+    amount: 10
+    unit: g
+    portions:
+      - { id: chilli-marinade, amount: 6 }
+      - { id: chilli-sauce, amount: 4 }
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 3
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 7
+    unit: g
+    portions:
+      - { id: cumin-marinade, amount: 4 }
+      - { id: cumin-sauce, amount: 3 }
+  - id: coriander-seed
+    ingredientRef: coriander-seed
+    form: ground
+    amount: 4
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 1
+    unit: g
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 2
+    unit: g
+    note: pods lightly crushed
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    portions:
+      - { id: salt-marinade, amount: 3 }
+      - { id: salt-sauce, amount: 3 }
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 50
+    unit: g
+    portions:
+      - { id: ghee-sear, amount: 30 }
+      - { id: ghee-sauce, amount: 20 }
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: finely chopped
+  - id: tinned-tomato
+    ingredientRef: tinned-tomato
+    form: whole-plum
+    amount: 400
+    unit: g
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 30
+    unit: g
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 120
+    unit: g
+  - id: coriander-leaf
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, to finish
+steps:
+  - { id: marinate-chicken, durationMin: 120, type: passive }
+  - { id: cook-onion, durationMin: 15, type: "parallel-with:marinate-chicken", phase: cook }
+  - { id: cook-spices, durationMin: 4, type: active, phase: cook }
+  - { id: simmer-sauce, durationMin: 20, type: passive }
+  - { id: sear-chicken, durationMin: 12, type: "parallel-with:simmer-sauce", phase: cook }
+  - { id: combine, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The chicken is best marinated overnight rather than for the minimum time; the sauce base can be made up to two days ahead and reheated before the seared chicken and cream go in.
+  freezable: true
+  freezeInstructions: Freeze the finished dish without the fresh coriander for up to two months; the sauce may separate slightly on reheating and needs a good stir back together over gentle heat.
+  reheatInstructions: Reheat gently on the stove, stirring often, without letting it boil hard, which can split the cream.
+notes:
+  techniqueRationale:
+    - stepId: sear-chicken
+      text: Searing the marinated chicken hot and fast, separately from the sauce, gives it the charred edges the dish is named for; simmering it directly in the sauce from raw would steam it instead.
+  commonPitfalls:
+    - stepId: combine
+      text: Adding the cream over high heat can cause it to split against the acidity of the tomatoes. It goes in once the sauce has come down to a gentle simmer, off any hard boil.
+---
+
+<Step id="marinate-chicken">
+  Combine the <Qty ref="chicken"/> with the <Qty ref="yoghurt"/>, the
+  <Qty ref="lemon-juice"/>, the <Qty ref="garlic-marinade"/>, the
+  <Qty ref="ginger-marinade"/>, the <Qty ref="chilli-marinade"/>, the
+  <Qty ref="turmeric"/>, the <Qty ref="cumin-marinade"/> and the
+  <Qty ref="salt-marinade"/>. Cover and refrigerate for <Dur step="marinate-chicken"/>.
+</Step>
+
+<Step id="cook-onion">
+  Melt the <Qty ref="ghee-sauce"/> in a wide pan and cook the <Qty ref="onion"/> over a
+  medium heat for <Dur step="cook-onion"/>, stirring occasionally, until soft and
+  turning golden.
+</Step>
+
+<Step id="cook-spices">
+  Stir in the <Qty ref="garlic-sauce"/>, the <Qty ref="ginger-sauce"/>, the
+  <Qty ref="chilli-sauce"/>, the <Qty ref="cumin-sauce"/>, the
+  <Qty ref="coriander-seed"/>, the <Qty ref="cinnamon"/>, the <Qty ref="cardamom"/> and
+  the <Qty ref="cloves"/>, and cook for <Dur step="cook-spices"/>, until fragrant.
+</Step>
+
+<Step id="simmer-sauce">
+  Add the <Qty ref="tinned-tomato"/>, the <Qty ref="tomato-puree"/> and the
+  <Qty ref="salt-sauce"/>, breaking the tomatoes up, and simmer for
+  <Dur step="simmer-sauce"/>, until thickened and no longer watery.
+</Step>
+
+<Step id="sear-chicken">
+  Lift the chicken from its marinade, shaking off the excess, and sear in the
+  <Qty ref="ghee-sear"/> in a very hot pan for <Dur step="sear-chicken"/>, turning
+  occasionally, until charred at the edges and cooked through.
+</Step>
+
+<Step id="combine">
+  Blend the tomato sauce until smooth, return it to the pan and stir in the
+  <Qty ref="cream"/>. Add the seared chicken and simmer gently for
+  <Dur step="combine"/>, until the chicken is coated and heated through. Scatter over
+  the <Qty ref="coriander-leaf"/> to serve.
+</Step>
