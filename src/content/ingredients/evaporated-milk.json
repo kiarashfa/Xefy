@@ -1,0 +1,54 @@
+{
+  "id": "evaporated-milk",
+  "name": "Evaporated Milk",
+  "proseName": "evaporated milk",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard, canned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172194",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172194/nutrients",
+      "nutritionPer100g": {
+        "kcal": 134,
+        "protein": 6.81,
+        "fat": 7.56,
+        "carbs": 10.04,
+        "fiber": 0,
+        "saturatedFat": 4.591,
+        "monounsaturatedFat": 2.335,
+        "polyunsaturatedFat": 0.245,
+        "cholesterol": 29,
+        "sodium": 106,
+        "potassium": 303,
+        "calcium": 261,
+        "iron": 0.19,
+        "magnesium": 24,
+        "phosphorus": 203,
+        "zinc": 0.77,
+        "copper": 0.016,
+        "manganese": 0.006,
+        "seleniumMcg": 2.3,
+        "vitaminC": 1.9,
+        "thiamin": 0.047,
+        "riboflavin": 0.316,
+        "niacin": 0.194,
+        "vitaminB6": 0.05,
+        "folateMcg": 8,
+        "vitaminB12Mcg": 0.16
+      },
+      "density": {
+        "gPerCup": 252,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/evaporated-milk-thumb.webp"
+}

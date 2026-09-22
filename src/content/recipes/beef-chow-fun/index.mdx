@@ -1,0 +1,138 @@
+---
+title: Beef Chow Fun
+subtitle: Wide rice noodles tossed hard and fast over the highest possible heat with marinated beef, bean sprouts and spring onion, in dark soy alone rather than a wet sauce.
+label: Guangdong
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Beef ho fun, lang: en }
+    - { name: Gon chow ngau ho, lang: yue }
+image:
+  src: images/recipes/beef-chow-fun.webp
+  alt: "A plate of stir-fried wide flat rice noodles with sliced beef, bean sprouts, and onion in dark soy sauce"
+ingredients:
+  - id: beef
+    ingredientRef: beef-flank
+    form: raw
+    amount: 300
+    unit: g
+    note: thinly sliced against the grain
+  - id: velvet-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: velvet-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 10
+    unit: ml
+  - id: velvet-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 8
+    unit: g
+  - id: velvet-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 10
+    unit: ml
+  - id: noodles
+    ingredientRef: rice-noodles
+    form: fresh
+    amount: 500
+    unit: g
+    note: wide, at room temperature
+  - id: dark-soy
+    ingredientRef: soy-sauce
+    form: dark
+    amount: 20
+    unit: ml
+  - id: light-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 5
+    unit: g
+  - id: wok-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: sliced
+  - id: bean-sprouts
+    ingredientRef: bean-sprouts
+    form: raw
+    amount: 150
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: cut into lengths
+steps:
+  - { id: marinate-beef, durationMin: 10, type: active, phase: prep }
+  - { id: rest-beef, durationMin: 15, type: passive }
+  - { id: sear-beef, durationMin: 3, type: active, phase: cook }
+  - { id: fry-noodles, durationMin: 5, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat in a very hot, dry pan or wok rather than a microwave, which turns the noodles gummy and clumped.
+notes:
+  techniqueRationale:
+    - stepId: fry-noodles
+      text: The wok needs to be smoking hot before the noodles go in, since chow fun's char comes from direct contact with a very hot surface in a short time — a cooler pan steams the noodles soft instead of catching the edges.
+  commonPitfalls:
+    - stepId: fry-noodles
+      text: Fresh rice noodles tear if handled roughly while cold and stiff. Loosening them gently by hand before they hit the wok, and tossing rather than stirring once they are in, keeps the strands whole.
+---
+
+<Step id="marinate-beef">
+  Combine the <Qty ref="velvet-soy"/>, <Qty ref="velvet-wine"/>,
+  <Qty ref="velvet-cornflour"/> and <Qty ref="velvet-oil"/> in a bowl and turn
+  the <Qty ref="beef"/> through it.
+</Step>
+
+<Step id="rest-beef">
+  Leave the beef to marinate for <Dur step="rest-beef"/>.
+</Step>
+
+<Step id="sear-beef">
+  Heat a wok over the highest possible heat until smoking. Add a little of the
+  <Qty ref="wok-oil"/> and sear the beef for <Dur step="sear-beef"/>, until just
+  coloured but not fully cooked through, then lift out and set aside.
+</Step>
+
+<Step id="fry-noodles">
+  Add the remaining <Qty ref="wok-oil"/> to the wok along with the
+  <Qty ref="garlic"/>, then add the <Qty ref="noodles"/>, loosening the strands
+  gently by hand as they go in. Toss over the highest heat for
+  <Dur step="fry-noodles"/>, letting the noodles catch and char lightly in
+  places, and add the <Qty ref="dark-soy"/> and <Qty ref="light-soy"/> partway
+  through so the colour works evenly through the strands.
+</Step>
+
+<Step id="combine">
+  Return the beef to the wok with the <Qty ref="bean-sprouts"/>,
+  <Qty ref="spring-onion"/> and <Qty ref="sugar"/>. Toss over high heat for
+  <Dur step="combine"/>, until the beef is cooked through and everything is
+  evenly combined.
+</Step>

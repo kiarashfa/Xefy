@@ -1,0 +1,126 @@
+---
+title: Encebollado
+subtitle: Tuna and cassava simmered in a cumin-and-achiote broth, topped with lime-pickled red onion — Ecuador's coastal fish soup, eaten at any hour as a cure for the night before.
+label: Ecuador
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [andean]
+  course: [soup]
+  method: [simmering, pickling]
+image:
+  src: images/recipes/encebollado.webp
+  alt: "A competition presentation of encebollado fish soup in a black bowl, with red onion, chunks of fish, and fried plantain, served with toasted corn kernels on the side"
+ingredients:
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 150
+    unit: g
+    note: thinly sliced, for the pickle
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 40
+    unit: ml
+  - id: pickle-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: cassava
+    ingredientRef: cassava
+    form: raw
+    amount: 400
+    unit: g
+    note: peeled and cut into chunks
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1500
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 3
+    unit: g
+  - id: tuna
+    ingredientRef: tuna
+    form: raw
+    amount: 500
+    unit: g
+    note: cut into large pieces
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: chopped
+  - id: broth-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: pickle-onions, durationMin: 15, type: passive }
+  - { id: cook-cassava, durationMin: 25, type: "parallel-with:pickle-onions", phase: rest }
+  - { id: build-broth, durationMin: 10, type: active, phase: cook }
+  - { id: cook-fish, durationMin: 8, type: active, phase: cook }
+  - { id: finish, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The pickled onion can be made up to two days ahead and refrigerated.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-fish
+      text: Adding the tuna only once the broth is already built and simmering, and cooking it briefly, keeps the fish tender rather than turning it dry and stringy over a long simmer.
+  commonPitfalls:
+    - stepId: pickle-onions
+      text: Sliced onion added raw and un-pickled is sharp and overpowering on top of the finished soup; the brief lime-and-salt pickle mellows it into the soft, acidic topping the dish is built around.
+---
+
+<Step id="pickle-onions">
+  Toss the <Qty ref="onion"/> with the <Qty ref="lime-juice"/> and
+  <Qty ref="pickle-salt"/> and leave to pickle for
+  <Dur step="pickle-onions"/>.
+</Step>
+
+<Step id="cook-cassava">
+  Meanwhile, simmer the <Qty ref="cassava"/> in the <Qty ref="water"/> for
+  <Dur step="cook-cassava"/>, until tender. Do not drain.
+</Step>
+
+<Step id="build-broth">
+  Add the <Qty ref="garlic"/>, <Qty ref="tomato"/>, <Qty ref="cumin"/>,
+  <Qty ref="achiote"/> and <Qty ref="broth-salt"/> to the cassava and its
+  liquid and simmer for <Dur step="build-broth"/>.
+</Step>
+
+<Step id="cook-fish">
+  Add the <Qty ref="tuna"/> and simmer for <Dur step="cook-fish"/>, until
+  just cooked through.
+</Step>
+
+<Step id="finish">
+  Stir in the <Qty ref="coriander"/>, ladle into bowls, and top with the
+  pickled onion. This takes about <Dur step="finish"/>.
+</Step>

@@ -1,0 +1,63 @@
+{
+  "id": "swiss-cheese",
+  "name": "Swiss Cheese",
+  "proseName": "Swiss cheese",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Emmental",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Traditional Emmental and other Alpine Swiss-type cheeses are set with animal rennet and are not vegetarian; some industrial Swiss cheese uses microbial rennet, so check the label if it matters to you.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "sliced",
+      "label": "Sliced",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "746767",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/746767/nutrients",
+      "nutritionPer100g": {
+        "kcal": 393,
+        "protein": 27,
+        "carbs": 1.44,
+        "fat": 31,
+        "fiber": 0,
+        "saturatedFat": 18.2,
+        "monounsaturatedFat": 7.26,
+        "polyunsaturatedFat": 1.14,
+        "transFat": 0.993,
+        "cholesterol": 93,
+        "sodium": 185,
+        "potassium": 71,
+        "calcium": 890,
+        "iron": 0.13,
+        "magnesium": 33.4,
+        "phosphorus": 574,
+        "zinc": 4.37,
+        "copper": 0.047,
+        "manganese": 0.027,
+        "seleniumMcg": 30.1,
+        "vitaminAMcg": 292,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.6,
+        "vitaminKMcg": 1.4,
+        "thiamin": 0.011,
+        "riboflavin": 0.303,
+        "niacin": 0.06,
+        "vitaminB6": 0.07,
+        "vitaminB12Mcg": 3.02,
+        "choline": 13.8
+      }
+    }
+  ],
+  "image": "images/ingredients/swiss-cheese-thumb.webp"
+}

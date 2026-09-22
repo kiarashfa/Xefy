@@ -1,0 +1,97 @@
+---
+title: Smashed Cucumber Salad
+subtitle: Cucumbers split open by smashing rather than slicing, salted briefly, then dressed with garlic, vinegar, soy sauce and chilli oil.
+label: Home-style
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [chinese]
+  course: [salad]
+  method: [no-cook]
+names:
+  alsoKnownAs:
+    - { name: Pai huang gua, lang: zh }
+image:
+  src: images/recipes/chinese-pickled-cucumber.webp
+  alt: "Chunks of smashed cucumber glistening in a red chilli oil and garlic dressing"
+ingredients:
+  - id: cucumber
+    ingredientRef: cucumber
+    form: peeled
+    amount: 500
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+    note: minced
+  - id: black-vinegar
+    ingredientRef: black-vinegar
+    form: standard
+    amount: 20
+    unit: ml
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 8
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 8
+    unit: ml
+  - id: chilli-oil
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 3
+    unit: g
+    note: or a spoonful of prepared chilli oil
+  - id: sesame-seed
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 5
+    unit: g
+    note: toasted, to finish
+steps:
+  - { id: smash-cucumber, durationMin: 5, type: active, phase: prep }
+  - { id: salt-cucumber, durationMin: 15, type: passive }
+  - { id: dress, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: smash-cucumber
+      text: Smashing rather than slicing splits the cucumber's flesh along its natural grain into jagged, irregular pieces with far more surface area than a clean cut gives, which is what lets the dressing cling to and soak into the flesh instead of running off it.
+---
+
+<Step id="smash-cucumber">
+  Lay the <Qty ref="cucumber"/> on a board and strike firmly along its length
+  with the flat side of a large knife or a rolling pin, until it splits open.
+  Cut into rough chunks, taking <Dur step="smash-cucumber"/>.
+</Step>
+
+<Step id="salt-cucumber">
+  Toss the cucumber with the <Qty ref="salt"/> and leave to stand for
+  <Dur step="salt-cucumber"/>, then drain off any liquid that collects.
+</Step>
+
+<Step id="dress">
+  Toss the drained cucumber with the <Qty ref="garlic"/>, <Qty ref="black-vinegar"/>,
+  <Qty ref="soy-sauce"/>, <Qty ref="sugar"/>, <Qty ref="sesame-oil"/> and
+  <Qty ref="chilli-oil"/>, taking <Dur step="dress"/>. Finish with the
+  <Qty ref="sesame-seed"/>.
+</Step>

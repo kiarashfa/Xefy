@@ -1,0 +1,52 @@
+{
+  "id": "pork-belly",
+  "name": "Pork Belly",
+  "proseName": "pork belly",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, lean and fat",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167812",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167812/nutrients",
+      "nutritionPer100g": {
+        "kcal": 518,
+        "protein": 9.34,
+        "fat": 53.01,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 5,
+        "iron": 0.52,
+        "magnesium": 4,
+        "phosphorus": 108,
+        "potassium": 185,
+        "sodium": 32,
+        "zinc": 1.02,
+        "copper": 0.052,
+        "manganese": 0.006,
+        "seleniumMcg": 8,
+        "vitaminC": 0.3,
+        "thiamin": 0.396,
+        "riboflavin": 0.242,
+        "niacin": 4.647,
+        "vitaminB6": 0.13,
+        "folateMcg": 1,
+        "vitaminB12Mcg": 0.84,
+        "vitaminAMcg": 3,
+        "vitaminE": 0.39,
+        "vitaminKMcg": 0,
+        "saturatedFat": 19.33,
+        "monounsaturatedFat": 24.7,
+        "polyunsaturatedFat": 5.65,
+        "cholesterol": 72
+      }
+    }
+  ],
+  "image": "images/ingredients/pork-belly-thumb.webp"
+}

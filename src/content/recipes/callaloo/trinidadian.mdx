@@ -1,0 +1,115 @@
+---
+label: Trinidadian
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: dasheen
+    ingredientRef: dasheen
+    form: leaves-fresh
+    amount: 400
+    unit: g
+    note: stems trimmed, leaves roughly chopped
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 400
+    unit: ml
+  - id: okra
+    ingredientRef: okra
+    form: raw
+    amount: 150
+    unit: g
+    note: sliced
+  - id: pumpkin
+    ingredientRef: pumpkin
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and diced
+  - id: crab
+    ingredientRef: crab
+    form: cooked
+    amount: 200
+    unit: g
+    note: picked
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 4
+    unit: g
+    note: whole
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+steps:
+  - { id: saute-aromatics, durationMin: 5, type: active, phase: cook }
+  - { id: simmer-soup, durationMin: 30, type: passive }
+  - { id: blend, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The soup can be made up to two days ahead and reheated; it thickens on standing, and can be loosened with a little water.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months.
+  reheatInstructions: Reheat gently in a covered pot, stirring, until steaming through.
+notes:
+  techniqueRationale:
+    - stepId: blend
+      text: Blending the soup once the dasheen and okra have fully softened is what gives it its characteristic thick, smooth body; the okra's mucilage and the dasheen's starch are what hold that texture together.
+  commonPitfalls:
+    - stepId: simmer-soup
+      text: Dasheen leaves that are not cooked through retain calcium oxalate crystals that irritate the throat; the leaves need the full simmering time, not a quick wilt.
+---
+
+<Step id="saute-aromatics">
+  Heat the <Qty ref="oil"/> in a large pot over a medium heat and cook the
+  <Qty ref="onion"/>, <Qty ref="garlic"/> and <Qty ref="spring-onion"/> for
+  <Dur step="saute-aromatics"/>, until softened.
+</Step>
+
+<Step id="simmer-soup">
+  Add the <Qty ref="dasheen"/>, <Qty ref="okra"/>, <Qty ref="pumpkin"/>,
+  <Qty ref="crab"/>, <Qty ref="coconut-milk"/>, <Qty ref="water"/>,
+  <Qty ref="thyme"/>, <Qty ref="scotch-bonnet"/> and <Qty ref="salt"/>. Bring
+  to a simmer and cook for <Dur step="simmer-soup"/>, until the dasheen and
+  pumpkin are completely soft. Remove the scotch bonnet.
+</Step>
+
+<Step id="blend">
+  Blend the soup until smooth and thick, either in a blender in batches or
+  directly in the pot with an immersion blender, then return to a brief
+  simmer to heat through. This takes about <Dur step="blend"/>.
+</Step>

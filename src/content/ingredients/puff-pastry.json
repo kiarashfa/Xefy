@@ -1,0 +1,54 @@
+{
+  "id": "puff-pastry",
+  "name": "Puff Pastry",
+  "proseName": "puff pastry",
+  "category": "grain",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Commercial puff pastry is usually laminated with butter or a butter-and-margarine blend; some brands use an all-vegetable fat. Check the packet if a strict dairy-free version is needed.",
+  "containsGluten": true,
+  "containsDairy": true,
+  "allergenTags": [
+    "gluten",
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, ready-to-bake",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172790",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172790/nutrients",
+      "nutritionPer100g": {
+        "kcal": 551,
+        "protein": 7.3,
+        "fat": 38.1,
+        "carbs": 45.1,
+        "fiber": 1.5,
+        "sugars": 0.74,
+        "saturatedFat": 9.643,
+        "monounsaturatedFat": 21.597,
+        "polyunsaturatedFat": 4.894,
+        "cholesterol": 0,
+        "sodium": 249,
+        "potassium": 61,
+        "calcium": 10,
+        "iron": 2.56,
+        "magnesium": 16,
+        "phosphorus": 60,
+        "zinc": 0.53,
+        "copper": 0.114,
+        "manganese": 0.488,
+        "seleniumMcg": 24.2,
+        "vitaminC": 0,
+        "vitaminE": 0.54,
+        "vitaminKMcg": 16.1,
+        "thiamin": 0.398,
+        "riboflavin": 0.283,
+        "niacin": 4.168,
+        "vitaminB6": 0.021,
+        "folateMcg": 124
+      }
+    }
+  ],
+  "image": "images/ingredients/puff-pastry-thumb.webp"
+}

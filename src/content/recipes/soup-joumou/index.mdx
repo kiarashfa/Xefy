@@ -1,0 +1,218 @@
+---
+title: Soup Joumou
+subtitle: Beef and pumpkin simmered into a thick, orange broth with cabbage, carrot, potato, plantain and macaroni — Haiti's Independence Day soup, eaten every first of January.
+label: Haiti
+defaultServings: 8
+difficulty: Hard
+tags:
+  cuisine: [caribbean]
+  course: [soup]
+  method: [braising, simmering]
+image:
+  src: images/recipes/soup-joumou.webp
+  alt: "A large pot of orange pumpkin soup joumou with thin noodles, carrot slices, and cabbage"
+ingredients:
+  - id: beef
+    ingredientRef: beef-brisket
+    form: raw
+    amount: 500
+    unit: g
+    note: cut into chunks
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 30
+    unit: ml
+    note: for washing the meat
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: chopped
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: chopped
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: chopped
+  - id: pumpkin
+    ingredientRef: pumpkin
+    form: raw
+    amount: 500
+    unit: g
+    note: peeled and cut into chunks
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2200
+    unit: ml
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 0.5
+    unit: g
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 4
+    unit: g
+    note: whole
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 20
+    unit: g
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and sliced
+  - id: white-cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 150
+    unit: g
+    note: shredded
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 60
+    unit: g
+    note: sliced
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and cut into chunks
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 150
+    unit: g
+    note: peeled and cut into chunks
+  - id: macaroni
+    ingredientRef: macaroni
+    form: dry
+    amount: 100
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: marinate-beef, durationMin: 60, type: passive }
+  - { id: brown-beef, durationMin: 15, type: active, phase: cook }
+  - { id: simmer-beef, durationMin: 60, type: passive }
+  - { id: cook-pumpkin, durationMin: 30, type: "parallel-with:simmer-beef", phase: rest }
+  - { id: puree-pumpkin, durationMin: 5, type: active, phase: prep }
+  - { id: combine-broth, durationMin: 5, type: active, phase: cook }
+  - { id: add-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: simmer-vegetables, durationMin: 30, type: passive }
+  - { id: add-pasta, durationMin: 3, type: active, phase: cook }
+  - { id: simmer-pasta, durationMin: 12, type: passive }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The beef can be marinated up to a day ahead and refrigerated. The finished soup keeps well and is often better the next day, though the macaroni continues to soften on standing.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months; the macaroni softens further on thawing.
+  reheatInstructions: Reheat gently in a covered pot with a splash of water, stirring, until steaming through.
+notes:
+  techniqueRationale:
+    - stepId: puree-pumpkin
+      text: Boiling the pumpkin separately and blending it before it joins the beef broth is what gives soup joumou its characteristic thick, orange body; added in chunks it would simply fall apart into the broth unevenly instead of thickening it throughout.
+  commonPitfalls:
+    - stepId: add-pasta
+      text: Adding the macaroni too early leaves it badly overcooked and starchy by the time the soup is served; it needs only its own cooking time once everything else is already tender.
+---
+
+<Step id="marinate-beef">
+  Rub the <Qty ref="beef"/> with the <Qty ref="lime-juice"/>,
+  <Qty ref="garlic"/>, <Qty ref="onion"/>, <Qty ref="spring-onion"/>,
+  <Qty ref="thyme"/> and <Qty ref="parsley"/>, and leave to marinate for
+  <Dur step="marinate-beef"/>.
+</Step>
+
+<Step id="brown-beef">
+  Brown the marinated beef in a large pot over a high heat for
+  <Dur step="brown-beef"/>.
+</Step>
+
+<Step id="simmer-beef">
+  Add the <Qty ref="water"/>, <Qty ref="cloves"/>,
+  <Qty ref="scotch-bonnet"/> and <Qty ref="tomato-puree"/>. Bring to a
+  simmer and cook for <Dur step="simmer-beef"/>, until the beef is tender.
+</Step>
+
+<Step id="cook-pumpkin">
+  Meanwhile, boil the <Qty ref="pumpkin"/> in a separate pot of water until
+  completely soft, about <Dur step="cook-pumpkin"/>.
+</Step>
+
+<Step id="puree-pumpkin">
+  Drain the pumpkin, reserving a little of its cooking water, and blend to a
+  smooth purée. This takes about <Dur step="puree-pumpkin"/>.
+</Step>
+
+<Step id="combine-broth">
+  Remove the scotch bonnet from the beef broth and stir the pumpkin purée
+  into the pot until fully combined. This takes about
+  <Dur step="combine-broth"/>.
+</Step>
+
+<Step id="add-vegetables">
+  Add the <Qty ref="carrot"/>, <Qty ref="white-cabbage"/>,
+  <Qty ref="celery"/>, <Qty ref="potato"/>, <Qty ref="plantain"/>,
+  <Qty ref="butter"/>, <Qty ref="salt"/> and <Qty ref="black-pepper"/>. This
+  takes about <Dur step="add-vegetables"/>.
+</Step>
+
+<Step id="simmer-vegetables">
+  Simmer for <Dur step="simmer-vegetables"/>, until the vegetables are
+  tender.
+</Step>
+
+<Step id="add-pasta">
+  Stir in the <Qty ref="macaroni"/>. This takes about
+  <Dur step="add-pasta"/>.
+</Step>
+
+<Step id="simmer-pasta">
+  Simmer for a further <Dur step="simmer-pasta"/>, until the pasta is
+  tender.
+</Step>
+
+<Step id="finish">
+  Adjust the seasoning and serve hot. This takes about
+  <Dur step="finish"/>.
+</Step>

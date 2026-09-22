@@ -1,0 +1,147 @@
+---
+title: Hong Kong Egg Tart
+subtitle: A wobbling, faintly sweet egg custard baked in a small pastry shell until the top sets smooth and pale rather than browned.
+description: The puff pastry version — a laminated, lard-enriched dough that bakes into flaky, shattering layers around the custard.
+label: Puff pastry
+defaultServings: 12
+difficulty: Hard
+tags:
+  cuisine: [chinese]
+  course: [dessert]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Dan tat, lang: zh }
+    - { name: Egg custard tart, region: Hong Kong, lang: en }
+  notToBeConfusedWith:
+    - name: Portuguese egg tart
+      note: A different, later Macau pastry with a caramelised, blistered custard top and an all-butter puff pastry shell, created by an English pharmacist in Macau in 1989 rather than descending from the Cantonese dan tat.
+image:
+  src: images/recipes/egg-tart.webp
+  alt: "Rows of Hong Kong-style egg tarts with smooth pale yellow custard and crumbly cookie-dough crusts"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+    portions:
+      - { id: dough-flour, amount: 200 }
+      - { id: lamination-flour, amount: 50 }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 90
+    unit: ml
+    note: cold
+  - id: dough-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 20
+    unit: g
+  - id: dough-egg
+    ingredientRef: egg
+    form: whole
+    amount: 25
+    unit: g
+    note: half an egg, beaten
+  - id: lard
+    ingredientRef: lard
+    form: standard
+    amount: 120
+    unit: g
+    portions:
+      - { id: dough-lard, amount: 20, note: softened, for the dough }
+      - { id: lamination-lard, amount: 100, note: softened, for laminating }
+  - id: custard-egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: four eggs, beaten
+  - id: custard-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: hot-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: hot, for dissolving the sugar
+  - id: evaporated-milk
+    ingredientRef: evaporated-milk
+    form: standard
+    amount: 60
+    unit: ml
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 4
+    unit: ml
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: laminate, durationMin: 20, type: active, phase: prep }
+  - { id: rest-laminated, durationMin: 30, type: passive }
+  - { id: line-tins, durationMin: 20, type: active, phase: prep }
+  - { id: make-custard, durationMin: 10, type: "parallel-with:rest-laminated", phase: prep }
+  - { id: fill-and-bake, durationMin: 22, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The lined, unbaked pastry cases can be frozen in their tin; fill and bake directly from frozen, adding a few minutes to the baking time.
+  freezable: true
+  freezeInstructions: Freeze the baked, cooled tarts in a single layer before bagging. Reheat gently in a low oven rather than a microwave, which turns the custard rubbery.
+  reheatInstructions: Reheat gently in a low oven for a few minutes; a microwave overcooks the custard.
+notes:
+  techniqueRationale:
+    - stepId: make-custard
+      text: Dissolving the sugar in hot water and letting it cool before it meets the egg, rather than beating sugar directly into the egg, keeps the mixture from trapping air — a frothy custard bakes with a pitted, bubbled surface instead of the smooth, glassy top this tart is judged on.
+  commonPitfalls:
+    - stepId: fill-and-bake
+      text: An oven left too hot throughout puffs and cracks the custard's surface. Baking hot to set the pastry and then dropping the temperature is what keeps the custard smooth rather than curdled.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="dough-flour"/>, <Qty ref="dough-sugar"/>,
+  <Qty ref="dough-egg"/>, <Qty ref="water"/> and <Qty ref="dough-lard"/> into a
+  smooth dough, taking <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Wrap and rest the dough in the refrigerator for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="laminate">
+  Beat the <Qty ref="lamination-flour"/> into the <Qty ref="lamination-lard"/>
+  to make a soft paste. Roll the rested dough into a rectangle, spread the
+  lard paste over two-thirds of it, and fold as if folding a letter. Roll and
+  fold again several times, taking <Dur step="laminate"/> in total, until the
+  layers are even.
+</Step>
+
+<Step id="rest-laminated">
+  Wrap and rest the laminated dough in the refrigerator for
+  <Dur step="rest-laminated"/>.
+</Step>
+
+<Step id="line-tins">
+  Roll the dough out and cut rounds to line a tart tin, pressing each round up
+  the sides so the pastry stands slightly proud of the rim, taking
+  <Dur step="line-tins"/>.
+</Step>
+
+<Step id="make-custard">
+  Meanwhile, dissolve the <Qty ref="custard-sugar"/> in the
+  <Qty ref="hot-water"/> and leave to cool. Whisk in the
+  <Qty ref="custard-egg"/>, <Qty ref="evaporated-milk"/> and
+  <Qty ref="vanilla"/>, then strain through a fine sieve, taking
+  <Dur step="make-custard"/>.
+</Step>
+
+<Step id="fill-and-bake">
+  Pour the custard into the lined tart cases, filling almost to the rim.
+  Bake at <Temp c={220}/> for the first part of <Dur step="fill-and-bake"/>,
+  then lower the heat to <Temp c={160}/> for the remainder, until the pastry
+  is golden and the custard is just set with a faint wobble at the centre.
+</Step>

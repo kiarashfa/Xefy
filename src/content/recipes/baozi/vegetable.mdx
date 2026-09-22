@@ -1,0 +1,174 @@
+---
+label: Vegetable
+defaultServings: 12
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 260
+    unit: ml
+    note: lukewarm
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 6
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 50
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 5
+    unit: g
+  - id: dough-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 350
+    unit: g
+    note: finely chopped
+  - id: salting-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+    note: for drawing water from the cabbage
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 200
+    unit: g
+    note: crumbled
+  - id: shiitake
+    ingredientRef: shiitake
+    form: dried
+    amount: 20
+    unit: g
+    note: soaked and finely chopped
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: grated
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely chopped
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 20
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 15
+    unit: ml
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: bloom-yeast, durationMin: 10, type: passive }
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-prove, durationMin: 60, type: passive }
+  - { id: salt-cabbage, durationMin: 15, type: "parallel-with:first-prove", phase: prep }
+  - { id: make-filling, durationMin: 15, type: active, phase: prep }
+  - { id: shape, durationMin: 25, type: active, phase: prep }
+  - { id: second-prove, durationMin: 20, type: passive }
+  - { id: steam, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling can be made a day ahead and kept covered in the refrigerator. Shaped, unproved buns also keep covered overnight; bring back to room temperature before the second prove.
+  freezable: true
+  freezeInstructions: Freeze the cooked, cooled buns in a bag. Re-steam from frozen for several minutes until hot through.
+  reheatInstructions: Re-steam rather than microwave, which turns the crumb rubbery.
+notes:
+  techniqueRationale:
+    - stepId: salt-cabbage
+      text: Salting the cabbage and squeezing it dry before it goes anywhere near the other filling ingredients is what keeps a vegetable filling from turning the dough soggy as it steams, since cabbage otherwise releases a large amount of water once heated.
+---
+
+<Step id="bloom-yeast">
+  Stir the <Qty ref="yeast"/> into the <Qty ref="water"/> and set aside for
+  <Dur step="bloom-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="sugar"/> and
+  <Qty ref="baking-powder"/> in a large bowl. Pour in the yeast mixture and the
+  <Qty ref="dough-oil"/> and bring together into a shaggy dough.
+</Step>
+
+<Step id="knead">
+  Turn the dough out onto the <Qty ref="flour-bench"/> and knead for
+  <Dur step="knead"/>, until smooth, elastic and no longer tacky.
+</Step>
+
+<Step id="first-prove">
+  Return the dough to the bowl, cover and leave to prove somewhere warm for
+  <Dur step="first-prove"/>, until roughly doubled in size.
+</Step>
+
+<Step id="salt-cabbage">
+  Meanwhile, toss the <Qty ref="cabbage"/> with the <Qty ref="salting-salt"/> and
+  leave to stand for <Dur step="salt-cabbage"/>, then squeeze it firmly by the
+  handful to press out as much water as possible.
+</Step>
+
+<Step id="make-filling">
+  Combine the squeezed cabbage with the <Qty ref="tofu"/>, <Qty ref="shiitake"/>,
+  <Qty ref="carrot"/>, <Qty ref="ginger"/>, <Qty ref="spring-onion"/>,
+  <Qty ref="soy-sauce"/>, <Qty ref="sesame-oil"/>, <Qty ref="pepper"/> and
+  <Qty ref="filling-salt"/> in a bowl and mix well.
+</Step>
+
+<Step id="shape">
+  Knock the dough back and roll it into a log, then divide it into even pieces.
+  Roll each piece into a round, thicker at the centre than at the rim, spoon
+  filling into the middle, and pleat the edge closed around it, twisting to seal
+  at the top. Set each bun on a small square of baking paper.
+</Step>
+
+<Step id="second-prove">
+  Cover the shaped buns loosely and leave to prove for a further
+  <Dur step="second-prove"/>, until visibly puffed.
+</Step>
+
+<Step id="steam">
+  Arrange the buns in a steamer basket with space between each to allow for
+  expansion, and steam over gently simmering water for <Dur step="steam"/>, until
+  risen and firm to the touch. Turn off the heat and let the steam settle briefly
+  before lifting the lid.
+</Step>

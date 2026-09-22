@@ -1,0 +1,107 @@
+---
+label: Shortcrust
+description: The bakery-style version — a short, crumbly butter pastry pressed into the tin rather than laminated, giving a firmer shell than the flaky puff pastry version.
+defaultServings: 12
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 220
+    unit: g
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 60
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 110
+    unit: g
+    note: cold, diced
+  - id: dough-egg
+    ingredientRef: egg
+    form: whole
+    amount: 25
+    unit: g
+    note: half an egg, beaten
+  - id: custard-egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: four eggs, beaten
+  - id: custard-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: hot-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: hot, for dissolving the sugar
+  - id: evaporated-milk
+    ingredientRef: evaporated-milk
+    form: standard
+    amount: 60
+    unit: ml
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 4
+    unit: ml
+steps:
+  - { id: rub-in, durationMin: 10, type: active, phase: prep }
+  - { id: mix-dough, durationMin: 5, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: line-tins, durationMin: 15, type: active, phase: prep }
+  - { id: make-custard, durationMin: 10, type: "parallel-with:rest-dough", phase: prep }
+  - { id: fill-and-bake, durationMin: 22, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The lined, unbaked pastry cases can be frozen in their tin; fill and bake directly from frozen, adding a few minutes to the baking time.
+  freezable: true
+  freezeInstructions: Freeze the baked, cooled tarts in a single layer before bagging. Reheat gently in a low oven rather than a microwave, which turns the custard rubbery.
+  reheatInstructions: Reheat gently in a low oven for a few minutes; a microwave overcooks the custard.
+notes:
+  commonPitfalls:
+    - stepId: rub-in
+      text: Butter worked until fully smooth rather than left in small flecks gives a dense, biscuit-like shell instead of the short, sandy crumb this pastry is meant to have.
+---
+
+<Step id="rub-in">
+  Rub the <Qty ref="butter"/> into the <Qty ref="flour"/> and
+  <Qty ref="icing-sugar"/> until the mixture looks like coarse crumbs, taking
+  <Dur step="rub-in"/>.
+</Step>
+
+<Step id="mix-dough">
+  Add the <Qty ref="dough-egg"/> and bring together into a smooth dough
+  without overworking it, taking <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Wrap and rest the dough in the refrigerator for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="line-tins">
+  Press the dough into a tart tin in a thin, even layer, taking
+  <Dur step="line-tins"/>.
+</Step>
+
+<Step id="make-custard">
+  Meanwhile, dissolve the <Qty ref="custard-sugar"/> in the
+  <Qty ref="hot-water"/> and leave to cool. Whisk in the
+  <Qty ref="custard-egg"/>, <Qty ref="evaporated-milk"/> and
+  <Qty ref="vanilla"/>, then strain through a fine sieve, taking
+  <Dur step="make-custard"/>.
+</Step>
+
+<Step id="fill-and-bake">
+  Pour the custard into the lined tart cases, filling almost to the rim.
+  Bake at <Temp c={220}/> for the first part of <Dur step="fill-and-bake"/>,
+  then lower the heat to <Temp c={160}/> for the remainder, until the pastry
+  is golden and the custard is just set with a faint wobble at the centre.
+</Step>

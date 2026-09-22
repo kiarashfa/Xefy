@@ -1,0 +1,49 @@
+{
+  "id": "sesame-paste",
+  "name": "Chinese Sesame Paste",
+  "proseName": "sesame paste",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "sesame"
+  ],
+  "forms": [
+    {
+      "id": "toasted",
+      "label": "Toasted",
+      "proseQualifier": "toasted",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2262073",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2262073/nutrients",
+      "sourceNote": "USDA does not separately carry Chinese sesame paste, made from toasted seeds and darker and more strongly flavoured than tahini. This is its record for creamy sesame butter, the closest ground-sesame profile it publishes; the macro profile of toasted and untoasted sesame paste is very close.",
+      "nutritionPer100g": {
+        "kcal": 648.374,
+        "protein": 19.705,
+        "fat": 62.4,
+        "carbs": 14.179,
+        "fiber": 8.372,
+        "saturatedFat": 8.966,
+        "monounsaturatedFat": 22.57,
+        "polyunsaturatedFat": 26.37,
+        "sodium": 63.63,
+        "potassium": 407.7,
+        "calcium": 115.8,
+        "iron": 7.003,
+        "magnesium": 356.8,
+        "phosphorus": 719.3,
+        "zinc": 6.039,
+        "copper": 1.646,
+        "manganese": 1.609,
+        "seleniumMcg": 46.48,
+        "vitaminE": 0,
+        "vitaminKMcg": 1.713,
+        "thiamin": 0.993,
+        "niacin": 5.813,
+        "vitaminB6": 0.595
+      }
+    }
+  ],
+  "image": "images/ingredients/sesame-paste-thumb.webp"
+}

@@ -1,0 +1,96 @@
+---
+title: Mangú
+subtitle: Green plantains boiled until soft and mashed smooth with butter and their own cooking water, topped with red onion sautéed in vinegar.
+label: Dominican Republic
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [caribbean]
+  course: [breakfast]
+  method: [boiling, sauteing]
+image:
+  src: images/recipes/mangu.webp
+  alt: "A bowl of smooth mashed green plantain mangu, swirled into a mound"
+ingredients:
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 700
+    unit: g
+    note: peeled and cut into chunks
+  - id: boiling-water
+    ingredientRef: water
+    form: tap
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.04
+    consumedFractionNote: Almost all of the water the plantains boil in is drained away; only a splash is worked back into the mash to loosen it.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: vinegar
+    ingredientRef: white-vinegar
+    form: distilled
+    amount: 30
+    unit: ml
+steps:
+  - { id: boil-plantains, durationMin: 25, type: passive }
+  - { id: saute-onions, durationMin: 8, type: "parallel-with:boil-plantains", phase: prep }
+  - { id: mash, durationMin: 6, type: active, phase: cook }
+  - { id: top, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat gently in a covered pan with a splash of water, stirring, as mashed plantain stiffens considerably once cold.
+notes:
+  techniqueRationale:
+    - stepId: mash
+      text: Mashing the plantains while they are still hot, with a little of their own cooking water rather than milk or stock, keeps the texture smooth without masking the plantain's own flavour.
+  commonPitfalls:
+    - stepId: boil-plantains
+      text: Plantains left even slightly underdone mash into a gluey, lumpy paste rather than a smooth one; they should be fork-tender all the way through before draining.
+---
+
+<Step id="boil-plantains">
+  Put the <Qty ref="plantain"/> in a pot with the <Qty ref="boiling-water"/>
+  and <Qty ref="salt"/> and bring to a boil, then cook for
+  <Dur step="boil-plantains"/>, until completely tender. Reserve some of the
+  cooking water, then drain.
+</Step>
+
+<Step id="saute-onions">
+  Heat the <Qty ref="oil"/> in a pan over a medium heat and cook the
+  <Qty ref="onion"/> for most of <Dur step="saute-onions"/>, until softened,
+  then add the <Qty ref="vinegar"/> and simmer briefly until it reduces
+  slightly.
+</Step>
+
+<Step id="mash">
+  Mash the drained plantains with the <Qty ref="butter"/> and enough of the
+  reserved cooking water to make a smooth, soft mash, working for about
+  <Dur step="mash"/>.
+</Step>
+
+<Step id="top">
+  Spread the mash onto plates and spoon the sautéed onions over the top;
+  serve at once.
+</Step>

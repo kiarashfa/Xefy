@@ -1,0 +1,72 @@
+{
+  "id": "squash-seeds",
+  "name": "Squash Seeds",
+  "proseName": "squash seeds",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Pepitoria",
+        "lang": "es"
+      },
+      {
+        "name": "Pepitas",
+        "lang": "es"
+      }
+    ]
+  },
+  "category": "seed",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "hulled-dried",
+      "label": "Hulled kernels, dried",
+      "proseQualifier": "hulled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170556",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170556/nutrients",
+      "nutritionPer100g": {
+        "kcal": 559,
+        "protein": 30.23,
+        "carbs": 10.71,
+        "fat": 49.05,
+        "fiber": 6,
+        "sugars": 1.4,
+        "saturatedFat": 8.659,
+        "monounsaturatedFat": 16.242,
+        "polyunsaturatedFat": 20.976,
+        "transFat": 0.064,
+        "cholesterol": 0,
+        "sodium": 7,
+        "potassium": 809,
+        "calcium": 46,
+        "iron": 8.82,
+        "magnesium": 592,
+        "phosphorus": 1233,
+        "zinc": 7.81,
+        "copper": 1.343,
+        "manganese": 4.543,
+        "seleniumMcg": 9.4,
+        "vitaminAMcg": 1,
+        "vitaminC": 1.9,
+        "vitaminDMcg": 0,
+        "vitaminE": 2.18,
+        "vitaminKMcg": 7.3,
+        "thiamin": 0.273,
+        "riboflavin": 0.153,
+        "niacin": 4.987,
+        "vitaminB6": 0.143,
+        "folateMcg": 58,
+        "vitaminB12Mcg": 0,
+        "choline": 63
+      },
+      "density": {
+        "gPerCup": 129,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/squash-seeds-thumb.webp"
+}

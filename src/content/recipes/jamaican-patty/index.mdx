@@ -1,0 +1,162 @@
+---
+title: Jamaican Beef Patty
+subtitle: A turmeric-yellow, shortening-rich pastry crimped around spiced ground beef and baked until crisp — Jamaica's hand pie, one patty to a serving.
+label: Jamaica
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [snack]
+  method: [baking, sauteing]
+image:
+  src: images/recipes/jamaican-patty.webp
+  alt: "Two golden, flaky Jamaican beef patties on a green plate beside a small dipping sauce"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 400
+    unit: g
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 6
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+    portions:
+      - { id: salt-pastry, amount: 3 }
+      - { id: salt-filling, amount: 2 }
+  - id: shortening
+    ingredientRef: vegetable-shortening
+    form: standard
+    amount: 200
+    unit: g
+    note: cold, cut into small pieces
+  - id: cold-water
+    ingredientRef: water
+    form: tap
+    amount: 120
+    unit: ml
+    note: iced
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 400
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: sliced
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 4
+    unit: g
+    note: finely minced
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: allspice
+    ingredientRef: allspice
+    form: ground
+    amount: 2
+    unit: g
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 30
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 100
+    unit: ml
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: make-pastry, durationMin: 10, type: active, phase: prep }
+  - { id: chill-pastry, durationMin: 30, type: passive }
+  - { id: cook-filling, durationMin: 20, type: "parallel-with:chill-pastry", phase: cook }
+  - { id: cool-filling, durationMin: 15, type: passive }
+  - { id: shape, durationMin: 20, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling can be made up to two days ahead and refrigerated; the pastry can be made and chilled up to two days ahead or shaped, unbaked patties frozen for up to three months.
+  freezable: true
+  freezeInstructions: Freeze unbaked, shaped patties on a tray until solid, then bag; bake from frozen, allowing extra time. Baked patties also freeze well and reheat from frozen.
+  reheatInstructions: Reheat in a moderate oven until hot through and the crust has recrisped; a microwave leaves the pastry soft.
+notes:
+  techniqueRationale:
+    - stepId: cool-filling
+      text: Filling the pastry with hot beef melts the shortening before the patties reach the oven, so the filling needs to cool close to room temperature first to keep the crust flaky rather than greasy.
+  commonPitfalls:
+    - stepId: make-pastry
+      text: Overworking the dough or letting the shortening soften develops gluten and melts the fat that should stay in solid pieces, both of which flatten the pastry's texture instead of leaving it short and flaky.
+---
+
+<Step id="make-pastry">
+  Whisk the <Qty ref="flour"/>, <Qty ref="turmeric"/> and
+  <Qty ref="salt-pastry"/> together, then rub in the <Qty ref="shortening"/>
+  until the mixture looks like coarse crumbs. Add the <Qty ref="cold-water"/>
+  and bring together into a firm dough without overworking it. This takes
+  about <Dur step="make-pastry"/>.
+</Step>
+
+<Step id="chill-pastry">
+  Wrap the dough and refrigerate for <Dur step="chill-pastry"/>.
+</Step>
+
+<Step id="cook-filling">
+  Heat the <Qty ref="oil"/> in a pan over a medium heat and cook the
+  <Qty ref="onion"/>, <Qty ref="garlic"/>, <Qty ref="spring-onion"/>,
+  <Qty ref="scotch-bonnet"/> and <Qty ref="thyme"/> until softened. Add the
+  <Qty ref="beef"/> and cook, breaking it up, until browned. Stir in the
+  <Qty ref="allspice"/>, <Qty ref="breadcrumbs"/>, <Qty ref="stock"/>,
+  <Qty ref="salt-filling"/> and <Qty ref="black-pepper"/> and simmer until
+  the liquid is absorbed. This takes about <Dur step="cook-filling"/> in
+  total.
+</Step>
+
+<Step id="cool-filling">
+  Spread the filling on a tray and leave to cool for
+  <Dur step="cool-filling"/>, until close to room temperature.
+</Step>
+
+<Step id="shape">
+  Roll out the pastry and cut into rounds. Spoon the cooled filling onto one
+  half of each round, fold over and crimp the edges firmly to seal. This
+  takes about <Dur step="shape"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until the pastry is puffed
+  and deep golden.
+</Step>

@@ -1,0 +1,88 @@
+---
+title: Egg Fried Rice
+subtitle: Cold, day-old rice fried hard and fast with egg and spring onion, each grain staying separate rather than clumping together.
+label: Home-style
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Dan chao fan, lang: zh }
+image:
+  src: images/recipes/egg-fried-rice.webp
+  alt: "A bowl of golden egg fried rice with visible scrambled egg pieces, topped with sliced spring onion"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+    note: cooked and chilled overnight
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: three eggs, beaten
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: finely sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: white-pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: scramble-egg, durationMin: 2, type: active, phase: cook }
+  - { id: fry-rice, durationMin: 5, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The rice needs to be cooked and chilled, uncovered, for several hours or overnight before frying, so this stage is effectively done ahead and improves the result.
+  freezable: true
+  freezeInstructions: Freeze in portions once fully cooled. Reheat in a hot, dry wok rather than a microwave to keep the grains separate.
+  reheatInstructions: Reheat in a hot, dry wok, breaking up any clumps, rather than a microwave.
+notes:
+  techniqueRationale:
+    - stepId: fry-rice
+      text: Rice fried straight after cooking clumps and turns gluey, since the grains are still soft and full of surface moisture. Cold, day-old rice has dried out and firmed up enough for the grains to separate and fry rather than steam.
+---
+
+<Step id="scramble-egg">
+  Heat half the <Qty ref="oil"/> in a wok over high heat and pour in the
+  <Qty ref="egg"/>, stirring briefly for <Dur step="scramble-egg"/> to large,
+  soft curds. Lift out and set aside.
+</Step>
+
+<Step id="fry-rice">
+  Heat the remaining oil in the wok and add the <Qty ref="rice"/>, breaking up
+  any clumps with the back of a spatula. Fry over high heat for
+  <Dur step="fry-rice"/>, tossing constantly, until every grain is hot and
+  separate.
+</Step>
+
+<Step id="combine">
+  Return the egg to the wok with the <Qty ref="spring-onion"/>,
+  <Qty ref="soy-sauce"/>, <Qty ref="salt"/> and <Qty ref="white-pepper"/>. Toss
+  over high heat for <Dur step="combine"/>, until evenly combined.
+</Step>

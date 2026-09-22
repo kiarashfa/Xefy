@@ -51,8 +51,16 @@
         "transFat": 0,
         "cholesterol": 0
       },
-      "density": { "gPerCup": 105, "densitySource": "measured" },
-      "countUnit": { "singular": "malagueta chilli", "plural": "malagueta chillies", "grams": 2 }
+      "density": {
+        "gPerCup": 105,
+        "densitySource": "measured"
+      },
+      "countUnit": {
+        "singular": "malagueta chilli",
+        "plural": "malagueta chillies",
+        "grams": 2
+      }
     }
-  ]
+  ],
+  "image": "images/ingredients/malagueta-thumb.webp"
 }

@@ -6,7 +6,9 @@
   "animalOrigin": "none",
   "containsGluten": true,
   "containsDairy": false,
-  "allergenTags": ["gluten"],
+  "allergenTags": [
+    "gluten"
+  ],
   "pantryStaple": true,
   "forms": [
     {
@@ -56,5 +58,6 @@
         "densitySource": "measured"
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/malt-vinegar-thumb.webp"
 }

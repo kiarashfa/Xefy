@@ -1,0 +1,69 @@
+---
+label: De choclo
+defaultServings: 6
+difficulty: Easy
+ingredients:
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 300
+    unit: g
+    note: kernels cut from the cob
+  - id: masa-harina
+    ingredientRef: maize-meal
+    form: precooked
+    amount: 100
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 20
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: cheese
+    ingredientRef: queso-fresco
+    form: crumbled
+    amount: 100
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 15
+    unit: g
+steps:
+  - { id: blend-corn, durationMin: 5, type: active, phase: prep }
+  - { id: make-dough, durationMin: 8, type: active, phase: prep }
+  - { id: shape, durationMin: 8, type: active, phase: prep }
+  - { id: cook, durationMin: 16, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze shaped, uncooked discs between sheets of baking paper for up to two months; cook from frozen, allowing extra time.
+  reheatInstructions: Reheat on a dry, hot griddle for a minute a side, or split and toast under a grill.
+---
+
+<Step id="blend-corn">
+  Blend the <Qty ref="corn"/> to a coarse, wet purée. This takes about
+  <Dur step="blend-corn"/>.
+</Step>
+
+<Step id="make-dough">
+  Stir the <Qty ref="masa-harina"/>, <Qty ref="sugar"/>, <Qty ref="salt"/>
+  and <Qty ref="cheese"/> into the corn purée to make a soft, thick batter.
+  This takes about <Dur step="make-dough"/>.
+</Step>
+
+<Step id="shape">
+  Divide the batter into as many equal portions as arepas are being made and
+  pat each into a flat, even round. This takes about <Dur step="shape"/>.
+</Step>
+
+<Step id="cook">
+  Melt the <Qty ref="butter"/> on a griddle or in a wide pan over a
+  medium-low heat and cook the arepas for <Dur step="cook"/> in total,
+  turning once or twice, until golden and set through.
+</Step>

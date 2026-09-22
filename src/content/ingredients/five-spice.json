@@ -1,0 +1,58 @@
+{
+  "id": "five-spice",
+  "name": "Five-Spice Powder",
+  "proseName": "five-spice powder",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171320",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171320/nutrients",
+      "sourceNote": "USDA carries no record for five-spice powder, a ground blend of star anise, cloves, cinnamon, Sichuan pepper and fennel. This is its record for ground cinnamon, one of the blend's dominant components and the closest single-spice profile it publishes; the powder is used in small enough amounts that the nutritional effect of standing in one warm ground spice for the blend is negligible.",
+      "nutritionPer100g": {
+        "kcal": 247,
+        "protein": 3.99,
+        "carbs": 80.59,
+        "fat": 1.24,
+        "fiber": 53.1,
+        "sugars": 2.17,
+        "saturatedFat": 0.345,
+        "monounsaturatedFat": 0.246,
+        "polyunsaturatedFat": 0.068,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 10,
+        "potassium": 431,
+        "calcium": 1002,
+        "iron": 8.32,
+        "magnesium": 60,
+        "phosphorus": 64,
+        "zinc": 1.83,
+        "copper": 0.339,
+        "manganese": 17.466,
+        "seleniumMcg": 3.1,
+        "vitaminC": 3.8,
+        "vitaminAMcg": 15,
+        "thiamin": 0.022,
+        "riboflavin": 0.041,
+        "niacin": 1.332,
+        "vitaminB6": 0.158,
+        "folateMcg": 6
+      },
+      "density": {
+        "gPerTbsp": 4.5,
+        "gPerTsp": 1.4,
+        "densitySource": "estimated",
+        "densityClass": "ground-spice"
+      }
+    }
+  ],
+  "image": "images/ingredients/five-spice-thumb.webp"
+}

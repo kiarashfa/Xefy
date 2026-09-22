@@ -1,0 +1,126 @@
+---
+title: Chilli Oil
+subtitle: Coarse dried chilli and Sichuan pepper infused in hot oil poured over aromatics in stages, left to steep into a fragrant, deep red condiment.
+label: Sichuan
+defaultServings: 24
+difficulty: Easy
+tags:
+  cuisine: [chinese]
+  course: [condiment]
+  method: [no-cook]
+names:
+  alsoKnownAs:
+    - { name: Hongyou, lang: zh }
+    - { name: Lajiaoyou, lang: zh }
+image:
+  src: images/recipes/chinese-chilli-oil.webp
+  alt: "A close-up of dark red Chinese chili oil in a pot, with toasted sesame seeds and chili flakes floating on the surface"
+ingredients:
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 60
+    unit: g
+    note: coarse
+  - id: sichuan-pepper
+    ingredientRef: sichuan-pepper
+    form: whole
+    amount: 8
+    unit: g
+  - id: star-anise
+    ingredientRef: star-anise
+    form: whole
+    amount: 3
+    unit: g
+    consumedFraction: 0.05
+    consumedFractionNote: The whole pods flavour the oil as it steeps and are strained out before bottling; only a trace of their oil carries through into the finished condiment, which is an editorial estimate rather than a sourced figure.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 3
+    unit: g
+    consumedFraction: 0.05
+    consumedFractionNote: The stick flavours the oil as it steeps and is strained out before bottling; only a trace of its oil carries through, which is an editorial estimate rather than a sourced figure.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 1
+    unit: g
+    consumedFraction: 0.05
+    consumedFractionNote: The leaf flavours the oil as it steeps and is strained out before bottling; only a trace of its oil carries through, which is an editorial estimate rather than a sourced figure.
+  - id: base-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 400
+    unit: ml
+    consumedFraction: 0.95
+    consumedFractionNote: This oil is infused and bottled as the finished condiment rather than used for frying, so almost all of it is eventually eaten; the small loss accounts for what clings to the strained spices and what is left behind in the jar.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: sliced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: sliced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: cut into lengths
+  - id: sesame-seed
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 10
+    unit: g
+    note: toasted
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+steps:
+  - { id: toast-spices, durationMin: 3, type: active, phase: cook }
+  - { id: infuse-oil, durationMin: 15, type: active, phase: cook }
+  - { id: pour-and-steep, durationMin: 3, type: active, phase: cook }
+  - { id: rest, durationMin: 60, type: passive }
+makeAhead:
+  aheadInstructions: Chilli oil keeps for several weeks at room temperature, or longer refrigerated, and improves after the first day as the flavours settle.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: pour-and-steep
+      text: The hot oil is poured over the chilli flakes and sesame seed in two or three additions rather than all at once, letting the temperature drop between pours so the chilli colours and flavours the oil without scorching into bitterness.
+---
+
+<Step id="toast-spices">
+  Combine the <Qty ref="sichuan-pepper"/>, <Qty ref="star-anise"/>,
+  <Qty ref="cinnamon"/> and <Qty ref="bay-leaf"/> in a dry pan over a low heat and
+  toast for <Dur step="toast-spices"/>, until fragrant.
+</Step>
+
+<Step id="infuse-oil">
+  Add the <Qty ref="base-oil"/>, <Qty ref="garlic"/>, <Qty ref="ginger"/> and
+  <Qty ref="spring-onion"/> to the pan and warm gently over a low heat for
+  <Dur step="infuse-oil"/>, until the aromatics turn golden and smell toasted.
+  Strain, discarding the solids, and return the oil to the pan.
+</Step>
+
+<Step id="pour-and-steep">
+  Put the <Qty ref="chilli-flakes"/>, <Qty ref="sesame-seed"/> and
+  <Qty ref="salt"/> in a heatproof bowl. Reheat the strained oil until just
+  beginning to smoke, then pour it over the chilli in two or three additions,
+  stirring between each, over <Dur step="pour-and-steep"/>.
+</Step>
+
+<Step id="rest">
+  Leave the oil to cool and steep for at least <Dur step="rest"/> before
+  bottling, undisturbed, so the sediment can begin to settle.
+</Step>

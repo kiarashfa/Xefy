@@ -1,0 +1,129 @@
+---
+title: Char Siu
+subtitle: Pork shoulder marinated in hoisin, soy and five-spice, then roasted and repeatedly basted with maltose until deeply glazed and faintly charred at the edges.
+label: Guangdong
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [roasting]
+names:
+  alsoKnownAs:
+    - { name: Cha siu, lang: en }
+    - { name: Chinese barbecued pork, lang: en }
+image:
+  src: images/recipes/char-siu.webp
+  alt: "Sliced glossy red char siu roast pork fanned over white rice in a takeaway box"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 800
+    unit: g
+    note: cut into long strips
+  - id: hoisin
+    ingredientRef: hoisin-sauce
+    form: standard
+    amount: 60
+    unit: g
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+  - id: dark-soy
+    ingredientRef: soy-sauce
+    form: dark
+    amount: 15
+    unit: ml
+  - id: shaoxing-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 30
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: five-spice
+    ingredientRef: five-spice
+    form: ground
+    amount: 3
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: maltose
+    ingredientRef: maltose
+    form: syrup
+    amount: 40
+    unit: g
+    portions:
+      - { id: baste-maltose, amount: 25, note: for basting }
+      - { id: glaze-maltose, amount: 15, note: for the final glaze }
+  - id: glaze-water
+    ingredientRef: water
+    form: tap
+    amount: 15
+    unit: ml
+    note: to loosen the final glaze
+steps:
+  - { id: marinate, durationMin: 10, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 240, type: passive }
+  - { id: roast, durationMin: 25, type: active, phase: cook }
+  - { id: baste, durationMin: 10, type: active, phase: cook }
+  - { id: glaze, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The pork can marinate for up to two days in the refrigerator, which deepens the colour and flavour.
+  freezable: true
+  freezeInstructions: Freeze the cooked, glazed pork in slices. Thaw in the refrigerator and reheat gently before serving.
+  reheatInstructions: Reheat in a low oven rather than a microwave, which dries out the edges without warming the centre.
+notes:
+  techniqueRationale:
+    - stepId: glaze
+      text: Maltose is thinned with a little water and brushed on only after roasting, off the direct heat, because on its own it scorches well before the pork's centre is cooked through.
+  commonPitfalls:
+    - stepId: roast
+      text: Strips laid flat rather than hung or turned develop a pale underside where they sit in their own juices. Turning partway through roasting keeps every face of the meat exposed to the heat.
+---
+
+<Step id="marinate">
+  Combine the <Qty ref="hoisin"/>, <Qty ref="soy-sauce"/>, <Qty ref="dark-soy"/>,
+  <Qty ref="shaoxing-wine"/>, <Qty ref="sugar"/>, <Qty ref="garlic"/>,
+  <Qty ref="five-spice"/> and <Qty ref="sesame-oil"/> in a bowl and turn the
+  <Qty ref="pork"/> through it, coating every side.
+</Step>
+
+<Step id="rest-marinade">
+  Cover and marinate in the refrigerator for <Dur step="rest-marinade"/>, turning the
+  strips over once partway through.
+</Step>
+
+<Step id="roast">
+  Lift the pork from the marinade, letting the excess drip off, and set the strips on a
+  rack over a lined tray. Roast at <Temp c={200}/> for <Dur step="roast"/>, turning
+  once, until the edges begin to char and the surface sets.
+</Step>
+
+<Step id="baste">
+  Brush the strips with the reserved marinade and the <Qty ref="baste-maltose"/>,
+  return to the oven and continue roasting for <Dur step="baste"/>, turning and
+  basting again halfway through, until the pork is cooked through and deeply
+  coloured.
+</Step>
+
+<Step id="glaze">
+  Warm the <Qty ref="glaze-maltose"/> with the <Qty ref="glaze-water"/> until loose
+  enough to brush, and paint it over the hot pork. Rest for <Dur step="glaze"/> before
+  slicing.
+</Step>

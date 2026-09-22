@@ -1,0 +1,161 @@
+---
+title: Dan Dan Noodles
+subtitle: Wheat noodles in a small bowl of chilli oil, doubanjiang and Sichuan pepper, tossed with a savoury minced pork and preserved vegetable topping — dry rather than in broth.
+label: Sichuan
+defaultServings: 3
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [boiling, stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Dandanmian, lang: zh }
+  notToBeConfusedWith:
+    - name: Hong Kong-style dan dan noodles
+      note: A soup-based, milder adaptation developed outside Sichuan, sometimes thickened with sesame paste or peanut butter, quite different from the dry, chilli-forward Chengdu original this recipe follows.
+image:
+  src: images/recipes/dan-dan-noodles.webp
+  alt: "A shallow bowl of dry dan dan noodles coated in red chilli sauce, topped with a pile of crumbled minced pork"
+ingredients:
+  - id: noodles
+    ingredientRef: wheat-noodles
+    form: dried
+    amount: 250
+    unit: g
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 200
+    unit: g
+  - id: cooking-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: preserved-radish
+    ingredientRef: preserved-radish
+    form: sweet
+    amount: 40
+    unit: g
+    note: finely chopped
+  - id: shaoxing-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 15
+    unit: ml
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: bowl-chilli-oil
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 20
+    unit: g
+  - id: bowl-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+  - id: sichuan-pepper
+    ingredientRef: sichuan-pepper
+    form: whole
+    amount: 3
+    unit: g
+    note: toasted and ground
+  - id: doubanjiang
+    ingredientRef: doubanjiang
+    form: standard
+    amount: 15
+    unit: g
+  - id: bowl-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 20
+    unit: ml
+  - id: black-vinegar
+    ingredientRef: black-vinegar
+    form: standard
+    amount: 15
+    unit: ml
+  - id: sesame-paste
+    ingredientRef: sesame-paste
+    form: toasted
+    amount: 20
+    unit: g
+  - id: noodle-water
+    ingredientRef: water
+    form: tap
+    amount: 40
+    unit: ml
+    note: hot, to loosen the sesame paste
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: minced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 25
+    unit: g
+    note: finely sliced
+  - id: peanut
+    ingredientRef: peanut
+    form: roasted
+    amount: 30
+    unit: g
+    note: crushed
+steps:
+  - { id: make-chilli-oil, durationMin: 5, type: active, phase: cook }
+  - { id: cook-topping, durationMin: 8, type: active, phase: cook }
+  - { id: boil-noodles, durationMin: 4, type: "parallel-with:cook-topping", phase: cook }
+  - { id: build-bowls, durationMin: 5, type: active, phase: prep }
+  - { id: combine, durationMin: 2, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The pork and preserved radish topping and the chilli oil can both be made a day or two ahead and kept covered in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze the cooked topping on its own. Thaw fully and reheat before assembling with freshly boiled noodles.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: build-bowls
+      text: Building the seasoning in the bowl before the noodles arrive, rather than tossing everything together in a pan, is what keeps this dish dry rather than soupy — the noodles are meant to be tossed at the table, coating themselves in a small, concentrated amount of sauce.
+---
+
+<Step id="make-chilli-oil">
+  Put the <Qty ref="bowl-chilli-oil"/> in a heatproof bowl. Heat the
+  <Qty ref="bowl-oil"/> until just beginning to smoke, then pour it over the
+  chilli, taking <Dur step="make-chilli-oil"/>, and stir in the
+  <Qty ref="sichuan-pepper"/>.
+</Step>
+
+<Step id="cook-topping">
+  Heat the <Qty ref="cooking-oil"/> in a wok and stir-fry the
+  <Qty ref="pork"/>, breaking it up, until browned. Add the
+  <Qty ref="preserved-radish"/>, <Qty ref="shaoxing-wine"/> and
+  <Qty ref="soy-sauce"/> and cook for <Dur step="cook-topping"/>, until dry and
+  fragrant.
+</Step>
+
+<Step id="boil-noodles">
+  Meanwhile, boil the <Qty ref="noodles"/> for <Dur step="boil-noodles"/>,
+  until just tender, then drain well.
+</Step>
+
+<Step id="build-bowls">
+  Divide the <Qty ref="doubanjiang"/>, <Qty ref="bowl-soy"/>,
+  <Qty ref="black-vinegar"/>, <Qty ref="garlic"/> and the chilli oil mixture
+  between the serving bowls. Loosen the <Qty ref="sesame-paste"/> with the
+  <Qty ref="noodle-water"/> and add it to the bowls, taking
+  <Dur step="build-bowls"/>.
+</Step>
+
+<Step id="combine">
+  Pile the drained noodles into the bowls and top with the pork mixture,
+  <Qty ref="spring-onion"/> and <Qty ref="peanut"/>. Toss well at the table
+  before eating, over <Dur step="combine"/>.
+</Step>

@@ -1,0 +1,168 @@
+---
+title: Sweet and Sour Pork
+subtitle: Battered pork shoulder fried until crisp, tossed in a sharp, glossy sauce of vinegar, ketchup and sugar with pineapple and pepper.
+label: Guangdong
+defaultServings: 3
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [deep-frying, stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Gu lao rou, lang: zh }
+    - { name: Gu lou yuk, lang: yue }
+image:
+  src: images/recipes/sweet-and-sour-pork.webp
+  alt: "Battered fried pork chunks in glossy orange-red sweet and sour sauce with pineapple, red pepper, green pepper, and onion"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into large cubes
+  - id: velvet-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: velvet-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 10
+    unit: ml
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: one egg, beaten
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 80
+    unit: g
+    note: for coating
+  - id: pork-deep-fry-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 800
+    unit: ml
+    consumedFraction: 0.05
+    consumedFractionNote: Most of the deep-frying oil is strained off and reused or discarded; only what clings to the crust is eaten.
+  - id: sauce-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into chunks
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 100
+    unit: g
+    note: cut into chunks
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: cut into chunks
+  - id: pineapple
+    ingredientRef: pineapple
+    form: fresh
+    amount: 150
+    unit: g
+    note: cut into chunks
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 60
+    unit: g
+  - id: vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 40
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 40
+    unit: g
+  - id: sauce-water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: ml
+  - id: sauce-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 8
+    unit: g
+steps:
+  - { id: marinate-pork, durationMin: 5, type: active, phase: prep }
+  - { id: rest-pork, durationMin: 15, type: passive }
+  - { id: coat-pork, durationMin: 5, type: active, phase: prep }
+  - { id: fry-pork, durationMin: 8, type: active, phase: cook }
+  - { id: refry-pork, durationMin: 3, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 5, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat in a hot oven or air fryer rather than a microwave, which softens the crust; the crispness will not fully return.
+notes:
+  techniqueRationale:
+    - stepId: refry-pork
+      text: A brief second fry at a higher temperature, after the pork has rested, is what gives the crust its lasting crunch — without it, the crust turns soft within minutes of being tossed in sauce.
+  commonPitfalls:
+    - stepId: combine
+      text: Tossing the pork in the sauce too far ahead of serving softens the crust almost immediately. It goes in only at the very end, for just long enough to coat.
+---
+
+<Step id="marinate-pork">
+  Combine the <Qty ref="velvet-soy"/> and <Qty ref="velvet-wine"/> in a bowl
+  and turn the <Qty ref="pork"/> through it.
+</Step>
+
+<Step id="rest-pork">
+  Leave the pork to marinate for <Dur step="rest-pork"/>.
+</Step>
+
+<Step id="coat-pork">
+  Dip each piece of pork in the <Qty ref="egg"/>, then coat thoroughly in the
+  <Qty ref="cornflour"/>, shaking off the excess, over <Dur step="coat-pork"/>.
+</Step>
+
+<Step id="fry-pork">
+  Heat the <Qty ref="pork-deep-fry-oil"/> until shimmering and fry the pork in batches
+  for <Dur step="fry-pork"/>, until pale gold and cooked through. Drain on a
+  rack.
+</Step>
+
+<Step id="refry-pork">
+  Raise the oil to a higher heat and fry the pork again, in batches, for
+  <Dur step="refry-pork"/>, until deeply golden and crisp. Drain again.
+</Step>
+
+<Step id="make-sauce">
+  Heat the <Qty ref="sauce-oil"/> in a wok and stir-fry the
+  <Qty ref="green-pepper"/>, <Qty ref="red-pepper"/> and <Qty ref="onion"/> for
+  a minute, then add the <Qty ref="pineapple"/>, <Qty ref="ketchup"/>,
+  <Qty ref="vinegar"/>, <Qty ref="sugar"/> and <Qty ref="sauce-water"/>. Bring
+  to a simmer over <Dur step="make-sauce"/>, then stir in the
+  <Qty ref="sauce-cornflour"/> mixed with a little cold water and cook until
+  thickened.
+</Step>
+
+<Step id="combine">
+  Add the fried pork to the wok and toss quickly to coat, over
+  <Dur step="combine"/>, until glossy all over.
+</Step>

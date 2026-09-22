@@ -1,0 +1,136 @@
+---
+title: Pupusas
+subtitle: Thick corn masa cakes griddled with a filling sealed inside — El Salvador's national dish, one pupusa to a serving, always served with pickled cabbage curtido.
+label: Revueltas
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [central-american]
+  course: [main-course]
+  method: [pan-frying, boiling]
+image:
+  src: images/recipes/pupusas.webp
+  alt: "Two griddled pupusas with browned spots and melted cheese and meat filling peeking out at the edges, served with curtido cabbage slaw and tomato salsa"
+ingredients:
+  - id: black-beans
+    ingredientRef: black-beans
+    form: dried
+    amount: 100
+    unit: g
+    note: soaked overnight
+  - id: bean-water
+    ingredientRef: water
+    form: tap
+    amount: 400
+    unit: ml
+  - id: bean-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pork-mince
+    ingredientRef: pork-mince
+    form: raw
+    amount: 150
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 30
+    unit: g
+    note: finely chopped
+  - id: cheese
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 150
+    unit: g
+    note: shredded — standing in for quesillo, the stretched Salvadoran cheese
+  - id: masa-harina
+    ingredientRef: maize-meal
+    form: masa-harina
+    amount: 400
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 320
+    unit: ml
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+steps:
+  - { id: soak-beans, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 45, type: passive }
+  - { id: mash-beans, durationMin: 8, type: active, phase: cook }
+  - { id: cook-pork, durationMin: 10, type: "parallel-with:mash-beans", phase: cook }
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 15, type: passive }
+  - { id: shape-and-fill, durationMin: 20, type: active, phase: prep }
+  - { id: cook-pupusas, durationMin: 16, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The beans and pork filling can each be made up to two days ahead and refrigerated; the dough is best made and used the same day.
+  freezable: true
+  freezeInstructions: Freeze shaped, unfilled or filled raw pupusas between sheets of baking paper for up to two months; cook from frozen, allowing extra time.
+  reheatInstructions: Reheat on a dry, hot griddle or pan for a minute or two a side until warmed through and the surface has recrisped.
+notes:
+  techniqueRationale:
+    - stepId: shape-and-fill
+      text: Sealing the filling completely inside the dough before flattening, rather than pressing it onto an already-flat disc, is what keeps the beans, pork and cheese from bursting out once the pupusa hits the hot griddle.
+  commonPitfalls:
+    - stepId: cook-pupusas
+      text: A griddle that is too hot browns the outside before the masa cooks through in the centre; a moderate, steady heat over the full time gives an evenly cooked pupusa rather than a raw-doughed one.
+---
+
+<Step id="soak-beans">
+  Soak the <Qty ref="black-beans"/> in plenty of cold water for
+  <Dur step="soak-beans"/>, then drain.
+</Step>
+
+<Step id="cook-beans">
+  Simmer the soaked beans in the <Qty ref="bean-water"/> for
+  <Dur step="cook-beans"/>, until completely soft.
+</Step>
+
+<Step id="mash-beans">
+  Drain the beans and mash them with the <Qty ref="bean-salt"/> in a pan over
+  a medium heat for <Dur step="mash-beans"/>, until they form a thick paste.
+</Step>
+
+<Step id="cook-pork">
+  Meanwhile, cook the <Qty ref="pork-mince"/> and <Qty ref="onion"/> in a
+  separate pan over a medium heat for <Dur step="cook-pork"/>, breaking the
+  meat up finely, until browned and cooked through.
+</Step>
+
+<Step id="make-dough">
+  Combine the <Qty ref="masa-harina"/> and <Qty ref="dough-salt"/>, then work
+  in the <Qty ref="dough-water"/> to form a soft, smooth dough. This takes
+  about <Dur step="make-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="shape-and-fill">
+  Divide the dough into as many equal balls as pupusas are being made.
+  Flatten each into a cup, spoon in a little of the mashed beans, cooked
+  pork and <Qty ref="cheese"/>, then draw the edges up and pinch closed
+  around the filling. Flatten each filled ball gently between the palms
+  into a thick disc, taking care not to let the filling break through. This
+  takes about <Dur step="shape-and-fill"/> in total.
+</Step>
+
+<Step id="cook-pupusas">
+  Cook the discs on a lightly oiled griddle with the <Qty ref="oil"/> over a
+  moderate heat for <Dur step="cook-pupusas"/> in total, turning once or
+  twice, until both sides are browned in spots and the dough is cooked
+  through.
+</Step>

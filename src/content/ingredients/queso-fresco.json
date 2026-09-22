@@ -1,0 +1,62 @@
+{
+  "id": "queso-fresco",
+  "name": "Queso Fresco",
+  "proseName": "queso fresco",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "animalOriginNote": "Rennet type varies by producer; check the label if it matters to you.",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "crumbled",
+      "label": "Crumbled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172223",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172223/nutrients",
+      "nutritionPer100g": {
+        "kcal": 299,
+        "protein": 18.09,
+        "carbs": 2.98,
+        "fat": 23.82,
+        "fiber": 0,
+        "sugars": 2.32,
+        "saturatedFat": 12.94,
+        "monounsaturatedFat": 5.966,
+        "polyunsaturatedFat": 1.106,
+        "transFat": 0.834,
+        "cholesterol": 69,
+        "sodium": 751,
+        "potassium": 129,
+        "calcium": 566,
+        "iron": 0.2,
+        "magnesium": 24,
+        "phosphorus": 385,
+        "zinc": 2.58,
+        "copper": 0.033,
+        "manganese": 0.014,
+        "seleniumMcg": 19.3,
+        "vitaminAMcg": 224,
+        "vitaminC": 0,
+        "vitaminDMcg": 2.7,
+        "vitaminE": 0.37,
+        "vitaminKMcg": 1,
+        "thiamin": 0.042,
+        "riboflavin": 0.173,
+        "niacin": 0.027,
+        "vitaminB6": 0.076,
+        "folateMcg": 7,
+        "vitaminB12Mcg": 1.68,
+        "choline": 12.5
+      },
+      "density": {
+        "gPerCup": 122,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/queso-fresco-thumb.webp"
+}

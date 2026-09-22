@@ -1,0 +1,73 @@
+{
+  "id": "doubanjiang",
+  "name": "Doubanjiang",
+  "proseName": "doubanjiang",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Sichuan broad bean chilli paste",
+        "region": "China",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "soy",
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard, Pixian-style",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172442",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172442/nutrients",
+      "sourceNote": "USDA carries no record for doubanjiang, a broad bean and chilli paste fermented with koji. This is its record for miso, the closest fermented-bean-paste profile it publishes; doubanjiang is broad bean rather than soybean based and carries chilli, but the two share a comparable salt-forward, fermented macro profile.",
+      "nutritionPer100g": {
+        "kcal": 198,
+        "protein": 12.79,
+        "fat": 6.01,
+        "carbs": 25.37,
+        "fiber": 5.4,
+        "sugars": 6.2,
+        "calcium": 57,
+        "iron": 2.49,
+        "magnesium": 48,
+        "phosphorus": 159,
+        "potassium": 210,
+        "sodium": 3728,
+        "zinc": 2.56,
+        "copper": 0.42,
+        "manganese": 0.859,
+        "seleniumMcg": 7,
+        "vitaminC": 0,
+        "thiamin": 0.098,
+        "riboflavin": 0.233,
+        "niacin": 0.906,
+        "vitaminB6": 0.199,
+        "folateMcg": 19,
+        "choline": 72.2,
+        "vitaminB12Mcg": 0.08,
+        "vitaminAMcg": 4,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 29.3,
+        "saturatedFat": 1.025,
+        "monounsaturatedFat": 1.118,
+        "polyunsaturatedFat": 2.884,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 17,
+        "gPerCup": 275,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/doubanjiang-thumb.webp"
+}

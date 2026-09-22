@@ -1,0 +1,51 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2646175",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646175/nutrients",
+  "description": "Beef, flank, steak, boneless, choice, raw",
+  "category": "Beef Products",
+  "publicationDate": "10/26/2023",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 169.563,
+    "protein": 20.131,
+    "fat": 9.399,
+    "carbs": 0,
+    "calcium": 3.836,
+    "iron": 1.834,
+    "magnesium": 18.86,
+    "phosphorus": 167.3,
+    "potassium": 331.8,
+    "sodium": 51.3,
+    "zinc": 5.563,
+    "copper": 0.045,
+    "manganese": 0.002,
+    "saturatedFat": 3.551,
+    "monounsaturatedFat": 3.589,
+    "polyunsaturatedFat": 0.314,
+    "transFat": 0.389,
+    "cholesterol": 57.7
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 69.78,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 3.221,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.9938,
+      "unit": "g"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

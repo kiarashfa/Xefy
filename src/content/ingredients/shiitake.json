@@ -1,0 +1,50 @@
+{
+  "id": "shiitake",
+  "name": "Shiitake Mushroom",
+  "proseName": "shiitake mushrooms",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168436",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168436/nutrients",
+      "nutritionPer100g": {
+        "kcal": 296,
+        "protein": 9.58,
+        "fat": 0.99,
+        "carbs": 75.37,
+        "fiber": 11.5,
+        "sugars": 2.21,
+        "saturatedFat": 0.225,
+        "monounsaturatedFat": 0.317,
+        "polyunsaturatedFat": 0.151,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 13,
+        "potassium": 1534,
+        "calcium": 11,
+        "iron": 1.72,
+        "magnesium": 132,
+        "phosphorus": 294,
+        "zinc": 7.66,
+        "copper": 5.165,
+        "manganese": 1.176,
+        "seleniumMcg": 46.1,
+        "vitaminC": 3.5,
+        "vitaminDMcg": 3.9,
+        "thiamin": 0.3,
+        "riboflavin": 1.27,
+        "niacin": 14.1,
+        "vitaminB6": 0.965
+      }
+    }
+  ],
+  "image": "images/ingredients/shiitake-thumb.webp"
+}

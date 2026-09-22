@@ -1,0 +1,176 @@
+---
+title: Salteñas
+subtitle: Slightly sweet baked pastries filled with a chicken, potato and pea stew set into a jelly with gelatine, so it bakes back into the juicy filling Bolivia's salteña is named for.
+label: Bolivia
+defaultServings: 10
+difficulty: Hard
+tags:
+  cuisine: [andean]
+  course: [snack]
+  method: [baking, simmering]
+image:
+  src: images/recipes/saltenas.webp
+  alt: "A golden saltena pastry bitten open, showing its juicy stew filling of meat and broth inside"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: diced
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and diced small
+  - id: peas
+    ingredientRef: peas
+    form: garden
+    amount: 100
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 350
+    unit: ml
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 2
+    unit: g
+  - id: gelatine
+    ingredientRef: gelatine
+    form: powdered
+    amount: 10
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 30
+    unit: g
+  - id: olives
+    ingredientRef: olives
+    form: green
+    amount: 30
+    unit: g
+    note: chopped
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: two eggs, hard-boiled and diced
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 400
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 20
+    unit: g
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 4
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 100
+    unit: g
+    note: melted
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 130
+    unit: ml
+    note: warm
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: cook-filling, durationMin: 20, type: active, phase: cook }
+  - { id: set-filling, durationMin: 5, type: active, phase: cook }
+  - { id: chill-filling, durationMin: 240, type: passive }
+  - { id: make-dough, durationMin: 12, type: "parallel-with:chill-filling", phase: prep }
+  - { id: rest-dough, durationMin: 20, type: passive }
+  - { id: shape-and-fill, durationMin: 25, type: active, phase: prep }
+  - { id: bake, durationMin: 25, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling must be made and chilled at least several hours ahead, and is best made the day before; the dough can be made the same day.
+  freezable: true
+  freezeInstructions: Freeze shaped, unbaked salteñas on a tray until solid, then bag, for up to two months; bake from frozen, allowing extra time.
+  reheatInstructions: Reheat baked salteñas in a moderate oven until warmed through; a microwave leaves the pastry soft.
+notes:
+  techniqueRationale:
+    - stepId: set-filling
+      text: Setting the stew into a firm jelly with gelatine before it goes anywhere near the dough is what lets a genuinely liquid filling be sealed inside pastry by hand; without it, the stock would simply leak out during shaping.
+  commonPitfalls:
+    - stepId: shape-and-fill
+      text: A dough seal that is not pinched tightly and evenly shut lets the filling's melted jelly leak out during baking, which both dries out the salteña and can burn onto the tray.
+---
+
+<Step id="cook-filling">
+  Cook the <Qty ref="onion"/> and <Qty ref="garlic"/> in a pan over a medium
+  heat until soft, then add the <Qty ref="chicken"/>, <Qty ref="potato"/>,
+  <Qty ref="peas"/>, <Qty ref="stock"/>, <Qty ref="paprika"/> and
+  <Qty ref="cumin"/>. Simmer for <Dur step="cook-filling"/>, until the
+  chicken is cooked through and the potato is tender.
+</Step>
+
+<Step id="set-filling">
+  Bloom the <Qty ref="gelatine"/> in a little of the hot liquid, then stir
+  it back into the filling until fully dissolved. This takes about
+  <Dur step="set-filling"/>.
+</Step>
+
+<Step id="chill-filling">
+  Refrigerate the filling for <Dur step="chill-filling"/>, until it has set
+  into a firm jelly.
+</Step>
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="sugar"/>, <Qty ref="achiote"/>
+  and <Qty ref="salt"/>, then work in the <Qty ref="butter"/> and
+  <Qty ref="dough-water"/> to form a smooth, firm dough. This takes about
+  <Dur step="make-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="shape-and-fill">
+  Roll out the dough and cut into rounds. Place a spoonful of the set
+  filling on each round along with a little of the <Qty ref="raisins"/>,
+  <Qty ref="olives"/> and <Qty ref="egg"/>, then fold the dough over and
+  pinch the edges into a tight, sealed braid. This takes about
+  <Dur step="shape-and-fill"/> in total.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={200}/> for <Dur step="bake"/>, until deep golden and the
+  filling inside has melted back to a hot, juicy liquid.
+</Step>

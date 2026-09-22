@@ -1,0 +1,139 @@
+---
+title: Cuban Sandwich
+subtitle: Ham, mojo-roasted pork, Swiss cheese, pickles and mustard pressed inside Cuban bread until the cheese melts and the crust turns crisp and flat.
+label: Miami style
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [main-course]
+  method: [roasting, pan-frying]
+image:
+  src: images/recipes/cuban-sandwich.webp
+  alt: "A pressed Cuban sandwich cut in half, showing layers of ham, roast pork, melted cheese, and pickles inside toasted golden-brown bread"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 400
+    unit: g
+    note: boneless, in one piece
+  - id: sour-orange-juice
+    ingredientRef: orange
+    form: sour
+    amount: 60
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 2
+    unit: g
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 1
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 10
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: bread
+    ingredientRef: cuban-bread
+    form: loaf
+    amount: 480
+    unit: g
+    note: split lengthwise, cut into four
+  - id: ham
+    ingredientRef: ham
+    form: sliced
+    amount: 200
+    unit: g
+  - id: cheese
+    ingredientRef: swiss-cheese
+    form: sliced
+    amount: 160
+    unit: g
+  - id: pickles
+    ingredientRef: pickles
+    form: dill
+    amount: 80
+    unit: g
+    note: sliced
+  - id: mustard
+    ingredientRef: mustard
+    form: yellow
+    amount: 30
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    note: softened, for the outside of the bread
+steps:
+  - { id: marinate-pork, durationMin: 720, type: passive }
+  - { id: roast-pork, durationMin: 180, type: passive }
+  - { id: rest-and-slice, durationMin: 10, type: active, phase: prep }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+  - { id: press, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The pork can be marinated and roasted up to three days ahead and refrigerated; assemble and press the sandwiches just before serving.
+  freezable: true
+  freezeInstructions: Freeze the roasted pork alone, sliced, for up to three months; do not freeze the assembled sandwich.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: press
+      text: Pressing the sandwich under weight while it cooks flattens the layers into the bread and melts the cheese into a binder, which is what holds the whole sandwich together when it is cut and eaten by hand.
+  commonPitfalls:
+    - stepId: assemble
+      text: Layering the pickles directly against the bread rather than between the meats lets their liquid soak in before pressing, leaving the crust soggy instead of crisp.
+---
+
+<Step id="marinate-pork">
+  Combine the <Qty ref="sour-orange-juice"/>, <Qty ref="garlic"/>,
+  <Qty ref="cumin"/>, <Qty ref="oregano"/>, <Qty ref="olive-oil"/>,
+  <Qty ref="salt"/> and <Qty ref="black-pepper"/>, rub over the
+  <Qty ref="pork"/> and refrigerate for <Dur step="marinate-pork"/>.
+</Step>
+
+<Step id="roast-pork">
+  Roast the pork with its marinade at <Temp c={160}/> for
+  <Dur step="roast-pork"/>, until completely tender and cooked through.
+</Step>
+
+<Step id="rest-and-slice">
+  Rest the pork, then slice it thinly. This takes about
+  <Dur step="rest-and-slice"/>.
+</Step>
+
+<Step id="assemble">
+  Split the <Qty ref="bread"/> lengthwise and spread the cut sides with the
+  <Qty ref="mustard"/>. Layer the <Qty ref="ham"/>, sliced roast pork,
+  <Qty ref="cheese"/> and <Qty ref="pickles"/> onto the bottom half and close
+  each sandwich. This takes about <Dur step="assemble"/>.
+</Step>
+
+<Step id="press">
+  Spread the outside of each sandwich with the <Qty ref="butter"/> and cook
+  in a sandwich press or under a heavy pan over a medium heat for
+  <Dur step="press"/>, until the bread is flattened and deeply golden and the
+  cheese has melted.
+</Step>

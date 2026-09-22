@@ -1,0 +1,142 @@
+---
+title: Ajiaco Santafereño
+subtitle: Chicken and potato simmered with guascas until the starchier potatoes break down into the broth, finished with corn, capers, avocado and cream — Bogotá's own soup.
+label: Bogotá
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [colombian]
+  course: [soup]
+  method: [simmering]
+names:
+  notToBeConfusedWith:
+    - name: Cuban ajiaco
+      note: A hearty stew of beef, pork and chicken with tropical tubers, unrelated in method or flavour beyond sharing the name and a general root-vegetable-and-meat structure.
+image:
+  src: images/recipes/ajiaco.webp
+  alt: "A terracotta bowl of ajiaco soup with corn on the cob, potatoes, avocado, and capers, topped with a fried plantain chip, served with a fork on a wooden table"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 800
+    unit: g
+    note: bone-in pieces
+    consumedFraction: 0.75
+    consumedFractionNote: Bone and skin are removed after poaching and not eaten; this reflects the shredded meat actually served.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2500
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: roughly chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 700
+    unit: g
+    note: a mix of starchy and small waxy potatoes, traditionally three Colombian varieties including papa criolla, peeled and cut into chunks
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 300
+    unit: g
+    note: cut into rounds on the cob
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: sliced
+  - id: guascas
+    ingredientRef: guascas
+    form: fresh
+    amount: 15
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: capers
+    ingredientRef: capers
+    form: brined
+    amount: 20
+    unit: g
+  - id: avocado
+    ingredientRef: avocado
+    form: hass
+    amount: 150
+    unit: g
+    note: sliced
+  - id: cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 100
+    unit: g
+steps:
+  - { id: poach-chicken, durationMin: 45, type: passive }
+  - { id: shred-chicken, durationMin: 10, type: active, phase: prep }
+  - { id: cook-potatoes, durationMin: 30, type: passive }
+  - { id: add-corn-and-guascas, durationMin: 5, type: active, phase: cook }
+  - { id: simmer-together, durationMin: 15, type: passive }
+  - { id: serve, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The chicken can be poached and shredded, and the broth strained, up to two days ahead and refrigerated separately.
+  freezable: true
+  freezeInstructions: Freeze the soup without the capers, avocado or cream for up to two months.
+  reheatInstructions: Reheat gently in a covered pot, stirring, until steaming through, then add the fresh toppings just before serving.
+notes:
+  techniqueRationale:
+    - stepId: cook-potatoes
+      text: Using a mix of a starchy potato that breaks down and a firmer, waxy one that holds its shape is what gives ajiaco its characteristic thick, creamy broth studded with intact pieces of potato, rather than either a thin soup or a smooth purée.
+  commonPitfalls:
+    - stepId: add-corn-and-guascas
+      text: Guascas loses its distinctive flavour if simmered too long before serving; adding it well after the potatoes rather than at the start of cooking keeps it noticeable in the finished soup.
+---
+
+<Step id="poach-chicken">
+  Put the <Qty ref="chicken"/> in a large pot with the <Qty ref="water"/>,
+  <Qty ref="onion"/>, <Qty ref="garlic"/> and half the <Qty ref="salt"/>.
+  Bring to a simmer and cook for <Dur step="poach-chicken"/>, until the
+  chicken is fully cooked.
+</Step>
+
+<Step id="shred-chicken">
+  Lift out the chicken, discard the skin and bones, and shred the meat.
+  Return the broth to the pot. This takes about <Dur step="shred-chicken"/>.
+</Step>
+
+<Step id="cook-potatoes">
+  Add the <Qty ref="potato"/> to the broth and simmer for
+  <Dur step="cook-potatoes"/>, until the softer potatoes have broken down
+  and thickened the broth while the firmer ones still hold their shape.
+</Step>
+
+<Step id="add-corn-and-guascas">
+  Stir in the <Qty ref="corn"/>, <Qty ref="spring-onion"/>,
+  <Qty ref="guascas"/>, the shredded chicken and the remaining
+  <Qty ref="salt"/>. This takes about <Dur step="add-corn-and-guascas"/>.
+</Step>
+
+<Step id="simmer-together">
+  Simmer for a further <Dur step="simmer-together"/>, until the corn is
+  tender and the soup has come together.
+</Step>
+
+<Step id="serve">
+  Ladle into bowls and serve with the <Qty ref="capers"/>,
+  <Qty ref="avocado"/> and <Qty ref="cream"/> alongside, for each diner to
+  add as they like. This takes about <Dur step="serve"/>.
+</Step>

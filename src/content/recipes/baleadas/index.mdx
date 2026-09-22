@@ -1,0 +1,97 @@
+---
+title: Baleadas
+subtitle: A thick flour tortilla folded around mashed red beans, crumbled queso fresco and crema — Honduras's everyday street food, one tortilla to a serving.
+label: Sencilla
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [central-american]
+  course: [snack, breakfast]
+  method: [pan-frying, simmering]
+image:
+  src: images/recipes/baleadas.webp
+  alt: "An open flour tortilla topped with refried beans, scrambled egg, and melted cheese on a white plate"
+ingredients:
+  - id: kidney-beans
+    ingredientRef: kidney-beans
+    form: dried
+    amount: 150
+    unit: g
+    note: soaked overnight
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 600
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: Most of the cooking water is absorbed by the beans or boiled away; only a little remains once they are drained and mashed.
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: tortilla
+    ingredientRef: flour-tortilla
+    form: ready-made
+    amount: 320
+    unit: g
+    note: four large flour tortillas
+  - id: cheese
+    ingredientRef: queso-fresco
+    form: crumbled
+    amount: 120
+    unit: g
+  - id: crema
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 80
+    unit: g
+steps:
+  - { id: soak-beans, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 50, type: passive }
+  - { id: refry-beans, durationMin: 10, type: active, phase: cook }
+  - { id: warm-tortillas, durationMin: 5, type: active, phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The mashed beans can be made up to three days ahead and refrigerated.
+  freezable: true
+  freezeInstructions: Freeze the mashed beans alone for up to two months; assemble the baleada fresh.
+  reheatInstructions: Reheat the beans gently in a pan with a splash of water before assembling.
+notes:
+  commonPitfalls:
+    - stepId: refry-beans
+      text: Mashing the beans while they are still wet from cooking, rather than letting most of the liquid cook away first, leaves the filling too loose to hold inside a folded tortilla.
+---
+
+<Step id="soak-beans">
+  Soak the <Qty ref="kidney-beans"/> in plenty of cold water for
+  <Dur step="soak-beans"/>, then drain.
+</Step>
+
+<Step id="cook-beans">
+  Simmer the soaked beans in the <Qty ref="water"/> for
+  <Dur step="cook-beans"/>, until completely soft.
+</Step>
+
+<Step id="refry-beans">
+  Drain the beans, reserving a little of the cooking liquid, and mash them
+  with the <Qty ref="oil"/> and <Qty ref="salt"/> in a pan over a medium
+  heat, adding a splash of the reserved liquid as needed, until they form a
+  thick, smooth paste. This takes about <Dur step="refry-beans"/>.
+</Step>
+
+<Step id="warm-tortillas">
+  Warm the <Qty ref="tortilla"/> on a dry, hot griddle or pan for
+  <Dur step="warm-tortillas"/>, until soft and lightly speckled.
+</Step>
+
+<Step id="assemble">
+  Spread the mashed beans over half of each warm tortilla, scatter with the
+  <Qty ref="cheese"/> and spoon over the <Qty ref="crema"/>, then fold in
+  half. This takes about <Dur step="assemble"/>.
+</Step>

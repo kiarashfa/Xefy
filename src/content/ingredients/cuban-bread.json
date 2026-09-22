@@ -1,0 +1,59 @@
+{
+  "id": "cuban-bread",
+  "name": "Cuban Bread",
+  "proseName": "Cuban bread",
+  "category": "bread",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "loaf",
+      "label": "Loaf",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174913",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174913/nutrients",
+      "sourceNote": "USDA publishes no record specific to Cuban bread. This is its record for Italian bread, the closest published composition for a lean, lard-enriched white loaf with a similar crumb and crust.",
+      "nutritionPer100g": {
+        "kcal": 259,
+        "protein": 9.49,
+        "carbs": 48.11,
+        "fat": 2.73,
+        "fiber": 2.1,
+        "sugars": 4.69,
+        "saturatedFat": 0.544,
+        "monounsaturatedFat": 0.493,
+        "polyunsaturatedFat": 1.312,
+        "transFat": 0.017,
+        "cholesterol": 0,
+        "sodium": 618,
+        "potassium": 124,
+        "calcium": 105,
+        "iron": 3.45,
+        "magnesium": 26,
+        "phosphorus": 95,
+        "zinc": 0.79,
+        "copper": 0.121,
+        "manganese": 0.491,
+        "seleniumMcg": 17.2,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.29,
+        "vitaminKMcg": 3,
+        "thiamin": 0.582,
+        "riboflavin": 0.321,
+        "niacin": 4.538,
+        "vitaminB6": 0.104,
+        "folateMcg": 132,
+        "vitaminB12Mcg": 0,
+        "choline": 14.6
+      }
+    }
+  ],
+  "image": "images/ingredients/cuban-bread-thumb.webp"
+}

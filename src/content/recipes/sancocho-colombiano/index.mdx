@@ -1,0 +1,140 @@
+---
+title: Sancocho de Gallina
+subtitle: Chicken simmered with green plantain, cassava, potato and corn into a light, golden broth, seasoned with tomato, cumin and cilantro rather than the heavier spicing of its Dominican cousin.
+label: Colombia
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [colombian]
+  course: [soup]
+  method: [simmering]
+names:
+  notToBeConfusedWith:
+    - name: Sancocho Dominicano
+      note: Built on two or three meats rather than chicken alone, seasoned with oregano and sour orange, and noticeably heavier and more heavily spiced than the plainer, chicken-only Colombian version.
+      slugRef: sancocho-dominicano
+image:
+  src: images/recipes/sancocho-colombiano.webp
+  alt: "A steaming bowl of Colombian sancocho with corn on the cob, meat, and chopped cilantro, served with a side arepa"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 900
+    unit: g
+    note: bone-in pieces
+    consumedFraction: 0.75
+    consumedFractionNote: Bone and skin are left in the pot for flavour but not all of it is eaten; this reflects the meat actually served.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2200
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 12
+    unit: g
+    note: crushed
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 2
+    unit: g
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 250
+    unit: g
+    note: peeled and cut into thick chunks
+  - id: cassava
+    ingredientRef: cassava
+    form: raw
+    amount: 250
+    unit: g
+    note: peeled and cut into chunks
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 250
+    unit: g
+    note: peeled and cut into chunks
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 250
+    unit: g
+    note: cut into pieces on the cob
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: sliced
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+steps:
+  - { id: build-broth, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-chicken, durationMin: 40, type: passive }
+  - { id: add-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: simmer-vegetables, durationMin: 30, type: passive }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Sancocho keeps well and often tastes better the next day; refrigerate for up to three days.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months.
+  reheatInstructions: Reheat gently in a covered pot, stirring, adding a little water if the broth has thickened too much.
+notes:
+  techniqueRationale:
+    - stepId: simmer-vegetables
+      text: Adding the plantain and root vegetables only after the chicken broth is already established lets them cook in a broth already carrying flavour, rather than diluting it before the chicken has had time to season the pot.
+---
+
+<Step id="build-broth">
+  Put the <Qty ref="chicken"/> in a large pot with the <Qty ref="water"/>,
+  <Qty ref="onion"/>, <Qty ref="garlic"/>, <Qty ref="tomato"/>,
+  <Qty ref="cumin"/> and half the <Qty ref="salt"/>. This takes about
+  <Dur step="build-broth"/>.
+</Step>
+
+<Step id="simmer-chicken">
+  Bring to a simmer and cook for <Dur step="simmer-chicken"/>, until the
+  chicken is tender.
+</Step>
+
+<Step id="add-vegetables">
+  Add the <Qty ref="plantain"/>, <Qty ref="cassava"/>, <Qty ref="potato"/>,
+  <Qty ref="corn"/> and remaining <Qty ref="salt"/>. This takes about
+  <Dur step="add-vegetables"/>.
+</Step>
+
+<Step id="simmer-vegetables">
+  Simmer for <Dur step="simmer-vegetables"/>, until the vegetables are
+  tender and the broth has thickened slightly.
+</Step>
+
+<Step id="finish">
+  Stir in the <Qty ref="spring-onion"/> and <Qty ref="coriander"/> and
+  serve. This takes about <Dur step="finish"/>.
+</Step>

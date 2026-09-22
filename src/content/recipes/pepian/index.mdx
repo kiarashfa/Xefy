@@ -1,0 +1,150 @@
+---
+title: Pepián
+subtitle: Bone-in chicken and potato in a thick, toasted sauce of guajillo chilli, squash seeds, sesame and tortilla — Guatemala's national dish.
+label: Guatemala
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [central-american]
+  course: [main-course]
+  method: [simmering, sauteing]
+image:
+  src: images/recipes/pepian.webp
+  alt: "Chicken pieces in dark reddish-brown pepián sauce with toasted sesame seeds, served with rice, a fanned avocado slice, and green beans"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 800
+    unit: g
+    note: bone-in
+    consumedFraction: 0.85
+    consumedFractionNote: Bone-in thighs lose roughly a seventh of their raw weight to bone once eaten.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1200
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: roughly chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+  - id: guajillo-chilli
+    ingredientRef: guajillo-chilli
+    form: dried
+    amount: 15
+    unit: g
+    note: stemmed and seeded
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 200
+    unit: g
+  - id: squash-seeds
+    ingredientRef: squash-seeds
+    form: hulled-dried
+    amount: 40
+    unit: g
+  - id: sesame-seed
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 15
+    unit: g
+  - id: corn-tortilla
+    ingredientRef: corn-tortilla
+    form: small
+    amount: 30
+    unit: g
+    note: one tortilla, torn into pieces
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 1
+    unit: g
+  - id: allspice
+    ingredientRef: allspice
+    form: ground
+    amount: 1
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and cut into chunks
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: poach-chicken, durationMin: 40, type: passive }
+  - { id: toast-aromatics, durationMin: 8, type: "parallel-with:poach-chicken", phase: cook }
+  - { id: blend-sauce, durationMin: 8, type: active, phase: prep }
+  - { id: fry-sauce, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-together, durationMin: 25, type: passive }
+makeAhead:
+  aheadInstructions: Pepián keeps well and deepens in flavour over a day or two in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months.
+  reheatInstructions: Reheat gently in a covered pot, stirring, adding a little water if the sauce has thickened too much.
+notes:
+  techniqueRationale:
+    - stepId: toast-aromatics
+      text: Dry-toasting the chilli, squash seeds, sesame seeds and tortilla before blending develops a deep, nutty flavour that boiling the same ingredients would leave flat and raw-tasting.
+  commonPitfalls:
+    - stepId: fry-sauce
+      text: Skipping the step of frying the blended sauce in oil before it joins the broth leaves it tasting of raw seeds and chilli rather than the toasted, rounded flavour a proper pepián has.
+---
+
+<Step id="poach-chicken">
+  Put the <Qty ref="chicken"/> in a pot with the <Qty ref="water"/>, half the
+  <Qty ref="onion"/>, half the <Qty ref="garlic"/> and the
+  <Qty ref="salt"/>. Bring to a simmer and cook for
+  <Dur step="poach-chicken"/>, until the chicken is cooked through. Lift out
+  the chicken, reserving the broth.
+</Step>
+
+<Step id="toast-aromatics">
+  Meanwhile, toast the <Qty ref="guajillo-chilli"/>, <Qty ref="squash-seeds"/>,
+  <Qty ref="sesame-seed"/> and <Qty ref="corn-tortilla"/> separately in a dry
+  pan for <Dur step="toast-aromatics"/>, until fragrant, taking care not to
+  scorch them.
+</Step>
+
+<Step id="blend-sauce">
+  Blend the toasted ingredients with the <Qty ref="tomato"/>, the remaining
+  <Qty ref="onion"/> and <Qty ref="garlic"/>, the <Qty ref="cinnamon"/>,
+  <Qty ref="allspice"/>, <Qty ref="black-pepper"/> and enough of the reserved
+  broth to make a smooth, thick sauce. This takes about
+  <Dur step="blend-sauce"/>.
+</Step>
+
+<Step id="fry-sauce">
+  Heat the <Qty ref="oil"/> in a pot over a medium heat and fry the blended
+  sauce for <Dur step="fry-sauce"/>, stirring often, until it darkens
+  slightly and smells toasted rather than raw.
+</Step>
+
+<Step id="simmer-together">
+  Stir in the remaining reserved broth, the poached chicken and the
+  <Qty ref="potato"/>. Simmer for <Dur step="simmer-together"/>, until the
+  potato is tender and the sauce has thickened.
+</Step>

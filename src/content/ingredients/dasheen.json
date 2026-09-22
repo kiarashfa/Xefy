@@ -1,0 +1,74 @@
+{
+  "id": "dasheen",
+  "name": "Dasheen",
+  "proseName": "dasheen",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Taro leaves",
+        "lang": "en"
+      },
+      {
+        "name": "Callaloo bush",
+        "region": "Trinidad and Tobago",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "leaves-fresh",
+      "label": "Leaves, fresh, raw",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168487",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168487/nutrients",
+      "sourceNote": "USDA carries no separate record for dasheen; this is its record for raw taro leaves, the same plant, Colocasia esculenta, that Trinidadian cooks call dasheen bush.",
+      "nutritionPer100g": {
+        "kcal": 42,
+        "protein": 4.98,
+        "carbs": 6.7,
+        "fat": 0.74,
+        "fiber": 3.7,
+        "sugars": 3.01,
+        "saturatedFat": 0.151,
+        "monounsaturatedFat": 0.06,
+        "polyunsaturatedFat": 0.307,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 3,
+        "potassium": 648,
+        "calcium": 107,
+        "iron": 2.25,
+        "magnesium": 45,
+        "phosphorus": 60,
+        "zinc": 0.41,
+        "copper": 0.27,
+        "manganese": 0.714,
+        "seleniumMcg": 0.9,
+        "vitaminAMcg": 241,
+        "vitaminC": 52,
+        "vitaminDMcg": 0,
+        "vitaminE": 2.02,
+        "vitaminKMcg": 108.6,
+        "thiamin": 0.209,
+        "riboflavin": 0.456,
+        "niacin": 1.513,
+        "vitaminB6": 0.146,
+        "folateMcg": 126,
+        "vitaminB12Mcg": 0,
+        "choline": 12.8
+      },
+      "density": {
+        "gPerCup": 28,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/dasheen-thumb.webp"
+}

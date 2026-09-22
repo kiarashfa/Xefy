@@ -1,0 +1,121 @@
+---
+title: Dhalpuri Roti
+subtitle: A soft, griddle-cooked flatbread rolled around a filling of ground, spiced yellow split peas — one roti is one serving, usually wrapped around a curry.
+label: Trinidad
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [caribbean]
+  course: [bread]
+  method: [pan-frying, boiling]
+image:
+  src: images/recipes/trinidad-roti.webp
+  alt: "A folded dhalpurie roti flatbread beside dark curry goat and mashed orange curried pumpkin"
+ingredients:
+  - id: split-peas
+    ingredientRef: peas
+    form: yellow-split-dried
+    amount: 250
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: peeled
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 6
+    unit: g
+    note: toasted
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: salt-dough, amount: 5 }
+      - { id: salt-filling, amount: 3 }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 280
+    unit: ml
+    note: for the dough
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+    note: for cooking
+steps:
+  - { id: boil-peas, durationMin: 35, type: passive }
+  - { id: make-dough, durationMin: 10, type: "parallel-with:boil-peas", phase: prep }
+  - { id: rest-dough, durationMin: 20, type: passive }
+  - { id: grind-filling, durationMin: 8, type: "parallel-with:rest-dough", phase: prep }
+  - { id: stuff-and-roll, durationMin: 20, type: active, phase: prep }
+  - { id: cook, durationMin: 24, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The ground filling and the dough can each be made up to a day ahead and refrigerated separately, covered; bring both to room temperature before stuffing and rolling.
+  freezable: true
+  freezeInstructions: Freeze the cooked, cooled roti stacked between sheets of baking paper for up to one month.
+  reheatInstructions: Reheat on a dry hot griddle or a dry pan for a minute on each side until warmed through and pliable again.
+notes:
+  techniqueRationale:
+    - stepId: cook
+      text: Cooking the stuffed dough on a dry, very hot griddle before brushing with oil lets the surface set and seal around the loose filling, so the roti holds together when it is later oiled and pressed to encourage puffing.
+  commonPitfalls:
+    - stepId: stuff-and-roll
+      text: Rolling a stuffed ball too thin, or with filling pushed too close to the edge, tears the dough and lets the split peas burst through onto the griddle.
+---
+
+<Step id="boil-peas">
+  Rinse the <Qty ref="split-peas"/> and simmer in plenty of water for
+  <Dur step="boil-peas"/>, until completely soft, then drain well.
+</Step>
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="baking-powder"/> and
+  <Qty ref="salt-dough"/> in a large bowl, then work in the <Qty ref="water"/>
+  and knead for <Dur step="make-dough"/>, until the dough is smooth and
+  elastic.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest at room temperature for
+  <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="grind-filling">
+  Grind the drained split peas with the <Qty ref="garlic"/>,
+  <Qty ref="cumin"/> and <Qty ref="salt-filling"/> to a dry, fine paste,
+  working in batches if needed; this takes about <Dur step="grind-filling"/>.
+</Step>
+
+<Step id="stuff-and-roll">
+  Divide the dough into as many equal pieces as roti are being made. Flatten
+  each piece into a cup, place a portion of the split pea filling in the
+  centre, then draw the edges up and pinch them closed around it. Flatten each
+  stuffed ball with the palm and roll it out gently into a thin, even round,
+  taking care not to tear the dough or force filling out at the edges. This
+  takes about <Dur step="stuff-and-roll"/> in total.
+</Step>
+
+<Step id="cook">
+  Cook each round on a dry, very hot griddle for about a minute a side, until
+  set and lightly spotted, then brush both sides with the <Qty ref="oil"/> and
+  press gently around the edges with a folded cloth to encourage it to puff.
+  Stack the cooked roti under a clean cloth to keep them soft while the rest
+  cook, in total about <Dur step="cook"/>.
+</Step>

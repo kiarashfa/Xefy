@@ -1,0 +1,100 @@
+---
+title: Youtiao
+subtitle: A wheat dough leavened with baking powder and ammonium bicarbonate, twisted into a pair and deep-fried until it puffs into a hollow, golden-brown stick.
+label: Breakfast
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [breakfast]
+  method: [deep-frying]
+names:
+  alsoKnownAs:
+    - { name: Chinese oil stick, lang: en }
+    - { name: You char kway, region: Southeast Asia, lang: en }
+image:
+  src: images/recipes/youtiao.webp
+  alt: "A pile of golden, ridged fried youtiao dough sticks, freshly cooked"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 400
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 240
+    unit: ml
+    note: lukewarm
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 6
+    unit: g
+  - id: ammonium-bicarbonate
+    ingredientRef: ammonium-bicarbonate
+    form: standard
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 8
+    unit: g
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1200
+    unit: ml
+    consumedFraction: 0.08
+    consumedFractionNote: Most of the deep-frying oil is left behind in the pan and reused or discarded; only what clings to the dough as it puffs is eaten, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 240, type: passive }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: fry, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough must rest for several hours or overnight for the raising agents to fully develop, so this stage is effectively done ahead. Fry only just before serving, since youtiao loses its crispness quickly once cool.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat briefly in a hot oven or dry pan to recrisp; a microwave leaves it tough and chewy.
+notes:
+  techniqueRationale:
+    - stepId: rest-dough
+      text: The long, slack rest is what lets the two raising agents work without kneading strength back into the dough — a firmer, well-developed dough resists puffing and fries dense rather than hollow.
+  commonPitfalls:
+    - stepId: fry
+      text: Oil that is not hot enough lets the dough absorb fat before it has a chance to puff, giving a heavy, greasy result instead of a light, hollow one. The oil needs to be at full frying temperature before the first pair goes in.
+---
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="baking-powder"/>,
+  <Qty ref="ammonium-bicarbonate"/>, <Qty ref="salt"/> and <Qty ref="sugar"/> in a
+  bowl. Add the <Qty ref="water"/> and bring together into a soft, wet dough,
+  mixing rather than kneading, until no dry flour remains.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest at room temperature for
+  <Dur step="rest-dough"/>, until visibly relaxed and slightly puffed.
+</Step>
+
+<Step id="shape">
+  Turn the dough out onto an oiled surface without kneading it, and pat it into a
+  rectangle. Cut into even strips, stack two strips together and press a
+  chopstick along the length of the top strip to seal the pair, then stretch each
+  pair gently as you go.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> until shimmering, then lower each pair in
+  gently, stretching slightly as it enters the oil. Fry for <Dur step="fry"/>,
+  turning constantly, until puffed, hollow and deep golden all over. Lift out and
+  drain.
+</Step>

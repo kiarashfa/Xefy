@@ -27,7 +27,12 @@
         "sugars": 0,
         "sodium": 0
       },
-      "density": { "gPerTsp": 5, "densitySource": "estimated", "densityClass": "liquid-water-like" }
+      "density": {
+        "gPerTsp": 5,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
     }
-  ]
+  ],
+  "image": "images/ingredients/food-colouring-thumb.webp"
 }

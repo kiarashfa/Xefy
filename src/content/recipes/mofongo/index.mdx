@@ -1,0 +1,101 @@
+---
+title: Mofongo
+subtitle: Green plantains fried until tender then pounded in a wooden mortar with garlic, olive oil and crisp pork chicharrón, mounded and served with broth.
+label: Puerto Rico
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [side]
+  method: [deep-frying]
+image:
+  src: images/recipes/mofongo.webp
+  alt: "A domed mound of mashed fried plantain mofongo, studded with visible flecks of garlic and crisp pork, on a plate beside a tomato slice and coleslaw"
+ingredients:
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 600
+    unit: g
+    note: peeled and cut into thick rounds
+  - id: pork-belly
+    ingredientRef: pork-belly
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into small pieces, for the chicharrón
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 600
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pot; the plantains and pork absorb only a fraction of what they are fried in.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 20
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 150
+    unit: ml
+    note: warmed, to moisten the mash and serve alongside
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+steps:
+  - { id: fry-pork, durationMin: 20, type: active, phase: cook }
+  - { id: fry-plantains, durationMin: 15, type: active, phase: cook }
+  - { id: mash, durationMin: 10, type: active, phase: cook }
+  - { id: shape, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Mofongo is best made fresh; the mash stiffens badly once cold and does not return to its original texture on reheating.
+notes:
+  techniqueRationale:
+    - stepId: mash
+      text: Pounding the fried plantain with the garlic and chicharrón while everything is still hot, rather than blending it smooth, is what keeps mofongo's texture coarse and studded with crisp pork rather than a uniform paste.
+  commonPitfalls:
+    - stepId: fry-plantains
+      text: Plantain fried at too high a heat browns on the outside before the inside softens, which mashes into a mound with hard, undercooked lumps running through it.
+---
+
+<Step id="fry-pork">
+  Heat the <Qty ref="frying-oil"/> in a deep, heavy pot and fry the
+  <Qty ref="pork-belly"/> for <Dur step="fry-pork"/>, until deeply browned
+  and crisp all over. Lift out with a slotted spoon and drain, leaving the
+  oil in the pot.
+</Step>
+
+<Step id="fry-plantains">
+  Fry the <Qty ref="plantain"/> in the same oil for <Dur step="fry-plantains"/>,
+  turning occasionally, until golden outside and completely tender when
+  pierced. Lift out and drain.
+</Step>
+
+<Step id="mash">
+  While still hot, pound the fried plantain in a mortar with the
+  <Qty ref="garlic"/>, <Qty ref="olive-oil"/> and <Qty ref="salt"/>, working
+  in the crisp pork toward the end so it stays in coarse pieces rather than
+  breaking down completely. Moisten with a little of the warm
+  <Qty ref="stock"/> as needed to bring it together. This takes about
+  <Dur step="mash"/>.
+</Step>
+
+<Step id="shape">
+  Press the mash into mounds, hollowing the centre of each slightly, and
+  serve at once with the remaining stock poured around or alongside. This
+  takes about <Dur step="shape"/>.
+</Step>

@@ -49,6 +49,42 @@
         "polyunsaturatedFat": 0.15,
         "cholesterol": 0
       }
+    },
+    {
+      "id": "fresh",
+      "label": "Fresh, wide",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168914",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168914/nutrients",
+      "sourceNote": "USDA does not separately carry the fresh, pre-steamed wide rice noodle (shahe fen) sold refrigerated for dishes such as chow fun. This is its record for cooked rice noodles generally, the closest already-hydrated rice-noodle profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 108,
+        "protein": 1.79,
+        "fat": 0.2,
+        "carbs": 24.01,
+        "fiber": 1,
+        "sugars": 0.03,
+        "saturatedFat": 0.023,
+        "monounsaturatedFat": 0.026,
+        "polyunsaturatedFat": 0.023,
+        "cholesterol": 0,
+        "sodium": 19,
+        "potassium": 4,
+        "calcium": 4,
+        "iron": 0.14,
+        "magnesium": 3,
+        "phosphorus": 20,
+        "zinc": 0.25,
+        "copper": 0.038,
+        "manganese": 0.114,
+        "seleniumMcg": 4.5,
+        "vitaminC": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.03,
+        "vitaminKMcg": 0
+      }
     }
   ],
   "image": "images/ingredients/rice-noodles-thumb.webp"

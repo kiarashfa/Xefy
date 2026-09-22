@@ -1,0 +1,137 @@
+---
+title: Mapo Tofu
+subtitle: Soft tofu simmered in a sauce of doubanjiang, fermented black bean and minced beef, finished with Sichuan pepper for the dish's characteristic tingling heat.
+label: Sichuan
+defaultServings: 3
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Mapo doufu, lang: zh }
+image:
+  src: images/recipes/mapo-tofu.webp
+  alt: "A bowl of mapo tofu with soft tofu cubes and minced pork in glossy red chilli oil, topped with ground Sichuan pepper and scallion"
+ingredients:
+  - id: tofu
+    ingredientRef: tofu
+    form: silken
+    amount: 450
+    unit: g
+    note: cut into cubes
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 150
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: doubanjiang
+    ingredientRef: doubanjiang
+    form: standard
+    amount: 30
+    unit: g
+  - id: fermented-black-beans
+    ingredientRef: fermented-black-beans
+    form: salted
+    amount: 10
+    unit: g
+    note: rinsed and chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: minced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: minced
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 5
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 250
+    unit: ml
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 12
+    unit: g
+    note: mixed with a little cold water
+  - id: sichuan-pepper
+    ingredientRef: sichuan-pepper
+    form: whole
+    amount: 4
+    unit: g
+    note: toasted and ground
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 25
+    unit: g
+    note: finely sliced, to finish
+steps:
+  - { id: blanch-tofu, durationMin: 3, type: active, phase: prep }
+  - { id: brown-beef, durationMin: 5, type: active, phase: cook }
+  - { id: fry-paste, durationMin: 3, type: active, phase: cook }
+  - { id: simmer-tofu, durationMin: 8, type: active, phase: cook }
+  - { id: thicken, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat gently on the hob rather than a microwave, which can cause the tofu to break apart; stir as little as possible.
+notes:
+  techniqueRationale:
+    - stepId: blanch-tofu
+      text: A brief blanch in salted water firms the tofu's surface just enough to survive the simmer without breaking apart, without changing its soft, custardy centre.
+  commonPitfalls:
+    - stepId: simmer-tofu
+      text: Stirring the tofu with a spoon rather than shaking the pan or folding gently breaks the cubes down into curds. The tofu wants to be moved as little as possible once it goes in.
+---
+
+<Step id="blanch-tofu">
+  Blanch the <Qty ref="tofu"/> in a pot of gently simmering, lightly salted
+  water for <Dur step="blanch-tofu"/>, then drain carefully and set aside.
+</Step>
+
+<Step id="brown-beef">
+  Heat the <Qty ref="oil"/> in a wok over high heat and fry the
+  <Qty ref="beef"/> for <Dur step="brown-beef"/>, breaking it up, until browned
+  and starting to crisp at the edges.
+</Step>
+
+<Step id="fry-paste">
+  Add the <Qty ref="doubanjiang"/>, <Qty ref="fermented-black-beans"/>,
+  <Qty ref="garlic"/>, <Qty ref="ginger"/> and <Qty ref="dried-chilli"/> and fry
+  for <Dur step="fry-paste"/>, until the oil turns red and fragrant.
+</Step>
+
+<Step id="simmer-tofu">
+  Pour in the <Qty ref="stock"/> and <Qty ref="soy-sauce"/> and bring to a
+  simmer. Slide in the blanched tofu, and simmer gently, shaking the pan
+  rather than stirring, for <Dur step="simmer-tofu"/>.
+</Step>
+
+<Step id="thicken">
+  Stir in the <Qty ref="cornflour"/> mixture in stages, folding gently, until
+  the sauce clings to the tofu, about <Dur step="thicken"/>. Finish with the
+  <Qty ref="sichuan-pepper"/> and <Qty ref="spring-onion"/>.
+</Step>

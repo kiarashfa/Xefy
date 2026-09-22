@@ -1,0 +1,106 @@
+---
+title: Mantou
+subtitle: A plain, faintly sweet steamed wheat bun, leavened soft and white, eaten alongside a meal in place of rice.
+label: Northern Chinese
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [chinese]
+  course: [bread]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Chinese steamed bun, lang: en }
+  notToBeConfusedWith:
+    - name: Manti
+      note: The Turkish and Central Asian boiled or steamed dumpling of the same root name — small, filled with meat, and served under yoghurt and a spiced butter, rather than a plain unfilled bun eaten as bread.
+      slugRef: manti
+image:
+  src: images/recipes/mantou.webp
+  alt: "A single plain steamed mantou bun with a pale, softly wrinkled surface"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 240
+    unit: ml
+    note: lukewarm
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 40
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 5
+    unit: g
+steps:
+  - { id: bloom-yeast, durationMin: 10, type: passive }
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-prove, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: second-prove, durationMin: 20, type: passive }
+  - { id: steam, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Shaped, unproved buns can be kept covered in the refrigerator overnight; bring back to room temperature before the second prove.
+  freezable: true
+  freezeInstructions: Freeze the cooked, cooled buns in a bag. Re-steam from frozen for a few minutes until soft and hot through.
+  reheatInstructions: Re-steam rather than microwave, which turns the crumb rubbery.
+notes:
+  commonPitfalls:
+    - stepId: steam
+      text: Lifting the lid before the steamer has fully cooled lets a rush of cold air hit the buns, and they collapse and wrinkle. Turn off the heat and let the steam settle for a minute before uncovering.
+---
+
+<Step id="bloom-yeast">
+  Stir the <Qty ref="yeast"/> into the <Qty ref="water"/> and set aside for
+  <Dur step="bloom-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="sugar"/> and
+  <Qty ref="baking-powder"/> in a large bowl, then pour in the yeast mixture and bring
+  together into a shaggy dough.
+</Step>
+
+<Step id="knead">
+  Turn the dough out onto the <Qty ref="flour-bench"/> and knead for
+  <Dur step="knead"/>, until smooth, elastic and no longer tacky.
+</Step>
+
+<Step id="first-prove">
+  Return the dough to the bowl, cover and leave to prove somewhere warm for
+  <Dur step="first-prove"/>, until roughly doubled in size.
+</Step>
+
+<Step id="shape">
+  Knock the dough back and roll it into a log, then divide it into even pieces and
+  shape each into a smooth, taut bun. Set each on a small square of baking paper.
+</Step>
+
+<Step id="second-prove">
+  Cover the shaped buns loosely and leave to prove for a further
+  <Dur step="second-prove"/>, until visibly puffed.
+</Step>
+
+<Step id="steam">
+  Arrange the buns in a steamer basket with space between each to allow for
+  expansion, and steam over gently simmering water for <Dur step="steam"/>, until
+  risen, glossy and firm to the touch. Turn off the heat and let the steam settle
+  briefly before lifting the lid.
+</Step>

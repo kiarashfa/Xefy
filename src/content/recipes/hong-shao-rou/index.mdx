@@ -1,0 +1,130 @@
+---
+title: Red Braised Pork Belly
+subtitle: Pork belly seared, then braised low and slow in soy sauce, rice wine, star anise and rock sugar until the fat turns glossy and almost translucent.
+label: Hunan
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [braising]
+names:
+  alsoKnownAs:
+    - { name: Hong shao rou, lang: zh }
+    - { name: "Mao's red-braised pork", region: Hunan, lang: en }
+image:
+  src: images/recipes/hong-shao-rou.webp
+  alt: "Glossy caramel-red braised pork belly cubes in a cast iron skillet, coated in thick reduced sauce"
+ingredients:
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 800
+    unit: g
+    note: cut into large cubes
+  - id: sugar
+    ingredientRef: rock-sugar
+    form: standard
+    amount: 40
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 20
+    unit: g
+    note: sliced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: cut into lengths, plus more finely sliced to finish
+  - id: shaoxing-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 60
+    unit: ml
+  - id: light-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+  - id: dark-soy
+    ingredientRef: soy-sauce
+    form: dark
+    amount: 20
+    unit: ml
+  - id: star-anise
+    ingredientRef: star-anise
+    form: whole
+    amount: 4
+    unit: g
+    consumedFraction: 0.05
+    consumedFractionNote: The whole pods flavour the braise and are removed before serving; only a trace of their oil carries through into the sauce, which is an editorial estimate rather than a sourced figure.
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 3
+    unit: g
+    consumedFraction: 0.05
+    consumedFractionNote: The stick flavours the braise and is removed before serving; only a trace of its oil carries through, which is an editorial estimate rather than a sourced figure.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: ml
+steps:
+  - { id: blanch-pork, durationMin: 5, type: active, phase: prep }
+  - { id: caramelise-sugar, durationMin: 5, type: active, phase: cook }
+  - { id: sear-pork, durationMin: 8, type: active, phase: cook }
+  - { id: braise, durationMin: 75, type: passive }
+  - { id: reduce, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The braise improves overnight in the refrigerator, once cooled, as the sauce continues to firm around the pork; reheat gently before finishing the reduction.
+  freezable: true
+  freezeInstructions: Freeze in its sauce. Thaw fully in the refrigerator before reheating gently on the hob.
+  reheatInstructions: Reheat gently on the hob, covered, until piping hot throughout.
+notes:
+  techniqueRationale:
+    - stepId: caramelise-sugar
+      text: Melting the rock sugar to a deep amber before the pork goes in, rather than adding it as a sweetener later, is what gives the dish its glossy mahogany colour — the same colour a plain soy braise cannot fully reach on its own.
+  commonPitfalls:
+    - stepId: braise
+      text: A hard simmer breaks the pork cubes apart before the fat has had time to turn tender and translucent. The braise wants the gentlest possible bubble, with the lid slightly ajar, for the full length of cooking.
+---
+
+<Step id="blanch-pork">
+  Blanch the <Qty ref="pork"/> in a pot of boiling water for
+  <Dur step="blanch-pork"/>, then drain and rinse.
+</Step>
+
+<Step id="caramelise-sugar">
+  Heat the <Qty ref="oil"/> in a heavy pot over a low heat and add the
+  <Qty ref="sugar"/>. Cook gently, swirling, for <Dur step="caramelise-sugar"/>,
+  until melted and a deep amber colour.
+</Step>
+
+<Step id="sear-pork">
+  Add the blanched pork to the pot and turn it through the caramel until every
+  side is coated and lightly coloured, about <Dur step="sear-pork"/>. Add the
+  <Qty ref="ginger"/> and <Qty ref="spring-onion"/> and stir briefly.
+</Step>
+
+<Step id="braise">
+  Pour in the <Qty ref="shaoxing-wine"/>, <Qty ref="light-soy"/>,
+  <Qty ref="dark-soy"/> and <Qty ref="water"/>, and add the
+  <Qty ref="star-anise"/> and <Qty ref="cinnamon"/>. Bring to a bare simmer,
+  cover with the lid slightly ajar, and braise for <Dur step="braise"/>, until
+  the pork is completely tender.
+</Step>
+
+<Step id="reduce">
+  Uncover fully and raise the heat, reducing the sauce for
+  <Dur step="reduce"/>, until thick and glossy enough to coat the pork. Discard
+  the spices and finish with a little extra sliced spring onion.
+</Step>

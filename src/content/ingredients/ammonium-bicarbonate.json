@@ -1,0 +1,50 @@
+{
+  "id": "ammonium-bicarbonate",
+  "name": "Ammonium Bicarbonate",
+  "proseName": "ammonium bicarbonate",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Baker's ammonia",
+        "region": "en"
+      }
+    ]
+  },
+  "category": "leavening",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175040",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175040/nutrients",
+      "sourceNote": "USDA carries no food record for ammonium bicarbonate, since it is an inorganic leavening salt rather than a food. This cites its record for bicarbonate of soda, another inert leavening salt, to establish that the value is genuinely zero rather than unmeasured; ammonium bicarbonate itself contributes no food energy or macronutrients and decomposes fully into gas on baking.",
+      "nutritionPer100g": {
+        "kcal": 0,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "sodium": 0,
+        "calcium": 0,
+        "iron": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 4,
+        "densitySource": "estimated",
+        "densityClass": "salt-fine"
+      }
+    }
+  ],
+  "image": "images/ingredients/ammonium-bicarbonate-thumb.webp"
+}

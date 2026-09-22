@@ -1,0 +1,208 @@
+---
+title: Char Siu Bao
+subtitle: A soft, white steamed bun leavened with both yeast and baking powder, split open at the top and filled with diced char siu in a sticky, savoury-sweet sauce.
+description: The classic dim sum teahouse version — steamed to a soft white finish, its bun cracked open at the crown from the rise.
+label: Steamed
+defaultServings: 12
+difficulty: Hard
+tags:
+  cuisine: [chinese]
+  course: [starter]
+  method: [steaming, roasting]
+names:
+  alsoKnownAs:
+    - { name: Cha siu bao, lang: en }
+    - { name: Char siu bau, region: Hong Kong, lang: en }
+image:
+  src: images/recipes/char-siu-bao.webp
+  alt: "Two fluffy white steamed char siu bao in a bamboo steamer, one split open showing red char siu filling"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 250
+    unit: ml
+    note: lukewarm
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 6
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 55
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 6
+    unit: g
+  - id: dough-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 400
+    unit: g
+    note: diced small
+  - id: hoisin
+    ingredientRef: hoisin-sauce
+    form: standard
+    amount: 30
+    unit: g
+    portions:
+      - { id: marinade-hoisin, amount: 20 }
+      - { id: sauce-hoisin, amount: 10 }
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 25
+    unit: ml
+    portions:
+      - { id: marinade-soy, amount: 15 }
+      - { id: sauce-soy, amount: 10 }
+  - id: shaoxing-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 15
+    unit: ml
+  - id: char-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: minced
+  - id: five-spice
+    ingredientRef: five-spice
+    form: ground
+    amount: 2
+    unit: g
+  - id: oyster-sauce
+    ingredientRef: oyster-sauce
+    form: standard
+    amount: 20
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 15
+    unit: g
+  - id: sauce-water
+    ingredientRef: water
+    form: tap
+    amount: 80
+    unit: ml
+    note: for the filling sauce
+steps:
+  - { id: marinate-pork, durationMin: 10, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 120, type: passive }
+  - { id: bloom-yeast, durationMin: 10, type: "parallel-with:rest-marinade", phase: prep }
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-prove, durationMin: 60, type: passive }
+  - { id: roast-pork, durationMin: 20, type: "parallel-with:first-prove", phase: cook }
+  - { id: make-filling, durationMin: 10, type: active, phase: prep }
+  - { id: shape, durationMin: 25, type: active, phase: prep }
+  - { id: second-prove, durationMin: 20, type: passive }
+  - { id: steam, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The roasted pork filling can be made up to two days ahead and kept covered in the refrigerator. Shaped, unproved buns also keep covered overnight; bring back to room temperature before the second prove.
+  freezable: true
+  freezeInstructions: Freeze the cooked, cooled buns in a bag. Re-steam from frozen for several minutes until hot through.
+  reheatInstructions: Re-steam rather than microwave, which turns the crumb rubbery.
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: A looser pleat left slightly open at the top, rather than sealed as tightly as a baozi, is deliberate — the crown is meant to crack open as the bun rises in the steamer, which is how a char siu bao is recognised at a glance.
+  commonPitfalls:
+    - stepId: steam
+      text: Lifting the lid before the steamer has fully cooled lets a rush of cold air hit the buns, and they collapse and wrinkle on one side. Turn off the heat and let the steam settle for a minute before uncovering.
+---
+
+<Step id="marinate-pork">
+  Combine the <Qty ref="marinade-hoisin"/>, <Qty ref="marinade-soy"/>,
+  <Qty ref="shaoxing-wine"/>, <Qty ref="char-sugar"/>, <Qty ref="garlic"/> and
+  <Qty ref="five-spice"/> in a bowl and turn the <Qty ref="pork"/> through it.
+</Step>
+
+<Step id="rest-marinade">
+  Cover and marinate in the refrigerator for <Dur step="rest-marinade"/>.
+</Step>
+
+<Step id="bloom-yeast">
+  Stir the <Qty ref="yeast"/> into the <Qty ref="water"/> and set aside for
+  <Dur step="bloom-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="sugar"/> and
+  <Qty ref="baking-powder"/> in a large bowl. Pour in the yeast mixture and the
+  <Qty ref="dough-oil"/> and bring together into a shaggy dough.
+</Step>
+
+<Step id="knead">
+  Turn the dough out onto the <Qty ref="flour-bench"/> and knead for
+  <Dur step="knead"/>, until smooth, elastic and no longer tacky.
+</Step>
+
+<Step id="first-prove">
+  Return the dough to the bowl, cover and leave to prove somewhere warm for
+  <Dur step="first-prove"/>, until roughly doubled in size.
+</Step>
+
+<Step id="roast-pork">
+  Meanwhile, spread the marinated pork on a lined tray and roast at
+  <Temp c={200}/> for <Dur step="roast-pork"/>, turning once, until cooked through
+  and lightly charred at the edges. Once cool enough to handle, dice into small
+  pieces.
+</Step>
+
+<Step id="make-filling">
+  Whisk the <Qty ref="cornflour"/> into the <Qty ref="sauce-water"/> until smooth,
+  then combine in a pan with the <Qty ref="sauce-hoisin"/>, <Qty ref="sauce-soy"/>
+  and <Qty ref="oyster-sauce"/>. Bring to a simmer, stirring, until thickened and
+  glossy. Off the heat, stir through the diced pork and the
+  <Qty ref="sesame-oil"/>, then leave to cool.
+</Step>
+
+<Step id="shape">
+  Knock the dough back and roll it into a log, then divide it into even pieces.
+  Roll each piece into a round, thicker at the centre than at the rim, spoon
+  filling into the middle, and gather the edge up around it, pleating loosely and
+  twisting to leave a small opening at the crown rather than sealing it flat. Set
+  each bun on a small square of baking paper.
+</Step>
+
+<Step id="second-prove">
+  Cover the shaped buns loosely and leave to prove for a further
+  <Dur step="second-prove"/>, until visibly puffed.
+</Step>
+
+<Step id="steam">
+  Arrange the buns in a steamer basket with space between each to allow for
+  expansion, and steam over gently simmering water for <Dur step="steam"/>, until
+  well risen and the crown has cracked open. Turn off the heat and let the steam
+  settle briefly before lifting the lid.
+</Step>

@@ -1,0 +1,55 @@
+{
+  "id": "whole-white-fish",
+  "name": "Whole White Fish",
+  "proseName": "white fish",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "whole-raw",
+      "label": "Whole, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "175142",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/175142/nutrients",
+      "sourceNote": "Cited against sea bass, a firm, mild white fish typical of the whole fish sold for steaming; grouper, seabream and tilapia, also used for this dish, share a very similar lean white-fish profile.",
+      "nutritionPer100g": {
+        "kcal": 97,
+        "protein": 18.43,
+        "fat": 2,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "saturatedFat": 0.511,
+        "monounsaturatedFat": 0.424,
+        "polyunsaturatedFat": 0.743,
+        "cholesterol": 41,
+        "sodium": 68,
+        "potassium": 256,
+        "calcium": 10,
+        "iron": 0.29,
+        "magnesium": 41,
+        "phosphorus": 194,
+        "zinc": 0.4,
+        "copper": 0.019,
+        "manganese": 0.015,
+        "seleniumMcg": 36.5,
+        "vitaminAMcg": 46,
+        "vitaminC": 0,
+        "vitaminDMcg": 5.6,
+        "vitaminE": 0.84,
+        "vitaminKMcg": 0.1,
+        "thiamin": 0.11,
+        "riboflavin": 0.12,
+        "niacin": 1.6,
+        "vitaminB6": 0.4,
+        "folateMcg": 5
+      }
+    }
+  ],
+  "image": "images/ingredients/whole-white-fish-thumb.webp"
+}

@@ -1,0 +1,145 @@
+---
+title: Chow Mein
+subtitle: Wheat noodles boiled, then pan-fried until the strands catch and crisp at the edges, tossed with pork, cabbage and bean sprouts in a light soy sauce.
+label: Guangdong
+defaultServings: 3
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [boiling, pan-frying]
+names:
+  alsoKnownAs:
+    - { name: Chao mian, lang: zh }
+image:
+  src: images/recipes/chow-mein.webp
+  alt: "A plate of soft stir-fried noodles with scrambled egg, carrot, and spring onion"
+ingredients:
+  - id: noodles
+    ingredientRef: wheat-noodles
+    form: dried
+    amount: 250
+    unit: g
+  - id: noodle-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+    note: for tossing the boiled noodles
+  - id: velvet-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: velvet-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 8
+    unit: g
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 200
+    unit: g
+    note: thinly sliced
+  - id: wok-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 45
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: sliced
+  - id: napa-cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 150
+    unit: g
+    note: shredded
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 60
+    unit: g
+    note: julienned
+  - id: bean-sprouts
+    ingredientRef: bean-sprouts
+    form: raw
+    amount: 100
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: cut into lengths
+  - id: sauce-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+  - id: dark-soy
+    ingredientRef: soy-sauce
+    form: dark
+    amount: 10
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 5
+    unit: g
+steps:
+  - { id: velvet-pork, durationMin: 10, type: active, phase: prep }
+  - { id: rest-pork, durationMin: 15, type: passive }
+  - { id: boil-noodles, durationMin: 4, type: "parallel-with:rest-pork", phase: cook }
+  - { id: fry-noodles, durationMin: 5, type: active, phase: cook }
+  - { id: stir-fry, durationMin: 6, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat in a hot, dry pan rather than a microwave, which turns the noodles soft and clumped.
+notes:
+  techniqueRationale:
+    - stepId: fry-noodles
+      text: Frying the boiled noodles undisturbed for a stretch before tossing them, rather than stirring constantly, is what lets a crisp, browned layer form against the pan — constant movement never gives any one part of the noodle mass long enough contact with the heat.
+---
+
+<Step id="velvet-pork">
+  Combine the <Qty ref="velvet-soy"/> and <Qty ref="velvet-cornflour"/> in a
+  bowl and turn the <Qty ref="pork"/> through it.
+</Step>
+
+<Step id="rest-pork">
+  Leave the pork to marinate for <Dur step="rest-pork"/>.
+</Step>
+
+<Step id="boil-noodles">
+  Meanwhile, boil the <Qty ref="noodles"/> for <Dur step="boil-noodles"/>,
+  until just tender, then drain well and toss with the <Qty ref="noodle-oil"/>
+  to stop them sticking together.
+</Step>
+
+<Step id="fry-noodles">
+  Heat half the <Qty ref="wok-oil"/> in a wide pan over high heat and spread
+  the noodles in an even layer. Fry undisturbed for most of
+  <Dur step="fry-noodles"/>, then turn and crisp the other side, until browned
+  in patches. Lift out and set aside.
+</Step>
+
+<Step id="stir-fry">
+  Heat the remaining oil in the pan and stir-fry the pork with the
+  <Qty ref="garlic"/> for a minute, until coloured. Add the
+  <Qty ref="napa-cabbage"/>, <Qty ref="carrot"/> and <Qty ref="bean-sprouts"/>
+  and stir-fry for <Dur step="stir-fry"/>, until just softened.
+</Step>
+
+<Step id="combine">
+  Return the noodles to the pan with the <Qty ref="spring-onion"/>,
+  <Qty ref="sauce-soy"/>, <Qty ref="dark-soy"/> and <Qty ref="sugar"/>. Toss
+  over high heat for <Dur step="combine"/>, until evenly coated.
+</Step>

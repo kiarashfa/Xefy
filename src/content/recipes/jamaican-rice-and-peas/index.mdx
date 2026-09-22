@@ -1,0 +1,117 @@
+---
+title: Rice and Peas
+subtitle: Rice and red kidney beans simmered together in coconut milk with garlic, thyme, allspice and a whole scotch bonnet — Jamaica's everyday side, and its Sunday dinner staple.
+label: Jamaica
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [caribbean]
+  course: [side]
+  method: [simmering, boiling]
+image:
+  src: images/recipes/jamaican-rice-and-peas.webp
+  alt: "A plate of coconut rice and kidney beans, the grains tinted brown from coconut milk and thyme"
+ingredients:
+  - id: kidney-beans
+    ingredientRef: kidney-beans
+    form: dried
+    amount: 150
+    unit: g
+    note: soaked overnight
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 300
+    unit: g
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 400
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 500
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: whole
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: allspice
+    ingredientRef: allspice
+    form: whole
+    amount: 1
+    unit: g
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 4
+    unit: g
+    note: whole
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: soak-beans, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 45, type: passive }
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: rest, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The beans can be soaked and cooked up to two days ahead and refrigerated in their liquid.
+  freezable: true
+  freezeInstructions: Freeze the finished rice and peas in an airtight container for up to two months.
+  reheatInstructions: Reheat covered in a pan with a splash of water, stirring occasionally, until steaming through.
+notes:
+  techniqueRationale:
+    - stepId: cook-rice
+      text: Cooking the rice in the beans' own liquid along with the coconut milk, rather than in plain water, is what carries the beans' flavour and colour all the way through the grain.
+  commonPitfalls:
+    - stepId: cook-rice
+      text: A punctured or chopped scotch bonnet turns the whole pot fiercely hot rather than gently fragrant; left whole and removed at the end, it seasons without overwhelming.
+---
+
+<Step id="soak-beans">
+  Soak the <Qty ref="kidney-beans"/> in plenty of cold water for
+  <Dur step="soak-beans"/>, then drain.
+</Step>
+
+<Step id="cook-beans">
+  Simmer the soaked beans in the <Qty ref="water"/> for
+  <Dur step="cook-beans"/>, until tender, topping up with water as needed to
+  keep them covered. Do not drain.
+</Step>
+
+<Step id="cook-rice">
+  Add the <Qty ref="coconut-milk"/>, <Qty ref="garlic"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="thyme"/>, <Qty ref="allspice"/>,
+  <Qty ref="scotch-bonnet"/>, <Qty ref="salt"/> and <Qty ref="black-pepper"/>
+  to the beans and bring to a boil. Stir in the <Qty ref="rice"/>, cover,
+  reduce the heat to its lowest setting and cook undisturbed for
+  <Dur step="cook-rice"/>, until the liquid is absorbed and the rice is
+  tender. Remove the scotch bonnet and spring onion.
+</Step>
+
+<Step id="rest">
+  Take the pot off the heat and leave it covered for <Dur step="rest"/>
+  before fluffing the rice with a fork.
+</Step>

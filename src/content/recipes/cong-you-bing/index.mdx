@@ -1,0 +1,111 @@
+---
+title: Scallion Pancake
+subtitle: An unleavened wheat dough rolled with oil and spring onion, coiled and rolled again into layers, then pan-fried until the outside is crisp and the inside stays chewy.
+label: Northern Chinese
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [snack]
+  method: [pan-frying]
+names:
+  alsoKnownAs:
+    - { name: Cong you bing, lang: zh }
+image:
+  src: images/recipes/cong-you-bing.webp
+  alt: "Golden-brown scallion pancake wedges with flaky, layered edges and visible green scallion flecks, stacked on a patterned plate"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: boiling-water
+    ingredientRef: water
+    form: tap
+    amount: 100
+    unit: ml
+    note: boiling
+  - id: cold-water
+    ingredientRef: water
+    form: tap
+    amount: 60
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: lamination-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 40
+    unit: ml
+  - id: lamination-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 20
+    unit: g
+    note: mixed with the oil into a paste
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 80
+    unit: g
+    note: finely sliced
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+    consumedFraction: 0.5
+    consumedFractionNote: A shallow-fried flatbread absorbs some of the oil it is cooked in but leaves a portion behind in the pan; this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 30, type: passive }
+  - { id: roll-and-layer, durationMin: 20, type: active, phase: prep }
+  - { id: rest-again, durationMin: 15, type: passive }
+  - { id: fry, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The rolled, layered discs can be stacked between sheets of baking paper and refrigerated for a day before frying.
+  freezable: true
+  freezeInstructions: Freeze the uncooked, layered discs between sheets of baking paper. Fry directly from frozen, adding a little extra time.
+  reheatInstructions: Reheat in a dry pan rather than a microwave, which softens the crisp layers.
+notes:
+  techniqueRationale:
+    - stepId: mix-dough
+      text: Bringing part of the flour together with boiling water before the cold water goes in partly cooks the starch, giving a softer, more pliable dough than cold water alone would, which is what lets it roll out thin without tearing.
+  commonPitfalls:
+    - stepId: roll-and-layer
+      text: Rolling the coiled dough out too firmly presses the layers back together into one dense sheet. A light touch keeps the spiral of oil and spring onion distinct, which is what gives the cooked pancake its flaky layers.
+---
+
+<Step id="mix-dough">
+  Pour the <Qty ref="boiling-water"/> into the <Qty ref="flour"/> and stir
+  quickly with chopsticks, then add the <Qty ref="cold-water"/> and
+  <Qty ref="salt"/> and bring together into a soft dough, taking
+  <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and rest it for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="roll-and-layer">
+  Roll the dough out into a large, thin rectangle. Mix the
+  <Qty ref="lamination-oil"/> with the <Qty ref="lamination-flour"/> into a
+  paste and spread it evenly over the surface, then scatter with the
+  <Qty ref="spring-onion"/>. Roll up tightly from one long edge into a
+  log, then coil the log into a flat spiral and roll it out gently into a
+  disc, taking <Dur step="roll-and-layer"/> in total.
+</Step>
+
+<Step id="rest-again">
+  Rest the shaped disc for <Dur step="rest-again"/>.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> in a wide pan over medium heat and fry the
+  pancake for <Dur step="fry"/> in total, turning occasionally, until deep
+  golden and crisp on both sides. Drain briefly before cutting into wedges.
+</Step>

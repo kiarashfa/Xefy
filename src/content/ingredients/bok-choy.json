@@ -1,0 +1,51 @@
+{
+  "id": "bok-choy",
+  "name": "Bok Choy",
+  "proseName": "bok choy",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Pak choi",
+        "region": "UK",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2685572",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2685572/nutrients",
+      "nutritionPer100g": {
+        "kcal": 17.003,
+        "protein": 1.024,
+        "fat": 0.234,
+        "carbs": 3.515,
+        "fiber": 1.259,
+        "sodium": 14.27,
+        "potassium": 227.8,
+        "calcium": 61.93,
+        "iron": 0.439,
+        "magnesium": 13.64,
+        "phosphorus": 30.51,
+        "zinc": 0.274,
+        "copper": 0.028,
+        "manganese": 0.196,
+        "vitaminC": 30.3
+      },
+      "density": {
+        "gPerCup": 70,
+        "densitySource": "estimated",
+        "densityClass": "leafy-fresh-herb"
+      }
+    }
+  ],
+  "image": "images/ingredients/bok-choy-thumb.webp"
+}

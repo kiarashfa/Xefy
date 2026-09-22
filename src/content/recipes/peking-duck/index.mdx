@@ -1,0 +1,171 @@
+---
+title: Peking Duck
+subtitle: A whole duck air-dried, glazed with maltose and roasted until the skin turns deep mahogany and crackling-crisp, carved and eaten wrapped in thin pancakes.
+label: Beijing
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [roasting]
+names:
+  alsoKnownAs:
+    - { name: Beijing kaoya, lang: zh }
+image:
+  src: images/recipes/peking-duck.webp
+  alt: "Sliced Peking duck with glossy lacquered skin on a white plate, served with plates of cucumber and scallion sticks"
+ingredients:
+  - id: duck
+    ingredientRef: duck
+    form: whole-raw
+    amount: 2200
+    unit: g
+    note: whole, neck and innards removed
+    consumedFraction: 0.55
+    consumedFractionNote: A whole duck is carved for its skin and breast meat, with the carcass, most of the bones and a portion of the leg and dark meat typically left over or used for a separate stock rather than eaten at the table. This is an editorial estimate rather than a sourced figure.
+  - id: boiling-water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+    note: for scalding the skin
+  - id: maltose
+    ingredientRef: maltose
+    form: syrup
+    amount: 40
+    unit: g
+  - id: black-vinegar
+    ingredientRef: black-vinegar
+    form: standard
+    amount: 20
+    unit: ml
+  - id: glaze-water
+    ingredientRef: water
+    form: tap
+    amount: 40
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: five-spice
+    ingredientRef: five-spice
+    form: ground
+    amount: 3
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 80
+    unit: g
+    note: cut into fine batons, to serve
+  - id: cucumber
+    ingredientRef: cucumber
+    form: peeled
+    amount: 150
+    unit: g
+    note: cut into fine batons, to serve
+  - id: hoisin
+    ingredientRef: hoisin-sauce
+    form: standard
+    amount: 80
+    unit: g
+    note: to serve
+  - id: pancake-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 200
+    unit: g
+  - id: pancake-water
+    ingredientRef: water
+    form: tap
+    amount: 130
+    unit: ml
+    note: boiling
+  - id: pancake-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+    note: for brushing between the pancakes
+steps:
+  - { id: scald-skin, durationMin: 5, type: active, phase: prep }
+  - { id: season-duck, durationMin: 5, type: active, phase: prep }
+  - { id: glaze-duck, durationMin: 5, type: active, phase: prep }
+  - { id: air-dry, durationMin: 720, type: passive }
+  - { id: roast, durationMin: 60, type: active, phase: cook }
+  - { id: make-pancake-dough, durationMin: 10, type: "parallel-with:roast", phase: prep }
+  - { id: roll-and-cook-pancakes, durationMin: 25, type: "parallel-with:roast", phase: prep }
+  - { id: rest-duck, durationMin: 10, type: passive }
+  - { id: carve, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The duck must air-dry, uncovered and preferably in front of a fan, for several hours or overnight before roasting; this stage is effectively done ahead and is what gives the skin its crispness.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat sliced duck skin briefly under a hot grill to recrisp; a microwave turns it soft and rubbery.
+notes:
+  techniqueRationale:
+    - stepId: scald-skin
+      text: Scalding the skin with boiling water tightens it and helps separate it slightly from the fat beneath, which is what lets it blister and crisp cleanly in the oven rather than staying soft and pliable.
+    - stepId: air-dry
+      text: A long, uncovered dry in a cold, airy spot draws moisture out of the skin before it ever reaches the oven — a wet skin steams rather than crisps under heat, however hot the oven is set.
+  commonPitfalls:
+    - stepId: roast
+      text: Opening the oven repeatedly to check the duck lets heat escape and slows the skin's crisping. The duck is better judged by colour through the oven door and turned only at set intervals.
+---
+
+<Step id="scald-skin">
+  Set the <Qty ref="duck"/> on a rack over a tray and pour the
+  <Qty ref="boiling-water"/> slowly over the skin, working over the whole
+  surface, for <Dur step="scald-skin"/>, until the skin visibly tightens. Pat
+  completely dry.
+</Step>
+
+<Step id="season-duck">
+  Rub the <Qty ref="salt"/> and <Qty ref="five-spice"/> inside the cavity only,
+  taking <Dur step="season-duck"/>.
+</Step>
+
+<Step id="glaze-duck">
+  Warm the <Qty ref="maltose"/>, <Qty ref="black-vinegar"/> and
+  <Qty ref="glaze-water"/> together until the maltose dissolves, then brush
+  evenly over the outside of the duck, taking <Dur step="glaze-duck"/>.
+</Step>
+
+<Step id="air-dry">
+  Hang or rest the duck uncovered on a rack in a cold, airy spot, ideally in
+  front of a fan, for <Dur step="air-dry"/>, until the skin feels completely
+  dry and papery to the touch.
+</Step>
+
+<Step id="roast">
+  Roast the duck breast-side up on a rack over a tray at <Temp c={180}/> for
+  <Dur step="roast"/> in total, turning once partway through, until the skin is
+  deep mahogany and crackling-crisp and the juices run clear.
+</Step>
+
+<Step id="make-pancake-dough">
+  Meanwhile, pour the <Qty ref="pancake-water"/> into the
+  <Qty ref="pancake-flour"/> and stir into a shaggy dough, then knead briefly
+  for <Dur step="make-pancake-dough"/> until smooth. Cover and rest.
+</Step>
+
+<Step id="roll-and-cook-pancakes">
+  Roll the dough into a log and divide into small, even pieces. Brush one side
+  of each with the <Qty ref="pancake-oil"/> and press two together, oiled sides
+  in, then roll each pair out thin as one round. Cook each round in a dry pan
+  over medium heat for <Dur step="roll-and-cook-pancakes"/> in total, until
+  small bubbles appear and the surface sets, then peel the two layers apart
+  while still warm and stack them, covered, until needed.
+</Step>
+
+<Step id="rest-duck">
+  Rest the duck for <Dur step="rest-duck"/> before carving.
+</Step>
+
+<Step id="carve">
+  Carve the skin and breast meat into thin slices, taking
+  <Dur step="carve"/>. Serve with the warm pancakes, <Qty ref="spring-onion"/>,
+  <Qty ref="cucumber"/> and <Qty ref="hoisin"/>, for wrapping at the table.
+</Step>

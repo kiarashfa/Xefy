@@ -1,0 +1,90 @@
+---
+title: Tostones
+subtitle: Green plantain fried once to soften, flattened, then fried again until crisp outside and tender within — a Caribbean side eaten wherever plantains are.
+label: Caribbean
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [caribbean]
+  course: [side]
+  method: [deep-frying]
+image:
+  src: images/recipes/tostones.webp
+  alt: "A plate of round golden tostones, twice-fried plantain discs, stacked together"
+ingredients:
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 500
+    unit: g
+    note: peeled and cut into thick rounds
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 700
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pan; the twice-fried plantain absorbs only a fraction of what it is fried in.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 5
+    unit: g
+    note: crushed, for the soaking water
+  - id: soaking-water
+    ingredientRef: water
+    form: tap
+    amount: 300
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: The plantain is briefly dunked in this salted, garlicky water between fryings and lifted straight back out; almost none of it is retained or eaten.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: soak-salt, amount: 5, note: for the soaking water }
+      - { id: finishing-salt, amount: 3, note: for serving }
+steps:
+  - { id: first-fry, durationMin: 8, type: active, phase: cook }
+  - { id: flatten, durationMin: 5, type: active, phase: prep }
+  - { id: soak, durationMin: 3, type: active, phase: prep }
+  - { id: second-fry, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: soak
+      text: The brief dunk in salted, garlicky water between fryings seasons the flattened plantain all the way through and adds back a little moisture, which is what keeps the second fry from drying the centre out even as the outside crisps.
+  commonPitfalls:
+    - stepId: flatten
+      text: Plantain flattened straight from the hot oil tears easily; letting it cool for a few seconds first, or pressing gently rather than all at once, keeps the disc in one piece.
+---
+
+<Step id="first-fry">
+  Heat the <Qty ref="frying-oil"/> in a deep, heavy pan and fry the
+  <Qty ref="plantain"/> for <Dur step="first-fry"/>, until pale gold and just
+  tender but not browned. Lift out and drain, leaving the oil in the pan.
+</Step>
+
+<Step id="flatten">
+  Press each piece flat with a tostonera, the base of a glass, or the flat
+  side of a knife, to about half its original thickness. This takes about
+  <Dur step="flatten"/>.
+</Step>
+
+<Step id="soak">
+  Stir the <Qty ref="garlic"/> and <Qty ref="soak-salt"/> into the
+  <Qty ref="soaking-water"/>, then dip each flattened piece briefly in the
+  water and lift straight back out. This takes about <Dur step="soak"/>.
+</Step>
+
+<Step id="second-fry">
+  Return the plantain to the hot oil and fry for <Dur step="second-fry"/>,
+  until deeply golden and crisp at the edges. Drain and season with the
+  <Qty ref="finishing-salt"/> while still hot.
+</Step>

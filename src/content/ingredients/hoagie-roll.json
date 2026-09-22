@@ -6,7 +6,9 @@
   "animalOrigin": "none",
   "containsGluten": true,
   "containsDairy": false,
-  "allergenTags": ["gluten"],
+  "allergenTags": [
+    "gluten"
+  ],
   "pantryStaple": false,
   "forms": [
     {
@@ -52,5 +54,6 @@
         "cholesterol": 0
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/hoagie-roll-thumb.webp"
 }

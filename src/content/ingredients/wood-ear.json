@@ -1,0 +1,41 @@
+{
+  "id": "wood-ear",
+  "name": "Wood Ear Mushroom",
+  "proseName": "wood ear mushrooms",
+  "names": {
+    "alsoKnownAs": [
+      { "name": "Cloud ear fungus", "region": "China", "lang": "en" }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168581",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168581/nutrients",
+      "nutritionPer100g": {
+        "kcal": 284,
+        "protein": 10.1,
+        "fat": 0.5,
+        "carbs": 65.5,
+        "fiber": 0,
+        "sugars": 0,
+        "sodium": 60,
+        "potassium": 757,
+        "calcium": 159,
+        "iron": 44.4,
+        "magnesium": 87,
+        "phosphorus": 258,
+        "zinc": 3.36,
+        "vitaminC": 0
+      }
+    }
+  ]
+}

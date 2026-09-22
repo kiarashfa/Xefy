@@ -1,0 +1,51 @@
+{
+  "id": "wheat-noodles",
+  "name": "Wheat Noodles",
+  "proseName": "wheat noodles",
+  "category": "grain",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168908",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168908/nutrients",
+      "sourceNote": "USDA does not carry the plain wheat-and-water noodle used for dishes such as dan dan noodles or chow mein. This is its record for dried somen, a thin Japanese wheat noodle made from the same flour, salt and water with no egg, the closest eggless wheat-noodle profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 356,
+        "protein": 11.35,
+        "fat": 0.81,
+        "carbs": 74.1,
+        "fiber": 4.3,
+        "saturatedFat": 0.115,
+        "monounsaturatedFat": 0.095,
+        "polyunsaturatedFat": 0.33,
+        "cholesterol": 0,
+        "sodium": 1840,
+        "potassium": 164,
+        "calcium": 23,
+        "iron": 1.32,
+        "magnesium": 28,
+        "phosphorus": 80,
+        "zinc": 0.45,
+        "copper": 0.144,
+        "manganese": 0.479,
+        "seleniumMcg": 8.3,
+        "vitaminC": 0,
+        "thiamin": 0.101,
+        "riboflavin": 0.026,
+        "niacin": 0.875,
+        "vitaminB6": 0.05,
+        "folateMcg": 14
+      }
+    }
+  ],
+  "image": "images/ingredients/wheat-noodles-thumb.webp"
+}

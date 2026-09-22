@@ -1,0 +1,60 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2685572",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2685572/nutrients",
+  "description": "Cabbage, bok choy, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/18/2024",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 17.003,
+    "protein": 1.024,
+    "fat": 0.234,
+    "carbs": 3.515,
+    "fiber": 1.259,
+    "calcium": 61.93,
+    "iron": 0.439,
+    "magnesium": 13.64,
+    "phosphorus": 30.51,
+    "potassium": 227.8,
+    "sodium": 14.27,
+    "zinc": 0.274,
+    "copper": 0.028,
+    "manganese": 0.196,
+    "vitaminC": 30.3
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 94.54,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 0.1638,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.6875,
+      "unit": "g"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 68,
+      "unit": "µg"
+    },
+    {
+      "number": "433",
+      "name": "5-methyl tetrahydrofolate (5-MTHF)",
+      "amount": 50,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

@@ -1,0 +1,109 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "172241",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/172241/nutrients",
+  "description": "Vinegar, balsamic",
+  "category": "Spices and Herbs",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 88,
+    "protein": 0.49,
+    "fat": 0,
+    "carbs": 17.03,
+    "sugars": 14.95,
+    "calcium": 27,
+    "iron": 0.72,
+    "magnesium": 12,
+    "phosphorus": 19,
+    "potassium": 112,
+    "sodium": 23,
+    "zinc": 0.08,
+    "copper": 0.026,
+    "manganese": 0.131,
+    "vitaminC": 0,
+    "vitaminAMcg": 0,
+    "saturatedFat": 0,
+    "transFat": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 76.45,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 369,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.37,
+      "unit": "g"
+    },
+    {
+      "number": "210",
+      "name": "Sucrose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "211",
+      "name": "Glucose",
+      "amount": 7.57,
+      "unit": "g"
+    },
+    {
+      "number": "212",
+      "name": "Fructose",
+      "amount": 7.38,
+      "unit": "g"
+    },
+    {
+      "number": "213",
+      "name": "Lactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "214",
+      "name": "Maltose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "287",
+      "name": "Galactose",
+      "amount": 0,
+      "unit": "g"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 0,
+      "unit": "IU"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerTbsp",
+      "value": 16,
+      "from": "1 tbsp"
+    },
+    {
+      "measure": "gPerTsp",
+      "value": 5.3,
+      "from": "1 tsp"
+    },
+    {
+      "measure": "gPerCup",
+      "value": 255,
+      "from": "1 cup"
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+---
+title: Hot and Sour Soup
+subtitle: A thickened pork and tofu broth built on black vinegar and white pepper, with wood ear and shiitake for texture and a thin stream of beaten egg folded through at the end.
+label: Beijing
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [soup]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Suan la tang, lang: zh }
+image:
+  src: images/recipes/hot-and-sour-soup.webp
+  alt: "A bowl of thickened hot and sour soup with silky egg ribbons, tofu cubes, and shredded mushroom and bamboo shoot"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 150
+    unit: g
+    note: finely julienned
+  - id: velvet-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: velvet-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 8
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 1000
+    unit: ml
+  - id: shiitake
+    ingredientRef: shiitake
+    form: dried
+    amount: 15
+    unit: g
+    note: soaked and sliced
+  - id: wood-ear
+    ingredientRef: wood-ear
+    form: dried
+    amount: 10
+    unit: g
+    note: soaked and sliced
+  - id: bamboo-shoots
+    ingredientRef: bamboo-shoots
+    form: tinned
+    amount: 100
+    unit: g
+    note: julienned
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 200
+    unit: g
+    note: julienned
+  - id: black-vinegar
+    ingredientRef: black-vinegar
+    form: standard
+    amount: 50
+    unit: ml
+  - id: sauce-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 20
+    unit: ml
+  - id: white-pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 4
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: thickener
+    ingredientRef: cornflour
+    form: standard
+    amount: 25
+    unit: g
+    note: mixed with a little cold water
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: two eggs, beaten
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: finely sliced, to finish
+steps:
+  - { id: velvet-pork, durationMin: 5, type: active, phase: prep }
+  - { id: simmer-base, durationMin: 15, type: active, phase: cook }
+  - { id: season, durationMin: 3, type: active, phase: cook }
+  - { id: thicken, durationMin: 3, type: active, phase: cook }
+  - { id: add-egg, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat gently on the hob rather than a microwave; the soup thickens further once cold and may need loosening with a splash of stock.
+notes:
+  techniqueRationale:
+    - stepId: add-egg
+      text: Pouring the beaten egg in a thin, slow stream over the back of a spoon or fork, into soup that has already thickened and is only gently simmering, is what gives the classic fine egg ribbons rather than large, cloudy clumps.
+---
+
+<Step id="velvet-pork">
+  Combine the <Qty ref="velvet-soy"/> and <Qty ref="velvet-cornflour"/> in a
+  bowl and turn the <Qty ref="pork"/> through it, taking
+  <Dur step="velvet-pork"/>.
+</Step>
+
+<Step id="simmer-base">
+  Bring the <Qty ref="stock"/> to a simmer and add the pork, separating the
+  strands as they go in. Add the <Qty ref="shiitake"/>, <Qty ref="wood-ear"/>,
+  <Qty ref="bamboo-shoots"/> and <Qty ref="tofu"/> and simmer for
+  <Dur step="simmer-base"/>.
+</Step>
+
+<Step id="season">
+  Stir in the <Qty ref="black-vinegar"/>, <Qty ref="sauce-soy"/>,
+  <Qty ref="white-pepper"/> and <Qty ref="sugar"/>, and simmer for
+  <Dur step="season"/>.
+</Step>
+
+<Step id="thicken">
+  Stir in the <Qty ref="thickener"/> mixture in stages, stirring constantly,
+  until the soup thickens to a light coating consistency, over
+  <Dur step="thicken"/>.
+</Step>
+
+<Step id="add-egg">
+  Reduce the heat to a bare simmer and pour in the <Qty ref="egg"/> in a thin,
+  slow stream, stirring gently, over <Dur step="add-egg"/>, so it sets into
+  fine ribbons. Finish with the <Qty ref="sesame-oil"/> and
+  <Qty ref="spring-onion"/>.
+</Step>

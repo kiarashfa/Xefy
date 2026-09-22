@@ -1,0 +1,156 @@
+---
+title: Kung Pao Chicken
+subtitle: Diced chicken thigh stir-fried with dried chilli, Sichuan pepper and roasted peanuts in a quick, sticky sauce sharpened with black vinegar.
+label: Sichuan
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Gongbao jiding, lang: zh }
+image:
+  src: images/recipes/kung-pao-chicken.webp
+  alt: "A plate of kung pao chicken with diced chicken, roasted peanuts, scallion, and dried red chillies in a glossy sauce"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: boneless, skinless, diced
+  - id: velvet-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: velvet-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 10
+    unit: ml
+  - id: velvet-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 8
+    unit: g
+  - id: sauce-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: black-vinegar
+    ingredientRef: black-vinegar
+    form: standard
+    amount: 15
+    unit: ml
+  - id: sauce-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: sauce-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 5
+    unit: g
+  - id: sauce-water
+    ingredientRef: water
+    form: tap
+    amount: 30
+    unit: ml
+  - id: wok-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: whole
+    amount: 8
+    unit: g
+  - id: sichuan-pepper
+    ingredientRef: sichuan-pepper
+    form: whole
+    amount: 3
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: sliced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: sliced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: cut into short lengths
+  - id: peanut
+    ingredientRef: peanut
+    form: roasted
+    amount: 60
+    unit: g
+steps:
+  - { id: velvet-chicken, durationMin: 10, type: active, phase: prep }
+  - { id: rest-chicken, durationMin: 15, type: passive }
+  - { id: mix-sauce, durationMin: 5, type: "parallel-with:rest-chicken", phase: prep }
+  - { id: sear-chicken, durationMin: 4, type: active, phase: cook }
+  - { id: fry-aromatics, durationMin: 3, type: active, phase: cook }
+  - { id: combine, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat in a hot wok or pan rather than a microwave, which softens the peanuts and dulls the chilli.
+notes:
+  techniqueRationale:
+    - stepId: fry-aromatics
+      text: The dried chilli and Sichuan pepper are fried in oil that has cooled slightly from searing the chicken, rather than in oil straight off the highest heat, so their flavour infuses the oil without scorching into bitterness.
+  commonPitfalls:
+    - stepId: combine
+      text: Peanuts added too early turn soft and lose their bite by the time the dish reaches the table. They go in only at the very end, off the direct heat, to keep their crunch.
+---
+
+<Step id="velvet-chicken">
+  Combine the <Qty ref="velvet-soy"/>, <Qty ref="velvet-wine"/> and
+  <Qty ref="velvet-cornflour"/> in a bowl and turn the <Qty ref="chicken"/>
+  through it.
+</Step>
+
+<Step id="rest-chicken">
+  Leave the chicken to marinate for <Dur step="rest-chicken"/>.
+</Step>
+
+<Step id="mix-sauce">
+  Meanwhile, whisk together the <Qty ref="sauce-soy"/>, <Qty ref="black-vinegar"/>,
+  <Qty ref="sauce-sugar"/>, <Qty ref="sauce-cornflour"/> and
+  <Qty ref="sauce-water"/> until smooth.
+</Step>
+
+<Step id="sear-chicken">
+  Heat the <Qty ref="wok-oil"/> in a wok over high heat and sear the chicken for
+  <Dur step="sear-chicken"/>, until coloured on the outside, then lift out and set
+  aside.
+</Step>
+
+<Step id="fry-aromatics">
+  Lower the heat slightly and add the <Qty ref="dried-chilli"/> and
+  <Qty ref="sichuan-pepper"/>, frying for <Dur step="fry-aromatics"/> until
+  fragrant and just beginning to darken. Add the <Qty ref="garlic"/>,
+  <Qty ref="ginger"/> and <Qty ref="spring-onion"/> and stir briefly.
+</Step>
+
+<Step id="combine">
+  Return the chicken to the wok, pour in the sauce mixture and toss over high
+  heat for <Dur step="combine"/>, until thickened and glossy and the chicken is
+  cooked through. Off the heat, stir through the <Qty ref="peanut"/>.
+</Step>

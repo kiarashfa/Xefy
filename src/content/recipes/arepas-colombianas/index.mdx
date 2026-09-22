@@ -1,0 +1,79 @@
+---
+title: Arepas Colombianas
+subtitle: Griddled corn cakes made from precooked white corn flour, one arepa to a serving — the everyday bread of the Colombian table, in the version stuffed with cheese.
+label: De queso
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [colombian]
+  course: [breakfast, side, bread]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Venezuelan arepa
+      note: Made the same way from the same precooked corn flour, but shaped noticeably thicker and typically split open and stuffed after cooking, rather than eaten flat with the filling worked into the dough or spread on top.
+image:
+  src: images/recipes/arepas-colombianas.webp
+  alt: "A round griddled corn arepa with scattered char marks, melted white cheese spilling from its middle, on a plate printed with flowers"
+ingredients:
+  - id: masa-harina
+    ingredientRef: maize-meal
+    form: precooked
+    amount: 300
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 350
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: cheese
+    ingredientRef: queso-fresco
+    form: crumbled
+    amount: 150
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 15
+    unit: g
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 10, type: passive }
+  - { id: shape, durationMin: 8, type: active, phase: prep }
+  - { id: cook, durationMin: 16, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze shaped, uncooked discs between sheets of baking paper for up to two months; cook from frozen, allowing extra time.
+  reheatInstructions: Reheat on a dry, hot griddle for a minute a side, or split and toast under a grill.
+notes:
+  commonPitfalls:
+    - stepId: rest-dough
+      text: Shaping the dough immediately after mixing leaves it prone to cracking at the edges once griddled; a short rest lets the flour hydrate fully first.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="masa-harina"/> and <Qty ref="salt"/>, then work in
+  the <Qty ref="water"/> and the <Qty ref="cheese"/> to form a soft, slightly
+  sticky dough. This takes about <Dur step="make-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="shape">
+  Divide the dough into as many equal portions as arepas are being made and
+  pat each into a flat, even round. This takes about <Dur step="shape"/>.
+</Step>
+
+<Step id="cook">
+  Melt the <Qty ref="butter"/> on a griddle or in a wide pan over a medium
+  heat and cook the arepas for <Dur step="cook"/> in total, turning once or
+  twice, until deeply golden and cooked through to the centre.
+</Step>

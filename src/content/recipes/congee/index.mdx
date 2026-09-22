@@ -1,0 +1,76 @@
+---
+title: Congee
+subtitle: Rice simmered slowly in a large volume of water until it breaks down into a smooth, thick porridge, seasoned only with salt and a little oil.
+description: Plain congee, cooked down from rice and water alone — the base bowl eaten at any time of day, or the starting point for a topped version.
+label: Plain
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [chinese]
+  course: [breakfast]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Jook, region: Guangdong, lang: yue }
+    - { name: Zhou, lang: zh }
+image:
+  src: images/recipes/congee.webp
+  alt: "A bowl of smooth white rice congee with a white spoon, lightly garnished with chopped spring onion and coriander"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 200
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: finely sliced, to finish
+steps:
+  - { id: rinse-rice, durationMin: 5, type: active, phase: prep }
+  - { id: simmer, durationMin: 75, type: active, phase: cook }
+  - { id: season, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Congee keeps well for a couple of days in the refrigerator and thickens further as it sits.
+  freezable: true
+  freezeInstructions: Freeze in portions. Thaw and reheat gently with a splash of water stirred in to loosen it back to its original consistency.
+  reheatInstructions: Reheat gently on the hob with a little extra water, stirring, since congee thickens considerably once cold.
+notes:
+  techniqueRationale:
+    - stepId: simmer
+      text: A very low, barely-there simmer rather than a rolling boil is what breaks the grains down evenly into the porridge's characteristic smooth, thick consistency, rather than leaving whole grains suspended in a thin liquid.
+---
+
+<Step id="rinse-rice">
+  Rinse the <Qty ref="rice"/> in several changes of water until it runs mostly
+  clear, then drain.
+</Step>
+
+<Step id="simmer">
+  Put the rice and the <Qty ref="water"/> in a large, heavy pot and bring to the
+  boil, then reduce to the lowest possible simmer. Cook uncovered, stirring
+  occasionally to stop the rice catching on the base, for <Dur step="simmer"/>,
+  until the grains have broken down into a smooth, thick porridge.
+</Step>
+
+<Step id="season">
+  Stir in the <Qty ref="salt"/> and <Qty ref="sesame-oil"/>, and finish with the
+  <Qty ref="spring-onion"/>.
+</Step>

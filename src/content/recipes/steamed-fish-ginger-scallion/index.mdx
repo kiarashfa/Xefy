@@ -1,0 +1,103 @@
+---
+title: Steamed Fish with Ginger and Scallion
+subtitle: A whole white fish steamed just to the point of flaking, dressed with soy sauce and finished with a sizzling ladle of hot oil poured over ginger and spring onion.
+label: Guangdong
+defaultServings: 3
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Ching jing yu, lang: yue }
+image:
+  src: images/recipes/steamed-fish-ginger-scallion.webp
+  alt: "A whole steamed white fish on an oval plate, topped with julienned ginger and scallion in light soy sauce"
+ingredients:
+  - id: fish
+    ingredientRef: whole-white-fish
+    form: whole-raw
+    amount: 700
+    unit: g
+    note: whole, scaled and gutted
+    consumedFraction: 0.55
+    consumedFractionNote: A whole fish is served bone-in, and the head, skeleton and fins are not eaten even though they are steamed and plated with it. This is an editorial estimate rather than a sourced figure.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 25
+    unit: g
+    portions:
+      - { id: ginger-cavity, amount: 10, note: sliced, for the cavity }
+      - { id: ginger-garnish, amount: 15, note: finely julienned, to finish }
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    portions:
+      - { id: spring-onion-cavity, amount: 10, note: cut into lengths, for the cavity }
+      - { id: spring-onion-garnish, amount: 20, note: finely julienned, to finish }
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 40
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 5
+    unit: g
+  - id: oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 40
+    unit: ml
+steps:
+  - { id: season-fish, durationMin: 8, type: active, phase: prep }
+  - { id: steam-fish, durationMin: 10, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 3, type: "parallel-with:steam-fish", phase: prep }
+  - { id: finish, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: finish
+      text: Pouring the oil over the ginger and spring onion only once it is smoking hot briefly cooks the aromatics and releases their fragrance in the moment they land, which a cooler oil or a longer cooking time cannot reproduce.
+  commonPitfalls:
+    - stepId: steam-fish
+      text: A fish left in the steamer even a minute or two past done turns dry and loses the point of the technique. It is better judged early and checked often, since the flesh continues cooking briefly from residual heat once lifted out.
+---
+
+<Step id="season-fish">
+  Pat the <Qty ref="fish"/> dry and rub the <Qty ref="salt"/> over the skin and
+  inside the cavity. Stuff the cavity with the <Qty ref="ginger-cavity"/> and
+  <Qty ref="spring-onion-cavity"/>, taking <Dur step="season-fish"/>.
+</Step>
+
+<Step id="steam-fish">
+  Set the fish on a heatproof plate and steam over rapidly boiling water for
+  <Dur step="steam-fish"/>, until the flesh just flakes at the thickest part.
+</Step>
+
+<Step id="make-sauce">
+  Meanwhile, warm the <Qty ref="soy-sauce"/> and <Qty ref="sugar"/> together
+  gently until the sugar dissolves, taking <Dur step="make-sauce"/>.
+</Step>
+
+<Step id="finish">
+  Lift the fish from the steamer, discarding the liquid that has collected on
+  the plate, and pour over the warm soy mixture. Scatter with the
+  <Qty ref="ginger-garnish"/> and <Qty ref="spring-onion-garnish"/>. Heat the
+  <Qty ref="oil"/> in a small pan until smoking, then pour it directly over the
+  aromatics, taking <Dur step="finish"/>, so it sizzles as it lands.
+</Step>

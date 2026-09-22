@@ -1,0 +1,68 @@
+{
+  "id": "pumpkin",
+  "name": "Pumpkin",
+  "proseName": "pumpkin",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Calabaza",
+        "lang": "es"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, peeled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168448",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168448/nutrients",
+      "sourceNote": "USDA publishes no record specific to calabaza, the pumpkin-squash sold across the Caribbean and used interchangeably with pumpkin in Trinidadian callaloo; this is its general raw pumpkin record, the closest published composition.",
+      "nutritionPer100g": {
+        "kcal": 26,
+        "protein": 1,
+        "carbs": 6.5,
+        "fat": 0.1,
+        "fiber": 0.5,
+        "sugars": 2.76,
+        "saturatedFat": 0.052,
+        "monounsaturatedFat": 0.013,
+        "polyunsaturatedFat": 0.005,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 1,
+        "potassium": 340,
+        "calcium": 21,
+        "iron": 0.8,
+        "magnesium": 12,
+        "phosphorus": 44,
+        "zinc": 0.32,
+        "copper": 0.127,
+        "manganese": 0.125,
+        "seleniumMcg": 0.3,
+        "vitaminAMcg": 426,
+        "vitaminC": 9,
+        "vitaminDMcg": 0,
+        "vitaminE": 1.06,
+        "vitaminKMcg": 1.1,
+        "thiamin": 0.05,
+        "riboflavin": 0.11,
+        "niacin": 0.6,
+        "vitaminB6": 0.061,
+        "folateMcg": 16,
+        "vitaminB12Mcg": 0,
+        "choline": 8.2
+      },
+      "density": {
+        "gPerCup": 116,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/pumpkin-thumb.webp"
+}

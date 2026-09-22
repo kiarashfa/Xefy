@@ -1,0 +1,193 @@
+---
+title: Sancocho Dominicano
+subtitle: Beef, chicken and pork simmered into a single broth with yam, cassava, potato, pumpkin and both green and ripe plantain — the Dominican Republic's everyday and holiday stew alike.
+label: Dominican Republic
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [soup]
+  method: [braising, simmering]
+image:
+  src: images/recipes/sancocho-dominicano.webp
+  alt: "A bowl of dark green Dominican sancocho stew with pieces of meat and a corn cob half, served with a side of white rice"
+ingredients:
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 350
+    unit: g
+    note: cut into large chunks
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 350
+    unit: g
+    note: cut into large pieces
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 250
+    unit: g
+    note: cut into large chunks
+  - id: sour-orange-juice
+    ingredientRef: orange
+    form: sour
+    amount: 80
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed
+    portions:
+      - { id: garlic-marinade, amount: 10 }
+      - { id: garlic-broth, amount: 10 }
+  - id: oregano
+    ingredientRef: oregano
+    form: dried
+    amount: 2
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: chopped
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 70
+    unit: g
+    note: chopped
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: yam
+    ingredientRef: yam
+    form: raw
+    amount: 250
+    unit: g
+    note: peeled and cut into chunks
+  - id: cassava
+    ingredientRef: cassava
+    form: raw
+    amount: 250
+    unit: g
+    note: peeled and cut into chunks
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and cut into chunks
+  - id: pumpkin
+    ingredientRef: pumpkin
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and cut into chunks
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 200
+    unit: g
+    note: cut into pieces on the cob
+  - id: plantain-green
+    ingredientRef: plantain
+    form: green
+    amount: 200
+    unit: g
+    note: peeled and cut into thick chunks
+  - id: plantain-ripe
+    ingredientRef: plantain
+    form: ripe
+    amount: 150
+    unit: g
+    note: peeled and cut into thick chunks
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 15
+    unit: g
+    note: chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: marinate-meats, durationMin: 60, type: passive }
+  - { id: brown-meats, durationMin: 15, type: active, phase: cook }
+  - { id: simmer-broth, durationMin: 60, type: passive }
+  - { id: add-hard-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: simmer-vegetables, durationMin: 30, type: passive }
+  - { id: add-ripe-plantain, durationMin: 3, type: active, phase: cook }
+  - { id: simmer-plantain, durationMin: 15, type: passive }
+  - { id: finish, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Sancocho keeps and improves over a day or two in the refrigerator; the vegetables soften further but the flavour deepens.
+  freezable: true
+  freezeInstructions: Freeze in an airtight container for up to two months; the root vegetables soften on thawing but hold together.
+  reheatInstructions: Reheat gently in a covered pot, stirring occasionally, adding a little water if the broth has thickened too much.
+notes:
+  techniqueRationale:
+    - stepId: add-ripe-plantain
+      text: Adding the ripe plantain well after the root vegetables, rather than with them, keeps it from disintegrating into the broth before everything else is tender, while still giving it enough time to soften and lend its sweetness.
+  commonPitfalls:
+    - stepId: simmer-broth
+      text: Simmering the meats too hard rather than gently toughens them well before they have had time to grow tender; a bare, steady simmer works better than a rolling boil.
+---
+
+<Step id="marinate-meats">
+  Toss the <Qty ref="beef"/>, <Qty ref="chicken"/> and <Qty ref="pork"/> with
+  the <Qty ref="sour-orange-juice"/>, <Qty ref="garlic-marinade"/> and
+  <Qty ref="oregano"/>, and leave to marinate for <Dur step="marinate-meats"/>.
+</Step>
+
+<Step id="brown-meats">
+  Brown the marinated meats in a large pot over a high heat, in batches if
+  needed, for <Dur step="brown-meats"/>.
+</Step>
+
+<Step id="simmer-broth">
+  Return all the meat to the pot with the <Qty ref="onion"/>,
+  <Qty ref="green-pepper"/>, <Qty ref="garlic-broth"/>, <Qty ref="water"/>
+  and <Qty ref="salt"/>. Bring to a simmer and cook for
+  <Dur step="simmer-broth"/>, skimming occasionally, until the meats are
+  tender.
+</Step>
+
+<Step id="add-hard-vegetables">
+  Add the <Qty ref="yam"/>, <Qty ref="cassava"/>, <Qty ref="potato"/>,
+  <Qty ref="pumpkin"/>, <Qty ref="corn"/> and <Qty ref="plantain-green"/>.
+  This takes about <Dur step="add-hard-vegetables"/>.
+</Step>
+
+<Step id="simmer-vegetables">
+  Simmer for <Dur step="simmer-vegetables"/>, until the root vegetables are
+  tender.
+</Step>
+
+<Step id="add-ripe-plantain">
+  Add the <Qty ref="plantain-ripe"/>. This takes about
+  <Dur step="add-ripe-plantain"/>.
+</Step>
+
+<Step id="simmer-plantain">
+  Simmer for a further <Dur step="simmer-plantain"/>, until the ripe
+  plantain is tender but still holding its shape.
+</Step>
+
+<Step id="finish">
+  Stir in the <Qty ref="coriander"/> and <Qty ref="black-pepper"/>, adjust
+  the salt, and serve. This takes about <Dur step="finish"/>.
+</Step>

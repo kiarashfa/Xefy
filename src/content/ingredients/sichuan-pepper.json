@@ -1,0 +1,73 @@
+{
+  "id": "sichuan-pepper",
+  "name": "Sichuan Pepper",
+  "proseName": "Sichuan pepper",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Huajiao",
+        "region": "China",
+        "lang": "zh"
+      }
+    ]
+  },
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": true,
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole, dried",
+      "proseQualifier": "whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170931",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170931/nutrients",
+      "sourceNote": "USDA carries no record for Sichuan pepper, the dried husk of the Zanthoxylum shrub and botanically unrelated to black pepper. This is its record for black peppercorn, the closest dried-spice profile it publishes; Sichuan pepper is used in such small quantities that the nutritional effect of this substitution is negligible.",
+      "nutritionPer100g": {
+        "kcal": 251,
+        "protein": 10.39,
+        "fat": 3.26,
+        "carbs": 63.95,
+        "fiber": 25.3,
+        "sugars": 0.64,
+        "calcium": 443,
+        "iron": 9.71,
+        "magnesium": 171,
+        "phosphorus": 158,
+        "potassium": 1329,
+        "sodium": 20,
+        "zinc": 1.19,
+        "copper": 1.33,
+        "manganese": 12.753,
+        "seleniumMcg": 4.9,
+        "vitaminAMcg": 27,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 1.04,
+        "vitaminKMcg": 163.7,
+        "thiamin": 0.108,
+        "riboflavin": 0.18,
+        "niacin": 1.143,
+        "vitaminB6": 0.291,
+        "folateMcg": 17,
+        "vitaminB12Mcg": 0,
+        "choline": 11.3,
+        "saturatedFat": 1.392,
+        "monounsaturatedFat": 0.739,
+        "polyunsaturatedFat": 0.998,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 4.5,
+        "gPerTsp": 1.4,
+        "densitySource": "estimated",
+        "densityClass": "ground-spice"
+      }
+    }
+  ],
+  "image": "images/ingredients/sichuan-pepper-thumb.webp"
+}

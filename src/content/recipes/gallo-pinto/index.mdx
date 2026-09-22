@@ -1,0 +1,122 @@
+---
+title: Gallo Pinto
+subtitle: Rice and black beans fried together in one pan with onion, pepper and a dark, tangy sauce until every grain is speckled brown — Costa Rica's everyday breakfast.
+label: Costa Rica
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [central-american]
+  course: [breakfast, side]
+  method: [sauteing, boiling]
+image:
+  src: images/recipes/gallo-pinto.webp
+  alt: "A mound of gallo pinto rice and black beans beside slices of white cheese and a folded tortilla, served on a banana leaf"
+ingredients:
+  - id: black-beans
+    ingredientRef: black-beans
+    form: dried
+    amount: 150
+    unit: g
+    note: soaked overnight
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 600
+    unit: ml
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 300
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 50
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: worcestershire-sauce
+    ingredientRef: worcestershire-sauce
+    form: bottled
+    amount: 15
+    unit: ml
+    note: standing in for Salsa Lizano, the Costa Rican condiment the dish traditionally uses
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: chopped
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+steps:
+  - { id: soak-beans, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 50, type: passive }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:cook-beans", phase: rest }
+  - { id: saute-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: combine-and-fry, durationMin: 10, type: active, phase: cook }
+  - { id: finish, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The beans and rice can each be cooked up to two days ahead and refrigerated separately; gallo pinto is traditionally made from rice and beans left over from the day before.
+  freezable: true
+  freezeInstructions: Freeze the finished dish in an airtight container for up to two months.
+  reheatInstructions: Reheat in a hot pan with a little oil, stirring, until piping hot; a microwave leaves it soft rather than lightly crisped.
+notes:
+  techniqueRationale:
+    - stepId: combine-and-fry
+      text: Frying already-cooked rice and beans together in a hot pan, rather than combining them straight after cooking, is what gives gallo pinto its speckled, slightly crisp grains — the dish's name, "spotted rooster," describes exactly this effect.
+---
+
+<Step id="soak-beans">
+  Soak the <Qty ref="black-beans"/> in plenty of cold water for
+  <Dur step="soak-beans"/>, then drain.
+</Step>
+
+<Step id="cook-beans">
+  Simmer the soaked beans in the <Qty ref="water"/> for
+  <Dur step="cook-beans"/>, until tender. Drain, reserving some of the
+  cooking liquid.
+</Step>
+
+<Step id="cook-rice">
+  Meanwhile, cook the <Qty ref="rice"/> according to the packet
+  instructions, then set aside. This takes about <Dur step="cook-rice"/>.
+</Step>
+
+<Step id="saute-vegetables">
+  Heat the <Qty ref="oil"/> in a large pan over a medium heat and cook the
+  <Qty ref="onion"/>, <Qty ref="red-pepper"/> and <Qty ref="garlic"/> for
+  <Dur step="saute-vegetables"/>, until softened.
+</Step>
+
+<Step id="combine-and-fry">
+  Add the cooked rice, the drained beans and the
+  <Qty ref="worcestershire-sauce"/> to the pan and fry over a fairly high
+  heat, stirring and turning often, for <Dur step="combine-and-fry"/>, until
+  the grains are speckled brown and lightly crisp in places, adding a
+  splash of the reserved bean liquid if the pan looks dry.
+</Step>
+
+<Step id="finish">
+  Stir in the <Qty ref="coriander"/> and <Qty ref="salt"/> and serve at
+  once. This takes about <Dur step="finish"/>.
+</Step>

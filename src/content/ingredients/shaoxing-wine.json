@@ -1,0 +1,65 @@
+{
+  "id": "shaoxing-wine",
+  "name": "Shaoxing Wine",
+  "proseName": "Shaoxing wine",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Chinese cooking wine",
+        "region": "China",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169070",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169070/nutrients",
+      "sourceNote": "USDA carries no record for Shaoxing wine, a fermented rice wine. This is its record for cooking wine generally, the closest salted, low-strength cooking-wine profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 50,
+        "protein": 0.5,
+        "fat": 0,
+        "carbs": 6.3,
+        "fiber": 0,
+        "sugars": 1.55,
+        "calcium": 9,
+        "iron": 0.4,
+        "magnesium": 10,
+        "phosphorus": 15,
+        "potassium": 88,
+        "sodium": 626,
+        "zinc": 0.08,
+        "copper": 0.011,
+        "seleniumMcg": 0.2,
+        "vitaminC": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "thiamin": 0,
+        "riboflavin": 0.01,
+        "niacin": 0.1,
+        "vitaminB6": 0.02,
+        "folateMcg": 1,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/shaoxing-wine-thumb.webp"
+}

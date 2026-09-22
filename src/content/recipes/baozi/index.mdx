@@ -1,0 +1,170 @@
+---
+title: Baozi
+subtitle: A soft, yeast-leavened wheat bun pleated shut around a savoury filling and steamed until puffed — here filled with seasoned pork.
+description: The pork-filled version of baozi, mixed with ginger, spring onion and a little Shaoxing wine and pleated into a domed bun.
+label: Pork
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: Bao, lang: en }
+    - { name: Steamed pork buns, lang: en }
+image:
+  src: images/recipes/baozi.webp
+  alt: "A close-up pile of pleated white steamed baozi buns with hints of filling visible through the twisted tops"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 260
+    unit: ml
+    note: lukewarm
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 6
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 50
+    unit: g
+  - id: baking-powder
+    ingredientRef: baking-powder
+    form: double-acting
+    amount: 5
+    unit: g
+  - id: dough-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 400
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: grated
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: finely chopped
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 20
+    unit: ml
+  - id: oyster-sauce
+    ingredientRef: oyster-sauce
+    form: standard
+    amount: 15
+    unit: g
+  - id: shaoxing-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 15
+    unit: ml
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: filling-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+steps:
+  - { id: bloom-yeast, durationMin: 10, type: passive }
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-prove, durationMin: 60, type: passive }
+  - { id: make-filling, durationMin: 15, type: "parallel-with:first-prove", phase: prep }
+  - { id: shape, durationMin: 25, type: active, phase: prep }
+  - { id: second-prove, durationMin: 20, type: passive }
+  - { id: steam, durationMin: 14, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The filling can be made a day ahead and kept covered in the refrigerator. Shaped, unproved buns also keep covered overnight; bring back to room temperature before the second prove.
+  freezable: true
+  freezeInstructions: Freeze the cooked, cooled buns in a bag. Re-steam from frozen for several minutes until hot through.
+  reheatInstructions: Re-steam rather than microwave, which turns the crumb rubbery.
+notes:
+  techniqueRationale:
+    - stepId: make-filling
+      text: Stirring the filling with the liquid seasonings added gradually rather than all at once lets the mince absorb them fully, so the filling stays juicy without pooling liquid inside the bun as it steams.
+  commonPitfalls:
+    - stepId: steam
+      text: Lifting the lid before the steamer has fully cooled lets a rush of cold air hit the buns, and they collapse and wrinkle on one side. Turn off the heat and let the steam settle for a minute before uncovering.
+---
+
+<Step id="bloom-yeast">
+  Stir the <Qty ref="yeast"/> into the <Qty ref="water"/> and set aside for
+  <Dur step="bloom-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="sugar"/> and
+  <Qty ref="baking-powder"/> in a large bowl. Pour in the yeast mixture and the
+  <Qty ref="dough-oil"/> and bring together into a shaggy dough.
+</Step>
+
+<Step id="knead">
+  Turn the dough out onto the <Qty ref="flour-bench"/> and knead for
+  <Dur step="knead"/>, until smooth, elastic and no longer tacky.
+</Step>
+
+<Step id="first-prove">
+  Return the dough to the bowl, cover and leave to prove somewhere warm for
+  <Dur step="first-prove"/>, until roughly doubled in size.
+</Step>
+
+<Step id="make-filling">
+  Meanwhile, combine the <Qty ref="pork"/>, <Qty ref="ginger"/>,
+  <Qty ref="spring-onion"/>, <Qty ref="soy-sauce"/>, <Qty ref="oyster-sauce"/>,
+  <Qty ref="shaoxing-wine"/>, <Qty ref="sesame-oil"/>, <Qty ref="pepper"/> and
+  <Qty ref="filling-salt"/> in a bowl and stir hard in one direction until sticky
+  and cohesive.
+</Step>
+
+<Step id="shape">
+  Knock the dough back and roll it into a log, then divide it into even pieces.
+  Roll each piece into a round, thicker at the centre than at the rim, spoon
+  filling into the middle, and pleat the edge closed around it, twisting to seal
+  at the top. Set each bun on a small square of baking paper.
+</Step>
+
+<Step id="second-prove">
+  Cover the shaped buns loosely and leave to prove for a further
+  <Dur step="second-prove"/>, until visibly puffed.
+</Step>
+
+<Step id="steam">
+  Arrange the buns in a steamer basket with space between each to allow for
+  expansion, and steam over gently simmering water for <Dur step="steam"/>, until
+  risen and firm, and the filling is cooked through. Turn off the heat and let the
+  steam settle briefly before lifting the lid.
+</Step>

@@ -1,0 +1,93 @@
+---
+title: Tomato and Egg Stir-Fry
+subtitle: Egg scrambled quickly and set aside, then folded back through tomato cooked down to a loose, savoury-sweet sauce.
+label: Home-style
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Xihongshi chao jidan, lang: zh }
+image:
+  src: images/recipes/tomato-and-egg.webp
+  alt: "Soft scrambled egg curds tossed with juicy tomato wedges in a light red-tinted sauce on a plate"
+ingredients:
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: four eggs, beaten
+  - id: egg-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: egg-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: tomato-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 400
+    unit: g
+    note: cut into wedges
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: finely sliced
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 8
+    unit: g
+  - id: sauce-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: scramble-egg, durationMin: 3, type: active, phase: cook }
+  - { id: cook-tomato, durationMin: 6, type: active, phase: cook }
+  - { id: combine, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat gently in a pan rather than a microwave, which toughens the egg.
+notes:
+  techniqueRationale:
+    - stepId: cook-tomato
+      text: Cooking the tomato wedges until they slump and release their juice, rather than stopping while they still hold their shape, is what builds the loose sauce the egg is folded back into — a briefly cooked tomato stays watery and separate instead.
+---
+
+<Step id="scramble-egg">
+  Beat the <Qty ref="egg"/> with the <Qty ref="egg-salt"/>. Heat the
+  <Qty ref="egg-oil"/> in a wok over high heat and pour in the egg, stirring
+  briefly for <Dur step="scramble-egg"/> to large, soft curds, just set. Lift
+  out and set aside.
+</Step>
+
+<Step id="cook-tomato">
+  Heat the <Qty ref="tomato-oil"/> in the same wok and add the
+  <Qty ref="tomato"/>. Cook for <Dur step="cook-tomato"/>, pressing gently,
+  until the wedges soften and slump into their own juice.
+</Step>
+
+<Step id="combine">
+  Stir in the <Qty ref="sugar"/> and <Qty ref="sauce-salt"/>, then return the
+  scrambled egg to the wok and fold through gently for <Dur step="combine"/>,
+  until just combined. Finish with the <Qty ref="spring-onion"/>.
+</Step>

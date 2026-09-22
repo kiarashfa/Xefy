@@ -1,0 +1,163 @@
+---
+title: Sichuan Hot Pot
+subtitle: A málà broth of doubanjiang, dried chilli and Sichuan pepper kept at a simmer on the table, into which thinly sliced meat and vegetables are cooked piece by piece.
+label: Sichuan
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chinese]
+  course: [main-course]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Huoguo, lang: zh }
+image:
+  src: images/recipes/sichuan-hot-pot.webp
+  alt: "A divided Sichuan hot pot with bubbling spicy red-oil broth on a table surrounded by raw ingredients ready for dipping, including bean sprouts, lotus root, and sliced meat"
+ingredients:
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+  - id: doubanjiang
+    ingredientRef: doubanjiang
+    form: standard
+    amount: 60
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: whole
+    amount: 20
+    unit: g
+  - id: sichuan-pepper
+    ingredientRef: sichuan-pepper
+    form: whole
+    amount: 12
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: sliced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 20
+    unit: g
+    note: sliced
+  - id: star-anise
+    ingredientRef: star-anise
+    form: whole
+    amount: 3
+    unit: g
+    consumedFraction: 0.05
+    consumedFractionNote: The whole pods flavour the broth and are left in the pot rather than eaten; only a trace of their oil carries through, which is an editorial estimate rather than a sourced figure.
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 1200
+    unit: ml
+  - id: rock-sugar
+    ingredientRef: rock-sugar
+    form: standard
+    amount: 15
+    unit: g
+  - id: beef
+    ingredientRef: beef-flank
+    form: raw
+    amount: 250
+    unit: g
+    note: sliced paper-thin
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 200
+    unit: g
+    note: sliced paper-thin
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 200
+    unit: g
+    note: sliced
+  - id: napa-cabbage
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 250
+    unit: g
+    note: leaves separated
+  - id: mushroom
+    ingredientRef: mushroom
+    form: raw
+    amount: 150
+    unit: g
+  - id: noodles
+    ingredientRef: wheat-noodles
+    form: dried
+    amount: 150
+    unit: g
+  - id: dip-sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 40
+    unit: ml
+    note: for the dipping sauce
+  - id: dip-garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: minced, for the dipping sauce
+steps:
+  - { id: fry-base, durationMin: 8, type: active, phase: cook }
+  - { id: simmer-broth, durationMin: 20, type: passive }
+  - { id: prepare-dip, durationMin: 5, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: arrange-plates, durationMin: 15, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: cook-at-table, durationMin: 30, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth base can be made up to two days ahead and reheated at the table; slice the raw meat and vegetables no more than a few hours ahead and keep chilled.
+  freezable: true
+  freezeInstructions: Freeze the broth base on its own. Thaw fully and bring back to a simmer before adding fresh raw ingredients to cook.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-base
+      text: Frying the doubanjiang and dried chilli in oil before any liquid is added is what draws out their red colour and toasts their flavour — added straight into stock, the same ingredients taste flat and raw by comparison.
+  commonPitfalls:
+    - stepId: cook-at-table
+      text: Meat sliced too thick stays tough even after a long dip in the broth. Slicing it paper-thin, ideally while still slightly frozen, is what lets each piece cook through in the seconds it takes to swirl through the pot.
+---
+
+<Step id="fry-base">
+  Heat the <Qty ref="oil"/> in a large pot over medium heat and fry the
+  <Qty ref="doubanjiang"/>, <Qty ref="dried-chilli"/> and
+  <Qty ref="sichuan-pepper"/> for <Dur step="fry-base"/>, until the oil turns
+  red and fragrant. Add the <Qty ref="garlic"/>, <Qty ref="ginger"/> and
+  <Qty ref="star-anise"/> and stir briefly.
+</Step>
+
+<Step id="simmer-broth">
+  Pour in the <Qty ref="stock"/> and stir in the <Qty ref="rock-sugar"/>. Bring
+  to a simmer and cook gently for <Dur step="simmer-broth"/>, then transfer to
+  a tabletop burner.
+</Step>
+
+<Step id="prepare-dip">
+  Meanwhile, combine the <Qty ref="dip-sesame-oil"/> and <Qty ref="dip-garlic"/>
+  in small individual bowls for dipping.
+</Step>
+
+<Step id="arrange-plates">
+  Arrange the <Qty ref="beef"/>, <Qty ref="pork"/>, <Qty ref="tofu"/>,
+  <Qty ref="napa-cabbage"/>, <Qty ref="mushroom"/> and <Qty ref="noodles"/> on
+  plates around the pot, ready for cooking at the table.
+</Step>
+
+<Step id="cook-at-table">
+  Keep the broth at a steady simmer on the tabletop burner. Add the
+  ingredients in small batches, cooking each briefly in the broth until done,
+  over <Dur step="cook-at-table"/> in total, and dip each piece in the
+  sesame-and-garlic sauce before eating.
+</Step>

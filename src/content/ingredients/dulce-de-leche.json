@@ -6,7 +6,9 @@
   "animalOrigin": "dairy",
   "containsGluten": false,
   "containsDairy": true,
-  "allergenTags": ["dairy"],
+  "allergenTags": [
+    "dairy"
+  ],
   "pantryStaple": false,
   "forms": [
     {
@@ -50,7 +52,11 @@
         "transFat": 0.364,
         "cholesterol": 29
       },
-      "density": { "gPerTbsp": 19, "densitySource": "measured" }
+      "density": {
+        "gPerTbsp": 19,
+        "densitySource": "measured"
+      }
     }
-  ]
+  ],
+  "image": "images/ingredients/dulce-de-leche-thumb.webp"
 }

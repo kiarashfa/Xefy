@@ -1,0 +1,110 @@
+---
+label: Century Egg and Pork
+description: The Cantonese breakfast staple — plain congee cooked further with sliced century egg and marinated lean pork stirred through at the end.
+defaultServings: 4
+difficulty: Easy
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 200
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: finely sliced, to finish
+  - id: century-egg
+    ingredientRef: century-egg
+    form: preserved
+    amount: 130
+    unit: g
+    note: two century eggs, shelled and diced
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 200
+    unit: g
+    note: lean
+  - id: pork-soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: pork-cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 8
+    unit: g
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: finely julienned, to finish
+  - id: white-pepper
+    ingredientRef: white-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: rinse-rice, durationMin: 5, type: active, phase: prep }
+  - { id: marinate-pork, durationMin: 10, type: active, phase: prep }
+  - { id: simmer, durationMin: 75, type: active, phase: cook }
+  - { id: add-egg, durationMin: 5, type: active, phase: cook }
+  - { id: cook-pork, durationMin: 4, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The plain congee base can be made ahead; add the pork and century egg only when reheating to serve, since the pork toughens if cooked twice.
+  freezable: true
+  freezeInstructions: Freeze the base congee, without the pork or egg, in portions. Thaw, reheat with a little extra water, then add the pork and century egg fresh.
+  reheatInstructions: Reheat gently on the hob with a little extra water, stirring, since congee thickens considerably once cold.
+notes:
+  techniqueRationale:
+    - stepId: cook-pork
+      text: Dropping the marinated pork in loosely, a little at a time, rather than as one mass lets each piece separate into fine strands in the simmering congee instead of clumping into a single dense lump.
+---
+
+<Step id="rinse-rice">
+  Rinse the <Qty ref="rice"/> in several changes of water until it runs mostly
+  clear, then drain.
+</Step>
+
+<Step id="marinate-pork">
+  Combine the <Qty ref="pork"/>, <Qty ref="pork-soy"/> and
+  <Qty ref="pork-cornflour"/> in a bowl and set aside.
+</Step>
+
+<Step id="simmer">
+  Put the rice and the <Qty ref="water"/> in a large, heavy pot and bring to the
+  boil, then reduce to the lowest possible simmer. Cook uncovered, stirring
+  occasionally to stop the rice catching on the base, for <Dur step="simmer"/>,
+  until the grains have broken down into a smooth, thick porridge.
+</Step>
+
+<Step id="add-egg">
+  Stir in the <Qty ref="century-egg"/>, <Qty ref="salt"/> and
+  <Qty ref="white-pepper"/>, and simmer gently for <Dur step="add-egg"/>.
+</Step>
+
+<Step id="cook-pork">
+  Loosen the marinated pork with your fingers and drop it into the pot in small
+  pieces, stirring gently. Simmer for <Dur step="cook-pork"/>, until the pork is
+  cooked through and separated into fine strands, then finish with the
+  <Qty ref="sesame-oil"/>, <Qty ref="ginger"/> and <Qty ref="spring-onion"/>.
+</Step>

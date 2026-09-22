@@ -60,6 +60,57 @@
         "gPerCup": 255,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "dark",
+      "label": "Dark",
+      "proseQualifier": "dark",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174277",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174277/nutrients",
+      "sourceNote": "USDA does not carry dark soy sauce as a separate record. Dark soy is the same soy-and-wheat brew aged longer with added molasses or caramel for colour and body, so this cites the same shoyu-style record as the light form; the real product is somewhat thicker and mildly sweeter than these figures show.",
+      "nutritionPer100g": {
+        "kcal": 53,
+        "protein": 8.14,
+        "fat": 0.57,
+        "carbs": 4.93,
+        "fiber": 0.8,
+        "sugars": 0.4,
+        "calcium": 33,
+        "iron": 1.45,
+        "magnesium": 74,
+        "phosphorus": 166,
+        "potassium": 435,
+        "sodium": 5493,
+        "zinc": 0.87,
+        "copper": 0.043,
+        "manganese": 1.018,
+        "seleniumMcg": 0.5,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0,
+        "thiamin": 0.033,
+        "riboflavin": 0.165,
+        "niacin": 2.196,
+        "vitaminB6": 0.148,
+        "folateMcg": 14,
+        "vitaminB12Mcg": 0,
+        "choline": 18.3,
+        "saturatedFat": 0.073,
+        "monounsaturatedFat": 0.088,
+        "polyunsaturatedFat": 0.263,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTbsp": 18,
+        "gPerTsp": 6,
+        "gPerCup": 288,
+        "densitySource": "estimated",
+        "densityClass": "honey-syrup-like"
+      }
     }
   ],
   "image": "images/ingredients/soy-sauce-thumb.webp"

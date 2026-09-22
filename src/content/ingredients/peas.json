@@ -101,6 +101,54 @@
         "gPerCup": 196,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "yellow-split-dried",
+      "label": "Yellow split, dried",
+      "proseQualifier": "dried yellow split",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172428",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172428/nutrients",
+      "sourceNote": "USDA's record is described as green split peas; dried split peas of either colour are the same species and the same seed with the hull removed, so the nutrition profile applies equally to the yellow split peas used for dhalpuri and other Caribbean and South Asian dals.",
+      "nutritionPer100g": {
+        "kcal": 364,
+        "protein": 23.12,
+        "fat": 3.89,
+        "carbs": 61.63,
+        "fiber": 22.2,
+        "sugars": 3.14,
+        "calcium": 46,
+        "iron": 4.73,
+        "magnesium": 63,
+        "phosphorus": 334,
+        "potassium": 852,
+        "sodium": 5,
+        "zinc": 3.49,
+        "copper": 0.809,
+        "manganese": 1.19,
+        "seleniumMcg": 10.7,
+        "vitaminC": 1.8,
+        "thiamin": 0.719,
+        "riboflavin": 0.244,
+        "niacin": 3.608,
+        "vitaminB6": 0.14,
+        "folateMcg": 15,
+        "choline": 156.9,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 7,
+        "vitaminE": 0.12,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 15.9,
+        "saturatedFat": 0.408,
+        "monounsaturatedFat": 0.615,
+        "polyunsaturatedFat": 1.022,
+        "transFat": 0.004,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 196,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/peas-thumb.webp"

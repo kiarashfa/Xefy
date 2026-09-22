@@ -1,0 +1,97 @@
+---
+title: Callaloo
+subtitle: A leafy green cooked down with onion, tomato and scotch bonnet until soft and glossy — a side dish in Jamaica, though the same name covers an entirely different soup elsewhere in the Caribbean.
+label: Jamaican
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [caribbean]
+  course: [side, soup]
+  method: [sauteing, simmering]
+image:
+  src: images/recipes/callaloo.webp
+  alt: "A bowl of sautéed dark green callaloo topped with a whole scotch bonnet pepper"
+ingredients:
+  - id: amaranth
+    ingredientRef: amaranth
+    form: fresh
+    amount: 500
+    unit: g
+    note: leaves and tender stems, washed and roughly chopped
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: sliced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: chopped
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 4
+    unit: g
+    note: whole
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: saute-aromatics, durationMin: 5, type: active, phase: cook }
+  - { id: cook-down, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze the cooked callaloo in an airtight container for up to two months; it softens further on reheating.
+  reheatInstructions: Reheat gently in a covered pan with a splash of water until steaming through.
+notes:
+  commonPitfalls:
+    - stepId: cook-down
+      text: Leaving the scotch bonnet whole and removing it before serving seasons the pot with its heat and fruitiness without the risk of an unexpectedly fierce mouthful; a burst or chopped pepper is far hotter than the dish is meant to be.
+---
+
+<Step id="saute-aromatics">
+  Heat the <Qty ref="oil"/> in a wide pan over a medium heat and cook the
+  <Qty ref="onion"/>, <Qty ref="garlic"/> and <Qty ref="spring-onion"/> for
+  <Dur step="saute-aromatics"/>, until softened.
+</Step>
+
+<Step id="cook-down">
+  Add the <Qty ref="tomato"/>, <Qty ref="thyme"/>, <Qty ref="scotch-bonnet"/>,
+  <Qty ref="salt"/> and <Qty ref="black-pepper"/>, then stir in the
+  <Qty ref="amaranth"/> in batches as it wilts down. Cover and cook for
+  <Dur step="cook-down"/>, stirring occasionally, until completely soft and
+  glossy. Remove the scotch bonnet before serving.
+</Step>

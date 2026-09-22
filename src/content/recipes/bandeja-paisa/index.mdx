@@ -1,0 +1,183 @@
+---
+title: Bandeja Paisa
+subtitle: Red beans, rice, ground beef, chorizo, pork chicharrón, fried egg, ripe plantain, avocado and a small arepa, all served together on one large tray — Antioquia's enormous everyday platter.
+label: Antioquia
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [colombian]
+  course: [main-course]
+  method: [simmering, pan-frying, deep-frying]
+image:
+  src: images/recipes/bandeja-paisa.webp
+  alt: "A large plate of bandeja paisa with white rice, red beans, a fried egg, chicharrón, fried sweet plantain, a small arepa, and an avocado wedge"
+ingredients:
+  - id: kidney-beans
+    ingredientRef: kidney-beans
+    form: dried
+    amount: 150
+    unit: g
+    note: soaked overnight
+  - id: bean-water
+    ingredientRef: water
+    form: tap
+    amount: 600
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: chopped
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 300
+    unit: g
+  - id: beef-mince
+    ingredientRef: beef-mince
+    form: raw
+    amount: 300
+    unit: g
+  - id: pork-belly
+    ingredientRef: pork-belly
+    form: raw
+    amount: 200
+    unit: g
+    note: cut into small pieces, for the chicharrón
+  - id: chorizo
+    ingredientRef: chorizo
+    form: raw
+    amount: 200
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: four eggs
+  - id: plantain
+    ingredientRef: plantain
+    form: ripe
+    amount: 300
+    unit: g
+    note: peeled and sliced on the diagonal
+  - id: avocado
+    ingredientRef: avocado
+    form: hass
+    amount: 150
+    unit: g
+    note: sliced
+  - id: masa-harina
+    ingredientRef: maize-meal
+    form: precooked
+    amount: 150
+    unit: g
+    note: for four small arepas
+  - id: arepa-water
+    ingredientRef: water
+    form: tap
+    amount: 180
+    unit: ml
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+steps:
+  - { id: soak-beans, durationMin: 480, type: passive }
+  - { id: cook-beans, durationMin: 60, type: passive }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:cook-beans", phase: rest }
+  - { id: make-arepas, durationMin: 20, type: "parallel-with:cook-beans", phase: prep }
+  - { id: cook-chicharron, durationMin: 20, type: active, phase: cook }
+  - { id: cook-beef, durationMin: 12, type: active, phase: cook }
+  - { id: cook-chorizo, durationMin: 12, type: active, phase: cook }
+  - { id: fry-plantain, durationMin: 10, type: active, phase: cook }
+  - { id: fry-eggs, durationMin: 6, type: active, phase: cook }
+  - { id: plate, durationMin: 8, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The beans can be cooked up to two days ahead and reheated; every other element is best cooked and served the same day.
+  freezable: true
+  freezeInstructions: Freeze the cooked beans alone for up to two months.
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: plate
+      text: Cooking every element separately and only combining them on the plate, rather than stewing them together, is what keeps each component's own texture — the beans soft, the chicharrón crisp, the egg yolk still runny — intact rather than blurred into one dish.
+---
+
+<Step id="soak-beans">
+  Soak the <Qty ref="kidney-beans"/> in plenty of cold water for
+  <Dur step="soak-beans"/>, then drain.
+</Step>
+
+<Step id="cook-beans">
+  Simmer the soaked beans in the <Qty ref="bean-water"/> with the
+  <Qty ref="onion"/>, <Qty ref="garlic"/>, <Qty ref="tomato"/> and half the
+  <Qty ref="salt"/> for <Dur step="cook-beans"/>, until completely soft and
+  the liquid has thickened.
+</Step>
+
+<Step id="cook-rice">
+  Meanwhile, cook the <Qty ref="rice"/> according to the packet
+  instructions. This takes about <Dur step="cook-rice"/>.
+</Step>
+
+<Step id="make-arepas">
+  Combine the <Qty ref="masa-harina"/> with the remaining
+  <Qty ref="salt"/> and the <Qty ref="arepa-water"/> to form a soft dough,
+  divide into four and pat into flat rounds, then cook on a dry, hot
+  griddle, turning once or twice, until golden and cooked through. This
+  takes about <Dur step="make-arepas"/> in total.
+</Step>
+
+<Step id="cook-chicharron">
+  Fry the <Qty ref="pork-belly"/> in a dry pan over a medium heat for
+  <Dur step="cook-chicharron"/>, until deeply browned and crisp.
+</Step>
+
+<Step id="cook-beef">
+  Season the <Qty ref="beef-mince"/> and cook it in a hot pan, breaking it
+  up or shaping it into thin patties as preferred, for
+  <Dur step="cook-beef"/>, until browned through.
+</Step>
+
+<Step id="cook-chorizo">
+  Cook the <Qty ref="chorizo"/> in a pan over a medium heat for
+  <Dur step="cook-chorizo"/>, turning occasionally, until cooked through and
+  browned.
+</Step>
+
+<Step id="fry-plantain">
+  Heat half the <Qty ref="oil"/> in a pan and fry the <Qty ref="plantain"/>
+  for <Dur step="fry-plantain"/>, turning once, until golden and caramelised
+  at the edges.
+</Step>
+
+<Step id="fry-eggs">
+  Heat the remaining <Qty ref="oil"/> and fry the <Qty ref="egg"/> for
+  <Dur step="fry-eggs"/>, until the whites are set and the yolks still soft.
+</Step>
+
+<Step id="plate">
+  Divide the beans, rice, beef, chicharrón, chorizo, fried eggs, plantain,
+  <Qty ref="avocado"/> and arepas between large plates or trays. This takes
+  about <Dur step="plate"/>.
+</Step>

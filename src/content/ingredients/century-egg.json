@@ -1,0 +1,77 @@
+{
+  "id": "century-egg",
+  "name": "Century Egg",
+  "proseName": "century egg",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Pidan",
+        "region": "China",
+        "lang": "zh"
+      },
+      {
+        "name": "Preserved egg",
+        "region": "China",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "egg",
+  "animalOrigin": "egg",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "egg"
+  ],
+  "forms": [
+    {
+      "id": "preserved",
+      "label": "Preserved, whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171287",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171287/nutrients",
+      "sourceNote": "USDA carries no record for century egg, a duck or hen egg cured for weeks in an alkaline clay-and-ash paste. This is its record for raw whole hen egg, the closest whole-egg profile it publishes; the curing process changes texture and flavour rather than the underlying protein and fat content.",
+      "nutritionCaveat": "The alkaline cure raises sodium well above a fresh egg's, and USDA's fresh-egg record does not capture that. Treat the sodium figure on any dish using century egg as an underestimate.",
+      "nutritionPer100g": {
+        "kcal": 143,
+        "protein": 12.56,
+        "fat": 9.51,
+        "carbs": 0.72,
+        "fiber": 0,
+        "sugars": 0.37,
+        "calcium": 56,
+        "iron": 1.75,
+        "magnesium": 12,
+        "phosphorus": 198,
+        "potassium": 138,
+        "sodium": 142,
+        "zinc": 1.29,
+        "copper": 0.072,
+        "manganese": 0.028,
+        "seleniumMcg": 30.7,
+        "vitaminC": 0,
+        "thiamin": 0.04,
+        "riboflavin": 0.457,
+        "niacin": 0.075,
+        "vitaminB6": 0.17,
+        "folateMcg": 47,
+        "vitaminB12Mcg": 0.89,
+        "vitaminAMcg": 160,
+        "vitaminE": 1.05,
+        "vitaminDMcg": 2,
+        "vitaminKMcg": 0.3,
+        "saturatedFat": 3.1,
+        "monounsaturatedFat": 3.66,
+        "polyunsaturatedFat": 1.91,
+        "transFat": 0,
+        "cholesterol": 372
+      },
+      "countUnit": {
+        "singular": "century egg",
+        "plural": "century eggs",
+        "grams": 65
+      }
+    }
+  ],
+  "image": "images/ingredients/century-egg-thumb.webp"
+}

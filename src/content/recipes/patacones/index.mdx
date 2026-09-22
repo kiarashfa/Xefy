@@ -1,0 +1,113 @@
+---
+title: Patacones
+subtitle: Green plantain fried once to soften, flattened into wide discs, then fried again until crisp, and finished with hogao, Colombia's tomato-and-onion sauce.
+label: Colombia
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [colombian]
+  course: [side]
+  method: [deep-frying, sauteing]
+names:
+  notToBeConfusedWith:
+    - name: Tostones
+      note: The same twice-fried green plantain technique under its Caribbean name — Puerto Rico, Cuba and the Dominican Republic use tostones, dipped in salted water between fryings rather than finished with hogao.
+      slugRef: tostones
+image:
+  src: images/recipes/patacones.webp
+  alt: "A stack of golden, twice-fried green plantain discs on a plate"
+ingredients:
+  - id: plantain
+    ingredientRef: plantain
+    form: green
+    amount: 500
+    unit: g
+    note: peeled and cut into thick rounds
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 700
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most of the frying oil stays in the pan; the twice-fried plantain absorbs only a fraction of what it is fried in.
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: diced, for the hogao
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: diced, for the hogao
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: crushed, for the hogao
+  - id: hogao-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 15
+    unit: ml
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: hogao-salt, amount: 2 }
+      - { id: finishing-salt, amount: 5 }
+steps:
+  - { id: make-hogao, durationMin: 15, type: active, phase: cook }
+  - { id: first-fry, durationMin: 8, type: "parallel-with:make-hogao", phase: cook }
+  - { id: flatten, durationMin: 5, type: active, phase: prep }
+  - { id: second-fry, durationMin: 6, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The hogao can be made up to three days ahead and refrigerated, or frozen for up to two months.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-hogao
+      text: Cooking the tomato and onion down slowly until they collapse into a thick, jammy sauce, rather than leaving them fresh and chunky, is what gives hogao the concentrated sweetness that plain fried plantain needs alongside it.
+  commonPitfalls:
+    - stepId: flatten
+      text: Plantain flattened straight from the hot oil tears easily; letting it cool for a few seconds first, or pressing gently rather than all at once, keeps the disc in one piece.
+---
+
+<Step id="make-hogao">
+  Heat the <Qty ref="hogao-oil"/> in a small pan over a low heat and cook
+  the <Qty ref="onion"/> and <Qty ref="garlic"/> until soft, then add the
+  <Qty ref="tomato"/>, <Qty ref="cumin"/> and <Qty ref="hogao-salt"/> and
+  cook gently for <Dur step="make-hogao"/>, until the tomato has completely
+  broken down into a thick sauce.
+</Step>
+
+<Step id="first-fry">
+  Meanwhile, heat the <Qty ref="frying-oil"/> in a deep, heavy pan and fry
+  the <Qty ref="plantain"/> for <Dur step="first-fry"/>, until pale gold and
+  just tender but not browned. Lift out and drain, leaving the oil in the
+  pan.
+</Step>
+
+<Step id="flatten">
+  Press each piece flat with a tostonera, the base of a glass, or the flat
+  side of a knife, into a wide disc. This takes about <Dur step="flatten"/>.
+</Step>
+
+<Step id="second-fry">
+  Return the plantain to the hot oil and fry for <Dur step="second-fry"/>,
+  until deeply golden and crisp at the edges. Drain, season with the
+  <Qty ref="finishing-salt"/>, and serve with the hogao spooned over or
+  alongside.
+</Step>

@@ -1,0 +1,68 @@
+---
+label: De queso
+defaultServings: 8
+difficulty: Easy
+ingredients:
+  - id: cheese
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 300
+    unit: g
+    note: shredded — standing in for quesillo, the stretched Salvadoran cheese
+  - id: masa-harina
+    ingredientRef: maize-meal
+    form: masa-harina
+    amount: 400
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 320
+    unit: ml
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 15, type: passive }
+  - { id: shape-and-fill, durationMin: 15, type: active, phase: prep }
+  - { id: cook-pupusas, durationMin: 16, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough is best made and used the same day.
+  freezable: true
+  freezeInstructions: Freeze shaped, filled raw pupusas between sheets of baking paper for up to two months; cook from frozen, allowing extra time.
+  reheatInstructions: Reheat on a dry, hot griddle or pan for a minute or two a side until warmed through and the surface has recrisped.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="masa-harina"/> and <Qty ref="dough-salt"/>, then work
+  in the <Qty ref="dough-water"/> to form a soft, smooth dough. This takes
+  about <Dur step="make-dough"/>.
+</Step>
+
+<Step id="rest-dough">
+  Cover the dough and leave it to rest for <Dur step="rest-dough"/>.
+</Step>
+
+<Step id="shape-and-fill">
+  Divide the dough into as many equal balls as pupusas are being made.
+  Flatten each into a cup, fill generously with the <Qty ref="cheese"/>,
+  then draw the edges up and pinch closed around it. Flatten each filled
+  ball gently between the palms into a thick disc, taking care not to let
+  the cheese break through. This takes about <Dur step="shape-and-fill"/> in
+  total.
+</Step>
+
+<Step id="cook-pupusas">
+  Cook the discs on a lightly oiled griddle with the <Qty ref="oil"/> over a
+  moderate heat for <Dur step="cook-pupusas"/> in total, turning once or
+  twice, until both sides are browned in spots, the dough is cooked through
+  and the cheese has melted.
+</Step>

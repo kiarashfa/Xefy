@@ -1,0 +1,41 @@
+{
+  "id": "beef-flank",
+  "name": "Beef Flank",
+  "proseName": "flank steak",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2646175",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2646175/nutrients",
+      "nutritionPer100g": {
+        "kcal": 169.563,
+        "protein": 20.131,
+        "fat": 9.399,
+        "carbs": 0,
+        "fiber": 0,
+        "saturatedFat": 3.551,
+        "monounsaturatedFat": 3.589,
+        "polyunsaturatedFat": 0.314,
+        "transFat": 0.389,
+        "cholesterol": 57.7,
+        "sodium": 51.3,
+        "potassium": 331.8,
+        "calcium": 3.836,
+        "iron": 1.834,
+        "magnesium": 18.86,
+        "phosphorus": 167.3,
+        "zinc": 5.563,
+        "copper": 0.045,
+        "manganese": 0.002
+      }
+    }
+  ],
+  "image": "images/ingredients/beef-flank-thumb.webp"
+}

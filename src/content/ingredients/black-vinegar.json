@@ -1,0 +1,55 @@
+{
+  "id": "black-vinegar",
+  "name": "Black Vinegar",
+  "proseName": "black vinegar",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Chinkiang vinegar",
+        "region": "China",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "standard",
+      "label": "Standard",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172241",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172241/nutrients",
+      "sourceNote": "USDA carries no record for Chinese black vinegar, an aged glutinous-rice vinegar. This is its record for balsamic vinegar, the closest dark, mildly sweet aged-vinegar profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 88,
+        "protein": 0.49,
+        "fat": 0,
+        "carbs": 17.03,
+        "sugars": 14.95,
+        "saturatedFat": 0,
+        "sodium": 23,
+        "potassium": 112,
+        "calcium": 27,
+        "iron": 0.72,
+        "magnesium": 12,
+        "phosphorus": 19,
+        "zinc": 0.08,
+        "copper": 0.026,
+        "manganese": 0.131,
+        "vitaminAMcg": 0,
+        "vitaminC": 0
+      },
+      "density": {
+        "gPerTbsp": 16,
+        "gPerTsp": 5.3,
+        "gPerCup": 255,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/black-vinegar-thumb.webp"
+}

@@ -1,0 +1,154 @@
+---
+title: Doubles
+subtitle: Curried chickpeas sandwiched between two pieces of soft, turmeric-fried bara bread — Trinidad's street-food breakfast, eaten standing up with a spoon of chutney.
+label: Trinidad
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [snack]
+  method: [deep-frying, simmering]
+image:
+  src: images/recipes/doubles.webp
+  alt: "Two fried bara flatbreads topped with curried channa (chickpeas), garnished with chopped carrot and tamarind chutney, on a paper-lined plate"
+ingredients:
+  - id: chickpeas
+    ingredientRef: chickpea
+    form: dried
+    amount: 250
+    unit: g
+    note: soaked overnight
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 6
+    unit: g
+    portions:
+      - { id: turmeric-channa, amount: 3 }
+      - { id: turmeric-bara, amount: 3 }
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+    note: for the channa
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 60
+    unit: g
+    note: finely chopped, for the channa
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed, for the channa
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 5
+    unit: g
+    note: whole, for the channa
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+    note: for the bara
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 4
+    unit: g
+    note: for the bara
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    portions:
+      - { id: salt-channa, amount: 3 }
+      - { id: salt-bara, amount: 3 }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    note: warm, for the bara dough
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1020
+    unit: ml
+    consumedFraction: 0.14
+    consumedFractionNote: A small measure of this oil goes into the channa and is fully eaten; the great majority is the deep-frying oil for the bara, and most of that stays in the pan rather than the dough. Blended across both uses, this is the fraction of the whole actually consumed.
+    portions:
+      - { id: oil-channa, amount: 20, note: for the channa }
+      - { id: frying-oil, amount: 1000, note: for deep-frying the bara }
+steps:
+  - { id: soak-chickpeas, durationMin: 480, type: passive }
+  - { id: cook-channa, durationMin: 40, type: active, phase: cook }
+  - { id: make-bara-dough, durationMin: 8, type: "parallel-with:cook-channa", phase: prep }
+  - { id: prove-bara, durationMin: 45, type: passive }
+  - { id: shape-bara, durationMin: 12, type: active, phase: prep }
+  - { id: fry-bara, durationMin: 15, type: active, phase: cook }
+  - { id: assemble, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The curried channa can be made up to two days ahead and reheated; the bara dough is best proved and fried fresh, as it toughens on standing.
+  freezable: true
+  freezeInstructions: Freeze the cooked channa alone for up to one month; the fried bara does not freeze well.
+  reheatInstructions: Reheat the channa gently in a covered pan with a splash of water, and fry fresh bara to go with it.
+notes:
+  techniqueRationale:
+    - stepId: fry-bara
+      text: A soft, wet dough fried quickly in oil hot enough to make it puff produces the light, slightly chewy bara doubles need; a stiffer dough or cooler oil fries dense and heavy instead.
+  commonPitfalls:
+    - stepId: prove-bara
+      text: An underproved dough fries flat and tough rather than light and puffed, so the batter needs the full rise before it goes anywhere near the oil.
+---
+
+<Step id="soak-chickpeas">
+  Soak the <Qty ref="chickpeas"/> in plenty of cold water for
+  <Dur step="soak-chickpeas"/>, then drain.
+</Step>
+
+<Step id="cook-channa">
+  Simmer the soaked chickpeas with the <Qty ref="turmeric-channa"/>,
+  <Qty ref="cumin"/>, <Qty ref="onion"/>, <Qty ref="garlic"/>,
+  <Qty ref="scotch-bonnet"/>, <Qty ref="oil-channa"/> and
+  <Qty ref="salt-channa"/> in enough water to cover, for
+  <Dur step="cook-channa"/>, until the chickpeas are soft and the liquid has
+  reduced to a thick curry. Remove the scotch bonnet before serving.
+</Step>
+
+<Step id="make-bara-dough">
+  Whisk the <Qty ref="flour"/>, <Qty ref="yeast"/>, <Qty ref="turmeric-bara"/>
+  and <Qty ref="salt-bara"/> together, then work in the <Qty ref="water"/> to
+  make a soft, wet, elastic batter-like dough. This takes about
+  <Dur step="make-bara-dough"/>.
+</Step>
+
+<Step id="prove-bara">
+  Cover the dough and leave it in a warm place for <Dur step="prove-bara"/>,
+  until visibly puffed.
+</Step>
+
+<Step id="shape-bara">
+  With wet hands, pull off pieces of dough and pat each into a thin, round
+  disc directly against the palm. Lay the discs out on a floured tray as they
+  are shaped, ready to fry; this takes about <Dur step="shape-bara"/>.
+</Step>
+
+<Step id="fry-bara">
+  Heat the <Qty ref="frying-oil"/> in a deep pan and fry the discs a few at a
+  time for about a minute a side, until puffed, golden and cooked through.
+  Drain on paper towels. Frying the whole batch takes about
+  <Dur step="fry-bara"/>.
+</Step>
+
+<Step id="assemble">
+  Spoon the curried channa onto one piece of bara and top with a second piece
+  to close the sandwich, in the manner that gives doubles its name. Assembling
+  the full batch takes about <Dur step="assemble"/>.
+</Step>

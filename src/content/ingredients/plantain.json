@@ -42,6 +42,53 @@
         "niacin": 0.55,
         "vitaminB6": 0.07
       }
+    },
+    {
+      "id": "ripe",
+      "label": "Ripe (yellow), raw, peeled",
+      "proseQualifier": "ripe",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169130",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169130/nutrients",
+      "nutritionPer100g": {
+        "kcal": 122,
+        "protein": 1.3,
+        "carbs": 31.89,
+        "fat": 0.35,
+        "fiber": 1.7,
+        "sugars": 17.51,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 4,
+        "potassium": 487,
+        "calcium": 3,
+        "iron": 0.55,
+        "magnesium": 36,
+        "phosphorus": 32,
+        "zinc": 0.19,
+        "copper": 0.074,
+        "manganese": 0.144,
+        "seleniumMcg": 1.5,
+        "vitaminAMcg": 56,
+        "vitaminC": 18.4,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 28.8,
+        "thiamin": 0.062,
+        "riboflavin": 0.076,
+        "niacin": 0.672,
+        "vitaminB6": 0.242,
+        "folateMcg": 22,
+        "vitaminB12Mcg": 0,
+        "choline": 13.5
+      },
+      "density": {
+        "gPerCup": 148,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/plantain-thumb.webp"

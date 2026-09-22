@@ -1,0 +1,203 @@
+---
+label: Baked
+description: The bakery version — an enriched, egg-washed dough baked to a shiny, golden-brown crust rather than steamed to white.
+defaultServings: 12
+difficulty: Hard
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for shaping }
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 200
+    unit: ml
+    note: lukewarm
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 6
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 70
+    unit: g
+  - id: dough-egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: one egg
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+    note: softened
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 400
+    unit: g
+    note: diced small
+  - id: hoisin
+    ingredientRef: hoisin-sauce
+    form: standard
+    amount: 30
+    unit: g
+    portions:
+      - { id: marinade-hoisin, amount: 20 }
+      - { id: sauce-hoisin, amount: 10 }
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 25
+    unit: ml
+    portions:
+      - { id: marinade-soy, amount: 15 }
+      - { id: sauce-soy, amount: 10 }
+  - id: shaoxing-wine
+    ingredientRef: shaoxing-wine
+    form: standard
+    amount: 15
+    unit: ml
+  - id: char-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 8
+    unit: g
+    note: minced
+  - id: five-spice
+    ingredientRef: five-spice
+    form: ground
+    amount: 2
+    unit: g
+  - id: oyster-sauce
+    ingredientRef: oyster-sauce
+    form: standard
+    amount: 20
+    unit: g
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 15
+    unit: g
+  - id: sauce-water
+    ingredientRef: water
+    form: tap
+    amount: 80
+    unit: ml
+    note: for the filling sauce
+  - id: egg-wash
+    ingredientRef: egg
+    form: whole
+    amount: 25
+    unit: g
+    note: half an egg, beaten, for brushing
+steps:
+  - { id: marinate-pork, durationMin: 10, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 120, type: passive }
+  - { id: bloom-yeast, durationMin: 10, type: "parallel-with:rest-marinade", phase: prep }
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: knead, durationMin: 12, type: active, phase: prep }
+  - { id: first-prove, durationMin: 75, type: passive }
+  - { id: roast-pork, durationMin: 20, type: "parallel-with:first-prove", phase: cook }
+  - { id: make-filling, durationMin: 10, type: active, phase: prep }
+  - { id: shape, durationMin: 25, type: active, phase: prep }
+  - { id: second-prove, durationMin: 25, type: passive }
+  - { id: bake, durationMin: 16, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The roasted pork filling can be made up to two days ahead and kept covered in the refrigerator. Shaped, unproved buns also keep covered overnight; bring back to room temperature before the second prove.
+  freezable: true
+  freezeInstructions: Freeze the baked, cooled buns in a bag. Reheat from frozen in a moderate oven until warmed through.
+  reheatInstructions: Reheat in a moderate oven rather than a microwave, which turns the crust soft and chewy instead of crisp.
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: The egg wash is what gives the baked bun its shine and deep colour — the same enriched dough baked without it comes out matte and pale by comparison.
+---
+
+<Step id="marinate-pork">
+  Combine the <Qty ref="marinade-hoisin"/>, <Qty ref="marinade-soy"/>,
+  <Qty ref="shaoxing-wine"/>, <Qty ref="char-sugar"/>, <Qty ref="garlic"/> and
+  <Qty ref="five-spice"/> in a bowl and turn the <Qty ref="pork"/> through it.
+</Step>
+
+<Step id="rest-marinade">
+  Cover and marinate in the refrigerator for <Dur step="rest-marinade"/>.
+</Step>
+
+<Step id="bloom-yeast">
+  Stir the <Qty ref="yeast"/> into the <Qty ref="milk"/> and set aside for
+  <Dur step="bloom-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="sugar"/> and <Qty ref="salt"/> in
+  a large bowl. Pour in the milk mixture and the <Qty ref="dough-egg"/> and bring
+  together into a shaggy dough.
+</Step>
+
+<Step id="knead">
+  Turn the dough out onto the <Qty ref="flour-bench"/> and knead for
+  <Dur step="knead"/>, working in the <Qty ref="butter"/> a little at a time,
+  until smooth, glossy and elastic.
+</Step>
+
+<Step id="first-prove">
+  Return the dough to the bowl, cover and leave to prove somewhere warm for
+  <Dur step="first-prove"/>, until roughly doubled in size.
+</Step>
+
+<Step id="roast-pork">
+  Meanwhile, spread the marinated pork on a lined tray and roast at
+  <Temp c={200}/> for <Dur step="roast-pork"/>, turning once, until cooked through
+  and lightly charred at the edges. Once cool enough to handle, dice into small
+  pieces.
+</Step>
+
+<Step id="make-filling">
+  Whisk the <Qty ref="cornflour"/> into the <Qty ref="sauce-water"/> until smooth,
+  then combine in a pan with the <Qty ref="sauce-hoisin"/>, <Qty ref="sauce-soy"/>
+  and <Qty ref="oyster-sauce"/>. Bring to a simmer, stirring, until thickened and
+  glossy. Off the heat, stir through the diced pork and the
+  <Qty ref="sesame-oil"/>, then leave to cool.
+</Step>
+
+<Step id="shape">
+  Knock the dough back and roll it into a log, then divide it into even pieces.
+  Roll each piece into a round, thicker at the centre than at the rim, spoon
+  filling into the middle, and gather the edge up around it, pinching firmly to
+  seal completely. Set each bun seam-down on a lined tray.
+</Step>
+
+<Step id="second-prove">
+  Cover the shaped buns loosely and leave to prove for a further
+  <Dur step="second-prove"/>, until visibly puffed.
+</Step>
+
+<Step id="bake">
+  Brush each bun with the <Qty ref="egg-wash"/> and bake at <Temp c={190}/> for
+  <Dur step="bake"/>, until deeply golden and glossy.
+</Step>

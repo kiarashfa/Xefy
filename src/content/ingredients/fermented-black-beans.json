@@ -1,0 +1,59 @@
+{
+  "id": "fermented-black-beans",
+  "name": "Fermented Black Beans",
+  "proseName": "fermented black beans",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Douchi",
+        "region": "China",
+        "lang": "zh"
+      }
+    ]
+  },
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "soy"
+  ],
+  "forms": [
+    {
+      "id": "salted",
+      "label": "Salted, dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174280",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174280/nutrients",
+      "sourceNote": "USDA carries no record for douchi, whole soybeans salted and fermented dry. This is its record for fuyu, a salted and fermented tofu, the closest salted-fermented-soy profile it publishes.",
+      "nutritionPer100g": {
+        "kcal": 116,
+        "protein": 8.92,
+        "fat": 8,
+        "carbs": 4.38,
+        "saturatedFat": 1.157,
+        "monounsaturatedFat": 1.767,
+        "polyunsaturatedFat": 4.516,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 2873,
+        "potassium": 75,
+        "calcium": 46,
+        "iron": 1.98,
+        "magnesium": 52,
+        "phosphorus": 73,
+        "zinc": 1.56,
+        "copper": 0.376,
+        "manganese": 1.174,
+        "seleniumMcg": 17.3,
+        "vitaminC": 0.2,
+        "thiamin": 0.157,
+        "riboflavin": 0.101,
+        "niacin": 0.379,
+        "vitaminB6": 0.091,
+        "folateMcg": 29
+      }
+    }
+  ],
+  "image": "images/ingredients/fermented-black-beans-thumb.webp"
+}

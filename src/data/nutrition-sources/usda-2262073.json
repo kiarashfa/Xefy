@@ -1,0 +1,254 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "2262073",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/2262073/nutrients",
+  "description": "Sesame butter, creamy",
+  "category": "Nut and Seed Products",
+  "publicationDate": "4/28/2022",
+  "retrieved": "2026-09-21",
+  "nutritionPer100g": {
+    "kcal": 648.374,
+    "protein": 19.705,
+    "fat": 62.4,
+    "carbs": 14.179,
+    "fiber": 8.372,
+    "calcium": 115.8,
+    "iron": 7.003,
+    "magnesium": 356.8,
+    "phosphorus": 719.3,
+    "potassium": 407.7,
+    "sodium": 63.63,
+    "zinc": 6.039,
+    "copper": 1.646,
+    "manganese": 1.609,
+    "seleniumMcg": 46.48,
+    "thiamin": 0.993,
+    "niacin": 5.813,
+    "vitaminB6": 0.595,
+    "vitaminE": 0,
+    "vitaminKMcg": 1.713,
+    "saturatedFat": 8.966,
+    "monounsaturatedFat": 22.57,
+    "polyunsaturatedFat": 26.37
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 0.6056,
+      "unit": "g"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 3.718,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 3.11,
+      "unit": "g"
+    },
+    {
+      "number": "416",
+      "name": "Biotin",
+      "amount": 13.31,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 108.4,
+      "unit": "µg"
+    },
+    {
+      "number": "613",
+      "name": "SFA 16:0",
+      "amount": 5.324,
+      "unit": "g"
+    },
+    {
+      "number": "614",
+      "name": "SFA 18:0",
+      "amount": 3.103,
+      "unit": "g"
+    },
+    {
+      "number": "615",
+      "name": "SFA 20:0",
+      "amount": 0.3611,
+      "unit": "g"
+    },
+    {
+      "number": "674",
+      "name": "MUFA 18:1 c",
+      "amount": 22.37,
+      "unit": "g"
+    },
+    {
+      "number": "829",
+      "name": "MUFA 20:1 c",
+      "amount": 0.1221,
+      "unit": "g"
+    },
+    {
+      "number": "675",
+      "name": "PUFA 18:2 n-6 c,c",
+      "amount": 26.11,
+      "unit": "g"
+    },
+    {
+      "number": "851",
+      "name": "PUFA 18:3 n-3 c,c,c (ALA)",
+      "amount": 0.2495,
+      "unit": "g"
+    },
+    {
+      "number": "501",
+      "name": "Tryptophan",
+      "amount": 0.3088,
+      "unit": "g"
+    },
+    {
+      "number": "502",
+      "name": "Threonine",
+      "amount": 0.9163,
+      "unit": "g"
+    },
+    {
+      "number": "503",
+      "name": "Isoleucine",
+      "amount": 0.8588,
+      "unit": "g"
+    },
+    {
+      "number": "504",
+      "name": "Leucine",
+      "amount": 1.649,
+      "unit": "g"
+    },
+    {
+      "number": "505",
+      "name": "Lysine",
+      "amount": 0.6725,
+      "unit": "g"
+    },
+    {
+      "number": "506",
+      "name": "Methionine",
+      "amount": 0.7388,
+      "unit": "g"
+    },
+    {
+      "number": "508",
+      "name": "Phenylalanine",
+      "amount": 1.116,
+      "unit": "g"
+    },
+    {
+      "number": "509",
+      "name": "Tyrosine",
+      "amount": 0.8363,
+      "unit": "g"
+    },
+    {
+      "number": "510",
+      "name": "Valine",
+      "amount": 1.1,
+      "unit": "g"
+    },
+    {
+      "number": "511",
+      "name": "Arginine",
+      "amount": 3.14,
+      "unit": "g"
+    },
+    {
+      "number": "512",
+      "name": "Histidine",
+      "amount": 0.6175,
+      "unit": "g"
+    },
+    {
+      "number": "513",
+      "name": "Alanine",
+      "amount": 1.174,
+      "unit": "g"
+    },
+    {
+      "number": "514",
+      "name": "Aspartic acid",
+      "amount": 2.055,
+      "unit": "g"
+    },
+    {
+      "number": "515",
+      "name": "Glutamic acid",
+      "amount": 5.046,
+      "unit": "g"
+    },
+    {
+      "number": "516",
+      "name": "Glycine",
+      "amount": 1.225,
+      "unit": "g"
+    },
+    {
+      "number": "517",
+      "name": "Proline",
+      "amount": 0.9288,
+      "unit": "g"
+    },
+    {
+      "number": "518",
+      "name": "Serine",
+      "amount": 1.151,
+      "unit": "g"
+    },
+    {
+      "number": "521",
+      "name": "Hydroxyproline",
+      "amount": 0.035,
+      "unit": "g"
+    },
+    {
+      "number": "526",
+      "name": "Cysteine",
+      "amount": 0.7513,
+      "unit": "g"
+    },
+    {
+      "number": "710",
+      "name": "Daidzein",
+      "amount": 1.525,
+      "unit": "mg"
+    },
+    {
+      "number": "711",
+      "name": "Genistein",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "717",
+      "name": "Daidzin",
+      "amount": 0.4056,
+      "unit": "mg"
+    },
+    {
+      "number": "718",
+      "name": "Genistin",
+      "amount": 0,
+      "unit": "mg"
+    },
+    {
+      "number": "719",
+      "name": "Glycitin",
+      "amount": 0.1694,
+      "unit": "mg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

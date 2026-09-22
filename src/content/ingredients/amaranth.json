@@ -1,0 +1,70 @@
+{
+  "id": "amaranth",
+  "name": "Amaranth",
+  "proseName": "amaranth",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Callaloo",
+        "region": "Jamaica",
+        "lang": "en"
+      },
+      {
+        "name": "Chinese spinach",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Leaves, fresh, raw",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168385",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168385/nutrients",
+      "sourceNote": "USDA's record for raw amaranth leaves publishes no fibre figure at all, an omission rather than a true zero on a leafy green; no other USDA amaranth-leaf record carries one either, so none is stated here.",
+      "nutritionPer100g": {
+        "kcal": 23,
+        "protein": 2.46,
+        "carbs": 4.02,
+        "fat": 0.33,
+        "saturatedFat": 0.091,
+        "monounsaturatedFat": 0.076,
+        "polyunsaturatedFat": 0.147,
+        "transFat": 0,
+        "cholesterol": 0,
+        "sodium": 20,
+        "potassium": 611,
+        "calcium": 215,
+        "iron": 2.32,
+        "magnesium": 55,
+        "phosphorus": 50,
+        "zinc": 0.9,
+        "copper": 0.162,
+        "manganese": 0.885,
+        "seleniumMcg": 0.9,
+        "vitaminAMcg": 146,
+        "vitaminC": 43.3,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1140,
+        "thiamin": 0.027,
+        "riboflavin": 0.158,
+        "niacin": 0.658,
+        "vitaminB6": 0.192,
+        "folateMcg": 85,
+        "vitaminB12Mcg": 0
+      },
+      "density": {
+        "gPerCup": 28,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/amaranth-thumb.webp"
+}
