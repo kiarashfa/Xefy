@@ -1,0 +1,128 @@
+---
+title: Jalebi
+subtitle: A fermented batter piped into hot oil in coils, fried crisp, and steeped in warm saffron syrup until it turns glossy and juicy inside. Makes one batch of small jalebi; the nutrition panel is for one piece.
+label: Fermented batter
+defaultServings: 15
+difficulty: Medium
+tags:
+  cuisine: [indian]
+  course: [dessert]
+  method: [deep-frying]
+image:
+  src: images/recipes/jalebi.webp
+  alt: "A pile of bright orange, syrup-soaked jalebi spirals in a glass dish"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: cornflour
+    ingredientRef: cornflour
+    form: standard
+    amount: 20
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 3
+    unit: g
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 30
+    unit: g
+  - id: batter-water
+    ingredientRef: water
+    form: tap
+    amount: 160
+    unit: ml
+    note: lukewarm
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 250
+    unit: g
+  - id: syrup-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 3
+    unit: g
+    consumedFraction: 0.15
+    consumedFractionNote: The pods flavour the syrup but are strained out rather than eaten.
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.15
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 5
+    unit: ml
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1000
+    unit: g
+    consumedFraction: 0.12
+    consumedFractionNote: Most frying oil stays in the pan; a shallow, batter-coiled fritter absorbs only a small fraction of what it is fried in.
+steps:
+  - { id: mix-batter, durationMin: 8, type: active, phase: prep }
+  - { id: ferment-batter, durationMin: 480, type: passive }
+  - { id: make-syrup, durationMin: 10, type: "parallel-with:ferment-batter", phase: cook }
+  - { id: fry-jalebi, durationMin: 20, type: active, phase: cook }
+  - { id: soak-jalebi, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: ferment-batter
+      text: The long rest lets the yeast loosen the batter with a light, even sourness, which is what gives fried jalebi its characteristic tang against the sweetness of the syrup — a quick, unfermented batter fries flat-tasting by comparison.
+  commonPitfalls:
+    - stepId: soak-jalebi
+      text: The syrup and the fritters both need to be warm at the same time. A cold syrup barely penetrates the crisp shell, leaving the jalebi dry at the centre rather than juicy.
+---
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="flour"/>, <Qty ref="cornflour"/> and <Qty ref="yeast"/>
+  together, then whisk in the <Qty ref="yoghurt"/> and the <Qty ref="batter-water"/>
+  to a smooth, pourable batter, about the thickness of double cream. This takes
+  <Dur step="mix-batter"/>.
+</Step>
+
+<Step id="ferment-batter">
+  Cover the batter and leave it somewhere warm to ferment for
+  <Dur step="ferment-batter"/>, until it has loosened further and turned lightly
+  bubbly and faintly sour-smelling.
+</Step>
+
+<Step id="make-syrup">
+  Combine the <Qty ref="caster-sugar"/> and the <Qty ref="syrup-water"/> in a pan
+  with the <Qty ref="cardamom"/> and bring to a simmer, stirring until the sugar
+  dissolves. Stir in the <Qty ref="saffron"/> and the <Qty ref="lemon-juice"/> and
+  simmer gently for <Dur step="make-syrup"/>, until very slightly thickened. Keep
+  warm.
+</Step>
+
+<Step id="fry-jalebi">
+  Heat the <Qty ref="frying-oil"/> in a wide, shallow pan to a moderate heat.
+  Transfer the fermented batter to a piping bag or a bottle with a narrow nozzle
+  and pipe it into the oil in tight, overlapping coils, working in batches. Fry for
+  <Dur step="fry-jalebi"/> in total, turning once, until crisp and golden all over.
+  Lift out with a slotted spoon, draining briefly.
+</Step>
+
+<Step id="soak-jalebi">
+  Slide the hot, freshly fried jalebi straight into the warm syrup and turn them to
+  coat for <Dur step="soak-jalebi"/>, until they have soaked through and turned
+  glossy. Lift out and serve warm.
+</Step>

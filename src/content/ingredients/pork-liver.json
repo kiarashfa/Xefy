@@ -1,0 +1,49 @@
+{
+  "id": "pork-liver",
+  "name": "Pork Liver",
+  "proseName": "pork liver",
+  "category": "offal",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167862",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167862/nutrients",
+      "nutritionPer100g": {
+        "kcal": 134,
+        "protein": 21.39,
+        "fat": 3.65,
+        "carbs": 2.47,
+        "fiber": 0,
+        "saturatedFat": 1.17,
+        "monounsaturatedFat": 0.52,
+        "polyunsaturatedFat": 0.87,
+        "cholesterol": 301,
+        "sodium": 87,
+        "potassium": 273,
+        "calcium": 9,
+        "iron": 23.3,
+        "magnesium": 18,
+        "phosphorus": 288,
+        "zinc": 5.76,
+        "copper": 0.677,
+        "manganese": 0.344,
+        "seleniumMcg": 52.7,
+        "vitaminAMcg": 6502,
+        "vitaminC": 25.3,
+        "thiamin": 0.283,
+        "riboflavin": 3.005,
+        "niacin": 15.301,
+        "vitaminB6": 0.69,
+        "folateMcg": 212,
+        "vitaminB12Mcg": 26
+      }
+    }
+  ],
+  "image": "images/ingredients/pork-liver-thumb.webp"
+}

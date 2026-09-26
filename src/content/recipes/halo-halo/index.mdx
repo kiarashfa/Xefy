@@ -1,0 +1,118 @@
+---
+title: Halo-Halo
+subtitle: Sweetened beans, banana and ube halaya, layered under shaved ice and finished with evaporated and condensed milk, mixed together at the table.
+label: Filipino
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [dessert]
+  method: [no-cook]
+image:
+  src: images/recipes/halo-halo.webp
+  alt: "A bowl of halo-halo shaved ice dessert with ube ice cream, ube halaya, sweet red beans, jackfruit strips, banana slices and candied sweet potato"
+ingredients:
+  - id: kidney-beans
+    ingredientRef: kidney-beans
+    form: dried
+    amount: 100
+    unit: g
+    note: soaked overnight
+  - id: bean-water
+    ingredientRef: water
+    form: tap
+    amount: 600
+    unit: ml
+    note: for boiling the beans
+    consumedFraction: 0.15
+    consumedFractionNote: The beans are boiled in this water and then drained; only what clings to them and what is used to build their syrup afterward is eaten.
+  - id: ube
+    ingredientRef: ube
+    form: raw
+    amount: 300
+    unit: g
+    note: peeled and cubed
+  - id: ube-water
+    ingredientRef: water
+    form: tap
+    amount: 400
+    unit: ml
+    note: for boiling the ube
+    consumedFraction: 0.1
+    consumedFractionNote: The ube is boiled in this water and drained before mashing; only a trace remains in the finished halaya.
+  - id: banana
+    ingredientRef: banana
+    form: raw
+    amount: 200
+    unit: g
+    note: sliced
+  - id: banana-water
+    ingredientRef: water
+    form: tap
+    amount: 50
+    unit: ml
+    note: for the banana syrup
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 120
+    unit: g
+    portions:
+      - { id: sugar-beans, amount: 40 }
+      - { id: sugar-ube, amount: 50 }
+      - { id: sugar-banana, amount: 30 }
+  - id: condensed-milk
+    ingredientRef: condensed-milk
+    form: sweetened
+    amount: 200
+    unit: g
+    portions:
+      - { id: condensed-ube, amount: 60, note: mashed into the ube halaya }
+      - { id: condensed-topping, amount: 140, note: for pouring over the finished glasses }
+  - id: evaporated-milk
+    ingredientRef: evaporated-milk
+    form: standard
+    amount: 300
+    unit: ml
+    note: for pouring over the finished glasses
+steps:
+  - { id: sweeten-beans, durationMin: 65, type: active, phase: cook }
+  - { id: make-ube-halaya, durationMin: 30, type: "parallel-with:sweeten-beans", phase: cook }
+  - { id: make-banana-syrup, durationMin: 10, type: active, phase: cook }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The sweetened beans, ube halaya and banana syrup can each be made up to three days ahead and refrigerated separately; assemble just before serving so the ice does not melt.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: assemble
+      text: Piling all three components into the glass before the ice, rather than under it, buries them where they never get seen or stirred through evenly. Ice goes on top, mounded high, with the milk poured last.
+---
+
+<Step id="sweeten-beans">
+  Drain the soaked <Qty ref="kidney-beans"/>, cover with the <Qty ref="bean-water"/> and
+  simmer for most of <Dur step="sweeten-beans"/>, until tender. Drain again, return to
+  the pan with the <Qty ref="sugar-beans"/> and a splash of water, and simmer for the
+  remaining few minutes until syrupy.
+</Step>
+
+<Step id="make-ube-halaya">
+  Meanwhile, cover the <Qty ref="ube"/> with the <Qty ref="ube-water"/> and simmer for
+  most of <Dur step="make-ube-halaya"/>, until fork-tender. Drain, mash while hot with
+  the <Qty ref="sugar-ube"/> and <Qty ref="condensed-ube"/>, and continue cooking
+  briefly over a low heat, stirring, until thick and glossy.
+</Step>
+
+<Step id="make-banana-syrup">
+  Simmer the <Qty ref="banana"/> with the <Qty ref="sugar-banana"/> and
+  <Qty ref="banana-water"/> for <Dur step="make-banana-syrup"/>, until the banana has
+  softened and the liquid has thickened into a light syrup.
+</Step>
+
+<Step id="assemble">
+  Divide the sweetened beans, banana syrup and ube halaya between glasses. Mound shaved
+  ice on top and pour over the <Qty ref="evaporated-milk"/> and
+  <Qty ref="condensed-topping"/>. Stir together at the table before eating.
+</Step>

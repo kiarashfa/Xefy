@@ -1,0 +1,66 @@
+{
+  "id": "water-spinach",
+  "name": "Water Spinach",
+  "proseName": "water spinach",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Kangkong",
+        "region": "Philippines",
+        "lang": "tl"
+      },
+      {
+        "name": "Ong choy",
+        "region": "China",
+        "lang": "yue"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169301",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169301/nutrients",
+      "sourceNote": "USDA publishes water spinach under its Latin name, \"water convolvulus.\"",
+      "nutritionPer100g": {
+        "kcal": 19,
+        "protein": 2.6,
+        "fat": 0.2,
+        "carbs": 3.13,
+        "fiber": 2.1,
+        "calcium": 77,
+        "iron": 1.67,
+        "magnesium": 71,
+        "phosphorus": 39,
+        "potassium": 312,
+        "sodium": 113,
+        "zinc": 0.18,
+        "copper": 0.023,
+        "manganese": 0.16,
+        "seleniumMcg": 0.9,
+        "vitaminAMcg": 315,
+        "vitaminC": 55,
+        "vitaminDMcg": 0,
+        "thiamin": 0.03,
+        "riboflavin": 0.1,
+        "niacin": 0.9,
+        "vitaminB6": 0.096,
+        "folateMcg": 57,
+        "vitaminB12Mcg": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 56,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/water-spinach-thumb.webp"
+}

@@ -1,0 +1,140 @@
+---
+title: Kare-Kare
+subtitle: Oxtail simmered until tender, then finished in a thick peanut and toasted-rice sauce coloured with annatto, served with aubergine, long beans and bok choy.
+label: Oxtail
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [filipino]
+  course: [main-course]
+  method: [stewing]
+image:
+  src: images/recipes/kare-kare.webp
+  alt: "Oxtail kare-kare, chunks of oxtail and eggplant in a thick orange peanut sauce with bok choy"
+ingredients:
+  - id: oxtail
+    ingredientRef: oxtail
+    form: raw
+    amount: 1200
+    unit: g
+    consumedFraction: 0.55
+    consumedFractionNote: Oxtail is cross-cut through the bone, and a large share of its raw weight is bone and connective tissue left on the plate once the meat is eaten.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: quartered
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: minced
+    portions:
+      - { id: garlic-broth, amount: 10 }
+      - { id: garlic-bagoong, amount: 10 }
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: ml
+    portions:
+      - { id: oil-sauce, amount: 20 }
+      - { id: oil-bagoong, amount: 10 }
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 8
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 25
+    unit: g
+    note: toasted and ground to a fine powder
+  - id: peanut
+    ingredientRef: peanut
+    form: roasted
+    amount: 120
+    unit: g
+    note: ground to a paste
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 200
+    unit: g
+    note: sliced
+  - id: long-beans
+    ingredientRef: long-beans
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into short lengths
+  - id: bok-choy
+    ingredientRef: bok-choy
+    form: raw
+    amount: 200
+    unit: g
+    note: halved lengthways
+  - id: shrimp-paste
+    ingredientRef: shrimp-paste
+    form: alamang
+    amount: 60
+    unit: g
+steps:
+  - { id: simmer-oxtail, durationMin: 120, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 8, type: "parallel-with:simmer-oxtail", phase: cook }
+  - { id: combine, durationMin: 10, type: active, phase: cook }
+  - { id: cook-vegetables, durationMin: 8, type: active, phase: cook }
+  - { id: bagoong, durationMin: 5, type: "parallel-with:cook-vegetables", phase: cook }
+makeAhead:
+  aheadInstructions: The oxtail can be simmered a day ahead and refrigerated in its broth; finishing with the sauce and vegetables is quick once that stage is done.
+  freezable: true
+  freezeInstructions: Freeze the oxtail in its sauce, before the vegetables go in. Thaw and reheat gently, then cook the vegetables fresh.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-sauce
+      text: The rice is toasted dry before grinding, which is what gives the sauce its nutty depth and lets it thicken without tasting starchy the way raw rice flour would.
+  commonPitfalls:
+    - stepId: cook-vegetables
+      text: Aubergine and bok choy take very different times to cook through. Added together rather than staggered, one is always either raw or collapsing.
+---
+
+<Step id="simmer-oxtail">
+  Combine the <Qty ref="oxtail"/>, <Qty ref="water"/> and <Qty ref="onion"/> in a large
+  pot, bring to the boil, skim, then lower the heat and simmer for
+  <Dur step="simmer-oxtail"/>, until the meat is fork-tender. Lift out the oxtail and
+  reserve the broth.
+</Step>
+
+<Step id="make-sauce">
+  Meanwhile, heat the <Qty ref="oil-sauce"/> in a separate pan and cook the
+  <Qty ref="garlic-broth"/> until fragrant. Stir in the <Qty ref="achiote"/> and cook
+  briefly to colour the oil, then add the <Qty ref="peanut"/> and <Qty ref="rice"/> and
+  enough of the reserved broth to loosen into a thick, pourable sauce, stirring for
+  <Dur step="make-sauce"/>.
+</Step>
+
+<Step id="combine">
+  Return the oxtail to the pot with the sauce, adding more reserved broth as needed, and
+  simmer gently for <Dur step="combine"/>, until the sauce coats the meat thickly.
+</Step>
+
+<Step id="cook-vegetables">
+  Add the <Qty ref="aubergine"/> and <Qty ref="long-beans"/> and simmer for
+  <Dur step="cook-vegetables"/>, then stir in the <Qty ref="bok-choy"/> for the final
+  minute, just until it wilts.
+</Step>
+
+<Step id="bagoong">
+  Separately, heat the <Qty ref="oil-bagoong"/> and cook the <Qty ref="garlic-bagoong"/>
+  until golden. Add the <Qty ref="shrimp-paste"/> and cook for <Dur step="bagoong"/>,
+  stirring, until fragrant. Serve alongside the stew as a condiment.
+</Step>

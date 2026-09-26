@@ -1,0 +1,104 @@
+---
+title: Chicken Inasal
+subtitle: Chicken marinated in vinegar, calamansi and lemongrass, grilled over coals and basted orange-red with annatto oil.
+label: Bacolod
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [main-course]
+  method: [grilling]
+image:
+  src: images/recipes/chicken-inasal.webp
+  alt: "Grilled annatto-glazed chicken inasal leg quarter served with two mounds of steamed rice and a small bowl of dipping sauce"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 900
+    unit: g
+    note: leg quarters
+    consumedFraction: 0.75
+    consumedFractionNote: Leg quarters lose about a quarter of their raw weight to bone once eaten.
+  - id: calamansi
+    ingredientRef: calamansi
+    form: fresh
+    amount: 60
+    unit: g
+    note: halved and squeezed
+  - id: vinegar
+    ingredientRef: cane-vinegar
+    form: cane
+    amount: 45
+    unit: ml
+  - id: lemongrass
+    ingredientRef: lemongrass
+    form: fresh
+    amount: 30
+    unit: g
+    note: bruised and finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: minced
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 60
+    unit: ml
+  - id: achiote
+    ingredientRef: achiote
+    form: ground
+    amount: 6
+    unit: g
+steps:
+  - { id: marinate, durationMin: 10, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 120, type: passive }
+  - { id: make-baste, durationMin: 5, type: "parallel-with:rest-marinade", phase: prep }
+  - { id: grill, durationMin: 25, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The chicken can marinate up to a day ahead in the refrigerator.
+  freezable: true
+  freezeInstructions: Freeze the marinated, uncooked chicken. Thaw fully in the refrigerator before grilling.
+  reheatInstructions: Reheat over a low grill or under a hot oven, basting again with any leftover annatto oil to bring back the colour and shine.
+notes:
+  techniqueRationale:
+    - stepId: make-baste
+      text: The annatto is warmed gently in oil rather than added raw, which draws its colour out into the oil so basting tints the chicken's skin as it grills instead of leaving the seeds' colour behind on the surface.
+  commonPitfalls:
+    - stepId: grill
+      text: Basting only once leaves pale patches where the marinade never reaches. Repeated basting through the whole grilling time is what gives the skin its even, deep colour.
+---
+
+<Step id="marinate">
+  Combine the <Qty ref="calamansi"/>, <Qty ref="vinegar"/>, <Qty ref="lemongrass"/>,
+  <Qty ref="garlic"/>, <Qty ref="pepper"/> and <Qty ref="salt"/> in a bowl and turn the
+  <Qty ref="chicken"/> through it, coating every piece, for <Dur step="marinate"/>.
+</Step>
+
+<Step id="rest-marinade">
+  Cover and marinate in the refrigerator for <Dur step="rest-marinade"/>.
+</Step>
+
+<Step id="make-baste">
+  Meanwhile, warm the <Qty ref="oil"/> with the <Qty ref="achiote"/> over a low heat for
+  <Dur step="make-baste"/>, until the oil turns deep orange, then strain out the seeds.
+</Step>
+
+<Step id="grill">
+  Lift the chicken from the marinade and grill over hot coals for
+  <Dur step="grill"/>, turning and basting repeatedly with the annatto oil, until the
+  skin is deeply coloured and the chicken is cooked through.
+</Step>

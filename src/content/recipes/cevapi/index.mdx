@@ -1,0 +1,119 @@
+---
+title: Ćevapi
+subtitle: Small, hand-rolled skinless sausages of seasoned beef and lamb mince, grilled hot and fast and stuffed into warm flatbread with raw onion.
+label: Bosnian
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [balkan]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: Ćevapčići, region: Bosnia and Herzegovina, lang: bs }
+image:
+  src: images/recipes/cevapi.webp
+  alt: "Grilled ćevapi sausages on a plate with somun flatbread, chopped raw onion and a spoonful of red ajvar"
+ingredients:
+  - id: beef-mince
+    ingredientRef: beef-mince
+    form: raw
+    amount: 400
+    unit: g
+  - id: lamb-mince
+    ingredientRef: lamb-mince
+    form: raw
+    amount: 200
+    unit: g
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed to a paste
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 9
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: bicarbonate-of-soda
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 3
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 30
+    unit: ml
+  - id: pita-bread
+    ingredientRef: pita-bread
+    form: white
+    amount: 320
+    unit: g
+    note: warmed, or somun flatbread if available
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: finely diced, for serving
+  - id: clotted-cream
+    ingredientRef: clotted-cream
+    form: clotted
+    amount: 60
+    unit: g
+    note: kajmak if available, for serving
+    optional: true
+steps:
+  - { id: mix-meat, durationMin: 10, type: active, phase: prep }
+  - { id: rest-meat, durationMin: 240, type: passive }
+  - { id: shape-cevapi, durationMin: 15, type: active, phase: prep }
+  - { id: grill-cevapi, durationMin: 10, type: active, phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The meat mixture can be mixed and rested up to a day ahead, covered and refrigerated; shape it just before grilling.
+  freezable: true
+  freezeInstructions: Freeze the shaped, uncooked ćevapi in a single layer, then bag them. Grill directly from frozen, allowing extra time.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: rest-meat
+      text: The rest lets the bicarbonate of soda raise the mixture's pH and work into the proteins, which is what gives ćevapi their characteristic springy, slightly bouncy bite rather than a dense, crumbly one.
+  commonPitfalls:
+    - stepId: shape-cevapi
+      text: Handled too warm or too long, the fat in the mince starts to smear rather than stay distinct, and the ćevapi lose their light, open texture on the grill. Keep the mixture and your hands cold while shaping.
+---
+
+<Step id="mix-meat">
+  Combine the <Qty ref="beef-mince"/>, <Qty ref="lamb-mince"/>, <Qty ref="garlic"/>,
+  <Qty ref="fine-sea-salt"/>, <Qty ref="black-pepper"/>, <Qty ref="bicarbonate-of-soda"/>
+  and the <Qty ref="water"/> in a large bowl. Mix by hand for <Dur step="mix-meat"/>,
+  until sticky and well combined.
+</Step>
+
+<Step id="rest-meat">
+  Cover and refrigerate the mixture for <Dur step="rest-meat"/>, so it firms up and
+  the bicarbonate of soda has time to work.
+</Step>
+
+<Step id="shape-cevapi">
+  With cold, wet hands, roll the mixture into short, finger-thick lengths, working
+  for <Dur step="shape-cevapi"/> and keeping the mixture cold throughout.
+</Step>
+
+<Step id="grill-cevapi">
+  Grill the ćevapi over high, direct heat, turning regularly, for
+  <Dur step="grill-cevapi"/>, until well charred outside and cooked through.
+</Step>
+
+<Step id="assemble">
+  Split open the warm <Qty ref="pita-bread"/> and tuck the grilled ćevapi inside,
+  scattering over the diced <Qty ref="onion"/> and spooning over the
+  <Qty ref="clotted-cream"/>. This takes <Dur step="assemble"/>.
+</Step>

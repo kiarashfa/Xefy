@@ -1,0 +1,185 @@
+---
+title: Koshari
+subtitle: Rice and vermicelli, lentils, macaroni and chickpeas, layered under crisp fried onion and a garlic-and-vinegar tomato sauce.
+label: Egyptian
+defaultServings: 6
+difficulty: Hard
+tags:
+  cuisine: [egyptian]
+  course: [main-course]
+  method: [boiling, pan-frying, simmering]
+image:
+  src: images/recipes/koshari.webp
+  alt: "A platter of Egyptian koshari arranged in sections of lentils, chickpeas, macaroni, vermicelli and rice, topped with crispy fried onions and a red chilli"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 200
+    unit: g
+  - id: vermicelli
+    ingredientRef: vermicelli
+    form: dried
+    amount: 40
+    unit: g
+    note: broken into short pieces
+  - id: lentils
+    ingredientRef: lentils
+    form: brown
+    amount: 120
+    unit: g
+  - id: chickpeas
+    ingredientRef: chickpea
+    form: dried
+    amount: 100
+    unit: g
+    note: soaked overnight
+  - id: macaroni
+    ingredientRef: macaroni
+    form: dry
+    amount: 150
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2900
+    unit: ml
+    portions:
+      - { id: rice-water, amount: 350 }
+      - { id: lentil-water, amount: 400 }
+      - { id: chickpea-water, amount: 500 }
+      - { id: macaroni-water, amount: 1500 }
+      - { id: sauce-water, amount: 150 }
+    consumedFraction: 0.34
+    consumedFractionNote: Blended across five very different uses in one line, as the site's convention requires. The rice- and sauce-cooking water is fully absorbed or retained, the lentil water mostly so, but the chickpea and especially the pasta water is largely drained off and discarded; this figure is a weighted editorial estimate across all five, not a sourced one.
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: thinly sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 25
+    unit: g
+    note: minced
+    portions:
+      - { id: garlic-sauce, amount: 15 }
+      - { id: garlic-dakka, amount: 10 }
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 100
+    unit: g
+  - id: vinegar
+    ingredientRef: white-vinegar
+    form: distilled
+    amount: 30
+    unit: ml
+    portions:
+      - { id: vinegar-sauce, amount: 15 }
+      - { id: vinegar-dakka, amount: 15 }
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+    portions:
+      - { id: cumin-sauce, amount: 2 }
+      - { id: cumin-dakka, amount: 2 }
+  - id: chilli-flakes
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 3
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 130
+    unit: ml
+    portions:
+      - { id: oil-rice, amount: 15 }
+      - { id: oil-onions, amount: 100 }
+      - { id: oil-sauce, amount: 10 }
+      - { id: oil-dakka, amount: 5 }
+    consumedFraction: 0.85
+    consumedFractionNote: Most of the oil the onions fry in is drained off and discarded once they crisp; the small amounts used to cook the rice, sauce and dakka are eaten in full. This blended figure is an editorial estimate.
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    portions:
+      - { id: salt-sauce, amount: 4 }
+      - { id: salt-dakka, amount: 4 }
+steps:
+  - { id: cook-chickpeas, durationMin: 75, type: active, phase: cook }
+  - { id: fry-onions, durationMin: 20, type: "parallel-with:cook-chickpeas", phase: cook }
+  - { id: cook-rice, durationMin: 20, type: active, phase: cook }
+  - { id: cook-lentils, durationMin: 25, type: "parallel-with:cook-rice", phase: cook }
+  - { id: cook-macaroni, durationMin: 12, type: active, phase: cook }
+  - { id: make-sauce, durationMin: 15, type: "parallel-with:cook-macaroni", phase: cook }
+  - { id: make-dakka, durationMin: 5, type: active, phase: prep }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The chickpeas, lentils, fried onion, tomato sauce and dakka can each be made up to two days ahead and refrigerated separately; cook the rice and macaroni fresh and assemble just before serving.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat each component separately with a little water to loosen, then reassemble; a microwave turns the fried onion soft.
+notes:
+  techniqueRationale:
+    - stepId: cook-rice
+      text: Toasting the vermicelli in oil before the rice and water go in is what gives it its brown colour and nutty flavour, rather than the pale, soft strands that boiling it raw alongside the rice would produce.
+  commonPitfalls:
+    - stepId: fry-onions
+      text: Onions pulled from the pan the moment they look done keep cooking in their own residual heat and turn from golden to burnt within moments. Lifting them slightly before they reach the target colour and draining them at once avoids this.
+---
+
+<Step id="cook-chickpeas">
+  Drain the soaked <Qty ref="chickpeas"/>, cover with the <Qty ref="chickpea-water"/>
+  and simmer for <Dur step="cook-chickpeas"/>, until tender. Drain and set aside.
+</Step>
+
+<Step id="fry-onions">
+  Meanwhile, heat the <Qty ref="oil-onions"/> in a wide pan and fry the <Qty ref="onion"/>
+  for <Dur step="fry-onions"/>, stirring occasionally, until deep golden and crisp.
+  Lift out with a slotted spoon and drain on paper towels.
+</Step>
+
+<Step id="cook-rice">
+  Heat the <Qty ref="oil-rice"/> in a pot and toast the <Qty ref="vermicelli"/> until
+  golden. Add the <Qty ref="rice"/> and <Qty ref="rice-water"/>, cover and cook for
+  <Dur step="cook-rice"/>, until the liquid is absorbed and the rice is tender.
+</Step>
+
+<Step id="cook-lentils">
+  In a separate pot, cover the <Qty ref="lentils"/> with the <Qty ref="lentil-water"/>
+  and simmer for <Dur step="cook-lentils"/>, until tender but still holding their
+  shape. Drain any excess liquid.
+</Step>
+
+<Step id="cook-macaroni">
+  Cook the <Qty ref="macaroni"/> in the boiling <Qty ref="macaroni-water"/> for
+  <Dur step="cook-macaroni"/>, until just tender, then drain.
+</Step>
+
+<Step id="make-sauce">
+  Meanwhile, heat the <Qty ref="oil-sauce"/> and cook the <Qty ref="garlic-sauce"/>
+  briefly, then stir in the <Qty ref="tomato-puree"/>, <Qty ref="sauce-water"/>,
+  <Qty ref="vinegar-sauce"/>, <Qty ref="cumin-sauce"/> and <Qty ref="salt-sauce"/>.
+  Simmer for <Dur step="make-sauce"/>, until slightly thickened.
+</Step>
+
+<Step id="make-dakka">
+  Combine the <Qty ref="oil-dakka"/>, <Qty ref="garlic-dakka"/>,
+  <Qty ref="vinegar-dakka"/>, <Qty ref="chilli-flakes"/>, <Qty ref="cumin-dakka"/> and
+  <Qty ref="salt-dakka"/> for <Dur step="make-dakka"/>, to make a sharp, garlicky
+  dressing.
+</Step>
+
+<Step id="assemble">
+  Layer the rice, lentils, macaroni and chickpeas in bowls, top with the fried onion,
+  and serve with the tomato sauce and dakka alongside for spooning over, working for
+  <Dur step="assemble"/>.
+</Step>

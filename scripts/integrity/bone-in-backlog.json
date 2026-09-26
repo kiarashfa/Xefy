@@ -1,0 +1,20 @@
+{
+  "note": "Ingredient lines weighed on the bone that predate bone-in-consumed-fraction. Listed lines only warn; every other one fails. Remove a line once it declares its consumedFraction. Never add one.",
+  "lines": [
+    "src/content/recipes/bbq-ribs/index.mdx::ribs",
+    "src/content/recipes/bbq-ribs/kansas-city.mdx::ribs",
+    "src/content/recipes/bbq-ribs/st-louis.mdx::ribs",
+    "src/content/recipes/buffalo-wings/index.mdx::wings",
+    "src/content/recipes/churrasco/index.mdx::short-rib",
+    "src/content/recipes/gumbo/index.mdx::chicken",
+    "src/content/recipes/jerk-chicken/index.mdx::chicken",
+    "src/content/recipes/jerk-chicken/pimento-wood.mdx::chicken",
+    "src/content/recipes/pulled-pork/index.mdx::pork",
+    "src/content/recipes/pulled-pork/western.mdx::pork",
+    "src/content/recipes/roast-turkey/index.mdx::turkey",
+    "src/content/recipes/roast-turkey/spatchcocked.mdx::turkey",
+    "src/content/recipes/southern-fried-chicken/index.mdx::chicken",
+    "src/content/recipes/southern-fried-chicken/nashville-hot.mdx::chicken",
+    "src/content/recipes/wonton-noodle-soup/index.mdx::chicken"
+  ]
+}

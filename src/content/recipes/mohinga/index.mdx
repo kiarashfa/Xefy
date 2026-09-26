@@ -1,0 +1,172 @@
+---
+title: Mohinga
+subtitle: Catfish simmered until it falls apart, built into a thick, lemongrass-scented broth over soft rice noodles, and finished with boiled egg and crisp garnishes.
+label: Burmese
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [burmese]
+  course: [soup]
+  method: [simmering]
+image:
+  src: images/recipes/mohinga.webp
+  alt: "A bowl of mohinga fish and rice noodle soup topped with crispy fritters, chilli oil, coriander and boiled egg"
+ingredients:
+  - id: catfish
+    ingredientRef: catfish
+    form: raw
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1600
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: lemongrass
+    ingredientRef: lemongrass
+    form: fresh
+    amount: 20
+    unit: g
+    consumedFraction: 0.2
+    consumedFractionNote: The bruised stalks flavour the broth but are fibrous and mostly picked out rather than eaten.
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 4
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 4
+    unit: g
+  - id: yellow-split-peas
+    ingredientRef: peas
+    form: yellow-split-dried
+    amount: 100
+    unit: g
+    note: soaked
+  - id: gram-flour
+    ingredientRef: gram-flour
+    form: besan
+    amount: 30
+    unit: g
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 45
+    unit: g
+  - id: dried-shrimp
+    ingredientRef: dried-shrimp
+    form: dried
+    amount: 15
+    unit: g
+  - id: fish-sauce
+    ingredientRef: fish-sauce
+    form: standard
+    amount: 25
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: rice-noodles
+    ingredientRef: rice-noodles
+    form: dried-flat
+    amount: 300
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: hard-boiled and halved, for serving
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, for garnish
+steps:
+  - { id: poach-fish, durationMin: 20, type: passive }
+  - { id: soak-noodles, durationMin: 20, type: "parallel-with:poach-fish", phase: prep }
+  - { id: cook-aromatics, durationMin: 12, type: active, phase: cook }
+  - { id: build-broth, durationMin: 40, type: passive }
+  - { id: cook-noodles, durationMin: 4, type: active, phase: cook }
+  - { id: assemble, durationMin: 6, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth can be made up to two days ahead and reheated; cook the noodles fresh just before serving.
+  freezable: true
+  freezeInstructions: Freeze the finished broth, without noodles or garnishes, for up to two months.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: build-broth
+      text: The split peas and toasted gram flour are what give mohinga its body — the broth is thickened by what dissolves into it during the long simmer rather than by any separate roux or cornflour slurry.
+  commonPitfalls:
+    - stepId: poach-fish
+      text: Boiling the catfish hard toughens it and clouds the poaching liquid. A gentle simmer keeps the flesh tender enough to flake apart by hand and leaves a cleaner stock to build the broth on.
+---
+
+<Step id="poach-fish">
+  Gently poach the <Qty ref="catfish"/> in the <Qty ref="water"/> at a bare
+  simmer for <Dur step="poach-fish"/>, until it flakes easily. Lift the fish out,
+  flake it into large pieces discarding any bones, and reserve the poaching
+  liquid.
+</Step>
+
+<Step id="soak-noodles">
+  Cover the <Qty ref="rice-noodles"/> with warm water and leave to soak for
+  <Dur step="soak-noodles"/>, until pliable.
+</Step>
+
+<Step id="cook-aromatics">
+  Heat the <Qty ref="vegetable-oil"/> in a large pot and fry the
+  <Qty ref="onion"/>, <Qty ref="garlic"/> and <Qty ref="ginger"/> until softened.
+  Add the <Qty ref="lemongrass"/>, <Qty ref="turmeric"/>, <Qty ref="dried-chilli"/>
+  and <Qty ref="dried-shrimp"/> and cook for <Dur step="cook-aromatics"/>, until
+  fragrant.
+</Step>
+
+<Step id="build-broth">
+  Pour in the reserved poaching liquid along with the <Qty ref="yellow-split-peas"/>.
+  Simmer for most of <Dur step="build-broth"/>, until the peas have fully broken
+  down. Whisk the <Qty ref="gram-flour"/> with a little of the hot broth to a
+  smooth paste, stir it back in, then return the flaked catfish to the pot with
+  the <Qty ref="fish-sauce"/> and <Qty ref="fine-sea-salt"/> and simmer gently for
+  the remaining time, until thickened to the consistency of a loose gravy.
+</Step>
+
+<Step id="cook-noodles">
+  Drop the soaked noodles into a pot of boiling water and cook for
+  <Dur step="cook-noodles"/>, until just tender, then drain.
+</Step>
+
+<Step id="assemble">
+  Divide the noodles between bowls, ladle the hot broth over the top, and finish
+  each bowl with the <Qty ref="egg"/>, a squeeze of the <Qty ref="lime-juice"/> and
+  the <Qty ref="coriander"/>. This takes <Dur step="assemble"/>.
+</Step>

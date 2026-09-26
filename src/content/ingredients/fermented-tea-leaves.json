@@ -1,0 +1,70 @@
+{
+  "id": "fermented-tea-leaves",
+  "name": "Fermented Tea Leaves",
+  "proseName": "fermented tea leaves",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Lahpet",
+        "region": "Myanmar",
+        "lang": "my"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "fermented",
+      "label": "Fermented, jarred",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169393",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169393/nutrients",
+      "sourceNote": "USDA publishes no record for fermented tea leaves (lahpet). This is its record for canned grape leaves, the closest available match for a green leaf preserved whole in a salty liquid, rather than eaten fresh.",
+      "nutritionCaveat": "Cited against canned grape leaves because no fermented-tea-leaf record exists in USDA. This does not capture tea's own chemistry — its catechins and caffeine — and the sodium figure in particular reflects a canning brine rather than lahpet's own fermentation liquor, so treat the sodium and micronutrient figures as approximate.",
+      "nutritionPer100g": {
+        "kcal": 69,
+        "protein": 4.27,
+        "fat": 1.97,
+        "carbs": 11.71,
+        "fiber": 9.9,
+        "calcium": 289,
+        "iron": 2.98,
+        "magnesium": 14,
+        "phosphorus": 34,
+        "potassium": 29,
+        "sodium": 2853,
+        "zinc": 0.4,
+        "copper": 1.841,
+        "manganese": 0.29,
+        "seleniumMcg": 0.9,
+        "vitaminC": 11.3,
+        "thiamin": 0.064,
+        "riboflavin": 0.364,
+        "niacin": 4.505,
+        "vitaminB6": 0.136,
+        "folateMcg": 78,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 263,
+        "vitaminE": 1.79,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 97.3,
+        "saturatedFat": 0.312,
+        "monounsaturatedFat": 0.076,
+        "polyunsaturatedFat": 0.989,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 24,
+        "densitySource": "estimated",
+        "densityClass": "leafy-fresh-herb"
+      }
+    }
+  ],
+  "image": "images/ingredients/fermented-tea-leaves-thumb.webp"
+}

@@ -1,0 +1,57 @@
+{
+  "id": "lumpia-wrappers",
+  "name": "Lumpia Wrappers",
+  "proseName": "lumpia wrappers",
+  "category": "pastry",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172802",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172802/nutrients",
+      "sourceNote": "USDA has no record for lumpia wrappers specifically. Cited against wonton/egg roll wrappers, the closest thin wheat-and-water dough it carries; lumpia wrappers are rolled thinner but share the same flour-and-water composition.",
+      "nutritionPer100g": {
+        "kcal": 291,
+        "protein": 9.8,
+        "fat": 1.5,
+        "carbs": 57.9,
+        "fiber": 1.8,
+        "saturatedFat": 0.263,
+        "monounsaturatedFat": 0.195,
+        "polyunsaturatedFat": 0.61,
+        "cholesterol": 9,
+        "sodium": 572,
+        "potassium": 82,
+        "calcium": 47,
+        "iron": 3.36,
+        "magnesium": 20,
+        "phosphorus": 81,
+        "zinc": 0.71,
+        "copper": 0.147,
+        "manganese": 0.638,
+        "seleniumMcg": 28.2,
+        "vitaminAMcg": 4,
+        "vitaminC": 0,
+        "thiamin": 0.519,
+        "riboflavin": 0.378,
+        "niacin": 5.424,
+        "vitaminB6": 0.03,
+        "folateMcg": 134,
+        "vitaminB12Mcg": 0.02
+      },
+      "countUnit": {
+        "singular": "wrapper",
+        "plural": "wrappers",
+        "grams": 8
+      }
+    }
+  ],
+  "image": "images/ingredients/lumpia-wrappers-thumb.webp"
+}

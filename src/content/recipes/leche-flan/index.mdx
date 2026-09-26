@@ -1,0 +1,79 @@
+---
+title: Leche Flan
+subtitle: An egg-yolk custard set over a layer of hard caramel, steamed rather than baked, and unmolded to show off its glossy amber top.
+label: Filipino
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [dessert]
+  method: [steaming]
+image:
+  src: images/recipes/leche-flan.webp
+  alt: "A steamed leche flan sliced into wedges, showing its dense custard and glossy amber caramel top"
+ingredients:
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: egg-yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 180
+    unit: g
+  - id: condensed-milk
+    ingredientRef: condensed-milk
+    form: sweetened
+    amount: 300
+    unit: g
+  - id: evaporated-milk
+    ingredientRef: evaporated-milk
+    form: standard
+    amount: 250
+    unit: ml
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+steps:
+  - { id: make-caramel, durationMin: 8, type: active, phase: prep }
+  - { id: mix-custard, durationMin: 10, type: active, phase: prep }
+  - { id: steam, durationMin: 40, type: active, phase: cook }
+  - { id: chill, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: Leche flan is best made a day ahead; the caramel needs the resting time to soften into a sauce against the custard.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: steam
+      text: Steaming rather than baking in a water bath keeps the custard at a gentler, more even temperature throughout, which is what gives leche flan its dense, silky set without the small air bubbles a hotter oven bake can leave behind.
+  commonPitfalls:
+    - stepId: mix-custard
+      text: Whisking the yolks too vigorously beats air into the mixture, and that air shows up as small holes in the finished custard. Stirring gently, just enough to combine, keeps the texture smooth.
+---
+
+<Step id="make-caramel">
+  Melt the <Qty ref="sugar"/> in a dry pan over a medium heat, swirling rather than
+  stirring, for <Dur step="make-caramel"/>, until deep amber. Pour immediately into
+  the base of the mould or moulds, tilting to coat, and set aside to harden.
+</Step>
+
+<Step id="mix-custard">
+  Gently whisk the <Qty ref="egg-yolk"/> with the <Qty ref="condensed-milk"/>,
+  <Qty ref="evaporated-milk"/> and <Qty ref="vanilla"/> for <Dur step="mix-custard"/>,
+  until just combined, then strain through a fine sieve into the caramel-lined mould.
+</Step>
+
+<Step id="steam">
+  Cover the mould with foil and steam over gently simmering water for
+  <Dur step="steam"/>, until the custard is set but still faintly wobbly at the centre.
+</Step>
+
+<Step id="chill">
+  Cool, then refrigerate for <Dur step="chill"/>. Run a knife around the edge and invert
+  onto a plate to unmould, letting the caramel run down over the custard.
+</Step>

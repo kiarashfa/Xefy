@@ -1,0 +1,93 @@
+---
+title: Nyama Choma
+subtitle: Goat, salted plainly and grilled slowly over charcoal until the outside is charred and the inside still juicy.
+label: Charcoal-grilled
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [east-african]
+  course: [main-course]
+  method: [grilling]
+names:
+  alsoKnownAs:
+    - { name: Choma, region: Kenya, lang: sw }
+image:
+  src: images/recipes/nyama-choma.webp
+  alt: "Whole pieces of goat meat roasting over a smoky charcoal grill, charred and browned"
+ingredients:
+  - id: goat
+    ingredientRef: goat
+    form: raw
+    amount: 900
+    unit: g
+    note: bone-in, hacked into large pieces
+    consumedFraction: 0.7
+    consumedFractionNote: Bone-in goat loses roughly a third of its raw weight to bone once the meat is eaten.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: g
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+steps:
+  - { id: season-goat, durationMin: 8, type: active, phase: prep }
+  - { id: rest-goat, durationMin: 30, type: passive }
+  - { id: grill-goat, durationMin: 40, type: active, phase: cook }
+  - { id: rest-and-chop, durationMin: 8, type: passive }
+makeAhead:
+  aheadInstructions: The goat can be seasoned and left to marinate, covered and refrigerated, for up to a day before grilling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: grill-goat
+      text: Grilling over a low, indirect charcoal heat for a long stretch rather than searing hard is what renders the goat's connective tissue without drying the meat out before the bone pieces cook through.
+  commonPitfalls:
+    - stepId: season-goat
+      text: The seasoning here is only salt, pepper, garlic and a little citrus. A heavier marinade masks the char and smoke that the dish is built around.
+---
+
+<Step id="season-goat">
+  Rub the <Qty ref="goat"/> all over with the <Qty ref="garlic"/>,
+  <Qty ref="lemon-juice"/>, <Qty ref="vegetable-oil"/>, <Qty ref="fine-sea-salt"/>
+  and <Qty ref="black-pepper"/>, working the seasoning into the meat and between
+  the joints. This takes <Dur step="season-goat"/>.
+</Step>
+
+<Step id="rest-goat">
+  Leave the goat to sit at room temperature for <Dur step="rest-goat"/>, so the
+  seasoning reaches the meat before it hits the fire.
+</Step>
+
+<Step id="grill-goat">
+  Build a charcoal fire and let it burn down to a steady, even bed of hot coals.
+  Grill the goat over indirect heat, turning regularly, for
+  <Dur step="grill-goat"/>, until the outside is well charred and a skewer pushed
+  into the thickest piece meets no resistance.
+</Step>
+
+<Step id="rest-and-chop">
+  Rest the goat off the heat for <Dur step="rest-and-chop"/>, then chop it into
+  smaller pieces directly on the board it is served from.
+</Step>

@@ -1,0 +1,112 @@
+---
+label: Liège
+defaultServings: 8
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 350
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 7
+    unit: g
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 60
+    unit: ml
+    note: warmed to just above body temperature
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 150
+    unit: g
+    note: very soft, plus more for the iron
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+  - id: pearl-sugar
+    ingredientRef: pearl-sugar
+    form: coarse
+    amount: 150
+    unit: g
+steps:
+  - { id: activate-yeast, durationMin: 8, type: active, phase: prep }
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: knead-dough, durationMin: 12, type: active, phase: prep }
+  - { id: prove-dough, durationMin: 60, type: passive }
+  - { id: fold-in-sugar, durationMin: 5, type: active, phase: prep }
+  - { id: portion-and-rest, durationMin: 20, type: passive }
+  - { id: cook-waffles, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough can be made through its first prove up to a day ahead and kept refrigerated; bring it back to room temperature before folding in the pearl sugar.
+  freezable: true
+  freezeInstructions: Freeze cooked, cooled waffles in a single layer, then bag them. Reheat from frozen directly in a toaster or hot oven, without thawing first.
+  reheatInstructions: A Liège waffle recrisps well in a toaster; a microwave will only soften the caramelised sugar.
+notes:
+  techniqueRationale:
+    - stepId: fold-in-sugar
+      text: The pearl sugar is folded in only after the dough has already risen once, and only just before baking, so it stays in distinct, unmelted lumps that caramelise against the hot iron rather than dissolving fully into the dough.
+  commonPitfalls:
+    - stepId: cook-waffles
+      text: Escaped pearl sugar burns quickly on a bare iron plate and turns bitter. Wipe the plates between waffles if sugar has leaked and caught.
+---
+
+<Step id="activate-yeast">
+  Stir the <Qty ref="yeast"/> into the warm <Qty ref="milk"/> and leave it for
+  <Dur step="activate-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="caster-sugar"/> and
+  <Qty ref="fine-sea-salt"/> in a large bowl. Add the yeasted milk, the
+  <Qty ref="egg"/> and the <Qty ref="vanilla"/>, and bring together into a
+  rough, sticky dough. This takes <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="knead-dough">
+  Knead in the soft <Qty ref="butter"/> a little at a time, working the dough
+  for <Dur step="knead-dough"/>, until smooth, glossy and elastic.
+</Step>
+
+<Step id="prove-dough">
+  Cover the dough and leave it to prove somewhere warm for
+  <Dur step="prove-dough"/>, until roughly doubled.
+</Step>
+
+<Step id="fold-in-sugar">
+  Knock the dough back and fold in the <Qty ref="pearl-sugar"/> by hand,
+  distributing it evenly. This takes <Dur step="fold-in-sugar"/>.
+</Step>
+
+<Step id="portion-and-rest">
+  Divide the dough into equal balls and let them rest, covered, for
+  <Dur step="portion-and-rest"/>.
+</Step>
+
+<Step id="cook-waffles">
+  Heat the waffle iron and brush it lightly with butter. Press a ball of
+  dough into the iron and cook until deep golden-brown, with the pearl sugar
+  caramelised at the surface. Repeat with the remaining dough, spending
+  <Dur step="cook-waffles"/> in total, and serve each waffle warm.
+</Step>

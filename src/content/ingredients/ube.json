@@ -1,0 +1,61 @@
+{
+  "id": "ube",
+  "name": "Ube",
+  "proseName": "ube",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Purple yam",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170071",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170071/nutrients",
+      "sourceNote": "USDA has no record specific to ube (Dioscorea alata). Cited against its generic raw yam record, the same genus and the closest composition it publishes; ube's deep purple colour comes from anthocyanins the record does not itemise.",
+      "nutritionPer100g": {
+        "kcal": 118,
+        "protein": 1.53,
+        "fat": 0.17,
+        "carbs": 27.88,
+        "fiber": 4.1,
+        "sugars": 0.5,
+        "calcium": 17,
+        "iron": 0.54,
+        "magnesium": 21,
+        "phosphorus": 55,
+        "potassium": 816,
+        "sodium": 9,
+        "zinc": 0.24,
+        "copper": 0.178,
+        "manganese": 0.397,
+        "seleniumMcg": 0.7,
+        "vitaminAMcg": 7,
+        "vitaminC": 17.1,
+        "vitaminDMcg": 0,
+        "vitaminE": 0.35,
+        "vitaminKMcg": 2.3,
+        "thiamin": 0.112,
+        "riboflavin": 0.032,
+        "niacin": 0.552,
+        "vitaminB6": 0.293,
+        "saturatedFat": 0.037,
+        "monounsaturatedFat": 0.006,
+        "polyunsaturatedFat": 0.076,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/ube-thumb.webp"
+}

@@ -1,0 +1,129 @@
+---
+title: Lahpet Thoke
+subtitle: Fermented tea leaves tossed with crisp-fried beans, peanuts and garlic, sharpened with lime, fish sauce and fresh chilli.
+label: Burmese
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [burmese]
+  course: [salad]
+  method: [no-cook]
+names:
+  alsoKnownAs:
+    - { name: Laphet thoke, region: Myanmar, lang: my }
+image:
+  src: images/recipes/lahpet-thoke.webp
+  alt: "A plate of Burmese lahpet thoke tea leaf salad, tossed with shredded cabbage, tomato, dried shrimp, fried garlic and crunchy beans and nuts"
+ingredients:
+  - id: fermented-tea-leaves
+    ingredientRef: fermented-tea-leaves
+    form: fermented
+    amount: 150
+    unit: g
+    note: drained and rinsed
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 25
+    unit: g
+    note: thinly sliced
+  - id: peanut-oil
+    ingredientRef: peanut-oil
+    form: refined
+    amount: 40
+    unit: g
+  - id: dried-broad-beans
+    ingredientRef: dried-broad-beans
+    form: dried
+    amount: 40
+    unit: g
+  - id: peanut
+    ingredientRef: peanut
+    form: roasted
+    amount: 40
+    unit: g
+    note: roughly chopped
+  - id: dried-shrimp
+    ingredientRef: dried-shrimp
+    form: dried
+    amount: 15
+    unit: g
+  - id: sesame-seed
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 10
+    unit: g
+  - id: romaine-lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 80
+    unit: g
+    note: finely shredded
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: cut into thin wedges
+  - id: serrano-chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 10
+    unit: g
+    note: thinly sliced
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: fish-sauce
+    ingredientRef: fish-sauce
+    form: standard
+    amount: 12
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { id: fry-garlic, durationMin: 6, type: active, phase: prep }
+  - { id: fry-beans, durationMin: 6, type: active, phase: prep }
+  - { id: prep-vegetables, durationMin: 8, type: "parallel-with:fry-garlic", phase: prep }
+  - { id: toss-salad, durationMin: 6, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The fried garlic, beans and peanuts can be prepared up to a week ahead and kept in an airtight container; toss the salad itself only just before serving.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: toss-salad
+      text: The salad is tossed and eaten immediately rather than left to sit, because the crisp-fried garlic and beans are the point of contrast against the soft, sour tea leaves — given time, they soften and the dish loses its texture.
+---
+
+<Step id="fry-garlic">
+  Heat the <Qty ref="peanut-oil"/> in a small pan and fry the <Qty ref="garlic"/>
+  over a medium heat for <Dur step="fry-garlic"/>, until golden and crisp. Lift out
+  with a slotted spoon, reserving the oil.
+</Step>
+
+<Step id="fry-beans">
+  In the same oil, fry the <Qty ref="dried-broad-beans"/> for <Dur step="fry-beans"/>,
+  until crisp and golden, then lift out and drain alongside the garlic.
+</Step>
+
+<Step id="prep-vegetables">
+  Shred the <Qty ref="romaine-lettuce"/>, cut the <Qty ref="tomato"/> into wedges,
+  and slice the <Qty ref="serrano-chilli"/>. This takes
+  <Dur step="prep-vegetables"/>.
+</Step>
+
+<Step id="toss-salad">
+  In a large bowl, combine the drained <Qty ref="fermented-tea-leaves"/>, fried
+  garlic, fried beans, <Qty ref="peanut"/>, <Qty ref="dried-shrimp"/> and
+  <Qty ref="sesame-seed"/> with the shredded lettuce, tomato and chilli. Add the
+  <Qty ref="lime-juice"/>, <Qty ref="fish-sauce"/>, the reserved garlic oil and the
+  <Qty ref="fine-sea-salt"/>, and toss everything together for
+  <Dur step="toss-salad"/> just before serving.
+</Step>

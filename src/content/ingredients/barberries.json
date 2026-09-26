@@ -1,0 +1,71 @@
+{
+  "id": "barberries",
+  "name": "Barberries",
+  "proseName": "barberries",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Zereshk",
+        "region": "Iran",
+        "lang": "fa"
+      }
+    ]
+  },
+  "category": "dried fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171724",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171724/nutrients",
+      "sourceNote": "USDA has no record for barberries (Berberis vulgaris/integerrima), and no regional or national food-composition table for them could be found that was accessible to read directly, so a stand-in is used. USDA's raw-cranberry record (a wrong water content: raw fruit cited for a dried one) was replaced with dried, unsweetened Zante currants — a small dried fruit at a comparable water content to dried barberries, rather than a fresh fruit understating the energy and mineral concentration several-fold. Zante currants are sweeter and less acidic than barberries, so this is still an approximation, not a match.",
+      "nutritionCaveat": "Cited against dried Zante currants because USDA carries no barberry record and no unsweetened dried-cranberry record either. The water content is a reasonable match for a dried fruit, but Zante currants are a sweeter, less tart fruit than barberries, so the sugar figure in particular likely overstates barberries and the true profile is closer to a tart, low-sugar dried fruit than this record shows.",
+      "nutritionPer100g": {
+        "kcal": 290,
+        "protein": 3.43,
+        "fat": 0.22,
+        "carbs": 76.98,
+        "fiber": 4.4,
+        "sugars": 62.28,
+        "calcium": 88,
+        "iron": 1.88,
+        "magnesium": 36,
+        "phosphorus": 99,
+        "potassium": 777,
+        "sodium": 43,
+        "zinc": 0.37,
+        "copper": 0.298,
+        "manganese": 0.345,
+        "seleniumMcg": 0.7,
+        "vitaminC": 4.7,
+        "thiamin": 0.16,
+        "riboflavin": 0.142,
+        "niacin": 1.615,
+        "vitaminB6": 0.296,
+        "folateMcg": 10,
+        "choline": 10.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 4,
+        "vitaminE": 0.11,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 3.3,
+        "saturatedFat": 0.085,
+        "monounsaturatedFat": 0.021,
+        "polyunsaturatedFat": 0.047,
+        "transFat": 0.001,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 110,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/barberries-thumb.webp"
+}

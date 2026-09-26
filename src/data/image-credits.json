@@ -68,6 +68,29 @@
     }
   },
   {
+    "slug": "ackee",
+    "kind": "ingredient",
+    "alt": "Ripe ackee pods split open, showing the glossy black seeds and creamy yellow arils inside the red husks",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARipe_ackee_fruit_in_Jamaica._The_white_flesh_is_eaten_cooked_for_breakfast%2C_with_salt_fish_or_the_like._(33317955982).jpg",
+    "title": "File:Ripe ackee fruit in Jamaica. The white flesh is eaten cooked for breakfast, with salt fish or the like. (33317955982).jpg",
+    "author": "Ralf Steinberger from Northern Italy and Berlin",
+    "credit": "Ripe ackee fruit in Jamaica. The white flesh is eaten cooked for breakfast, with salt fish or the like.",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4928,
+    "originalHeight": 3264,
+    "files": {
+      "hero": "images/ingredients/ackee.webp",
+      "card": "images/ingredients/ackee-card.webp",
+      "thumb": "images/ingredients/ackee-thumb.webp"
+    }
+  },
+  {
     "slug": "aji-amarillo",
     "kind": "ingredient",
     "alt": "A pile of fresh orange-yellow aji amarillo chilli peppers",
@@ -344,6 +367,29 @@
     }
   },
   {
+    "slug": "aubergine",
+    "kind": "ingredient",
+    "alt": "Three whole aubergines side by side — striped purple, glossy dark purple and pale white varieties",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAubergine-Varianten.JPG",
+    "title": "File:Aubergine-Varianten.JPG",
+    "author": "Grey Geezer",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3111,
+    "originalHeight": 2773,
+    "files": {
+      "hero": "images/ingredients/aubergine.webp",
+      "card": "images/ingredients/aubergine-card.webp",
+      "thumb": "images/ingredients/aubergine-thumb.webp"
+    }
+  },
+  {
     "slug": "avocado",
     "kind": "ingredient",
     "alt": "A whole dark-skinned avocado beside one halved around its stone",
@@ -478,6 +524,29 @@
       "hero": "images/ingredients/banana.webp",
       "card": "images/ingredients/banana-card.webp",
       "thumb": "images/ingredients/banana-thumb.webp"
+    }
+  },
+  {
+    "slug": "barberries",
+    "kind": "ingredient",
+    "alt": "A pile of small, dried red barberries on a plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADried_barberries_on_a_plate.JPG",
+    "title": "File:Dried barberries on a plate.JPG",
+    "author": "Conifer",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2816,
+    "originalHeight": 2112,
+    "files": {
+      "hero": "images/ingredients/barberries.webp",
+      "card": "images/ingredients/barberries-card.webp",
+      "thumb": "images/ingredients/barberries-thumb.webp"
     }
   },
   {
@@ -848,6 +917,29 @@
     }
   },
   {
+    "slug": "bitterleaf",
+    "kind": "ingredient",
+    "alt": "A bushy bitterleaf plant with dense, deeply veined green leaves",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AGreenish_Bitter_leave_plant.jpg",
+    "title": "File:Greenish Bitter leave plant.jpg",
+    "author": "Daniel Paullll",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2296,
+    "originalHeight": 4080,
+    "files": {
+      "hero": "images/ingredients/bitterleaf.webp",
+      "card": "images/ingredients/bitterleaf-card.webp",
+      "thumb": "images/ingredients/bitterleaf-thumb.webp"
+    }
+  },
+  {
     "slug": "black-beans",
     "kind": "ingredient",
     "alt": "A close view of dried black turtle beans",
@@ -1147,6 +1239,29 @@
     }
   },
   {
+    "slug": "calamansi",
+    "kind": "ingredient",
+    "alt": "A pile of whole and halved green calamansi limes, showing their pale yellow flesh",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACalamansi_(Philippines).jpg",
+    "title": "File:Calamansi (Philippines).jpg",
+    "author": "Obsidian Soul",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4032,
+    "originalHeight": 2268,
+    "files": {
+      "hero": "images/ingredients/calamansi.webp",
+      "card": "images/ingredients/calamansi-card.webp",
+      "thumb": "images/ingredients/calamansi-thumb.webp"
+    }
+  },
+  {
     "slug": "capers",
     "kind": "ingredient",
     "alt": "A bowl of small green pickled capers with a spoon",
@@ -1303,6 +1418,28 @@
       "hero": "images/ingredients/caster-sugar.webp",
       "card": "images/ingredients/caster-sugar-card.webp",
       "thumb": "images/ingredients/caster-sugar-thumb.webp"
+    }
+  },
+  {
+    "slug": "catfish",
+    "kind": "ingredient",
+    "alt": "A close-up of a channel catfish showing its dark grey-brown skin, broad fanned tail fin and barbels",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChannel_Catfish_(Ictalurus_punctatus)_Gavins_Point.jpg",
+    "title": "File:Channel Catfish (Ictalurus punctatus) Gavins Point.jpg",
+    "author": "USFWS Mountain Prairie",
+    "credit": "https://www.flickr.com/photos/51986662@N05/51171356337/",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3793,
+    "originalHeight": 1897,
+    "files": {
+      "hero": "images/ingredients/catfish.webp",
+      "card": "images/ingredients/catfish-card.webp",
+      "thumb": "images/ingredients/catfish-thumb.webp"
     }
   },
   {
@@ -2153,6 +2290,29 @@
     }
   },
   {
+    "slug": "daikon",
+    "kind": "ingredient",
+    "alt": "Three long white daikon radishes with root hairs, freshly harvested and resting in a woven basket",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADaikon_radish_-_Minowase.jpg",
+    "title": "File:Daikon radish - Minowase.jpg",
+    "author": "Eric Polk",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3000,
+    "originalHeight": 4000,
+    "files": {
+      "hero": "images/ingredients/daikon.webp",
+      "card": "images/ingredients/daikon-card.webp",
+      "thumb": "images/ingredients/daikon-thumb.webp"
+    }
+  },
+  {
     "slug": "dark-chocolate",
     "kind": "ingredient",
     "alt": "A bar of dark chocolate broken into squares",
@@ -2581,6 +2741,29 @@
       "hero": "images/ingredients/fermented-black-beans.webp",
       "card": "images/ingredients/fermented-black-beans-card.webp",
       "thumb": "images/ingredients/fermented-black-beans-thumb.webp"
+    }
+  },
+  {
+    "slug": "fermented-tea-leaves",
+    "kind": "ingredient",
+    "alt": "A bowl of plain fermented tea leaves, chopped and glossy, unmixed with any other ingredients",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALahpet_in_bulk.JPG",
+    "title": "File:Lahpet in bulk.JPG",
+    "author": "Wagaung (talk)",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1600,
+    "originalHeight": 1200,
+    "files": {
+      "hero": "images/ingredients/fermented-tea-leaves.webp",
+      "card": "images/ingredients/fermented-tea-leaves-card.webp",
+      "thumb": "images/ingredients/fermented-tea-leaves-thumb.webp"
     }
   },
   {
@@ -3545,6 +3728,52 @@
     }
   },
   {
+    "slug": "lemongrass",
+    "kind": "ingredient",
+    "alt": "Two trimmed pale lemongrass stalks laid across wooden spoons, alongside other spices on a chopping board",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABumbu_Rawon.jpg",
+    "title": "File:Bumbu Rawon.jpg",
+    "author": "Herusutimbul",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 5014,
+    "originalHeight": 3342,
+    "files": {
+      "hero": "images/ingredients/lemongrass.webp",
+      "card": "images/ingredients/lemongrass-card.webp",
+      "thumb": "images/ingredients/lemongrass-thumb.webp"
+    }
+  },
+  {
+    "slug": "lentils",
+    "kind": "ingredient",
+    "alt": "A small pile of dried brown lentils",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABrown_lentils.JPG",
+    "title": "File:Brown lentils.JPG",
+    "author": "Illustratedjc",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4676,
+    "originalHeight": 3110,
+    "files": {
+      "hero": "images/ingredients/lentils.webp",
+      "card": "images/ingredients/lentils-card.webp",
+      "thumb": "images/ingredients/lentils-thumb.webp"
+    }
+  },
+  {
     "slug": "lime",
     "kind": "ingredient",
     "alt": "A whole lime beside one cut in half, showing the pale green flesh",
@@ -3611,6 +3840,51 @@
       "hero": "images/ingredients/linguica.webp",
       "card": "images/ingredients/linguica-card.webp",
       "thumb": "images/ingredients/linguica-thumb.webp"
+    }
+  },
+  {
+    "slug": "long-beans",
+    "kind": "ingredient",
+    "alt": "Bundles of fresh green yardlong beans tied with rubber bands at a market",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALong_Bean.JPG",
+    "title": "File:Long Bean.JPG",
+    "author": "David",
+    "credit": "Own work (Original text: I created this work entirely by myself.)",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2592,
+    "originalHeight": 1944,
+    "files": {
+      "hero": "images/ingredients/long-beans.webp",
+      "card": "images/ingredients/long-beans-card.webp",
+      "thumb": "images/ingredients/long-beans-thumb.webp"
+    }
+  },
+  {
+    "slug": "lumpia-wrappers",
+    "kind": "ingredient",
+    "alt": "A thin, fresh wheat spring-roll wrapper cooking on a hot flat pan, with a hand smoothing more batter into a wrapper on a second pan",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASpring_roll_wrappers_in_Jincheng.jpg",
+    "title": "File:Spring roll wrappers in Jincheng.jpg",
+    "author": "riNux",
+    "credit": "https://www.flickr.com/photos/rinux/3408851843/",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4288,
+    "originalHeight": 2848,
+    "files": {
+      "hero": "images/ingredients/lumpia-wrappers.webp",
+      "card": "images/ingredients/lumpia-wrappers-card.webp",
+      "thumb": "images/ingredients/lumpia-wrappers-thumb.webp"
     }
   },
   {
@@ -4623,6 +4897,29 @@
     }
   },
   {
+    "slug": "pig-ears",
+    "kind": "ingredient",
+    "alt": "A pile of raw, pale pink pig ears in a tray",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChilled_pig_ears.jpg",
+    "title": "File:Chilled pig ears.jpg",
+    "author": "François Nguyen",
+    "credit": "https://www.flickr.com/photos/198613871@N06/53499799763/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/ingredients/pig-ears.webp",
+      "card": "images/ingredients/pig-ears-card.webp",
+      "thumb": "images/ingredients/pig-ears-thumb.webp"
+    }
+  },
+  {
     "slug": "pigeon-peas",
     "kind": "ingredient",
     "alt": "Open pigeon pea pods showing rows of pale green and cream-coloured peas inside",
@@ -4780,6 +5077,29 @@
       "hero": "images/ingredients/pork-belly.webp",
       "card": "images/ingredients/pork-belly-card.webp",
       "thumb": "images/ingredients/pork-belly-thumb.webp"
+    }
+  },
+  {
+    "slug": "pork-liver",
+    "kind": "ingredient",
+    "alt": "A raw, dark reddish-brown pig's liver laid on a wooden board, freshly butchered alongside other offal",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACzech_traditional_pig-killing_Day._Liver_%26_lungs.jpg",
+    "title": "File:Czech traditional pig-killing Day. Liver & lungs.jpg",
+    "author": "kitmasterbloke",
+    "credit": "https://www.flickr.com/photos/58415659@N00/16672066565/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/ingredients/pork-liver.webp",
+      "card": "images/ingredients/pork-liver-card.webp",
+      "thumb": "images/ingredients/pork-liver-thumb.webp"
     }
   },
   {
@@ -5679,6 +5999,29 @@
     }
   },
   {
+    "slug": "shrimp-paste",
+    "kind": "ingredient",
+    "alt": "A dense block of dark purplish-brown fermented shrimp paste",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AA_square_of_shrimp_paste_from_Hung_Kee_store.jpg",
+    "title": "File:A square of shrimp paste from Hung Kee store.jpg",
+    "author": "Peachyeung316",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 5184,
+    "originalHeight": 2920,
+    "files": {
+      "hero": "images/ingredients/shrimp-paste.webp",
+      "card": "images/ingredients/shrimp-paste-card.webp",
+      "thumb": "images/ingredients/shrimp-paste-thumb.webp"
+    }
+  },
+  {
     "slug": "sichuan-pepper",
     "kind": "ingredient",
     "alt": "A close-up pile of dried reddish-brown Sichuan peppercorns, some split open showing the husks",
@@ -6045,6 +6388,29 @@
     }
   },
   {
+    "slug": "taro",
+    "kind": "ingredient",
+    "alt": "Whole raw taro roots with rough, fibrous brown skin, broken open at the ends to show pale white flesh",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ATaro_Root.jpg",
+    "title": "File:Taro Root.jpg",
+    "author": "Yakshitha",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2296,
+    "originalHeight": 4080,
+    "files": {
+      "hero": "images/ingredients/taro.webp",
+      "card": "images/ingredients/taro-card.webp",
+      "thumb": "images/ingredients/taro-thumb.webp"
+    }
+  },
+  {
     "slug": "teff-flour",
     "kind": "ingredient",
     "alt": "A close-up spread of tiny brown teff grains",
@@ -6299,6 +6665,29 @@
     }
   },
   {
+    "slug": "ube",
+    "kind": "ingredient",
+    "alt": "A whole raw ube tuber with brown skin, cut to reveal its vivid purple flesh",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APurpleyamphoto.jpg",
+    "title": "File:Purpleyamphoto.jpg",
+    "author": "Badagnani",
+    "credit": "Own work",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1948,
+    "originalHeight": 1396,
+    "files": {
+      "hero": "images/ingredients/ube.webp",
+      "card": "images/ingredients/ube-card.webp",
+      "thumb": "images/ingredients/ube-thumb.webp"
+    }
+  },
+  {
     "slug": "urad-dal",
     "kind": "ingredient",
     "alt": "A bowl of peeled, dried white urad dal",
@@ -6391,6 +6780,29 @@
     }
   },
   {
+    "slug": "vermicelli",
+    "kind": "ingredient",
+    "alt": "Coiled nests of dried yellow wheat vermicelli noodles on a plate",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFideo_(coiled_vermicelli).JPG",
+    "title": "File:Fideo (coiled vermicelli).JPG",
+    "author": "Glane23",
+    "credit": "Own work",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1949,
+    "originalHeight": 1383,
+    "files": {
+      "hero": "images/ingredients/vermicelli.webp",
+      "card": "images/ingredients/vermicelli-card.webp",
+      "thumb": "images/ingredients/vermicelli-thumb.webp"
+    }
+  },
+  {
     "slug": "wakame",
     "kind": "ingredient",
     "alt": "Dark fronds of wakame hanging to dry",
@@ -6457,6 +6869,29 @@
       "hero": "images/ingredients/water.webp",
       "card": "images/ingredients/water-card.webp",
       "thumb": "images/ingredients/water-thumb.webp"
+    }
+  },
+  {
+    "slug": "water-spinach",
+    "kind": "ingredient",
+    "alt": "A bundle of fresh water spinach with hollow green stems and narrow arrow-shaped leaves",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWater_Spinach_-_Chinese_Convolvulus_-_Kangkong.jpg",
+    "title": "File:Water Spinach - Chinese Convolvulus - Kangkong.jpg",
+    "author": "SarKaLay စာကလေး",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4914,
+    "originalHeight": 4705,
+    "files": {
+      "hero": "images/ingredients/water-spinach.webp",
+      "card": "images/ingredients/water-spinach-card.webp",
+      "thumb": "images/ingredients/water-spinach-thumb.webp"
     }
   },
   {
@@ -6711,6 +7146,29 @@
     }
   },
   {
+    "slug": "ackee-and-saltfish",
+    "kind": "recipe",
+    "alt": "A plate of ackee and saltfish with sautéed peppers and onion, served with tomato wedges and coleslaw",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AAckee_and_Saltfish.jpg",
+    "title": "File:Ackee and Saltfish.jpg",
+    "author": "gailf548 from New York State, USA",
+    "credit": "PC3100901-Lunch!",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2048,
+    "originalHeight": 1536,
+    "files": {
+      "hero": "images/recipes/ackee-and-saltfish.webp",
+      "card": "images/recipes/ackee-and-saltfish-card.webp",
+      "thumb": "images/recipes/ackee-and-saltfish-thumb.webp"
+    }
+  },
+  {
     "slug": "adana-kebab",
     "kind": "recipe",
     "alt": "Two grilled minced-lamb Adana kebab skewers plated on flatbread with tomato and green pepper",
@@ -6731,6 +7189,29 @@
       "hero": "images/recipes/adana-kebab.webp",
       "card": "images/recipes/adana-kebab-card.webp",
       "thumb": "images/recipes/adana-kebab-thumb.webp"
+    }
+  },
+  {
+    "slug": "adobo",
+    "kind": "recipe",
+    "alt": "Chicken adobo leg and thigh glazed in dark soy-vinegar sauce and topped with fried garlic, served with steamed rice and a hard-boiled egg",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChicken_adobo_meal_20231025.jpg",
+    "title": "File:Chicken adobo meal 20231025.jpg",
+    "author": "Ian Lopez (Ianlopez1115)",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/adobo.webp",
+      "card": "images/recipes/adobo-card.webp",
+      "thumb": "images/recipes/adobo-thumb.webp"
     }
   },
   {
@@ -7194,6 +7675,29 @@
     }
   },
   {
+    "slug": "belgian-waffles",
+    "kind": "recipe",
+    "alt": "A rectangular Brussels waffle with deep pockets, dusted with icing sugar and topped with a dollop of whipped cream",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AWafelmetslagroom.JPG",
+    "title": "File:Wafelmetslagroom.JPG",
+    "author": "Hortensja Bukietowa",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4576,
+    "originalHeight": 3209,
+    "files": {
+      "hero": "images/recipes/belgian-waffles.webp",
+      "card": "images/recipes/belgian-waffles-card.webp",
+      "thumb": "images/recipes/belgian-waffles-thumb.webp"
+    }
+  },
+  {
     "slug": "brigadeiro",
     "kind": "recipe",
     "alt": "Chocolate brigadeiros in gold paper cases, rolled in chocolate sprinkles",
@@ -7493,6 +7997,29 @@
     }
   },
   {
+    "slug": "cevapi",
+    "kind": "recipe",
+    "alt": "Grilled ćevapi sausages on a plate with somun flatbread, chopped raw onion and a spoonful of red ajvar",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACevapcici_Bosnia_(10675837796).jpg",
+    "title": "File:Cevapcici Bosnia (10675837796).jpg",
+    "author": "amanderson2",
+    "credit": "Cevapcici Bosnia Uploaded by Smooth_O",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4288,
+    "originalHeight": 3216,
+    "files": {
+      "hero": "images/recipes/cevapi.webp",
+      "card": "images/recipes/cevapi-card.webp",
+      "thumb": "images/recipes/cevapi-thumb.webp"
+    }
+  },
+  {
     "slug": "ceviche",
     "kind": "recipe",
     "alt": "Peruvian ceviche of marinated white fish with red onion and chilli, served with sweet potato and choclo corn",
@@ -7628,6 +8155,29 @@
       "hero": "images/recipes/chicago-deep-dish.webp",
       "card": "images/recipes/chicago-deep-dish-card.webp",
       "thumb": "images/recipes/chicago-deep-dish-thumb.webp"
+    }
+  },
+  {
+    "slug": "chicken-inasal",
+    "kind": "recipe",
+    "alt": "Grilled annatto-glazed chicken inasal leg quarter served with two mounds of steamed rice and a small bowl of dipping sauce",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AChicken_Inasal_%2B_Rice%2C_Jun_2024.jpg",
+    "title": "File:Chicken Inasal + Rice, Jun 2024.jpg",
+    "author": "Ralff Nestor Nacor",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4080,
+    "originalHeight": 3072,
+    "files": {
+      "hero": "images/recipes/chicken-inasal.webp",
+      "card": "images/recipes/chicken-inasal-card.webp",
+      "thumb": "images/recipes/chicken-inasal-thumb.webp"
     }
   },
   {
@@ -8091,6 +8641,29 @@
     }
   },
   {
+    "slug": "dhansak",
+    "kind": "recipe",
+    "alt": "A bowl of Parsi lamb dhansak, thick brown lentil stew with pieces of lamb surrounding a mound of rice garnished with fried onion, coriander and lime",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ADhansak_2.JPG",
+    "title": "File:Dhansak 2.JPG",
+    "author": "Miansari66",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2816,
+    "originalHeight": 2112,
+    "files": {
+      "hero": "images/recipes/dhansak.webp",
+      "card": "images/recipes/dhansak-card.webp",
+      "thumb": "images/recipes/dhansak-thumb.webp"
+    }
+  },
+  {
     "slug": "doner-kebab",
     "kind": "recipe",
     "alt": "Vertical lamb doner spit being sliced by a kebab shop worker, with a shaved doner spit beside it",
@@ -8482,6 +9055,29 @@
     }
   },
   {
+    "slug": "ful-medames",
+    "kind": "recipe",
+    "alt": "A plate of mashed ful medames fava beans garnished with spring onion, served with pita bread, boiled egg halves, olives, diced tomato and lime wedges",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFul_Medames.JPG",
+    "title": "File:Ful Medames.JPG",
+    "author": "Miansari66",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2034,
+    "originalHeight": 2073,
+    "files": {
+      "hero": "images/recipes/ful-medames.webp",
+      "card": "images/recipes/ful-medames-card.webp",
+      "thumb": "images/recipes/ful-medames-thumb.webp"
+    }
+  },
+  {
     "slug": "full-english-breakfast",
     "kind": "recipe",
     "alt": "A full English breakfast plate with bacon, two fried eggs, baked beans in tomato sauce, sausages and toast",
@@ -8758,6 +9354,29 @@
     }
   },
   {
+    "slug": "halo-halo",
+    "kind": "recipe",
+    "alt": "A bowl of halo-halo shaved ice dessert with ube ice cream, ube halaya, sweet red beans, jackfruit strips, banana slices and candied sweet potato",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AHalo-halo_at_mama_nang's_halo-halo.jpg",
+    "title": "File:Halo-halo at mama nang's halo-halo.jpg",
+    "author": "Chammy17",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3472,
+    "originalHeight": 3463,
+    "files": {
+      "hero": "images/recipes/halo-halo.webp",
+      "card": "images/recipes/halo-halo-card.webp",
+      "thumb": "images/recipes/halo-halo-thumb.webp"
+    }
+  },
+  {
     "slug": "hamburger",
     "kind": "recipe",
     "alt": "A smash burger on a toasted bun with lettuce, tomato and onion, served with a side of crinkle-cut fries and a dipping sauce",
@@ -8986,6 +9605,28 @@
     }
   },
   {
+    "slug": "jalebi",
+    "kind": "recipe",
+    "alt": "A pile of bright orange, syrup-soaked jalebi spirals in a glass dish",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AJalebi_2.jpg",
+    "title": "File:Jalebi 2.jpg",
+    "author": "Haroldandkumar at English Wikipedia",
+    "credit": "Transferred from en.wikipedia to Commons.",
+    "license": "Public domain",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2832,
+    "originalHeight": 2128,
+    "files": {
+      "hero": "images/recipes/jalebi.webp",
+      "card": "images/recipes/jalebi-card.webp",
+      "thumb": "images/recipes/jalebi-thumb.webp"
+    }
+  },
+  {
     "slug": "jamaican-oxtail",
     "kind": "recipe",
     "alt": "Braised oxtail pieces and butter beans in a thick dark brown gravy on a white plate",
@@ -9168,6 +9809,52 @@
     }
   },
   {
+    "slug": "kacchi-biryani",
+    "kind": "recipe",
+    "alt": "A plate of kacchi biryani, saffron-streaked basmati rice piled over tender pieces of bone-in goat meat",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ABasmati_Kacchi_Biryani_(2).jpg",
+    "title": "File:Basmati Kacchi Biryani (2).jpg",
+    "author": "Nahian",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2920,
+    "originalHeight": 2472,
+    "files": {
+      "hero": "images/recipes/kacchi-biryani.webp",
+      "card": "images/recipes/kacchi-biryani-card.webp",
+      "thumb": "images/recipes/kacchi-biryani-thumb.webp"
+    }
+  },
+  {
+    "slug": "kare-kare",
+    "kind": "recipe",
+    "alt": "Oxtail kare-kare, chunks of oxtail and eggplant in a thick orange peanut sauce with bok choy",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOxtail_kare-kare_1.JPG",
+    "title": "File:Oxtail kare-kare 1.JPG",
+    "author": "BrokenSphere",
+    "credit": "Own work",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4000,
+    "originalHeight": 3000,
+    "files": {
+      "hero": "images/recipes/kare-kare.webp",
+      "card": "images/recipes/kare-kare-card.webp",
+      "thumb": "images/recipes/kare-kare-thumb.webp"
+    }
+  },
+  {
     "slug": "khinkali",
     "kind": "recipe",
     "alt": "Boiled khinkali on a white platter, each gathered into a twisted topknot",
@@ -9237,6 +9924,29 @@
     }
   },
   {
+    "slug": "koshari",
+    "kind": "recipe",
+    "alt": "A platter of Egyptian koshari arranged in sections of lentils, chickpeas, macaroni, vermicelli and rice, topped with crispy fried onions and a red chilli",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AKoshari_Group_Banner_Photo.jpg",
+    "title": "File:Koshari Group Banner Photo.jpg",
+    "author": "Koshari Station",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 5133,
+    "originalHeight": 3392,
+    "files": {
+      "hero": "images/recipes/koshari.webp",
+      "card": "images/recipes/koshari-card.webp",
+      "thumb": "images/recipes/koshari-thumb.webp"
+    }
+  },
+  {
     "slug": "kunefe",
     "kind": "recipe",
     "alt": "A whole round of künefe in its pan, shredded kadayıf strands crisped golden-brown with a mound of crushed pistachio in the centre",
@@ -9283,6 +9993,29 @@
     }
   },
   {
+    "slug": "lagman",
+    "kind": "recipe",
+    "alt": "A bowl of lagman soup, hand-pulled noodles and lamb in a peppery tomato broth topped with chopped fresh herbs",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALagman_Moscow_2023.jpg",
+    "title": "File:Lagman Moscow 2023.jpg",
+    "author": "Svetlov Artem",
+    "credit": "Own work",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2268,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/recipes/lagman.webp",
+      "card": "images/recipes/lagman-card.webp",
+      "thumb": "images/recipes/lagman-thumb.webp"
+    }
+  },
+  {
     "slug": "lahmacun",
     "kind": "recipe",
     "alt": "Thin lahmacun flatbread topped with spiced minced meat, half covered with shredded cabbage, herbs and pickled onion",
@@ -9303,6 +10036,98 @@
       "hero": "images/recipes/lahmacun.webp",
       "card": "images/recipes/lahmacun-card.webp",
       "thumb": "images/recipes/lahmacun-thumb.webp"
+    }
+  },
+  {
+    "slug": "lahpet-thoke",
+    "kind": "recipe",
+    "alt": "A plate of Burmese lahpet thoke tea leaf salad, tossed with shredded cabbage, tomato, dried shrimp, fried garlic and crunchy beans and nuts",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALahpet_thohk_(20250315181751).jpg",
+    "title": "File:Lahpet thohk (20250315181751).jpg",
+    "author": "Allervous",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3072,
+    "originalHeight": 4080,
+    "files": {
+      "hero": "images/recipes/lahpet-thoke.webp",
+      "card": "images/recipes/lahpet-thoke-card.webp",
+      "thumb": "images/recipes/lahpet-thoke-thumb.webp"
+    }
+  },
+  {
+    "slug": "lavash",
+    "kind": "recipe",
+    "alt": "Two women stretching lavash dough over a cushion and rolling pin beside a glowing tonir oven pit, ready to bake",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALavash_preparation.jpg",
+    "title": "File:Lavash preparation.jpg",
+    "author": "Alessandro Bezzi",
+    "credit": "http://arc-team-open-research.blogspot.it/2014/09/lavash-armenian-bread-and.html",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1600,
+    "originalHeight": 1200,
+    "files": {
+      "hero": "images/recipes/lavash.webp",
+      "card": "images/recipes/lavash-card.webp",
+      "thumb": "images/recipes/lavash-thumb.webp"
+    }
+  },
+  {
+    "slug": "leche-flan",
+    "kind": "recipe",
+    "alt": "A steamed leche flan sliced into wedges, showing its dense custard and glossy amber caramel top",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALeche_flan_(Philippines)_02.jpg",
+    "title": "File:Leche flan (Philippines) 02.jpg",
+    "author": "Obsidian Soul",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/leche-flan.webp",
+      "card": "images/recipes/leche-flan-card.webp",
+      "thumb": "images/recipes/leche-flan-thumb.webp"
+    }
+  },
+  {
+    "slug": "lechon",
+    "kind": "recipe",
+    "alt": "A whole spit-roasted lechon pig with deep mahogany, glossy crackling skin, resting on its side",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALechon_Baboy%2C_June_2025_(2).jpg",
+    "title": "File:Lechon Baboy, June 2025 (2).jpg",
+    "author": "Ralff Nestor Nacor",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4080,
+    "originalHeight": 3072,
+    "files": {
+      "hero": "images/recipes/lechon.webp",
+      "card": "images/recipes/lechon-card.webp",
+      "thumb": "images/recipes/lechon-thumb.webp"
     }
   },
   {
@@ -9349,6 +10174,52 @@
       "hero": "images/recipes/lemonade.webp",
       "card": "images/recipes/lemonade-card.webp",
       "thumb": "images/recipes/lemonade-thumb.webp"
+    }
+  },
+  {
+    "slug": "lok-lak",
+    "kind": "recipe",
+    "alt": "Cambodian beef lok lak, seared cubes of beef in dark peppery gravy, served with rice, lettuce and a bowl of lime-and-pepper dipping sauce",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3A2016_Phnom_Penh%2C_Kambod%C5%BCa%C5%84ski_Lok_Lak_(01).jpg",
+    "title": "File:2016 Phnom Penh, Kambodżański Lok Lak (01).jpg",
+    "author": "Marcin Konsek",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4487,
+    "originalHeight": 2991,
+    "files": {
+      "hero": "images/recipes/lok-lak.webp",
+      "card": "images/recipes/lok-lak-card.webp",
+      "thumb": "images/recipes/lok-lak-thumb.webp"
+    }
+  },
+  {
+    "slug": "lumpiang-shanghai",
+    "kind": "recipe",
+    "alt": "A pile of crispy fried lumpiang shanghai spring rolls with visible meat filling",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ALumpiang_Shanghai_2023.jpg",
+    "title": "File:Lumpiang Shanghai 2023.jpg",
+    "author": "Roderick Suñaz Sumalinog",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3456,
+    "originalHeight": 4608,
+    "files": {
+      "hero": "images/recipes/lumpiang-shanghai.webp",
+      "card": "images/recipes/lumpiang-shanghai-card.webp",
+      "thumb": "images/recipes/lumpiang-shanghai-thumb.webp"
     }
   },
   {
@@ -9628,6 +10499,29 @@
     }
   },
   {
+    "slug": "mohinga",
+    "kind": "recipe",
+    "alt": "A bowl of mohinga fish and rice noodle soup topped with crispy fritters, chilli oil, coriander and boiled egg",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AMohinga_(20250315).jpg",
+    "title": "File:Mohinga (20250315).jpg",
+    "author": "Allervous",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3072,
+    "originalHeight": 4080,
+    "files": {
+      "hero": "images/recipes/mohinga.webp",
+      "card": "images/recipes/mohinga-card.webp",
+      "thumb": "images/recipes/mohinga-thumb.webp"
+    }
+  },
+  {
     "slug": "momo",
     "kind": "recipe",
     "alt": "Steamed momo pleated into pouches, served on a plate with a red chilli achar",
@@ -9766,6 +10660,29 @@
     }
   },
   {
+    "slug": "ndole",
+    "kind": "recipe",
+    "alt": "Cameroonian ndolé stew of ground bitterleaf and peanuts, served with boiled plantain slices",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANdole_and_Ripe_Plantains.jpg",
+    "title": "File:Ndole and Ripe Plantains.jpg",
+    "author": "Giftcup",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3072,
+    "originalHeight": 4080,
+    "files": {
+      "hero": "images/recipes/ndole.webp",
+      "card": "images/recipes/ndole-card.webp",
+      "thumb": "images/recipes/ndole-thumb.webp"
+    }
+  },
+  {
     "slug": "new-england-clam-chowder",
     "kind": "recipe",
     "alt": "A bowl of creamy white clam chowder garnished with chopped parsley, served with a spoon and packaged saltine crackers",
@@ -9835,6 +10752,52 @@
     }
   },
   {
+    "slug": "nyama-choma",
+    "kind": "recipe",
+    "alt": "Whole pieces of goat meat roasting over a smoky charcoal grill, charred and browned",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ANyama_choma_the_cultural_food.jpg",
+    "title": "File:Nyama choma the cultural food.jpg",
+    "author": "Fatma Ramadhan",
+    "credit": "Own work",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "shareAlike": false,
+    "attributionRequired": false,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1669,
+    "originalHeight": 1527,
+    "files": {
+      "hero": "images/recipes/nyama-choma.webp",
+      "card": "images/recipes/nyama-choma-card.webp",
+      "thumb": "images/recipes/nyama-choma-thumb.webp"
+    }
+  },
+  {
+    "slug": "ohn-no-khauk-swe",
+    "kind": "recipe",
+    "alt": "A bowl of ohn no khauk swe, creamy coconut chicken noodle soup topped with sliced red onion, crushed split peas and coriander, served with a lime wedge and chilli",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AOhn_No_Khao_Swe_at_Sapphire_Asian_Cuisine_(10988302274).jpg",
+    "title": "File:Ohn No Khao Swe at Sapphire Asian Cuisine (10988302274).jpg",
+    "author": "Gary Stevens",
+    "credit": "Ohn No Khao Swe at Sapphire Asian Cuisine",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3062,
+    "originalHeight": 2293,
+    "files": {
+      "hero": "images/recipes/ohn-no-khauk-swe.webp",
+      "card": "images/recipes/ohn-no-khauk-swe-card.webp",
+      "thumb": "images/recipes/ohn-no-khauk-swe-thumb.webp"
+    }
+  },
+  {
     "slug": "pad-thai",
     "kind": "recipe",
     "alt": "A plate of pad thai topped with bean sprouts, served with a lime wedge and crushed peanuts alongside",
@@ -9881,6 +10844,52 @@
     }
   },
   {
+    "slug": "pancit-canton",
+    "kind": "recipe",
+    "alt": "A plate of stir-fried pancit canton noodles with shrimp, pork, snow peas, mushrooms and onion",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APancit_Ilonggo_Style.jpg",
+    "title": "File:Pancit Ilonggo Style.jpg",
+    "author": "pulaw",
+    "credit": "https://www.flickr.com/photos/pulaw/12110076265/",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4613,
+    "originalHeight": 3075,
+    "files": {
+      "hero": "images/recipes/pancit-canton.webp",
+      "card": "images/recipes/pancit-canton-card.webp",
+      "thumb": "images/recipes/pancit-canton-thumb.webp"
+    }
+  },
+  {
+    "slug": "pandesal",
+    "kind": "recipe",
+    "alt": "A bowl of freshly baked pandesal rolls dusted with breadcrumbs, steaming beside a cup of coffee",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APinoy_Pandesal.jpg",
+    "title": "File:Pinoy Pandesal.jpg",
+    "author": "Jessartcam",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 5472,
+    "originalHeight": 3648,
+    "files": {
+      "hero": "images/recipes/pandesal.webp",
+      "card": "images/recipes/pandesal-card.webp",
+      "thumb": "images/recipes/pandesal-thumb.webp"
+    }
+  },
+  {
     "slug": "pao-de-queijo",
     "kind": "recipe",
     "alt": "A basket of golden pão de queijo, Brazilian cheese bread rolls with a crisp browned crust",
@@ -9924,6 +10933,29 @@
       "hero": "images/recipes/pap.webp",
       "card": "images/recipes/pap-card.webp",
       "thumb": "images/recipes/pap-thumb.webp"
+    }
+  },
+  {
+    "slug": "pastel-de-choclo",
+    "kind": "recipe",
+    "alt": "An individual ramekin of pastel de choclo, its golden sweetcorn topping baked until browned on top",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3APastel_de_choclo_made_in_Turkey.jpg",
+    "title": "File:Pastel de choclo made in Turkey.jpg",
+    "author": "E4024",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 2560,
+    "originalHeight": 1920,
+    "files": {
+      "hero": "images/recipes/pastel-de-choclo.webp",
+      "card": "images/recipes/pastel-de-choclo-card.webp",
+      "thumb": "images/recipes/pastel-de-choclo-thumb.webp"
     }
   },
   {
@@ -10869,6 +11901,52 @@
     }
   },
   {
+    "slug": "sinigang",
+    "kind": "recipe",
+    "alt": "A pot of sinigang na baboy, pork simmered in sour tamarind broth with tomato, long beans and radish",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASinigang_na_Baboy.jpg",
+    "title": "File:Sinigang na Baboy.jpg",
+    "author": "??? ??? from San Francisco, California, USA",
+    "credit": "Sinigang na Baboy",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1600,
+    "originalHeight": 1200,
+    "files": {
+      "hero": "images/recipes/sinigang.webp",
+      "card": "images/recipes/sinigang-card.webp",
+      "thumb": "images/recipes/sinigang-thumb.webp"
+    }
+  },
+  {
+    "slug": "sisig",
+    "kind": "recipe",
+    "alt": "Sizzling pork sisig on a hot cast-iron plate, topped with a raw egg, calamansi and a red chilli",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ASisig_with_egg_and_kalamansi.jpg",
+    "title": "File:Sisig with egg and kalamansi.jpg",
+    "author": "Aerous",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 3024,
+    "originalHeight": 4032,
+    "files": {
+      "hero": "images/recipes/sisig.webp",
+      "card": "images/recipes/sisig-card.webp",
+      "thumb": "images/recipes/sisig-thumb.webp"
+    }
+  },
+  {
     "slug": "siu-mai",
     "kind": "recipe",
     "alt": "Open-topped siu mai dumplings with pork filling and carrot garnish in a bamboo steamer",
@@ -11168,6 +12246,29 @@
     }
   },
   {
+    "slug": "tapsilog",
+    "kind": "recipe",
+    "alt": "A tapsilog plate with garlic fried rice, a sunny-side-up egg, cured beef tapa and pickled radish",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3AFood_%26_Local_Flavors_1.jpg",
+    "title": "File:Food & Local Flavors 1.jpg",
+    "author": "LuzViMindaLife",
+    "credit": "Own work",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "shareAlike": true,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 4032,
+    "originalHeight": 3024,
+    "files": {
+      "hero": "images/recipes/tapsilog.webp",
+      "card": "images/recipes/tapsilog-card.webp",
+      "thumb": "images/recipes/tapsilog-thumb.webp"
+    }
+  },
+  {
     "slug": "tomato-and-egg",
     "kind": "recipe",
     "alt": "Soft scrambled egg curds tossed with juicy tomato wedges in a light red-tinted sauce on a plate",
@@ -11464,6 +12565,29 @@
       "hero": "images/recipes/youtiao.webp",
       "card": "images/recipes/youtiao-card.webp",
       "thumb": "images/recipes/youtiao-thumb.webp"
+    }
+  },
+  {
+    "slug": "zereshk-polo",
+    "kind": "recipe",
+    "alt": "A plate of zereshk polo, saffron basmati rice studded with dried barberries, topped with shredded braised chicken and a pat of butter",
+    "source": "Wikimedia Commons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ARice_flavoed_with_saffron_and_Zereshk.jpg",
+    "title": "File:Rice flavoed with saffron and Zereshk.jpg",
+    "author": "Julia Maudlin from Lake Oswego, Oregon, USA",
+    "credit": "Rice flavoed with saffron and Zeresh (dried Berberis Berries)",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "shareAlike": false,
+    "attributionRequired": true,
+    "modified": "Cropped and colour-adjusted for this site.",
+    "retrieved": "2026-09-25",
+    "originalWidth": 1560,
+    "originalHeight": 2340,
+    "files": {
+      "hero": "images/recipes/zereshk-polo.webp",
+      "card": "images/recipes/zereshk-polo-card.webp",
+      "thumb": "images/recipes/zereshk-polo-thumb.webp"
     }
   }
 ]

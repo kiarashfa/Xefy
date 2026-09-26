@@ -1,0 +1,146 @@
+---
+title: Beef Lok Lak
+subtitle: Cubes of beef seared hard in a screaming-hot wok and tossed with garlic, oyster sauce and black pepper, served over lettuce and tomato with a lime and pepper dip.
+label: Cambodian
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [cambodian]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  alsoKnownAs:
+    - { name: Loc lac, region: Cambodia, lang: km }
+image:
+  src: images/recipes/lok-lak.webp
+  alt: "Cambodian beef lok lak, seared cubes of beef in dark peppery gravy, served with rice, lettuce and a bowl of lime-and-pepper dipping sauce"
+ingredients:
+  - id: beef
+    ingredientRef: ribeye
+    form: raw
+    amount: 500
+    unit: g
+    note: cut into bite-sized cubes
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: finely chopped
+  - id: soy-sauce-dark
+    ingredientRef: soy-sauce
+    form: dark
+    amount: 15
+    unit: ml
+  - id: soy-sauce-light
+    ingredientRef: soy-sauce
+    form: light
+    amount: 10
+    unit: ml
+  - id: oyster-sauce
+    ingredientRef: oyster-sauce
+    form: standard
+    amount: 20
+    unit: g
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 4
+    unit: g
+    note: freshly and coarsely ground; Kampot pepper if available
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: g
+  - id: romaine-lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 100
+    unit: g
+    note: shredded
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: sliced into wedges
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 80
+    unit: g
+    note: thinly sliced
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 20
+    unit: ml
+    note: for the dipping sauce
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+    note: for the dipping sauce
+steps:
+  - { id: marinate-beef, durationMin: 8, type: active, phase: prep }
+  - { id: rest-beef, durationMin: 20, type: passive }
+  - { id: prep-salad, durationMin: 8, type: "parallel-with:rest-beef", phase: prep }
+  - { id: sear-beef, durationMin: 8, type: active, phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: sear-beef
+      text: The beef goes into a very hot, almost-smoking wok in a single layer and is tossed hard rather than stirred gently — the technique the dish is named for — so each cube sears rather than stews in its own liquid.
+  commonPitfalls:
+    - stepId: sear-beef
+      text: Crowding the wok drops its temperature and the beef steams instead of searing. Work in batches if the pan is not large enough to keep every cube in contact with hot metal.
+---
+
+<Step id="marinate-beef">
+  Combine the <Qty ref="beef"/> with the <Qty ref="garlic"/>, the
+  <Qty ref="soy-sauce-dark"/>, <Qty ref="soy-sauce-light"/>,
+  <Qty ref="oyster-sauce"/>, <Qty ref="caster-sugar"/> and half of the
+  <Qty ref="black-pepper"/>. Mix well. This takes <Dur step="marinate-beef"/>.
+</Step>
+
+<Step id="rest-beef">
+  Leave the beef to marinate at room temperature for <Dur step="rest-beef"/>.
+</Step>
+
+<Step id="prep-salad">
+  Arrange the shredded <Qty ref="romaine-lettuce"/>, <Qty ref="tomato"/> and
+  <Qty ref="onion"/> over a serving platter. This takes
+  <Dur step="prep-salad"/>.
+</Step>
+
+<Step id="sear-beef">
+  Heat the <Qty ref="vegetable-oil"/> in a wok or heavy pan until almost
+  smoking. Add the marinated beef in a single layer and sear hard, tossing
+  constantly, for <Dur step="sear-beef"/>, until well browned outside and still
+  pink at the centre. Stir in the <Qty ref="butter"/> in the last moments so it
+  melts into a light glaze.
+</Step>
+
+<Step id="assemble">
+  Pile the seared beef over the salad. Stir the remaining
+  <Qty ref="black-pepper"/> into the <Qty ref="lime-juice"/> and
+  <Qty ref="fine-sea-salt"/> and serve alongside as a dip. This takes
+  <Dur step="assemble"/>.
+</Step>

@@ -1,0 +1,128 @@
+---
+title: Tapsilog
+subtitle: Cured beef seared hot and fast, served with garlic fried rice and a fried egg — one plate holding all three words in its name.
+label: Filipino
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [filipino]
+  course: [breakfast]
+  method: [pan-frying]
+image:
+  src: images/recipes/tapsilog.webp
+  alt: "A tapsilog plate with garlic fried rice, a sunny-side-up egg, cured beef tapa and pickled radish"
+ingredients:
+  - id: beef
+    ingredientRef: beef-topside
+    form: raw
+    amount: 500
+    unit: g
+    note: thinly sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 45
+    unit: ml
+  - id: vinegar
+    ingredientRef: cane-vinegar
+    form: cane
+    amount: 20
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 35
+    unit: g
+    note: minced
+    portions:
+      - { id: garlic-marinade, amount: 20 }
+      - { id: garlic-rice, amount: 15 }
+  - id: sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 15
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: raw
+    amount: 300
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 480
+    unit: ml
+    note: for cooking the rice
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+    portions:
+      - { id: oil-rice, amount: 15 }
+      - { id: oil-beef, amount: 10 }
+      - { id: oil-eggs, amount: 15 }
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 240
+    unit: g
+steps:
+  - { id: marinate-beef, durationMin: 10, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 60, type: passive }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:rest-marinade", phase: cook }
+  - { id: fry-rice, durationMin: 8, type: active, phase: cook }
+  - { id: sear-beef, durationMin: 8, type: active, phase: cook }
+  - { id: fry-eggs, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The beef can marinate up to two days in the refrigerator; the garlic rice is best cooked fresh, or made with rice that has already been chilled overnight, which fries drier and separates better.
+  freezable: true
+  freezeInstructions: Freeze the raw, marinated beef only. Cook the rice and eggs fresh.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: sear-beef
+      text: The beef is seared over high, direct heat for a short time rather than simmered, which is what keeps tapa's edge — a firm, slightly chewy bite with a browned surface, distinct from a braise.
+  commonPitfalls:
+    - stepId: fry-rice
+      text: Freshly cooked rice is wet enough to turn gluey in the pan. Spreading it out to cool and dry slightly before frying is what gives sinangag its separate, faintly crisp grains.
+---
+
+<Step id="marinate-beef">
+  Combine the <Qty ref="soy-sauce"/>, <Qty ref="vinegar"/>, <Qty ref="garlic-marinade"/>,
+  <Qty ref="sugar"/> and <Qty ref="pepper"/> in a bowl and turn the <Qty ref="beef"/>
+  through it for <Dur step="marinate-beef"/>.
+</Step>
+
+<Step id="rest-marinade">
+  Cover and marinate in the refrigerator for <Dur step="rest-marinade"/>.
+</Step>
+
+<Step id="cook-rice">
+  Meanwhile, rinse the <Qty ref="rice"/>, combine with the <Qty ref="water"/> in a
+  covered pot and cook for <Dur step="cook-rice"/>, until tender. Spread out on a tray
+  to cool and dry slightly.
+</Step>
+
+<Step id="fry-rice">
+  Heat the <Qty ref="oil-rice"/> in a wide pan and fry the <Qty ref="garlic-rice"/>
+  until golden. Add the cooled rice and fry for <Dur step="fry-rice"/>, tossing, until
+  every grain is coated and lightly crisp. Set aside and keep warm.
+</Step>
+
+<Step id="sear-beef">
+  Heat the <Qty ref="oil-beef"/> in a hot pan and sear the marinated beef, in batches if
+  needed, for <Dur step="sear-beef"/>, until browned at the edges and just cooked
+  through.
+</Step>
+
+<Step id="fry-eggs">
+  Heat the <Qty ref="oil-eggs"/> and fry the <Qty ref="eggs"/> for <Dur step="fry-eggs"/>,
+  until the whites are set and the yolks still soft. Serve each portion with the beef,
+  garlic rice and a fried egg alongside.
+</Step>

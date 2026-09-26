@@ -1,0 +1,55 @@
+{
+  "id": "lemongrass",
+  "name": "Lemongrass",
+  "proseName": "lemongrass",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168573",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168573/nutrients",
+      "nutritionPer100g": {
+        "kcal": 99,
+        "protein": 1.82,
+        "fat": 0.49,
+        "carbs": 25.31,
+        "calcium": 65,
+        "iron": 8.17,
+        "magnesium": 60,
+        "phosphorus": 101,
+        "potassium": 723,
+        "sodium": 6,
+        "zinc": 2.23,
+        "copper": 0.266,
+        "manganese": 5.224,
+        "seleniumMcg": 0.7,
+        "vitaminC": 2.6,
+        "thiamin": 0.065,
+        "riboflavin": 0.135,
+        "niacin": 1.101,
+        "vitaminB6": 0.08,
+        "folateMcg": 75,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.119,
+        "monounsaturatedFat": 0.054,
+        "polyunsaturatedFat": 0.17,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 67,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/lemongrass-thumb.webp"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "long-beans",
+  "name": "Long Beans",
+  "proseName": "long beans",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Yardlong beans",
+        "region": "United States",
+        "lang": "en"
+      },
+      {
+        "name": "Sitaw",
+        "region": "Philippines",
+        "lang": "tl"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169222",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169222/nutrients",
+      "nutritionPer100g": {
+        "kcal": 47,
+        "protein": 2.8,
+        "fat": 0.4,
+        "carbs": 8.35,
+        "sugars": 0,
+        "calcium": 50,
+        "iron": 0.47,
+        "magnesium": 44,
+        "phosphorus": 59,
+        "potassium": 240,
+        "sodium": 4,
+        "zinc": 0.37,
+        "copper": 0.048,
+        "manganese": 0.205,
+        "seleniumMcg": 1.5,
+        "vitaminC": 18.8,
+        "thiamin": 0.107,
+        "riboflavin": 0.11,
+        "niacin": 0.41,
+        "vitaminB6": 0.024,
+        "folateMcg": 62,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 43,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.105,
+        "monounsaturatedFat": 0.036,
+        "polyunsaturatedFat": 0.169,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/long-beans-thumb.webp"
+}

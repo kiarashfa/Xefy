@@ -1,0 +1,195 @@
+---
+title: Lagman
+subtitle: Hand-pulled wheat noodles in a peppery lamb, tomato and pepper broth, the Uyghur noodle dish carried across Central Asia along the old Silk Road trade routes.
+label: Soup
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [central-asian]
+  course: [main-course]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Laghman, region: Central Asia, lang: en }
+image:
+  src: images/recipes/lagman.webp
+  alt: "A bowl of lagman soup, hand-pulled noodles and lamb in a peppery tomato broth topped with chopped fresh herbs"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 350
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: dough-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: g
+    note: for coating the dough while it rests
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 350
+    unit: g
+    note: thinly sliced
+  - id: cook-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 150
+    unit: g
+    note: cut into strips
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into strips
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into thin batons
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 80
+    unit: g
+    note: sliced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 200
+    unit: g
+    note: chopped
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 30
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 4
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 4
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 800
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, for garnish
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced, for garnish
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 40, type: passive }
+  - { id: pull-noodles, durationMin: 15, type: active, phase: cook }
+  - { id: cook-lamb, durationMin: 8, type: "parallel-with:rest-dough", phase: cook }
+  - { id: cook-sauce, durationMin: 25, type: active, phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The sauce can be made up to two days ahead and reheated; the noodles are best pulled and boiled fresh.
+  freezable: true
+  freezeInstructions: Freeze the sauce alone for up to two months; noodles do not freeze well.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: pull-noodles
+      text: Resting the dough under oil relaxes the gluten enough that it can be stretched by hand into long strands rather than snapping back — the same principle behind other hand-pulled wheat noodles, and the reason the dough is never kneaded stiff.
+  commonPitfalls:
+    - stepId: cook-sauce
+      text: The peppers and celery go in after the tomato has already broken down, not at the start. Added too early, they overcook and lose the crunch that lagman's sauce is built to keep.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="dough-water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, kneading
+  for <Dur step="make-dough"/> until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Rub the dough all over with the <Qty ref="dough-oil"/>, cover, and leave it to
+  rest for <Dur step="rest-dough"/>, so the gluten relaxes fully.
+</Step>
+
+<Step id="cook-lamb">
+  Heat the <Qty ref="cook-oil"/> in a wok or wide pan over a high heat and
+  stir-fry the <Qty ref="lamb"/> for <Dur step="cook-lamb"/>, until browned. Lift
+  out and set aside.
+</Step>
+
+<Step id="cook-sauce">
+  In the same pan, fry the <Qty ref="onion"/>, <Qty ref="garlic"/> and
+  <Qty ref="ginger"/> until fragrant. Stir in the <Qty ref="cumin"/> and
+  <Qty ref="dried-chilli"/>, then the <Qty ref="tomato"/> and
+  <Qty ref="tomato-puree"/>, and cook until the tomato has broken down. Add the
+  <Qty ref="red-pepper"/>, <Qty ref="green-pepper"/>, <Qty ref="carrot"/> and
+  <Qty ref="celery"/>, return the browned lamb to the pan, then pour in the
+  <Qty ref="stock"/> and the <Qty ref="fine-sea-salt"/>. Simmer for
+  <Dur step="cook-sauce"/>, until the vegetables are tender but still have bite.
+</Step>
+
+<Step id="pull-noodles">
+  Divide the rested dough into pieces and stretch each by hand into a long,
+  even strand, doubling and re-stretching as needed until noodle-thin. Boil in
+  plenty of salted water until just tender, working for <Dur step="pull-noodles"/>
+  in total, then drain.
+</Step>
+
+<Step id="assemble">
+  Divide the noodles between bowls, ladle the lamb and vegetable sauce over the
+  top, and scatter with the <Qty ref="coriander"/> and <Qty ref="spring-onion"/>.
+  This takes <Dur step="assemble"/>.
+</Step>

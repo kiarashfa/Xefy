@@ -410,6 +410,37 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
   }
 
+  /* --- 9b. Bone-in meat weighed with its bone -------------------------- */
+  // USDA meat records are per 100 g of edible lean and fat, so a bone-in cut
+  // weighed with its bone overstates every figure unless consumedFraction
+  // takes the bone off. The brief said so and batches kept missing it; a line
+  // whose note or Form says it is on the bone now has to declare the fraction.
+  // Lines in bone-in-backlog.json predate the rule and only warn.
+  const boneBacklog = new Set(
+    (
+      JSON.parse(
+        await readFile(path.join(ROOT, 'scripts', 'integrity', 'bone-in-backlog.json'), 'utf8'),
+      ) as { lines: string[] }
+    ).lines,
+  );
+  const ON_THE_BONE = /\bbone-in\b|\bon the bone\b|\bleg quarters?\b|\bjointed\b|\bdrumsticks?\b|\bdrumettes?\b|\bwhole (?:bird|chicken|rack)/i;
+  for (const unit of authored) {
+    for (const line of unit.ingredients) {
+      if (line.consumedFraction < 1) continue;
+      const formLabel =
+        ingredientBySlug.get(line.ingredientRef)?.data.forms.find((f) => f.id === line.form)?.label ?? '';
+      if (!ON_THE_BONE.test(line.note ?? '') && !ON_THE_BONE.test(formLabel)) continue;
+      const key = `${unit.file}::${line.id}`;
+      add(
+        'bone-in-consumed-fraction',
+        boneBacklog.has(key) ? 'warn' : 'fail',
+        unit.file,
+        `"${line.id}" is weighed on the bone but has no consumedFraction, so its nutrition counts the bone as meat. ` +
+          'Declare the edible share (bone-in chicken thighs ≈ 0.85, jointed chicken ≈ 0.75, oxtail ≈ 0.55) with a consumedFractionNote',
+      );
+    }
+  }
+
   /* --- Structural: recipe directories, versions, references ------------ */
   const byRecipe = new Map<string, typeof content.recipeVersions>();
   for (const version of content.recipeVersions) {

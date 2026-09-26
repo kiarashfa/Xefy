@@ -1,0 +1,106 @@
+{
+  "sourceDataset": "USDA FDC SR Legacy",
+  "sourceId": "168391",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/168391/nutrients",
+  "description": "Balsam-pear (bitter gourd), leafy tips, raw",
+  "category": "Vegetables and Vegetable Products",
+  "publicationDate": "4/1/2019",
+  "retrieved": "2026-09-25",
+  "nutritionPer100g": {
+    "kcal": 30,
+    "protein": 5.3,
+    "fat": 0.69,
+    "carbs": 3.29,
+    "calcium": 84,
+    "iron": 2.04,
+    "magnesium": 85,
+    "phosphorus": 99,
+    "potassium": 608,
+    "sodium": 11,
+    "zinc": 0.3,
+    "copper": 0.201,
+    "manganese": 0.536,
+    "seleniumMcg": 0.9,
+    "vitaminC": 88,
+    "thiamin": 0.181,
+    "riboflavin": 0.362,
+    "niacin": 1.11,
+    "vitaminB6": 0.803,
+    "folateMcg": 128,
+    "vitaminB12Mcg": 0,
+    "vitaminAMcg": 87,
+    "vitaminDMcg": 0,
+    "transFat": 0,
+    "cholesterol": 0
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 89.25,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 126,
+      "unit": "kJ"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.47,
+      "unit": "g"
+    },
+    {
+      "number": "410",
+      "name": "Pantothenic acid",
+      "amount": 0.063,
+      "unit": "mg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 128,
+      "unit": "µg"
+    },
+    {
+      "number": "431",
+      "name": "Folic acid",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "432",
+      "name": "Folate, food",
+      "amount": 128,
+      "unit": "µg"
+    },
+    {
+      "number": "319",
+      "name": "Retinol",
+      "amount": 0,
+      "unit": "µg"
+    },
+    {
+      "number": "318",
+      "name": "Vitamin A, IU",
+      "amount": 1734,
+      "unit": "IU"
+    },
+    {
+      "number": "324",
+      "name": "Vitamin D (D2 + D3), International Units",
+      "amount": 0,
+      "unit": "IU"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": [
+    {
+      "measure": "gPerCup",
+      "value": 48,
+      "from": "0.5 cup"
+    }
+  ]
+}

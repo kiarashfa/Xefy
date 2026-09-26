@@ -1,0 +1,42 @@
+{
+  "id": "ackee",
+  "name": "Ackee",
+  "proseName": "ackee",
+  "category": "fruit",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "canned",
+      "label": "Canned, drained",
+      "proseQualifier": "canned",
+      "sourceDataset": "CFNI Food Composition Tables for the English-Speaking Caribbean (1998)",
+      "sourceId": "Ackee, canned, drained",
+      "sourceUrl": "http://wwwchem.uwimona.edu.jm/lectures/ackee.html",
+      "sourceNote": "USDA FoodData Central publishes no record for ackee at all, so this is cited to the Caribbean Food and Nutrition Institute's regional food composition table instead, for the canned, drained form ackee is almost always sold and cooked in outside Jamaica.",
+      "nutritionPer100g": {
+        "kcal": 151,
+        "protein": 2.9,
+        "fat": 15.2,
+        "carbs": 0.8,
+        "fiber": 2.7,
+        "saturatedFat": 0,
+        "cholesterol": 0,
+        "calcium": 35,
+        "iron": 0.7,
+        "potassium": 270,
+        "sodium": 240,
+        "zinc": 1,
+        "thiamin": 0.03,
+        "riboflavin": 0.07,
+        "niacin": 1.1,
+        "folateMcg": 41,
+        "vitaminC": 3
+      }
+    }
+  ],
+  "image": "images/ingredients/ackee-thumb.webp"
+}

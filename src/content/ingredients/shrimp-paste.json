@@ -1,0 +1,60 @@
+{
+  "id": "shrimp-paste",
+  "name": "Shrimp Paste",
+  "proseName": "shrimp paste",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Bagoong alamang",
+        "region": "Philippines",
+        "lang": "tl"
+      }
+    ]
+  },
+  "category": "seasoning",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "shellfish"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "alamang",
+      "label": "Salted, fermented",
+      "sourceDataset": "Philippine peer-reviewed shrimp-paste composition studies (Pilapil et al. 2016, J. Sci. Food Agric.; Pilapil 2013, MSc thesis, Ghent University)",
+      "sourceId": "Pilapil A.R.B. et al., \"Chemical quality assessment of traditional salt-fermented shrimp paste from Northern Mindanao, Philippines\", J Sci Food Agric 2016 (DOI 10.1002/jsfa.7167); sodium figure via Pilapil 2013 MSc thesis as cited in Correa-Betanzo & Allen, \"Identification of Foods to Monitor the Sodium Content of Processed Foods\"",
+      "sourceUrl": "https://scijournals.onlinelibrary.wiley.com/doi/10.1002/jsfa.7167",
+      "sourceNote": "USDA publishes no record for bagoong alamang or any fermented shrimp paste, and DOST-FNRI's own Philippine Food Composition Table is only available through a login-gated database, so it could not be read directly. Cited instead against a peer-reviewed chemical analysis of traditional Philippine salt-fermented shrimp paste (protein, fat) and a Philippine master's-thesis measurement of its sodium content (13-14 g Na/100 g, reported secondhand in a published sodium-monitoring study), both of which measure the fermented paste itself rather than raw shrimp. Energy is calculated from the measured protein and fat. Carbohydrate and the micronutrient panel below (calcium, iron, magnesium, phosphorus, potassium, zinc, copper, manganese, fat breakdown, cholesterol) are not reported in the sources found and are carried over from a USDA raw-shrimp record as a rough proxy only.",
+      "nutritionCaveat": "Sodium, protein, fat and energy are now measured against actual Philippine bagoong alamang rather than raw shrimp, and the sodium figure in particular is roughly two orders of magnitude higher than a raw-shrimp record would suggest, consistent with a paste fermented for weeks under heavy salting. The remaining micronutrients (everything except kcal, protein, fat and sodium) are still a raw-shrimp proxy and are likely understated for minerals concentrated by salting and fermentation.",
+      "nutritionPer100g": {
+        "kcal": 67,
+        "protein": 14.1,
+        "fat": 1.2,
+        "carbs": 0,
+        "fiber": 0,
+        "calcium": 64,
+        "iron": 0.52,
+        "magnesium": 35,
+        "phosphorus": 214,
+        "potassium": 264,
+        "sodium": 13500,
+        "zinc": 1.34,
+        "copper": 0.391,
+        "manganese": 0.033,
+        "saturatedFat": 0.101,
+        "monounsaturatedFat": 0.086,
+        "polyunsaturatedFat": 0.152,
+        "transFat": 0.004,
+        "cholesterol": 161
+      },
+      "density": {
+        "gPerTbsp": 18,
+        "densitySource": "estimated",
+        "densityClass": "liquid-dairy-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/shrimp-paste-thumb.webp"
+}

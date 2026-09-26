@@ -1,0 +1,49 @@
+{
+  "id": "pig-ears",
+  "name": "Pig's Ears",
+  "proseName": "pig's ears",
+  "category": "offal",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167857",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167857/nutrients",
+      "nutritionPer100g": {
+        "kcal": 234,
+        "protein": 22.45,
+        "fat": 15.1,
+        "carbs": 0.6,
+        "fiber": 0,
+        "saturatedFat": 5.39,
+        "monounsaturatedFat": 6.86,
+        "polyunsaturatedFat": 1.61,
+        "cholesterol": 82,
+        "sodium": 191,
+        "potassium": 55,
+        "calcium": 21,
+        "iron": 2.4,
+        "magnesium": 7,
+        "phosphorus": 41,
+        "zinc": 0.19,
+        "copper": 0.006,
+        "manganese": 0.012,
+        "seleniumMcg": 4.3,
+        "vitaminAMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0.08,
+        "riboflavin": 0.11,
+        "niacin": 0.78,
+        "vitaminB6": 0.02,
+        "folateMcg": 0,
+        "vitaminB12Mcg": 0.07
+      }
+    }
+  ],
+  "image": "images/ingredients/pig-ears-thumb.webp"
+}

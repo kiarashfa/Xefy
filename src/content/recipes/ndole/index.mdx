@@ -1,0 +1,135 @@
+---
+title: Ndolé
+subtitle: Beef and shrimp simmered with ground peanuts and bitterleaf, boiled through several changes of water until only its deep, savoury edge remains.
+label: Cameroonian
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [central-african]
+  course: [main-course]
+  method: [simmering]
+image:
+  src: images/recipes/ndole.webp
+  alt: "Cameroonian ndolé stew of ground bitterleaf and peanuts, served with boiled plantain slices"
+ingredients:
+  - id: bitterleaf
+    ingredientRef: bitterleaf
+    form: fresh
+    amount: 200
+    unit: g
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into bite-sized pieces
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled
+  - id: dried-shrimp
+    ingredientRef: dried-shrimp
+    form: dried
+    amount: 30
+    unit: g
+  - id: peanut
+    ingredientRef: peanut
+    form: roasted
+    amount: 250
+    unit: g
+    note: ground to a paste
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: palm-oil
+    ingredientRef: palm-oil
+    form: red
+    amount: 40
+    unit: g
+  - id: bouillon-powder
+    ingredientRef: bouillon-powder
+    form: powder
+    amount: 6
+    unit: g
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 1
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 700
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: blanch-bitterleaf, durationMin: 25, type: active, phase: prep }
+  - { id: brown-beef, durationMin: 10, type: "parallel-with:blanch-bitterleaf", phase: cook }
+  - { id: simmer-beef, durationMin: 50, type: passive }
+  - { id: build-sauce, durationMin: 15, type: active, phase: cook }
+  - { id: finish, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Ndolé improves over a day in the refrigerator once the flavours have had time to settle; reheat gently before serving.
+  freezable: true
+  freezeInstructions: Freeze the finished stew for up to two months.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: blanch-bitterleaf
+      text: The leaves are boiled through several changes of water rather than once, which is what draws off enough of their natural bitterness to leave a rounded, savoury edge instead of a harsh one.
+  commonPitfalls:
+    - stepId: build-sauce
+      text: The ground peanut paste scorches easily against the base of the pot. Stir it in over a moderate heat and keep it moving rather than leaving it to sit.
+---
+
+<Step id="blanch-bitterleaf">
+  Boil the <Qty ref="bitterleaf"/> in plenty of water, draining and covering with
+  fresh water two more times, for <Dur step="blanch-bitterleaf"/> in total, until
+  much of its natural bitterness has gone. Drain well and set aside.
+</Step>
+
+<Step id="brown-beef">
+  Brown the <Qty ref="beef"/> in a dry, heavy pot over a high heat for
+  <Dur step="brown-beef"/>.
+</Step>
+
+<Step id="simmer-beef">
+  Add the <Qty ref="water"/> and the <Qty ref="fine-sea-salt"/> to the pot,
+  bring to a simmer, cover, and cook for <Dur step="simmer-beef"/>, until the
+  beef is tender.
+</Step>
+
+<Step id="build-sauce">
+  Stir the <Qty ref="onion"/>, <Qty ref="garlic"/>, <Qty ref="ginger"/>,
+  <Qty ref="palm-oil"/>, <Qty ref="bouillon-powder"/> and <Qty ref="nutmeg"/>
+  into the pot. Stir in the ground <Qty ref="peanut"/> and cook, stirring
+  often, for <Dur step="build-sauce"/>, until the sauce has thickened.
+</Step>
+
+<Step id="finish">
+  Add the blanched bitterleaf, the <Qty ref="shrimp"/> and the
+  <Qty ref="dried-shrimp"/> to the pot. Simmer for <Dur step="finish"/>, until
+  the shrimp are cooked through and the stew has come together into a thick,
+  dark sauce.
+</Step>

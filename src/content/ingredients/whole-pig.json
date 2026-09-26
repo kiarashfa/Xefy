@@ -1,0 +1,49 @@
+{
+  "id": "whole-pig",
+  "name": "Whole Pig",
+  "proseName": "pig",
+  "category": "meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, whole, dressed",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "167888",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/167888/nutrients",
+      "sourceNote": "USDA publishes no record for a whole dressed pig. Cited against its composite of trimmed retail cuts (leg, loin, shoulder and spareribs), separable lean and fat, raw — the closest thing it carries to an average across the carcass, since a whole roast pig runs through the same mix of cuts on and off the bone.",
+      "nutritionPer100g": {
+        "kcal": 216,
+        "protein": 18.95,
+        "fat": 14.95,
+        "carbs": 0,
+        "fiber": 0,
+        "saturatedFat": 5.28,
+        "monounsaturatedFat": 6.63,
+        "polyunsaturatedFat": 1.55,
+        "cholesterol": 67,
+        "sodium": 55,
+        "potassium": 335,
+        "calcium": 19,
+        "iron": 0.86,
+        "magnesium": 21,
+        "phosphorus": 200,
+        "zinc": 2.01,
+        "copper": 0.064,
+        "manganese": 0.011,
+        "seleniumMcg": 28.4,
+        "vitaminAMcg": 2,
+        "vitaminC": 0.5,
+        "thiamin": 0.841,
+        "riboflavin": 0.254,
+        "niacin": 4.504,
+        "vitaminB6": 0.445,
+        "folateMcg": 5,
+        "vitaminB12Mcg": 0.66
+      }
+    }
+  ]
+}

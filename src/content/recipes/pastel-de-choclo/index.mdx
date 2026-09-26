@@ -1,0 +1,145 @@
+---
+title: Pastel de Choclo
+subtitle: A beef, olive and raisin filling under a thick, basil-scented sweetcorn topping, baked until the top caramelises to a pale gold.
+label: Chilean
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [chilean]
+  course: [main-course]
+  method: [baking]
+image:
+  src: images/recipes/pastel-de-choclo.webp
+  alt: "An individual ramekin of pastel de choclo, its golden sweetcorn topping baked until browned on top"
+ingredients:
+  - id: beef-mince
+    ingredientRef: beef-mince
+    form: raw
+    amount: 400
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 4
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 3
+    unit: g
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: g
+  - id: raisins
+    ingredientRef: raisins
+    form: dried
+    amount: 30
+    unit: g
+  - id: olives
+    ingredientRef: olives
+    form: black
+    amount: 60
+    unit: g
+    note: pitted
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: hard-boiled and sliced
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: corn
+    ingredientRef: corn
+    form: fresh
+    amount: 800
+    unit: g
+    note: kernels cut from the cob
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 150
+    unit: ml
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 10
+    unit: g
+    note: leaves
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 15
+    unit: g
+    portions:
+      - { id: sugar-topping, amount: 10, note: stirred into the corn topping }
+      - { id: sugar-dusting, amount: 5, note: dusted over the top before baking }
+steps:
+  - { id: cook-pino, durationMin: 15, type: active, phase: cook }
+  - { id: make-corn-topping, durationMin: 20, type: active, phase: cook }
+  - { id: assemble-pie, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: The filling and corn topping can both be made a day ahead and kept separately, refrigerated; assemble and bake just before serving.
+  freezable: true
+  freezeInstructions: Freeze the assembled, unbaked pie for up to two months. Bake from frozen, allowing significantly longer in the oven.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-corn-topping
+      text: The corn is blended with milk and basil, then cooked down on the stove before it ever reaches the oven, which is what thickens it into a spreadable topping rather than a wet, watery one that would sink into the filling.
+  commonPitfalls:
+    - stepId: bake
+      text: The sugar dusted over the top is there to caramelise into a faint golden crust, not to sweeten the dish overall. Watch it in the final minutes, since it can turn from gold to burnt quickly under a hot grill.
+---
+
+<Step id="cook-pino">
+  Heat the <Qty ref="vegetable-oil"/> in a wide pan and fry the
+  <Qty ref="onion"/> and <Qty ref="garlic"/> until soft. Add the
+  <Qty ref="beef-mince"/>, <Qty ref="cumin"/>, <Qty ref="paprika"/> and half of
+  the <Qty ref="fine-sea-salt"/>, and cook, breaking up the meat, for
+  <Dur step="cook-pino"/>, until the beef is cooked through. Stir in the
+  <Qty ref="raisins"/> and set aside.
+</Step>
+
+<Step id="make-corn-topping">
+  Blend the <Qty ref="corn"/> with the <Qty ref="milk"/> and <Qty ref="basil"/>
+  until fairly smooth. Transfer to a pan with the <Qty ref="butter"/>, the
+  <Qty ref="sugar-topping"/> and the remaining <Qty ref="fine-sea-salt"/>, and
+  cook over a low heat, stirring constantly, for <Dur step="make-corn-topping"/>,
+  until noticeably thickened.
+</Step>
+
+<Step id="assemble-pie">
+  Spread the beef filling over the base of a baking dish. Scatter over the
+  <Qty ref="olives"/> and arrange the <Qty ref="egg"/> on top. Cover evenly with
+  the corn topping. This takes <Dur step="assemble-pie"/>.
+</Step>
+
+<Step id="bake">
+  Dust the top with the <Qty ref="sugar-dusting"/> and bake at
+  <Temp c={200}/> for <Dur step="bake"/>, until the top is set and lightly
+  golden in patches.
+</Step>

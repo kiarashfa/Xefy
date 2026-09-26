@@ -1,0 +1,181 @@
+---
+label: Fried
+defaultServings: 4
+difficulty: Hard
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 350
+    unit: g
+  - id: dough-water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+  - id: dough-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: dough-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: g
+    note: for coating the dough while it rests
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 350
+    unit: g
+    note: thinly sliced
+  - id: cook-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 45
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: finely chopped
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: red-pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 150
+    unit: g
+    note: cut into strips
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into strips
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into thin batons
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 80
+    unit: g
+    note: sliced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 200
+    unit: g
+    note: chopped
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 30
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 4
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 4
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 150
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, for garnish
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced, for garnish
+steps:
+  - { id: make-dough, durationMin: 10, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 40, type: passive }
+  - { id: pull-noodles, durationMin: 15, type: active, phase: cook }
+  - { id: cook-lamb, durationMin: 8, type: "parallel-with:rest-dough", phase: cook }
+  - { id: cook-vegetables, durationMin: 15, type: active, phase: cook }
+  - { id: toss-noodles, durationMin: 6, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: toss-noodles
+      text: Too much liquid at this stage steams the noodles soft instead of letting them fry against the hot wok. The stock here is only a splash, just enough to loosen the sauce, not enough to make a broth.
+---
+
+<Step id="make-dough">
+  Combine the <Qty ref="flour"/>, <Qty ref="dough-water"/> and
+  <Qty ref="dough-salt"/> in a bowl and bring together into a firm dough, kneading
+  for <Dur step="make-dough"/> until smooth.
+</Step>
+
+<Step id="rest-dough">
+  Rub the dough all over with the <Qty ref="dough-oil"/>, cover, and leave it to
+  rest for <Dur step="rest-dough"/>, so the gluten relaxes fully.
+</Step>
+
+<Step id="cook-lamb">
+  Heat half of the <Qty ref="cook-oil"/> in a wok over a high heat and stir-fry the
+  <Qty ref="lamb"/> for <Dur step="cook-lamb"/>, until well browned and starting to
+  crisp at the edges. Lift out and set aside.
+</Step>
+
+<Step id="pull-noodles">
+  Divide the rested dough into pieces and stretch each by hand into a long,
+  even strand, doubling and re-stretching as needed until noodle-thin. Boil in
+  plenty of salted water until just tender, working for <Dur step="pull-noodles"/>
+  in total, then drain well.
+</Step>
+
+<Step id="cook-vegetables">
+  Heat the remaining <Qty ref="cook-oil"/> in the same wok and fry the
+  <Qty ref="onion"/>, <Qty ref="garlic"/> and <Qty ref="ginger"/> until fragrant.
+  Add the <Qty ref="cumin"/> and <Qty ref="dried-chilli"/>, then the
+  <Qty ref="tomato"/> and <Qty ref="tomato-puree"/>, and cook until the tomato has
+  broken down. Add the <Qty ref="red-pepper"/>, <Qty ref="green-pepper"/>,
+  <Qty ref="carrot"/> and <Qty ref="celery"/> and stir-fry over a high heat for
+  <Dur step="cook-vegetables"/>, until the vegetables are tender but still crisp.
+</Step>
+
+<Step id="toss-noodles">
+  Return the lamb to the wok along with the drained noodles, the
+  <Qty ref="stock"/> and the <Qty ref="fine-sea-salt"/>. Toss everything together
+  over a high heat for <Dur step="toss-noodles"/>, until the noodles are coated
+  and lightly caught at the edges. Scatter with the <Qty ref="coriander"/> and
+  <Qty ref="spring-onion"/> to serve.
+</Step>

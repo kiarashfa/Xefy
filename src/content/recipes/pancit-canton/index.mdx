@@ -1,0 +1,131 @@
+---
+title: Pancit Canton
+subtitle: Egg noodles stir-fried with pork, shrimp, carrot and cabbage in a soy-and-oyster-sauce broth until the liquid is absorbed.
+label: Filipino
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [main-course]
+  method: [stir-frying]
+image:
+  src: images/recipes/pancit-canton.webp
+  alt: "A plate of stir-fried pancit canton noodles with shrimp, pork, snow peas, mushrooms and onion"
+ingredients:
+  - id: noodles
+    ingredientRef: egg-noodles
+    form: dried
+    amount: 250
+    unit: g
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 60
+    unit: g
+    note: sliced
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 80
+    unit: g
+    note: julienned
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 150
+    unit: g
+    note: shredded
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 350
+    unit: ml
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+  - id: oyster-sauce
+    ingredientRef: oyster-sauce
+    form: standard
+    amount: 20
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced, for finishing
+  - id: calamansi
+    ingredientRef: calamansi
+    form: fresh
+    amount: 30
+    unit: g
+    note: halved, for serving
+steps:
+  - { id: cook-meat, durationMin: 6, type: active, phase: cook }
+  - { id: aromatics, durationMin: 3, type: active, phase: cook }
+  - { id: add-vegetables, durationMin: 4, type: active, phase: cook }
+  - { id: add-liquid, durationMin: 2, type: active, phase: cook }
+  - { id: add-noodles, durationMin: 6, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat in a hot pan with a splash of water to loosen the noodles; a microwave leaves them gluey.
+notes:
+  commonPitfalls:
+    - stepId: add-noodles
+      text: Dried canton noodles keep absorbing liquid after they look done, so the pan should still look a little wet when the noodles go in — left too dry, they turn stiff rather than tender by the time they finish cooking.
+---
+
+<Step id="cook-meat">
+  Heat the <Qty ref="oil"/> in a wok over a high heat and stir-fry the <Qty ref="pork"/>
+  for <Dur step="cook-meat"/> until browned, then add the <Qty ref="shrimp"/> and cook
+  until pink. Lift both out and set aside.
+</Step>
+
+<Step id="aromatics">
+  Add the <Qty ref="garlic"/> and <Qty ref="onion"/> to the same wok and stir-fry for
+  <Dur step="aromatics"/>, until softened and fragrant.
+</Step>
+
+<Step id="add-vegetables">
+  Add the <Qty ref="carrot"/> and <Qty ref="cabbage"/> and stir-fry for
+  <Dur step="add-vegetables"/>, until just starting to soften.
+</Step>
+
+<Step id="add-liquid">
+  Pour in the <Qty ref="stock"/>, <Qty ref="soy-sauce"/> and <Qty ref="oyster-sauce"/>
+  and bring to a simmer for <Dur step="add-liquid"/>.
+</Step>
+
+<Step id="add-noodles">
+  Return the pork and shrimp to the wok, add the <Qty ref="noodles"/> and toss for
+  <Dur step="add-noodles"/>, until the noodles have softened and absorbed most of the
+  liquid. Scatter with the <Qty ref="spring-onion"/> and serve with the
+  <Qty ref="calamansi"/> alongside.
+</Step>

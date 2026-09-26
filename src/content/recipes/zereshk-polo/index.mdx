@@ -1,0 +1,166 @@
+---
+title: Zereshk Polo ba Morgh
+subtitle: Saffron-braised chicken alongside basmati rice studded with tart, sugar-glossed barberries, a festive Persian pairing of sweet, sour and saffron.
+label: Persian
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [persian]
+  course: [main-course]
+  method: [steaming]
+image:
+  src: images/recipes/zereshk-polo.webp
+  alt: "A plate of zereshk polo, saffron basmati rice studded with dried barberries, topped with shredded braised chicken and a pat of butter"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 700
+    unit: g
+    note: bone-in, skin on
+    consumedFraction: 0.85
+    consumedFractionNote: Bone-in thighs lose roughly a seventh of their raw weight to bone once eaten.
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: thinly sliced
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 3
+    unit: g
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 70
+    unit: g
+    portions:
+      - { id: butter-chicken, amount: 25, note: for the chicken }
+      - { id: butter-barberries, amount: 15, note: for the barberries }
+      - { id: butter-rice, amount: 30, note: for the rice }
+  - id: barberries
+    ingredientRef: barberries
+    form: dried
+    amount: 40
+    unit: g
+    note: picked over and rinsed
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 12
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 400
+    unit: g
+  - id: boil-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+    portions:
+      - { id: salt-chicken, amount: 5 }
+      - { id: salt-rice, amount: 15 }
+    consumedFraction: 0.5
+    consumedFractionNote: Blended across two uses. The chicken seasoning is fully eaten, but the rice-parboiling portion is only partly absorbed by the grains; most of it drains away with the water.
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2530
+    unit: ml
+    consumedFraction: 0.03
+    consumedFractionNote: Blended across two uses. Almost all of it is parboiling water, drained off and discarded but for what clings to the rinsed grains; a small remainder blooms the saffron and is fully absorbed into the rice.
+    portions:
+      - { id: boil-water, amount: 2500, note: for parboiling the rice }
+      - { id: saffron-water, amount: 30, note: to bloom the saffron }
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.4
+    unit: g
+steps:
+  - { id: braise-chicken, durationMin: 45, type: passive }
+  - { id: rinse-rice, durationMin: 6, type: "parallel-with:braise-chicken", phase: prep }
+  - { id: soak-rice, durationMin: 45, type: passive }
+  - { id: bloom-saffron, durationMin: 5, type: "parallel-with:soak-rice", phase: prep }
+  - { id: glaze-barberries, durationMin: 8, type: active, phase: cook }
+  - { id: parboil-rice, durationMin: 7, type: active, phase: cook }
+  - { id: steam-rice, durationMin: 45, type: passive }
+  - { id: assemble, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The chicken can be braised up to two days ahead and reheated gently in its sauce while the rice cooks.
+  freezable: true
+  freezeInstructions: Freeze the braised chicken in its sauce for up to two months; the rice does not freeze well and is best cooked fresh.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: glaze-barberries
+      text: A short glaze in butter and sugar rather than a longer cook keeps the barberries whole and glossy; overcooked, they turn bitter and lose the sharp pop that offsets the rice.
+  commonPitfalls:
+    - stepId: glaze-barberries
+      text: Barberries scorch within moments in a hot pan because they are already dried and low in moisture. Keep the heat moderate and keep them moving.
+---
+
+<Step id="braise-chicken">
+  Season the <Qty ref="chicken"/> with the <Qty ref="turmeric"/>,
+  <Qty ref="black-pepper"/> and <Qty ref="salt-chicken"/>. Melt the
+  <Qty ref="butter-chicken"/> in a wide pan over a medium heat, brown the chicken on
+  both sides, then add the <Qty ref="onion"/> and the <Qty ref="lemon-juice"/>. Cover
+  and cook over a low heat for <Dur step="braise-chicken"/>, until the chicken is
+  fully tender and the onion has collapsed into the sauce.
+</Step>
+
+<Step id="rinse-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water, swirling and
+  draining each time, for <Dur step="rinse-rice"/>, until the water runs clear.
+</Step>
+
+<Step id="soak-rice">
+  Cover the rinsed rice with the <Qty ref="boil-water"/> and the
+  <Qty ref="salt-rice"/> and leave it to soak for <Dur step="soak-rice"/>.
+</Step>
+
+<Step id="bloom-saffron">
+  Grind the <Qty ref="saffron"/> and stir it into the hot <Qty ref="saffron-water"/>,
+  setting it aside to steep for <Dur step="bloom-saffron"/>.
+</Step>
+
+<Step id="glaze-barberries">
+  Melt the <Qty ref="butter-barberries"/> in a small pan, add the
+  <Qty ref="barberries"/> and the <Qty ref="caster-sugar"/>, and cook over a moderate
+  heat, stirring constantly, for <Dur step="glaze-barberries"/>, until glossy and just
+  softened. Take off the heat immediately.
+</Step>
+
+<Step id="parboil-rice">
+  Bring the rice in its soaking water to the boil and cook for
+  <Dur step="parboil-rice"/>, until the grains have softened at the edge but are
+  still firm at the core. Drain in a fine sieve.
+</Step>
+
+<Step id="steam-rice">
+  Melt the <Qty ref="butter-rice"/> in the base of a heavy, non-stick pot. Mound the
+  drained rice over it, drizzle with the bloomed <Qty ref="saffron-water"/>, cover
+  the lid with a clean cloth and steam over a low heat for <Dur step="steam-rice"/>,
+  until the rice is tender and separate.
+</Step>
+
+<Step id="assemble">
+  Spoon the rice onto a platter, folding through most of the glazed
+  <Qty ref="barberries"/>. Arrange the braised chicken alongside, spoon over its
+  sauce, and scatter the remaining barberries over the top. This takes
+  <Dur step="assemble"/>.
+</Step>

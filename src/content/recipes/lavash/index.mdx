@@ -1,0 +1,85 @@
+---
+title: Lavash
+subtitle: A paper-thin wheat dough rolled almost translucent and baked in well under a minute against ferocious, direct heat. Makes one batch of thin sheets; the nutrition panel is for one sheet.
+label: Tonir-baked
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [armenian]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/lavash.webp
+  alt: "Two women stretching lavash dough over a cushion and rolling pin beside a glowing tonir oven pit, ready to bake"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 400
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 3
+    unit: g
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 240
+    unit: ml
+    note: lukewarm
+steps:
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: prove, durationMin: 60, type: passive }
+  - { id: divide-and-rest, durationMin: 10, type: active, phase: prep }
+  - { id: roll-and-bake, durationMin: 25, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Stack cooled sheets with baking paper between them and freeze in an airtight bag for up to two months.
+  reheatInstructions: A dried sheet can be misted with water and left to soften for a few minutes before use; a fresh one needs no reheating.
+notes:
+  techniqueRationale:
+    - stepId: roll-and-bake
+      text: Rolling the dough close to translucent is what lets it bake through in under a minute — anywhere thicker and the surface blisters and burns against the intense heat before the centre sets.
+  commonPitfalls:
+    - stepId: roll-and-bake
+      text: A domestic oven cannot match a clay tonir's direct wall heat. Baking on a stone or steel preheated as hot as the oven allows, on the floor of the oven rather than a shelf, is the closest substitute.
+---
+
+<Step id="mix-dough">
+  Stir the <Qty ref="yeast"/> into the warm <Qty ref="water"/> and leave it for a few
+  minutes until foamy. Combine the <Qty ref="flour"/> and <Qty ref="fine-sea-salt"/>
+  in a large bowl, pour in the yeasted water, and bring it together into a rough
+  dough. This takes <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="knead">
+  Turn the dough out and knead for <Dur step="knead"/>, until smooth, elastic and no
+  longer sticky.
+</Step>
+
+<Step id="prove">
+  Cover the dough and leave it to prove somewhere warm for <Dur step="prove"/>, until
+  roughly doubled.
+</Step>
+
+<Step id="divide-and-rest">
+  Knock the dough back and divide it into equal pieces, shaping each into a ball.
+  Cover and let them rest for <Dur step="divide-and-rest"/>, so the gluten relaxes
+  before rolling.
+</Step>
+
+<Step id="roll-and-bake">
+  Heat a baking stone or steel on the floor of the oven to its highest setting.
+  Roll each ball out as thin as possible, close to translucent, and lift it
+  carefully onto the hot stone. Bake until puffed and lightly spotted with brown,
+  then remove immediately. Repeat with the remaining dough, spending
+  <Dur step="roll-and-bake"/> in total, and stack the sheets to cool under a cloth.
+</Step>

@@ -1,0 +1,112 @@
+---
+label: Shrimp
+defaultServings: 4
+difficulty: Easy
+ingredients:
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1400
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: quartered
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: quartered
+  - id: tamarind
+    ingredientRef: tamarind
+    form: pulp
+    amount: 50
+    unit: g
+    note: dissolved in a little hot water and strained
+  - id: daikon
+    ingredientRef: daikon
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and sliced
+  - id: long-beans
+    ingredientRef: long-beans
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into short lengths
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 150
+    unit: g
+    note: sliced
+  - id: chilli
+    ingredientRef: jalapeno
+    form: fresh
+    amount: 15
+    unit: g
+    note: left whole
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 500
+    unit: g
+    note: shell-on
+  - id: water-spinach
+    ingredientRef: water-spinach
+    form: raw
+    amount: 100
+    unit: g
+    note: leaves and tender stems only
+  - id: fish-sauce
+    ingredientRef: fish-sauce
+    form: standard
+    amount: 15
+    unit: ml
+steps:
+  - { id: make-broth, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-daikon, durationMin: 10, type: active, phase: cook }
+  - { id: add-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: cook-shrimp, durationMin: 4, type: active, phase: cook }
+  - { id: finish, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: cook-shrimp
+      text: Shrimp toughen within moments of being fully cooked, so they go in last and only long enough to turn pink and curl, off a hard boil.
+---
+
+<Step id="make-broth">
+  Combine the <Qty ref="water"/>, <Qty ref="onion"/>, <Qty ref="tomato"/> and the
+  strained <Qty ref="tamarind"/> liquid in a large pot and simmer for
+  <Dur step="make-broth"/>, until the tomato begins to break down.
+</Step>
+
+<Step id="simmer-daikon">
+  Add the <Qty ref="daikon"/> and simmer for <Dur step="simmer-daikon"/>, until almost
+  tender.
+</Step>
+
+<Step id="add-vegetables">
+  Add the <Qty ref="long-beans"/>, <Qty ref="aubergine"/> and <Qty ref="chilli"/> and
+  simmer for <Dur step="add-vegetables"/>, until the vegetables are just cooked through.
+</Step>
+
+<Step id="cook-shrimp">
+  Add the <Qty ref="shrimp"/> and simmer for <Dur step="cook-shrimp"/>, until they turn
+  pink and curl.
+</Step>
+
+<Step id="finish">
+  Season with the <Qty ref="fish-sauce"/>, then take the pot off the heat and stir
+  through the <Qty ref="water-spinach"/> for <Dur step="finish"/>, just long enough for
+  it to wilt. Serve at once.
+</Step>

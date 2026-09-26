@@ -1,0 +1,119 @@
+---
+title: Belgian Waffles
+subtitle: A yeasted batter lightened with whipped egg white, baked into a large, rectangular waffle with deep, crisp pockets, dusted with icing sugar.
+label: Brussels
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [dutch-belgian]
+  course: [breakfast, dessert]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: American waffles
+      note: The baking-powder batter sold in the United States as "Belgian waffles" since the 1960s, cooked in the same deep-pocketed iron but chemically leavened and made without yeast — a different dish from this yeasted Brussels batter.
+      slugRef: belgian-style-waffles
+image:
+  src: images/recipes/belgian-waffles.webp
+  alt: "A rectangular Brussels waffle with deep pockets, dusted with icing sugar and topped with a dollop of whipped cream"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 300
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: caster-sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 20
+    unit: g
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: egg-yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 34
+    unit: g
+  - id: egg-white
+    ingredientRef: egg
+    form: white
+    amount: 66
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 350
+    unit: ml
+    note: warmed to just above body temperature
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+    note: melted, plus more for the iron
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 20
+    unit: g
+    note: for dusting
+steps:
+  - { id: activate-yeast, durationMin: 8, type: active, phase: prep }
+  - { id: mix-batter, durationMin: 6, type: active, phase: prep }
+  - { id: whip-whites, durationMin: 5, type: "parallel-with:prove-batter", phase: prep }
+  - { id: prove-batter, durationMin: 45, type: passive }
+  - { id: cook-waffles, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Freeze cooked, cooled waffles in a single layer, then bag them. Reheat from frozen directly in a toaster or hot oven, without thawing first.
+  reheatInstructions: A day-old waffle recrisps well in a toaster or a hot oven; a microwave will only soften it.
+notes:
+  techniqueRationale:
+    - stepId: whip-whites
+      text: Whipping the whites separately and folding them in at the end is what gives a Brussels waffle its light, almost soufflé-like crumb inside a crisp shell, rather than the denser texture of a batter mixed all at once.
+---
+
+<Step id="activate-yeast">
+  Stir the <Qty ref="yeast"/> into the warm <Qty ref="milk"/> and leave it for
+  <Dur step="activate-yeast"/>, until foamy.
+</Step>
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="flour"/>, <Qty ref="caster-sugar"/> and
+  <Qty ref="fine-sea-salt"/> together in a large bowl. Whisk in the yeasted
+  milk, the <Qty ref="egg-yolk"/>, the <Qty ref="butter"/> and the
+  <Qty ref="vanilla"/> until smooth. This takes <Dur step="mix-batter"/>.
+</Step>
+
+<Step id="whip-whites">
+  Whip the <Qty ref="egg-white"/> to stiff peaks, working for
+  <Dur step="whip-whites"/>.
+</Step>
+
+<Step id="prove-batter">
+  Fold the whipped whites gently through the batter, cover, and leave
+  somewhere warm to prove for <Dur step="prove-batter"/>, until visibly
+  puffed and bubbly.
+</Step>
+
+<Step id="cook-waffles">
+  Heat the waffle iron and brush it lightly with butter. Ladle in the batter
+  and cook until deep golden and crisp, releasing easily from the plates.
+  Repeat with the remaining batter, spending <Dur step="cook-waffles"/> in
+  total. Dust with the <Qty ref="icing-sugar"/> and serve each waffle as soon
+  as it is done.
+</Step>

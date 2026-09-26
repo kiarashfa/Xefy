@@ -1,0 +1,111 @@
+---
+title: Ful Medames
+subtitle: Fava beans simmered until very tender, mashed with garlic and cumin, and dressed with lemon juice and olive oil.
+label: Egyptian
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [egyptian]
+  course: [breakfast]
+  method: [simmering]
+image:
+  src: images/recipes/ful-medames.webp
+  alt: "A plate of mashed ful medames fava beans garnished with spring onion, served with pita bread, boiled egg halves, olives, diced tomato and lime wedges"
+ingredients:
+  - id: beans
+    ingredientRef: dried-broad-beans
+    form: dried
+    amount: 250
+    unit: g
+    note: soaked overnight
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.5
+    consumedFractionNote: Some of the cooking liquid is mashed back into the beans; the rest is drained off once they are tender.
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed
+  - id: cumin
+    ingredientRef: cumin
+    form: ground
+    amount: 3
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: lemon-juice
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 30
+    unit: ml
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+    portions:
+      - { id: oil-mash, amount: 15 }
+      - { id: oil-finish, amount: 15, note: for drizzling }
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: diced, for serving
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: chopped, for serving
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 120
+    unit: g
+    note: hard-boiled and quartered, for serving
+steps:
+  - { id: boil-beans, durationMin: 90, type: active, phase: cook }
+  - { id: boil-eggs, durationMin: 10, type: "parallel-with:boil-beans", phase: cook }
+  - { id: mash, durationMin: 5, type: active, phase: cook }
+  - { id: dress, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The beans can be cooked and mashed a day ahead and refrigerated; dress with lemon juice and olive oil close to serving.
+  freezable: true
+  freezeInstructions: Freeze the cooked, mashed beans before dressing. Thaw and reheat gently, then dress fresh.
+  reheatInstructions: Reheat gently on the stove with a splash of water to loosen; a microwave can dry the edges.
+notes:
+  commonPitfalls:
+    - stepId: boil-beans
+      text: Fava beans that have not been simmered long enough stay grainy no matter how hard they are mashed afterward. They need to collapse on their own before mashing, not be forced there by force.
+---
+
+<Step id="boil-beans">
+  Drain the soaked <Qty ref="beans"/>, cover with the <Qty ref="water"/> and simmer for
+  <Dur step="boil-beans"/>, until completely tender and starting to break down.
+</Step>
+
+<Step id="boil-eggs">
+  Meanwhile, boil the <Qty ref="egg"/> for <Dur step="boil-eggs"/>, then cool, peel and
+  quarter.
+</Step>
+
+<Step id="mash">
+  Drain most of the cooking liquid, reserving a little, and mash the beans with the
+  <Qty ref="garlic"/>, <Qty ref="cumin"/> and <Qty ref="salt"/> for <Dur step="mash"/>,
+  loosening with the reserved liquid to a thick, coarse texture.
+</Step>
+
+<Step id="dress">
+  Stir in the <Qty ref="lemon-juice"/> and <Qty ref="oil-mash"/>. Spoon into bowls and
+  top with the <Qty ref="tomato"/>, <Qty ref="parsley"/>, quartered egg and the
+  <Qty ref="oil-finish"/>, working for <Dur step="dress"/>.
+</Step>

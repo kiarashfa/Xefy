@@ -1,0 +1,126 @@
+---
+title: Sisig
+subtitle: Pig's ears and liver, boiled until tender, grilled until charred, then chopped fine and tossed with onion, chilli, vinegar and calamansi on a sizzling plate.
+label: Pampanga
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [starter]
+  method: [boiling, grilling]
+image:
+  src: images/recipes/sisig.webp
+  alt: "Sizzling pork sisig on a hot cast-iron plate, topped with a raw egg, calamansi and a red chilli"
+ingredients:
+  - id: pig-ears
+    ingredientRef: pig-ears
+    form: raw
+    amount: 600
+    unit: g
+  - id: pork-liver
+    ingredientRef: pork-liver
+    form: raw
+    amount: 150
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1500
+    unit: ml
+    consumedFraction: 0.05
+    consumedFractionNote: The boiling liquid is discarded once the ears and liver are cooked; only a trace clings to the meat.
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 80
+    unit: g
+    note: finely diced
+  - id: chilli
+    ingredientRef: serrano-chilli
+    form: fresh
+    amount: 20
+    unit: g
+    note: finely chopped
+  - id: vinegar
+    ingredientRef: cane-vinegar
+    form: cane
+    amount: 20
+    unit: ml
+  - id: calamansi
+    ingredientRef: calamansi
+    form: fresh
+    amount: 30
+    unit: g
+    note: halved and squeezed
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 60
+    unit: g
+steps:
+  - { id: boil, durationMin: 60, type: active, phase: cook }
+  - { id: grill, durationMin: 15, type: active, phase: cook }
+  - { id: chop, durationMin: 10, type: active, phase: prep }
+  - { id: season, durationMin: 5, type: active, phase: cook }
+  - { id: top-egg, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The ears and liver can be boiled and refrigerated up to two days ahead; grill, chop and season close to serving.
+  freezable: true
+  freezeInstructions: Freeze the boiled, unchopped ears and liver. Thaw before grilling.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: boil
+      text: Boiling the ears until fully tender before they ever meet the grill is what lets the grilling stage char and crisp the surface without leaving the cartilage underneath tough.
+  commonPitfalls:
+    - stepId: chop
+      text: Pieces left too large chew unevenly, cartilage against soft liver in the same bite. Chopping fine and even is what makes the texture read as one dish rather than two.
+---
+
+<Step id="boil">
+  Combine the <Qty ref="pig-ears"/>, <Qty ref="pork-liver"/>, <Qty ref="water"/> and
+  <Qty ref="bay-leaf"/> in a pot, bring to the boil, then lower the heat and simmer for
+  <Dur step="boil"/>, until both are fully tender. Drain and pat dry.
+</Step>
+
+<Step id="grill">
+  Grill the ears over a high heat for <Dur step="grill"/>, turning, until charred at the
+  edges and crisp on the outside.
+</Step>
+
+<Step id="chop">
+  Finely chop the grilled ears and the boiled liver for <Dur step="chop"/>, until the
+  pieces are small and even.
+</Step>
+
+<Step id="season">
+  Heat the <Qty ref="oil"/> in a pan, preferably one that can go straight to the table,
+  and toss in the chopped mixture with the <Qty ref="onion"/>, <Qty ref="chilli"/>,
+  <Qty ref="vinegar"/>, <Qty ref="calamansi"/>, <Qty ref="salt"/> and <Qty ref="pepper"/>.
+  Cook for <Dur step="season"/>, stirring, until piping hot.
+</Step>
+
+<Step id="top-egg">
+  Crack the <Qty ref="egg"/> over the top while the pan is still hot and stir it through
+  for <Dur step="top-egg"/>, letting the residual heat just cook it into the mixture.
+</Step>

@@ -1,0 +1,120 @@
+---
+title: Pandesal
+subtitle: Soft, faintly sweet breakfast rolls, rolled in fine breadcrumbs before baking for their characteristic dry, matte crust.
+label: Filipino
+defaultServings: 20
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/pandesal.webp
+  alt: "A bowl of freshly baked pandesal rolls dusted with breadcrumbs, steaming beside a cup of coffee"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 470 }
+      - { id: flour-bench, amount: 30, note: for shaping }
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 7
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 60
+    unit: g
+    portions:
+      - { id: sugar-bloom, amount: 10, note: to activate the yeast }
+      - { id: sugar-dough, amount: 50 }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 220
+    unit: ml
+    note: warmed
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    note: melted
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+  - id: breadcrumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 100
+    unit: g
+    note: for coating
+steps:
+  - { id: bloom-yeast, durationMin: 5, type: active, phase: prep }
+  - { id: rest-yeast, durationMin: 10, type: passive }
+  - { id: mix-dough, durationMin: 10, type: active, phase: prep }
+  - { id: first-prove, durationMin: 90, type: passive }
+  - { id: shape, durationMin: 20, type: active, phase: prep }
+  - { id: second-prove, durationMin: 30, type: passive }
+  - { id: bake, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The shaped, coated rolls can be refrigerated overnight for their second prove; bring to room temperature before baking.
+  freezable: true
+  freezeInstructions: Freeze the baked, cooled rolls. Thaw at room temperature and warm through in the oven before serving.
+  reheatInstructions: Warm briefly in the oven; a microwave turns the crumb dense.
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: Rolling each piece in dry breadcrumbs rather than dusting with flour is what gives pandesal its characteristic matte, faintly crunchy crust, distinct from a floured dinner roll.
+  commonPitfalls:
+    - stepId: bake
+      text: A hot oven browns the crumb coating before the centre is fully baked. A moderate, even heat is what cooks the crumb through without scorching the coating.
+---
+
+<Step id="bloom-yeast">
+  Stir the <Qty ref="yeast"/> and <Qty ref="sugar-bloom"/> into the warm
+  <Qty ref="milk"/> for <Dur step="bloom-yeast"/>.
+</Step>
+
+<Step id="rest-yeast">
+  Leave the mixture for <Dur step="rest-yeast"/>, until foamy on top.
+</Step>
+
+<Step id="mix-dough">
+  Combine the <Qty ref="flour-dough"/>, <Qty ref="salt"/>, <Qty ref="sugar-dough"/>,
+  <Qty ref="egg"/> and <Qty ref="butter"/> with the yeast mixture and bring together
+  into a dough. Turn out and knead for <Dur step="mix-dough"/>, until smooth and
+  elastic.
+</Step>
+
+<Step id="first-prove">
+  Cover and leave to rise in a warm place for <Dur step="first-prove"/>, until doubled
+  in size.
+</Step>
+
+<Step id="shape">
+  Turn the dough out onto the <Qty ref="flour-bench"/>, divide into even pieces and
+  shape into ovals. Roll each piece in the <Qty ref="breadcrumbs"/> to coat, working for
+  <Dur step="shape"/>, and arrange on lined trays.
+</Step>
+
+<Step id="second-prove">
+  Cover loosely and leave to rise again for <Dur step="second-prove"/>, until visibly
+  puffed.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={190}/> for <Dur step="bake"/>, until pale gold and firm.
+</Step>

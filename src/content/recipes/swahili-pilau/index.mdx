@@ -1,0 +1,162 @@
+---
+title: Pilau ya Nyama
+subtitle: Beef and basmati rice browned in whole cinnamon, clove and cardamom, coloured dark by the spice rather than by any sauce.
+label: Zanzibari
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [east-african]
+  course: [main-course]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Beef pilau, region: Tanzania, lang: en }
+ingredients:
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 500
+    unit: g
+    note: cut into bite-sized cubes
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 250
+    unit: g
+    note: thinly sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: chopped
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 4
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 5
+    unit: g
+    consumedFraction: 0.15
+    consumedFractionNote: The stick flavours the pot but is largely picked out on the plate rather than eaten.
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 2
+    unit: g
+    consumedFraction: 0.15
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the pot.
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 3
+    unit: g
+    consumedFraction: 0.15
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the pot.
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 3
+    unit: g
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.5
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: Picked out rather than eaten, the same as the other whole spices in the pot.
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 45
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: basmati
+    amount: 400
+    unit: g
+    note: rinsed
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 650
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, for garnish
+steps:
+  - { id: brown-beef, durationMin: 10, type: active, phase: cook }
+  - { id: fry-aromatics, durationMin: 12, type: active, phase: cook }
+  - { id: braise-beef, durationMin: 45, type: passive }
+  - { id: cook-rice, durationMin: 20, type: active, phase: cook }
+  - { id: rest-pilau, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The beef can be browned and braised up to two days ahead; bring back to a simmer before adding the rice.
+  freezable: true
+  freezeInstructions: Freeze the finished pilau in an airtight container for up to two months. Thaw fully before reheating gently with a splash of water.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-aromatics
+      text: Frying the whole spices in the oil before any liquid goes in is what colours the rice dark brown without any sauce or browning agent — the spice itself is the colouring.
+---
+
+<Step id="brown-beef">
+  Heat half of the <Qty ref="vegetable-oil"/> in a heavy pot over a high heat and
+  brown the <Qty ref="beef"/> on all sides, working in batches if needed, for
+  <Dur step="brown-beef"/>. Lift out and set aside.
+</Step>
+
+<Step id="fry-aromatics">
+  Add the remaining <Qty ref="vegetable-oil"/> to the same pot and fry the
+  <Qty ref="onion"/> over a medium heat until deep golden. Stir in the
+  <Qty ref="garlic"/>, <Qty ref="ginger"/>, <Qty ref="cumin"/>,
+  <Qty ref="cinnamon"/>, <Qty ref="cloves"/>, <Qty ref="cardamom"/>,
+  <Qty ref="black-pepper"/> and <Qty ref="bay-leaf"/> and fry for
+  <Dur step="fry-aromatics"/>, until deeply fragrant and the oil has taken on the
+  colour of the spice. Stir in the <Qty ref="tomato"/> and cook until it has broken
+  down into the onions.
+</Step>
+
+<Step id="braise-beef">
+  Return the browned <Qty ref="beef"/> to the pot along with the <Qty ref="stock"/>
+  and the <Qty ref="fine-sea-salt"/>. Bring to a simmer, cover, and cook for
+  <Dur step="braise-beef"/>, until the beef is tender and the liquid is
+  well-flavoured.
+</Step>
+
+<Step id="cook-rice">
+  Stir the rinsed <Qty ref="rice"/> into the pot, spreading it in an even layer
+  over the beef and liquid. Bring back to the boil, then cover tightly and reduce
+  to the lowest possible heat, cooking undisturbed for <Dur step="cook-rice"/>,
+  until the liquid is fully absorbed and the rice is tender.
+</Step>
+
+<Step id="rest-pilau">
+  Take the pot off the heat and leave it covered and undisturbed for
+  <Dur step="rest-pilau"/>, then fluff the rice through with a fork, folding the
+  beef up from the bottom. Scatter over the <Qty ref="coriander"/> to serve.
+</Step>

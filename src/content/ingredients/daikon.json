@@ -1,0 +1,66 @@
+{
+  "id": "daikon",
+  "name": "Daikon",
+  "proseName": "daikon",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "White radish",
+        "lang": "en"
+      },
+      {
+        "name": "Labanos",
+        "region": "Philippines",
+        "lang": "tl"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168451",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168451/nutrients",
+      "sourceNote": "USDA's \"oriental radish, raw\" record is daikon.",
+      "nutritionPer100g": {
+        "kcal": 18,
+        "protein": 0.6,
+        "fat": 0.1,
+        "carbs": 4.1,
+        "fiber": 1.6,
+        "sugars": 2.5,
+        "calcium": 27,
+        "iron": 0.4,
+        "magnesium": 16,
+        "phosphorus": 23,
+        "potassium": 227,
+        "sodium": 21,
+        "zinc": 0.15,
+        "copper": 0.115,
+        "manganese": 0.038,
+        "seleniumMcg": 0.7,
+        "vitaminAMcg": 0,
+        "vitaminC": 22,
+        "vitaminDMcg": 0,
+        "vitaminE": 0,
+        "vitaminKMcg": 0.3,
+        "thiamin": 0.02,
+        "riboflavin": 0.02,
+        "niacin": 0.2,
+        "vitaminB6": 0.046,
+        "saturatedFat": 0.03,
+        "monounsaturatedFat": 0.017,
+        "polyunsaturatedFat": 0.045,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/daikon-thumb.webp"
+}

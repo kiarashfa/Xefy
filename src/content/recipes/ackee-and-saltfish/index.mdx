@@ -1,0 +1,118 @@
+---
+title: Ackee and Saltfish
+subtitle: Salt cod, soaked and flaked, folded gently through sautéed onion, tomato and scotch bonnet with soft, buttery ackee.
+label: Jamaican
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [caribbean]
+  course: [breakfast]
+  method: [sauteing]
+image:
+  src: images/recipes/ackee-and-saltfish.webp
+  alt: "A plate of ackee and saltfish with sautéed peppers and onion, served with tomato wedges and coleslaw"
+ingredients:
+  - id: saltfish
+    ingredientRef: cod
+    form: salt-dried
+    amount: 300
+    unit: g
+  - id: ackee
+    ingredientRef: ackee
+    form: canned
+    amount: 400
+    unit: g
+    note: drained
+  - id: onion
+    ingredientRef: onion
+    form: red
+    amount: 100
+    unit: g
+    note: sliced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 100
+    unit: g
+    note: chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely chopped
+  - id: scotch-bonnet
+    ingredientRef: scotch-bonnet
+    form: fresh
+    amount: 5
+    unit: g
+    note: left whole and pierced once
+    consumedFraction: 0.1
+    consumedFractionNote: The whole pepper simmers in the pan for gentle heat and fragrance and is picked out before serving rather than eaten.
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced
+  - id: black-pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 30
+    unit: g
+steps:
+  - { id: soak-saltfish, durationMin: 480, type: passive }
+  - { id: poach-and-flake, durationMin: 15, type: active, phase: cook }
+  - { id: fry-aromatics, durationMin: 8, type: active, phase: cook }
+  - { id: combine, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The saltfish can be soaked, poached and flaked up to two days ahead and kept refrigerated; finish the dish just before serving so the ackee stays intact.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: combine
+      text: The ackee goes in last and is folded rather than stirred hard, because the cooked arils are already soft and break down into mush under vigorous handling.
+  commonPitfalls:
+    - stepId: soak-saltfish
+      text: Skimping on the soak leaves the fish too salty to eat comfortably. Several changes of cold water over a long soak draw out enough salt without needing to simmer it away later.
+---
+
+<Step id="soak-saltfish">
+  Cover the <Qty ref="saltfish"/> with cold water and leave to soak for
+  <Dur step="soak-saltfish"/>, changing the water several times, to draw out the
+  curing salt.
+</Step>
+
+<Step id="poach-and-flake">
+  Drain the saltfish, cover with fresh water, and poach at a bare simmer for
+  <Dur step="poach-and-flake"/>, until it flakes easily. Drain, remove any skin
+  and bones, and flake into large pieces.
+</Step>
+
+<Step id="fry-aromatics">
+  Heat the <Qty ref="vegetable-oil"/> in a wide pan and fry the
+  <Qty ref="onion"/>, <Qty ref="garlic"/>, <Qty ref="tomato"/>,
+  <Qty ref="scotch-bonnet"/> and <Qty ref="thyme"/> for
+  <Dur step="fry-aromatics"/>, until the onion has softened and the tomato has
+  broken down.
+</Step>
+
+<Step id="combine">
+  Add the flaked saltfish to the pan and toss through the aromatics. Fold in the
+  <Qty ref="ackee"/> gently, along with the <Qty ref="spring-onion"/> and
+  <Qty ref="black-pepper"/>, warming everything through for
+  <Dur step="combine"/> without breaking up the ackee. Discard the whole
+  scotch bonnet before serving.
+</Step>

@@ -8,6 +8,11 @@
         "name": "Gandules",
         "region": "Puerto Rico",
         "lang": "es"
+      },
+      {
+        "name": "Toor dal",
+        "region": "India",
+        "lang": "hi"
       }
     ]
   },
@@ -18,6 +23,50 @@
   "allergenTags": [],
   "pantryStaple": false,
   "forms": [
+    {
+      "id": "split-dried",
+      "label": "Split, Dried",
+      "proseQualifier": "split, dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172436",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172436/nutrients",
+      "sourceNote": "USDA publishes no record specifically for the split, dehusked dal (toor dal). This is its record for the whole raw seed; dehusking and splitting remove only the thin outer skin, a small fraction of the mass, so the composition is close to what the dal carries.",
+      "nutritionPer100g": {
+        "kcal": 343,
+        "protein": 21.7,
+        "fat": 1.49,
+        "carbs": 62.78,
+        "fiber": 15,
+        "calcium": 130,
+        "iron": 5.23,
+        "magnesium": 183,
+        "phosphorus": 367,
+        "potassium": 1392,
+        "sodium": 17,
+        "zinc": 2.76,
+        "copper": 1.057,
+        "manganese": 1.791,
+        "seleniumMcg": 8.2,
+        "vitaminC": 0,
+        "thiamin": 0.643,
+        "riboflavin": 0.187,
+        "niacin": 2.965,
+        "vitaminB6": 0.283,
+        "folateMcg": 456,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.33,
+        "monounsaturatedFat": 0.012,
+        "polyunsaturatedFat": 0.814,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 205,
+        "densitySource": "measured"
+      }
+    },
     {
       "id": "canned",
       "label": "Canned",

@@ -1,0 +1,114 @@
+---
+title: Adobo
+subtitle: Chicken simmered in vinegar, soy sauce, garlic and bay, the vinegar left unstirred to mellow before the pot is uncovered to reduce.
+label: Chicken
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [filipino]
+  course: [main-course]
+  method: [braising]
+names:
+  alsoKnownAs:
+    - { name: Adobong manok, lang: tl }
+image:
+  src: images/recipes/adobo.webp
+  alt: "Chicken adobo leg and thigh glazed in dark soy-vinegar sauce and topped with fried garlic, served with steamed rice and a hard-boiled egg"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 1000
+    unit: g
+    note: jointed into pieces
+    consumedFraction: 0.75
+    consumedFractionNote: A jointed chicken loses about a quarter of its raw weight to bone once eaten.
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 90
+    unit: ml
+  - id: vinegar
+    ingredientRef: cane-vinegar
+    form: cane
+    amount: 90
+    unit: ml
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: added with the soy sauce and vinegar
+steps:
+  - { id: brown, durationMin: 8, type: active, phase: cook }
+  - { id: aromatics, durationMin: 3, type: active, phase: cook }
+  - { id: add-liquid, durationMin: 2, type: active, phase: cook }
+  - { id: simmer-covered, durationMin: 25, type: active, phase: cook }
+  - { id: reduce, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Adobo tastes better a day after cooking, once the sauce has had time to settle back into the meat; cool, refrigerate and reheat gently.
+  freezable: true
+  freezeInstructions: Freeze the cooled chicken in its sauce. Thaw in the refrigerator and reheat in a covered pan.
+  reheatInstructions: Reheat gently on the stove in its own sauce rather than in a microwave, which dries out the skin.
+notes:
+  techniqueRationale:
+    - stepId: add-liquid
+      text: The vinegar goes in and is left alone, unstirred, for the first part of the simmer. Stirring raw vinegar straight into hot fat and soy sauce sharpens the smell and the taste; left to come to a simmer undisturbed, its edge softens before it mixes into the sauce.
+  commonPitfalls:
+    - stepId: simmer-covered
+      text: Lifting the lid to stir in the first few minutes drives off the vinegar's aroma along with its harshness. Leave the pot covered and undisturbed until the liquid is already simmering.
+---
+
+<Step id="brown">
+  Heat the <Qty ref="oil"/> in a wide, heavy pot over a medium-high heat and brown the
+  <Qty ref="chicken"/> on all sides, in batches if needed, for <Dur step="brown"/>. Lift
+  out and set aside.
+</Step>
+
+<Step id="aromatics">
+  Add the <Qty ref="garlic"/> and <Qty ref="onion"/> to the same pot and cook for
+  <Dur step="aromatics"/>, stirring, until softened and just turning gold.
+</Step>
+
+<Step id="add-liquid">
+  Return the chicken to the pot and pour in the <Qty ref="soy-sauce"/>,
+  <Qty ref="vinegar"/>, <Qty ref="water"/>, <Qty ref="bay-leaf"/> and <Qty ref="pepper"/>.
+  Do not stir; let the pot come up to a simmer undisturbed for <Dur step="add-liquid"/>.
+</Step>
+
+<Step id="simmer-covered">
+  Cover and simmer for <Dur step="simmer-covered"/>, until the chicken is cooked
+  through and tender.
+</Step>
+
+<Step id="reduce">
+  Uncover and simmer for a further <Dur step="reduce"/>, turning the chicken
+  occasionally, until the sauce has reduced and thickened enough to coat the pieces.
+</Step>

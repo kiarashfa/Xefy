@@ -1,0 +1,116 @@
+---
+title: Lechon
+subtitle: A whole pig, stuffed with lemongrass, garlic and bay, spit-roasted for hours over live coals until the skin shatters.
+label: Spit-roasted
+defaultServings: 40
+difficulty: Hard
+tags:
+  cuisine: [filipino]
+  course: [main-course]
+  method: [roasting]
+names:
+  alsoKnownAs:
+    - { name: Lechon baboy, lang: tl }
+  notToBeConfusedWith:
+    - name: Lechón asado
+      note: A Cuban roast pork shoulder or leg, boned and marinated in a citrus-and-garlic mojo, cooked in a domestic oven rather than spit-roasted whole — a different dish descended from the same Spanish word.
+      slugRef: lechon-asado-cubano
+image:
+  src: images/recipes/lechon.webp
+  alt: "A whole spit-roasted lechon pig with deep mahogany, glossy crackling skin, resting on its side"
+ingredients:
+  - id: pig
+    ingredientRef: whole-pig
+    form: raw
+    amount: 20000
+    unit: g
+    note: dressed and cleaned, head on
+    consumedFraction: 0.6
+    consumedFractionNote: A dressed whole pig is roughly two-fifths bone, cavity and trim that is not served. The figure is an editorial estimate for a typical carcass rather than a sourced yield table.
+  - id: lemongrass
+    ingredientRef: lemongrass
+    form: fresh
+    amount: 150
+    unit: g
+    note: stalks bruised
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 60
+    unit: g
+    note: crushed
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: quartered
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 200
+    unit: g
+    portions:
+      - { id: salt-cavity, amount: 60, note: for the cavity }
+      - { id: salt-skin, amount: 140, note: for the skin }
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 10
+    unit: g
+steps:
+  - { id: season-cavity, durationMin: 20, type: active, phase: prep }
+  - { id: truss, durationMin: 15, type: active, phase: prep }
+  - { id: dry-skin, durationMin: 720, type: passive }
+  - { id: roast, durationMin: 240, type: active, phase: cook }
+  - { id: rest, durationMin: 20, type: passive }
+  - { id: carve, durationMin: 15, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The pig can be seasoned and left to air-dry, uncovered and refrigerated, up to a day ahead — this is what lets the skin crackle rather than steam once it hits the heat.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat carved pieces in a hot oven, skin side up, to recrisp the skin; a microwave leaves it rubbery.
+notes:
+  techniqueRationale:
+    - stepId: dry-skin
+      text: Skin roasted wet steams before it crisps. An uncovered rest in the refrigerator draws moisture out of the surface so the skin blisters and shatters rather than turning leathery.
+  commonPitfalls:
+    - stepId: roast
+      text: A fire hot enough to colour the skin quickly will burn it long before the meat near the bone is cooked through. Constant turning over a moderate, steady heat, rather than a hot, uneven one, is what gets both right together.
+---
+
+<Step id="season-cavity">
+  Rub the inside of the cavity with the <Qty ref="salt-cavity"/> and
+  <Qty ref="pepper"/>, then pack in the <Qty ref="lemongrass"/>, <Qty ref="garlic"/>,
+  <Qty ref="onion"/> and <Qty ref="bay-leaf"/> for <Dur step="season-cavity"/>.
+</Step>
+
+<Step id="truss">
+  Close the cavity by sewing or skewering it shut, then mount the <Qty ref="pig"/> on a
+  spit, securing it firmly along its length so it turns evenly, for <Dur step="truss"/>.
+</Step>
+
+<Step id="dry-skin">
+  Rub the skin all over with the <Qty ref="salt-skin"/> and leave the pig uncovered and
+  refrigerated for <Dur step="dry-skin"/>, letting the surface dry out completely.
+</Step>
+
+<Step id="roast">
+  Roast over a steady bed of live coals, turning constantly, for <Dur step="roast"/>,
+  keeping the pig a consistent distance from the heat so it colours gradually and cooks
+  through to the bone without the skin scorching.
+</Step>
+
+<Step id="rest">
+  Lift off the heat and rest for <Dur step="rest"/> before carving.
+</Step>
+
+<Step id="carve">
+  Carve for <Dur step="carve"/>, separating the crackled skin from the meat in sheets
+  and chopping both into serving pieces.
+</Step>

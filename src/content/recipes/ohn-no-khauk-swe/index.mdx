@@ -1,0 +1,167 @@
+---
+title: Ohn No Khauk Swè
+subtitle: Egg noodles under a thick, turmeric-yellow chicken and coconut broth, finished with crisp fried noodles, boiled egg and lime.
+label: Burmese
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [burmese]
+  course: [soup]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: Ohn no khao swè, region: Myanmar, lang: my }
+image:
+  src: images/recipes/ohn-no-khauk-swe.webp
+  alt: "A bowl of ohn no khauk swe, creamy coconut chicken noodle soup topped with sliced red onion, crushed split peas and coriander, served with a lime wedge and chilli"
+ingredients:
+  - id: egg-noodles
+    ingredientRef: egg-noodles
+    form: dried
+    amount: 350
+    unit: g
+    portions:
+      - { id: noodles-boil, amount: 300, note: for boiling }
+      - { id: noodles-fry, amount: 50, note: for the crisp garnish }
+  - id: vegetable-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 60
+    unit: g
+    portions:
+      - { id: oil-cook, amount: 40, note: for the curry base }
+      - { id: oil-fry, amount: 20, note: for frying the noodle garnish }
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 600
+    unit: g
+    note: bone-in, skin removed
+    consumedFraction: 0.85
+    consumedFractionNote: Bone-in thighs lose roughly a seventh of their raw weight to bone once eaten.
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 15
+    unit: g
+    note: crushed to a paste
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 4
+    unit: g
+  - id: paprika
+    ingredientRef: paprika
+    form: sweet
+    amount: 4
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: flakes
+    amount: 4
+    unit: g
+  - id: gram-flour
+    ingredientRef: gram-flour
+    form: besan
+    amount: 40
+    unit: g
+  - id: coconut-milk
+    ingredientRef: coconut-milk
+    form: tinned
+    amount: 800
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 400
+    unit: ml
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: hard-boiled and halved, for serving
+  - id: lime-juice
+    ingredientRef: lime-juice
+    form: fresh
+    amount: 20
+    unit: ml
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 15
+    unit: g
+    note: sliced, for garnish
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, for garnish
+steps:
+  - { id: fry-noodle-garnish, durationMin: 8, type: active, phase: prep }
+  - { id: cook-curry-base, durationMin: 12, type: active, phase: cook }
+  - { id: simmer-broth, durationMin: 35, type: passive }
+  - { id: boil-noodles, durationMin: 5, type: active, phase: cook }
+  - { id: assemble, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth can be made up to two days ahead and reheated; boil the noodles and fry the garnish fresh.
+  freezable: true
+  freezeInstructions: Freeze the finished broth, without noodles or garnishes, for up to two months.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: simmer-broth
+      text: The gram flour is whisked into the coconut milk before it meets any heat, which is what keeps the broth from splitting into oil and solids over the long simmer that lets the chicken cook through on the bone.
+---
+
+<Step id="fry-noodle-garnish">
+  Heat the <Qty ref="oil-fry"/> in a small pan and fry a handful of the
+  <Qty ref="noodles-fry"/>, uncooked and dry, until golden and crisp, for
+  <Dur step="fry-noodle-garnish"/>. Drain and set aside for garnish.
+</Step>
+
+<Step id="cook-curry-base">
+  Heat the <Qty ref="oil-cook"/> in a large pot and fry the <Qty ref="onion"/>,
+  <Qty ref="garlic"/> and <Qty ref="ginger"/> until softened. Stir in the
+  <Qty ref="turmeric"/>, <Qty ref="paprika"/> and <Qty ref="dried-chilli"/> and
+  cook for <Dur step="cook-curry-base"/>, until fragrant. Add the
+  <Qty ref="chicken"/> and turn to coat it in the spiced base.
+</Step>
+
+<Step id="simmer-broth">
+  Whisk the <Qty ref="gram-flour"/> into the <Qty ref="coconut-milk"/> until
+  smooth, then pour this and the <Qty ref="stock"/> into the pot with the
+  <Qty ref="fine-sea-salt"/>. Bring to a gentle simmer and cook for
+  <Dur step="simmer-broth"/>, stirring occasionally, until the chicken is fully
+  tender and the broth has thickened.
+</Step>
+
+<Step id="boil-noodles">
+  Boil the <Qty ref="noodles-boil"/> in plenty of water for
+  <Dur step="boil-noodles"/>, until just tender, then drain.
+</Step>
+
+<Step id="assemble">
+  Divide the noodles between bowls and ladle over the chicken and broth. Top
+  each bowl with the <Qty ref="egg"/>, the fried noodle garnish, the
+  <Qty ref="spring-onion"/> and <Qty ref="coriander"/>, and serve with the
+  <Qty ref="lime-juice"/> alongside. This takes <Dur step="assemble"/>.
+</Step>

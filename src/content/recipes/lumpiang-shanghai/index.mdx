@@ -1,0 +1,112 @@
+---
+title: Lumpiang Shanghai
+subtitle: Minced pork and vegetables rolled thin and tight in wrappers, deep-fried until crisp — the everyday party-table spring roll.
+label: Filipino
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [filipino]
+  course: [starter]
+  method: [deep-frying]
+image:
+  src: images/recipes/lumpiang-shanghai.webp
+  alt: "A pile of crispy fried lumpiang shanghai spring rolls with visible meat filling"
+ingredients:
+  - id: pork
+    ingredientRef: pork-mince
+    form: raw
+    amount: 400
+    unit: g
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: finely diced
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 80
+    unit: g
+    note: finely diced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+    note: minced
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: finely sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: wrappers
+    ingredientRef: lumpia-wrappers
+    form: fresh
+    amount: 200
+    unit: g
+  - id: egg-white
+    ingredientRef: egg
+    form: white
+    amount: 30
+    unit: g
+    note: lightly beaten, for sealing
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 500
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: Most frying oil stays in the pan; absorption varies with wrapper thickness and oil temperature, and this is an editorial estimate rather than a sourced figure.
+steps:
+  - { id: mix-filling, durationMin: 10, type: active, phase: prep }
+  - { id: roll, durationMin: 25, type: active, phase: prep }
+  - { id: fry, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The rolled, uncooked lumpia keep well refrigerated for a day, or open-frozen on a tray until firm and bagged for longer storage.
+  freezable: true
+  freezeInstructions: Freeze the rolled, uncooked lumpia on a tray until solid, then bag them. Fry directly from frozen, adding a couple of minutes to the frying time.
+  reheatInstructions: Reheat fried lumpia in a hot oven to recrisp; a microwave leaves the wrapper soft.
+notes:
+  techniqueRationale:
+    - stepId: roll
+      text: Rolling tight and thin, rather than loosely, is what makes the wrapper shatter rather than chew once fried — a loosely rolled piece steams inside its own layers instead of crisping through.
+  commonPitfalls:
+    - stepId: fry
+      text: A pan overcrowded with rolls drops the oil's temperature, so the wrappers absorb oil and turn greasy before they colour. Frying in batches keeps the temperature steady.
+---
+
+<Step id="mix-filling">
+  Combine the <Qty ref="pork"/>, <Qty ref="carrot"/>, <Qty ref="onion"/>,
+  <Qty ref="garlic"/>, <Qty ref="spring-onion"/>, <Qty ref="soy-sauce"/>,
+  <Qty ref="salt"/> and <Qty ref="pepper"/> in a bowl and mix for
+  <Dur step="mix-filling"/>, until evenly combined.
+</Step>
+
+<Step id="roll">
+  Lay out the <Qty ref="wrappers"/> and spoon a line of filling along one edge of each.
+  Roll tightly into a thin cylinder, sealing the final edge with the
+  <Qty ref="egg-white"/>. Repeat for <Dur step="roll"/>.
+</Step>
+
+<Step id="fry">
+  Heat the <Qty ref="frying-oil"/> to a steady deep-frying temperature and fry the rolls
+  in batches for <Dur step="fry"/>, turning, until golden and crisp all over. Drain on
+  paper towels before serving.
+</Step>

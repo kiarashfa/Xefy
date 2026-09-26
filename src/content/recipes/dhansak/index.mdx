@@ -1,0 +1,199 @@
+---
+title: Dhansak
+subtitle: A Parsi lamb, lentil and pumpkin stew, sweet-soured with tamarind and jaggery-style sugar and finished with a masala built on Persian braising spice.
+label: Parsi
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [indian]
+  course: [main-course]
+  method: [simmering]
+image:
+  src: images/recipes/dhansak.webp
+  alt: "A bowl of Parsi lamb dhansak, thick brown lentil stew with pieces of lamb surrounding a mound of rice garnished with fried onion, coriander and lime"
+ingredients:
+  - id: lamb
+    ingredientRef: lamb-leg
+    form: raw
+    amount: 600
+    unit: g
+    note: cut into large, bite-sized pieces
+  - id: toor-dal
+    ingredientRef: pigeon-peas
+    form: split-dried
+    amount: 150
+    unit: g
+    note: rinsed
+  - id: red-lentils
+    ingredientRef: lentils
+    form: red
+    amount: 50
+    unit: g
+    note: rinsed
+  - id: pumpkin
+    ingredientRef: pumpkin
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and diced
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and diced
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 150
+    unit: g
+    note: chopped
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    portions:
+      - { id: onion-stew, amount: 100, note: diced }
+      - { id: onion-garnish, amount: 100, note: thinly sliced }
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 20
+    unit: g
+    note: crushed to a paste
+  - id: turmeric
+    ingredientRef: turmeric
+    form: ground
+    amount: 4
+    unit: g
+  - id: dried-chilli
+    ingredientRef: dried-chilli
+    form: whole
+    amount: 6
+    unit: g
+    note: stems removed
+  - id: coriander-seed
+    ingredientRef: coriander-seed
+    form: ground
+    amount: 8
+    unit: g
+  - id: cumin
+    ingredientRef: cumin
+    form: whole
+    amount: 5
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: stick
+    amount: 4
+    unit: g
+  - id: cloves
+    ingredientRef: cloves
+    form: whole
+    amount: 1
+    unit: g
+  - id: cardamom
+    ingredientRef: cardamom
+    form: whole
+    amount: 2
+    unit: g
+  - id: fenugreek-seed
+    ingredientRef: fenugreek-seed
+    form: whole
+    amount: 3
+    unit: g
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 40
+    unit: g
+  - id: tamarind
+    ingredientRef: tamarind
+    form: pulp
+    amount: 30
+    unit: g
+    note: soaked and strained
+  - id: brown-sugar
+    ingredientRef: brown-sugar
+    form: light-soft
+    amount: 15
+    unit: g
+  - id: fine-sea-salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1200
+    unit: ml
+  - id: coriander
+    ingredientRef: coriander
+    form: fresh
+    amount: 10
+    unit: g
+    note: roughly chopped, for garnish
+steps:
+  - { id: fry-onion-garnish, durationMin: 10, type: active, phase: prep }
+  - { id: toast-spices, durationMin: 5, type: "parallel-with:simmer-stew", phase: cook }
+  - { id: simmer-stew, durationMin: 75, type: passive }
+  - { id: blend-stew, durationMin: 8, type: active, phase: cook }
+  - { id: finish-stew, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The stew improves overnight in the refrigerator, once the lamb has had time to sit back in the sauce; reheat gently before serving.
+  freezable: true
+  freezeInstructions: Freeze the finished stew, without the fried onion garnish, for up to three months. Thaw fully before reheating.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: blend-stew
+      text: Lifting the lamb out before blending keeps the meat in whole pieces; the dal, pumpkin and potato collapse into the thick, textured purée that carries the dish, in the manner of a Persian khoresh rather than a clear-broth dal.
+  commonPitfalls:
+    - stepId: finish-stew
+      text: The tamarind and sugar are added only at the end, once the base is already thick. Added earlier, the acid slows the lentils and pumpkin from breaking down fully.
+---
+
+<Step id="fry-onion-garnish">
+  Heat a little of the <Qty ref="ghee"/> in a pan and fry the <Qty ref="onion-garnish"/>
+  over a medium heat for <Dur step="fry-onion-garnish"/>, until deep golden-brown and
+  crisp. Lift out and set aside for garnish.
+</Step>
+
+<Step id="toast-spices">
+  Toast the <Qty ref="cumin"/>, <Qty ref="cinnamon"/>, <Qty ref="cloves"/>,
+  <Qty ref="cardamom"/> and <Qty ref="fenugreek-seed"/> in a dry pan for
+  <Dur step="toast-spices"/>, until fragrant, then grind to a coarse powder.
+</Step>
+
+<Step id="simmer-stew">
+  Combine the <Qty ref="lamb"/>, <Qty ref="toor-dal"/>, <Qty ref="red-lentils"/>,
+  <Qty ref="pumpkin"/>, <Qty ref="potato"/>, <Qty ref="tomato"/>,
+  <Qty ref="onion-stew"/>, <Qty ref="garlic"/>, <Qty ref="ginger"/>,
+  <Qty ref="turmeric"/>, <Qty ref="dried-chilli"/>, the <Qty ref="water"/> and the
+  <Qty ref="fine-sea-salt"/> in a large, heavy pot. Bring to the boil, then reduce to
+  a bare simmer and cook, partly covered, for <Dur step="simmer-stew"/>, until the
+  lamb is completely tender and the lentils have broken down.
+</Step>
+
+<Step id="blend-stew">
+  Lift the lamb pieces out of the pot and set aside. Blend the remaining dal,
+  vegetables and cooking liquid until smooth, working for <Dur step="blend-stew"/>,
+  then return the lamb to the pot.
+</Step>
+
+<Step id="finish-stew">
+  Stir the ground spice mix from the pan into the pot along with the
+  <Qty ref="coriander-seed"/>, the <Qty ref="tamarind"/> and the
+  <Qty ref="brown-sugar"/>, along with the remaining <Qty ref="ghee"/>. Simmer for <Dur step="finish-stew"/>, until the stew has
+  thickened to the consistency of a loose porridge and tastes clearly sweet and
+  sour. Scatter over the fried <Qty ref="onion-garnish"/> and the
+  <Qty ref="coriander"/> to serve.
+</Step>

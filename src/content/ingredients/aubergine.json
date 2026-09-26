@@ -1,0 +1,57 @@
+{
+  "id": "aubergine",
+  "name": "Aubergine",
+  "proseName": "aubergine",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Eggplant",
+        "region": "United States",
+        "lang": "en"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169228",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169228/nutrients",
+      "nutritionPer100g": {
+        "kcal": 25,
+        "protein": 0.98,
+        "fat": 0.18,
+        "carbs": 5.88,
+        "fiber": 3,
+        "sugars": 3.53,
+        "calcium": 9,
+        "iron": 0.23,
+        "magnesium": 14,
+        "phosphorus": 24,
+        "potassium": 229,
+        "sodium": 2,
+        "zinc": 0.16,
+        "copper": 0.081,
+        "manganese": 0.232,
+        "seleniumMcg": 0.3,
+        "vitaminC": 2.2,
+        "thiamin": 0.039,
+        "riboflavin": 0.037,
+        "niacin": 0.649,
+        "vitaminB6": 0.084,
+        "saturatedFat": 0.034,
+        "monounsaturatedFat": 0.016,
+        "polyunsaturatedFat": 0.076,
+        "transFat": 0,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/aubergine-thumb.webp"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "catfish",
+  "name": "Catfish",
+  "proseName": "catfish",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, farmed",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "2684445",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/2684445/nutrients",
+      "nutritionPer100g": {
+        "kcal": 133.787,
+        "protein": 16.469,
+        "fat": 7.308,
+        "carbs": 0,
+        "calcium": 7.796,
+        "iron": 0,
+        "magnesium": 20.63,
+        "phosphorus": 166.2,
+        "potassium": 292.3,
+        "sodium": 60.51,
+        "zinc": 0.475,
+        "copper": 0,
+        "manganese": 0.002,
+        "seleniumMcg": 9.281,
+        "vitaminB12Mcg": 2.266,
+        "saturatedFat": 1.602,
+        "monounsaturatedFat": 3.324,
+        "polyunsaturatedFat": 1.19,
+        "cholesterol": 65.96
+      }
+    }
+  ],
+  "image": "images/ingredients/catfish-thumb.webp"
+}

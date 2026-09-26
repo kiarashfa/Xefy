@@ -1,0 +1,97 @@
+---
+label: Pork
+defaultServings: 4
+difficulty: Easy
+ingredients:
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 900
+    unit: g
+    note: cut into chunks
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 10
+    unit: ml
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    note: crushed
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: sliced
+  - id: soy-sauce
+    ingredientRef: soy-sauce
+    form: light
+    amount: 90
+    unit: ml
+  - id: vinegar
+    ingredientRef: cane-vinegar
+    form: cane
+    amount: 90
+    unit: ml
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    note: added with the soy sauce and vinegar
+steps:
+  - { id: brown, durationMin: 8, type: active, phase: cook }
+  - { id: aromatics, durationMin: 3, type: active, phase: cook }
+  - { id: add-liquid, durationMin: 2, type: active, phase: cook }
+  - { id: simmer-covered, durationMin: 45, type: active, phase: cook }
+  - { id: reduce, durationMin: 15, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Adobo tastes better a day after cooking, once the sauce has had time to settle back into the meat; cool, refrigerate and reheat gently.
+  freezable: true
+  freezeInstructions: Freeze the cooled pork in its sauce. Thaw in the refrigerator and reheat in a covered pan.
+  reheatInstructions: Reheat gently on the stove in its own sauce rather than in a microwave.
+notes:
+  commonPitfalls:
+    - stepId: simmer-covered
+      text: Pork belly needs longer than the covered simmer a leaner cut would take before the fat and connective tissue soften; testing a piece rather than watching the clock is the reliable way to know it is ready.
+---
+
+<Step id="brown">
+  Heat the <Qty ref="oil"/> in a wide, heavy pot over a medium-high heat and brown the
+  <Qty ref="pork"/> on all sides, in batches if needed, for <Dur step="brown"/>. Lift out
+  and set aside.
+</Step>
+
+<Step id="aromatics">
+  Add the <Qty ref="garlic"/> and <Qty ref="onion"/> to the same pot and cook for
+  <Dur step="aromatics"/>, stirring, until softened and just turning gold.
+</Step>
+
+<Step id="add-liquid">
+  Return the pork to the pot and pour in the <Qty ref="soy-sauce"/>,
+  <Qty ref="vinegar"/>, <Qty ref="water"/>, <Qty ref="bay-leaf"/> and <Qty ref="pepper"/>.
+  Do not stir; let the pot come up to a simmer undisturbed for <Dur step="add-liquid"/>.
+</Step>
+
+<Step id="simmer-covered">
+  Cover and simmer for <Dur step="simmer-covered"/>, until the pork is fork-tender.
+</Step>
+
+<Step id="reduce">
+  Uncover and simmer for a further <Dur step="reduce"/>, turning the pork occasionally,
+  until the sauce has reduced and thickened enough to coat the pieces and the fat has
+  begun to render into it.
+</Step>

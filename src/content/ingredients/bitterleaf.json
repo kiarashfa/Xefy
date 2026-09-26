@@ -1,0 +1,62 @@
+{
+  "id": "bitterleaf",
+  "name": "Bitterleaf",
+  "proseName": "bitterleaf",
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Ndoleh",
+        "region": "Cameroon",
+        "lang": "duala"
+      }
+    ]
+  },
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "pantryStaple": false,
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168391",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168391/nutrients",
+      "sourceNote": "USDA publishes no record for bitterleaf (Vernonia amygdalina). This is its record for the leafy tips of balsam-pear (bitter gourd), the closest genuinely bitter tropical leafy green it carries.",
+      "nutritionPer100g": {
+        "kcal": 30,
+        "protein": 5.3,
+        "fat": 0.69,
+        "carbs": 3.29,
+        "calcium": 84,
+        "iron": 2.04,
+        "magnesium": 85,
+        "phosphorus": 99,
+        "potassium": 608,
+        "sodium": 11,
+        "zinc": 0.3,
+        "copper": 0.201,
+        "manganese": 0.536,
+        "seleniumMcg": 0.9,
+        "vitaminC": 88,
+        "thiamin": 0.181,
+        "riboflavin": 0.362,
+        "niacin": 1.11,
+        "vitaminB6": 0.803,
+        "folateMcg": 128,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 87,
+        "vitaminDMcg": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 48,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/bitterleaf-thumb.webp"
+}
