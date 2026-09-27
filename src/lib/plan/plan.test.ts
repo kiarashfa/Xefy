@@ -378,7 +378,7 @@ test('the shared text puts the quantity first, one item per line', () => {
   const text = shareText(groupList(lines, planOf([])).toBuy, items, 'metric', 'https://example.test/');
 
   const rows = text.split('\n');
-  assert.equal(rows[0], 'Shopping list — Xefy');
+  assert.equal(rows[0], 'Shopping list · Xefy');
   assert.equal(rows[1], '');
   assert.equal(rows[2], '- 500 g  Wheat Flour (Type 00)');
   assert.ok(rows.includes('For: Test Pizza (4 servings)'));

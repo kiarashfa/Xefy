@@ -70,8 +70,9 @@
   /* The centred content band. Borders and background washes may go full-bleed;
      text never does, or the method column runs past 110 characters on a wide
      monitor. */
-  --page-max: 1240px;
-  --gutter: 48px;
+  --page-max: 1200px;
+  /* Fluid rather than stepped: 20px on a phone, 48px from a laptop up. */
+  --gutter: clamp(20px, 4vw, 48px);
 
   /* Reading-measure cap for step prose. Tuned by measurement rather than by the
      usual "65ch" guideline: 1ch is the width of a zero, which in Inter is much
@@ -97,19 +98,6 @@
      body and UI. */
   --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-}
-
-/*
- * The narrow-screen gutter, declared here with the token it overrides rather
- * than beside the components that consume it. An unlayered declaration beats
- * anything inside `@layer`, so an override written in the component layer
- * would silently lose to the base value above and leave `--gutter` reporting a
- * figure the page is not actually using.
- */
-@media (max-width: 860px) {
-  :root {
-    --gutter: 20px;
-  }
 }
 
 /*

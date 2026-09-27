@@ -272,11 +272,8 @@
     color: var(--muted);
   }
 
-  .site-footer {
+  .site-foot {
     margin-top: 16px;
-  }
-
-  .footer-inner {
     padding-block: 8px;
     font-size: 8pt;
   }

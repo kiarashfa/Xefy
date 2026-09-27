@@ -19,6 +19,26 @@ interface Props {
 const { title, description, noindex = false, pagefindIgnore = noindex } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const base = import.meta.env.BASE_URL;
+
+/** Site analytics. The measurement ID is public by design, and this is the only place it is written. */
+const GA_ID = 'G-XQGBVVQR15';
+
+/*
+ * The link-preview card, drawn by `npm run brand` from the site's own mark and
+ * type. One card for every page: entry photographs carry attribution terms a
+ * preview on another platform would drop.
+ */
+const ogImage = new URL(`${base}og.png`, Astro.site).href;
+
+/*
+ * `theme-color` follows the theme the page actually resolved to, not the OS: a
+ * reader who toggles to dark on a light machine would otherwise get a light
+ * browser strip over a dark page. The observer catches every writer of
+ * `data-theme` (the pre-paint script and the toggle) without either knowing.
+ */
+const THEME_COLOR = { light: '#faf7f2', dark: '#1c1a17', fallback: 'light' };
+const themeColorSync = `(()=>{const m=document.querySelector('meta[name="theme-color"]'),r=document.documentElement,c=${JSON.stringify(THEME_COLOR)},d=matchMedia('(prefers-color-scheme: dark)'),l=matchMedia('(prefers-color-scheme: light)'),s=()=>{const t=r.dataset.theme;m.content=c[t==='light'||t==='dark'?t:d.matches?'dark':l.matches?'light':c.fallback];};s();new MutationObserver(s).observe(r,{attributes:true,attributeFilter:['data-theme']});d.addEventListener('change',s);})();`;
 ---
 
 <!doctype html>
@@ -35,7 +55,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         <meta name="robots" content="noindex, follow" />
       )
     }
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+    <link rel="manifest" href={`${base}site.webmanifest`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Xefy" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Xefy, a recipe encyclopedia" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     {/*
       Both typefaces are self-hosted, declared in `src/styles/fonts.css` and
@@ -65,6 +101,21 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         document.documentElement.dataset.theme = theme;
       })();
     </script>
+    <meta name="theme-color" content={THEME_COLOR.light} />
+    <script is:inline set:html={themeColorSync} />
+
+    {
+      import.meta.env.PROD && (
+        <>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+          {/* The path only: a query string or hash can carry what a reader shared, and it stays theirs. */}
+          <script
+            is:inline
+            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(GA_ID)},{page_location:location.origin+location.pathname});`}
+          />
+        </>
+      )
+    }
   </head>
   <body data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
     <slot />

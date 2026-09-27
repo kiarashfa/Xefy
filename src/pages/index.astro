@@ -37,7 +37,7 @@ const teaserIngredients = [...useCount.entries()]
   .map(([id]) => ({ id, name: site.ingredients.find((i) => i.id === id)?.name ?? id }))
   .sort((a, b) => a.name.localeCompare(b.name));
 
-const title = 'Xefy — a recipe encyclopedia where the numbers are computed';
+const title = 'Xefy · Recipe encyclopedia';
 const description =
   'One page per dish. Every quantity, nutrition figure and timing is derived from structured data and recomputes when you change the serving count or the units.';
 ---

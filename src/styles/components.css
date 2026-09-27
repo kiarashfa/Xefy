@@ -22,29 +22,35 @@
     border-bottom: 1px solid var(--line);
   }
 
+  /*
+   * The header anatomy is shared with the sibling sites: lockup, nav, then the
+   * controls as one group of 36px round buttons. Proportions, not palette, are
+   * what the four have in common.
+   */
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: 20px;
+    padding-block: 14px;
     gap: 16px;
   }
 
   .logo {
     display: flex;
     align-items: center;
-    gap: 9px;
+    gap: 10px;
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 21px;
+    font-size: 23px;
+    line-height: 1;
     text-decoration: none;
   }
 
   /* The mark carries the accent; the wordmark stays ink, so the pair reads as
      one lockup rather than as a coloured word. */
   .logo-mark {
-    width: 23px;
-    height: 23px;
+    width: 26px;
+    height: 26px;
     flex: none;
     color: var(--accent);
   }
@@ -57,22 +63,36 @@
   .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 24px;
   }
 
-  .desktop-nav a {
-    color: var(--ink);
+  .desktop-nav > a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    color: var(--ink-soft);
     text-decoration: none;
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    opacity: 0.6;
-    transition: opacity 0.3s var(--ease);
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    padding-block: 4px;
+    transition: color 0.3s var(--ease);
   }
 
-  .desktop-nav a:hover,
-  .desktop-nav a[aria-current='page'] {
-    opacity: 1;
+  /* The rule sits on the label, not the link, so it never runs under the count. */
+  .desktop-nav .nav-label {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: border-color 0.3s var(--ease);
+  }
+
+  .desktop-nav > a:hover,
+  .desktop-nav > a[aria-current='page'] {
+    color: var(--ink);
+  }
+
+  .desktop-nav > a:hover .nav-label,
+  .desktop-nav > a[aria-current='page'] .nav-label {
+    border-bottom-color: var(--accent);
   }
 
   /*
@@ -101,12 +121,12 @@
   }
 
   .icon-btn {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    border: 1px solid var(--line);
+    border: 1px solid var(--line-strong);
     background: transparent;
-    color: var(--ink);
+    color: var(--ink-soft);
     text-decoration: none;
     cursor: pointer;
     display: flex;
@@ -120,7 +140,7 @@
 
   .icon-btn:hover {
     background: var(--surface-2);
-    border-color: var(--line-strong);
+    color: var(--ink);
   }
 
   .icon-btn svg {
@@ -1213,50 +1233,68 @@
    * Footer
    * ================================================================ */
 
-  .site-footer {
+  /*
+   * The footer: one quiet row of links and the copyright, with the sibling
+   * sites underneath. The same shape on all four sibling sites.
+   */
+  .site-foot {
     border-top: 1px solid var(--line);
-    margin-top: 40px;
+    margin-top: 56px;
+    padding-block: 20px 32px;
+    font-size: 13px;
   }
-
-  .footer-inner {
-    padding-block: 36px;
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  /* The taxonomy indexes live here rather than in the header, which is capped
-     at four items. Without it they are reachable by nothing at all. */
-  .footer-browse {
+  .foot-bar {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 18px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--line);
+    align-items: center;
+    gap: 8px 24px;
   }
-
-  .footer-browse-label {
-    font-size: 10.5px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 20px;
   }
-
-  .footer-browse a {
+  .foot-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .site-foot a {
     color: var(--ink-soft);
     text-decoration: none;
+    transition: color 0.3s var(--ease);
   }
-
-  .footer-browse a:hover {
+  .site-foot a:hover {
     color: var(--accent);
   }
-
-  .footer-meta {
+  .site-foot .foot-brand {
+    font-family: var(--font-display);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .foot-copy {
+    margin: 0 0 0 auto;
+    color: var(--muted);
+  }
+  .foot-family {
     display: flex;
-    justify-content: space-between;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .site-foot .foot-family a {
+    color: var(--muted);
+  }
+  .foot-family [aria-current] {
+    color: var(--ink-soft);
   }
 
   /* ================================================================
@@ -1317,14 +1355,8 @@
       gap: 32px;
     }
 
-    .footer-inner {
-      gap: 14px;
-      padding-block: 24px;
-    }
-
-    .footer-meta {
-      flex-direction: column;
-      gap: 6px;
+    .foot-copy {
+      margin-left: 0;
     }
   }
 }
@@ -2784,6 +2816,86 @@
     margin: 0;
     padding-bottom: 22px;
     font-size: 12px;
+    color: var(--muted);
+  }
+}
+
+/*
+ * The 404, the same shape as the sibling sites': the status, a plain
+ * headline, one line in the site's voice, then the ways out.
+ */
+@layer components {
+  .notfound {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    padding-block: 90px 120px;
+    max-width: 44rem;
+  }
+
+  .notfound-code {
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    letter-spacing: 0.34em;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+
+  .notfound h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(42px, 7vw, 68px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .notfound-quip {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin: 18px 0 0;
+    max-width: 34rem;
+    text-wrap: balance;
+  }
+
+  .notfound-ways {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 26px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--line);
+    width: 100%;
+  }
+
+  .notfound-ways a {
+    font-family: var(--font-display);
+    font-size: 19px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition:
+      color 0.3s var(--ease),
+      border-color 0.3s var(--ease);
+  }
+
+  .notfound-ways a:hover,
+  .notfound-ways a:focus-visible {
+    color: var(--accent-ink);
+    border-bottom-color: var(--accent);
+  }
+
+  .notfound-note {
+    margin: 28px 0 0;
+    max-width: 38rem;
+    font-size: 13.5px;
+    line-height: 1.65;
     color: var(--muted);
   }
 }

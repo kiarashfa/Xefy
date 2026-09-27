@@ -49,7 +49,7 @@ export function shareText(
     .join(', ');
 
   return [
-    'Shopping list — Xefy',
+    'Shopping list · Xefy',
     '',
     ...(body.length > 0 ? body : ['- (nothing to buy)']),
     '',
@@ -87,7 +87,7 @@ export function planText(
   const loose = items.filter((i) => i.item.day === null);
 
   return [
-    'Meal plan — Xefy',
+    'Meal plan · Xefy',
     '',
     ...(scheduled.length > 0 ? scheduled : []),
     ...(loose.length > 0 ? ['Not yet given a day:', ...loose.map(line), ''] : []),

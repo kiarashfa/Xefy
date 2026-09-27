@@ -145,7 +145,7 @@
 
   async function share() {
     try {
-      await navigator.share({ title: 'Meal plan — Xefy', text: planMessage });
+      await navigator.share({ title: 'Meal plan · Xefy', text: planMessage });
     } catch {
       // A cancelled share is the ordinary case and is not an error.
     }
@@ -229,7 +229,7 @@
           text={planMessage}
           body={planBody}
           url={planUrl()}
-          title="Meal plan — Xefy"
+          title="Meal plan · Xefy"
           payload={payload}
         />
         <p class="source-line">

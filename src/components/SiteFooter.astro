@@ -1,34 +1,63 @@
 ---
 /**
- * The site footer, and the only home the browsing indexes have.
+ * The site footer: one quiet row of links and the copyright, with the sibling
+ * sites underneath. The same shape on all four sibling sites.
  *
- * The header is capped at four items (§19.4) and the taxonomy listings are not
- * among them — they are ways *into* the catalogue rather than destinations, and
- * putting them here keeps them reachable by a reader and by a crawler without
- * competing with the four things the header is for.
+ * It is also the only home the browsing indexes have. The header is capped at
+ * four items and the taxonomy listings are not among them, so without this row
+ * they would be reachable by nothing at all.
  */
 const base = import.meta.env.BASE_URL;
 
-const browse = [
-  { href: `${base}cuisines/`, label: 'Cuisine' },
-  { href: `${base}courses/`, label: 'Course' },
-  { href: `${base}methods/`, label: 'Method' },
-  { href: `${base}diets/`, label: 'Diet' },
+const links = [
+  { href: `${base}cuisines/`, label: 'Cuisines' },
+  { href: `${base}courses/`, label: 'Courses' },
+  { href: `${base}methods/`, label: 'Methods' },
+  { href: `${base}diets/`, label: 'Diets' },
   { href: `${base}techniques/`, label: 'Techniques' },
+  { href: `${base}about/`, label: 'About' },
+  { href: `${base}attributions/`, label: 'Image credits' },
+  { href: 'https://github.com/kiarashfa/Xefy', label: 'Source code' },
+];
+
+/*
+ * The first year is fixed: it is when the project began. The current year is
+ * read when the site is built, so every deploy carries the right range without
+ * anyone editing it.
+ */
+const COPYRIGHT_START_YEAR = 2026;
+const buildYear = new Date().getFullYear();
+const years = buildYear > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}–${buildYear}` : `${COPYRIGHT_START_YEAR}`;
+
+const siblings = [
+  { name: 'Xefy', subject: 'Recipes', url: 'https://kiarashfa.github.io/Xefy/' },
+  { name: 'eXir', subject: 'Drinks', url: 'https://kiarashfa.github.io/eXir/' },
+  { name: 'Markey', subject: 'Cars', url: 'https://kiarashfa.github.io/Markey/' },
+  { name: 'ARMAG', subject: 'Firearms', url: 'https://kiarashfa.github.io/ARMAG/' },
 ];
 ---
 
-<footer class="site-footer" data-pagefind-ignore>
-  <div class="wrap footer-inner">
-    <nav class="footer-browse" aria-label="Browse">
-      <span class="footer-browse-label">Browse by</span>
-      {browse.map((item) => <a href={item.href}>{item.label}</a>)}
-    </nav>
-    <div class="footer-meta">
-      <span>
-        Xefy — free, ad-free and login-free. <a href={`${base}attributions/`}>Image credits</a>.
-      </span>
-      <span>Nutrition from USDA FoodData Central.</span>
+<footer class="site-foot" data-pagefind-ignore>
+  <div class="wrap">
+    <div class="foot-bar">
+      <nav class="foot-links" aria-label="Site">
+        <a class="foot-brand" href={base}>Xefy</a>
+        <ul>
+          {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+        </ul>
+      </nav>
+      <p class="foot-copy">© {years} Kiarash Farajzadehahary</p>
     </div>
+    <nav class="foot-family" aria-label="Sibling sites">
+      {
+        siblings.map((s) =>
+          s.name === 'Xefy' ? (
+            <span aria-current="true" title={s.subject}>{s.name}</span>
+          ) : (
+            <a href={s.url} title={s.subject}>{s.name}</a>
+          ),
+        )
+      }
+    </nav>
   </div>
 </footer>

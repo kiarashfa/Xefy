@@ -137,7 +137,7 @@
 
   async function share() {
     try {
-      await navigator.share({ title: 'Shopping list — Xefy', text });
+      await navigator.share({ title: 'Shopping list · Xefy', text });
     } catch {
       // A cancelled share is the ordinary case and is not an error.
     }
@@ -213,7 +213,7 @@
           text={text}
           body={body}
           url={shareUrl()}
-          title="Shopping list — Xefy"
+          title="Shopping list · Xefy"
           payload={payload}
         />
 
