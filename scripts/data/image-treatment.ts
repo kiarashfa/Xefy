@@ -63,7 +63,7 @@ export const TREATMENT = {
   channelOffset: [4, 2, -1] as [number, number, number],
 
   gamma: 1.03,
-  webpQuality: 82,
+  webpQuality: 78,
 } as const;
 
 /**

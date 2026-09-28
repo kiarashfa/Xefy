@@ -50,6 +50,7 @@
   let cuisine = $state<string[]>([]);
   let course = $state<string[]>([]);
   let method = $state<string[]>([]);
+  let diet = $state<string[]>([]);
   let excludedAllergens = $state<string[]>([]);
   let limit = $state(PAGE);
 
@@ -100,7 +101,7 @@
   /** Alphabetical, because a named vocabulary has no other order a reader can predict. */
   const byLabel = (list: readonly Term[]) => [...list].sort((a, b) => a.label.localeCompare(b.label));
 
-  type Axis = 'query' | 'cuisine' | 'course' | 'method' | 'hide' | 'limits';
+  type Axis = 'query' | 'cuisine' | 'course' | 'method' | 'diet' | 'hide' | 'limits';
 
   /** Every active filter, optionally ignoring one axis (for that axis's own counts). */
   function passes(r: any, skip?: Axis): boolean {
@@ -113,6 +114,8 @@
     if (skip !== 'cuisine' && cuisine.length && !cuisine.some((c) => r.tags.cuisine.includes(c))) return false;
     if (skip !== 'course' && course.length && !course.some((c) => r.tags.course.includes(c))) return false;
     if (skip !== 'method' && method.length && !method.some((c) => r.tags.method.includes(c))) return false;
+    // Diets are requirements, so every chosen one must hold: vegan AND gluten-free.
+    if (skip !== 'diet' && diet.length && !diet.every((d) => r.diets.includes(d))) return false;
     // Allergens are an exclusion filter, never an inclusion one.
     if (skip !== 'hide' && excludedAllergens.some((a) => r.allergens.includes(a))) return false;
     if (skip !== 'limits') {
@@ -152,6 +155,20 @@
     return out;
   }
 
+  /** The same, for the computed diet labels, which live beside the tags. */
+  function dietCounts(): Record<string, number> {
+    const out: Record<string, number> = {};
+    for (const r of recipes) {
+      if (!passes(r, 'diet')) continue;
+      for (const d of r.diets) out[d] = (out[d] ?? 0) + 1;
+    }
+    return out;
+  }
+  const dietLabel = (id: string) => id.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
+  const dietTerms = $derived(
+    [...new Set(recipes.flatMap((r) => r.diets as string[]))].map((id) => ({ id, label: dietLabel(id) })),
+  );
+
   /* Only terms with a dish behind them: a menu of empty filters wastes the
      reader's attention on answers that are all "nothing". */
   const used = $derived({
@@ -182,7 +199,15 @@
       selected: method,
       set: (v: string[]) => (method = v),
     },
-  ]);
+    {
+      key: 'Diet',
+      terms: byLabel(dietTerms),
+      counts: dietCounts(),
+      selected: diet,
+      set: (v: string[]) => (diet = v),
+    },
+    // The menus read in alphabetical order, like the options inside them.
+  ].sort((a, b) => a.key.localeCompare(b.key)));
 
   const hideTerms = $derived(byLabel(allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id)))));
   const hideCounts = $derived.by(() => {
@@ -195,7 +220,7 @@
   });
 
   const activeCount = $derived(
-    cuisine.length + course.length + method.length + excludedAllergens.length + limitCount + (query ? 1 : 0),
+    cuisine.length + course.length + method.length + diet.length + excludedAllergens.length + limitCount + (query ? 1 : 0),
   );
 
   function clearAll() {
@@ -203,6 +228,7 @@
     cuisine = [];
     course = [];
     method = [];
+    diet = [];
     excludedAllergens = [];
     maxMinutes = null;
     maxKcal = null;
@@ -211,7 +237,7 @@
 
   /* A changed question starts again at the top of its answer. */
   $effect(() => {
-    void [query, cuisine, course, method, excludedAllergens, maxMinutes, maxKcal, maxDifficulty, sortField, sortDesc];
+    void [query, cuisine, course, method, diet, excludedAllergens, maxMinutes, maxKcal, maxDifficulty, sortField, sortDesc];
     limit = PAGE;
   });
 
@@ -227,6 +253,7 @@
     cuisine = list('cuisine');
     course = list('course');
     method = list('method');
+    diet = list('diet');
     excludedAllergens = list('hide');
     maxMinutes = num(p.get('time'));
     maxKcal = num(p.get('kcal'));
@@ -249,6 +276,7 @@
     if (cuisine.length) p.set('cuisine', cuisine.join(','));
     if (course.length) p.set('course', course.join(','));
     if (method.length) p.set('method', method.join(','));
+    if (diet.length) p.set('diet', diet.join(','));
     if (excludedAllergens.length) p.set('hide', excludedAllergens.join(','));
     if (maxMinutes != null) p.set('time', String(maxMinutes));
     if (maxKcal != null) p.set('kcal', String(maxKcal));
@@ -304,137 +332,142 @@
   const courseLabel = (id: string) => courses.find((c) => c.id === id)?.label ?? id;
 </script>
 
-<!-- One row: everything that narrows the list, above the list it narrows. -->
+<!-- Two rows, each filled edge to edge: the tools that shape the list, then
+     the list menus that narrow it, in alphabetical order with exclusion last. -->
 <div class="catalog-bar">
-  <input
-    class="catalog-search"
-    type="search"
-    bind:value={query}
-    placeholder="Search dishes, styles…"
-    aria-label="Search the catalogue"
-  />
-
-  {#each facets as facet (facet.key)}
-    <FacetMenu
-      label={facet.key}
-      terms={facet.terms}
-      counts={facet.counts}
-      selected={facet.selected}
-      onchange={facet.set}
+  <div class="catalog-row">
+    <input
+      class="catalog-search"
+      type="search"
+      bind:value={query}
+      placeholder="Search dishes, styles…"
+      aria-label="Search the catalogue"
     />
-  {/each}
 
-  {#if hideTerms.length > 0}
-    <FacetMenu
-      label="Hide"
-      terms={hideTerms}
-      counts={hideCounts}
-      selected={excludedAllergens}
-      onchange={(v) => (excludedAllergens = v)}
-      exclusion
-    />
-  {/if}
+    <!-- Ceilings on the computed figures. A typed number, not a chosen bucket. -->
+    <div class="facet-menu" bind:this={limitsRoot}>
+      <button
+        class="facet-menu-button"
+        class:on={limitCount > 0}
+        bind:this={limitsButton}
+        aria-expanded={limitsOpen}
+        aria-haspopup="true"
+        onclick={() => (limitsOpen = !limitsOpen)}
+      >
+        Limits
+        {#if limitCount > 0}<span class="facet-menu-count">{limitCount}</span>{/if}
+        <span class="facet-menu-caret" aria-hidden="true">▾</span>
+      </button>
 
-  <!-- Ceilings on the computed figures. A typed number, not a chosen bucket. -->
-  <div class="facet-menu" bind:this={limitsRoot}>
+      {#if limitsOpen}
+        <div class="facet-menu-panel is-limits" role="group" aria-label="Limits">
+          <label class="limit-row">
+            <span>Time at most</span>
+            <span class="limit-input">
+              <input
+                type="number"
+                min="1"
+                step="5"
+                inputmode="numeric"
+                placeholder="any"
+                value={maxMinutes ?? ''}
+                oninput={(e) => (maxMinutes = num(e.currentTarget.value))}
+              />
+              <span class="limit-unit">min</span>
+            </span>
+          </label>
+
+          <label class="limit-row">
+            <span>Calories at most</span>
+            <span class="limit-input">
+              <input
+                type="number"
+                min="1"
+                step="50"
+                inputmode="numeric"
+                placeholder="any"
+                value={maxKcal ?? ''}
+                oninput={(e) => (maxKcal = num(e.currentTarget.value))}
+              />
+              <span class="limit-unit">kcal</span>
+            </span>
+          </label>
+
+          <label class="limit-row">
+            <span>Difficulty at most</span>
+            <select bind:value={maxDifficulty}>
+              <option value="">any</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </label>
+
+          <p class="limit-note">Calories are per serving, and time is the whole dish.</p>
+
+          {#if limitCount > 0}
+            <button
+              class="facet-menu-clear"
+              onclick={() => {
+                maxMinutes = null;
+                maxKcal = null;
+                maxDifficulty = '';
+              }}
+            >
+              Clear limits
+            </button>
+          {/if}
+        </div>
+      {/if}
+    </div>
+
+    <label class="catalog-sort">
+      <span class="visually-hidden">Sort by</span>
+      <select bind:value={sortField}>
+        {#each SORT_FIELDS as s (s.id)}
+          <option value={s.id}>{s.label}</option>
+        {/each}
+      </select>
+    </label>
+
+    <!-- Direction is its own control, so every field can go both ways. -->
     <button
-      class="facet-menu-button"
-      class:on={limitCount > 0}
-      bind:this={limitsButton}
-      aria-expanded={limitsOpen}
-      aria-haspopup="true"
-      onclick={() => (limitsOpen = !limitsOpen)}
+      class="sort-dir"
+      aria-pressed={sortDesc}
+      onclick={() => (sortDesc = !sortDesc)}
+      title={`Sorted by ${activeSort.label.toLowerCase()}: ${sortDesc ? activeSort.high : activeSort.low} first`}
     >
-      Limits
-      {#if limitCount > 0}<span class="facet-menu-count">{limitCount}</span>{/if}
-      <span class="facet-menu-caret" aria-hidden="true">▾</span>
+      <span aria-hidden="true">{sortDesc ? '↓' : '↑'}</span>
+      {sortDesc ? activeSort.high : activeSort.low}
     </button>
 
-    {#if limitsOpen}
-      <div class="facet-menu-panel is-limits" role="group" aria-label="Limits">
-        <label class="limit-row">
-          <span>Time at most</span>
-          <span class="limit-input">
-            <input
-              type="number"
-              min="1"
-              step="5"
-              inputmode="numeric"
-              placeholder="any"
-              value={maxMinutes ?? ''}
-              oninput={(e) => (maxMinutes = num(e.currentTarget.value))}
-            />
-            <span class="limit-unit">min</span>
-          </span>
-        </label>
-
-        <label class="limit-row">
-          <span>Calories at most</span>
-          <span class="limit-input">
-            <input
-              type="number"
-              min="1"
-              step="50"
-              inputmode="numeric"
-              placeholder="any"
-              value={maxKcal ?? ''}
-              oninput={(e) => (maxKcal = num(e.currentTarget.value))}
-            />
-            <span class="limit-unit">kcal</span>
-          </span>
-        </label>
-
-        <label class="limit-row">
-          <span>Difficulty at most</span>
-          <select bind:value={maxDifficulty}>
-            <option value="">any</option>
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select>
-        </label>
-
-        <p class="limit-note">Calories are per serving, and time is the whole dish.</p>
-
-        {#if limitCount > 0}
-          <button
-            class="facet-menu-clear"
-            onclick={() => {
-              maxMinutes = null;
-              maxKcal = null;
-              maxDifficulty = '';
-            }}
-          >
-            Clear limits
-          </button>
-        {/if}
-      </div>
-    {/if}
+    <div class="catalog-view">
+      <button class:active={view === 'grid'} aria-pressed={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>
+      <button class:active={view === 'table'} aria-pressed={view === 'table'} onclick={() => (view = 'table')}>Table</button>
+    </div>
   </div>
 
-  <label class="catalog-sort">
-    <span class="visually-hidden">Sort by</span>
-    <select bind:value={sortField}>
-      {#each SORT_FIELDS as s (s.id)}
-        <option value={s.id}>{s.label}</option>
-      {/each}
-    </select>
-  </label>
+  <div class="catalog-row catalog-menus" style={`--menus: ${facets.length + (hideTerms.length > 0 ? 1 : 0)}`}>
+    {#each facets as facet (facet.key)}
+      <FacetMenu
+        label={facet.key}
+        terms={facet.terms}
+        counts={facet.counts}
+        selected={facet.selected}
+        onchange={facet.set}
+      />
+    {/each}
 
-  <!-- Direction is its own control, so every field can go both ways. -->
-  <button
-    class="sort-dir"
-    aria-pressed={sortDesc}
-    onclick={() => (sortDesc = !sortDesc)}
-    title={`Sorted by ${activeSort.label.toLowerCase()}: ${sortDesc ? activeSort.high : activeSort.low} first`}
-  >
-    <span aria-hidden="true">{sortDesc ? '↓' : '↑'}</span>
-    {sortDesc ? activeSort.high : activeSort.low}
-  </button>
-
-  <div class="catalog-view">
-    <button class:active={view === 'grid'} aria-pressed={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>
-    <button class:active={view === 'table'} aria-pressed={view === 'table'} onclick={() => (view = 'table')}>Table</button>
+    {#if hideTerms.length > 0}
+      <FacetMenu
+        label="Hide"
+        terms={hideTerms}
+        counts={hideCounts}
+        selected={excludedAllergens}
+        onchange={(v) => (excludedAllergens = v)}
+        exclusion
+      />
+    {/if}
   </div>
 </div>
 
@@ -445,6 +478,7 @@
     {#each cuisine as id (id)}<button class="catalog-chip" onclick={() => (cuisine = cuisine.filter((x) => x !== id))}>{cuisineLabel(id)} <span aria-hidden="true">×</span></button>{/each}
     {#each course as id (id)}<button class="catalog-chip" onclick={() => (course = course.filter((x) => x !== id))}>{courseLabel(id)} <span aria-hidden="true">×</span></button>{/each}
     {#each method as id (id)}<button class="catalog-chip" onclick={() => (method = method.filter((x) => x !== id))}>{methods.find((m) => m.id === id)?.label ?? id} <span aria-hidden="true">×</span></button>{/each}
+    {#each diet as id (id)}<button class="catalog-chip" onclick={() => (diet = diet.filter((x) => x !== id))}>{dietLabel(id)} <span aria-hidden="true">×</span></button>{/each}
     {#each excludedAllergens as id (id)}<button class="catalog-chip is-exclusion" onclick={() => (excludedAllergens = excludedAllergens.filter((x) => x !== id))}>No {allergens.find((a) => a.id === id)?.label.toLowerCase() ?? id} <span aria-hidden="true">×</span></button>{/each}
     {#if limitCount > 0}<button class="catalog-chip" onclick={() => { maxMinutes = null; maxKcal = null; maxDifficulty = ''; }}>Limits <span aria-hidden="true">×</span></button>{/if}
     <button class="catalog-clear" onclick={clearAll}>Clear all</button>

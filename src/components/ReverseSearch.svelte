@@ -10,13 +10,28 @@
   import type { CatalogRecord } from '../lib/plan/types.ts';
 
   interface Props {
-    recipes: CatalogRecord[];
+    /** The light catalogue export; fetched rather than embedded, and shared with /recipes/. */
+    src: string;
     ingredients: { id: string; name: string; category: string }[];
     staples: string[];
     base: string;
   }
 
-  const { recipes, ingredients, staples, base }: Props = $props();
+  const { src, ingredients, staples, base }: Props = $props();
+
+  let recipes = $state<CatalogRecord[]>([]);
+  let loaded = $state(false);
+  $effect(() => {
+    fetch(src)
+      .then((response) => (response.ok ? (response.json() as Promise<CatalogRecord[]>) : []))
+      .then((records) => {
+        recipes = records;
+        loaded = true;
+      })
+      .catch(() => {
+        loaded = true;
+      });
+  });
 
   loadPlan();
 
@@ -133,9 +148,11 @@
       <p class="empty-state">
         Tick a few things and the dishes you are closest to making will appear here, nearest first.
       </p>
+    {:else if !loaded}
+      <p class="empty-state">Loading the dishes…</p>
     {:else if results.length === 0}
       <p class="empty-state">
-        Nothing is within reach of that yet — with {recipes.length} dishes on the site, that is more a
+        Nothing is within reach of that yet. With {recipes.length} dishes on the site, that is more a
         comment on the catalogue than on your cupboard.
       </p>
     {:else}

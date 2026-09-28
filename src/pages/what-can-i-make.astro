@@ -3,11 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReverseSearch from '../components/ReverseSearch.svelte';
-import { catalogRecord, getSite } from '../lib/content/site.ts';
+import { getSite } from '../lib/content/site.ts';
 
 const site = await getSite();
 const base = import.meta.env.BASE_URL;
-const recipes = site.recipes.map(catalogRecord);
 const ingredients = site.ingredients.map((i) => ({ id: i.id, name: i.name, category: i.category }));
 ---
 
@@ -26,7 +25,7 @@ const ingredients = site.ingredients.map((i) => ({ id: i.id, name: i.name, categ
     </div>
     <ReverseSearch
       client:load
-      recipes={recipes}
+      src={`${base}catalog-index.json`}
       ingredients={ingredients}
       staples={site.staples}
       base={base}

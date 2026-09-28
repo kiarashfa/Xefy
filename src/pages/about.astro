@@ -4,6 +4,7 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import PayPalMark from '../assets/paypal.svg';
 import CoffeeMark from '../assets/buy-me-a-coffee.svg';
+import { getSite } from '../lib/content/site.ts';
 
 /**
  * What the site is, who builds it, and how to reach or support them.
@@ -15,6 +16,15 @@ import CoffeeMark from '../assets/buy-me-a-coffee.svg';
  * the outlined button carried in the accent wash the exclusion pill uses.
  */
 const base = import.meta.env.BASE_URL;
+
+/** Counted from the published content at build time, never typed. */
+const site = await getSite();
+const counts = [
+  { label: 'Dishes', value: site.recipes.length },
+  { label: 'Cuisines', value: new Set(site.recipes.flatMap((r) => r.identity.tags.cuisine)).size },
+  { label: 'Ingredients', value: site.ingredients.length },
+  { label: 'Photographs', value: site.credits.length },
+];
 
 const contact = [
   { label: 'Personal site', href: 'https://kiarashfa.github.io/website/', note: 'kiarashfa.github.io' },
@@ -88,7 +98,7 @@ const description = 'What Xefy is, who builds it, and how to get in touch or sup
         <div class="side-card">
           <div class="side-card-label">Support</div>
           <p class="support-note">
-            Xefy is free, ad-free and login-free, and stays that way — if it saved you a dinner, you
+            Xefy is free, ad-free and login-free, and stays that way. If it saved you a dinner, you
             can put something toward the next hundred dishes.
           </p>
           <div class="support-links">
@@ -106,6 +116,24 @@ const description = 'What Xefy is, who builds it, and how to get in touch or sup
               <span>Buy Me a Coffee</span>
             </a>
           </div>
+        </div>
+
+        <div class="side-card">
+          <div class="side-card-label">Where it stands</div>
+          <div class="nutrition-major">
+            {
+              counts.map((count) => (
+                <div class="nutri-stat">
+                  <div class="val">{count.value.toLocaleString('en')}</div>
+                  <div class="lbl">{count.label}</div>
+                </div>
+              ))
+            }
+          </div>
+          <p class="support-note">
+            Counted from the published recipes when the site is built. The collection grows dish by
+            dish; every figure in it is checked by the same build that publishes it.
+          </p>
         </div>
       </aside>
 

@@ -89,7 +89,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
                 <span class="name-label">Also known as</span>
                 {ingredient.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
                   <>
-                    {i > 0 && <span class="name-sep">—</span>}
+                    {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
                     <span class="name-alt">{n.name}</span>
                     {n.region && <span class="name-region"> · {n.region}</span>}
                   </>
@@ -101,7 +101,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
                 <span class="name-label">Not the same as</span>
                 {ingredient.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
                   <>
-                    {i > 0 && <span class="name-sep">—</span>}
+                    {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
                     <span class="name-alt">{n.name}</span>
                     <span class="name-region"> — {n.note}</span>
                   </>

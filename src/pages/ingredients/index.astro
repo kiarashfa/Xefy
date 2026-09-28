@@ -39,7 +39,7 @@ const categories = [...byCategory].sort(([a], [b]) => a.localeCompare(b));
               .map((i) => (
                 <li>
                   <a href={`${base}ingredients/${i.id}/`}>
-                    {i.image && <img class="ing-thumb" src={`${base}${i.image}`} alt="" width="34" height="34" />}
+                    {i.image && <img class="ing-thumb" src={`${base}${i.image}`} alt="" width="34" height="34" loading="lazy" decoding="async" />}
                     {i.name}
                     <span class="count">{(site.usage.get(i.id) ?? []).length}</span>
                   </a>

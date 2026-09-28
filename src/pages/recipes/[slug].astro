@@ -168,7 +168,7 @@ const description = identity.description ?? identity.subtitle;
                   <span class="name-label">Also known as</span>
                   {identity.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
                     <>
-                      {i > 0 && <span class="name-sep">—</span>}
+                      {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
                       <span class="name-alt">{n.name}</span>
                       {n.region && <span class="name-region"> · {n.region}</span>}
                     </>
@@ -180,7 +180,7 @@ const description = identity.description ?? identity.subtitle;
                   <span class="name-label">Not the same as</span>
                   {identity.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
                     <>
-                      {i > 0 && <span class="name-sep">—</span>}
+                      {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
                       <span class="name-alt">{n.name}</span>
                       <span class="name-region"> — {n.note}</span>
                     </>
@@ -210,6 +210,8 @@ const description = identity.description ?? identity.subtitle;
                 fetched ahead of everything else and never lazily. */}
             <img
               src={`${base}${identity.image.src}`}
+              srcset={`${base}${identity.image.src.replace(/\.webp$/, '-card.webp')} 800w, ${base}${identity.image.src} 1200w`}
+              sizes="(min-width: 64rem) 30rem, 100vw"
               alt={identity.image.alt}
               width="1200"
               height="1200"
@@ -378,7 +380,7 @@ const description = identity.description ?? identity.subtitle;
                                 href={`${base}ingredients/${line.ingredient.id}/`}
                                 aria-label={`${line.ingredient.name}, ingredient page`}
                               >
-                                <img src={`${base}${line.ingredient.image}`} alt="" width="34" height="34" />
+                                <img src={`${base}${line.ingredient.image}`} alt="" width="34" height="34" loading="lazy" decoding="async" />
                               </a>
                             ) : (
                               /*

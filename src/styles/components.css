@@ -23,7 +23,7 @@
   }
 
   /*
-   * The header anatomy is shared across all four sites: lockup, nav, then the
+   * The header anatomy: lockup, nav, then the
    * controls as one group of 36px round buttons. Proportions, not palette, are
    * what the four have in common.
    */
@@ -215,6 +215,12 @@
     align-items: center;
   }
 
+  /* A dish with no photograph yet gives its text the whole width rather than
+     keeping an empty column for a picture that is not there. */
+  .hero:not(:has(.hero-image)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .hero-text {
     display: flex;
     flex-direction: column;
@@ -246,7 +252,6 @@
     font-style: italic;
     font-size: 18px;
     color: var(--ink-soft);
-    max-width: 42ch;
     line-height: 1.55;
     margin: 0 0 22px;
   }
@@ -257,7 +262,6 @@
     flex-direction: column;
     gap: 5px;
     margin-bottom: 28px;
-    max-width: 54ch;
   }
 
   .name-line {
@@ -622,12 +626,18 @@
     gap: 10px;
   }
 
+  .timing-item {
+    min-width: 0;
+  }
+
+  /* On one line where it fits; a multi-day cure ("10d 4h 30m") wraps inside
+     its own tile instead of pushing past the card. */
   .timing-item b {
     font-family: var(--font-display);
     font-weight: 500;
     display: block;
     font-size: 17px;
-    white-space: nowrap;
+    overflow-wrap: anywhere;
   }
 
   .timing-item span {
@@ -816,7 +826,7 @@
    */
   .nutrition-major {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 16px 12px;
     margin-top: 14px;
   }
@@ -846,7 +856,7 @@
 
   .nutrition-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 7px 14px;
     font-size: 11.5px;
     margin-top: 10px;
@@ -985,7 +995,6 @@
     font-size: 15.5px;
     line-height: 1.7;
     color: var(--ink);
-    max-width: var(--measure);
     margin: 0;
   }
 
@@ -1021,7 +1030,6 @@
     border-radius: 12px;
     font-size: 13.5px;
     line-height: 1.6;
-    max-width: var(--measure);
   }
 
   .callout {
@@ -1057,10 +1065,9 @@
    * separation between them is one rule rather than two: the step list drops
    * its final border (below) so this one is the only line there.
    *
-   * Full column width, not the reading measure. The measure belongs to running
-   * prose; this is a labelled block like the Method heading above it, and
-   * indenting it to a narrower column made it read as a footnote to the last
-   * step rather than as a section of its own.
+   * Full column width: this is a labelled block like the Method heading above
+   * it, and indenting it made it read as a footnote to the last step rather
+   * than as a section of its own.
    */
   .makeahead {
     margin-top: 30px;
@@ -1162,7 +1169,6 @@
    * ================================================================ */
 
   .about {
-    max-width: var(--measure);
     padding-bottom: 40px;
   }
 
@@ -1245,7 +1251,7 @@
 
   /*
    * The footer: one quiet row of links and the copyright, with one line of
-   * small print underneath. The same shape on all four sites.
+   * small print underneath.
    */
   .site-foot {
     border-top: 1px solid var(--line);
@@ -1389,7 +1395,6 @@
     font-style: italic;
     font-size: 18px;
     color: var(--ink-soft);
-    max-width: var(--measure-intro);
     line-height: 1.55;
     margin: 0;
   }
@@ -1419,7 +1424,6 @@
   .teaser-lede {
     font-size: 13.5px;
     color: var(--muted);
-    max-width: 62ch;
     line-height: 1.55;
     margin: 0;
   }
@@ -1481,18 +1485,69 @@
    * row one line whatever the vocabulary grows to.
    */
   .catalog-bar {
-    /* The positioning context for a phone-width menu, which spans the bar. */
+    /* The positioning context for a phone-width menu, which spans the bar; and
+       above the results, so an open menu is never painted under a card. */
     position: relative;
+    z-index: 20;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
     padding-block: 22px;
     border-bottom: 1px solid var(--line);
   }
 
-  .catalog-bar .catalog-search {
-    flex: 1 1 220px;
+  /* Two rows, each filled edge to edge. */
+  .catalog-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+  .catalog-row > * {
+    flex: none;
+  }
+  .catalog-row .catalog-search {
+    flex: 1 1 240px;
+    max-width: none;
+    min-width: 0;
+  }
+  .catalog-row .catalog-search,
+  .catalog-row .facet-menu-button,
+  .catalog-row .catalog-sort select,
+  .catalog-row .sort-dir,
+  .catalog-row .catalog-view {
+    height: 40px;
+    box-sizing: border-box;
+  }
+  /* The list menus grow to fill their line, and on a wide screen are one row
+     of equal buttons. */
+  .catalog-menus > .facet-menu {
+    flex: 1 1 auto;
+  }
+  .catalog-menus .facet-menu-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+  @media (min-width: 900px) {
+    .catalog-menus {
+      display: grid;
+      grid-template-columns: repeat(var(--menus), minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 640px) {
+    .catalog-row > * {
+      flex: 1 1 auto;
+    }
+    .catalog-row .catalog-search {
+      flex-basis: 100%;
+    }
+    .catalog-row .catalog-sort select,
+    .catalog-row .facet-menu-button {
+      width: 100%;
+    }
+    .catalog-row .catalog-view button {
+      flex: 1 1 0;
+    }
   }
 
   .facet-menu {
@@ -1917,11 +1972,16 @@
     gap: 5px;
   }
 
+  /* One line, always: a long variant name must not push this card's title out
+     of line with its neighbours. The full text stays in the page. */
   .card-eyebrow {
     font-size: 10.5px;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .card-title {
@@ -1934,6 +1994,32 @@
   .card-meta {
     font-size: 12px;
     color: var(--muted);
+  }
+
+  /* Two across on a phone: one full-width square per dish made a page of 48
+     cards some 23,000px long. */
+  @media (max-width: 640px) {
+    .card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 14px;
+    }
+    .card-image {
+      border-radius: 12px;
+    }
+    .card-body {
+      padding-top: 10px;
+      gap: 3px;
+    }
+    .card-eyebrow {
+      font-size: 9.5px;
+      letter-spacing: 0.06em;
+    }
+    .card-title {
+      font-size: 16px;
+    }
+    .card-meta {
+      font-size: 11px;
+    }
   }
 
   .table-scroll {
@@ -2038,12 +2124,6 @@
     grid-template-columns: minmax(0, 1fr);
   }
 
-  /* Explanatory prose on a technique page. The measure matches the step text:
-     it is read the same way, at the same length, for the same reason. */
-  .technique-prose {
-    max-width: var(--measure);
-  }
-
   .technique-prose p {
     margin: 0 0 1em;
     line-height: 1.75;
@@ -2073,6 +2153,11 @@
     gap: 52px;
     padding-block: 8px 40px;
     align-items: start;
+  }
+
+  /* Prose first, its side panel on the right: the prose takes the wide track. */
+  .two-col--prose-first {
+    grid-template-columns: minmax(0, 1fr) 320px;
   }
 
   .nutrition-table {
@@ -2134,6 +2219,8 @@
   }
 
   .attribution-list .meta {
+    min-width: 0;
+    overflow-wrap: anywhere;
     font-size: 12.5px;
     color: var(--ink-soft);
     line-height: 1.55;
@@ -2344,7 +2431,6 @@
     border-radius: 12px;
     font-family: var(--font-display);
     font-size: 14px;
-    max-width: var(--measure);
   }
 
   /* Prepended to the meta line each step already has, rather than taking a
@@ -2710,7 +2796,6 @@
     padding-top: 20px;
     border-top: 1px solid var(--line);
     font-size: 14px;
-    max-width: var(--measure);
     line-height: 1.6;
   }
 
@@ -2775,7 +2860,6 @@
     font-size: 12.5px;
     line-height: 1.55;
     color: var(--ink-soft);
-    max-width: var(--measure);
   }
 
   .plan-row-controls {
@@ -2899,7 +2983,7 @@
   }
 
   .search-drawer[data-open] {
-    grid-template-rows: 1fr;
+    grid-template-rows: minmax(0, 1fr);
     border-top-color: var(--line);
   }
 
@@ -2948,7 +3032,7 @@
 }
 
 /*
- * The 404, the same shape as the other three sites': the status, a plain
+ * The 404: the status, a plain
  * headline, one line in the site's voice, then the ways out.
  */
 @layer components {

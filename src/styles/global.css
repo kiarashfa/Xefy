@@ -12,8 +12,8 @@
  * is a value that can disagree with itself, and the second theme is where that
  * shows up.
  *
- * Layout and motion tokens live here on the same terms — the reading measure
- * and the easing curve are as much part of the design as the palette.
+ * Layout and motion tokens live here on the same terms: the page frame and
+ * the easing curve are as much part of the design as the palette.
  *
  * Every foreground token clears **4.5:1 against all three surfaces of its own
  * theme**, measured rather than eyeballed. Three were adjusted in the Phase 8
@@ -74,22 +74,7 @@
   /* Fluid rather than stepped: 20px on a phone, 48px from a laptop up. */
   --gutter: clamp(20px, 4vw, 48px);
 
-  /* Reading-measure cap for step prose. Tuned by measurement rather than by the
-     usual "65ch" guideline: 1ch is the width of a zero, which in Inter is much
-     wider than the average glyph, so the conventional figure overshoots by
-     roughly a fifth. Re-measure if the body face ever changes. */
-  --measure: 55ch;
 
-  /*
-   * The cap for an introduction, which is a different job from body prose.
-   *
-   * A reading measure exists so the eye can find the next line through many
-   * lines of it. A page lede is one or two sentences under a large heading, and
-   * held to the same width it does not read as careful typography — it reads as
-   * a column that stopped halfway across the page. Wide enough to reach a
-   * natural break on a large screen, still short of edge to edge.
-   */
-  --measure-intro: 76ch;
 
   /* One easing curve everywhere. Motion is slow and eased, never bouncy. */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -138,14 +123,49 @@
     color-scheme: dark;
   }
 
+  /*
+   * A column at least one screen tall, so the footer sits at the bottom of a
+   * short page (a 404, an empty plan) instead of floating halfway up it.
+   * `main` takes the slack; `width: 100%` keeps a `.wrap` main at its full
+   * measure, because auto margins on a flex item would otherwise shrink it.
+   */
+  /* A long URL or unbroken word breaks rather than overflowing its box. */
+  body {
+    overflow-wrap: break-word;
+  }
+
+  /* Scrolling lists inside the page (menus, drawers, pickers) get a thin
+     thumb with no track, instead of the boxed system scrollbar. */
+  :where(body *) {
+    scrollbar-width: thin;
+    scrollbar-color: var(--line-strong) transparent;
+  }
+
+  /*
+   * A fieldset's minimum width is its min-content width by default, so a long
+   * option list inside one refuses to shrink and pushes a phone page sideways.
+   */
+  fieldset {
+    min-inline-size: 0;
+  }
+
   body {
     background: var(--surface);
     color: var(--ink);
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
     transition:
       background 0.3s,
       color 0.3s;
+  }
+
+  body > main {
+    flex: 1 0 auto;
+    width: 100%;
   }
 
   a {

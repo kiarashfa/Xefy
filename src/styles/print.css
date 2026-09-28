@@ -60,9 +60,6 @@
   html:root {
     --page-max: none;
     --gutter: 0;
-    /* Paper is narrower than a monitor and the type is smaller; the screen's
-       reading measure would leave a third of the page empty. */
-    --measure: none;
   }
 
   @page {
