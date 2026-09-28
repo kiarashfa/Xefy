@@ -33,7 +33,7 @@ const VALUE = /<(Temp|Len)\s+(?:c|cm)=\{(-?[\d.]+)\}\s*\/>/g;
  * Temperatures and dimensions are live here too.
  *
  * A technique page explaining that an egg sets somewhere above a stated
- * temperature is making exactly the kind of claim §3.7 exists for: typed as a
+ * temperature is making exactly the kind of claim exists for: typed as a
  * literal it would stay Celsius for a reader who has asked for Fahrenheit,
  * which is the one thing this site promises never to do. The spans are the same
  * ones a recipe emits, so the same shared script updates them.
@@ -76,7 +76,7 @@ const CITE = /<Cite\s+ref="([^"]+)"\s*\/>/g;
 
 /**
  * The same prose with citation markers resolved to numbered links. Sourcing is
- * mandatory in an About section and nowhere else (§11.5), which is why this is
+ * mandatory in an About section and nowhere else, which is why this is
  * a separate entry point rather than a flag.
  */
 export function renderAbout(body: string, sources: { id: string }[]): string {

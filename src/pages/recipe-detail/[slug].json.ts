@@ -4,7 +4,7 @@ import { gramsPerMl } from '../../lib/math/quantity.ts';
 import type { DetailLine, RecipeDetail } from '../../lib/plan/types.ts';
 
 /**
- * Per-recipe detail, fetched on demand by the Plan and the shopping list. §8.1
+ * Per-recipe detail, fetched on demand by the Plan and the shopping list.
  *
  * Carries the ingredient lines, timing and nutrition the light index
  * deliberately omits — one file per planned recipe rather than one file for the
@@ -31,7 +31,7 @@ export const GET: APIRoute = ({ props }) => {
       id,
       label: resolved.label,
       defaultServings: resolved.defaultServings,
-      // Timing does not scale with portions (§3.5), so this is the dish's time
+      // Timing does not scale with portions, so this is the dish's time
       // however many servings the Plan asks for — and the Plan must never sum
       // or scale it.
       totalMin: resolved.timing.total,
@@ -39,8 +39,8 @@ export const GET: APIRoute = ({ props }) => {
       nutritionEstimated: resolved.nutrition.estimated,
       nutritionEstimateReasons: resolved.nutrition.estimateReasons,
       // Estimated density is a separate reason for an aggregate to be an
-      // estimate (§5.3) from a partially-consumed ingredient (§3.4.1), and
-      // §8.5 flags the whole plan on either.
+      // estimate from a partially-consumed ingredient, and
+      // flags the whole plan on either.
       densityEstimated: resolved.lines.some((l) => l.density?.source === 'estimated'),
       makeAhead: resolved.makeAhead,
       ingredients: resolved.lines.map((l): DetailLine => {

@@ -25,7 +25,7 @@
 
   // Closing the loop between "what can I nearly make" and "what do I need to
   // buy" — at the default version and its own serving count, since neither has
-  // been chosen here. §8.2
+  // been chosen here.
   function add(recipe: CatalogRecord) {
     const version = recipe.versions[0];
     if (!version) return;
@@ -65,7 +65,7 @@
   });
 
   // Staples are assumed and excluded from the checklist and from matching
-  // entirely — nobody wants to tick "water". §8.2
+  // entirely — nobody wants to tick "water".
   const selectable = $derived(
     ingredients
       .filter((i) => !staples.includes(i.id))

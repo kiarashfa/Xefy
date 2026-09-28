@@ -19,10 +19,10 @@ is credited on the attributions page, along with the processing applied to it.
 
 ---
 
-**Live site:** <https://kiarashfa.github.io/Xefy/> · **Sibling encyclopedias:** **Xefy** · [eXir](https://kiarashfa.github.io/eXir/) · [Markey](https://kiarashfa.github.io/Markey/) · [ARMAG](https://kiarashfa.github.io/ARMAG/)
+**Live site:** <https://kiarashfa.github.io/Xefy/>
 
 © 2026 Kiarash Farajzadehahary.
 
 ⚖ Licensed under the [KFA Source-Available License 1.0](LICENSE).
 
-Made with ❤️ and `4·P + 4·C + 9·F`
+Made with ❤️ for those who find joy in every bite.

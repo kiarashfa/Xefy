@@ -3,7 +3,7 @@
  *
  * Every value here resolves through a token. Nothing declares a colour, and no
  * component re-declares a spacing or type value that belongs to the system —
- * §1.1's discipline, which is only worth anything if it holds from the first
+ * discipline, which is only worth anything if it holds from the first
  * component rather than being retrofitted.
  *
  * Colour meanings are reserved and hold everywhere:
@@ -15,7 +15,7 @@
 
 @layer components {
   /* ================================================================
-   * Header — four nav items, search, theme. §19.4
+   * Header — four nav items, search, theme.
    * ================================================================ */
 
   .site-header {
@@ -23,7 +23,7 @@
   }
 
   /*
-   * The header anatomy is shared with the sibling sites: lockup, nav, then the
+   * The header anatomy is shared across all four sites: lockup, nav, then the
    * controls as one group of 36px round buttons. Proportions, not palette, are
    * what the four have in common.
    */
@@ -58,7 +58,7 @@
   /*
    * Desktop and mobile navigation are governed by separate classes with no
    * shared display-relevant base, so a media query override reliably wins
-   * without a specificity contest. §19.6.
+   * without a specificity contest..
    */
   .desktop-nav {
     display: flex;
@@ -98,7 +98,7 @@
   /*
    * The Plan count is client-rendered from local storage, so its space is
    * reserved before hydration. A nav item that grows after load is a
-   * layout-shift regression on every page. §19.4.
+   * layout-shift regression on every page..
    *
    * Wide enough for two digits, because a week of meal-prep runs to ten or more
    * dishes and the first reservation only covered one — measured, not guessed.
@@ -176,7 +176,7 @@
   }
 
   /* ================================================================
-   * Breadcrumb — real links, for internal linking. §19.4
+   * Breadcrumb — real links, for internal linking.
    * ================================================================ */
 
   .crumb {
@@ -195,7 +195,7 @@
   }
 
   /* ================================================================
-   * Hero identity block. §19.5
+   * Hero identity block.
    * ================================================================ */
 
   .hero-band {
@@ -294,7 +294,7 @@
   /*
    * A wrapping grid of equal columns, never a fixed four: a fact with no value
    * is omitted rather than shown empty, and the row stays symmetric when it
-   * wraps. §19.5.
+   * wraps..
    */
   .fact-row {
     display: grid;
@@ -320,7 +320,7 @@
   }
 
   /* Difficulty is an editorial assessment, not a controlled tag, and is
-     marked as a different kind of thing. §19.5. */
+     marked as a different kind of thing.. */
   .fact-value.is-difficulty {
     color: var(--gold);
     position: relative;
@@ -380,7 +380,7 @@
   }
 
   /* ================================================================
-   * Image attribution. §19.8
+   * Image attribution.
    * ================================================================ */
 
   .attribution {
@@ -439,7 +439,7 @@
   }
 
   /* ================================================================
-   * Panel switch and version tabs — designed together. §11.5, §19.10
+   * Panel switch and version tabs — designed together.,
    *
    * These sit next to each other and do different jobs, so they are
    * deliberately different *kinds* of control rather than two tab strips.
@@ -537,7 +537,7 @@
   }
 
   /* ================================================================
-   * Body grid — nothing on this page is sticky. §19.4
+   * Body grid — nothing on this page is sticky.
    * ================================================================ */
 
   .body-grid {
@@ -612,7 +612,7 @@
   }
 
   /* ================================================================
-   * Timing card. §3.5
+   * Timing card.
    * ================================================================ */
 
   .timing {
@@ -655,7 +655,7 @@
   }
 
   /* ================================================================
-   * Ingredient checklist — checkbox, thumbnail, text. §19.7
+   * Ingredient checklist — checkbox, thumbnail, text.
    * ================================================================ */
 
   .ingredients {
@@ -733,6 +733,16 @@
     display: block;
   }
 
+  /* An ingredient with no photograph yet: its initial, in the same round frame. */
+  .ing-thumb--blank {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+
   .ing-note {
     display: block;
     color: var(--muted);
@@ -765,7 +775,7 @@
   /*
    * "Add to plan" is a side door, not the page's purpose — outlined rather
    * than a filled accent button, which would read as commerce on a page that
-   * sells nothing. §19.7.
+   * sells nothing..
    */
   .add-to-plan {
     width: 100%;
@@ -789,7 +799,7 @@
   }
 
   /* ================================================================
-   * Nutrition. Always expanded — no collapse. §19.7
+   * Nutrition. Always expanded — no collapse.
    * ================================================================ */
 
   .nutrition {
@@ -865,7 +875,7 @@
   }
 
   /* An allergen flag is a safety signal, not a browsing tag, and never
-     appears without its disclaimer. §5.4, §19.9. */
+     appears without its disclaimer. */
   .allergen-box {
     margin-top: 14px;
     padding: 11px 13px;
@@ -884,7 +894,7 @@
   }
 
   /* ================================================================
-   * Method. §19.7
+   * Method.
    * ================================================================ */
 
   .steps {
@@ -912,7 +922,7 @@
     border-bottom: none;
   }
 
-  /* Not circular, and the numeral is plain rather than italic. §19.7. */
+  /* Not circular, and the numeral is plain rather than italic.. */
   .step-check {
     width: 24px;
     height: 24px;
@@ -960,7 +970,7 @@
 
   /*
    * Done-state is a class change only. Step text stays in the DOM at all
-   * times so crawlers see the full method. §19.7.
+   * times so crawlers see the full method..
    */
   .step[data-done] .step-body {
     opacity: 0.48;
@@ -1001,7 +1011,7 @@
   }
 
   /* ================================================================
-   * Notes. Two categories, visually distinct from each other. §19.9
+   * Notes. Two categories, visually distinct from each other.
    * ================================================================ */
 
   .callout,
@@ -1039,7 +1049,7 @@
   }
 
   /* ================================================================
-   * Make-ahead — collapsed, but the content stays in the DOM. §19.7
+   * Make-ahead — collapsed, but the content stays in the DOM.
    * ================================================================ */
 
   /*
@@ -1115,7 +1125,7 @@
 
   /* CSS-hidden rather than unrendered: hidden text is still crawled and
      weighted, so there is no reason to lazy-render it and a clear reason
-     not to. §19.7. */
+     not to.. */
   .makeahead-body {
     display: none;
     padding-bottom: 8px;
@@ -1148,7 +1158,7 @@
   }
 
   /* ================================================================
-   * About panel. §11.5
+   * About panel.
    * ================================================================ */
 
   .about {
@@ -1234,8 +1244,8 @@
    * ================================================================ */
 
   /*
-   * The footer: one quiet row of links and the copyright, with the sibling
-   * sites underneath. The same shape on all four sibling sites.
+   * The footer: one quiet row of links and the copyright, with one line of
+   * small print underneath. The same shape on all four sites.
    */
   .site-foot {
     border-top: 1px solid var(--line);
@@ -1282,23 +1292,16 @@
     margin: 0 0 0 auto;
     color: var(--muted);
   }
-  .foot-family {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px 12px;
-    margin-top: 12px;
+  .foot-note {
+    margin: 12px 0 0;
+    max-width: 72rem;
     font-size: 12px;
+    line-height: 1.6;
     color: var(--muted);
-  }
-  .site-foot .foot-family a {
-    color: var(--muted);
-  }
-  .foot-family [aria-current] {
-    color: var(--ink-soft);
   }
 
   /* ================================================================
-   * Responsive. §19.6 — separate selectors, consistent specificity.
+   * Responsive. — separate selectors, consistent specificity.
    * ================================================================ */
 
   @media (max-width: 860px) {
@@ -1340,7 +1343,7 @@
       max-width: none;
     }
 
-    /* A 2×2 grid at mobile width, never 3+1. §19.5. */
+    /* A 2×2 grid at mobile width, never 3+1.. */
     .fact-row {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px 20px;
@@ -1391,7 +1394,7 @@
     margin: 0;
   }
 
-  /* The reverse-search entry point on the homepage — §8.2. Set on a raised
+  /* The reverse-search entry point on the homepage. Set on a raised
      surface rather than ruled off, so it reads as a different question rather
      than as another row of the catalogue's own filters. */
   .teaser {
@@ -1478,6 +1481,8 @@
    * row one line whatever the vocabulary grows to.
    */
   .catalog-bar {
+    /* The positioning context for a phone-width menu, which spans the bar. */
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -1551,14 +1556,21 @@
     opacity: 0.7;
   }
 
+  /*
+   * The panel is a column: an optional search field, the list, and the clear
+   * button. Only the list scrolls, so the field and the clear stay put however
+   * long the vocabulary grows.
+   */
   .facet-menu-panel {
     position: absolute;
     z-index: 20;
     top: calc(100% + 6px);
     left: 0;
-    min-width: 210px;
-    max-height: 320px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 230px;
+    max-width: min(320px, calc(100vw - 2 * var(--gutter)));
+    max-height: min(380px, 70vh);
     padding: 8px;
     background: var(--surface-2);
     border: 1px solid var(--line-strong);
@@ -1566,10 +1578,48 @@
     box-shadow: 0 18px 40px rgb(0 0 0 / 0.28);
   }
 
-  .facet-menu-panel ul {
+  .facet-menu-list {
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    min-height: 0;
+  }
+
+  .facet-menu-search {
+    flex: none;
+    width: 100%;
+    margin-bottom: 6px;
+    padding: 8px 10px;
+    background: var(--surface-1);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+  }
+
+  .facet-menu-label {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* How many dishes the term would leave, given the other filters. */
+  .facet-menu-n {
+    font-size: 11.5px;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+  }
+
+  .facet-menu-panel label.is-empty {
+    opacity: 0.45;
+  }
+
+  .facet-menu-none {
+    padding: 8px;
+    font-size: 12.5px;
+    color: var(--muted);
   }
 
   .facet-menu-panel label {
@@ -1588,6 +1638,7 @@
   }
 
   .facet-menu-clear {
+    flex: none;
     width: 100%;
     margin-top: 6px;
     padding: 8px;
@@ -1603,6 +1654,82 @@
 
   .facet-menu-clear:hover {
     color: var(--accent);
+  }
+
+  /* On a phone a menu spans the whole bar rather than hanging off its button,
+     which near the right edge would run off the screen. */
+  @media (max-width: 640px) {
+    .facet-menu {
+      position: static;
+    }
+
+    .facet-menu-panel {
+      left: 0;
+      right: 0;
+      max-width: none;
+    }
+  }
+
+  /* What is filtering the list right now, each chip removing its own filter. */
+  .catalog-active {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+    padding-top: 14px;
+  }
+
+  .catalog-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  .catalog-chip span {
+    color: var(--muted);
+  }
+
+  .catalog-chip:hover span {
+    color: var(--accent);
+  }
+
+  .catalog-chip.is-exclusion {
+    background: var(--accent-soft);
+  }
+
+  /* Results arrive a page at a time, so the end of the page stays reachable. */
+  .catalog-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0 48px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .catalog-more-button {
+    padding: 11px 26px;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.3s var(--ease);
+  }
+
+  .catalog-more-button:hover {
+    background: var(--surface-2);
   }
 
   .catalog-sort select {
@@ -2135,7 +2262,7 @@
 }
 
 /*
- * The Plan, the shopping list, and the cook-back timeline. §8.4, §8.5, §19.7
+ * The Plan, the shopping list, and the cook-back timeline.,,
  *
  * Built from the vocabulary the recipe page already has — the side card for
  * grouped controls, the checklist row for list items, the outlined button for a
@@ -2144,7 +2271,7 @@
  */
 @layer components {
   /* ================================================================
-   * Cook-back timeline, inside the Timing card. §19.7
+   * Cook-back timeline, inside the Timing card.
    * ================================================================ */
 
   .timeline-controls {
@@ -2207,7 +2334,7 @@
   }
 
   /* Sits above the Method, and is generated rather than built — no computed
-     clock time reaches the static HTML or the structured data. §19.7 */
+     clock time reaches the static HTML or the structured data. */
   .timeline-summary {
     margin: 0 0 22px;
     padding: 12px 16px;
@@ -2221,7 +2348,7 @@
   }
 
   /* Prepended to the meta line each step already has, rather than taking a
-     second slot for the same fact. §19.5 */
+     second slot for the same fact. */
   .step-clock {
     font-family: var(--font-display);
     font-weight: 500;
@@ -2305,7 +2432,7 @@
     fill: currentColor;
   }
 
-  /* Adding a dish to a day without leaving the plan. §8.5 */
+  /* Adding a dish to a day without leaving the plan. */
   .day-adder-open {
     display: inline-flex;
     align-items: center;
@@ -2530,7 +2657,7 @@
     flex-basis: 100%;
   }
 
-  /* Moved down and struck through — still visible, and still reversible. §8.4 */
+  /* Moved down and struck through — still visible, and still reversible. */
   .list-lines.is-had .ing-text {
     text-decoration: line-through;
     opacity: 0.45;
@@ -2546,7 +2673,7 @@
   }
 
   /* ================================================================
-   * The week. Days are relative slots, not dates. §8.5
+   * The week. Days are relative slots, not dates.
    * ================================================================ */
 
   .plan-day {
@@ -2642,7 +2769,7 @@
   }
 
   /* Straight from the structured make-ahead data: the storage answer is what
-     separates "cook eight portions" from eating them before they spoil. §8.5 */
+     separates "cook eight portions" from eating them before they spoil. */
   .plan-row-keeps {
     margin: 8px 0 0;
     font-size: 12.5px;
@@ -2696,7 +2823,7 @@
   }
 
   /* ================================================================
-   * Reverse search results gain the same side door. §8.2
+   * Reverse search results gain the same side door.
    * ================================================================ */
 
   .result-row {
@@ -2821,7 +2948,7 @@
 }
 
 /*
- * The 404, the same shape as the sibling sites': the status, a plain
+ * The 404, the same shape as the other three sites': the status, a plain
  * headline, one line in the site's voice, then the ways out.
  */
 @layer components {
@@ -2897,5 +3024,53 @@
     font-size: 13.5px;
     line-height: 1.65;
     color: var(--muted);
+  }
+}
+
+/*
+ * The homepage: a fixed number of sections whatever the size of the catalogue.
+ * Each section names itself and says where the whole of it lives.
+ */
+@layer components {
+  .home-section {
+    padding-top: 36px;
+  }
+
+  .home-section-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 20px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .home-section-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .home-section-link {
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .home-section-link:hover {
+    color: var(--accent);
+  }
+
+  .home-cta {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 56px;
+  }
+
+  .home-cta .catalog-more-button {
+    text-decoration: none;
   }
 }

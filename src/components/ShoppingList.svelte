@@ -1,6 +1,6 @@
 <script lang="ts">
   /**
-   * The shopping list — the Plan, aggregated. §8.4
+   * The shopping list — the Plan, aggregated.
    *
    * Nothing here is stored: every amount is summed from the plan's references
    * against the current catalogue each time the page opens, so a list made a

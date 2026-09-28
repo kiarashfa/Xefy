@@ -14,7 +14,7 @@ export const unitSystem = atom<UnitSystem>('metric');
 export const servings = atom<number>(0);
 
 /* Namespacing, versioning, the schema check and the guarded read all live in
- * one place now — the same utility the Plan uses. §8.1 */
+ * one place now — the same utility the Plan uses. */
 const unitsStore = versionedStore<{ system: UnitSystem }>('units', 1, 1);
 const servingsStore = versionedStore<{ byRecipe: Record<string, number> }>('servings', 1, 1);
 

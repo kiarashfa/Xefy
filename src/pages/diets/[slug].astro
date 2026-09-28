@@ -7,10 +7,10 @@ import { catalogRecord, getSite } from '../../lib/content/site.ts';
 import { DIETS } from '../../schemas/taxonomy.ts';
 
 /**
- * The one taxonomy listing whose terms nobody typed — §5.2 computes every diet
+ * The one taxonomy listing whose terms nobody typed — computes every diet
  * label from the ingredient records, so this page is a view of an inference
  * rather than of an editorial tag. Otherwise it behaves like the others: a
- * computed filtered view that owns no recipe and no URL. §9.
+ * computed filtered view that owns no recipe and no URL..
  */
 export async function getStaticPaths() {
   const site = await getSite();

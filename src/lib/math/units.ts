@@ -108,7 +108,7 @@ export function formatDecimal(value: number): string {
 }
 
 /* ------------------------------------------------------------------ *
- * Temperature — §3.7
+ * Temperature —
  * ------------------------------------------------------------------ */
 
 /**
@@ -127,7 +127,7 @@ export function formatTemperature(celsius: number, system: UnitSystem): string {
 }
 
 /* ------------------------------------------------------------------ *
- * Length — §3.7
+ * Length —
  * ------------------------------------------------------------------ */
 
 export function formatLength(cm: number, system: UnitSystem): string {
@@ -139,7 +139,7 @@ export function formatLength(cm: number, system: UnitSystem): string {
 }
 
 /* ------------------------------------------------------------------ *
- * Duration — §3.5
+ * Duration —
  * ------------------------------------------------------------------ */
 
 /**
@@ -158,7 +158,7 @@ export function formatDuration(minutes: number): string {
 }
 
 /* ------------------------------------------------------------------ *
- * Clock times — §3.8
+ * Clock times —
  * ------------------------------------------------------------------ */
 
 /** 24-hour local clock. Exact, never rounded to a tidier minute. */

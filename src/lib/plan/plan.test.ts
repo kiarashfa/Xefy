@@ -254,7 +254,7 @@ test('amounts render in the reader’s unit system, and mark an estimated densit
 });
 
 /**
- * §8.4 rule 1 makes one ingredient in one Form one line, and a recipe using
+ * rule 1 makes one ingredient in one Form one line, and a recipe using
  * both yolks and whole eggs therefore produced two — correct, and useless in a
  * shop, where there are only eggs.
  */
@@ -412,7 +412,7 @@ test('a fragment round-trips through the catalogue', () => {
   ]);
 });
 
-test('§8.4’s two-field form is still valid input', () => {
+test('the older two-field form is still valid input', () => {
   assert.deepEqual(decodePlanFragment('#p=test-stew:6', catalog), [
     { recipe: 'test-stew', version: 'index', servings: 6, day: null, listOnly: false },
   ]);

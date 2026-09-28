@@ -37,7 +37,7 @@ export async function getStaticPaths() {
     ]),
   );
   const ingredients = new Map(content.ingredients.map((i) => [i.slug, i.data]));
-  // §4.2's optional cross-link. Only Components that have a page of their own
+  // optional cross-link. Only Components that have a page of their own
   // become links; the procedure itself is already here in full either way.
   const standalone = new Set(
     content.components.filter((c) => c.data.standalonePage && !c.data.draft).map((c) => c.slug),
@@ -128,7 +128,7 @@ const description = identity.description ?? identity.subtitle;
   <SiteHeader />
 
   {/*
-    Search-only spellings are indexed but never displayed (§2.2). Pagefind
+    Search-only spellings are indexed but never displayed. Pagefind
     reads rendered HTML rather than frontmatter, so they have to reach the page
     in some form — this is the non-displayed one.
   */}
@@ -207,7 +207,7 @@ const description = identity.description ?? identity.subtitle;
         identity.image && (
           <figure class="hero-image">
             {/* Almost always the page's largest contentful paint, so it is
-                fetched ahead of everything else and never lazily. §14.6 */}
+                fetched ahead of everything else and never lazily. */}
             <img
               src={`${base}${identity.image.src}`}
               alt={identity.image.alt}
@@ -314,7 +314,7 @@ const description = identity.description ?? identity.subtitle;
                       The card already answers "how long", so "when do I start"
                       belongs in the same slot rather than a new one. Off by
                       default; every clock time it produces is created in the
-                      browser and never reaches this HTML or the JSON-LD. §19.7
+                      browser and never reaches this HTML or the JSON-LD.
                     */}
                     <button class="timing-link" aria-expanded="false">Plan my timing →</button>
                     <div class="timeline-controls" hidden>
@@ -376,12 +376,24 @@ const description = identity.description ?? identity.subtitle;
                               <a
                                 class="ing-thumb"
                                 href={`${base}ingredients/${line.ingredient.id}/`}
-                                aria-label={`${line.ingredient.name} — ingredient page`}
+                                aria-label={`${line.ingredient.name}, ingredient page`}
                               >
                                 <img src={`${base}${line.ingredient.image}`} alt="" width="34" height="34" />
                               </a>
                             ) : (
-                              <span class="ing-thumb" />
+                              /*
+                               * No photograph yet, and still a way to the
+                               * ingredient page: the link used to hang off the
+                               * picture alone, which left every imageless
+                               * ingredient unreachable from the recipes naming it.
+                               */
+                              <a
+                                class="ing-thumb ing-thumb--blank"
+                                href={`${base}ingredients/${line.ingredient.id}/`}
+                                aria-label={`${line.ingredient.name}, ingredient page`}
+                              >
+                                <span aria-hidden="true">{line.ingredient.name.slice(0, 1)}</span>
+                              </a>
                             )}
                             <span class="ing-text">
                               <Fragment
@@ -420,7 +432,7 @@ const description = identity.description ?? identity.subtitle;
                     {/*
                       A side door, not the page's purpose — outlined rather than
                       a filled accent button, which would read as commerce on a
-                      page that sells nothing. §19.7
+                      page that sells nothing.
 
                       Two doors, because they are two intentions: cooking this
                       as part of the week, and simply wanting what it takes.

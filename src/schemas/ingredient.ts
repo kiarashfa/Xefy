@@ -45,7 +45,7 @@ export const ingredientForm = sourceCitation.extend({
    * Both are shown because the count is necessarily approximate — eggs vary —
    * and the exact figure sitting beside it is what keeps the display honest.
    * The dotted-underline estimate marker is deliberately not used here: it is
-   * reserved for a figure whose true value is *not* on the page (§5.3), and
+   * reserved for a figure whose true value is *not* on the page, and
    * here it is.
    */
   countUnit: z
@@ -164,7 +164,7 @@ export const ingredientSchema = z
     forms: z.array(ingredientForm).min(1),
 
     /**
-     * Assumed on hand rather than shopped for. §8.1
+     * Assumed on hand rather than shopped for.
      *
      * This is the single source of the staples list — the record is where every
      * other property of the food already lives, and a central list would have to
@@ -183,7 +183,7 @@ export const ingredientSchema = z
      *
      * Fresh and perishable fails the first test almost always — an onion is in
      * most kitchens most weeks and is still shopped for. Note that reverse
-     * search drops staples from matching entirely (§8.2), so an over-generous
+     * search drops staples from matching entirely, so an over-generous
      * list quietly inflates every match percentage on the site; the cost of a
      * wrong `true` is higher than the cost of a wrong `false`.
      */

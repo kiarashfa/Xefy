@@ -83,7 +83,7 @@
   /*
    * On paper the count stays and the controls go — the sheet is printed *at* a
    * serving count, and that number is the one thing the rest of it depends on.
-   * Scoped here because a scoped style beats a global one. §19.10
+   * Scoped here because a scoped style beats a global one.
    */
   @media print {
     .stepper {

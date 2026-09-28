@@ -1,7 +1,7 @@
 import type { CatalogRecord, CatalogVersion, Plan, PlanItem } from './types.ts';
 
 /**
- * Reconciling a saved plan against the catalogue it was saved from. §8.3
+ * Reconciling a saved plan against the catalogue it was saved from.
  *
  * The Plan stores references, so every figure it shows is recomputed on load —
  * which also means a reference can have gone away since. A recipe that has been
@@ -74,6 +74,6 @@ export function describeDropped(dropped: readonly DroppedItem[]): string | null 
   return `${count} removed from this plan: ${parts.join(', and ')}.`;
 }
 
-/** The total number of portions a plan produces — the divisor for §8.5's average. */
+/** The total number of portions a plan produces — the divisor for average. */
 export const totalPortions = (items: readonly ResolvedPlanItem[]): number =>
   items.reduce((sum, i) => sum + i.item.servings, 0);

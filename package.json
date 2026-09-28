@@ -11,7 +11,7 @@
     "test": "node --test \"src/**/*.test.ts\"",
     "build": "npm run test && npm run check:content && astro build && npm run postbuild:index && npm run check:site",
     "postbuild:index": "pagefind --site dist",
-    "check:site": "node scripts/integrity/site.ts",
+    "check:site": "node scripts/integrity/site.ts && node scripts/integrity/public-text.mjs Xefy",
     "preview": "astro preview",
     "check": "astro check",
     "check:content": "node scripts/integrity/run.ts",

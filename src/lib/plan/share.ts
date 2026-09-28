@@ -4,7 +4,7 @@ import type { ResolvedPlanItem } from './resolve.ts';
 import type { CatalogRecord, PlanItem } from './types.ts';
 
 /**
- * Sharing a list, and sharing a plan. §8.4
+ * Sharing a list, and sharing a plan.
  *
  * Two different things travel: the *text* goes to a person in a message, and
  * the *URL* carries the plan so the recipient's page computes the list itself —
@@ -63,7 +63,7 @@ export function shareText(
  *
  * Same discipline as the list: one line per thing, no markdown, nothing that
  * depends on a monospaced font to make sense. Days are relative slots rather
- * than dates (§8.5), so they are named and not dated — a plan sent on Thursday
+ * than dates, so they are named and not dated — a plan sent on Thursday
  * still means "Monday", whenever the reader cooks it.
  *
  * Anything without a day is grouped at the end rather than dropped. A dish
@@ -110,7 +110,7 @@ export function planText(
  * the server and so never appear in logs or referrers, and because it keeps the
  * page a single URL as far as crawlers are concerned.
  *
- * §8.4 gives the shape as `slug:servings`. The version is appended as a third
+ * gives the shape as `slug:servings`. The version is appended as a third
  * field only where the item is not on the recipe's default version: without it
  * a shared Neapolitan pizza arrives as the home-oven one, and the recipient's
  * list quietly disagrees with the sender's. A two-field entry still parses, so

@@ -904,7 +904,7 @@ async function offReview(barcode: string, slug: string): Promise<void> {
  * Adopting from Open Food Facts.
  *
  * The `off` command could search and nothing could take what it found, which
- * made §16's secondary source advice a dead end in practice. It stays a last
+ * made secondary source advice a dead end in practice. It stays a last
  * resort — these are packaging photographs of one brand's tin, and an ingredient
  * page usually wants the food — but "last resort" and "impossible" are different
  * things, and the ingredients Commons covers badly are exactly the ones that

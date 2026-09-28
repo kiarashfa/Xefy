@@ -3,7 +3,7 @@ import type { APIRoute } from 'astro';
 /**
  * The user-state pages are noindexed by meta tag rather than disallowed here.
  * A blocked page cannot be fetched, so the tag is never seen — which is the
- * standard way to end up with a thin page indexed anyway. §9.
+ * standard way to end up with a thin page indexed anyway..
  */
 export const GET: APIRoute = ({ site }) => {
   // The sitemap sits under the base path, not at the origin root.

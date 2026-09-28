@@ -5,7 +5,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import PlanView from '../components/PlanView.svelte';
 
 /**
- * The week view of the Plan. §8.5
+ * The week view of the Plan.
  *
  * `client:only` rather than a hydrated island: there is nothing true to render
  * on the server here. Every figure on this page comes from one browser's
@@ -15,7 +15,7 @@ import PlanView from '../components/PlanView.svelte';
  *
  * noindex: a user-state page has no crawlable content. It is deliberately not
  * disallowed in robots.txt — a blocked page is never fetched, so the tag would
- * never be seen. §9.
+ * never be seen..
  */
 const base = import.meta.env.BASE_URL;
 ---

@@ -2,7 +2,7 @@ import { atom } from 'nanostores';
 import type { CatalogRecord, RecipeDetail } from './types.ts';
 
 /**
- * Fetching the two build-time exports. §8.1
+ * Fetching the two build-time exports.
  *
  * The split is the point: the light index arrives once, and a detail file is
  * pulled only for a dish someone has actually planned. At ten recipes that is a

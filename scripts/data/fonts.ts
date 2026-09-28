@@ -2,7 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 /**
- * Fetches the site's two typefaces for self-hosting. §19.10, §14.6
+ * Fetches the site's two typefaces for self-hosting.,
  *
  *   node scripts/data/fonts.ts
  *

@@ -1,5 +1,5 @@
 {
-  "note": "Reference densities for interpolating a volume conversion where a Form has no direct density source of its own (§5.3). A figure taken from here is tagged densitySource: \"estimated\" and carries the tilde and dotted underline wherever it appears. Density never touches a stored amount — it is a display convenience over weight, so an estimate here cannot corrupt a figure the site presents as authoritative.",
+  "note": "Reference densities for interpolating a volume conversion where a Form has no direct density source of its own. A figure taken from here is tagged densitySource: \"estimated\" and carries the tilde and dotted underline wherever it appears. Density never touches a stored amount — it is a display convenience over weight, so an estimate here cannot corrupt a figure the site presents as authoritative.",
   "howToUse": "Prefer a measured figure from the ingredient's own USDA record: `node scripts/data/usda.ts fetch <fdcId>` reports the household portions that record publishes, and those are measured, not estimated. Reach for a class only when the record has none.",
   "sources": {
     "USDA FDC": "Household portion weights published on the food's own record. Public domain.",

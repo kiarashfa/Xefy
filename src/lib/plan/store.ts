@@ -8,7 +8,7 @@ import { EMPTY_PLAN, isDay, type Day, type Plan, type PlanItem } from './types.t
  * A shopping list and a weekly meal plan are two views of one list of recipes
  * the reader intends to cook. Building them over one store is the whole design:
  * two parallel stores would disagree the moment someone changed a serving count
- * in one of them. §8.3
+ * in one of them.
  *
  * Everything else in `src/lib/plan/` is a pure function over this value.
  */
@@ -20,7 +20,7 @@ const store = versionedStore<Plan>('plan', 1, 1);
 
 export const plan = atom<Plan>(EMPTY_PLAN);
 
-/** The one-line notice §8.1 requires when the Plan starts empty for a reason. */
+/** The one-line notice requires when the Plan starts empty for a reason. */
 export const planNotice = atom<string | null>(null);
 
 /** True once `loadPlan` has run, so a view can tell "empty" from "not yet read". */
@@ -84,7 +84,7 @@ export function sanitisePlan(raw: Partial<Plan> | null): Plan {
  * Idempotent on purpose: the header count and the page's own view both need the
  * Plan, and re-reading would lose the notice — a discarded value is cleared as
  * it is read, so a second read would find an ordinary empty store and report
- * nothing, which is exactly the silence §8.1 forbids.
+ * nothing, which is exactly the silence forbids.
  */
 export function loadPlan(): void {
   if (planLoaded.get()) return;
@@ -167,7 +167,7 @@ export function toggleHave(ingredientRef: string): void {
   }));
 }
 
-/** Moves one pantry staple into "To buy", or back out of it. §8.4 */
+/** Moves one pantry staple into "To buy", or back out of it. */
 export function toggleNeedStaple(ingredientRef: string): void {
   update((current) => ({
     ...current,
@@ -184,7 +184,7 @@ export function clearPlan(): void {
 /**
  * "Copy to my plan", from a shared link. It adds rather than replaces: someone
  * opening a friend's list has their own plan, and losing it to a link would be
- * unrecoverable. §8.4
+ * unrecoverable.
  */
 export function copyIntoPlan(items: readonly Omit<PlanItem, 'uid'>[]): number {
   const added = items.map((i) => ({ ...i, uid: uid(), servings: clampServings(i.servings) }));

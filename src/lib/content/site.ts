@@ -47,7 +47,7 @@ export interface ImageCredit {
 }
 
 /**
- * A Component that also stands on its own — §4.2. `usedBy` is the reason the
+ * A Component that also stands on its own. `usedBy` is the reason the
  * page is worth having: flattened into a recipe the Component disappears, so
  * this is the only place a reader can see which dishes share one procedure.
  */
@@ -72,7 +72,7 @@ export interface Site {
   ingredients: Ingredient[];
   credits: ImageCredit[];
   /**
-   * The one pantry-staples list every client tool reads. §8.1
+   * The one pantry-staples list every client tool reads.
    *
    * Derived from the ingredient records rather than hand-maintained in a file
    * of its own: the flag is a property of the food and belongs beside the
@@ -135,7 +135,7 @@ async function build(): Promise<Site> {
   /*
    * Only Components that ask for a page get one. A Component exists to keep
    * authoring DRY, and most of them are a fragment nobody would search for —
-   * "combine the dry ingredients" deserves reuse, not a URL. §4.2
+   * "combine the dry ingredients" deserves reuse, not a URL.
    */
   const usesComponent = (recipe: SiteRecipe, slug: string) =>
     recipe.versions.some((v) => v.resolved.flat.components.some((c) => c.slug === slug));
@@ -162,7 +162,7 @@ async function build(): Promise<Site> {
   /*
    * Backlinks are sorted by how much of the ingredient each recipe uses, not
    * alphabetically: someone arriving with 400 g of leftover ricotta wants the
-   * recipe that uses it up, and the sort key already exists in the data. §5.5.
+   * recipe that uses it up, and the sort key already exists in the data..
    */
   const usage = new Map<string, { recipe: SiteRecipe; grams: number }[]>();
   for (const recipe of recipes) {
@@ -193,7 +193,7 @@ export function getSite(): Promise<Site> {
   return cached;
 }
 
-/** The lightweight record the catalogue, reverse search and the Plan read. §8.1 */
+/** The lightweight record the catalogue, reverse search and the Plan read. */
 export function catalogRecord(recipe: SiteRecipe): CatalogRecord {
   const r = recipe.head;
   return {
@@ -214,7 +214,7 @@ export function catalogRecord(recipe: SiteRecipe): CatalogRecord {
     ingredients: [...new Set(r.lines.map((l) => l.ingredient.id))],
     image: recipe.identity.image?.src ?? null,
     // The ids, not a count: the Plan stores a version reference and has to be
-    // able to tell whether the one it saved still exists. §8.3
+    // able to tell whether the one it saved still exists.
     versions: recipe.versions.map((v) => ({
       id: v.id,
       label: v.resolved.label,

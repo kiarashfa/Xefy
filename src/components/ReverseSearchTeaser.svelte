@@ -1,6 +1,6 @@
 <script lang="ts">
   /**
-   * The homepage entry point into "what can I make" — §8.2.
+   * The homepage entry point into "what can I make".
    *
    * The catalogue answers "what is there"; this answers "what can I cook
    * tonight", which is a different question with a different control. Rather

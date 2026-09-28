@@ -10,7 +10,7 @@ interface Props {
    * Keeps the page out of the site's own search index. Defaults to `noindex`,
    * because a page with nothing crawlable on it has nothing worth finding
    * either — but it is a separate switch, since the two are separate
-   * requirements (§9) and meeting one has already been mistaken for meeting
+   * requirements and meeting one has already been mistaken for meeting
    * both once.
    */
   pagefindIgnore?: boolean;
@@ -75,11 +75,11 @@ const themeColorSync = `(()=>{const m=document.querySelector('meta[name="theme-c
 
     {/*
       Both typefaces are self-hosted, declared in `src/styles/fonts.css` and
-      bundled with the rest of the CSS. §19.10 left this open; the deciding
+      bundled with the rest of the CSS. left this open; the deciding
       fact is that browsers no longer share a font cache between sites, so the
       CDN's one advantage is gone and what remains is a render-blocking
       stylesheet on a third-party origin, on every page of a site that makes a
-      point of asking nothing of anyone else. §14.6
+      point of asking nothing of anyone else.
     */}
 
     <slot name="head" />
@@ -119,7 +119,7 @@ const themeColorSync = `(()=>{const m=document.querySelector('meta[name="theme-c
   </head>
   <body data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
     <slot />
-    {/* Shown on paper only, so a printed sheet can be found again. §19.10 */}
+    {/* Shown on paper only, so a printed sheet can be found again. */}
     <p class="print-source wrap">{canonical.href}</p>
   </body>
 </html>

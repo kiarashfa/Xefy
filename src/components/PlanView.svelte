@@ -1,6 +1,6 @@
 <script lang="ts">
   /**
-   * The Plan as a week. §8.5
+   * The Plan as a week.
    *
    * The same list the shopping list reads, shown by day, with the nutrition
    * arithmetic this site is unusually well placed to do: what a week of cooking
@@ -96,7 +96,7 @@
   const versionDetail = (entry: ResolvedPlanItem) =>
     $details.get(entry.recipe.slug)?.versions.find((v) => v.id === entry.item.version);
 
-  /* Sharing the week — a message to one person, not a post. §8.4 */
+  /* Sharing the week — a message to one person, not a post. */
   function planUrl(): string {
     return `${location.origin}${location.pathname}${encodePlanFragment(resolution.items)}`;
   }
@@ -266,7 +266,7 @@
               <b>{entry.item.servings}</b> portions
             </span>
             {#if detail}
-              <!-- The dish's own per-serving figures, which already exist. §8.5 -->
+              <!-- The dish's own per-serving figures, which already exist. -->
               <span>
                 <b>{formatNutrient(detail.perServing.kcal ?? 0, 'kcal')}</b> kcal each
               </span>
@@ -279,7 +279,7 @@
                 {/if}
               {/each}
             {/if}
-            <!-- Timing does not scale with portions (§3.5), so this is the dish's
+            <!-- Timing does not scale with portions, so this is the dish's
                  own time and is never summed across the plan. -->
             <span><b>{formatDuration(entry.recipe.totalMin)}</b> to cook</span>
           </div>
@@ -300,7 +300,7 @@
             <label>
               <span class="fact-label">Day</span>
               <!-- A select rather than drag-and-drop: operable by keyboard and
-                   screen reader with no extra work. §8.5 -->
+                   screen reader with no extra work. -->
               <select
                 value={entry.item.listOnly ? 'list' : (entry.item.day ?? '')}
                 onchange={(e) => {

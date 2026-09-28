@@ -7,7 +7,7 @@ import { readNotice, versionedStore } from './storage.ts';
  * Storage is the one dependency these features have that can simply not be
  * there — a private window, disabled cookies, a full quota. Every one of those
  * has to degrade to working-but-not-remembering rather than breaking the page,
- * so each is exercised here rather than assumed. §8.1
+ * so each is exercised here rather than assumed.
  */
 
 type Store = typeof globalThis.localStorage;

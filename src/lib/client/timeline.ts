@@ -4,7 +4,7 @@ import type { TimedStep } from '../math/timing.ts';
 import { versionedStore } from '../storage.ts';
 
 /**
- * The cook-back timeline, on the recipe page. §3.8, §19.7
+ * The cook-back timeline, on the recipe page.,
  *
  * Off by default, opened from the Timing card — the card already owns "how
  * long", so "when" belongs in the same slot rather than a new one. When it is
@@ -17,7 +17,7 @@ import { versionedStore } from '../storage.ts';
  * DOM-persistence rule that keeps step text in the document does not apply.
  *
  * The timeline does not move with the serving stepper, because timing does not
- * scale (§3.3). It is recomputed on a version change, which does change the
+ * scale. It is recomputed on a version change, which does change the
  * steps.
  */
 
@@ -36,7 +36,7 @@ interface Panel {
 
 let open = false;
 
-/** Only the target time is ephemeral; it is meaningless tomorrow. §19.7 */
+/** Only the target time is ephemeral; it is meaningless tomorrow. */
 function anchorAt(panel: Panel, mode: AnchorMode): Date {
   if (mode === 'start-now') return new Date();
   const [hours, minutes] = panel.time.value.split(':').map(Number);
@@ -74,7 +74,7 @@ function render(panel: Panel): void {
   const timeline = computeTimeline(panel.steps, { mode, at });
 
   // Neither end of the span is ever shown as a bare clock time that silently
-  // belongs to another day — a long ferment puts one of them there. §3.8
+  // belongs to another day — a long ferment puts one of them there.
   const startOffset = formatDayOffset(timeline.startDayOffset);
   const endOffset = formatDayOffset(dayOffset(at, timeline.end));
 
@@ -96,7 +96,7 @@ function render(panel: Panel): void {
     clock.setAttribute('data-generated-clock', '');
     const day = formatDayOffset(entry.dayOffset);
     // A passive span reads as when the wait ends: the useful fact about a
-    // two-hour proof is when to come back, not when to walk away. §3.8
+    // two-hour proof is when to come back, not when to walk away.
     // No separator of its own: the meta line already opens with the dot that
     // separates its parts, and a second one stutters.
     clock.textContent = `${formatClock(entry.displayAt)}${day ? ` ${day}` : ''}${entry.isPassive ? ' ready' : ''}`;
@@ -143,7 +143,7 @@ export function initTimeline(): void {
   for (const panel of panels) {
     panel.toggle.addEventListener('click', () => {
       open = !open;
-      // The on/off state persists; the target time does not. §19.7
+      // The on/off state persists; the target time does not.
       store.write({ open });
       renderAll();
     });

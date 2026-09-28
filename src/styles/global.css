@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import './fonts.css';
 @import './components.css';
-/* Last, and unlayered, so its overrides beat the component layer. §19.10 */
+/* Last, and unlayered, so its overrides beat the component layer. */
 @import './print.css';
 
 /*

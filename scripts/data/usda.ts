@@ -41,7 +41,7 @@ export interface DensityCandidate {
 }
 
 export interface CachedRecord {
-  /** Cited on every Form that uses this record (§16). */
+  /** Cited on every Form that uses this record. */
   sourceDataset: string;
   sourceId: string;
   sourceUrl: string;
@@ -174,7 +174,7 @@ function mapNutrition(food: RawFood): Pick<CachedRecord, 'nutritionPer100g' | 'u
 /**
  * Reads real densities out of the household measures USDA publishes.
  *
- * This matters more than it looks: §5.3 only permits an estimated density where
+ * This matters more than it looks: only permits an estimated density where
  * no direct source exists, and a `gramWeight` for "1 cup, chopped" is exactly
  * such a source. Every candidate found here is one fewer estimate on the page.
  */
@@ -306,7 +306,7 @@ async function show(fdcId: string, refresh: boolean): Promise<void> {
     }
     console.log('  Pick the measure that matches how the recipe uses it; chopped and whole differ.');
   } else {
-    console.log('\nNo household portions in this record — density will have to come from a class (§5.3).');
+    console.log('\nNo household portions in this record — density will have to come from a class.');
   }
 
   if (record.skipped.length > 0) {

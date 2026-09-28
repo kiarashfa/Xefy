@@ -144,6 +144,20 @@ export const componentStep = z.object({
    * merged result.
    */
   multiplier: z.number().positive().default(1),
+  /**
+   * Replaces the ingredient on named lines of the Component, for this use of it
+   * only, keyed by the Component's own line id: `{ spaghetti: { ingredientRef:
+   * macaroni, form: dried } }`.
+   *
+   * A Component is a technique, and a technique is usually applied to a
+   * variable ingredient — a boil, a dough, a brine, a batter. Without this, one
+   * that names its ingredient could only ever serve dishes using exactly that
+   * ingredient, and the planned Components would multiply into one per pasta
+   * shape. The swap reaches this Component's own lines only, not those of a
+   * Component nested inside it, and a key naming a line the Component does not
+   * have fails the build rather than doing nothing.
+   */
+  swap: z.record(slug, z.object({ ingredientRef: slug, form: slug })).optional(),
 });
 
 export const stepEntry = z.union([componentStep, inlineStep]);

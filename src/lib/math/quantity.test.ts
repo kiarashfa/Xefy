@@ -27,7 +27,7 @@ test('an estimated density is reported as estimated, in US only', () => {
 });
 
 /**
- * §2.1.1. Beside a count the bracketed figure is the exact weight that makes
+ * Beside a count the bracketed figure is the exact weight that makes
  * the approximate count honest — not a second way to measure the ingredient.
  * Rendering it as a volume would leave the reader two estimates and no fact,
  * which is how "2 garlic cloves (1 ⅛ tbsp)" reached the page.

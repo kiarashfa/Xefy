@@ -119,7 +119,7 @@ export function computeTiming(steps: TimedStep[]): TimingTotals {
 }
 
 /**
- * The same figure the card's Total shows, derived the same way. §3.6 asserts
+ * The same figure the card's Total shows, derived the same way. asserts
  * the two agree; they are one calculation, so a divergence would mean the
  * parallel handling had drifted apart in two places.
  */

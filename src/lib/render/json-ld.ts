@@ -2,7 +2,7 @@ import type { SiteRecipe } from '../content/site.ts';
 import { renderProse } from './prose.ts';
 
 /**
- * Schema.org Recipe structured data. §14.3
+ * Schema.org Recipe structured data.
  *
  * Generated from the **default version** and from the same resolved data the
  * page renders, at the authored serving count in metric. The instruction text

@@ -1,8 +1,8 @@
 /**
- * The ingredient merge rule. §4.5 rule 1, §8.4 rule 1
+ * The ingredient merge rule. rule 1, rule 1
  *
  * Two callers, one rule. Transclusion merges a Component's flour into the
- * parent's; the shopping list merges one recipe's flour into another's. §8.4
+ * parent's; the shopping list merges one recipe's flour into another's.
  * states outright that these are the same operation over different inputs, and
  * two implementations of it would eventually disagree about which Forms count
  * as one purchase — on one page and not the other, which is the worst way for

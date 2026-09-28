@@ -57,7 +57,7 @@
    * On paper the control becomes its own answer: the inactive option goes and
    * the active one reads as plain text. It lives here rather than in
    * print.css because a scoped component style beats a global one, so the
-   * global sheet cannot undo what this block sets. §19.10
+   * global sheet cannot undo what this block sets.
    */
   @media print {
     .unit-toggle {

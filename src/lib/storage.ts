@@ -1,5 +1,5 @@
 /**
- * The one way anything on this site remembers something. §8.1
+ * The one way anything on this site remembers something.
  *
  * Three rules, and they are the same three for every feature: keys are
  * namespaced and versioned (`xefy.<feature>.v<n>`), every stored object carries
@@ -107,7 +107,7 @@ export function versionedStore<T extends object>(
 }
 
 /**
- * The one-line notice §8.1 requires when a feature starts empty for a reason
+ * The one-line notice requires when a feature starts empty for a reason
  * other than "nothing was saved yet". Returns null when there is nothing worth
  * telling the reader.
  */

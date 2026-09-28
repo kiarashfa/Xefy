@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { catalogRecord, getSite } from '../lib/content/site.ts';
 
 /**
- * The light catalogue export. §8.1
+ * The light catalogue export.
  *
  * One record per recipe, holding what the homepage and reverse search need and
  * nothing else. Amounts and full nutrition live in the per-recipe detail files,

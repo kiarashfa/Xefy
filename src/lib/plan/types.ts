@@ -3,7 +3,7 @@ import type { NutritionTotals } from '../math/nutrition.ts';
 /**
  * The shapes the Plan works in.
  *
- * `CatalogRecord` and `RecipeDetail` are the two build-time exports (§8.1)
+ * `CatalogRecord` and `RecipeDetail` are the two build-time exports
  * described from the reading end. Declaring them here rather than in the routes
  * that emit them is what makes the exporter and its only consumer typecheck
  * against one definition — the JSON is a wire format between two halves of the
@@ -12,7 +12,7 @@ import type { NutritionTotals } from '../math/nutrition.ts';
 
 export type Day = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun';
 
-/** Relative weekday slots, not dates. No calendar, no rollover. §8.5 */
+/** Relative weekday slots, not dates. No calendar, no rollover. */
 export const DAYS: readonly Day[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 export const DAY_LABELS: Record<Day, string> = {
@@ -30,14 +30,14 @@ export const isDay = (value: unknown): value is Day => DAYS.includes(value as Da
 /**
  * One intention to cook something. References and one scalar — never a
  * snapshot of a computed value, so a month-old plan silently benefits from
- * every correction made since. §8.3
+ * every correction made since.
  */
 export interface PlanItem {
   /** Random. The same recipe may appear twice and the two stay independent. */
   uid: string;
   /** Recipe slug. */
   recipe: string;
-  /** RecipeVersion id. §4.4 */
+  /** RecipeVersion id. */
   version: string;
   /** Absolute, so a change to `defaultServings` cannot rewrite a saved plan. */
   servings: number;
@@ -45,7 +45,7 @@ export interface PlanItem {
   /**
    * Wanted for the shopping, not for the week.
    *
-   * §8.3 makes the Plan the single primitive and the shopping list a view of
+   * makes the Plan the single primitive and the shopping list a view of
    * it, which is right and which leaves one thing unsaid: someone can want a
    * dish's ingredients without committing to cook it as part of their week.
    * Two stores would be the wrong answer — they would disagree the moment a
@@ -63,9 +63,9 @@ export interface Plan {
   /** Ingredient ids ticked as already owned. */
   have: string[];
   /**
-   * Pantry staples the reader has moved into "To buy". §8.3 sketches this as a
+   * Pantry staples the reader has moved into "To buy". sketches this as a
    * single `includeStaples` boolean; a boolean cannot express "I need oil but I
-   * still have salt", which is exactly what §8.4 asks the staples group to
+   * still have salt", which is exactly what asks the staples group to
    * allow, so it is a list of the ones asked for.
    */
   needStaples: string[];
@@ -74,7 +74,7 @@ export interface Plan {
 export const EMPTY_PLAN: Plan = { items: [], have: [], needStaples: [] };
 
 /* ------------------------------------------------------------------ *
- * The build-time exports — §8.1
+ * The build-time exports —
  * ------------------------------------------------------------------ */
 
 export interface CatalogVersion {
@@ -115,7 +115,7 @@ export interface DetailLine {
   optional: boolean;
   /** Present where the Form carries a density, so US volumes can be rendered. */
   gPerMl?: number;
-  /** §5.3 — travels with the figure so the dotted underline follows it. */
+  /** — travels with the figure so the dotted underline follows it. */
   densityEstimated?: boolean;
   countUnit?: { singular: string; plural: string; grams: number };
   /**
@@ -148,10 +148,10 @@ export interface DetailVersion {
   defaultServings: number;
   totalMin: number;
   perServing: NutritionTotals;
-  /** §3.4.1 / §5.3 — why the figures are an estimate, if they are. */
+  /** / — why the figures are an estimate, if they are. */
   nutritionEstimated: boolean;
   nutritionEstimateReasons: string[];
-  /** True where any line's amount rests on an estimated density. §5.3 */
+  /** True where any line's amount rests on an estimated density. */
   densityEstimated: boolean;
   makeAhead: {
     aheadInstructions: string | null;

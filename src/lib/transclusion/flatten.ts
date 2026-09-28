@@ -119,6 +119,8 @@ interface Instance {
   source: FlattenSource;
   component?: { slug: string; title: string; multiplier: number } | undefined;
   multiplier: number;
+  /** The referencing step's swap: Component line id to the ingredient that replaces it. */
+  swap?: Record<string, { ingredientRef: string; form: string }> | undefined;
 }
 
 /**
@@ -154,6 +156,14 @@ function collectInstances(
 
       // A component used twice in one recipe gets its occurrences kept apart,
       // so two batches of the same sauce stay traceable rather than collapsing.
+      for (const lineId of Object.keys(step.swap ?? {})) {
+        if (!component.ingredients.some((line) => line.id === lineId)) {
+          throw new TransclusionError(
+            `component "${step.componentRef}" has no ingredient line "${lineId}" to swap`,
+          );
+        }
+      }
+
       const seen = (occurrences.get(step.componentRef) ?? 0) + 1;
       occurrences.set(step.componentRef, seen);
       const usedAgain = instanceCount(parent, components, step.componentRef) > 1;
@@ -170,6 +180,7 @@ function collectInstances(
           },
           // A component's own multiplier compounds with any it is nested inside.
           multiplier: instance.multiplier * step.multiplier,
+          swap: step.swap,
         },
         [...ancestry, step.componentRef],
       );
@@ -238,13 +249,21 @@ export function flatten(
 
   const groups = mergeByForm(
     instances.flatMap((instance) =>
-      instance.source.ingredients.map((line) => ({
+      instance.source.ingredients.map((authored) => {
+        // A swapped line becomes the named ingredient before anything else
+        // sees it, so the merge, the nutrition and the prose all follow.
+        const replacement = instance.swap?.[authored.id];
+        const line = replacement
+          ? { ...authored, ingredientRef: replacement.ingredientRef, form: replacement.form }
+          : authored;
+        return {
         sourceKey: instance.sourceKey,
         line,
         // The component's own multiplier lands here, before the merge. The
         // reader's serving scale multiplies the merged result later.
         amount: line.amount * instance.multiplier,
-      })),
+        };
+      }),
     ),
   );
 

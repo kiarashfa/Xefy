@@ -8,7 +8,7 @@ import { CUISINES } from '../../schemas/taxonomy.ts';
 
 /**
  * A computed filtered view, not a place a recipe lives. Re-tagging a dish must
- * never change its canonical URL, so taxonomy pages own nothing. §9.
+ * never change its canonical URL, so taxonomy pages own nothing..
  */
 export async function getStaticPaths() {
   const site = await getSite();

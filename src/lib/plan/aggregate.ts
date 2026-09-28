@@ -6,7 +6,7 @@ import type { ResolvedPlanItem } from './resolve.ts';
 import type { DetailLine, DetailVersion, Plan, RecipeDetail } from './types.ts';
 
 /**
- * Turning a plan into a shopping list, and into a week's nutrition. §8.4, §8.5
+ * Turning a plan into a shopping list, and into a week's nutrition.,
  *
  * Everything here is a pure function of the plan plus the build-time exports.
  * The grouping rule is not reimplemented: `mergeByForm` is the same code the
@@ -38,7 +38,7 @@ export interface ListLine {
   pantryStaple: boolean;
   density?: Density | undefined;
   countUnit?: DetailLine['countUnit'];
-  /** Forms folded into this purchase — "bought for the yolks". §8.4 */
+  /** Forms folded into this purchase — "bought for the yolks". */
   boughtFor: string[];
   sources: ListSource[];
 }
@@ -52,7 +52,7 @@ const densityOf = (line: DetailLine): Density | undefined =>
     : { gPerMl: line.gPerMl, source: line.densityEstimated ? 'estimated' : 'measured' };
 
 /**
- * Rewrites a line into the Form a shopper actually buys — §8.4 rule 1 says one
+ * Rewrites a line into the Form a shopper actually buys — rule 1 says one
  * ingredient in one Form is one line, and this decides which Form that is.
  *
  * A recipe wanting yolks and whole eggs needs both in the kitchen and neither
@@ -84,7 +84,7 @@ function asPurchased(line: DetailLine): DetailLine {
 }
 
 /**
- * The aggregation itself. §8.4
+ * The aggregation itself.
  *
  * Each planned item is scaled by `servings / defaultServings` before it is
  * summed, exactly as the recipe page scales it — and the sum happens in base
@@ -166,7 +166,7 @@ export interface ListGroups {
 }
 
 /**
- * Three groups, in the order §8.4 sets. The staples group is the one that earns
+ * Three groups, in the order sets. The staples group is the one that earns
  * its complexity: a list that silently omits the oil you have actually run out
  * of is a wasted trip, so they are always visible and always reachable.
  */
@@ -192,7 +192,7 @@ export interface DisplayAmount {
   text: string;
   /** A density estimate was involved, so it carries the tilde and the underline. */
   estimated: boolean;
-  /** "4 eggs", where the Form is something a cook counts. §2.1.1 */
+  /** "4 eggs", where the Form is something a cook counts. */
   count?: string;
 }
 
@@ -211,16 +211,16 @@ export const displayName = (line: ListLine): string =>
   line.multiForm ? `${line.name} (${line.formLabel})` : line.name;
 
 /* ------------------------------------------------------------------ *
- * Nutrition across a plan — §8.5
+ * Nutrition across a plan —
  * ------------------------------------------------------------------ */
 
 const MACROS: readonly Nutrient[] = ['kcal', 'protein', 'carbs', 'fat'];
 
 export interface PlanNutrition {
-  /** The plan as prepared, summed. Never framed as consumption. §3.4 */
+  /** The plan as prepared, summed. Never framed as consumption. */
   totals: NutritionTotals;
   portions: number;
-  /** The figure this feature exists to produce. §8.5 */
+  /** The figure this feature exists to produce. */
   perPortion: NutritionTotals;
   estimated: boolean;
   reasons: string[];
@@ -229,7 +229,7 @@ export interface PlanNutrition {
 /**
  * Uncertainty adds when figures are summed, so one estimated input makes the
  * whole aggregate an estimate — an aggregate that looks more confident than its
- * inputs is the one place this feature could actively mislead. §8.5
+ * inputs is the one place this feature could actively mislead.
  */
 export function aggregateNutrition(
   items: readonly ResolvedPlanItem[],

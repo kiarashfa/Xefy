@@ -13,7 +13,7 @@ import { servings } from '../stores/display.ts';
 /**
  * "Plan · 3", and nothing at all when the plan is empty. The span is rendered
  * server-side with its width reserved, so filling it in cannot shift the nav.
- * §19.4
+ *
  */
 function renderCount(): void {
   const count = plan.get().items.length;
@@ -27,7 +27,7 @@ function renderCount(): void {
  * place to a confirmation naming that count with a route to both destinations.
  * No modal, and no selection step — what the reader already has is a question
  * for the list page, where the answer applies across every planned dish at once
- * and can be changed freely. §8.4
+ * and can be changed freely.
  */
 function wireAddButtons(base: string): void {
   for (const button of document.querySelectorAll<HTMLButtonElement>('.add-to-plan[data-add-to-plan]')) {

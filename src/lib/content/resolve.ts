@@ -130,7 +130,7 @@ function resolveLines(
 }
 
 /**
- * A Component on its own page — §4.2's "independently notable" case.
+ * A Component on its own page — "independently notable" case.
  *
  * Deliberately narrower than a resolved recipe. A Component is a batch, not a
  * meal: it has no serving count, so it has no per-serving nutrition and no

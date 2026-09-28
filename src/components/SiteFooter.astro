@@ -1,7 +1,7 @@
 ---
 /**
- * The site footer: one quiet row of links and the copyright, with the sibling
- * sites underneath. The same shape on all four sibling sites.
+ * The site footer: one quiet row of links and the copyright, with one line of
+ * small print underneath. The same shape on all four sites.
  *
  * It is also the only home the browsing indexes have. The header is capped at
  * four items and the taxonomy listings are not among them, so without this row
@@ -29,12 +29,6 @@ const COPYRIGHT_START_YEAR = 2026;
 const buildYear = new Date().getFullYear();
 const years = buildYear > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}–${buildYear}` : `${COPYRIGHT_START_YEAR}`;
 
-const siblings = [
-  { name: 'Xefy', subject: 'Recipes', url: 'https://kiarashfa.github.io/Xefy/' },
-  { name: 'eXir', subject: 'Drinks', url: 'https://kiarashfa.github.io/eXir/' },
-  { name: 'Markey', subject: 'Cars', url: 'https://kiarashfa.github.io/Markey/' },
-  { name: 'ARMAG', subject: 'Firearms', url: 'https://kiarashfa.github.io/ARMAG/' },
-];
 ---
 
 <footer class="site-foot" data-pagefind-ignore>
@@ -48,16 +42,8 @@ const siblings = [
       </nav>
       <p class="foot-copy">© {years} Kiarash Farajzadehahary</p>
     </div>
-    <nav class="foot-family" aria-label="Sibling sites">
-      {
-        siblings.map((s) =>
-          s.name === 'Xefy' ? (
-            <span aria-current="true" title={s.subject}>{s.name}</span>
-          ) : (
-            <a href={s.url} title={s.subject}>{s.name}</a>
-          ),
-        )
-      }
-    </nav>
+    <p class="foot-note">
+      Nutrition, timing and diet labels are computed from published data for reference. They are not dietary or medical advice, and allergen flags cannot account for the product you buy.
+    </p>
   </div>
 </footer>

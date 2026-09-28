@@ -107,7 +107,7 @@ function formatUsMass(grams: number): string {
  * `counted` is the exception, and it exists because the figure means something
  * different there. Beside a count — "2 garlic cloves (…)" — the bracketed
  * figure is not an alternative way to measure the ingredient; it is the exact
- * weight that makes the approximate count honest (§2.1.1). A volume in that
+ * weight that makes the approximate count honest. A volume in that
  * position is a second approximation, which leaves the reader with two
  * estimates and no fact, so a counted amount always renders as mass.
  */
