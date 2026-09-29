@@ -66,7 +66,7 @@ const techniquesHere = component
   <SiteHeader />
 
   <main id="main" class="wrap">
-    <nav class="crumb" aria-label="Breadcrumb">
+    <nav class="crumb" aria-label="Breadcrumb" data-pagefind-ignore>
       <a href={`${base}techniques/`}>Techniques</a> / {title}
     </nav>
 
@@ -86,7 +86,7 @@ const techniquesHere = component
 
             <div class="side-card">
               <div class="side-card-label">
-                Ingredients{component.data.batchLabel ? ` — ${component.data.batchLabel}` : ''}
+                Ingredients{component.data.batchLabel ? ` · ${component.data.batchLabel}` : ''}
               </div>
               <ul class="ingredients">
                 {component.resolved.lines.map((line) => (

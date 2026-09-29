@@ -23,9 +23,8 @@
   }
 
   /*
-   * The header anatomy: lockup, nav, then the
-   * controls as one group of 36px round buttons. Proportions, not palette, are
-   * what the four have in common.
+   * The header anatomy: the lockup, the section links beside it, and the page
+   * controls (32px round icon buttons, no taller than the links) at the far end.
    */
   .header-inner {
     display: flex;
@@ -61,9 +60,11 @@
    * without a specificity contest..
    */
   .desktop-nav {
+    flex: 1;
     display: flex;
     align-items: center;
     gap: 24px;
+    margin-left: 24px;
   }
 
   .desktop-nav > a {
@@ -95,24 +96,21 @@
     border-bottom-color: var(--accent);
   }
 
-  /*
-   * The Plan count is client-rendered from local storage, so its space is
-   * reserved before hydration. A nav item that grows after load is a
-   * layout-shift regression on every page..
-   *
-   * Wide enough for two digits, because a week of meal-prep runs to ten or more
-   * dishes and the first reservation only covered one — measured, not guessed.
-   * A three-figure plan would still nudge it, and is not a case worth widening
-   * the header on every page for.
-   */
   /* The page controls, spaced to each other rather than to the nav items, so
      they read as one group at the end of the row rather than three more links. */
   .nav-icons {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    margin-left: auto;
   }
 
+  /*
+   * The Plan count is client-rendered from local storage, so its space is
+   * reserved before hydration: a nav item that grows after load shifts the
+   * layout on every page. Wide enough for two digits, because a week of
+   * meal-prep runs to ten or more dishes.
+   */
   .nav-count {
     display: inline-block;
     min-width: 2.2em;
@@ -121,8 +119,8 @@
   }
 
   .icon-btn {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     border: 1px solid var(--line-strong);
     background: transparent;
@@ -144,13 +142,13 @@
   }
 
   .icon-btn svg {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
   }
 
-  .mobile-nav {
+  /* The menu button is the phone's way to the section links. */
+  .menu-btn {
     display: none;
-    gap: 10px;
   }
 
   .mobile-menu {
@@ -1315,7 +1313,7 @@
       display: none;
     }
 
-    .mobile-nav {
+    .menu-btn {
       display: flex;
     }
 
@@ -1489,11 +1487,41 @@
        above the results, so an open menu is never painted under a card. */
     position: relative;
     z-index: 20;
+    margin-block: 22px 26px;
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--accent);
+    border-radius: 16px;
+    background: var(--surface);
+    box-shadow: 0 18px 40px -30px var(--shadow);
+  }
+
+  /* The console's header line: its name, what is shown, and what is filtering
+     it, each filter removable on its own. */
+  .catalog-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    padding: 11px 18px;
+    border-bottom: 1px solid var(--line);
+    border-radius: 13px 13px 0 0;
+    background: var(--surface-2);
+  }
+  .catalog-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .catalog-head .catalog-count {
+    padding: 0;
+  }
+
+  .catalog-body {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-block: 22px;
-    border-bottom: 1px solid var(--line);
+    padding: 14px 18px 16px;
   }
 
   /* Two rows, each filled edge to edge. */
@@ -1731,7 +1759,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 6px 8px;
-    padding-top: 14px;
+    margin-left: auto;
   }
 
   .catalog-chip {
@@ -1913,15 +1941,6 @@
     margin: 0;
   }
 
-  .catalog-count select {
-    font: inherit;
-    background: transparent;
-    color: var(--ink-soft);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 2px 6px;
-  }
-
   .card-grid {
     list-style: none;
     margin: 0;
@@ -2045,6 +2064,41 @@
     border-bottom: 1px solid var(--line-strong);
   }
 
+  /* Every column header sorts: a click sorts by it, a second click reverses. */
+  .th-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+  .th-sort:hover,
+  [aria-sort='ascending'] .th-sort,
+  [aria-sort='descending'] .th-sort {
+    color: var(--ink);
+  }
+  .th-dir::after {
+    content: '↕';
+    opacity: 0.35;
+    font-size: 11px;
+  }
+  [aria-sort='ascending'] .th-dir::after {
+    content: '↑';
+    opacity: 1;
+    color: var(--accent);
+  }
+  [aria-sort='descending'] .th-dir::after {
+    content: '↓';
+    opacity: 1;
+    color: var(--accent);
+  }
+
   .catalog-table td {
     padding: 11px 16px 11px 0;
     border-bottom: 1px solid var(--line);
@@ -2075,6 +2129,68 @@
   }
 
   /* ---- Listing and reference pages ---- */
+
+  /* The ingredients index: one tidy grid of rows, each with its photograph (or
+     its initial), its name and category, and how many recipes use it. */
+  .ing-index {
+    list-style: none;
+    margin: 0;
+    padding: 14px 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 0 26px;
+  }
+  .ing-index a {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 14px;
+  }
+  .ing-index a:hover .ing-name {
+    color: var(--accent);
+  }
+  .ing-index img,
+  .ing-blank {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    background: var(--surface-3);
+  }
+  .ing-blank {
+    display: grid;
+    place-items: center;
+    font-family: var(--font-display);
+    font-size: 17px;
+    color: var(--muted);
+  }
+  .ing-text {
+    display: grid;
+    min-width: 0;
+  }
+  .ing-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: color 0.3s var(--ease);
+  }
+  .ing-cat {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .ing-uses {
+    font-size: 12px;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
 
   .listing {
     list-style: none;
@@ -2957,69 +3073,232 @@
 
 @layer components {
   /*
-   * The search drawer.
-   *
-   * A grid whose single row animates between 0fr and 1fr, which is what allows
-   * a smooth open to a height nobody had to measure — the alternative, a fixed
-   * max-height, either clips a long result list or eases against a number that
-   * has nothing to do with the content.
+   * Search in the header. The search button grows leftwards into a field while
+   * the section links make way, and the results drop below it; closing runs
+   * the same motion backwards. Every piece is always in the DOM and moved by
+   * transitions, so the close animates as well as the open.
    */
-  .search-drawer {
-    display: grid;
-    grid-template-rows: 0fr;
-    grid-template-columns: minmax(0, 1fr);
-    border-top: 1px solid transparent;
-    transition:
-      grid-template-rows 0.42s var(--ease),
-      border-color 0.42s var(--ease);
+  .hs {
+    position: relative;
+    display: flex;
   }
 
-  .search-drawer[data-open] {
-    grid-template-rows: minmax(0, 1fr);
-    border-top-color: var(--line);
-  }
-
-  /*
-   * `width: 100%` is doing real work: the inner element carries `.wrap`, whose
-   * `margin-inline: auto` stops a grid item stretching — an item with auto
-   * margins is sized to fit its content and then centred by them. Without this
-   * the band came out 652px wide, floating in the middle of the header instead
-   * of lining up with the logo above it.
-   */
-  .search-drawer-inner {
-    width: 100%;
+  .hs-field {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 32px;
+    height: 36px;
+    padding: 0 5px 0 12px;
+    box-sizing: border-box;
     overflow: hidden;
-    min-height: 0;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    background: var(--surface);
+    transform: translateY(-50%);
     opacity: 0;
-    transition: opacity 0.3s var(--ease);
+    visibility: hidden;
+    transition:
+      width 0.26s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.14s ease 0.12s,
+      visibility 0s linear 0.26s;
   }
 
-  .search-drawer[data-open] .search-drawer-inner {
+  [data-hs-open] .hs-field {
+    width: var(--hs-w);
     opacity: 1;
-    transition-delay: 0.1s;
+    visibility: visible;
+    transition:
+      width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+      opacity 0.12s ease,
+      visibility 0s;
   }
 
-  /* Pagefind's own UI, retinted to the token set rather than left at its
-     defaults, and capped — a results list running the full width of a 1240px
-     band is unreadable. */
-  #pagefind-search {
-    max-width: 660px;
-    padding-block: 20px 6px;
-    --pagefind-ui-primary: var(--accent);
-    --pagefind-ui-text: var(--ink);
-    --pagefind-ui-background: var(--surface-1);
-    --pagefind-ui-border: var(--line);
-    --pagefind-ui-tag: var(--surface-2);
-    --pagefind-ui-border-radius: 10px;
-    --pagefind-ui-font: var(--font-body);
-  }
-
-  .search-hint {
-    max-width: 660px;
-    margin: 0;
-    padding-bottom: 22px;
-    font-size: 12px;
+  .hs-field > svg {
+    width: 15px;
+    height: 15px;
+    flex: none;
     color: var(--muted);
+  }
+
+  .hs-field input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 14px;
+    color: var(--ink);
+    outline: none;
+  }
+
+  .hs-field input::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  .hs-close {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 26px;
+    height: 26px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+  }
+
+  .hs-close:hover {
+    background: var(--surface-2);
+    color: var(--ink);
+  }
+
+  .hs-close svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .hs-panel {
+    position: absolute;
+    z-index: 60;
+    top: calc(100% + 16px);
+    right: var(--hs-pr, 0px);
+    width: var(--hs-pw, var(--hs-w));
+    padding: 6px;
+    box-sizing: border-box;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--surface);
+    box-shadow: 0 24px 60px -24px var(--shadow);
+    opacity: 0;
+    transform: translateY(-6px);
+    visibility: hidden;
+    transition:
+      opacity 0.16s ease,
+      transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 0.2s;
+  }
+
+  [data-hs-open] .hs-panel {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition:
+      opacity 0.18s ease 0.1s,
+      transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1) 0.1s,
+      visibility 0s;
+  }
+
+  .hs-results {
+    max-height: min(26rem, 65vh);
+    overflow-y: auto;
+  }
+
+  .hs-status {
+    margin: 0;
+    padding: 12px 10px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+
+  .hs-hits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hs-hit {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 9px;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .hs-hit[data-active],
+  .hs-hit:focus-visible {
+    background: var(--accent-soft);
+  }
+
+  .hs-hit-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .hs-kind {
+    flex: none;
+    align-self: center;
+    font-size: 10.5px;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .hs-hit-excerpt {
+    display: -webkit-box;
+    margin-top: 2px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  .hs-hit-excerpt mark {
+    background: transparent;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .hs-foot {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 6px;
+    padding: 8px 10px 4px;
+    border-top: 1px solid var(--line);
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  /* What makes way for the field: out to the left, and back in once the field
+     has gone. */
+  [data-hs-fade] {
+    transition:
+      opacity 0.2s ease 0.12s,
+      transform 0.26s ease 0.12s,
+      visibility 0s;
+  }
+
+  [data-hs-open] [data-hs-fade] {
+    opacity: 0;
+    transform: translateX(-8px);
+    visibility: hidden;
+    transition:
+      opacity 0.14s ease,
+      transform 0.22s ease,
+      visibility 0s linear 0.22s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hs-field,
+    .hs-panel,
+    [data-hs-fade] {
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
   }
 }
 

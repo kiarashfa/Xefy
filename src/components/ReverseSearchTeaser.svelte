@@ -33,7 +33,7 @@
 <section class="teaser" aria-labelledby="teaser-title">
   <h2 class="teaser-title" id="teaser-title">Or start from what you have</h2>
   <p class="teaser-lede">
-    Tick a few of these and carry them through — dishes are ranked by how close each one is, and
+    Tick a few of these and carry them through. Dishes are ranked by how close each one is, and
     every result names exactly what is missing.
   </p>
 

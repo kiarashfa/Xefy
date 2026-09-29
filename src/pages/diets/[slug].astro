@@ -27,7 +27,7 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout
   title={`${term.label} recipes · Xefy`}
-  description={`Every ${term.label.toLowerCase()} recipe on Xefy — ${recipes.length} in all. Labels are computed from the ingredient records, never hand-applied.`}
+  description={`Every ${term.label.toLowerCase()} recipe on Xefy, ${recipes.length} in all. Labels are computed from the ingredient records, never hand-applied.`}
 >
   <SiteHeader />
 
@@ -48,8 +48,8 @@ const base = import.meta.env.BASE_URL;
     <RecipeCards recipes={recipes} base={base} />
 
     <p class="source-line">
-      Computed from every ingredient in the recipe, including the ones a name does not give away —
-      the rennet in a hard cheese, the anchovy in a bottle of Worcestershire. Nothing here is
+      Computed from every ingredient in the recipe, including the ones a name does not give away,
+      such as the rennet in a hard cheese or the anchovy in a bottle of Worcestershire. Nothing here is
       hand-tagged, and nothing is a guarantee about the particular product you buy.
     </p>
   </main>

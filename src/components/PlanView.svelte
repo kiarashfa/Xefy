@@ -139,7 +139,7 @@
       await navigator.clipboard.writeText(planMessage);
       copied = 'Copied to the clipboard.';
     } catch {
-      copied = 'This browser would not let the page copy for you — select the plan and copy it.';
+      copied = 'This browser would not let the page copy for you. Select the plan and copy it.';
     }
   }
 
@@ -210,7 +210,7 @@
         <p class="nutrition-note">
           As prepared with these ingredients, not as eaten.
           {#if nutrition.estimated}
-            Estimated — {nutrition.reasons.join(' ')}
+            Estimated: {nutrition.reasons.join(' ')}
           {/if}
         </p>
       </div>

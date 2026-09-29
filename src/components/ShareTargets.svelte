@@ -58,7 +58,7 @@
   async function copyPayload() {
     try {
       await navigator.clipboard.writeText(JSON.stringify(payload, null, 2));
-      copied = 'JSON copied — paste it to an assistant.';
+      copied = 'JSON copied. Paste it to an assistant.';
     } catch {
       copied = 'This browser would not let the page copy for you.';
     }

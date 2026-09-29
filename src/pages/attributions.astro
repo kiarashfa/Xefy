@@ -38,7 +38,7 @@ const shareAlike = credits.filter((c) => c.shareAlike).length;
       <p class="page-lede">
         Every photograph here comes from Wikimedia Commons or Open Food Facts under the licence it
         carries. All of them have been cropped square, white-balanced and colour-graded so the set
-        reads as one publication — which makes each an adaptation, offered under the same licence as
+        reads as one publication. That makes each an adaptation, offered under the same licence as
         the original.
       </p>
     </div>
@@ -71,7 +71,7 @@ const shareAlike = credits.filter((c) => c.shareAlike).length;
               </b>
               <br />
               <a href={c.sourceUrl}>{c.title.replace('File:', '')}</a>
-              {c.author && <> by {c.author}</>} — {c.licenseUrl ? <a href={c.licenseUrl}>{c.license}</a> : c.license}
+              {c.author && <> by {c.author}</>} · {c.licenseUrl ? <a href={c.licenseUrl}>{c.license}</a> : c.license}
               <br />
               {c.modified}
             </div>

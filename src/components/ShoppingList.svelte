@@ -131,7 +131,7 @@
       await navigator.clipboard.writeText(text);
       copied = 'Copied to the clipboard.';
     } catch {
-      copied = 'This browser would not let the page copy for you — select the list and copy it.';
+      copied = 'This browser would not let the page copy for you. Select the list and copy it.';
     }
   }
 
@@ -161,7 +161,7 @@
 {:else if resolution.items.length === 0}
   <p class="empty-state">
     {#if shared}
-      That link does not name anything on the site — it may have been shortened or edited in
+      That link does not name anything on the site. It may have been shortened or edited in
       transit.
     {:else}
       Nothing planned yet, so there is nothing to buy. Add a dish from any
@@ -222,7 +222,7 @@
           worked out in their own units.
           {#if canShare}
             Share… opens your device's own sheet, which is how to reach Instagram Direct, an X
-            message, Signal and anything else installed on it — none of those can be opened with a
+            message, Signal and anything else installed on it. None of those can be opened with a
             message already written from a web page.
           {/if}
         </p>
@@ -264,7 +264,7 @@
                 <span class="ing-note">
                   {line.sources.map((s) => s.title).join(' · ')}
                   {#if line.boughtFor.length > 0}
-                    — enough for the {line.boughtFor.join(' and the ')} too
+                    (enough for the {line.boughtFor.join(' and the ')} too)
                   {/if}
                 </span>
               </span>
@@ -305,7 +305,7 @@
             onclick={() => (staplesOpen = !staplesOpen)}
           >
             <span class="makeahead-title">
-              Pantry staples — assumed you have these ({groups.staples.length})
+              Pantry staples you are assumed to have ({groups.staples.length})
             </span>
             <span class="makeahead-chevron">▾</span>
           </button>
@@ -339,7 +339,7 @@
       {/if}
 
       <p class="source-line">
-        Amounts are the computed totals, not package sizes — Xefy has no product data and will not
+        Amounts are the computed totals, not package sizes: Xefy has no product data and will not
         guess at one.
       </p>
     </div>

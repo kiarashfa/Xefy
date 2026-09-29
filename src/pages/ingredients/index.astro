@@ -7,11 +7,11 @@ import { getSite } from '../../lib/content/site.ts';
 const site = await getSite();
 const base = import.meta.env.BASE_URL;
 
-const byCategory = new Map<string, typeof site.ingredients>();
-for (const i of site.ingredients) {
-  byCategory.set(i.category, [...(byCategory.get(i.category) ?? []), i]);
-}
-const categories = [...byCategory].sort(([a], [b]) => a.localeCompare(b));
+const label = (s: string) => s.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
+const rows = site.ingredients
+  .map((i) => ({ id: i.id, name: i.name, category: i.category, image: i.image, uses: (site.usage.get(i.id) ?? []).length }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const categories = [...new Set(rows.map((r) => r.category))].sort((a, b) => label(a).localeCompare(label(b)));
 ---
 
 <BaseLayout
@@ -20,7 +20,7 @@ const categories = [...byCategory].sort(([a], [b]) => a.localeCompare(b));
 >
   <SiteHeader />
 
-  <main id="main" class="wrap">
+  <main id="main" class="wrap" data-ing-index>
     <div class="page-head">
       <h1 class="page-title">Ingredients</h1>
       <p class="page-lede">
@@ -29,32 +29,61 @@ const categories = [...byCategory].sort(([a], [b]) => a.localeCompare(b));
       </p>
     </div>
 
-    {
-      categories.map(([category, list]) => (
-        <section>
-          <h2 class="panel-title">{category}</h2>
-          <ul class="listing">
-            {list
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .map((i) => (
-                <li>
-                  <a href={`${base}ingredients/${i.id}/`}>
-                    {i.image && <img class="ing-thumb" src={`${base}${i.image}`} alt="" width="34" height="34" loading="lazy" decoding="async" />}
-                    {i.name}
-                    <span class="count">{(site.usage.get(i.id) ?? []).length}</span>
-                  </a>
-                </li>
-              ))}
-          </ul>
-        </section>
-      ))
-    }
+    <section class="catalog-bar" aria-label="Filter the ingredients">
+      <div class="catalog-head">
+        <span class="catalog-title">Filter</span>
+        <p class="catalog-count" data-ing-count aria-live="polite">{rows.length} ingredients</p>
+      </div>
+      <form class="catalog-body">
+        <div class="catalog-row">
+          <input class="catalog-search" type="search" placeholder="Find an ingredient" aria-label="Find an ingredient" data-ing-q />
+          <label class="catalog-sort">
+            <span class="visually-hidden">Category</span>
+            <select data-ing-cat>
+              <option value="">All categories</option>
+              {categories.map((c) => <option value={c}>{label(c)}</option>)}
+            </select>
+          </label>
+          <label class="catalog-sort">
+            <span class="visually-hidden">Sort by</span>
+            <select data-ing-sort>
+              <option value="az">Sort: A–Z</option>
+              <option value="za">Sort: Z–A</option>
+              <option value="most">Sort: most used</option>
+              <option value="least">Sort: least used</option>
+            </select>
+          </label>
+        </div>
+      </form>
+    </section>
+
+    <ul class="ing-index" data-ing-list>
+      {rows.map((r) => (
+        <li data-name={r.name} data-cat={r.category} data-uses={r.uses}>
+          <a href={`${base}ingredients/${r.id}/`}>
+            {r.image ? (
+              <img src={`${base}${r.image}`} alt="" width="40" height="40" loading="lazy" decoding="async" />
+            ) : (
+              <span class="ing-blank" aria-hidden="true">{r.name.charAt(0)}</span>
+            )}
+            <span class="ing-text">
+              <span class="ing-name">{r.name}</span>
+              <span class="ing-cat">{label(r.category)}</span>
+            </span>
+            <span class="ing-uses" title={`Used in ${r.uses} ${r.uses === 1 ? 'recipe' : 'recipes'}`}>{r.uses || '·'}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <p class="empty-state" data-ing-empty hidden>No ingredient matches that.</p>
   </main>
 
   <SiteFooter />
 
   <script>
     import { initInteractions } from '../../lib/client/interactions.ts';
+    import { initIngredientIndex } from '../../lib/client/ingredient-index.ts';
     initInteractions();
+    initIngredientIndex();
   </script>
 </BaseLayout>

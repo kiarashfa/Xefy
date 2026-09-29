@@ -27,7 +27,7 @@
   let open = $state(false);
   let copied = $state('');
 
-  const body = $derived(`${title} — ${subtitle}`);
+  const body = $derived(`${title}: ${subtitle}`);
   const text = $derived(`${body}\n${url}`);
 
   const canShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function';

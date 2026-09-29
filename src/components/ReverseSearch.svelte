@@ -137,7 +137,7 @@
         {/each}
       </ul>
       <p class="source-line">
-        Salt, oil, flour and the rest of the cupboard are assumed — they are not listed and they do
+        Salt, oil, flour and the rest of the cupboard are assumed. They are not listed, and they do
         not count against a match.
       </p>
     </div>

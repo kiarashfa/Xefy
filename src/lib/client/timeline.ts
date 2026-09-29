@@ -85,7 +85,7 @@ function render(panel: Panel): void {
   summary.textContent =
     mode === 'ready-at'
       ? `Start at ${formatClock(timeline.start)}${startOffset ? `, ${startOffset},` : ''} to eat at ${formatClock(timeline.end)}.`
-      : `${mode === 'start-now' ? 'Starting now' : `Starting at ${formatClock(timeline.start)}`}, ready at ${formatClock(timeline.end)}${endOffset ? ` ${endOffset}` : ''} — ${formatDuration(timeline.totalMin)} of elapsed time.`;
+      : `${mode === 'start-now' ? 'Starting now' : `Starting at ${formatClock(timeline.start)}`}, ready at ${formatClock(timeline.end)}${endOffset ? ` ${endOffset}` : ''} (${formatDuration(timeline.totalMin)} of elapsed time).`;
   scope.prepend(summary);
 
   for (const entry of timeline.entries) {

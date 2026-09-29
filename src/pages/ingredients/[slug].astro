@@ -42,7 +42,7 @@ const energy = primary.nutritionPer100g.kcal;
 const descriptor = [
   `${ingredient.name} is a ${ingredient.category}`,
   ingredient.forms.length > 1
-    ? `recorded here in ${ingredient.forms.length} forms — ${ingredient.forms.map((f) => f.label.toLowerCase()).join(', ')}`
+    ? `recorded here in ${ingredient.forms.length} forms: ${ingredient.forms.map((f) => f.label.toLowerCase()).join(', ')}`
     : null,
 ]
   .filter(Boolean)
@@ -103,7 +103,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
                   <>
                     {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
                     <span class="name-alt">{n.name}</span>
-                    <span class="name-region"> — {n.note}</span>
+                    <span class="name-region"> ({n.note})</span>
                   </>
                 ))}
               </p>
@@ -125,7 +125,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
                 </button>
                 <div class="attribution-popover">
                   <a href={credit.sourceUrl}>{credit.title.replace('File:', '')}</a>
-                  {credit.author && <> — {credit.author}</>}
+                  {credit.author && <> by {credit.author}</>}
                   <br />
                   {credit.license}. {credit.modified}
                 </div>
@@ -156,7 +156,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
                 <p class="source-line">
                   {usedIn.length > USED_IN_SHOWN
                     ? `The ${USED_IN_SHOWN} dishes using the most, at their own serving counts. ${usedIn.length - USED_IN_SHOWN} more use it in smaller amounts.`
-                    : 'Sorted by how much each recipe uses, at its own serving count — most first.'}
+                    : 'Sorted by how much each recipe uses, most first, at its own serving count.'}
                 </p>
               </>
             )
@@ -169,8 +169,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
               <div class="side-card-label">Rough substitutes</div>
               {ingredient.generalSubstitutes.map((s: any) => (
                 <p class="source-line" style="margin-top:0">
-                  <b>{s.substitute}</b>
-                  {s.note && <> — {s.note}</>}
+                  <b>{s.substitute}</b>{s.note && <>: {s.note}</>}
                 </p>
               ))}
               <p class="source-line">
@@ -186,7 +185,7 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
           ingredient.forms.map((form: any) => (
             <section style="margin-bottom:36px">
               <h2 class="panel-title">
-                {form.label} — per 100 g
+                {form.label} · per 100 g
               </h2>
 
               {form.animalOriginNote && <p class="pitfall"><b>Worth knowing</b>{form.animalOriginNote}</p>}

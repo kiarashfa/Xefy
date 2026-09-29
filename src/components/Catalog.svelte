@@ -62,12 +62,15 @@
    * mixing "Name A–Z" with "Fewest calories" can only offer one direction per
    * entry and doubles in length the moment both are wanted.
    */
-  type SortField = 'title' | 'totalMin' | 'kcalPerServing' | 'difficulty';
+  type SortField = 'title' | 'style' | 'cuisine' | 'course' | 'totalMin' | 'kcalPerServing' | 'difficulty';
   let sortField = $state<SortField>('title');
   let sortDesc = $state(false);
 
   const SORT_FIELDS: { id: SortField; label: string; low: string; high: string }[] = [
     { id: 'title', label: 'Name', low: 'A–Z', high: 'Z–A' },
+    { id: 'style', label: 'Style', low: 'A–Z', high: 'Z–A' },
+    { id: 'cuisine', label: 'Cuisine', low: 'A–Z', high: 'Z–A' },
+    { id: 'course', label: 'Course', low: 'A–Z', high: 'Z–A' },
     { id: 'totalMin', label: 'Time', low: 'Quickest', high: 'Longest' },
     { id: 'kcalPerServing', label: 'Calories', low: 'Fewest', high: 'Most' },
     { id: 'difficulty', label: 'Difficulty', low: 'Easiest', high: 'Hardest' },
@@ -133,6 +136,8 @@
       .sort((a, b) => {
         const dir = sortDesc ? -1 : 1;
         if (sortField === 'title') return dir * a.title.localeCompare(b.title);
+        if (sortField === 'style' || sortField === 'cuisine' || sortField === 'course')
+          return dir * textOf(a, sortField).localeCompare(textOf(b, sortField)) || a.title.localeCompare(b.title);
         const key =
           sortField === 'difficulty'
             ? DIFFICULTY_ORDER[a.difficulty as keyof typeof DIFFICULTY_ORDER] -
@@ -144,6 +149,28 @@
   );
 
   const windowed = $derived(shown.slice(0, limit));
+
+  /** The text a text column shows, which is also what it sorts by. */
+  function textOf(r: any, field: 'style' | 'cuisine' | 'course'): string {
+    if (field === 'style') return r.style ?? '';
+    if (field === 'cuisine') return r.tags.cuisine.map(cuisineLabel).join(', ');
+    return r.tags.course.map(courseLabel).join(', ');
+  }
+
+  /** The table's columns; each header sorts by its column, a second click reverses. */
+  const COLUMNS: { field: SortField; label: string }[] = [
+    { field: 'title', label: 'Name' },
+    { field: 'style', label: 'Style' },
+    { field: 'cuisine', label: 'Cuisine' },
+    { field: 'course', label: 'Course' },
+    { field: 'totalMin', label: 'Time' },
+    { field: 'kcalPerServing', label: 'kcal' },
+    { field: 'difficulty', label: 'Difficulty' },
+  ];
+  function sortBy(field: SortField) {
+    sortDesc = sortField === field ? !sortDesc : false;
+    sortField = field;
+  }
 
   /** How many dishes each term would leave, given every other filter. */
   function countsFor(axis: 'cuisine' | 'course' | 'method'): Record<string, number> {
@@ -178,6 +205,7 @@
   });
 
   const facets = $derived([
+    // The same order as the table's columns; the filters with no column follow.
     {
       key: 'Cuisine',
       terms: byLabel(cuisines.filter((t) => used.cuisine.has(t.id))),
@@ -206,8 +234,7 @@
       selected: diet,
       set: (v: string[]) => (diet = v),
     },
-    // The menus read in alphabetical order, like the options inside them.
-  ].sort((a, b) => a.key.localeCompare(b.key)));
+  ]);
 
   const hideTerms = $derived(byLabel(allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id)))));
   const hideCounts = $derived.by(() => {
@@ -332,168 +359,173 @@
   const courseLabel = (id: string) => courses.find((c) => c.id === id)?.label ?? id;
 </script>
 
-<!-- Two rows, each filled edge to edge: the tools that shape the list, then
-     the list menus that narrow it, in alphabetical order with exclusion last. -->
-<div class="catalog-bar">
-  <div class="catalog-row">
-    <input
-      class="catalog-search"
-      type="search"
-      bind:value={query}
-      placeholder="Search dishes, styles…"
-      aria-label="Search the catalogue"
-    />
-
-    <!-- Ceilings on the computed figures. A typed number, not a chosen bucket. -->
-    <div class="facet-menu" bind:this={limitsRoot}>
-      <button
-        class="facet-menu-button"
-        class:on={limitCount > 0}
-        bind:this={limitsButton}
-        aria-expanded={limitsOpen}
-        aria-haspopup="true"
-        onclick={() => (limitsOpen = !limitsOpen)}
-      >
-        Limits
-        {#if limitCount > 0}<span class="facet-menu-count">{limitCount}</span>{/if}
-        <span class="facet-menu-caret" aria-hidden="true">▾</span>
-      </button>
-
-      {#if limitsOpen}
-        <div class="facet-menu-panel is-limits" role="group" aria-label="Limits">
-          <label class="limit-row">
-            <span>Time at most</span>
-            <span class="limit-input">
-              <input
-                type="number"
-                min="1"
-                step="5"
-                inputmode="numeric"
-                placeholder="any"
-                value={maxMinutes ?? ''}
-                oninput={(e) => (maxMinutes = num(e.currentTarget.value))}
-              />
-              <span class="limit-unit">min</span>
-            </span>
-          </label>
-
-          <label class="limit-row">
-            <span>Calories at most</span>
-            <span class="limit-input">
-              <input
-                type="number"
-                min="1"
-                step="50"
-                inputmode="numeric"
-                placeholder="any"
-                value={maxKcal ?? ''}
-                oninput={(e) => (maxKcal = num(e.currentTarget.value))}
-              />
-              <span class="limit-unit">kcal</span>
-            </span>
-          </label>
-
-          <label class="limit-row">
-            <span>Difficulty at most</span>
-            <select bind:value={maxDifficulty}>
-              <option value="">any</option>
-              <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
-              <option value="Hard">Hard</option>
-            </select>
-          </label>
-
-          <p class="limit-note">Calories are per serving, and time is the whole dish.</p>
-
-          {#if limitCount > 0}
-            <button
-              class="facet-menu-clear"
-              onclick={() => {
-                maxMinutes = null;
-                maxKcal = null;
-                maxDifficulty = '';
-              }}
-            >
-              Clear limits
-            </button>
-          {/if}
-        </div>
+<!-- The console: a header line saying what is shown and what is filtering it,
+     then two rows, each filled edge to edge: the tools that shape the list, and
+     the list menus that narrow it, in the table's column order with exclusion
+     last. -->
+<section class="catalog-bar" aria-label="Filter the catalogue">
+  <div class="catalog-head">
+    <span class="catalog-title">Filter</span>
+    <p class="catalog-count" aria-live="polite">
+      {#if loadState === 'loading'}
+        Showing {windowed.length} of {total} dishes · loading the rest…
+      {:else if loadState === 'failed'}
+        The full list could not be loaded; these are the first {recipes.length} of {total} dishes.
+      {:else}
+        {shown.length === recipes.length ? `${shown.length} dishes` : `${shown.length} of ${recipes.length} dishes`}
       {/if}
-    </div>
-
-    <label class="catalog-sort">
-      <span class="visually-hidden">Sort by</span>
-      <select bind:value={sortField}>
-        {#each SORT_FIELDS as s (s.id)}
-          <option value={s.id}>{s.label}</option>
-        {/each}
-      </select>
-    </label>
-
-    <!-- Direction is its own control, so every field can go both ways. -->
-    <button
-      class="sort-dir"
-      aria-pressed={sortDesc}
-      onclick={() => (sortDesc = !sortDesc)}
-      title={`Sorted by ${activeSort.label.toLowerCase()}: ${sortDesc ? activeSort.high : activeSort.low} first`}
-    >
-      <span aria-hidden="true">{sortDesc ? '↓' : '↑'}</span>
-      {sortDesc ? activeSort.high : activeSort.low}
-    </button>
-
-    <div class="catalog-view">
-      <button class:active={view === 'grid'} aria-pressed={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>
-      <button class:active={view === 'table'} aria-pressed={view === 'table'} onclick={() => (view = 'table')}>Table</button>
-    </div>
-  </div>
-
-  <div class="catalog-row catalog-menus" style={`--menus: ${facets.length + (hideTerms.length > 0 ? 1 : 0)}`}>
-    {#each facets as facet (facet.key)}
-      <FacetMenu
-        label={facet.key}
-        terms={facet.terms}
-        counts={facet.counts}
-        selected={facet.selected}
-        onchange={facet.set}
-      />
-    {/each}
-
-    {#if hideTerms.length > 0}
-      <FacetMenu
-        label="Hide"
-        terms={hideTerms}
-        counts={hideCounts}
-        selected={excludedAllergens}
-        onchange={(v) => (excludedAllergens = v)}
-        exclusion
-      />
+    </p>
+    {#if activeCount > 0}
+      <div class="catalog-active">
+        {#if query}<button class="catalog-chip" onclick={() => (query = '')}>“{query}” <span aria-hidden="true">×</span></button>{/if}
+        {#each cuisine as id (id)}<button class="catalog-chip" onclick={() => (cuisine = cuisine.filter((x) => x !== id))}>{cuisineLabel(id)} <span aria-hidden="true">×</span></button>{/each}
+        {#each course as id (id)}<button class="catalog-chip" onclick={() => (course = course.filter((x) => x !== id))}>{courseLabel(id)} <span aria-hidden="true">×</span></button>{/each}
+        {#each method as id (id)}<button class="catalog-chip" onclick={() => (method = method.filter((x) => x !== id))}>{methods.find((m) => m.id === id)?.label ?? id} <span aria-hidden="true">×</span></button>{/each}
+        {#each diet as id (id)}<button class="catalog-chip" onclick={() => (diet = diet.filter((x) => x !== id))}>{dietLabel(id)} <span aria-hidden="true">×</span></button>{/each}
+        {#each excludedAllergens as id (id)}<button class="catalog-chip is-exclusion" onclick={() => (excludedAllergens = excludedAllergens.filter((x) => x !== id))}>No {allergens.find((a) => a.id === id)?.label.toLowerCase() ?? id} <span aria-hidden="true">×</span></button>{/each}
+        {#if limitCount > 0}<button class="catalog-chip" onclick={() => { maxMinutes = null; maxKcal = null; maxDifficulty = ''; }}>Limits <span aria-hidden="true">×</span></button>{/if}
+        <button class="catalog-clear" onclick={clearAll}>Clear all</button>
+      </div>
     {/if}
   </div>
-</div>
 
-<!-- What is filtering the list right now, each removable on its own. -->
-{#if activeCount > 0}
-  <div class="catalog-active">
-    {#if query}<button class="catalog-chip" onclick={() => (query = '')}>“{query}” <span aria-hidden="true">×</span></button>{/if}
-    {#each cuisine as id (id)}<button class="catalog-chip" onclick={() => (cuisine = cuisine.filter((x) => x !== id))}>{cuisineLabel(id)} <span aria-hidden="true">×</span></button>{/each}
-    {#each course as id (id)}<button class="catalog-chip" onclick={() => (course = course.filter((x) => x !== id))}>{courseLabel(id)} <span aria-hidden="true">×</span></button>{/each}
-    {#each method as id (id)}<button class="catalog-chip" onclick={() => (method = method.filter((x) => x !== id))}>{methods.find((m) => m.id === id)?.label ?? id} <span aria-hidden="true">×</span></button>{/each}
-    {#each diet as id (id)}<button class="catalog-chip" onclick={() => (diet = diet.filter((x) => x !== id))}>{dietLabel(id)} <span aria-hidden="true">×</span></button>{/each}
-    {#each excludedAllergens as id (id)}<button class="catalog-chip is-exclusion" onclick={() => (excludedAllergens = excludedAllergens.filter((x) => x !== id))}>No {allergens.find((a) => a.id === id)?.label.toLowerCase() ?? id} <span aria-hidden="true">×</span></button>{/each}
-    {#if limitCount > 0}<button class="catalog-chip" onclick={() => { maxMinutes = null; maxKcal = null; maxDifficulty = ''; }}>Limits <span aria-hidden="true">×</span></button>{/if}
-    <button class="catalog-clear" onclick={clearAll}>Clear all</button>
+  <div class="catalog-body">
+    <div class="catalog-row">
+      <input
+        class="catalog-search"
+        type="search"
+        bind:value={query}
+        placeholder="Search dishes, styles…"
+        aria-label="Search the catalogue"
+      />
+
+      <!-- Ceilings on the computed figures. A typed number, not a chosen bucket. -->
+      <div class="facet-menu" bind:this={limitsRoot}>
+        <button
+          class="facet-menu-button"
+          class:on={limitCount > 0}
+          bind:this={limitsButton}
+          aria-expanded={limitsOpen}
+          aria-haspopup="true"
+          onclick={() => (limitsOpen = !limitsOpen)}
+        >
+          Limits
+          {#if limitCount > 0}<span class="facet-menu-count">{limitCount}</span>{/if}
+          <span class="facet-menu-caret" aria-hidden="true">▾</span>
+        </button>
+
+        {#if limitsOpen}
+          <div class="facet-menu-panel is-limits" role="group" aria-label="Limits">
+            <label class="limit-row">
+              <span>Time at most</span>
+              <span class="limit-input">
+                <input
+                  type="number"
+                  min="1"
+                  step="5"
+                  inputmode="numeric"
+                  placeholder="any"
+                  value={maxMinutes ?? ''}
+                  oninput={(e) => (maxMinutes = num(e.currentTarget.value))}
+                />
+                <span class="limit-unit">min</span>
+              </span>
+            </label>
+
+            <label class="limit-row">
+              <span>Calories at most</span>
+              <span class="limit-input">
+                <input
+                  type="number"
+                  min="1"
+                  step="50"
+                  inputmode="numeric"
+                  placeholder="any"
+                  value={maxKcal ?? ''}
+                  oninput={(e) => (maxKcal = num(e.currentTarget.value))}
+                />
+                <span class="limit-unit">kcal</span>
+              </span>
+            </label>
+
+            <label class="limit-row">
+              <span>Difficulty at most</span>
+              <select bind:value={maxDifficulty}>
+                <option value="">any</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </label>
+
+            <p class="limit-note">Calories are per serving, and time is the whole dish.</p>
+
+            {#if limitCount > 0}
+              <button
+                class="facet-menu-clear"
+                onclick={() => {
+                  maxMinutes = null;
+                  maxKcal = null;
+                  maxDifficulty = '';
+                }}
+              >
+                Clear limits
+              </button>
+            {/if}
+          </div>
+        {/if}
+      </div>
+
+      <label class="catalog-sort">
+        <span class="visually-hidden">Sort by</span>
+        <select bind:value={sortField}>
+          {#each SORT_FIELDS as s (s.id)}
+            <option value={s.id}>{s.label}</option>
+          {/each}
+        </select>
+      </label>
+
+      <!-- Direction is its own control, so every field can go both ways. -->
+      <button
+        class="sort-dir"
+        aria-pressed={sortDesc}
+        onclick={() => (sortDesc = !sortDesc)}
+        title={`Sorted by ${activeSort.label.toLowerCase()}: ${sortDesc ? activeSort.high : activeSort.low} first`}
+      >
+        <span aria-hidden="true">{sortDesc ? '↓' : '↑'}</span>
+        {sortDesc ? activeSort.high : activeSort.low}
+      </button>
+
+      <div class="catalog-view">
+        <button class:active={view === 'grid'} aria-pressed={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>
+        <button class:active={view === 'table'} aria-pressed={view === 'table'} onclick={() => (view = 'table')}>Table</button>
+      </div>
+    </div>
+
+    <div class="catalog-row catalog-menus" style={`--menus: ${facets.length + (hideTerms.length > 0 ? 1 : 0)}`}>
+      {#each facets as facet (facet.key)}
+        <FacetMenu
+          label={facet.key}
+          terms={facet.terms}
+          counts={facet.counts}
+          selected={facet.selected}
+          onchange={facet.set}
+        />
+      {/each}
+
+      {#if hideTerms.length > 0}
+        <FacetMenu
+          label="Hide"
+          terms={hideTerms}
+          counts={hideCounts}
+          selected={excludedAllergens}
+          onchange={(v) => (excludedAllergens = v)}
+          exclusion
+        />
+      {/if}
+    </div>
   </div>
-{/if}
-
-<p class="catalog-count" aria-live="polite">
-  {#if loadState === 'loading'}
-    Showing {windowed.length} of {total} dishes · loading the rest…
-  {:else if loadState === 'failed'}
-    The full list could not be loaded; these are the first {recipes.length} of {total} dishes.
-  {:else}
-    {shown.length === recipes.length ? `${shown.length} dishes` : `${shown.length} of ${recipes.length} dishes`}
-  {/if}
-</p>
+</section>
 
 {#if view === 'grid'}
   <ul class="card-grid">
@@ -523,8 +555,13 @@
         <!-- Diet is gone: three or four labels per row made it the widest
              column on the table, for a fact the filters already act on. -->
         <tr>
-          <th>Name</th><th>Style</th><th>Cuisine</th><th>Course</th>
-          <th>Time</th><th>kcal</th><th>Difficulty</th>
+          {#each COLUMNS as c (c.field)}
+            <th aria-sort={sortField === c.field ? (sortDesc ? 'descending' : 'ascending') : 'none'}>
+              <button type="button" class="th-sort" onclick={() => sortBy(c.field)}>
+                {c.label}<span class="th-dir" aria-hidden="true"></span>
+              </button>
+            </th>
+          {/each}
         </tr>
       </thead>
       <tbody>

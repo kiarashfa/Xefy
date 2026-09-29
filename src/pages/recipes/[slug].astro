@@ -134,7 +134,7 @@ const description = identity.description ?? identity.subtitle;
   */}
   <span data-pagefind-index-attrs="data-alt-spellings" data-alt-spellings={searchOnly} hidden></span>
 
-  <nav class="wrap crumb" aria-label="Breadcrumb">
+  <nav class="wrap crumb" aria-label="Breadcrumb" data-pagefind-ignore>
     {/* The separator carries its own trailing space: a newline before the next
         element collapses away, and the crumb renders as "Recipes /Chinese". */}
     <a href={`${base}recipes/`}>Recipes</a>{' / '}
@@ -182,7 +182,7 @@ const description = identity.description ?? identity.subtitle;
                     <>
                       {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
                       <span class="name-alt">{n.name}</span>
-                      <span class="name-region"> — {n.note}</span>
+                      <span class="name-region"> ({n.note})</span>
                     </>
                   ))}
                 </p>
@@ -224,7 +224,7 @@ const description = identity.description ?? identity.subtitle;
                 </button>
                 <div class="attribution-popover">
                   <a href={heroCredit.sourceUrl}>{heroCredit.title.replace('File:', '')}</a>
-                  {heroCredit.author && <> — {heroCredit.author}</>}
+                  {heroCredit.author && <> by {heroCredit.author}</>}
                   <br />
                   {heroCredit.license}. {heroCredit.modified}
                 </div>
@@ -481,7 +481,7 @@ const description = identity.description ?? identity.subtitle;
                     <p class="nutrition-note">
                       As prepared with these ingredients, not as served.
                       {r.nutrition.estimated && (
-                        <> Estimated — {r.nutrition.estimateReasons.join(' ')}</>
+                        <> Estimated: {r.nutrition.estimateReasons.join(' ')}</>
                       )}
                     </p>
 
@@ -647,7 +647,7 @@ const description = identity.description ?? identity.subtitle;
                   <ol>
                     {about.data.sources.map((s: any) => (
                       <li id={`source-${s.id}`}>
-                        {s.url ? <a href={s.url}>{s.title}</a> : s.title} — {s.publisher}
+                        {s.url ? <a href={s.url}>{s.title}</a> : s.title}, {s.publisher}
                         {s.published && <>, {s.published}</>}
                         {s.note && <span class="source-note">{s.note}</span>}
                       </li>

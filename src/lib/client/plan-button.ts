@@ -50,9 +50,9 @@ function wireAddButtons(base: string): void {
       confirmation.className = 'add-confirmed';
       confirmation.setAttribute('role', 'status');
       confirmation.innerHTML = listOnly
-        ? `On the list at ${count} servings — ` +
+        ? `On the list at ${count} servings: ` +
           `<a href="${base}shopping-list/">Shopping list</a>`
-        : `Added at ${count} servings — ` +
+        : `Added at ${count} servings: ` +
           `<a href="${base}plan/">Plan</a> · <a href="${base}shopping-list/">Shopping list</a>`;
 
       // Both buttons go: the dish is in, and offering the other one now would
