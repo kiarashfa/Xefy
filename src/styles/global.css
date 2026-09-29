@@ -85,35 +85,6 @@
   --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
 
-/*
- * `inline` matters here: it resolves each token where it is used rather than
- * emitting a variable pointing at a variable, so utilities pick up the value
- * the active theme has set rather than the one that was current at build time.
- */
-@theme inline {
-  --color-surface: var(--surface);
-  --color-surface-2: var(--surface-2);
-  --color-surface-3: var(--surface-3);
-  --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-line: var(--line);
-  --color-line-strong: var(--line-strong);
-  --color-accent: var(--accent);
-  --color-accent-soft: var(--accent-soft);
-  --color-accent-ink: var(--accent-ink);
-  --color-sage: var(--sage);
-  --color-sage-soft: var(--sage-soft);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-muted: var(--muted);
-  --color-overlay: var(--overlay);
-
-  --font-display: var(--font-display);
-  --font-body: var(--font-body);
-
-  --ease-quiet: var(--ease);
-}
-
 @layer base {
   html {
     color-scheme: light;
