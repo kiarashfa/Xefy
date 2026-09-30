@@ -70,7 +70,7 @@ const categories = [...new Set(rows.map((r) => r.category))].sort((a, b) => labe
               <span class="ing-name">{r.name}</span>
               <span class="ing-cat">{label(r.category)}</span>
             </span>
-            <span class="ing-uses" title={`Used in ${r.uses} ${r.uses === 1 ? 'recipe' : 'recipes'}`}>{r.uses || '·'}</span>
+            <span class="ing-uses" title={`Used in ${r.uses} ${r.uses === 1 ? 'recipe' : 'recipes'}`}>{r.uses || '—'}</span>
           </a>
         </li>
       ))}

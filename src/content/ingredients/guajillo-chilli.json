@@ -15,7 +15,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168570",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168570/nutrients",
-      "sourceNote": "USDA has no guajillo-specific record — guajillo is the dried form of the mirasol chilli, not covered separately. This is its generic sun-dried hot chile profile, the closest dried-chile nutrient set it publishes.",
+      "sourceNote": "USDA has no guajillo-specific record: guajillo is the dried form of the mirasol chilli, not covered separately. This is its generic sun-dried hot chile profile, the closest dried-chile nutrient set it publishes.",
       "nutritionPer100g": {
         "kcal": 324,
         "protein": 10.58,

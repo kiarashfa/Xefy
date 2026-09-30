@@ -14,7 +14,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168726",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168726/nutrients",
-      "sourceNote": "USDA's record for top sirloin steak, trimmed to 1/8 inch of external fat — a lean, quick-grilling cut suitable for slicing thin for skewers.",
+      "sourceNote": "USDA's record for top sirloin steak, trimmed to 1/8 inch of external fat, a lean, quick-grilling cut suitable for slicing thin for skewers.",
       "nutritionPer100g": {
         "kcal": 201,
         "protein": 20.3,

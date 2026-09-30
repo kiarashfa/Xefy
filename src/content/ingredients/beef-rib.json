@@ -34,7 +34,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172152",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172152/nutrients",
-      "sourceNote": "USDA's record for bone-in rib eye steak/roast, lip-on, trimmed to 1/8 inch fat — the American cut corresponding to a British forerib joint.",
+      "sourceNote": "USDA's record for bone-in rib eye steak/roast, lip-on, trimmed to 1/8 inch fat. It is the American cut corresponding to a British forerib joint.",
       "nutritionPer100g": {
         "kcal": 260,
         "protein": 17.92,

@@ -17,7 +17,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "169736",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/169736/nutrients",
-      "sourceNote": "USDA has no record specific to vermicelli. Cited against dry enriched wheat pasta, which is what vermicelli is milled and dried from — only the strand's diameter differs.",
+      "sourceNote": "USDA has no record specific to vermicelli. Cited against dry enriched wheat pasta, which is what vermicelli is milled and dried from. Only the strand's diameter differs.",
       "nutritionPer100g": {
         "kcal": 371,
         "protein": 13.04,

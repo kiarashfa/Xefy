@@ -25,7 +25,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "175156",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/175156/nutrients",
-      "sourceNote": "USDA publishes no record for katsuobushi. This is its record for raw skipjack tuna, which is the same fish — katsuobushi is skipjack simmered, smoked, fermented with mould and dried until it is hard enough to shave. The dried block is several times as concentrated as the raw fish, so these figures understate it; in a stock the flakes are strained out and discarded.",
+      "sourceNote": "USDA publishes no record for katsuobushi. This is its record for raw skipjack tuna, which is the same fish: katsuobushi is skipjack simmered, smoked, fermented with mould and dried until it is hard enough to shave. The dried block is several times as concentrated as the raw fish, so these figures understate it; in a stock the flakes are strained out and discarded.",
       "nutritionPer100g": {
         "kcal": 103,
         "protein": 22,

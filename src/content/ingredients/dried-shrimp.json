@@ -16,7 +16,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "175180",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/175180/nutrients",
-      "sourceNote": "USDA publishes no record for dried shrimp; this is its record for cooked shrimp, which is the same animal before drying. The figures are therefore conservative by a wide margin — drying removes most of the water, so dried shrimp carry roughly three times this energy and protein for the same weight, and far more salt. The quantity used here is small, but the nutrition panel understates it.",
+      "sourceNote": "USDA publishes no record for dried shrimp; this is its record for cooked shrimp, which is the same animal before drying. The figures are therefore conservative by a wide margin: drying removes most of the water, so dried shrimp carry roughly three times this energy and protein for the same weight, and far more salt. The quantity used here is small, but the nutrition panel understates it.",
       "nutritionPer100g": {
         "kcal": 99,
         "protein": 23.98,

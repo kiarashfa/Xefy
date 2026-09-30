@@ -16,7 +16,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172442",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172442/nutrients",
-      "sourceNote": "USDA reports miso as a single food. Real misos differ widely — white miso is sweeter, shorter-fermented and roughly half as salty as a dark red one — and none of that variation is in this table. Some misos are made with barley or wheat koji and are not gluten-free; the label is the only way to tell.",
+      "sourceNote": "USDA reports miso as a single food. Real misos differ widely (white miso is sweeter, shorter-fermented and roughly half as salty as a dark red one), and none of that variation is in this table. Some misos are made with barley or wheat koji and are not gluten-free; the label is the only way to tell.",
       "nutritionPer100g": {
         "kcal": 198,
         "protein": 12.79,

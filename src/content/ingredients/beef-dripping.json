@@ -29,7 +29,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "171400",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/171400/nutrients",
-      "sourceNote": "USDA's record for beef tallow, rendered beef fat — the same product British cooks call dripping.",
+      "sourceNote": "USDA's record for beef tallow, rendered beef fat. It is the same product British cooks call dripping.",
       "nutritionPer100g": {
         "kcal": 902,
         "protein": 0,

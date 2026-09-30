@@ -15,7 +15,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "170827",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/170827/nutrients",
-      "sourceNote": "USDA publishes no record for oxtail. This is its record for boneless beef chuck short rib, separable lean and fat — the closest published fat and collagen profile to the well-marbled, connective-tissue-rich meat on an oxtail, which comes from the same forequarter region of the animal.",
+      "sourceNote": "USDA publishes no record for oxtail. This is its record for boneless beef chuck short rib, separable lean and fat; it is the closest published fat and collagen profile to the well-marbled, connective-tissue-rich meat on an oxtail, which comes from the same forequarter region of the animal.",
       "nutritionPer100g": {
         "kcal": 240,
         "protein": 17.22,

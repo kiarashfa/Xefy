@@ -14,7 +14,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "174584",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/174584/nutrients",
-      "sourceNote": "USDA has no record for linguiça specifically. This is its record for smoked link pork sausage — the closest cured, smoked pork-sausage profile it publishes.",
+      "sourceNote": "USDA has no record for linguiça specifically. This is its record for smoked link pork sausage; it is the closest cured, smoked pork-sausage profile it publishes.",
       "nutritionPer100g": {
         "kcal": 309,
         "protein": 11.98,

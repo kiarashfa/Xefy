@@ -15,7 +15,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168156",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168156/nutrients",
-      "sourceNote": "USDA's raw lime juice. Bottled juice is a different food — it is pasteurised and often preserved, and it tastes of it.",
+      "sourceNote": "USDA's raw lime juice. Bottled juice is a different food: it is pasteurised and often preserved, and it tastes of it.",
       "nutritionPer100g": {
         "kcal": 25,
         "protein": 0.42,

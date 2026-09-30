@@ -78,7 +78,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168929",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168929/nutrients",
-      "sourceNote": "USDA's degermed yellow cornmeal, unenriched — the standard grind for American cornbread.",
+      "sourceNote": "USDA's degermed yellow cornmeal, unenriched, the standard grind for American cornbread.",
       "nutritionPer100g": {
         "kcal": 370,
         "protein": 7.11,
@@ -126,7 +126,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "171670",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/171670/nutrients",
-      "sourceNote": "USDA's yellow corn grits, regular and quick, unenriched, dry — a coarser, less processed grind than degermed white cornmeal, and the closest published match to stone-ground Southern grits.",
+      "sourceNote": "USDA's yellow corn grits, regular and quick, unenriched, dry. It is a coarser, less processed grind than degermed white cornmeal, and the closest published match to stone-ground Southern grits.",
       "nutritionPer100g": {
         "kcal": 371,
         "protein": 8.8,
@@ -171,7 +171,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172015",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172015/nutrients",
-      "sourceNote": "USDA publishes no record for masarepa, the precooked, degermed white corn flour used for Colombian and Venezuelan arepas. It is a different product from Mexican masa harina: the corn is steamed and dried rather than nixtamalised in an alkaline solution. This is USDA's white degermed cornmeal, the closest published composition — precooking gelatinises the starch but changes the macronutrient profile only marginally, if at all.",
+      "sourceNote": "USDA publishes no record for masarepa, the precooked, degermed white corn flour used for Colombian and Venezuelan arepas. It is a different product from Mexican masa harina: the corn is steamed and dried rather than nixtamalised in an alkaline solution. This is USDA's white degermed cornmeal, the closest published composition: precooking gelatinises the starch but changes the macronutrient profile only marginally, if at all.",
       "nutritionPer100g": {
         "kcal": 370,
         "protein": 7.11,
@@ -219,7 +219,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "169696",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/169696/nutrients",
-      "sourceNote": "USDA's record for white corn masa flour, made from corn cooked and steeped in an alkaline solution (nixtamalisation) before grinding — a different process from the degermed cornmeal used for pap or cornbread, and the correct flour for pupusas, tortillas and other fresh masa doughs.",
+      "sourceNote": "USDA's record for white corn masa flour, made from corn cooked and steeped in an alkaline solution (nixtamalisation) before grinding, a different process from the degermed cornmeal used for pap or cornbread, and the correct flour for pupusas, tortillas and other fresh masa doughs.",
       "nutritionPer100g": {
         "kcal": 363,
         "protein": 8.46,

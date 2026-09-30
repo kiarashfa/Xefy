@@ -17,7 +17,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "175031",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/175031/nutrients",
-      "sourceNote": "USDA has no record for the Argentine pan francés roll used for choripán. This is its record for a hard (kaiser-type) roll — the closest crusty white-roll profile it publishes.",
+      "sourceNote": "USDA has no record for the Argentine pan francés roll used for choripán. This is its record for a hard (kaiser-type) roll; it is the closest crusty white-roll profile it publishes.",
       "nutritionPer100g": {
         "kcal": 293,
         "protein": 9.9,

@@ -14,7 +14,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172549",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172549/nutrients",
-      "sourceNote": "USDA's record for the sirloin half of the leg, trimmed to 1/8 inch of external fat — the tender end of the leg, suitable for cubing.",
+      "sourceNote": "USDA's record for the sirloin half of the leg, trimmed to 1/8 inch of external fat. It is the tender end of the leg, suitable for cubing.",
       "nutritionPer100g": {
         "kcal": 261,
         "protein": 17.21,

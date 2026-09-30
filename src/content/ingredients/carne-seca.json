@@ -23,7 +23,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "170604",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/170604/nutrients",
-      "sourceNote": "USDA has no record for carne seca/charque specifically. This is its record for cured, dried beef — the closest salted-and-dried beef profile it publishes.",
+      "sourceNote": "USDA has no record for carne seca/charque specifically. This is its record for cured, dried beef; it is the closest salted-and-dried beef profile it publishes.",
       "nutritionPer100g": {
         "kcal": 153,
         "protein": 31.1,

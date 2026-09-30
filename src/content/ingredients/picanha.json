@@ -28,7 +28,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "174750",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/174750/nutrients",
-      "sourceNote": "USDA publishes no picanha/rump-cap record. This is its record for New Zealand rump centre, separable lean and fat — the closest whole rump-muscle profile it carries.",
+      "sourceNote": "USDA publishes no picanha/rump-cap record. This is its record for New Zealand rump centre, separable lean and fat; it is the closest whole rump-muscle profile it carries.",
       "nutritionPer100g": {
         "kcal": 145,
         "protein": 21.65,

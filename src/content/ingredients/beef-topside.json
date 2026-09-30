@@ -29,7 +29,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "169534",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/169534/nutrients",
-      "sourceNote": "USDA has no record for topside (nalga/bola de lomo) specifically. This is its record for beef top round, separable lean and fat, trimmed to 1/8\" fat — the closest lean roasting-cut profile it publishes.",
+      "sourceNote": "USDA has no record for topside (nalga/bola de lomo) specifically. This is its record for beef top round, separable lean and fat, trimmed to 1/8\" fat; it is the closest lean roasting-cut profile it publishes.",
       "nutritionPer100g": {
         "kcal": 173,
         "protein": 22.24,

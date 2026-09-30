@@ -17,7 +17,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "174915",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/174915/nutrients",
-      "sourceNote": "USDA publishes no record for lavash. Cited against pita, the nearest thin wheat flatbread it carries — both are a plain, lean wheat dough baked hot and fast, with no added fat.",
+      "sourceNote": "USDA publishes no record for lavash. Cited against pita, the nearest thin wheat flatbread it carries. Both are a plain, lean wheat dough baked hot and fast, with no added fat.",
       "nutritionPer100g": {
         "kcal": 275,
         "protein": 9.1,

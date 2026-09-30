@@ -23,7 +23,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168579",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168579/nutrients",
-      "sourceNote": "USDA has no chipotle-specific record — a chipotle is a jalapeño that is smoked and dried rather than sun-dried. This is its record for dried pasilla chilli, the closest medium-heat dried-chile profile it publishes; the smoking is a flavour this table cannot capture.",
+      "sourceNote": "USDA has no chipotle-specific record: a chipotle is a jalapeño that is smoked and dried rather than sun-dried. This is its record for dried pasilla chilli, the closest medium-heat dried-chile profile it publishes; the smoking is a flavour this table cannot capture.",
       "nutritionPer100g": {
         "kcal": 345,
         "protein": 12.35,

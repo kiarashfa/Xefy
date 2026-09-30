@@ -150,7 +150,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168895",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168895/nutrients",
-      "sourceNote": "USDA's record for enriched self-rising all-purpose flour — plain flour milled with salt and a raising agent already worked through it.",
+      "sourceNote": "USDA's record for enriched self-rising all-purpose flour. It is plain flour milled with salt and a raising agent already worked through it.",
       "nutritionPer100g": {
         "kcal": 354,
         "protein": 9.89,

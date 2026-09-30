@@ -14,7 +14,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "167880",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/167880/nutrients",
-      "sourceNote": "USDA has no record for tasso, a heavily spiced and smoked Cajun cure. This is its record for cured, roasted pork shoulder (arm picnic), the closest published cured-pork-shoulder profile — tasso is cut from the same primal, more heavily seasoned and smoked rather than roasted, and used in small, intensely flavoured amounts.",
+      "sourceNote": "USDA has no record for tasso, a heavily spiced and smoked Cajun cure. This is its record for cured, roasted pork shoulder (arm picnic), the closest published cured-pork-shoulder profile: tasso is cut from the same primal, more heavily seasoned and smoked rather than roasted, and used in small, intensely flavoured amounts.",
       "nutritionPer100g": {
         "kcal": 170,
         "protein": 24.94,

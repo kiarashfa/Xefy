@@ -65,8 +65,8 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "174190",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/174190/nutrients",
-      "sourceNote": "USDA's record for cod dried and salted as sold, before the fish is soaked. A recipe that specifies soaking or boiling the salt cod to remove excess salt before cooking should declare a consumedFractionNote rather than relying on this figure alone: soaking rehydrates the flesh and leaches out much of the added salt, so the cooked fish is markedly less concentrated in both sodium and protein than this dry, unsoaked record shows.",
-      "nutritionCaveat": "Cited against dried, salted cod as sold. Once soaked and cooked — the standard preparation before use — the fish rehydrates and sheds much of its added salt, so the sodium figure in particular is well above what ends up on the plate; USDA publishes no record for the desalted, cooked state.",
+      "sourceNote": "USDA's record for cod dried and salted as sold, before the fish is soaked. Salt cod is normally soaked or boiled to draw out the excess salt before cooking, and soaking rehydrates the flesh and leaches out much of the added salt, so the cooked fish is markedly less concentrated in both sodium and protein than this dry, unsoaked record shows.",
+      "nutritionCaveat": "Cited against dried, salted cod as sold. Once soaked and cooked (the standard preparation before use), the fish rehydrates and sheds much of its added salt, so the sodium figure in particular is well above what ends up on the plate; USDA publishes no record for the desalted, cooked state.",
       "nutritionPer100g": {
         "kcal": 290,
         "protein": 62.82,

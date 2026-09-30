@@ -17,7 +17,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "174205",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/174205/nutrients",
-      "sourceNote": "USDA's blue crab record, moist-heat cooked — blue crab is the species used in Louisiana crab dishes.",
+      "sourceNote": "USDA's blue crab record, moist-heat cooked. Blue crab is the species used in Louisiana crab dishes.",
       "nutritionPer100g": {
         "kcal": 83,
         "protein": 17.88,

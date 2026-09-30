@@ -25,7 +25,7 @@
       "sourceId": "169393",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/169393/nutrients",
       "sourceNote": "USDA publishes no record for fermented tea leaves (lahpet). This is its record for canned grape leaves, the closest available match for a green leaf preserved whole in a salty liquid, rather than eaten fresh.",
-      "nutritionCaveat": "Cited against canned grape leaves because no fermented-tea-leaf record exists in USDA. This does not capture tea's own chemistry — its catechins and caffeine — and the sodium figure in particular reflects a canning brine rather than lahpet's own fermentation liquor, so treat the sodium and micronutrient figures as approximate.",
+      "nutritionCaveat": "Cited against canned grape leaves because no fermented-tea-leaf record exists in USDA. This does not capture tea's own chemistry (its catechins and caffeine), and the sodium figure in particular reflects a canning brine rather than lahpet's own fermentation liquor, so treat the sodium and micronutrient figures as approximate.",
       "nutritionPer100g": {
         "kcal": 69,
         "protein": 4.27,

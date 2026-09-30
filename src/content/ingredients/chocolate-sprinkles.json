@@ -23,7 +23,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "167976",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/167976/nutrients",
-      "sourceNote": "USDA has no record for chocolate sprinkles (granulado). This is its record for semisweet chocolate — sprinkles are the same chocolate formed into small rods, so the composition is representative.",
+      "sourceNote": "USDA has no record for chocolate sprinkles (granulado). This is its record for semisweet chocolate: sprinkles are the same chocolate formed into small rods, so the composition is representative.",
       "nutritionPer100g": {
         "kcal": 480,
         "protein": 4.2,

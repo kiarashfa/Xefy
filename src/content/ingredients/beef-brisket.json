@@ -14,7 +14,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "168664",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/168664/nutrients",
-      "sourceNote": "USDA's record for the whole brisket, point and flat together, trimmed to a thin fat cap — the trim a whole packer brisket is given before it goes into a smoker.",
+      "sourceNote": "USDA's record for the whole brisket, point and flat together, trimmed to a thin fat cap. This is the trim a whole packer brisket is given before it goes into a smoker.",
       "nutritionPer100g": {
         "kcal": 253,
         "protein": 18.42,

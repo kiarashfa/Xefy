@@ -22,7 +22,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172643",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172643/nutrients",
-      "sourceNote": "USDA's record for boneless veal leg cutlet — the top round, cap removed — which is the traditional cut for Wiener Schnitzel.",
+      "sourceNote": "USDA's record for boneless veal leg cutlet (the top round, cap removed), which is the traditional cut for Wiener Schnitzel.",
       "nutritionPer100g": {
         "kcal": 107,
         "protein": 22.07,

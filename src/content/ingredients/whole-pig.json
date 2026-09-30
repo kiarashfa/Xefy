@@ -14,7 +14,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "167888",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/167888/nutrients",
-      "sourceNote": "USDA publishes no record for a whole dressed pig. Cited against its composite of trimmed retail cuts (leg, loin, shoulder and spareribs), separable lean and fat, raw — the closest thing it carries to an average across the carcass, since a whole roast pig runs through the same mix of cuts on and off the bone.",
+      "sourceNote": "USDA publishes no record for a whole dressed pig. Cited against its composite of trimmed retail cuts (leg, loin, shoulder and spareribs), separable lean and fat, raw. This is the closest thing it carries to an average across the carcass, since a whole roast pig runs through the same mix of cuts on and off the bone.",
       "nutritionPer100g": {
         "kcal": 216,
         "protein": 18.95,

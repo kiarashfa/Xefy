@@ -24,7 +24,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "174527",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/174527/nutrients",
-      "sourceNote": "USDA's generic ready-to-serve pepper/hot sauce record — an aged cayenne mash thinned with vinegar and salt, the profile of the Louisiana-style bottled sauces this ingredient represents.",
+      "sourceNote": "USDA's generic ready-to-serve pepper/hot sauce record: an aged cayenne mash thinned with vinegar and salt, the profile of the Louisiana-style bottled sauces this ingredient represents.",
       "nutritionPer100g": {
         "kcal": 11,
         "protein": 0.51,

@@ -15,7 +15,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "169396",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/169396/nutrients",
-      "sourceNote": "USDA's record for the dried poblano — the ancho is a poblano dried whole rather than ground.",
+      "sourceNote": "USDA's record for the dried poblano. The ancho is a poblano dried whole rather than ground.",
       "nutritionPer100g": {
         "kcal": 281,
         "protein": 11.86,

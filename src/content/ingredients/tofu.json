@@ -60,7 +60,7 @@
       "sourceDataset": "USDA FDC SR Legacy",
       "sourceId": "172449",
       "sourceUrl": "https://fdc.nal.usda.gov/food-details/172449/nutrients",
-      "sourceNote": "USDA's record for soft tofu set with calcium sulphate and nigari, which is the unpressed, high-moisture curd sold as silken. It is not a pressed block that has been cut soft — the whole difference is that the whey was never drained out of it.",
+      "sourceNote": "USDA's record for soft tofu set with calcium sulphate and nigari, which is the unpressed, high-moisture curd sold as silken. It is not a pressed block that has been cut soft: the whole difference is that the whey was never drained out of it.",
       "nutritionPer100g": {
         "kcal": 61,
         "protein": 7.17,
