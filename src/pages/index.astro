@@ -3,15 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import ReverseSearchTeaser from '../components/ReverseSearchTeaser.svelte';
+import RecipeCard from '../components/RecipeCard.astro';
 import { catalogRecord, getSite } from '../lib/content/site.ts';
-import { weeklyPick } from '../lib/showcase.ts';
+import { FEATURED_SCRIPT, featured, featuredAttributes, featuredSlice } from '../lib/showcase.ts';
 import { COURSES, CUISINES } from '../schemas/taxonomy.ts';
 
 /**
  * The homepage: a way in, not the whole catalogue.
  *
  * It holds a fixed amount whatever the size of the catalogue — a featured
- * handful that changes weekly, the busiest ways to browse, and the door to the
+ * handful that changes daily, the busiest ways to browse, and the door to the
  * full list at `/recipes/`. A homepage that rendered every dish would be the
  * slowest page on the site by the time there were a thousand of them.
  */
@@ -38,10 +39,11 @@ const teaserIngredients = [...useCount.entries()]
   .sort((a, b) => a.name.localeCompare(b.name));
 
 /* Only dishes with a photograph: a featured card is the one place a blank tile
-   would be the first thing a visitor sees. */
-const featured = weeklyPick(
+   would be the first thing a visitor sees. Spread by cuisine, so a day's row
+   is not three dishes from one kitchen. */
+const picks = featured(
   records.filter((r) => r.image),
-  8,
+  { count: 8, id: (r) => r.slug, group: (r) => r.tags.cuisine[0] ?? '' },
 );
 
 const withCounts = (terms: readonly { id: string; label: string }[], axis: 'cuisine' | 'course') =>
@@ -58,8 +60,6 @@ const cuisines = withCounts(CUISINES, 'cuisine')
 const allCuisines = withCounts(CUISINES, 'cuisine').length;
 const courses = withCounts(COURSES, 'course').sort((a, b) => a.label.localeCompare(b.label));
 
-const cuisineLabel = (id: string) => CUISINES.find((c) => c.id === id)?.label ?? id;
-const minutes = (m: number) => (m < 60 ? `${m}m` : `${Math.floor(m / 60)}h ${m % 60 || ''}`.trim());
 
 const title = 'Xefy · Recipe encyclopedia';
 const description =
@@ -79,34 +79,24 @@ const description =
       <ReverseSearchTeaser client:visible ingredients={teaserIngredients} base={base} />
     </div>
 
-    <section class="home-section" aria-labelledby="featured-title">
-      <div class="home-section-head">
-        <h2 id="featured-title" class="home-section-title">Featured this week</h2>
-        <a class="home-section-link" href={`${base}recipes/`}>All {records.length} recipes →</a>
-      </div>
-      <ul class="card-grid">
-        {
-          featured.map((r) => (
-            <li>
-              <a class="card" href={`${base}recipes/${r.slug}/`}>
-                <span class="card-image">
-                  <img src={`${base}${r.image}`} alt="" width="800" height="800" loading="lazy" />
-                </span>
-                <span class="card-body">
-                  <span class="card-eyebrow">
-                    {cuisineLabel(r.tags.cuisine[0]!)} · {r.style}
-                  </span>
-                  <span class="card-title">{r.title}</span>
-                  <span class="card-meta">
-                    {minutes(r.totalMin)} · {r.kcalPerServing} kcal · {r.difficulty}
-                  </span>
-                </span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+    {
+      picks.count > 0 && (
+        <section class="home-section" aria-labelledby="featured-title" {...featuredAttributes(picks)}>
+          <div class="home-section-head">
+            <h2 id="featured-title" class="home-section-title">Featured today</h2>
+            <a class="home-section-link" href={`${base}recipes/`}>All {records.length} recipes →</a>
+          </div>
+          {/* Every candidate, inert until the script below clones the reader's day. */}
+          <template data-featured-pool data-pagefind-ignore>
+            {picks.pool.map((r) => <RecipeCard recipe={r} base={base} />)}
+          </template>
+          <ul class="card-grid" data-featured-list>
+            {featuredSlice(picks.pool, picks.count, picks.start).map((r) => <RecipeCard recipe={r} base={base} />)}
+          </ul>
+          <script is:inline set:html={FEATURED_SCRIPT} />
+        </section>
+      )
+    }
 
     <section class="home-section" aria-labelledby="cuisine-title">
       <div class="home-section-head">
