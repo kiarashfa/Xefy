@@ -51,6 +51,54 @@
         "gPerTsp": 5,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "dijon",
+      "label": "Dijon",
+      "proseQualifier": "Dijon",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172234",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172234/nutrients",
+      "sourceNote": "USDA has no record for Dijon mustard. This is its record for prepared yellow mustard, the closest published match for a smooth prepared mustard. Dijon is made with brown seed and wine or verjuice, and the figures are not adjusted for that.",
+      "nutritionPer100g": {
+        "kcal": 60,
+        "protein": 3.74,
+        "fat": 3.34,
+        "carbs": 5.83,
+        "fiber": 4,
+        "sugars": 0.92,
+        "calcium": 63,
+        "iron": 1.61,
+        "magnesium": 48,
+        "phosphorus": 108,
+        "potassium": 152,
+        "sodium": 1104,
+        "zinc": 0.64,
+        "copper": 0.074,
+        "manganese": 0.422,
+        "seleniumMcg": 33.5,
+        "vitaminC": 0.3,
+        "thiamin": 0.177,
+        "riboflavin": 0.07,
+        "niacin": 0.565,
+        "vitaminB6": 0.07,
+        "folateMcg": 7,
+        "choline": 22.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 5,
+        "vitaminE": 0.36,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1.4,
+        "saturatedFat": 0.214,
+        "monounsaturatedFat": 2.182,
+        "polyunsaturatedFat": 0.774,
+        "transFat": 0.009,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 5,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/mustard-thumb.webp"

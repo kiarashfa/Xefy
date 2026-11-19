@@ -1,0 +1,179 @@
+---
+title: Ossobuco alla Milanese
+subtitle: Cross-cut veal shanks braised in wine and stock until the meat loosens from the bone, finished with a gremolata of lemon, parsley and garlic; a serving is one shank.
+label: Milanese, without tomato
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [braising]
+names:
+  alsoKnownAs:
+    - { name: Osso buco, region: Italy, lang: it }
+    - { name: Osso buco alla milanese, region: Italy, lang: it }
+  searchOnly: ["ossobucco", "osso bucco", "ossobuco milanese"]
+image:
+  src: images/recipes/ossobuco.webp
+  alt: "Braised veal shank with marrow bone in tomato sauce over creamy polenta, scattered with chopped gremolata, in a rust-glazed bowl"
+ingredients:
+  - id: veal
+    ingredientRef: veal
+    form: shank
+    amount: 1200
+    unit: g
+    note: bone-in, cross-cut about three centimetres thick, tied once with string
+    consumedFraction: 0.7
+    consumedFractionNote: "An editorial estimate: roughly three tenths of a cross-cut shank is bone, which stays on the plate. The marrow is eaten but is not weighed apart."
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 30
+    unit: g
+    note: for dusting
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    portions:
+      - { id: butter-browning, amount: 20 }
+      - { id: butter-sauce, amount: 20, note: to finish the sauce }
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 80
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    portions:
+      - { id: garlic-braise, amount: 5, note: crushed }
+      - { id: garlic-gremolata, amount: 5, note: finely chopped }
+  - id: white-wine
+    ingredientRef: white-wine
+    form: table
+    amount: 200
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 400
+    unit: ml
+  - id: bay-leaf
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 1
+    unit: g
+  - id: lemon
+    ingredientRef: lemon
+    form: raw
+    amount: 60
+    unit: g
+    note: zest of one lemon, finely grated
+    consumedFraction: 0.2
+    consumedFractionNote: "Only the zest is used. The pulp and juice are not, and the zest is a small share of the fruit's weight."
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 15
+    unit: g
+    note: leaves only, finely chopped
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: dust-veal, durationMin: 5, type: active, phase: prep }
+  - { id: chop-vegetables, durationMin: 15, type: active, phase: prep }
+  - { id: brown-veal, durationMin: 12, type: active, phase: cook }
+  - { id: soffritto, durationMin: 12, type: active, phase: cook }
+  - { id: braise, durationMin: 150, type: passive }
+  - { id: gremolata, durationMin: 6, type: "parallel-with:braise", phase: prep }
+  - { id: reduce-sauce, durationMin: 10, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The braise improves for a day in the fridge. The fat sets on the surface and lifts off cleanly, and the sauce is easier to finish from cold.
+  freezable: true
+  freezeInstructions: Freeze the shanks in their braising liquid once they have cooled. Thaw in the fridge overnight before reheating.
+  reheatInstructions: Reheat gently, covered, in the liquid until the meat is hot through, then finish the sauce with the butter and serve with the fresh gremolata.
+notes:
+  techniqueRationale:
+    - stepId: brown-veal
+      text: The colour built on the cut faces is what the sauce draws its depth from, so the shanks are browned on every side rather than only on the skin.
+  commonPitfalls:
+    - stepId: braise
+      text: Submerging the shanks lets the exposed top boil and turn grey. The liquid should come only part way up the meat, and the shanks should be turned once during the braise.
+---
+
+<Step id="dust-veal">
+  Season the <Qty ref="veal"/> with the <Qty ref="salt"/> and dust each piece lightly with
+  the <Qty ref="flour"/>, shaking off the excess. Keep the string on each shank so it
+  holds its shape as it cooks.
+</Step>
+
+<Step id="chop-vegetables">
+  Finely chop the <Qty ref="onion"/>, the <Qty ref="carrot"/> and the <Qty ref="celery"/>.
+  Crush the <Qty ref="garlic-braise"/> with the flat of a knife. Keep the
+  <Qty ref="garlic-gremolata"/> apart for the gremolata.
+</Step>
+
+<Step id="brown-veal">
+  Heat the <Qty ref="olive-oil"/> and the <Qty ref="butter-browning"/> in a heavy casserole
+  over a moderately high flame until the butter foams. Brown the shanks on their cut faces
+  and round sides, turning them with tongs, for <Dur step="brown-veal"/>, until deeply
+  coloured. Lift them out onto a plate.
+</Step>
+
+<Step id="soffritto">
+  Lower the heat, add the vegetables and the crushed garlic, and cook gently for
+  <Dur step="soffritto"/>, until soft and sweet but not coloured. Pour in the
+  <Qty ref="white-wine"/> and let it bubble, scraping the base of the pan, until it has
+  reduced by about half.
+</Step>
+
+<Step id="braise">
+  Pour in the <Qty ref="stock"/>, add the <Qty ref="bay-leaf"/> and bring to a simmer. Return
+  the shanks to the casserole standing upright, with the liquid coming only part way up
+  the meat. Cover tightly and braise in an oven at <Temp c={160}/> for
+  <Dur step="braise"/>, turning the shanks once, until the meat is tender and comes away
+  from the bone.
+</Step>
+
+<Step id="gremolata">
+  Chop the <Qty ref="lemon"/>, the <Qty ref="parsley"/> and the
+  <Qty ref="garlic-gremolata"/> together on the board until fine, and keep the mixture
+  cold until it is needed.
+</Step>
+
+<Step id="reduce-sauce">
+  Lift the shanks out and keep them warm. Skim the fat from the liquid, set the pan over a
+  brisk flame and reduce it for <Dur step="reduce-sauce"/>, until it coats the back of a
+  spoon. Whisk in the <Qty ref="butter-sauce"/>, season with the <Qty ref="pepper"/>, and
+  serve each shank with its sauce, scattered with the gremolata.
+</Step>

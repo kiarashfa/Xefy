@@ -1,0 +1,61 @@
+{
+  "id": "cognac",
+  "name": "Cognac",
+  "proseName": "cognac",
+  "category": "drink",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "brandy",
+      "label": "Cognac or brandy",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174815",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174815/nutrients",
+      "sourceNote": "USDA has no brandy or cognac record. This is its record for a distilled spirit at 80 proof, which is 40 per cent alcohol, the strength of cognac. The figures are those of a generic spirit at that strength.",
+      "nutritionPer100g": {
+        "kcal": 231,
+        "protein": 0,
+        "fat": 0,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 0,
+        "iron": 0.04,
+        "magnesium": 0,
+        "phosphorus": 4,
+        "potassium": 2,
+        "sodium": 1,
+        "zinc": 0.04,
+        "copper": 0.021,
+        "manganese": 0.018,
+        "seleniumMcg": 0,
+        "vitaminC": 0,
+        "thiamin": 0.006,
+        "riboflavin": 0.004,
+        "niacin": 0.013,
+        "vitaminB6": 0.001,
+        "folateMcg": 0,
+        "choline": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/cognac-thumb.webp"
+}

@@ -1,0 +1,133 @@
+---
+title: Takoyaki
+subtitle: Dashi batter poured into a takoyaki pan around pieces of boiled octopus, turned into round balls and finished with sauce, mayonnaise and green laver.
+label: Osaka
+defaultServings: 20
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [snack]
+  method: [pan-frying]
+names:
+  searchOnly: ["octopus balls", "tako yaki"]
+image:
+  src: images/recipes/takoyaki.webp
+  alt: "Takoyaki balls glazed with dark sauce, striped with mayonnaise and topped with aonori and curled bonito flakes, in a long white dish"
+ingredients:
+  - id: flour
+    ingredientRef: tempura-flour
+    form: soft
+    amount: 150
+    unit: g
+    note: sifted into the dashi
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten into the batter
+  - id: octopus
+    ingredientRef: octopus
+    form: boiled
+    amount: 250
+    unit: g
+    note: cut into small dice, one piece for each ball
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: finely chopped
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: red
+    amount: 20
+    unit: g
+    note: finely chopped
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+    note: to grease the pan
+    consumedFraction: 0.1
+    consumedFractionNote: "Most of the oil stays in the pan, and the small amount that is absorbed by the batter is eaten. This is an editorial estimate, not a sourced figure."
+  - id: aonori
+    ingredientRef: aonori
+    form: dried
+    amount: 2
+    unit: g
+    note: to finish
+  - id: sauce
+    ingredientRef: tonkatsu-sauce
+    form: okonomiyaki
+    amount: 40
+    unit: g
+    note: brushed over the finished balls
+  - id: mayo
+    ingredientRef: japanese-mayonnaise
+    form: yolk
+    amount: 30
+    unit: g
+    note: drizzled in lines
+steps:
+  - { componentRef: dashi, multiplier: 0.8 }
+  - { id: prep-octopus, durationMin: 8, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: prep-toppings, durationMin: 6, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: make-batter, durationMin: 6, type: active, phase: prep }
+  - { id: heat-pan, durationMin: 6, type: active, phase: cook }
+  - { id: cook-takoyaki, durationMin: 12, type: active, phase: cook }
+  - { id: finish-takoyaki, durationMin: 4, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead and kept cold, and the octopus and toppings can be prepared in the morning. The batter is best mixed just before cooking, because it thickens as it stands and the balls lose their softness.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-takoyaki
+      text: The batter is turned again and again in the hole, so that the outside sets into a round shell while the centre stays soft and only just cooked. A ball left to stand in one position cooks flat on one side and stays raw on the other.
+  commonPitfalls:
+    - stepId: cook-takoyaki
+      text: Turning a ball before its edge has set tears the shell, and the batter runs out into the pan. A ball is turned only when a pick slides under it cleanly.
+---
+
+<Step id="prep-octopus">
+  Cut the <Qty ref="octopus"/> into small dice, one piece for each ball. One serving is one ball,
+  so the batch is counted by the piece rather than by the plate. This takes
+  <Dur step="prep-octopus"/>, and it runs while the kombu steeps.
+</Step>
+
+<Step id="prep-toppings">
+  Finely chop the <Qty ref="spring-onion"/> and the <Qty ref="pickled-ginger"/>, and keep them in
+  separate small piles on a plate. Set out the <Qty ref="aonori"/> ready to scatter. This takes
+  <Dur step="prep-toppings"/>.
+</Step>
+
+<Step id="make-batter">
+  Sift the <Qty ref="flour"/> into a bowl and pour the strained dashi over it, whisking as you go.
+  Beat in the <Qty ref="egg"/> and whisk until the batter is smooth and has no lumps of flour. Leave
+  it to rest while the pan heats. This takes <Dur step="make-batter"/>.
+</Step>
+
+<Step id="heat-pan">
+  Set the takoyaki pan over a medium flame. Wipe every hole with a little of the <Qty ref="oil"/> on
+  folded kitchen paper, and leave the pan until it is hot enough that the batter sizzles on contact.
+  This takes <Dur step="heat-pan"/>.
+</Step>
+
+<Step id="cook-takoyaki">
+  Pour the batter into each hole until it is nearly full, then drop a piece of the
+  <Qty ref="octopus"/>, some of the <Qty ref="spring-onion"/> and a little of the
+  <Qty ref="pickled-ginger"/> into each one. Once the base has set, turn each ball with a pick a
+  quarter turn at a time, drawing the loose batter from the edges into the gaps, until the balls are
+  round and golden all over. Refill the holes and repeat until all the batter is used. This takes
+  <Dur step="cook-takoyaki"/>.
+</Step>
+
+<Step id="finish-takoyaki">
+  Arrange the balls on a warm plate, brush them with the <Qty ref="sauce"/> and drizzle the
+  <Qty ref="mayo"/> over them in lines. Scatter the <Qty ref="aonori"/> on top, and serve at once
+  while the centres are still soft. This takes
+  <Dur step="finish-takoyaki"/>.
+</Step>

@@ -1,0 +1,124 @@
+---
+title: Nigiri Sushi
+subtitle: Hand-pressed mounds of vinegared short-grain rice, each topped with a slice of raw tuna, sea bream or mackerel, served with wasabi and pickled ginger.
+label: Edo style
+defaultServings: 2
+difficulty: Hard
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [no-cook, boiling]
+names:
+  searchOnly: ["nigiri", "nigiri zushi", "sushi", "hand-pressed sushi"]
+image:
+  src: images/recipes/nigiri-sushi.webp
+  alt: "A single salmon nigiri: a slice of raw salmon draped over a small mound of sushi rice, on a dark slate"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 240
+    unit: g
+    note: short-grain, weighed raw
+  - id: vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 40
+    unit: ml
+    note: for the sushi seasoning
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 16
+    unit: g
+    note: for the sushi seasoning
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    note: for the sushi seasoning
+  - id: tuna
+    ingredientRef: tuna
+    form: raw
+    amount: 120
+    unit: g
+    note: must be sold for raw eating, cut into thin slices
+  - id: bream
+    ingredientRef: sea-bream
+    form: raw
+    amount: 120
+    unit: g
+    note: must be sold for raw eating, cut into thin slices
+  - id: mackerel
+    ingredientRef: mackerel
+    form: raw
+    amount: 100
+    unit: g
+    note: must be sold for raw eating, cut into thin slices
+  - id: wasabi
+    ingredientRef: wasabi
+    form: paste
+    amount: 4
+    unit: g
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: sushi
+    amount: 15
+    unit: g
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+    note: for dipping
+steps:
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: prepare-fish, durationMin: 12, type: "parallel-with:cook-rice", phase: prep }
+  - { id: dress-rice, durationMin: 6, type: active, phase: prep }
+  - { id: shape-nigiri, durationMin: 15, type: active, phase: prep }
+  - { id: serve-nigiri, durationMin: 3, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The rice is dressed on the day and kept covered at room temperature until it is shaped. The fish is kept cold until just before it is laid on the rice, and the nigiri are eaten the same day.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: shape-nigiri
+      text: Each piece is pressed with a light hand, just enough to hold the rice together. Pressing hard makes the rice dense and gummy, and the grains lose the separation that lets the piece fall apart softly in the mouth.
+  commonPitfalls:
+    - stepId: shape-nigiri
+      text: Wet hands are kept wet with a little of the vinegared water, not with plain water, which would dilute the seasoning on the outside of each piece.
+---
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost clear,
+  drain it well, and cook it with a measured amount of water in a heavy pan with a tight lid. Leave
+  it covered off the heat for the last part of the <Dur step="cook-rice"/>.
+</Step>
+
+<Step id="prepare-fish">
+  Slice the <Qty ref="tuna"/>, the <Qty ref="bream"/> and the <Qty ref="mackerel"/> thinly across the
+  grain, one slice for each piece of rice. Keep them cold on a plate in the fridge. This takes
+  <Dur step="prepare-fish"/>.
+</Step>
+
+<Step id="dress-rice">
+  Warm the <Qty ref="vinegar"/> with the <Qty ref="sugar"/> and the <Qty ref="salt"/> until the
+  sugar and salt have dissolved. Spread the hot rice in a wide wooden tray, pour the seasoning over
+  it, and fold it through with a rice paddle, fanning it as you go, until it is glossy and cooled
+  to the touch. This takes <Dur step="dress-rice"/>.
+</Step>
+
+<Step id="shape-nigiri">
+  Wet your hands with a little of the seasoning water and take a small portion of the rice in your
+  palm. Shape it into an oval with a light touch, then lay a dab of the <Qty ref="wasabi"/> on the
+  fish, and press the slice of fish gently onto the rice. This takes <Dur step="shape-nigiri"/>.
+</Step>
+
+<Step id="serve-nigiri">
+  Arrange the nigiri on a plate in the order of their fish, with the <Qty ref="pickled-ginger"/>
+  beside them and the <Qty ref="soy"/> in a small dish for dipping. Serve at once. This takes
+  <Dur step="serve-nigiri"/>.
+</Step>

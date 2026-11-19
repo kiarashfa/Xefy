@@ -1,0 +1,166 @@
+---
+title: Chocolate Babka
+subtitle: A rich, enriched loaf of butter-and-egg dough rolled around a chocolate filling and finished with sugar syrup; a serving is one slice.
+label: Chocolate filling
+defaultServings: 10
+difficulty: Medium
+tags:
+  cuisine: [jewish]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/chocolate-babka.webp
+  alt: "A chocolate babka loaf sliced open, showing layered swirls of dark chocolate filling between pale enriched dough"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 190
+    unit: g
+    portions:
+      - { id: sugar-dough, amount: 60 }
+      - { id: sugar-filling, amount: 50, note: for the filling }
+      - { id: sugar-syrup, amount: 80, note: for the syrup }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 150
+    unit: ml
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 160
+    unit: g
+    portions:
+      - { id: butter-dough, amount: 100, note: softened but still cool }
+      - { id: butter-filling, amount: 60, note: softened }
+  - id: chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 20
+    unit: g
+    note: for the filling
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 80
+    unit: ml
+    note: for the syrup
+steps:
+  - { id: mix, durationMin: 8, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: add-butter, durationMin: 12, type: active, phase: prep }
+  - { id: first-rise, durationMin: 90, type: passive }
+  - { id: chill, durationMin: 60, type: passive }
+  - { id: make-filling, durationMin: 10, type: "parallel-with:first-rise", phase: prep }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: second-rise, durationMin: 60, type: passive }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:second-rise", phase: cook }
+  - { id: bake, durationMin: 40, type: active, phase: cook }
+  - { id: make-syrup, durationMin: 8, type: "parallel-with:bake", phase: cook }
+  - { id: cool, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to a workable temperature before shaping.
+  freezable: true
+  freezeInstructions: Freeze the cooled babka wrapped tightly, whole or in slices, for up to a month. Thaw it wrapped at room temperature.
+  reheatInstructions: Warm a slice briefly in a moderate oven or a toaster to soften the filling.
+notes:
+  techniqueRationale:
+    - stepId: add-butter
+      text: The butter goes in a little at a time and each piece is worked in before the next. Added all at once it separates the dough, which never becomes the smooth, elastic sheet that holds the rolled filling.
+  commonPitfalls:
+    - stepId: shape
+      text: A warm dough is soft and tears when it is rolled around the filling, and the filling leaks out in the oven. Chill it until the butter is firm enough to handle.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, the <Qty ref="sugar-dough"/>, the <Qty ref="salt"/> and the
+  <Qty ref="yeast"/> into the bowl of a mixer fitted with a dough hook. Add the
+  <Qty ref="milk"/> and the <Qty ref="egg"/>, and mix on low speed for <Dur step="mix"/>, until
+  the dough comes together into a soft, sticky mass.
+</Step>
+
+<Step id="knead">
+  Knead on low speed for <Dur step="knead"/>, until the dough is smooth and pulls away from the
+  sides of the bowl in a sheet, though it will still stick to your fingers.
+</Step>
+
+<Step id="add-butter">
+  Add the <Qty ref="butter-dough"/> a few pieces at a time, letting each one be absorbed before
+  the next goes in. Keep kneading for <Dur step="add-butter"/>, until the dough is glossy,
+  elastic and comes away from the bowl again.
+</Step>
+
+<Step id="first-rise">
+  Cover the bowl and leave the dough at room temperature for <Dur step="first-rise"/>, until it
+  has doubled in size. Knock it back gently to release the air.
+</Step>
+
+<Step id="chill">
+  Refrigerate the dough for <Dur step="chill"/>, until the butter has firmed and the dough can
+  be lifted without sticking.
+</Step>
+
+<Step id="make-filling">
+  Melt the <Qty ref="chocolate"/> with the <Qty ref="butter-filling"/> over a gentle heat, then
+  stir in the <Qty ref="sugar-filling"/> and the <Qty ref="cocoa"/> until smooth. Leave it to
+  cool and thicken for <Dur step="make-filling"/>.
+</Step>
+
+<Step id="shape">
+  Roll the chilled dough on a floured bench into a rectangle about <Len cm={30}/> wide. Spread
+  the filling over it, leaving a narrow border at the far edge. Roll the dough up tightly from
+  the near edge, then cut the roll in half lengthwise, turn the cut sides up, and twist the two
+  halves over each other. Lay the twist in a buttered loaf tin.
+</Step>
+
+<Step id="second-rise">
+  Cover the tin loosely and leave the babka to rise for <Dur step="second-rise"/>, until the
+  dough reaches the rim of the tin and feels airy when touched.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={180}/> with a shelf in the lower middle.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep golden and a skewer pushed into the centre comes out
+  clean. If the top colours before the middle is set, lay a sheet of foil over it.
+</Step>
+
+<Step id="make-syrup">
+  Heat the <Qty ref="sugar-syrup"/> and the <Qty ref="water"/> in a small pan, stirring until the
+  sugar has dissolved, then let the syrup boil for <Dur step="make-syrup"/>. Brush it over the
+  babka as soon as it comes out of the oven.
+</Step>
+
+<Step id="cool">
+  Leave the babka in the tin for <Dur step="cool"/>, then turn it out onto a rack before slicing.
+</Step>

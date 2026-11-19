@@ -1,0 +1,59 @@
+{
+  "id": "fennel",
+  "name": "Fennel",
+  "proseName": "fennel",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "bulb",
+      "label": "Bulb, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169385",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169385/nutrients",
+      "nutritionPer100g": {
+        "kcal": 31,
+        "protein": 1.24,
+        "fat": 0.2,
+        "carbs": 7.3,
+        "fiber": 3.1,
+        "sugars": 3.93,
+        "calcium": 49,
+        "iron": 0.73,
+        "magnesium": 17,
+        "phosphorus": 50,
+        "potassium": 414,
+        "sodium": 52,
+        "zinc": 0.2,
+        "copper": 0.066,
+        "manganese": 0.191,
+        "seleniumMcg": 0.7,
+        "vitaminC": 12,
+        "thiamin": 0.01,
+        "riboflavin": 0.032,
+        "niacin": 0.64,
+        "vitaminB6": 0.047,
+        "folateMcg": 27,
+        "choline": 13.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 48,
+        "vitaminE": 0.58,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 62.8,
+        "saturatedFat": 0.09,
+        "monounsaturatedFat": 0.068,
+        "polyunsaturatedFat": 0.169,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 87,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/fennel-thumb.webp"
+}

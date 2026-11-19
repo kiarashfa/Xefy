@@ -1,0 +1,57 @@
+{
+  "id": "mackerel",
+  "name": "Mackerel",
+  "proseName": "mackerel",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw fillet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173672",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173672/nutrients",
+      "sourceNote": "This is USDA's record for raw Pacific and jack mackerel mixed. It is the closest match to the Pacific mackerel used for sushi; the Atlantic record describes a different fish and was not taken. The fish must be sold for raw eating.",
+      "nutritionPer100g": {
+        "kcal": 158,
+        "protein": 20.07,
+        "fat": 7.89,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 23,
+        "iron": 1.16,
+        "magnesium": 28,
+        "phosphorus": 125,
+        "potassium": 406,
+        "sodium": 86,
+        "zinc": 0.67,
+        "copper": 0.093,
+        "manganese": 0.015,
+        "seleniumMcg": 36.5,
+        "vitaminC": 2,
+        "thiamin": 0.111,
+        "riboflavin": 0.421,
+        "niacin": 8.32,
+        "vitaminB6": 0.33,
+        "folateMcg": 2,
+        "choline": 66.9,
+        "vitaminB12Mcg": 4.4,
+        "vitaminAMcg": 19,
+        "vitaminE": 1,
+        "vitaminDMcg": 9.1,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 2.247,
+        "monounsaturatedFat": 2.629,
+        "polyunsaturatedFat": 1.94,
+        "cholesterol": 47
+      }
+    }
+  ],
+  "image": "images/ingredients/mackerel-thumb.webp"
+}

@@ -1,0 +1,64 @@
+{
+  "id": "marsala",
+  "name": "Marsala",
+  "proseName": "Marsala",
+  "category": "drink",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "sulphites"
+  ],
+  "forms": [
+    {
+      "id": "sweet",
+      "label": "Sweet, fortified",
+      "proseQualifier": "sweet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173176",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173176/nutrients",
+      "sourceNote": "USDA publishes no record for Marsala. This is its record for sweet dessert wine, the fortified wine that Marsala belongs to; dry Marsala would carry less sugar, so the sugar figure is the one most likely to be high for a dry wine.",
+      "nutritionPer100g": {
+        "kcal": 160,
+        "protein": 0.2,
+        "fat": 0,
+        "carbs": 13.69,
+        "fiber": 0,
+        "sugars": 7.78,
+        "calcium": 8,
+        "iron": 0.24,
+        "magnesium": 9,
+        "phosphorus": 9,
+        "potassium": 92,
+        "sodium": 9,
+        "zinc": 0.07,
+        "copper": 0.045,
+        "manganese": 0.119,
+        "seleniumMcg": 0.5,
+        "vitaminC": 0,
+        "thiamin": 0.018,
+        "riboflavin": 0.018,
+        "niacin": 0.213,
+        "vitaminB6": 0,
+        "folateMcg": 0,
+        "choline": 5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/marsala-thumb.webp"
+}

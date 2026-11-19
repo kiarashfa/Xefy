@@ -1,0 +1,154 @@
+---
+title: Cannoli Siciliani
+subtitle: Fried tubes of Marsala pastry filled with sweetened ricotta, chocolate and pistachio; a serving is one cannolo from a batch of twelve.
+label: Classic
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [pastry, dessert]
+  method: [deep-frying]
+names:
+  alsoKnownAs:
+    - { name: Cannolo siciliano, region: Sicily, lang: it }
+  searchOnly: ["cannoli", "cannolo", "sicilian cannoli"]
+image:
+  src: images/recipes/cannoli.webp
+  alt: "Four fried cannoli shells filled with white ricotta cream, dusted with icing sugar and topped with candied cherries, in a white box"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: "00"
+    amount: 250
+    unit: g
+    note: for the dough
+  - id: lard
+    ingredientRef: lard
+    form: standard
+    amount: 25
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 20
+    unit: g
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 5
+    unit: g
+  - id: cinnamon
+    ingredientRef: cinnamon
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    portions:
+      - { id: egg-dough, amount: 45 }
+      - { id: egg-seal, amount: 5, note: beaten, to seal the shells }
+  - id: marsala
+    ingredientRef: marsala
+    form: sweet
+    amount: 40
+    unit: ml
+  - id: orange
+    ingredientRef: orange
+    form: raw
+    amount: 10
+    unit: g
+    note: finely grated zest only
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.12
+    consumedFractionNote: "Most frying oil stays in the pan; absorption varies with batter and oil temperature."
+  - id: ricotta
+    ingredientRef: ricotta
+    form: whole
+    amount: 500
+    unit: g
+    note: drained in a sieve
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 60
+    unit: g
+    note: in small pieces
+  - id: pistachio
+    ingredientRef: pistachio
+    form: raw
+    amount: 20
+    unit: g
+    note: chopped
+steps:
+  - { id: make-dough, durationMin: 15, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 60, type: passive }
+  - { id: drain-ricotta, durationMin: 60, type: "parallel-with:rest-dough", phase: rest }
+  - { id: roll-shells, durationMin: 30, type: active, phase: prep }
+  - { id: fry-shells, durationMin: 15, type: active, phase: cook }
+  - { id: fill-cannoli, durationMin: 15, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The shells keep in an airtight tin for several days once they are cool. Fill them only on the day they are to be served, since the wet filling softens the shell.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fill-cannoli
+      text: Ricotta is wet, and it softens a fried shell within minutes. The filling goes in as close to serving as possible, and both ends are filled so that the shell stays crisp in the middle.
+  commonPitfalls:
+    - stepId: fry-shells
+      text: Oil that is too cool soaks into the shell and leaves it greasy instead of blistered. Keep the oil at the working temperature and fry the shells in small batches.
+---
+
+<Step id="make-dough">
+  Rub the <Qty ref="lard"/> into the <Qty ref="flour"/> with the <Qty ref="sugar"/>, the
+  <Qty ref="cocoa"/>, the <Qty ref="cinnamon"/> and the <Qty ref="salt"/>. Work in the
+  <Qty ref="egg-dough"/>, the <Qty ref="marsala"/> and the <Qty ref="orange"/> until the
+  dough comes together, then knead it until smooth and firm.
+</Step>
+
+<Step id="rest-dough">
+  Wrap the dough and rest it for <Dur step="rest-dough"/>, so that it relaxes enough to roll
+  thin without shrinking back.
+</Step>
+
+<Step id="drain-ricotta">
+  Set the <Qty ref="ricotta"/> in a sieve over a bowl in the fridge for
+  <Dur step="drain-ricotta"/>, so that the whey runs away and the filling holds its shape.
+</Step>
+
+<Step id="roll-shells">
+  Roll the dough out thin and cut it into rounds or rectangles. Wrap each piece around a
+  cannoli tube or a clean wooden dowel, brush the overlap with the <Qty ref="egg-seal"/>
+  and press it closed. Work for <Dur step="roll-shells"/>.
+</Step>
+
+<Step id="fry-shells">
+  Heat the <Qty ref="frying-oil"/> to <Temp c={180}/>. Lower the shells in a few at a time
+  and fry for <Dur step="fry-shells"/>, until they are blistered and deep gold. Lift them
+  out, drain them on kitchen paper, and slide the tubes out while the shells are still warm.
+</Step>
+
+<Step id="fill-cannoli">
+  Beat the drained <Qty ref="ricotta"/> with the <Qty ref="icing-sugar"/> until smooth, then
+  fold in the <Qty ref="chocolate"/>. Pipe or spoon the filling into each cold shell from
+  both ends, roll the ends in the <Qty ref="pistachio"/>. Filling the shells takes
+  <Dur step="fill-cannoli"/>, and they are served at once.
+</Step>

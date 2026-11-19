@@ -1,0 +1,57 @@
+{
+  "id": "haricot-beans",
+  "name": "Haricot Beans",
+  "proseName": "haricot beans",
+  "category": "legume",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173745",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173745/nutrients",
+      "sourceNote": "Haricot is the French name for the small dried white bean. USDA publishes no haricot record and gives navy beans, the same small white bean sold under its American name, which is the closest match.",
+      "nutritionPer100g": {
+        "kcal": 337,
+        "protein": 22.33,
+        "fat": 1.5,
+        "carbs": 60.75,
+        "fiber": 15.3,
+        "sugars": 3.88,
+        "calcium": 147,
+        "iron": 5.49,
+        "magnesium": 175,
+        "phosphorus": 407,
+        "potassium": 1185,
+        "sodium": 5,
+        "zinc": 3.65,
+        "copper": 0.834,
+        "manganese": 1.418,
+        "seleniumMcg": 11,
+        "thiamin": 0.775,
+        "riboflavin": 0.164,
+        "niacin": 2.188,
+        "vitaminB6": 0.428,
+        "folateMcg": 364,
+        "choline": 87.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.02,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.5,
+        "saturatedFat": 0.17,
+        "monounsaturatedFat": 0.128,
+        "polyunsaturatedFat": 0.873,
+        "transFat": 0
+      },
+      "density": {
+        "gPerCup": 208,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

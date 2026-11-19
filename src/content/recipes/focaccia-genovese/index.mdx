@@ -1,0 +1,120 @@
+---
+title: Focaccia Genovese
+subtitle: A soft, high-hydration yeasted flatbread of Liguria, pressed deep with the fingers and finished with olive oil and flaky salt; a serving is one square.
+label: Ligurian
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/focaccia-genovese.webp
+  alt: "Focaccia with a dimpled golden top scattered with rosemary and flaky salt, a cut piece below showing its open, airy crumb"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: "00"
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 340
+    unit: ml
+    note: lukewarm
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 75
+    unit: ml
+    portions:
+      - { id: oil-dough, amount: 20 }
+      - { id: oil-tin, amount: 10, note: for oiling the tin }
+      - { id: oil-top, amount: 45, note: for the top }
+  - id: flaky-salt
+    ingredientRef: fine-sea-salt
+    form: flaky
+    amount: 5
+    unit: g
+    note: for the top
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 8, type: active, phase: prep }
+  - { id: second-rise, durationMin: 60, type: passive }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:second-rise", phase: cook }
+  - { id: top, durationMin: 4, type: active, phase: cook }
+  - { id: bake, durationMin: 25, type: active, phase: cook }
+  - { id: cool, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: true
+  freezeInstructions: Freeze the cooled focaccia, wrapped, whole or in squares, for up to a month.
+  reheatInstructions: Warm it in a hot oven for a few minutes to crisp the base again.
+notes:
+  techniqueRationale:
+    - stepId: top
+      text: The dimples are what hold the oil in the dough. Without them the oil runs off the surface and collects in the bottom of the tin.
+  commonPitfalls:
+    - stepId: shape
+      text: A tin that is not oiled holds the base of the bread, and the focaccia tears when it is lifted. Oil the tin before the dough goes in.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, the <Qty ref="salt"/> and the <Qty ref="yeast"/> into a large
+  bowl and stir them together. Add the <Qty ref="water"/> and the <Qty ref="oil-dough"/>, and
+  mix for <Dur step="mix"/>, until no dry flour remains and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Pour the <Qty ref="oil-tin"/> into a large shallow tin and spread it over the base and sides.
+  Lift the dough into the tin and press it out with your fingers until it fills the tin and
+  lies evenly across the base.
+</Step>
+
+<Step id="second-rise">
+  Leave the shaped dough to prove for <Dur step="second-rise"/>, until a fingertip pressed in
+  leaves a dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={230}/> with a shelf in the lower middle.
+</Step>
+
+<Step id="top">
+  Press your fingers deep into the dough all over, making dimples that will hold the oil. Pour
+  the <Qty ref="oil-top"/> over the surface, letting it collect in the dimples, and scatter the
+  <Qty ref="flaky-salt"/> over the top.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until golden on top and crisp on the base, and the base sounds
+  hollow when tapped.
+</Step>
+
+<Step id="cool">
+  Leave the focaccia in the tin for <Dur step="cool"/>, then lift it out and cut it into
+  squares.
+</Step>

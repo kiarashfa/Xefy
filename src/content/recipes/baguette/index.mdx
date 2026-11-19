@@ -1,0 +1,117 @@
+---
+title: Baguette
+subtitle: A long, lean loaf of flour, water, salt and yeast, shaped thin so that the crust is most of the bread.
+label: Same-day dough
+defaultServings: 3
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [bread]
+  method: [baking]
+names:
+  alsoKnownAs:
+    - { name: Baguette de tradition française, region: France, lang: fr }
+image:
+  src: images/recipes/baguette.webp
+  alt: "A baguette cut across, showing the open, irregular crumb and thin golden crust"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for dusting the bench }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 340
+    unit: ml
+    note: at about room temperature
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 2
+    unit: g
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: autolyse, durationMin: 20, type: passive }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 90, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: second-rise, durationMin: 45, type: passive }
+  - { id: heat-oven, durationMin: 40, type: "parallel-with:second-rise", phase: cook }
+  - { id: bake, durationMin: 22, type: active, phase: cook }
+  - { id: cool, durationMin: 60, type: passive }
+makeAhead:
+  aheadInstructions: null
+  freezable: null
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: autolyse
+      text: Resting the flour and water before the yeast and salt go in lets the gluten begin to form without kneading, so the dough is easier to stretch and the knead is shorter.
+  commonPitfalls:
+    - stepId: bake
+      text: In a dry oven the crust sets before the loaf has finished rising, so the bread comes out short and the slashes do not open. The steam has to be in place before the loaves go in.
+---
+
+<Step id="mix">
+  The figures on this page are per loaf. Put the <Qty ref="flour-dough"/> into a large
+  bowl, add the <Qty ref="water"/>, and mix with a spatula or your hand until no dry
+  flour remains. Cover the bowl.
+</Step>
+
+<Step id="autolyse">
+  Leave the flour and water to stand for <Dur step="autolyse"/>, until the dough is
+  shaggy, sticky and holds together.
+</Step>
+
+<Step id="knead">
+  Scatter the <Qty ref="yeast"/> and the <Qty ref="salt"/> over the dough and knead it
+  for <Dur step="knead"/>, until it is smooth and stretches thin without tearing.
+</Step>
+
+<Step id="first-rise">
+  Put the dough back in the bowl, cover it, and leave it to rise for
+  <Dur step="first-rise"/>. Stretch and fold it over on itself every half hour during
+  that time, until it has grown by about half and feels airy.
+</Step>
+
+<Step id="shape">
+  Tip the dough onto a bench dusted with the <Qty ref="flour-bench"/>. Divide it into
+  equal pieces and shape each into a loose round, then leave them to relax for a few
+  minutes. Roll each piece into a long cylinder, pinching the seam closed as you go,
+  and taper the ends.
+</Step>
+
+<Step id="second-rise">
+  Set the loaves seam side up on a floured cloth, folding the cloth between them so
+  they hold their shape. Leave them to prove for <Dur step="second-rise"/>, until a
+  fingertip pressed in leaves a dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={250}/> with a baking stone or tray inside it and a second
+  tray in the bottom to hold boiling water for steam. Let it heat for
+  <Dur step="heat-oven"/> so the stone is fully hot before the loaves go in.
+</Step>
+
+<Step id="bake">
+  Turn the loaves onto a sheet of baking paper, slash each one a few times along its
+  length, and slide them onto the hot stone. Pour the boiling water into the tray below
+  and shut the door at once. Bake for <Dur step="bake"/>, until deep gold and hollow
+  when tapped on the base.
+</Step>
+
+<Step id="cool">
+  Lift the loaves onto a rack and leave them for <Dur step="cool"/> before cutting, so
+  the crumb can set.
+</Step>

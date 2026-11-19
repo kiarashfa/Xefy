@@ -117,6 +117,46 @@
         "densitySource": "estimated",
         "densityClass": "grain-uncooked"
       }
+    },
+    {
+      "id": "risotto",
+      "label": "Medium-grain, raw (Arborio, Carnaroli)",
+      "proseName": "risotto rice",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169760",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169760/nutrients",
+      "sourceNote": "USDA's record for raw medium-grain white rice, unenriched, which is the grain sold as Arborio and Carnaroli for risotto. Italian risotto rice is not enriched, so the unenriched record is the one that matches it. The record carries no fibre figure, as for the short-grain form above.",
+      "nutritionPer100g": {
+        "kcal": 360,
+        "protein": 6.61,
+        "fat": 0.58,
+        "carbs": 79.34,
+        "calcium": 9,
+        "iron": 0.8,
+        "magnesium": 35,
+        "phosphorus": 108,
+        "potassium": 86,
+        "sodium": 1,
+        "zinc": 1.16,
+        "copper": 0.11,
+        "manganese": 1.1,
+        "vitaminC": 0,
+        "thiamin": 0.07,
+        "riboflavin": 0.048,
+        "niacin": 1.6,
+        "vitaminB6": 0.145,
+        "folateMcg": 9,
+        "vitaminB12Mcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.158,
+        "monounsaturatedFat": 0.181,
+        "polyunsaturatedFat": 0.155,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 195,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/rice-thumb.webp"

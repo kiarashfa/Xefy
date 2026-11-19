@@ -1,0 +1,102 @@
+---
+title: Pesto alla Genovese
+subtitle: Basil, garlic, pine nuts, hard cheese and olive oil pounded to a loose green sauce; a serving is one portion of sauce for a plate of pasta.
+label: Mortar
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [sauce]
+  method: [no-cook]
+names:
+  alsoKnownAs:
+    - { name: Pesto genovese, region: Liguria, lang: it }
+  notToBeConfusedWith:
+    - name: Pesto alla trapanese
+      note: The Sicilian sauce of Trapani, made with tomato and almonds in place of basil and pine nuts, and it is not green.
+  searchOnly: ["basil pesto", "pesto", "genoese pesto"]
+image:
+  src: images/recipes/pesto-alla-genovese.webp
+  alt: "Freshly pounded green pesto in a white marble mortar with a wooden pestle"
+ingredients:
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 60
+    unit: g
+    note: leaves only, picked and dried
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 3
+    unit: g
+    note: peeled
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pine-nuts
+    ingredientRef: pine-nuts
+    form: shelled
+    amount: 20
+    unit: g
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 30
+    unit: g
+    note: finely grated
+  - id: pecorino
+    ingredientRef: pecorino-romano
+    form: aged
+    amount: 20
+    unit: g
+    note: finely grated
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 100
+    unit: ml
+steps:
+  - { id: pound-base, durationMin: 5, type: active, phase: prep }
+  - { id: add-basil, durationMin: 8, type: active, phase: prep }
+  - { id: add-cheese, durationMin: 2, type: active, phase: prep }
+  - { id: add-oil, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Pesto is best within a day of making. Keep it covered in the fridge with a thin layer of oil over the surface, which slows the browning.
+  freezable: true
+  freezeInstructions: Freeze in small portions, covered with a layer of oil. Thaw in the fridge before stirring it through hot pasta.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: add-basil
+      text: Pounding bruises the leaves and releases their oils, where cutting would bruise them into strands. Working the basil in small batches lets each one break down before the next goes in.
+  commonPitfalls:
+    - stepId: add-oil
+      text: Pouring the oil in all at once splits the sauce into a thin oil and a dry paste. Trickle it in while stirring, until the sauce is loose and glossy.
+---
+
+<Step id="pound-base">
+  Pound the <Qty ref="garlic"/> with the <Qty ref="salt"/> to a smooth paste in the
+  mortar. Add the <Qty ref="pine-nuts"/> and work them to a coarse paste, for
+  <Dur step="pound-base"/>.
+</Step>
+
+<Step id="add-basil">
+  Add the <Qty ref="basil"/> a few leaves at a time, pounding and turning in a circular
+  motion until each batch has broken down before the next goes in. Work for
+  <Dur step="add-basil"/>, until the mixture is a deep green paste.
+</Step>
+
+<Step id="add-cheese">
+  Work in the <Qty ref="parmigiano"/> and the <Qty ref="pecorino"/> for
+  <Dur step="add-cheese"/>, with a few drops of the oil to help the cheese blend into the
+  paste.
+</Step>
+
+<Step id="add-oil">
+  Trickle in the <Qty ref="olive-oil"/> a little at a time, stirring with the pestle, for
+  <Dur step="add-oil"/>, until the sauce is loose and glossy. Serve it at once, with the
+  pasta still hot.
+</Step>

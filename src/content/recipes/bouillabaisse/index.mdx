@@ -1,0 +1,181 @@
+---
+title: Bouillabaisse
+subtitle: Rockfish and potatoes simmered in a saffron and fennel broth, served with toasted bread and a saffron rouille; a serving is one portion of fish with its broth.
+label: Provence
+defaultServings: 4
+difficulty: Hard
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [simmering]
+ingredients:
+  - id: rockfish
+    ingredientRef: rockfish
+    form: mixed
+    amount: 1200
+    unit: g
+    note: whole, cleaned and scaled, cut into thick pieces; the heads and bones go into the broth
+    consumedFraction: 0.6
+    consumedFractionNote: "The heads and bones are used for the broth and not eaten. Roughly three-fifths of the weight of a whole cleaned fish is flesh; this is an editorial estimate, not a measured yield."
+  - id: potatoes
+    ingredientRef: potato
+    form: raw
+    amount: 400
+    unit: g
+    note: peeled and cut into thick slices
+    consumedFraction: 0.85
+    consumedFractionNote: "The peel is discarded. Roughly a seventh of the weight of whole potatoes goes; this is an editorial estimate, not a measured yield."
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: chopped
+  - id: leek
+    ingredientRef: leek
+    form: raw
+    amount: 150
+    unit: g
+    note: white part only, sliced
+  - id: fennel
+    ingredientRef: fennel
+    form: bulb
+    amount: 150
+    unit: g
+    note: sliced
+  - id: tomatoes
+    ingredientRef: tomato
+    form: fresh
+    amount: 400
+    unit: g
+    note: skinned and chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 20
+    unit: g
+    portions:
+      - { id: garlic-broth, amount: 15, note: crushed }
+      - { id: garlic-rouille, amount: 5, note: crushed to a paste }
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.5
+    unit: g
+    portions:
+      - { id: saffron-broth, amount: 0.3 }
+      - { id: saffron-rouille, amount: 0.2 }
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 180
+    unit: ml
+    portions:
+      - { id: oil-broth, amount: 60 }
+      - { id: oil-rouille, amount: 120 }
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.6
+    unit: g
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1500
+    unit: ml
+  - id: baguette
+    ingredientRef: baguette
+    form: french
+    amount: 200
+    unit: g
+    note: sliced and toasted
+  - id: yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 17
+    unit: g
+    note: for the rouille
+  - id: cayenne
+    ingredientRef: cayenne-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+steps:
+  - { id: prepare-fish, durationMin: 15, type: active, phase: prep }
+  - { id: soften-base, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-broth, durationMin: 20, type: passive }
+  - { id: cook-potatoes, durationMin: 15, type: passive }
+  - { id: make-rouille, durationMin: 10, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: toast-bread, durationMin: 5, type: "parallel-with:simmer-broth", phase: cook }
+  - { id: poach-fish, durationMin: 8, type: active, phase: cook }
+  - { id: serve, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The broth can be made a day ahead and kept in the fridge. Reheat it to a simmer, then poach the fish in it just before serving; the fish does not keep well once cooked.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: simmer-broth
+      text: The heads and bones are simmered with the vegetables and tomato, which is what gives the broth its body. Straining it before the fish goes in keeps the broth clear and stops the fish breaking up in it.
+  commonPitfalls:
+    - stepId: poach-fish
+      text: Fish boiled hard in the broth breaks into flakes and turns the broth cloudy. Keep the broth at a fast simmer and lower the pieces in gently, so they cook through without breaking.
+---
+
+<Step id="prepare-fish">
+  Scale and clean the <Qty ref="rockfish"/>, keeping the heads and bones. Cut the flesh into thick
+  pieces and set them aside on a plate in the fridge. Chop the heads and bones into pieces the size
+  of a fist. This takes <Dur step="prepare-fish"/>.
+</Step>
+
+<Step id="soften-base">
+  Heat the <Qty ref="oil-broth"/> in a large, deep pot over a medium heat. Add the <Qty ref="onion"/>,
+  the <Qty ref="leek"/>, the <Qty ref="fennel"/> and the <Qty ref="garlic-broth"/>, and cook for
+  <Dur step="soften-base"/>, until soft but not coloured.
+</Step>
+
+<Step id="simmer-broth">
+  Add the chopped fish heads and bones, the <Qty ref="tomatoes"/>, the <Qty ref="saffron-broth"/>,
+  the <Qty ref="bay"/>, the <Qty ref="thyme"/> and the <Qty ref="water"/>. Season with the
+  <Qty ref="salt"/>, bring to a boil and simmer hard for <Dur step="simmer-broth"/>, until the broth
+  has a good flavour. Strain it into a clean pot, pressing the solids to extract their juices, and
+  return it to a simmer.
+</Step>
+
+<Step id="cook-potatoes">
+  Add the <Qty ref="potatoes"/> to the strained broth and simmer gently for
+  <Dur step="cook-potatoes"/>, until they are tender right through.
+</Step>
+
+<Step id="make-rouille">
+  Crush the <Qty ref="garlic-rouille"/> to a paste with a pinch of the <Qty ref="salt"/>. Work in the
+  <Qty ref="yolk"/>, then whisk in the <Qty ref="oil-rouille"/> a little at a time, as for mayonnaise,
+  until it is thick. Steep the <Qty ref="saffron-rouille"/> in a spoonful of the hot broth and whisk
+  it in with the <Qty ref="cayenne"/>. This takes <Dur step="make-rouille"/>.
+</Step>
+
+<Step id="toast-bread">
+  Toast the <Qty ref="baguette"/> slices in a hot oven or under a grill until crisp and golden on both
+  sides. This takes <Dur step="toast-bread"/>.
+</Step>
+
+<Step id="poach-fish">
+  Lower the <Qty ref="rockfish"/> into the simmering broth and cook for
+  <Dur step="poach-fish"/>, until the flesh is just opaque and flakes easily.
+</Step>
+
+<Step id="serve">
+  Lift the fish and potatoes onto a warm platter. Lay the toasted bread in warm bowls, ladle the
+  broth over it, and serve the fish with the rouille on the side. This takes <Dur step="serve"/>.
+</Step>

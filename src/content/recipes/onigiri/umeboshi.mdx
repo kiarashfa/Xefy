@@ -1,0 +1,63 @@
+---
+label: Umeboshi
+defaultServings: 8
+difficulty: Easy
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 320
+    unit: g
+    note: short-grain, weighed raw, cooked plain
+  - id: umeboshi
+    ingredientRef: umeboshi
+    form: salted
+    amount: 80
+    unit: g
+    note: pitted, the flesh only, one piece for each rice ball
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 12
+    unit: g
+    note: cut into strips to wrap each rice ball
+steps:
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: prep-umeboshi, durationMin: 5, type: "parallel-with:cook-rice", phase: prep }
+  - { id: cut-nori, durationMin: 3, type: "parallel-with:cook-rice", phase: prep }
+  - { id: shape-onigiri, durationMin: 15, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The umeboshi can be pitted and torn into pieces a day ahead and kept covered in the fridge. The rice is best shaped on the day it is cooked, because cold rice hardens, and each rice ball is wrapped in nori just before it is eaten.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-rice
+      text: No salt is added to the rice, because the umeboshi carries the seasoning. Salt in the rice as well would make the filling and the rice too salty to eat together.
+---
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost clear,
+  then drain it well. Cook it in a heavy pan with a tight lid, and leave it covered off the heat for
+  the last part of <Dur step="cook-rice"/>. Spread it on a wide tray while it is still hot, so that
+  the steam can escape. No vinegar goes in, because the rice is plain and not sushi rice.
+</Step>
+
+<Step id="prep-umeboshi">
+  Split the <Qty ref="umeboshi"/> open with your fingers and tear the flesh into small pieces,
+  removing any stones that are left. Keep the pieces together on a plate. This takes
+  <Dur step="prep-umeboshi"/>.
+</Step>
+
+<Step id="cut-nori">
+  Cut the <Qty ref="nori"/> into strips, each one wide enough to wrap a rice ball around its base
+  and long enough to meet on the other side. This takes <Dur step="cut-nori"/>.
+</Step>
+
+<Step id="shape-onigiri">
+  Wet your hands in a bowl of water, shake them dry, and take a portion of the warm rice in your
+  palm. Press a hollow in the centre, put in a piece of the umeboshi, and close the rice over it.
+  Shape it into a triangle with light, firm pressure, then wrap a strip of the <Qty ref="nori"/>
+  around its base just before it is eaten. This takes <Dur step="shape-onigiri"/>.
+</Step>

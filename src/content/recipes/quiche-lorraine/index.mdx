@@ -1,0 +1,137 @@
+---
+title: Quiche Lorraine
+subtitle: A shortcrust tart filled with smoked bacon, eggs and cream, with no cheese, baked until the custard just sets; a serving is one slice.
+label: Lorraine
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [baking]
+image:
+  src: images/recipes/quiche-lorraine.webp
+  alt: "A slice of quiche Lorraine showing the set egg custard with layers of bacon and lardons, beside a mixed leaf salad"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 200
+    unit: g
+    note: for the pastry
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 100
+    unit: g
+    note: cold, cut into cubes
+  - id: yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 17
+    unit: g
+    note: for the pastry
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 30
+    unit: ml
+    note: iced
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: lardons
+    ingredientRef: streaky-bacon
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into lardons
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: beaten
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 250
+    unit: ml
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: make-pastry, durationMin: 8, type: active, phase: prep }
+  - { id: chill-pastry, durationMin: 30, type: passive }
+  - { id: line-tin, durationMin: 6, type: active, phase: prep }
+  - { id: blind-bake, durationMin: 20, type: passive }
+  - { id: render-lardons, durationMin: 6, type: "parallel-with:blind-bake", phase: cook }
+  - { id: whisk-custard, durationMin: 4, type: "parallel-with:blind-bake", phase: prep }
+  - { id: fill-quiche, durationMin: 4, type: active, phase: prep }
+  - { id: bake-quiche, durationMin: 35, type: passive }
+  - { id: rest, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The pastry can be made a day ahead and kept wrapped in the fridge. The quiche is best eaten the day it is baked, warm or at room temperature.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Warm a slice briefly in a moderate oven to crisp the base again.
+notes:
+  techniqueRationale:
+    - stepId: blind-bake
+      text: The shell is baked empty first so the base sets before the custard goes in. A raw base takes up the liquid and stays pale and soft under the filling.
+  commonPitfalls:
+    - stepId: bake-quiche
+      text: A custard baked until it is firm all the way through turns grainy and weeps. Take the quiche out while the centre still trembles slightly; it finishes setting as it rests.
+---
+
+<Step id="make-pastry">
+  Rub the <Qty ref="butter"/> into the <Qty ref="flour"/> with your fingertips until the
+  mixture looks like fine breadcrumbs. Add the <Qty ref="salt"/>, the <Qty ref="yolk"/> and the
+  <Qty ref="water"/>, and bring it together with a knife into a smooth disc. Do not knead it.
+  This takes <Dur step="make-pastry"/>.
+</Step>
+
+<Step id="chill-pastry">
+  Wrap the pastry and chill it for <Dur step="chill-pastry"/>, until firm enough to roll.
+</Step>
+
+<Step id="line-tin">
+  Roll the pastry to a round a little larger than a <Len cm={24}/> flan tin, about as thick as a
+  coin. Lift it into the tin, press it into the corners and trim the edges. Prick the base and
+  chill it again if it has softened. This takes <Dur step="line-tin"/>.
+</Step>
+
+<Step id="blind-bake">
+  Line the pastry with baking paper, fill it with baking beans, and bake at <Temp c={190}/> for
+  <Dur step="blind-bake"/>. Lift out the paper and beans and bake for a few minutes more, until the
+  base is dry and pale gold.
+</Step>
+
+<Step id="render-lardons">
+  While the case bakes, put the <Qty ref="lardons"/> in a dry frying pan over a medium heat and fry
+  them for <Dur step="render-lardons"/>, until the fat has run and the edges are crisp. Drain them
+  on kitchen paper.
+</Step>
+
+<Step id="whisk-custard">
+  While the lardons cook, beat the <Qty ref="eggs"/> in a bowl, then whisk in the
+  <Qty ref="cream"/> and the <Qty ref="pepper"/>. This takes <Dur step="whisk-custard"/>.
+</Step>
+
+<Step id="fill-quiche">
+  Scatter the lardons over the base of the case. Pour the custard over them, through a sieve if
+  you like. This takes <Dur step="fill-quiche"/>.
+</Step>
+
+<Step id="bake-quiche">
+  Bake at <Temp c={170}/> for <Dur step="bake-quiche"/>, until the filling is just set at the
+  edges and still trembles very slightly in the centre.
+</Step>
+
+<Step id="rest">
+  Leave the quiche to rest in the tin for <Dur step="rest"/>, which lets the custard finish
+  setting, then lift it out and cut it into slices.
+</Step>

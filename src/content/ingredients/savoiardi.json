@@ -1,0 +1,52 @@
+{
+  "id": "savoiardi",
+  "name": "Savoiardi",
+  "proseName": "savoiardi",
+  "category": "biscuit",
+  "animalOrigin": "egg",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten",
+    "egg"
+  ],
+  "forms": [
+    {
+      "id": "dry",
+      "label": "Dry sponge biscuit",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172821",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172821/nutrients",
+      "sourceNote": "USDA has no record for savoiardi. This is its record for ladyfingers, the same dry sponge biscuit under its English name, without lemon juice or rind.",
+      "nutritionPer100g": {
+        "kcal": 363,
+        "protein": 10.6,
+        "fat": 9.1,
+        "carbs": 59.7,
+        "fiber": 1,
+        "calcium": 47,
+        "iron": 3.58,
+        "magnesium": 12,
+        "phosphorus": 173,
+        "potassium": 113,
+        "sodium": 147,
+        "zinc": 1.14,
+        "copper": 0.095,
+        "manganese": 0.24,
+        "vitaminC": 0,
+        "thiamin": 0.284,
+        "riboflavin": 0.428,
+        "niacin": 2.104,
+        "vitaminB6": 0.122,
+        "folateMcg": 105,
+        "vitaminB12Mcg": 0.75,
+        "vitaminAMcg": 167,
+        "saturatedFat": 3.022,
+        "monounsaturatedFat": 3.745,
+        "polyunsaturatedFat": 1.423,
+        "cholesterol": 221
+      }
+    }
+  ],
+  "image": "images/ingredients/savoiardi-thumb.webp"
+}

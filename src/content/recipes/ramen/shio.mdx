@@ -1,0 +1,146 @@
+---
+label: Shio
+defaultServings: 2
+difficulty: Hard
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-carcass
+    form: raw
+    amount: 800
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: "The bones and skin are strained out of the broth and discarded. What is eaten is the meat and fat that have gone into the stock. This is an editorial estimate, not a sourced figure."
+    note: broken into pieces
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: sliced
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+    note: for the tare
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 60
+    unit: ml
+    note: for the braising liquid
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 40
+    unit: ml
+    note: for the braising liquid
+  - id: sake
+    ingredientRef: sake
+    form: standard
+    amount: 90
+    unit: ml
+    portions:
+      - { id: sake-tare, amount: 30, note: for the tare }
+      - { id: sake-braise, amount: 60, note: for the braising liquid }
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 200
+    unit: g
+    note: in one piece, rolled and tied with string
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: for the marinated eggs
+  - id: noodles
+    ingredientRef: ramen-noodles
+    form: dried
+    amount: 200
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: menma
+    ingredientRef: menma
+    form: fermented
+    amount: 60
+    unit: g
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 6
+    unit: g
+steps:
+  - { id: simmer-broth, durationMin: 150, type: passive }
+  - { id: braise-chashu, durationMin: 90, type: "parallel-with:simmer-broth", phase: rest }
+  - { id: boil-eggs, durationMin: 8, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: marinate-eggs, durationMin: 60, type: passive }
+  - { id: make-tare, durationMin: 3, type: active, phase: prep }
+  - { id: strain-broth, durationMin: 10, type: active, phase: cook }
+  - { id: cook-noodles, durationMin: 3, type: active, phase: cook }
+  - { id: assemble-bowls, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth and the chashu can be made two days ahead and kept cold. The tare keeps for a week in the fridge. The noodles are cooked to order.
+  freezable: true
+  freezeInstructions: The broth freezes well without the noodles. The chashu can be frozen in its braising liquid.
+  reheatInstructions: Bring the broth to a simmer and warm the chashu through in it. Cook the noodles fresh and assemble each bowl at once.
+notes:
+  techniqueRationale:
+    - stepId: make-tare
+      text: A shio tare is salt and sake and nothing else, so it has no colour and no sweetness to hide behind. The broth has to carry the flavour, which is why the chicken is simmered gently and kept clean.
+---
+
+<Step id="simmer-broth">
+  Put the <Qty ref="chicken"/>, the <Qty ref="water"/> and the <Qty ref="ginger"/> into a large
+  pot and bring it up to a bare simmer. Skim off the scum, then lower the heat so that the
+  surface only trembles, and leave it for <Dur step="simmer-broth"/>.
+</Step>
+
+<Step id="braise-chashu">
+  Put the <Qty ref="pork"/> into a pan with the <Qty ref="soy"/>, the <Qty ref="mirin"/> and the
+  <Qty ref="sake-braise"/>, and add enough water to cover it halfway. Cover and simmer gently for
+  <Dur step="braise-chashu"/>, turning once, until the pork is tender. Leave it to cool in its
+  liquid.
+</Step>
+
+<Step id="boil-eggs">
+  Lower the <Qty ref="egg"/> into boiling water and cook them for <Dur step="boil-eggs"/>, then
+  cool them under cold water and peel them.
+</Step>
+
+<Step id="marinate-eggs">
+  Put the peeled eggs into a bag with a little of the chashu braising liquid and leave them for
+  <Dur step="marinate-eggs"/>.
+</Step>
+
+<Step id="make-tare">
+  Warm the <Qty ref="salt"/> and the <Qty ref="sake-tare"/> together in a small pan until the
+  salt has dissolved, for <Dur step="make-tare"/>. Divide the tare between two bowls.
+</Step>
+
+<Step id="strain-broth">
+  Strain the broth through a fine sieve into a clean pan, letting it drain without pressing, and
+  keep it hot at a low simmer. This takes <Dur step="strain-broth"/>.
+</Step>
+
+<Step id="cook-noodles">
+  Cook the <Qty ref="noodles"/> in a large pan of boiling water for <Dur step="cook-noodles"/>,
+  until just tender, then drain them well.
+</Step>
+
+<Step id="assemble-bowls">
+  Pour the hot broth over the tare in each bowl and stir. Add the drained noodles, then the sliced
+  chashu, the halved marinated eggs, the <Qty ref="menma"/>, the <Qty ref="spring-onion"/> and the
+  <Qty ref="nori"/>, and serve at once.
+</Step>

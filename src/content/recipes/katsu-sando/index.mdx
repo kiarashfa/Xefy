@@ -1,0 +1,139 @@
+---
+title: Katsu Sando
+subtitle: A tonkatsu cutlet between slices of soft white bread with finely shredded cabbage and tonkatsu sauce, cut into halves.
+label: Soft white bread
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [snack]
+  method: [deep-frying]
+names:
+  searchOnly: ["katsusando", "katsu sand", "pork cutlet sandwich"]
+image:
+  src: images/recipes/katsu-sando.webp
+  alt: "A katsu sando held in a hand, cut to show a breaded pork cutlet between slices of soft white crustless bread"
+ingredients:
+  - id: pork
+    ingredientRef: pork-loin
+    form: boneless
+    amount: 300
+    unit: g
+    note: two boneless loin chops, cut about one finger thick
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 40
+    unit: g
+    note: for dredging
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten with a fork
+  - id: panko
+    ingredientRef: panko
+    form: dry
+    amount: 80
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 800
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: "Breaded cutlets take up a little of the oil as they fry, and most of it stays in the pan. This is an editorial estimate, not a sourced figure."
+  - id: bread
+    ingredientRef: sandwich-bread
+    form: white
+    amount: 120
+    unit: g
+    note: four slices of a soft white loaf, crusts trimmed
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 100
+    unit: g
+    note: very finely shredded
+  - id: tonkatsu-sauce
+    ingredientRef: tonkatsu-sauce
+    form: tonkatsu
+    amount: 30
+    unit: g
+steps:
+  - { id: prep-pork, durationMin: 6, type: active, phase: prep }
+  - { id: shred-cabbage, durationMin: 6, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 10, type: "parallel-with:prep-pork", phase: rest }
+  - { id: coat-pork, durationMin: 6, type: active, phase: prep }
+  - { id: fry-cutlets, durationMin: 7, type: active, phase: cook }
+  - { id: rest-cutlets, durationMin: 3, type: passive }
+  - { id: assemble-sando, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cabbage can be shredded and kept in cold water in the fridge for a few hours. The cutlets are breaded and fried just before the sandwiches are assembled, because the crumb softens as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: shred-cabbage
+      text: The cabbage is left in cold water so that it crisps before it goes into the sandwich. Dry, crisp cabbage keeps the bread from going soggy under the sauce.
+  commonPitfalls:
+    - stepId: assemble-sando
+      text: A cutlet put between the bread straight from the oil steams the crumb and softens the slices. The cutlet is left on the rack until it has stopped steaming before it is put into the sandwich.
+---
+
+<Step id="prep-pork">
+  Season the <Qty ref="pork"/> on both sides with the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>. Trim any sinew from the edges and make a few cuts through the fat
+  so that the chops do not curl in the oil. Lay each chop between sheets of cling film and
+  beat it lightly to an even thickness. This takes <Dur step="prep-pork"/>. One serving is one
+  half of a sandwich.
+</Step>
+
+<Step id="shred-cabbage">
+  Shred the <Qty ref="cabbage"/> very finely and leave it in a bowl of cold water for
+  <Dur step="shred-cabbage"/>, so that it crisps. Drain it well and pat it dry before it
+  goes into the sandwich.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a deep, heavy pan to <Temp c={170}/>, checking it with a
+  thermometer. It takes <Dur step="heat-oil"/> to come up to temperature and then holds
+  steady on a moderate flame.
+</Step>
+
+<Step id="coat-pork">
+  Set out three shallow dishes with the <Qty ref="flour"/>, the <Qty ref="egg"/> and the
+  <Qty ref="panko"/>. Dust each cutlet in flour and shake off the excess, dip it in the egg,
+  then press it into the panko on both sides so the crumb covers it evenly. This takes
+  <Dur step="coat-pork"/>.
+</Step>
+
+<Step id="fry-cutlets">
+  Lower the cutlets into the oil, which should stay at <Temp c={170}/>, and fry them for
+  <Dur step="fry-cutlets"/>, turning once, until the crumb is deep gold and the pork is
+  cooked through at its centre.
+</Step>
+
+<Step id="rest-cutlets">
+  Lift the cutlets out and drain them on a wire rack for <Dur step="rest-cutlets"/>. Do not
+  stack them, because the crust softens where they touch.
+</Step>
+
+<Step id="assemble-sando">
+  Spread the <Qty ref="tonkatsu-sauce"/> over one side of each slice of the <Qty ref="bread"/>.
+  Pile the drained <Qty ref="cabbage"/> onto two of the slices and lay a cutlet on each, then close
+  the sandwiches with the remaining slices and press them gently. Cut each sandwich in half and
+  serve at once. This takes <Dur step="assemble-sando"/>.
+</Step>

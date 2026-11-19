@@ -1,0 +1,86 @@
+---
+label: Madame
+defaultServings: 4
+difficulty: Easy
+ingredients:
+  - id: bread
+    ingredientRef: sandwich-bread
+    form: white
+    amount: 280
+    unit: g
+    note: sliced, crusts removed
+  - id: ham
+    ingredientRef: ham
+    form: sliced
+    amount: 240
+    unit: g
+    note: thinly sliced cooked ham
+  - id: gruyere
+    ingredientRef: gruyere
+    form: aged
+    amount: 200
+    unit: g
+    portions:
+      - { id: gruyere-inside, amount: 120, note: thinly sliced }
+      - { id: gruyere-top, amount: 80, note: grated }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 60
+    unit: g
+    note: clarified, for frying
+    portions:
+      - { id: butter-sandwiches, amount: 40 }
+      - { id: butter-eggs, amount: 20 }
+  - id: eggs
+    ingredientRef: egg
+    form: fried
+    amount: 180
+    unit: g
+    note: one per sandwich
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: assemble-sandwiches, durationMin: 6, type: active, phase: prep }
+  - { id: fry-sandwiches, durationMin: 8, type: active, phase: cook }
+  - { id: fry-eggs, durationMin: 4, type: "parallel-with:fry-sandwiches", phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-sandwiches
+      text: The sandwich is fried in butter with a lid over it, so the bread crisps on the outside while the cheese inside melts. The egg goes on last, so it sets on top of the hot sandwich without the yolk being broken.
+  commonPitfalls:
+    - stepId: fry-eggs
+      text: An egg fried in a pan that is too hot spreads thin and its white turns brown and lacy. Use medium heat and a little butter, and let the white set before the egg is lifted onto the sandwich.
+---
+
+<Step id="assemble-sandwiches">
+  Lay out the <Qty ref="bread"/> in pairs and season the inside of each pair lightly with the
+  <Qty ref="salt"/> and the <Qty ref="pepper"/>. Layer the <Qty ref="ham"/> and the
+  <Qty ref="gruyere-inside"/> on one slice of each pair, then close the sandwiches. Press the grated
+  <Qty ref="gruyere-top"/> on top of each sandwich. This takes <Dur step="assemble-sandwiches"/>.
+</Step>
+
+<Step id="fry-sandwiches">
+  Melt the <Qty ref="butter-sandwiches"/> in a heavy frying pan over a medium heat. Fry the sandwiches
+  for <Dur step="fry-sandwiches"/> in all, turning them once, until the bread is deep golden on both
+  sides and the cheese has melted. Cover the pan for the last minute or so to melt the cheese on top.
+</Step>
+
+<Step id="fry-eggs">
+  While the sandwiches fry, melt the <Qty ref="butter-eggs"/> in a second pan over a medium heat and
+  fry the <Qty ref="eggs"/> for <Dur step="fry-eggs"/>, until the whites are set and the yolks are
+  still soft. Lift one on top of each sandwich, and cut each sandwich in half to serve.
+</Step>

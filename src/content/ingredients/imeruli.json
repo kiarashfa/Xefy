@@ -1,0 +1,72 @@
+{
+  "id": "imeruli",
+  "name": "Imeruli",
+  "proseName": "imeruli",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "names": {
+    "alsoKnownAs": [
+      {
+        "name": "Imeretian cheese",
+        "region": "Imereti, Georgia",
+        "lang": "en"
+      }
+    ]
+  },
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172223",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172223/nutrients",
+      "nutritionPer100g": {
+        "kcal": 299,
+        "protein": 18.09,
+        "fat": 23.82,
+        "carbs": 2.98,
+        "fiber": 0,
+        "sugars": 2.32,
+        "calcium": 566,
+        "iron": 0.2,
+        "magnesium": 24,
+        "phosphorus": 385,
+        "potassium": 129,
+        "sodium": 751,
+        "zinc": 2.58,
+        "copper": 0.033,
+        "manganese": 0.014,
+        "seleniumMcg": 19.3,
+        "vitaminC": 0,
+        "thiamin": 0.042,
+        "riboflavin": 0.173,
+        "niacin": 0.027,
+        "vitaminB6": 0.076,
+        "folateMcg": 7,
+        "choline": 12.5,
+        "vitaminB12Mcg": 1.68,
+        "vitaminAMcg": 224,
+        "vitaminE": 0.37,
+        "vitaminDMcg": 2.7,
+        "vitaminKMcg": 1,
+        "saturatedFat": 12.94,
+        "monounsaturatedFat": 5.966,
+        "polyunsaturatedFat": 1.106,
+        "transFat": 0.834,
+        "cholesterol": 69
+      },
+      "density": {
+        "gPerCup": 122,
+        "densitySource": "measured"
+      },
+      "sourceNote": "USDA has no record for imeruli. This is its record for fresh queso fresco, the nearest unaged, mild, salted fresh cheese it publishes. Imeruli is a hand-made rennet cheese of cow's milk that its maker brines, and queso fresco is a different cheese made by a different method, so this record stands in for the nutrient profile only.",
+      "nutritionCaveat": "Cited against fresh queso fresco. Imeruli is brined by its maker and its salt content is not published, so the sodium figure is an approximation, not a measurement of this cheese."
+    }
+  ],
+  "image": "images/ingredients/imeruli-thumb.webp"
+}

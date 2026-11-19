@@ -1,0 +1,158 @@
+---
+label: Megruli
+defaultServings: 8
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for dusting the bench }
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 200
+    unit: ml
+    note: warm
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    portions:
+      - { id: egg-dough, amount: 100 }
+      - { id: egg-filling, amount: 50, note: beaten }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 120
+    unit: g
+    portions:
+      - { id: butter-dough, amount: 50, note: softened but still cool }
+      - { id: butter-filling, amount: 50, note: softened }
+      - { id: butter-top, amount: 20, note: for the top, after baking }
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: imeruli
+    ingredientRef: imeruli
+    form: fresh
+    amount: 200
+    unit: g
+    note: fresh and crumbled
+  - id: sulguni
+    ingredientRef: sulguni
+    form: brined
+    amount: 100
+    unit: g
+    note: grated
+  - id: yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 17
+    unit: g
+    note: for the topping
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: add-butter, durationMin: 8, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: make-filling, durationMin: 5, type: "parallel-with:first-rise", phase: prep }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: second-rise, durationMin: 20, type: passive }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:second-rise", phase: cook }
+  - { id: top, durationMin: 3, type: active, phase: cook }
+  - { id: bake, durationMin: 18, type: active, phase: cook }
+  - { id: dab-butter, durationMin: 1, type: active, phase: cook }
+  - { id: cool, durationMin: 5, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: The small hole left in the top lets steam out of the filling, so the dough does not split as the cheese heats.
+  commonPitfalls:
+    - stepId: shape
+      text: A filling that is not sealed in at the edges leaks onto the tray and leaves the bread dry. Pinch the edges shut firmly before flattening.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour-dough"/>, the <Qty ref="sugar"/> and the <Qty ref="salt"/> into a
+  large bowl, and stir in the <Qty ref="yeast"/>. Add the <Qty ref="milk"/> and the
+  <Qty ref="egg-dough"/>, and mix for <Dur step="mix"/>, until no dry flour remains and the
+  dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth and flexible.
+</Step>
+
+<Step id="add-butter">
+  Add the <Qty ref="butter-dough"/> a few pieces at a time, letting each one be absorbed before
+  the next goes in. Keep kneading for <Dur step="add-butter"/>, until the dough is glossy,
+  elastic and comes away from the bowl again.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="make-filling">
+  Crumble the <Qty ref="imeruli"/> into a bowl. Mix in the <Qty ref="egg-filling"/> and the
+  <Qty ref="butter-filling"/> until smooth, for <Dur step="make-filling"/>.
+</Step>
+
+<Step id="shape">
+  Divide the dough into two equal pieces and roll each one into a ball. Dust the bench with the
+  <Qty ref="flour-bench"/>, and flatten each ball into a round about <Len cm={25}/> across.
+  Place half the filling in the middle of each round, gather the edges over it and pinch them
+  shut firmly. Flatten each piece evenly into a round about <Len cm={25}/> across, and leave a
+  small hole in the top for the steam to escape.
+</Step>
+
+<Step id="second-rise">
+  Leave the khachapuri to prove for <Dur step="second-rise"/>, until a fingertip pressed in
+  leaves a dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={230}/> with a shelf in the lower middle.
+</Step>
+
+<Step id="top">
+  Mix the <Qty ref="sulguni"/> with the <Qty ref="yolk"/> for <Dur step="top"/>, and spread it
+  over each round, leaving the edge bare.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until the edge is golden and the cheese on top has melted and
+  browned in patches.
+</Step>
+
+<Step id="dab-butter">
+  Put a dollop of the <Qty ref="butter-top"/> on each khachapuri as it comes out of the oven.
+</Step>
+
+<Step id="cool">
+  Leave the khachapuri on a board for <Dur step="cool"/>, then cut each into four.
+</Step>

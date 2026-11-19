@@ -1,0 +1,170 @@
+---
+label: Tonkotsu
+defaultServings: 2
+difficulty: Hard
+ingredients:
+  - id: bones
+    ingredientRef: pork-bones
+    form: bones
+    amount: 1000
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: "The bones are cracked and strained out of the broth and discarded. What is eaten is the marrow, collagen and fat that have gone into the stock. This is an editorial estimate, not a sourced figure."
+    note: cracked into pieces
+  - id: trotters
+    ingredientRef: pork-bones
+    form: trotters
+    amount: 500
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: "The trotters are strained out of the broth and discarded with the bones. This is an editorial estimate, not a sourced figure."
+    note: split lengthways
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 3000
+    unit: ml
+    note: plus boiling water to top up
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: sliced
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely grated, for the tare
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 100
+    unit: ml
+    portions:
+      - { id: soy-tare, amount: 40, note: for the tare }
+      - { id: soy-braise, amount: 60, note: for the braising liquid }
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 60
+    unit: ml
+    portions:
+      - { id: mirin-tare, amount: 20, note: for the tare }
+      - { id: mirin-braise, amount: 40, note: for the braising liquid }
+  - id: sake
+    ingredientRef: sake
+    form: standard
+    amount: 60
+    unit: ml
+    note: for the braising liquid
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 200
+    unit: g
+    note: in one piece, rolled and tied with string
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: for the marinated eggs
+  - id: noodles
+    ingredientRef: ramen-noodles
+    form: dried
+    amount: 200
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: menma
+    ingredientRef: menma
+    form: fermented
+    amount: 60
+    unit: g
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 6
+    unit: g
+steps:
+  - { id: blanch-bones, durationMin: 15, type: active, phase: prep }
+  - { id: boil-broth, durationMin: 720, type: passive }
+  - { id: braise-chashu, durationMin: 90, type: "parallel-with:boil-broth", phase: rest }
+  - { id: boil-eggs, durationMin: 8, type: "parallel-with:boil-broth", phase: prep }
+  - { id: marinate-eggs, durationMin: 60, type: passive }
+  - { id: make-tare, durationMin: 3, type: active, phase: prep }
+  - { id: strain-broth, durationMin: 15, type: active, phase: cook }
+  - { id: cook-noodles, durationMin: 3, type: active, phase: cook }
+  - { id: assemble-bowls, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth is made a day or two ahead. Once it is cold it sets to a jelly, which is what it should do, and it is reheated to a boil before serving. The chashu and the eggs keep for two days.
+  freezable: true
+  freezeInstructions: The broth freezes well without the noodles. Thaw it fully before reheating it to a hard boil.
+  reheatInstructions: Bring the broth back to a hard boil so that it emulsifies again, then strain it. Warm the chashu through in the broth, and cook the noodles fresh.
+notes:
+  techniqueRationale:
+    - stepId: boil-broth
+      text: Tonkotsu is made by boiling the bones hard for many hours, not by simmering them. The fat and collagen from the marrow break down and emulsify into the water, which is what turns the broth white and thick. A gentle simmer for the same time gives a thin, clear stock with none of that body.
+  commonPitfalls:
+    - stepId: boil-broth
+      text: Topping up the pot with cold water stops the boil and the emulsion with it. Boiling water is added instead, and the pot is kept at a hard boil with the bones always covered.
+---
+
+<Step id="blanch-bones">
+  Put the <Qty ref="bones"/> and the <Qty ref="trotters"/> into a large pot of cold water and bring
+  it to the boil. Boil them hard for <Dur step="blanch-bones"/>, then drain them, rinse off the
+  scum and scrub the pot clean before the bones go back in.
+</Step>
+
+<Step id="boil-broth">
+  Return the bones and trotters to the clean pot with the <Qty ref="water"/> and the
+  <Qty ref="ginger"/>. Bring it to a hard, rolling boil and keep it there, topping up with boiling
+  water so the bones stay covered, for <Dur step="boil-broth"/>. The broth turns cloudy and then
+  white as the fat and collagen come out of the bones.
+</Step>
+
+<Step id="braise-chashu">
+  Put the <Qty ref="pork"/> into a pan with the <Qty ref="soy-braise"/>, the
+  <Qty ref="mirin-braise"/> and the <Qty ref="sake"/>, and add enough water to cover it halfway.
+  Cover and simmer gently for <Dur step="braise-chashu"/>, turning once, until the pork is
+  tender. Leave it to cool in its liquid.
+</Step>
+
+<Step id="boil-eggs">
+  Lower the <Qty ref="egg"/> into boiling water and cook them for <Dur step="boil-eggs"/>, then
+  cool them under cold water and peel them.
+</Step>
+
+<Step id="marinate-eggs">
+  Put the peeled eggs into a bag with a little of the chashu braising liquid and leave them for
+  <Dur step="marinate-eggs"/>.
+</Step>
+
+<Step id="make-tare">
+  Warm the <Qty ref="soy-tare"/>, the <Qty ref="mirin-tare"/> and the <Qty ref="garlic"/> together
+  in a small pan for <Dur step="make-tare"/>, until the garlic is fragrant. Divide the tare
+  between two bowls.
+</Step>
+
+<Step id="strain-broth">
+  Strain the broth through a fine sieve into a clean pan, letting the bones drain without
+  pressing, and keep the broth hot at a low simmer. Skim any surface fat that you do not want.
+  This takes <Dur step="strain-broth"/>.
+</Step>
+
+<Step id="cook-noodles">
+  Cook the <Qty ref="noodles"/> in a large pan of boiling water for <Dur step="cook-noodles"/>,
+  until just tender, then drain them well.
+</Step>
+
+<Step id="assemble-bowls">
+  Ladle the hot broth over the tare in each bowl and stir. Add the drained noodles, then the sliced
+  chashu, the halved marinated eggs, the <Qty ref="menma"/>, the <Qty ref="spring-onion"/> and the
+  <Qty ref="nori"/>, and serve at once.
+</Step>

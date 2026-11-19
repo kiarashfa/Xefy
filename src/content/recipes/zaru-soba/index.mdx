@@ -1,0 +1,114 @@
+---
+title: Zaru Soba
+subtitle: Chilled buckwheat noodles, rinsed cold and served on a draining tray, eaten by dipping each mouthful into a cold soy and dashi tsuyu.
+label: Chilled
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [boiling]
+names:
+  searchOnly: ["zaru soba", "cold soba", "soba noodles cold"]
+image:
+  src: images/recipes/zaru-soba.webp
+  alt: "Cold soba noodles on a bamboo mat in a red-rimmed lacquer box, topped with strips of nori, beside a cup of dipping broth with spring onion"
+ingredients:
+  - id: soba
+    ingredientRef: soba-noodles
+    form: dried
+    amount: 200
+    unit: g
+    note: weighed dry, about one hundred grams a serving
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 35
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 35
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 350
+    unit: ml
+    note: cold, for diluting the tsuyu
+    consumedFraction: 0.85
+    consumedFractionNote: "Some of the diluted tsuyu is left in the cup or the bowl; this is an editorial estimate, not a sourced figure."
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: finely sliced
+  - id: wasabi
+    ingredientRef: wasabi
+    form: paste
+    amount: 6
+    unit: g
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 6
+    unit: g
+    note: shredded with scissors
+steps:
+  - { componentRef: dashi, multiplier: 0.25 }
+  - { id: slice-spring-onion, durationMin: 4, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: boil-soba, durationMin: 6, type: "parallel-with:steep-kombu", phase: cook }
+  - { id: simmer-tsuyu, durationMin: 3, type: active, phase: cook }
+  - { id: chill-tsuyu, durationMin: 20, type: passive }
+  - { id: rinse-soba, durationMin: 3, type: active, phase: prep }
+  - { id: serve-zaru, durationMin: 2, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The tsuyu keeps for several days in the fridge once it has cooled, so it can be made well ahead. The noodles are boiled and rinsed just before they are eaten, because cooked soba softens quickly.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: rinse-soba
+      text: Rinsing the boiled soba under running water and then in iced water washes off the starch that would otherwise make the noodles gummy. The noodles are then drained well on the tray so that they stay springy and do not dilute the tsuyu.
+  commonPitfalls:
+    - stepId: boil-soba
+      text: Soba cooks in a few minutes and turns soft in the pan if left. The pot is watched and the noodles are lifted out as soon as they are tender through.
+---
+
+<Step id="slice-spring-onion">
+  Slice the <Qty ref="spring-onion"/> finely and keep it in cold water so that it curls.
+  Shred the <Qty ref="nori"/> with scissors. This takes <Dur step="slice-spring-onion"/>.
+</Step>
+
+<Step id="boil-soba">
+  Bring a large pan of unsalted water to the boil and lower in the <Qty ref="soba"/>,
+  loosening them at once with chopsticks. Cook them for <Dur step="boil-soba"/>, until they
+  are tender through but still firm to the bite.
+</Step>
+
+<Step id="simmer-tsuyu">
+  Pour the strained dashi into a small pan with the <Qty ref="soy"/> and the
+  <Qty ref="mirin"/>. Bring it to the boil, then simmer for <Dur step="simmer-tsuyu"/> to
+  cook off the alcohol in the mirin, and let it cool. This is the tsuyu. Dilute it with the
+  <Qty ref="water"/>, one part tsuyu to two parts water, and chill it.
+</Step>
+
+<Step id="chill-tsuyu">
+  Leave the diluted tsuyu in the fridge until it is cold, which takes
+  <Dur step="chill-tsuyu"/>.
+</Step>
+
+<Step id="rinse-soba">
+  Drain the noodles and rinse them under cold running water, rubbing them between the
+  fingers to lose the surface starch. Finish them in iced water for a moment, then drain
+  them well, shaking off the water, and pile them on the bamboo tray.
+</Step>
+
+<Step id="serve-zaru">
+  Set the tray of noodles in the middle of the table with the <Qty ref="nori"/>, the
+  <Qty ref="spring-onion"/> and the <Qty ref="wasabi"/> in small dishes beside it. Pour the
+  cold tsuyu into two small cups for dipping. Each mouthful of noodles is lifted from the
+  tray, dipped and eaten.
+</Step>

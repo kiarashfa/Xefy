@@ -1,0 +1,107 @@
+---
+title: Gyudon
+subtitle: Thinly sliced beef and onion simmered in a dashi, soy and mirin broth and spooned over short-grain rice, with pickled red ginger on top.
+label: Everyday
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [simmering]
+names:
+  searchOnly: ["gyu don", "beef bowl"]
+image:
+  src: images/recipes/gyudon.webp
+  alt: "Thin-sliced simmered beef and onion over rice in a patterned Japanese bowl"
+ingredients:
+  - id: beef
+    ingredientRef: beef-short-plate
+    form: raw
+    amount: 300
+    unit: g
+    note: cut into strips across the grain
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: halved and sliced into thin half-moons
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 200
+    unit: g
+    note: short-grain, weighed raw
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 70
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 70
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: red
+    amount: 20
+    unit: g
+    note: to serve
+steps:
+  - { componentRef: dashi, multiplier: 0.5 }
+  - { id: slice-onion, durationMin: 6, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:steep-kombu", phase: rest }
+  - { id: simmer-onion, durationMin: 8, type: active, phase: cook }
+  - { id: add-beef, durationMin: 5, type: active, phase: cook }
+  - { id: serve, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead and kept cold. The beef and onion are best simmered just before they are eaten, because beef held at a simmer for long turns tough.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: simmer-onion
+      text: The onion goes into the sauce first so that it softens and sweetens in the broth before the beef arrives. The beef needs only a few minutes, so it is added last.
+  commonPitfalls:
+    - stepId: add-beef
+      text: Dropping the beef in as a single mass sets the slices into one clump that cooks unevenly. They are laid in one at a time so each piece reaches the broth separately.
+---
+
+<Step id="slice-onion">
+  Halve the <Qty ref="onion"/> from root to tip and slice each half into thin half-moons.
+  This takes <Dur step="slice-onion"/>, and the slices go into the pan in a few minutes'
+  time, so keep them covered until then.
+</Step>
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost
+  clear, then drain it well. Cook it in a heavy pan with a tight lid, and leave it covered
+  for the last part of the time, for <Dur step="cook-rice"/> in all. Keep it warm until the
+  beef is ready.
+</Step>
+
+<Step id="simmer-onion">
+  Pour the strained dashi into a wide pan with the <Qty ref="soy"/>, the <Qty ref="mirin"/>
+  and the <Qty ref="sugar"/>, and bring it to the boil. Add the <Qty ref="onion"/>, turn the
+  heat down and simmer for <Dur step="simmer-onion"/>, until the onion is soft and
+  translucent.
+</Step>
+
+<Step id="add-beef">
+  Lay the <Qty ref="beef"/> over the onion one slice at a time, so that each piece reaches
+  the broth separately. Skim off the grey scum that rises, and cook for
+  <Dur step="add-beef"/>, only until the beef has lost its pink and the broth has thickened
+  slightly around it.
+</Step>
+
+<Step id="serve">
+  Divide the rice between two deep bowls. Spoon the beef and onion over the top along with
+  some of the sauce, and add the <Qty ref="pickled-ginger"/> to one side. Serve at once.
+</Step>

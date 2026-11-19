@@ -46,6 +46,31 @@
         "vitaminB6": 0.19,
         "folateMcg": 13
       }
+    },
+    {
+      "id": "confit-leg",
+      "label": "Confit leg, bone-in, meat and skin",
+      "proseQualifier": "confit",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171112",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171112/nutrients",
+      "sourceNote": "USDA has no record for confit. This is its record for roasted young duck leg, meat and skin, per 100 g of meat and skin without the bone. Confit is cooked in its own fat, so the figures are indicative of the cut rather than of the method.",
+      "nutritionPer100g": {
+        "kcal": 217,
+        "protein": 26.75,
+        "fat": 11.4,
+        "carbs": 0,
+        "calcium": 10,
+        "iron": 2.08,
+        "sodium": 110,
+        "seleniumMcg": 21.8,
+        "vitaminC": 1.5,
+        "niacin": 5.77,
+        "saturatedFat": 2.975,
+        "monounsaturatedFat": 5.617,
+        "polyunsaturatedFat": 1.896,
+        "cholesterol": 114
+      }
     }
   ]
 }

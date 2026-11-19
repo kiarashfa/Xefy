@@ -1,0 +1,128 @@
+---
+label: Adjaruli
+defaultServings: 8
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for dusting the bench }
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 150
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 100
+    unit: ml
+    note: lukewarm
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: imeruli
+    ingredientRef: imeruli
+    form: fresh
+    amount: 300
+    unit: g
+    note: grated
+  - id: sulguni
+    ingredientRef: sulguni
+    form: brined
+    amount: 100
+    unit: g
+    note: grated
+  - id: yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 17
+    unit: g
+    note: raw, added at the end
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+    note: added at the end
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: second-rise, durationMin: 20, type: passive }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:second-rise", phase: cook }
+  - { id: bake, durationMin: 18, type: active, phase: cook }
+  - { id: add-yolk, durationMin: 2, type: active, phase: cook }
+  - { id: butter-top, durationMin: 1, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: add-yolk
+      text: The raw yolk and the butter go in at the end, once the bread has come out of the oven. The yolk is stirred into the hot cheese just before it is eaten, so it is not baked.
+  commonPitfalls:
+    - stepId: shape
+      text: A boat with a thin rim lets the cheese run out in the oven. Keep the rim thick enough to hold the filling.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour-dough"/> and the <Qty ref="salt"/> into a large bowl, and stir in the
+  <Qty ref="yeast"/>. Add the <Qty ref="soured-cream"/> and the <Qty ref="milk"/>, and mix for
+  <Dur step="mix"/>, until no dry flour remains and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into two equal pieces and roll each one into a ball. Dust the bench with the
+  <Qty ref="flour-bench"/>, and roll each ball into an oval about <Len cm={35}/> long. Pinch the
+  edges up into a boat with a thick rim, leaving the centre open. Mix the <Qty ref="imeruli"/>
+  with the <Qty ref="sulguni"/>, and divide it between the two boats.
+</Step>
+
+<Step id="second-rise">
+  Leave the boats to prove for <Dur step="second-rise"/>, until a fingertip pressed in leaves a
+  dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={230}/> with a shelf in the lower middle.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until the rim is deep golden and the cheese has softened and
+  begun to colour at the edges.
+</Step>
+
+<Step id="add-yolk">
+  Take the boats out of the oven. Break the raw <Qty ref="yolk"/> into the hot cheese of each
+  one, and stir it through the cheese for <Dur step="add-yolk"/> until it is glossy.
+</Step>
+
+<Step id="butter-top">
+  Dab the <Qty ref="butter"/> over the crust of each boat, then cut each boat into four and serve
+  at once.
+</Step>

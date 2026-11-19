@@ -1,0 +1,58 @@
+{
+  "id": "baguette",
+  "name": "Baguette",
+  "proseName": "baguette",
+  "category": "bread",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "french",
+      "label": "Bread, French style",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172675",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172675/nutrients",
+      "sourceNote": "USDA has no baguette record. This is its record for French and Vienna bread, the closest published match to a crusty white loaf of this kind.",
+      "nutritionPer100g": {
+        "kcal": 272,
+        "protein": 10.75,
+        "fat": 2.42,
+        "carbs": 51.88,
+        "fiber": 2.2,
+        "sugars": 4.62,
+        "calcium": 52,
+        "iron": 3.91,
+        "magnesium": 32,
+        "phosphorus": 105,
+        "potassium": 117,
+        "sodium": 602,
+        "zinc": 1.04,
+        "copper": 0.152,
+        "manganese": 0.577,
+        "seleniumMcg": 28.6,
+        "vitaminC": 0,
+        "thiamin": 0.71,
+        "riboflavin": 0.427,
+        "niacin": 4.817,
+        "vitaminB6": 0.107,
+        "folateMcg": 170,
+        "choline": 8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.21,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.7,
+        "saturatedFat": 0.529,
+        "monounsaturatedFat": 0.362,
+        "polyunsaturatedFat": 0.855,
+        "transFat": 0.005,
+        "cholesterol": 0
+      }
+    }
+  ],
+  "image": "images/ingredients/baguette-thumb.webp"
+}

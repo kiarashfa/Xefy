@@ -1,0 +1,148 @@
+---
+title: Ragù alla Bolognese
+subtitle: Beef and pancetta cooked slowly with soffritto, white wine, milk and tomato, and served over tagliatelle; a serving is one portion of the batch with its pasta.
+label: Registered text
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [sauce]
+  method: [boiling, simmering]
+names:
+  alsoKnownAs:
+    - { name: Bolognese sauce, lang: en }
+  notToBeConfusedWith:
+    - name: Spaghetti bolognese
+      note: The international dish of spaghetti under a sauce like this one. The Bolognese sauce is served with tagliatelle, and spaghetti is not its traditional partner.
+  searchOnly: ["ragu bolognese", "ragù bolognese", "bolognese"]
+image:
+  src: images/recipes/ragu-alla-bolognese.webp
+  alt: "A white bowl of thick, finely minced meat ragù in tomato sauce"
+ingredients:
+  - id: beef
+    ingredientRef: beef-mince
+    form: raw
+    amount: 400
+    unit: g
+    note: coarsely ground
+  - id: pancetta
+    ingredientRef: pancetta
+    form: cured-belly
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 45
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 80
+    unit: g
+    note: finely chopped
+  - id: celery
+    ingredientRef: celery
+    form: raw
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: white-wine
+    ingredientRef: white-wine
+    form: table
+    amount: 200
+    unit: ml
+  - id: passata
+    ingredientRef: tomato-puree
+    form: passata
+    amount: 200
+    unit: g
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 15
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 200
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 300
+    unit: ml
+    note: hot
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - componentRef: boil-pasta-al-dente
+    multiplier: 2
+    swap:
+      spaghetti: { ingredientRef: tagliatelle, form: dried }
+  - { id: render-pancetta, durationMin: 8, type: active, phase: cook }
+  - { id: soffritto, durationMin: 12, type: active, phase: cook }
+  - { id: brown-beef, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-ragu, durationMin: 150, type: "parallel-with:boil-water", phase: rest }
+  - { id: combine, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The sauce is better made a day ahead. It keeps in the fridge for three days, and the fat can be lifted from the top once it has cooled.
+  freezable: true
+  freezeInstructions: Freeze the cooled sauce in portions. Thaw in the fridge overnight.
+  reheatInstructions: Reheat gently in a covered pan over a low flame, with a splash of water if it has thickened, then toss with freshly cooked pasta.
+substitutions:
+  - lineRef: pancetta
+    substitute: guanciale
+    ratio: "1:1"
+    note: Guanciale renders more of its soft fat and is more strongly flavoured. It is a Roman pork rather than a Bolognese one, so the sauce will taste less like the Bolognese original.
+    impact: { flavor: moderate change, texture: minor }
+notes:
+  techniqueRationale:
+    - stepId: simmer-ragu
+      text: The milk goes in partway through, so that it reduces into the meat over a long, gentle cook. Added at the start, it would separate while the sauce is still thin.
+  commonPitfalls:
+    - stepId: brown-beef
+      text: Crowding the pan steams the beef grey rather than browning it. Brown it in batches if the pan will not hold it in a single layer.
+---
+
+<Step id="render-pancetta">
+  Put the <Qty ref="pancetta"/> and the <Qty ref="olive-oil"/> into a heavy casserole over a
+  moderate flame. Let the pancetta render for <Dur step="render-pancetta"/>, until its fat
+  has run and the pieces are crisp at the edges.
+</Step>
+
+<Step id="soffritto">
+  Add the <Qty ref="onion"/>, the <Qty ref="carrot"/> and the <Qty ref="celery"/>, and cook
+  gently for <Dur step="soffritto"/>, until soft and sweet without any colour.
+</Step>
+
+<Step id="brown-beef">
+  Raise the heat slightly, add the <Qty ref="beef"/> and break it up with a wooden spoon.
+  Brown it thoroughly for <Dur step="brown-beef"/>, until no pink remains and the meat has
+  taken on colour.
+</Step>
+
+<Step id="simmer-ragu">
+  Pour in the <Qty ref="white-wine"/> and let it cook away completely. Stir in the
+  <Qty ref="passata"/> and the <Qty ref="tomato-puree"/>, then the <Qty ref="stock"/>.
+  Reduce the heat to the lowest that keeps a bare bubble, and cook with the lid ajar for
+  <Dur step="simmer-ragu"/>, stirring now and then. Halfway through, add the
+  <Qty ref="milk"/> and let it reduce away. Season with salt and the
+  <Qty ref="pepper"/> near the end, when the sauce is thick and the fat has separated.
+</Step>
+
+<Step id="combine">
+  Drain the pasta while it still has a little bite, and toss it through the ragù over a low
+  flame with a splash of the reserved cooking water, so the sauce coats every strand. Serve
+  at once.
+</Step>

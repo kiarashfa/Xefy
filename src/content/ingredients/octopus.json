@@ -1,0 +1,58 @@
+{
+  "id": "octopus",
+  "name": "Octopus",
+  "proseName": "octopus",
+  "category": "seafood",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "molluscs"
+  ],
+  "forms": [
+    {
+      "id": "boiled",
+      "label": "Boiled, moist heat",
+      "proseQualifier": "boiled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174249",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174249/nutrients",
+      "sourceNote": "USDA's record for common octopus cooked by moist heat. This is the cooked state in which octopus for takoyaki is usually bought, so the figures are for the weight after cooking.",
+      "nutritionPer100g": {
+        "kcal": 164,
+        "protein": 29.82,
+        "fat": 2.08,
+        "carbs": 4.4,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 106,
+        "iron": 9.54,
+        "magnesium": 60,
+        "phosphorus": 279,
+        "potassium": 630,
+        "sodium": 460,
+        "zinc": 3.36,
+        "copper": 0.739,
+        "manganese": 0.047,
+        "seleniumMcg": 89.6,
+        "vitaminC": 8,
+        "thiamin": 0.057,
+        "riboflavin": 0.076,
+        "niacin": 3.78,
+        "vitaminB6": 0.648,
+        "folateMcg": 24,
+        "choline": 81,
+        "vitaminB12Mcg": 36,
+        "vitaminAMcg": 90,
+        "vitaminE": 1.2,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.453,
+        "monounsaturatedFat": 0.324,
+        "polyunsaturatedFat": 0.477,
+        "cholesterol": 96
+      }
+    }
+  ],
+  "image": "images/ingredients/octopus-thumb.webp"
+}

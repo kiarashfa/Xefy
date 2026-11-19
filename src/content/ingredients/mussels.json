@@ -1,0 +1,60 @@
+{
+  "id": "mussels",
+  "name": "Mussels",
+  "proseName": "mussels",
+  "category": "shellfish",
+  "animalOrigin": "shellfish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "molluscs"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, meat only",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174216",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174216/nutrients",
+      "sourceNote": "USDA's record for raw blue mussel, per 100 g of meat. The shell is not in these figures; the recipe line discards it with a consumed fraction.",
+      "nutritionPer100g": {
+        "kcal": 86,
+        "protein": 11.9,
+        "fat": 2.24,
+        "carbs": 3.69,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 26,
+        "iron": 3.95,
+        "magnesium": 34,
+        "phosphorus": 197,
+        "potassium": 320,
+        "sodium": 286,
+        "zinc": 1.6,
+        "copper": 0.094,
+        "manganese": 3.4,
+        "seleniumMcg": 44.8,
+        "vitaminC": 8,
+        "thiamin": 0.16,
+        "riboflavin": 0.21,
+        "niacin": 1.6,
+        "vitaminB6": 0.05,
+        "folateMcg": 42,
+        "choline": 65,
+        "vitaminB12Mcg": 12,
+        "vitaminAMcg": 48,
+        "vitaminE": 0.55,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.425,
+        "monounsaturatedFat": 0.507,
+        "polyunsaturatedFat": 0.606,
+        "cholesterol": 28
+      },
+      "density": {
+        "gPerCup": 150,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

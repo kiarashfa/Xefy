@@ -1,0 +1,49 @@
+{
+  "id": "toulouse-sausage",
+  "name": "Toulouse Sausage",
+  "proseName": "Toulouse sausage",
+  "category": "sausage",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171631",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171631/nutrients",
+      "sourceNote": "USDA has no record for Toulouse sausage. This is its record for raw, mild, unsmoked pork sausage, the closest fresh pork sausage it publishes. The figures describe the type of sausage, not any one maker's product.",
+      "nutritionPer100g": {
+        "kcal": 290,
+        "protein": 13.9,
+        "fat": 24.26,
+        "carbs": 2.97,
+        "fiber": 0,
+        "sugars": 1.19,
+        "calcium": 12,
+        "iron": 1.77,
+        "magnesium": 16,
+        "phosphorus": 126,
+        "potassium": 211,
+        "sodium": 563,
+        "zinc": 1.91,
+        "copper": 0.064,
+        "manganese": 0.032,
+        "seleniumMcg": 11.3,
+        "vitaminC": 0,
+        "riboflavin": 0.23,
+        "niacin": 5.8,
+        "vitaminB12Mcg": 1,
+        "vitaminAMcg": 0,
+        "saturatedFat": 8.615,
+        "monounsaturatedFat": 11.024,
+        "polyunsaturatedFat": 4.386,
+        "transFat": 0.115,
+        "cholesterol": 69
+      }
+    }
+  ],
+  "image": "images/ingredients/toulouse-sausage-thumb.webp"
+}

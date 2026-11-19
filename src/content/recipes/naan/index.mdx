@@ -1,0 +1,126 @@
+---
+title: Naan
+subtitle: A leavened flatbread of flour, yoghurt and ghee, pressed against the hot wall of a tandoor until it blisters; a serving is one naan.
+label: Tandoor
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [indian]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/naan.webp
+  alt: "Three flat, blistered naan with charred brown spots, stacked on a white plate"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: yoghurt
+    ingredientRef: yoghurt
+    form: whole-milk
+    amount: 150
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 120
+    unit: ml
+    note: lukewarm
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 40
+    unit: g
+    portions:
+      - { id: ghee-dough, amount: 25, note: melted }
+      - { id: ghee-brush, amount: 15, note: melted, for brushing }
+  - id: nigella
+    ingredientRef: nigella-seed
+    form: whole
+    amount: 2
+    unit: g
+    optional: true
+    note: for scattering
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: second-rise, durationMin: 30, type: passive }
+  - { id: heat-tandoor, durationMin: 30, type: "parallel-with:second-rise", phase: cook }
+  - { id: bake, durationMin: 8, type: active, phase: cook }
+  - { id: brush, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: true
+  freezeInstructions: Freeze the cooled naan in a bag for up to a month. Reheat from frozen in a hot oven.
+  reheatInstructions: Warm the naan briefly in a hot oven, or in a dry pan, to soften them.
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: The dough is pressed onto a wall that is hotter than any domestic oven, so it sets and blisters within minutes, before it has time to dry out.
+  commonPitfalls:
+    - stepId: heat-tandoor
+      text: A tandoor that is not fully hot leaves the naan pale and doughy. Wait out the full heating time before the first one goes in.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, the <Qty ref="sugar"/>, the <Qty ref="salt"/> and the
+  <Qty ref="yeast"/> into a large bowl. Add the <Qty ref="yoghurt"/>, the <Qty ref="water"/>
+  and the <Qty ref="ghee-dough"/>, and mix for <Dur step="mix"/>, until no dry flour remains
+  and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces and roll each one into a smooth ball. Flatten each ball
+  and roll it into a teardrop about <Len cm={25}/> long, dusting the bench as needed. Set the
+  naan on a floured cloth and cover them.
+</Step>
+
+<Step id="second-rise">
+  Leave the shaped dough to prove for <Dur step="second-rise"/>, until a fingertip pressed in
+  leaves a dent that springs back slowly.
+</Step>
+
+<Step id="heat-tandoor">
+  Heat the tandoor until its walls are very hot, up to <Temp c={480}/>. Let it heat for
+  <Dur step="heat-tandoor"/> before the first naan goes in.
+</Step>
+
+<Step id="bake">
+  Press each naan onto the inner wall of the tandoor with a damp hand, so that it sticks.
+  Bake for <Dur step="bake"/> in total, until it is blistered and browned in patches and
+  lifts away from the wall.
+</Step>
+
+<Step id="brush">
+  Brush each naan with the <Qty ref="ghee-brush"/> as it comes out of the tandoor, and scatter
+  the <Qty ref="nigella"/> over it.
+</Step>

@@ -1,0 +1,118 @@
+---
+title: Oyakodon
+subtitle: Chicken and onion simmered in a dashi, soy and mirin broth, bound with egg that is only just set, and spooned over short-grain rice.
+label: Everyday
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [simmering]
+names:
+  searchOnly: ["oya ko don", "chicken and egg bowl", "chicken and egg rice bowl"]
+image:
+  src: images/recipes/oyakodon.webp
+  alt: "Oyakodon in a white bowl: chicken in soft, set egg and dashi over rice, with a sprig of mitsuba, and a small dish of pickles behind"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 300
+    unit: g
+    note: cut into bite-sized pieces
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: halved and sliced into thin half-moons
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 40
+    unit: g
+    note: cut into short lengths
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: beaten lightly, in two batches
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 200
+    unit: g
+    note: short-grain, weighed raw
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 70
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 70
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+steps:
+  - { componentRef: dashi, multiplier: 0.5 }
+  - { id: slice-onion, durationMin: 4, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:steep-kombu", phase: rest }
+  - { id: cut-chicken, durationMin: 5, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: beat-eggs, durationMin: 2, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: simmer-chicken, durationMin: 8, type: active, phase: cook }
+  - { id: add-eggs, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi and the simmering liquid can be made a day ahead and kept cold. The egg is beaten and added at the last moment, because it sets as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: add-eggs
+      text: The egg goes in as two batches, the second poured over once the first has begun to set. The bowl is finished while the egg is still glossy and just softened, which is what the dish is for.
+  commonPitfalls:
+    - stepId: add-eggs
+      text: Stirring the egg into the pan, or leaving it on the heat until it firms, turns it to scrambled curd that does not bind the rice. The lid goes on, and the pan is taken off the heat as soon as the surface looks soft.
+---
+
+<Step id="slice-onion">
+  Halve the <Qty ref="onion"/> from root to tip and slice each half into thin half-moons.
+  This takes <Dur step="slice-onion"/>.
+</Step>
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost
+  clear. Cook it in a heavy pan with a tight lid, and leave it covered after the boil for
+  the last part of the <Dur step="cook-rice"/>. Keep it warm.
+</Step>
+
+<Step id="cut-chicken">
+  Cut the <Qty ref="chicken"/> into bite-sized pieces, and cut the
+  <Qty ref="spring-onion"/> into short lengths. This takes <Dur step="cut-chicken"/>.
+</Step>
+
+<Step id="beat-eggs">
+  Beat the <Qty ref="egg"/> lightly in a jug with a fork, without making a foam. Divide it
+  into two batches. This takes <Dur step="beat-eggs"/>.
+</Step>
+
+<Step id="simmer-chicken">
+  Pour the strained dashi into a wide, shallow pan with the <Qty ref="soy"/>, the
+  <Qty ref="mirin"/> and the <Qty ref="sugar"/>, and bring it to the boil. Add the
+  <Qty ref="onion"/> and the <Qty ref="chicken"/>, and simmer for <Dur step="simmer-chicken"/>,
+  skimming, until the chicken is cooked through and the onion is soft.
+</Step>
+
+<Step id="add-eggs">
+  Scatter the <Qty ref="spring-onion"/> over the pan and pour in the first batch of beaten
+  egg, moving it gently from the edge to the centre. Cover and cook for a few seconds, then
+  pour in the second batch and cover again for <Dur step="add-eggs"/>, until the surface has
+  just set and still looks soft. Take the pan off the heat. Divide the rice between two deep
+  bowls, slide the chicken, onion and egg over the top, and serve at once.
+</Step>

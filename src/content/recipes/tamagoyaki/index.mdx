@@ -1,0 +1,101 @@
+---
+title: Tamagoyaki
+subtitle: Beaten eggs seasoned with dashi, sugar, soy sauce and mirin, cooked in thin layers and rolled into a rectangular omelette in a tamagoyaki pan.
+label: Kansai style
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [breakfast]
+  method: [pan-frying]
+names:
+  searchOnly: ["tamago yaki", "dashimaki tamago", "japanese rolled omelette", "rolled omelette"]
+image:
+  src: images/recipes/tamagoyaki.webp
+  alt: "A thick rolled Japanese omelette, cut into pieces, on a blue-and-white dish with shiso leaf and grated daikon"
+ingredients:
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: beaten until just combined
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 5
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 5
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 10
+    unit: ml
+    note: to grease the pan
+    consumedFraction: 0.1
+    consumedFractionNote: "Most of the oil stays in the pan, and the small amount that is taken up by the egg is eaten. This is an editorial estimate, not a sourced figure."
+steps:
+  - { componentRef: dashi, multiplier: 0.1 }
+  - { id: season-eggs, durationMin: 3, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: heat-pan, durationMin: 3, type: active, phase: cook }
+  - { id: roll-omelette, durationMin: 8, type: active, phase: cook }
+  - { id: rest-tamagoyaki, durationMin: 5, type: passive }
+  - { id: slice-tamagoyaki, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead and kept cold. The omelette is best cooked and eaten the same morning, because it loses its softness as it cools.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: roll-omelette
+      text: The egg goes into the pan in thin layers, and each layer is rolled up over the one before. The omelette builds up in stacked sheets that cook evenly, rather than setting as one thick layer that would be pale and wet in the middle.
+  commonPitfalls:
+    - stepId: roll-omelette
+      text: Pouring in too much egg at once leaves a wet centre that will not roll, and the omelette tears. The next layer goes in only once the one underneath has set enough to hold a roll.
+---
+
+<Step id="season-eggs">
+  Beat the <Qty ref="egg"/> lightly in a bowl with the strained dashi, the <Qty ref="sugar"/>, the
+  <Qty ref="soy"/>, the <Qty ref="mirin"/> and the <Qty ref="salt"/>, until the sugar and salt have
+  dissolved and the mixture is evenly yellow. Avoid beating in air. This takes
+  <Dur step="season-eggs"/>.
+</Step>
+
+<Step id="heat-pan">
+  Set a rectangular tamagoyaki pan over a medium flame. Wipe it with the <Qty ref="oil"/> on folded
+  kitchen paper, and leave it until the surface is hot enough that a little of the egg sets as soon as
+  it touches the pan. This takes <Dur step="heat-pan"/>.
+</Step>
+
+<Step id="roll-omelette">
+  Pour in a thin layer of the egg mixture, enough to cover the base of the pan, and cook it until it
+  has just set on top. Roll it up from the far side towards you with chopsticks or a spatula. Push the
+  roll to the far end of the pan, wipe the empty part with oil, and pour in another thin layer so that
+  it runs under the roll. Repeat until the egg is used up, rolling each new layer around the last. This
+  takes <Dur step="roll-omelette"/>.
+</Step>
+
+<Step id="rest-tamagoyaki">
+  Lift the omelette out onto a bamboo mat or a board, and press it gently into a rectangle while it is
+  still soft. Leave it to rest for <Dur step="rest-tamagoyaki"/>, so that it firms enough to slice.
+</Step>
+
+<Step id="slice-tamagoyaki">
+  Cut the omelette into slices across the roll, each about the thickness of a finger, and serve them at
+  once with the rolled edges uppermost. This takes <Dur step="slice-tamagoyaki"/>.
+</Step>

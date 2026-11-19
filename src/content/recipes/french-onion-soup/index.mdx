@@ -1,0 +1,131 @@
+---
+title: Soupe à l'Oignon Gratinée
+subtitle: Onions caramelised slowly in butter, simmered in beef stock and wine, then topped with toasted bread and grated Gruyère and browned under a grill; a serving is one bowl.
+label: Gratinée
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [soup]
+  method: [simmering]
+names:
+  alsoKnownAs:
+    - { name: French onion soup, lang: en }
+    - { name: Soupe à l'oignon, lang: fr }
+image:
+  src: images/recipes/french-onion-soup.webp
+  alt: "French onion soup in a shallow dish under a blistered crust of melted, browned cheese and bread"
+ingredients:
+  - id: onions
+    ingredientRef: onion
+    form: yellow
+    amount: 1000
+    unit: g
+    note: peeled and thinly sliced
+    consumedFraction: 0.9
+    consumedFractionNote: "The skins, root ends and tops are discarded. This is an editorial estimate of the trimmed share of onions, not a measured yield."
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+  - id: wine
+    ingredientRef: white-wine
+    form: table
+    amount: 150
+    unit: ml
+    note: dry white wine
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 1200
+    unit: ml
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.6
+    unit: g
+  - id: baguette
+    ingredientRef: baguette
+    form: french
+    amount: 120
+    unit: g
+    note: cut into rounds about a centimetre thick
+  - id: gruyere
+    ingredientRef: gruyere
+    form: aged
+    amount: 150
+    unit: g
+    note: grated
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: slice-onions, durationMin: 15, type: active, phase: prep }
+  - { id: caramelise-onions, durationMin: 40, type: active, phase: cook }
+  - { id: deglaze, durationMin: 5, type: active, phase: cook }
+  - { id: simmer-soup, durationMin: 30, type: passive }
+  - { id: toast-bread, durationMin: 5, type: "parallel-with:simmer-soup", phase: cook }
+  - { id: grate-cheese, durationMin: 4, type: "parallel-with:simmer-soup", phase: prep }
+  - { id: gratinate, durationMin: 6, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The soup base can be made a day ahead and kept in the fridge. Reheat it to a simmer, then ladle it into bowls and top and grill it just before serving.
+  freezable: true
+  freezeInstructions: Freeze the soup base without the bread and cheese, once it has cooled. Thaw it fully before reheating.
+  reheatInstructions: Bring the soup to a simmer, then top and grill each bowl just before it is served.
+notes:
+  techniqueRationale:
+    - stepId: caramelise-onions
+      text: The onions are cooked slowly over a moderate heat until they are deep brown, which takes most of the time. Their sweetness and colour come from that slow browning, and cooking them fast leaves a bitter soup with little depth.
+  commonPitfalls:
+    - stepId: caramelise-onions
+      text: Onions cooked over too high a heat scorch on the bottom of the pan before they colour evenly. Keep the heat moderate, stir often, and scrape the base of the pan as the onions brown.
+---
+
+<Step id="slice-onions">
+  Peel the <Qty ref="onions"/> and slice them thinly into rings. This takes <Dur step="slice-onions"/>.
+</Step>
+
+<Step id="caramelise-onions">
+  Melt the <Qty ref="butter"/> in a heavy, wide pot over a moderate heat. Add the onions and cook
+  them slowly for <Dur step="caramelise-onions"/>, stirring often, until they are deep golden brown
+  and very soft. Scrape the base of the pot as the onions brown.
+</Step>
+
+<Step id="deglaze">
+  Pour in the <Qty ref="wine"/> and let it bubble, scraping up the browned bits from the base. This
+  takes <Dur step="deglaze"/>.
+</Step>
+
+<Step id="simmer-soup">
+  Add the <Qty ref="stock"/>, the <Qty ref="thyme"/>, the <Qty ref="bay"/>, the <Qty ref="salt"/> and
+  the <Qty ref="pepper"/>. Bring to a simmer and cook gently for <Dur step="simmer-soup"/>, until the
+  onions are tender and the soup tastes deep and savoury. Take out the thyme stalks and the bay leaf.
+</Step>
+
+<Step id="toast-bread">
+  Toast the <Qty ref="baguette"/> rounds in a hot oven until crisp and golden. This takes
+  <Dur step="toast-bread"/>.
+</Step>
+
+<Step id="grate-cheese">
+  Grate the <Qty ref="gruyere"/> finely. This takes <Dur step="grate-cheese"/>.
+</Step>
+
+<Step id="gratinate">
+  Ladle the soup into ovenproof bowls, float the toasted bread on top and pile the cheese over it.
+  Set the bowls under a hot grill for <Dur step="gratinate"/>, until the cheese has melted and
+  browned in patches. Serve at once.
+</Step>

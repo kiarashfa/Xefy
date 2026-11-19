@@ -1,0 +1,100 @@
+---
+title: Panna Cotta
+subtitle: Cream and milk warmed with sugar and vanilla, set with gelatine and turned out over a dark caramel; a serving is one mould, and the dessert is not vegetarian.
+label: Piedmontese
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [dessert]
+  method: [simmering]
+names:
+  searchOnly: ["pannacotta", "panna cotta piemontese"]
+image:
+  src: images/recipes/panna-cotta.webp
+  alt: "A vanilla-flecked panna cotta turned out onto a white plate, with a drizzle of caramel and a sprig of mint"
+ingredients:
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 500
+    unit: ml
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 100
+    unit: ml
+    portions:
+      - { id: milk-bloom, amount: 20, note: cold, for the gelatine }
+      - { id: milk-set, amount: 80 }
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 130
+    unit: g
+    portions:
+      - { id: sugar-caramel, amount: 50, note: melted dry to a caramel for the moulds }
+      - { id: sugar-cream, amount: 80 }
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+  - id: gelatine
+    ingredientRef: gelatine
+    form: powdered
+    amount: 6
+    unit: g
+steps:
+  - { id: make-caramel, durationMin: 8, type: active, phase: prep }
+  - { id: warm-cream, durationMin: 8, type: active, phase: cook }
+  - { id: bloom-gelatine, durationMin: 5, type: "parallel-with:warm-cream", phase: prep }
+  - { id: combine-set, durationMin: 3, type: active, phase: cook }
+  - { id: fill-moulds, durationMin: 10, type: active, phase: prep }
+  - { id: chill, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: Panna cotta is made a day ahead. It keeps covered in the fridge, and it is turned out just before serving.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: warm-cream
+      text: The cream is only warmed enough to dissolve the sugar and the gelatine. Brought to a boil, it loses the fresh richness that the set is meant to carry.
+  commonPitfalls:
+    - stepId: make-caramel
+      text: A caramel taken past a deep amber turns bitter and will not come cleanly from the mould. Pour it while it is still a dark gold, and tilt each mould so the caramel coats the base.
+---
+
+<Step id="make-caramel">
+  Melt the <Qty ref="sugar-caramel"/> in a small, dry pan over a moderate flame, without
+  stirring, until it is a dark gold. Pour it at once into the base of each mould, tilting
+  each to coat the bottom, and leave it to harden.
+</Step>
+
+<Step id="warm-cream">
+  Warm the <Qty ref="cream"/>, the <Qty ref="milk-set"/>, the <Qty ref="sugar-cream"/> and
+  the <Qty ref="vanilla"/> in a pan over a low flame, stirring, until the sugar has dissolved
+  and the surface begins to shiver. Allow <Dur step="warm-cream"/> for this, then take
+  the pan off the heat.
+</Step>
+
+<Step id="bloom-gelatine">
+  Sprinkle the <Qty ref="gelatine"/> over the <Qty ref="milk-bloom"/> in a small bowl, and
+  leave it to swell for <Dur step="bloom-gelatine"/>, until it has taken up all the liquid.
+</Step>
+
+<Step id="combine-set">
+  Whisk the bloomed gelatine into the warm cream until it has dissolved completely, and
+  strain the mixture through a fine sieve into a jug.
+</Step>
+
+<Step id="fill-moulds">
+  Pour the cream over the set caramel in the moulds, leaving a little space at the top.
+  Work for <Dur step="fill-moulds"/>, and cover the moulds as they are filled.
+</Step>
+
+<Step id="chill">
+  Chill the moulds, uncovered for the first hour and then covered, for <Dur step="chill"/>,
+  until they are set firm and wobble only when shaken.
+</Step>

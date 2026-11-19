@@ -1,0 +1,81 @@
+---
+title: Omelette Française
+subtitle: Beaten eggs cooked in butter over gentle heat and rolled in the pan into a pale, soft cylinder; a serving is one omelette.
+label: Pale and rolled
+defaultServings: 1
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [breakfast]
+  method: [pan-frying]
+ingredients:
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: beaten lightly
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 0.5
+    unit: g
+  - id: chives
+    ingredientRef: chives
+    form: fresh
+    amount: 5
+    unit: g
+    note: finely snipped
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 15
+    unit: g
+    portions:
+      - { id: butter-pan, amount: 10, note: for the pan }
+      - { id: butter-finish, amount: 5, note: to finish }
+steps:
+  - { id: beat, durationMin: 2, type: active, phase: prep }
+  - { id: heat-pan, durationMin: 2, type: active, phase: cook }
+  - { id: cook-omelette, durationMin: 2, type: active, phase: cook }
+  - { id: roll-omelette, durationMin: 1, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-omelette
+      text: Stirring and shaking keep the curds small and tender. Left alone, the eggs set in a single sheet that cracks when rolled.
+  commonPitfalls:
+    - stepId: cook-omelette
+      text: Heat that is too high browns the surface and toughens the eggs. Take the pan off the heat while the top is still moist, because the residual warmth finishes the set.
+---
+
+<Step id="beat">
+  Beat the <Qty ref="eggs"/> with the <Qty ref="salt"/> and the <Qty ref="pepper"/> in a
+  bowl, for <Dur step="beat"/>, until no streaks of white remain. Stir in the
+  <Qty ref="chives"/>.
+</Step>
+
+<Step id="heat-pan">
+  Set a small non-stick pan over a moderate heat and melt the <Qty ref="butter-pan"/>
+  until it foams, without letting it colour. This takes <Dur step="heat-pan"/>.
+</Step>
+
+<Step id="cook-omelette">
+  Pour in the eggs. Stir them with a fork and shake the pan, for <Dur step="cook-omelette"/>,
+  until the eggs are just set but the top is still a little moist.
+</Step>
+
+<Step id="roll-omelette">
+  Tilt the pan and roll the omelette towards the handle, folding it over itself as it
+  goes, so that it lands on a warm plate seam side down. Rub the surface with the
+  <Qty ref="butter-finish"/>. This takes <Dur step="roll-omelette"/>.
+</Step>

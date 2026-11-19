@@ -1,0 +1,57 @@
+{
+  "id": "azuki-beans",
+  "name": "Azuki Beans",
+  "proseName": "azuki beans",
+  "category": "pulse",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried, raw",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173727",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173727/nutrients",
+      "sourceNote": "USDA's record for mature adzuki seeds, raw. This is the dried bean that the paste for daifuku is cooked from, weighed before soaking.",
+      "nutritionPer100g": {
+        "kcal": 329,
+        "protein": 19.87,
+        "fat": 0.53,
+        "carbs": 62.9,
+        "fiber": 12.7,
+        "calcium": 66,
+        "iron": 4.98,
+        "magnesium": 127,
+        "phosphorus": 381,
+        "potassium": 1254,
+        "sodium": 5,
+        "zinc": 5.04,
+        "copper": 1.094,
+        "manganese": 1.73,
+        "seleniumMcg": 3.1,
+        "vitaminC": 0,
+        "thiamin": 0.455,
+        "riboflavin": 0.22,
+        "niacin": 2.63,
+        "vitaminB6": 0.351,
+        "folateMcg": 622,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.191,
+        "monounsaturatedFat": 0.05,
+        "polyunsaturatedFat": 0.113,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 197,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/azuki-beans-thumb.webp"
+}

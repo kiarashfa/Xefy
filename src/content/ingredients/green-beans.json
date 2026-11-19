@@ -1,0 +1,60 @@
+{
+  "id": "green-beans",
+  "name": "Green Beans",
+  "proseName": "green beans",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169961",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169961/nutrients",
+      "sourceNote": "USDA's record for snap beans. French and snap beans are the same green bean, and USDA publishes no separate record for the fine French type.",
+      "nutritionPer100g": {
+        "kcal": 31,
+        "protein": 1.83,
+        "fat": 0.22,
+        "carbs": 6.97,
+        "fiber": 2.7,
+        "sugars": 3.26,
+        "calcium": 37,
+        "iron": 1.03,
+        "magnesium": 25,
+        "phosphorus": 38,
+        "potassium": 211,
+        "sodium": 6,
+        "zinc": 0.24,
+        "copper": 0.069,
+        "manganese": 0.216,
+        "seleniumMcg": 0.6,
+        "vitaminC": 12.2,
+        "thiamin": 0.082,
+        "riboflavin": 0.104,
+        "niacin": 0.734,
+        "vitaminB6": 0.141,
+        "folateMcg": 33,
+        "choline": 15.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 35,
+        "vitaminE": 0.41,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 43,
+        "saturatedFat": 0.05,
+        "monounsaturatedFat": 0.01,
+        "polyunsaturatedFat": 0.113,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 100,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/green-beans-thumb.webp"
+}

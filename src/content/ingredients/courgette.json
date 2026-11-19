@@ -1,0 +1,59 @@
+{
+  "id": "courgette",
+  "name": "Courgette",
+  "proseName": "courgette",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, with skin",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169291",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169291/nutrients",
+      "sourceNote": "USDA lists this vegetable as summer squash, zucchini. A courgette is the same fruit under its British and French name.",
+      "nutritionPer100g": {
+        "kcal": 17,
+        "protein": 1.21,
+        "fat": 0.32,
+        "carbs": 3.11,
+        "fiber": 1,
+        "sugars": 2.5,
+        "calcium": 16,
+        "iron": 0.37,
+        "magnesium": 18,
+        "phosphorus": 38,
+        "potassium": 261,
+        "sodium": 8,
+        "zinc": 0.32,
+        "copper": 0.053,
+        "manganese": 0.177,
+        "seleniumMcg": 0.2,
+        "vitaminC": 17.9,
+        "thiamin": 0.045,
+        "riboflavin": 0.094,
+        "niacin": 0.451,
+        "vitaminB6": 0.163,
+        "folateMcg": 24,
+        "choline": 9.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 10,
+        "vitaminE": 0.12,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 4.3,
+        "saturatedFat": 0.084,
+        "monounsaturatedFat": 0.011,
+        "polyunsaturatedFat": 0.091,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 124,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

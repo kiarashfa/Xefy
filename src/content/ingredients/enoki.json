@@ -1,0 +1,58 @@
+{
+  "id": "enoki",
+  "name": "Enoki",
+  "proseName": "enoki mushrooms",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169382",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169382/nutrients",
+      "sourceNote": "This is USDA's record for raw enoki, the slender cultivated mushroom sold in clusters. It is the same food, so no substitution is made.",
+      "nutritionPer100g": {
+        "kcal": 37,
+        "protein": 2.66,
+        "fat": 0.29,
+        "carbs": 7.81,
+        "fiber": 2.7,
+        "sugars": 0.22,
+        "calcium": 0,
+        "iron": 1.15,
+        "magnesium": 16,
+        "phosphorus": 105,
+        "potassium": 359,
+        "sodium": 3,
+        "zinc": 0.65,
+        "copper": 0.107,
+        "manganese": 0.075,
+        "seleniumMcg": 2.2,
+        "vitaminC": 0,
+        "thiamin": 0.225,
+        "riboflavin": 0.2,
+        "niacin": 7.032,
+        "vitaminB6": 0.1,
+        "folateMcg": 48,
+        "choline": 47.7,
+        "vitaminB12Mcg": 0,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0.1,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.027,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0.124,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 65,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "leek",
+  "name": "Leek",
+  "proseName": "leek",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169246",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169246/nutrients",
+      "sourceNote": "USDA's record for the white bulb and the lower leaf portion, which is the part a French recipe uses.",
+      "nutritionPer100g": {
+        "kcal": 61,
+        "protein": 1.5,
+        "fat": 0.3,
+        "carbs": 14.15,
+        "fiber": 1.8,
+        "sugars": 3.9,
+        "calcium": 59,
+        "iron": 2.1,
+        "magnesium": 28,
+        "phosphorus": 35,
+        "potassium": 180,
+        "sodium": 20,
+        "zinc": 0.12,
+        "copper": 0.12,
+        "manganese": 0.481,
+        "seleniumMcg": 1,
+        "vitaminC": 12,
+        "thiamin": 0.06,
+        "riboflavin": 0.03,
+        "niacin": 0.4,
+        "vitaminB6": 0.233,
+        "folateMcg": 64,
+        "choline": 9.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 83,
+        "vitaminE": 0.92,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 47,
+        "saturatedFat": 0.04,
+        "monounsaturatedFat": 0.004,
+        "polyunsaturatedFat": 0.166,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 89,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/leek-thumb.webp"
+}

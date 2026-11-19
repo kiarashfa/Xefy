@@ -1,0 +1,117 @@
+---
+title: Risotto alla Milanese
+subtitle: Medium-grain rice cooked in chicken stock, coloured and flavoured with saffron, and finished with butter and Parmigiano; a serving is a first-course portion of the batch.
+label: Milanese
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [simmering, sauteing]
+names:
+  searchOnly: ["risotto milanese", "milanese risotto", "saffron risotto"]
+image:
+  src: images/recipes/risotto-alla-milanese.webp
+  alt: "A plate of saffron-yellow risotto, glossy and creamy, on a white plate with a blue and yellow rim"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: risotto
+    amount: 320
+    unit: g
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 80
+    unit: g
+    note: finely chopped
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 80
+    unit: g
+    portions:
+      - { id: butter-toast, amount: 30 }
+      - { id: butter-finish, amount: 50, note: cold, to finish }
+  - id: white-wine
+    ingredientRef: white-wine
+    form: table
+    amount: 80
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 1000
+    unit: ml
+    note: hot, kept at a bare simmer
+  - id: saffron
+    ingredientRef: saffron
+    form: threads
+    amount: 0.2
+    unit: g
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 60
+    unit: g
+    note: finely grated
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+steps:
+  - { id: warm-stock, durationMin: 8, type: active, phase: prep }
+  - { id: soften-onion, durationMin: 8, type: "parallel-with:warm-stock", phase: prep }
+  - { id: toast-rice, durationMin: 2, type: active, phase: cook }
+  - { id: add-stock, durationMin: 18, type: active, phase: cook }
+  - { id: finish-risotto, durationMin: 2, type: active, phase: cook }
+  - { id: rest-risotto, durationMin: 2, type: passive }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: add-stock
+      text: The stock goes in a ladleful at a time and each addition is allowed to be taken up before the next. The starch is released by the stirring and the constant absorption, and that is what makes the rice creamy without cream.
+  commonPitfalls:
+    - stepId: add-stock
+      text: Cold stock stops the cooking dead and leaves the grains chalky at the centre. Keep it at a bare simmer throughout, so that every addition restarts the rice at once.
+---
+
+<Step id="warm-stock">
+  Bring the <Qty ref="stock"/> to a bare simmer in a separate pan and keep it there. Ladle
+  off a cupful, crumble the <Qty ref="saffron"/> into it and leave it to steep.
+</Step>
+
+<Step id="soften-onion">
+  Melt the <Qty ref="butter-toast"/> in a wide, heavy pan over a low flame. Add the
+  <Qty ref="onion"/> and cook gently for <Dur step="soften-onion"/>, until soft and
+  translucent but not coloured.
+</Step>
+
+<Step id="toast-rice">
+  Tip in the <Qty ref="rice"/> and stir it over a moderate flame until every grain is
+  glossy and the edges have gone translucent, for <Dur step="toast-rice"/>. Pour in the
+  <Qty ref="white-wine"/> and let it cook away, stirring.
+</Step>
+
+<Step id="add-stock">
+  Add the hot stock a ladleful at a time, stirring, and wait for each addition to be
+  taken up before the next goes in. Stir in the saffron liquor with the last of the
+  stock. Cook for <Dur step="add-stock"/>, until the rice is just tender with a little
+  bite at the centre and the mixture runs loosely across the pan.
+</Step>
+
+<Step id="finish-risotto">
+  Take the pan off the heat. Beat in the <Qty ref="butter-finish"/> and the
+  <Qty ref="parmigiano"/> with the <Qty ref="salt"/> until the rice is glossy, for
+  <Dur step="finish-risotto"/>.
+</Step>
+
+<Step id="rest-risotto">
+  Cover the pan and leave the risotto to rest for <Dur step="rest-risotto"/>, so that it
+  loosens to a slow wave, then serve at once.
+</Step>

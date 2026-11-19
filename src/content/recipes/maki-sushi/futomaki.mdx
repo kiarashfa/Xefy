@@ -1,0 +1,136 @@
+---
+label: Futomaki
+defaultServings: 2
+difficulty: Medium
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 240
+    unit: g
+    note: short-grain, weighed raw
+  - id: vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 40
+    unit: ml
+    note: for the sushi seasoning
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 26
+    unit: g
+    portions:
+      - { id: sugar-rice, amount: 16, note: for the sushi seasoning }
+      - { id: sugar-egg, amount: 10, note: for the omelette }
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: salt-rice, amount: 6, note: for the sushi seasoning }
+      - { id: salt-egg, amount: 1, note: for the omelette }
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 9
+    unit: g
+    note: whole sheets
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: beaten for the omelette
+  - id: shiitake
+    ingredientRef: shiitake
+    form: dried
+    amount: 10
+    unit: g
+    note: soaked, then cut into strips
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+    note: for simmering the shiitake
+  - id: cucumber
+    ingredientRef: cucumber
+    form: peeled
+    amount: 100
+    unit: g
+    note: cut into matchsticks
+  - id: spinach
+    ingredientRef: spinach
+    form: raw
+    amount: 80
+    unit: g
+    note: blanched and squeezed dry
+steps:
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: soak-shiitake, durationMin: 20, type: "parallel-with:cook-rice", phase: rest }
+  - { id: simmer-shiitake, durationMin: 10, type: active, phase: prep }
+  - { id: cook-omelette, durationMin: 8, type: active, phase: cook }
+  - { id: blanch-spinach, durationMin: 2, type: active, phase: prep }
+  - { id: dress-rice, durationMin: 6, type: active, phase: prep }
+  - { id: roll-futomaki, durationMin: 14, type: active, phase: prep }
+  - { id: slice-rolls, durationMin: 4, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The shiitake and the omelette can be made a day ahead and kept cold. The rice is dressed on the day, and the rolls are assembled and cut just before they are eaten.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: roll-futomaki
+      text: A futomaki is rolled with the filling laid in a straight line across the middle, so that every slice shows the same pattern. Filling that is not cut to an even length makes the roll bulge unevenly and the slices fall apart.
+---
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost clear,
+  drain it well, and cook it with a measured amount of water in a heavy pan with a tight lid. Leave
+  it covered off the heat for the last part of the <Dur step="cook-rice"/>.
+</Step>
+
+<Step id="soak-shiitake">
+  Cover the <Qty ref="shiitake"/> with warm water and leave it to soften for
+  <Dur step="soak-shiitake"/>. Drain it, reserving a little of the soaking liquid, and cut away the
+  stems.
+</Step>
+
+<Step id="simmer-shiitake">
+  Put the shiitake into a small pan with the <Qty ref="soy"/> and the reserved soaking liquid.
+  Simmer gently for <Dur step="simmer-shiitake"/>, until
+  the liquid is nearly gone, and leave them to cool.
+</Step>
+
+<Step id="cook-omelette">
+  Beat the <Qty ref="egg"/> with the <Qty ref="sugar-egg"/> and the <Qty ref="salt-egg"/> in a bowl. Cook it in a small oiled pan
+  in thin layers, rolling each layer up as it sets, to make a thick omelette. Leave it to cool, then
+  cut it into long strips. This takes <Dur step="cook-omelette"/>.
+</Step>
+
+<Step id="blanch-spinach">
+  Blanch the <Qty ref="spinach"/> in boiling salted water for <Dur step="blanch-spinach"/>, refresh
+  it in cold water, and squeeze it dry.
+</Step>
+
+<Step id="dress-rice">
+  Warm the <Qty ref="vinegar"/> with the <Qty ref="sugar-rice"/> and the <Qty ref="salt-rice"/> until
+  the sugar and salt have dissolved. Spread the hot rice in a wide wooden tray, pour the seasoning
+  over it, and fold it through with a rice paddle, fanning it as you go, until it is glossy and
+  cooled to the touch. This takes <Dur step="dress-rice"/>.
+</Step>
+
+<Step id="roll-futomaki">
+  Lay a sheet of the <Qty ref="nori"/> on a bamboo mat. Spread the seasoned rice over most of it
+  with a thin border at the far edge. Lay the omelette, the shiitake, the <Qty ref="cucumber"/> and
+  the spinach along the middle in one straight line, and roll the mat up tightly from the near edge,
+  pressing to seal. This takes <Dur step="roll-futomaki"/>.
+</Step>
+
+<Step id="slice-rolls">
+  Cut each roll into thick rounds with a wet knife, wiping the blade between cuts, and arrange them
+  on a plate. This takes <Dur step="slice-rolls"/>.
+</Step>

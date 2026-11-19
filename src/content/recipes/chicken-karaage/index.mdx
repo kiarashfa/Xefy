@@ -1,0 +1,119 @@
+---
+title: Karaage
+subtitle: Chicken thigh marinated in soy, ginger and garlic, coated in potato starch and fried twice, so the crust is thin, light and crisp.
+label: Soy and ginger
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [starter]
+  method: [deep-frying]
+names:
+  searchOnly: ["kara-age", "kara age", "japanese fried chicken"]
+image:
+  src: images/recipes/chicken-karaage.webp
+  alt: "Pieces of crisp, craggy fried chicken on shredded cabbage with a dollop of mayonnaise, on a black plate"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 400
+    unit: g
+    note: boneless and skinless, cut into large bite-sized pieces
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+  - id: sake
+    ingredientRef: sake
+    form: standard
+    amount: 15
+    unit: ml
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 10
+    unit: g
+    note: grated
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: grated
+  - id: potato-starch
+    ingredientRef: potato-starch
+    form: starch
+    amount: 60
+    unit: g
+    note: for coating
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 800
+    unit: ml
+    note: for deep-frying
+    consumedFraction: 0.03
+    consumedFractionNote: "Most of the oil stays in the pan. A small amount is taken up by the coating and the chicken, and this is an editorial estimate, not a sourced figure."
+steps:
+  - { id: marinate-chicken, durationMin: 8, type: active, phase: prep }
+  - { id: rest-marinade, durationMin: 30, type: passive }
+  - { id: heat-oil, durationMin: 8, type: "parallel-with:rest-marinade", phase: rest }
+  - { id: coat-chicken, durationMin: 5, type: active, phase: prep }
+  - { id: fry-karaage, durationMin: 5, type: active, phase: cook }
+  - { id: rest-karaage, durationMin: 5, type: passive }
+  - { id: refry-karaage, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The chicken can be marinated the day before and kept covered in the fridge. It is coated and fried just before it is eaten, because the starch softens and absorbs moisture as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: refry-karaage
+      text: The first fry at a moderate heat cooks the chicken through and sets the coating. The second, hotter fry, after a rest, crisps that set coating without cooking the meat any further, which is why the crust stays crisp rather than softening as it cools.
+  commonPitfalls:
+    - stepId: coat-chicken
+      text: Coating the chicken while it is still wet with marinade gives a thick, gummy shell. The pieces are lifted out and shaken free of liquid before they go into the starch.
+---
+
+<Step id="marinate-chicken">
+  Put the <Qty ref="chicken"/> into a bowl with the <Qty ref="soy"/>, the <Qty ref="sake"/>, the
+  <Qty ref="ginger"/> and the <Qty ref="garlic"/>. Work the marinade into the meat with your hands
+  until every piece is coated. This takes <Dur step="marinate-chicken"/>. One serving is a quarter of
+  the batch.
+</Step>
+
+<Step id="rest-marinade">
+  Cover the bowl and leave the chicken in the fridge for <Dur step="rest-marinade"/>, so that the
+  seasoning goes into the meat.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a deep, heavy pan to <Temp c={160}/>, checking it with a thermometer.
+  It takes <Dur step="heat-oil"/> to come up to temperature, and it happens while the chicken
+  marinates.
+</Step>
+
+<Step id="coat-chicken">
+  Lift the chicken out of the marinade and shake off the excess liquid. Put the
+  <Qty ref="potato-starch"/> into a bowl, and toss each piece in it, pressing the starch on so that
+  the coating is thin and even. Set the pieces on a tray. This takes <Dur step="coat-chicken"/>.
+</Step>
+
+<Step id="fry-karaage">
+  Lower the coated pieces into the oil at <Temp c={160}/>, a few at a time so that the temperature
+  holds, and fry them for <Dur step="fry-karaage"/> until the coating is pale and set. Lift them out
+  onto a rack.
+</Step>
+
+<Step id="rest-karaage">
+  Leave the pieces on the rack for <Dur step="rest-karaage"/>, while the oil comes up to
+  <Temp c={180}/>.
+</Step>
+
+<Step id="refry-karaage">
+  Fry the pieces again in the oil at <Temp c={180}/> for <Dur step="refry-karaage"/>, until the
+  coating is deep gold and crisp. Drain them briefly and serve at once.
+</Step>

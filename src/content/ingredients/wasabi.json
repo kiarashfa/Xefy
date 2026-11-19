@@ -1,0 +1,59 @@
+{
+  "id": "wasabi",
+  "name": "Wasabi",
+  "proseName": "wasabi",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "paste",
+      "label": "Paste",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173472",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173472/nutrients",
+      "sourceNote": "USDA has no record for wasabi paste. This is its record for prepared horseradish, the nearest match: wasabi and horseradish are both pungent members of the cabbage family, and many pastes sold as wasabi are mostly horseradish.",
+      "nutritionPer100g": {
+        "kcal": 48,
+        "protein": 1.18,
+        "fat": 0.69,
+        "carbs": 11.29,
+        "fiber": 3.3,
+        "sugars": 7.99,
+        "calcium": 56,
+        "iron": 0.42,
+        "magnesium": 27,
+        "phosphorus": 31,
+        "potassium": 246,
+        "sodium": 420,
+        "zinc": 0.83,
+        "copper": 0.058,
+        "manganese": 0.126,
+        "seleniumMcg": 2.8,
+        "vitaminC": 24.9,
+        "thiamin": 0.008,
+        "riboflavin": 0.024,
+        "niacin": 0.386,
+        "vitaminB6": 0.073,
+        "folateMcg": 57,
+        "choline": 6.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1.3,
+        "saturatedFat": 0.09,
+        "monounsaturatedFat": 0.13,
+        "polyunsaturatedFat": 0.339,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 5,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

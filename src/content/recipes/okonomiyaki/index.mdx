@@ -1,0 +1,121 @@
+---
+title: Okonomiyaki
+subtitle: A savoury pancake of shredded cabbage mixed through a dashi batter, topped with pork belly, okonomiyaki sauce, Japanese mayonnaise, aonori and red pickled ginger.
+label: Osaka mixed
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  searchOnly: ["okonomi yaki", "japanese savoury pancake", "japanese pancake"]
+image:
+  src: images/recipes/okonomiyaki.webp
+  alt: "Okonomiyaki on a hot griddle, glazed with dark sauce, striped with mayonnaise and sprinkled with aonori and bonito flakes"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 150
+    unit: g
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 300
+    unit: g
+    note: very finely shredded
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 150
+    unit: g
+    note: in thin slices
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+    consumedFraction: 0.8
+    consumedFractionNote: "A little of the oil stays in the pan when the pancakes are turned out. This is an editorial estimate, not a sourced figure."
+  - id: sauce
+    ingredientRef: tonkatsu-sauce
+    form: okonomiyaki
+    amount: 60
+    unit: g
+  - id: mayonnaise
+    ingredientRef: japanese-mayonnaise
+    form: yolk
+    amount: 20
+    unit: g
+  - id: aonori
+    ingredientRef: aonori
+    form: dried
+    amount: 2
+    unit: g
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: red
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { componentRef: dashi, multiplier: 0.5 }
+  - { id: prepare-toppings, durationMin: 8, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: mix-batter, durationMin: 5, type: active, phase: prep }
+  - { id: cook-pancakes, durationMin: 12, type: active, phase: cook }
+  - { id: finish-okonomiyaki, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead. The batter is mixed just before it is cooked, because the cabbage begins to weep into it and the pancake turns watery if it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: mix-batter
+      text: The cabbage is folded through a thick batter rather than laid on top, so the pancake is held together by the flour and egg and the cabbage cooks in its own steam inside it. That is the mixed style, and the cut face shows the cabbage through the whole pancake.
+  commonPitfalls:
+    - stepId: cook-pancakes
+      text: A pancake pressed flat with the spatula comes out dense and oily. It is left to set on its base, then turned once with two spatulas, and only pressed gently at the end.
+---
+
+<Step id="prepare-toppings">
+  Shred the <Qty ref="cabbage"/> very finely and slice the <Qty ref="spring-onion"/> finely.
+  Lay the <Qty ref="pork"/> slices out on a board. This takes <Dur step="prepare-toppings"/>.
+</Step>
+
+<Step id="mix-batter">
+  Whisk the <Qty ref="flour"/>, the <Qty ref="egg"/> and the <Qty ref="salt"/> with the
+  strained dashi until the batter is smooth. Fold in the cabbage and the spring onion, so
+  that every piece is coated, and do this in the time it takes <Dur step="mix-batter"/>.
+</Step>
+
+<Step id="cook-pancakes">
+  Heat the <Qty ref="oil"/> in a wide, heavy pan over a medium heat. Spoon in half the
+  batter and spread it into a round about two fingers deep. Lay half the <Qty ref="pork"/>
+  over the top and cook for <Dur step="cook-pancakes"/>, until the base is firm and golden
+  and the edges have set. Turn it with two spatulas, and cook the other side until the pork
+  is cooked through and the centre is set. Repeat with the remaining batter and pork.
+</Step>
+
+<Step id="finish-okonomiyaki">
+  Slide each pancake onto a plate, pork side up. Brush it with the <Qty ref="sauce"/>, drizzle
+  the <Qty ref="mayonnaise"/> over in lines, and finish with the <Qty ref="aonori"/> and the
+  <Qty ref="pickled-ginger"/>. Serve at once, cut into wedges at the table.
+</Step>

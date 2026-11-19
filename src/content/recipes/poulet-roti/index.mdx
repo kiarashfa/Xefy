@@ -1,0 +1,113 @@
+---
+title: Poulet Rôti
+subtitle: A whole chicken roasted with butter, garlic, thyme and lemon, its pan juices made into a simple jus; a serving is one portion.
+label: Butter and lemon
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [roasting]
+image:
+  src: images/recipes/poulet-roti.webp
+  alt: "A whole roast chicken with glossy golden skin flecked with herbs, on a white oval platter with charred lemon wedges"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: whole
+    amount: 1600
+    unit: g
+    note: trussed, brought to room temperature
+    consumedFraction: 0.65
+    consumedFractionNote: "The carcass is not eaten. Roughly a third of the raw weight of a whole bird is bone and carcass; this is an editorial estimate of the edible share, not a measured yield."
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 50
+    unit: g
+    note: softened
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 25
+    unit: g
+    note: half a head, halved crosswise
+  - id: lemon
+    ingredientRef: lemon
+    form: raw
+    amount: 100
+    unit: g
+    note: halved
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 5
+    unit: g
+    note: a few sprigs
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 150
+    unit: ml
+    note: for the jus
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: prepare-chicken, durationMin: 10, type: active, phase: prep }
+  - { id: roast, durationMin: 75, type: passive }
+  - { id: make-jus, durationMin: 6, type: "parallel-with:roast", phase: cook }
+  - { id: rest, durationMin: 15, type: passive }
+  - { id: carve, durationMin: 5, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The chicken can be seasoned and butter-rubbed a day ahead and kept uncovered in the fridge, so the skin dries. Roast it on the day it is served.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Carve the cold chicken and warm the slices gently in the jus, rather than reheating the whole bird.
+notes:
+  techniqueRationale:
+    - stepId: prepare-chicken
+      text: The butter goes under the skin of the breast and thighs as well as on the outside, so the meat stays moist while the skin crisps. Drying the skin first is what lets it brown rather than steam.
+  commonPitfalls:
+    - stepId: rest
+      text: Carving straight from the oven lets the juices run out onto the board and leaves the meat dry. Rest the bird for the full time, loosely covered, before it is carved.
+---
+
+<Step id="prepare-chicken">
+  Pat the <Qty ref="chicken"/> dry inside and out. Work the <Qty ref="butter"/> under the skin
+  of the breast and thighs with your fingers, then rub the rest over the outside. Season the
+  cavity and the skin with the <Qty ref="salt"/> and the <Qty ref="pepper"/>. Put the
+  <Qty ref="garlic"/>, the <Qty ref="lemon"/> and the <Qty ref="thyme"/> inside the cavity.
+  This takes <Dur step="prepare-chicken"/>.
+</Step>
+
+<Step id="roast">
+  Set the chicken on a rack in a roasting tin and roast it at <Temp c={200}/> for
+  <Dur step="roast"/>, basting it with the fat in the tin once or twice. It is ready when the
+  thickest part of the thigh is cooked through and its juices run clear.
+</Step>
+
+<Step id="make-jus">
+  While the chicken roasts, pour off most of the fat from the tin, leaving the juices and the
+  sediment. Set the tin over a medium heat, pour in the <Qty ref="stock"/>, and scrape up the
+  browned bits from the base. Simmer for <Dur step="make-jus"/>, until the jus has
+  reduced slightly and tastes concentrated.
+</Step>
+
+<Step id="rest">
+  Lift the chicken onto a board, cover it loosely with foil, and leave it to rest for
+  <Dur step="rest"/>. Pour any juices from the cavity into the jus.
+</Step>
+
+<Step id="carve">
+  Take off the legs and wings, then the breast on each side of the bone. Carve the breast across
+  the grain and arrange it on a warm plate with the legs and wings, and spoon the jus over.
+  This takes <Dur step="carve"/>.
+</Step>

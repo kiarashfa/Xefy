@@ -1,0 +1,144 @@
+---
+title: Sukiyaki
+subtitle: Thin slices of beef, tofu and vegetables simmered at the table in a sweet soy and mirin sauce, with each cooked piece dipped in raw egg.
+label: Kantō
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [simmering]
+names:
+  searchOnly: ["suki yaki", "sukiyaki hot pot"]
+image:
+  src: images/recipes/sukiyaki.webp
+  alt: "Sukiyaki in a black iron pot: thin slices of raw beef, shungiku greens, enoki, leek and tofu in a dark simmering broth"
+ingredients:
+  - id: beef
+    ingredientRef: beef
+    form: raw
+    amount: 300
+    unit: g
+    note: top sirloin, sliced paper-thin
+  - id: beef-fat
+    ingredientRef: beef-dripping
+    form: rendered
+    amount: 10
+    unit: g
+    note: a small piece, rubbed over the pan
+    consumedFraction: 0.5
+    consumedFractionNote: "Most of the fat stays in the pan and is discarded with it. This is an editorial estimate, not a sourced figure."
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 200
+    unit: g
+    note: cut into thick cubes
+  - id: napa
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: cut across the leaves into wide pieces
+  - id: enoki
+    ingredientRef: enoki
+    form: raw
+    amount: 100
+    unit: g
+    note: root base cut off and separated into small clumps
+  - id: shiitake
+    ingredientRef: shiitake
+    form: dried
+    amount: 6
+    unit: g
+    note: soaked until soft, stalks removed, caps scored with a lattice
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 100
+    unit: g
+    note: cut on the diagonal into long pieces
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: raw, beaten, for dipping
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 100
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 100
+    unit: ml
+  - id: sake
+    ingredientRef: sake
+    form: standard
+    amount: 100
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+steps:
+  - { componentRef: dashi, multiplier: 0.4 }
+  - { id: prep-vegetables, durationMin: 12, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: beat-egg, durationMin: 2, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: make-warishita, durationMin: 4, type: active, phase: prep }
+  - { id: cook-sukiyaki, durationMin: 15, type: active, phase: cook }
+  - { id: serve-sukiyaki, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead and kept cold, and the warishita mixed on the day. The napa and enoki are best cut just before cooking, because both release water as they stand.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: cook-sukiyaki
+      text: The beef goes into the hot warishita a few slices at a time, so that each piece cooks in the time it takes to lift it out. Sliced this thin, it turns tough if it is left in the sauce to simmer with the vegetables.
+  commonPitfalls:
+    - stepId: serve-sukiyaki
+      text: Beef left in the pan keeps cooking after it is ready and tightens. Each slice is lifted out and dipped as soon as it has changed colour, and more beef goes in only when the last has been eaten.
+---
+
+<Step id="prep-vegetables">
+  Cut the <Qty ref="tofu"/> into thick cubes and the <Qty ref="napa"/> into wide pieces, keeping
+  the stalks and the leaves apart. Separate the <Qty ref="enoki"/> into small clumps and cut the
+  <Qty ref="spring-onion"/> on the diagonal. Soak the <Qty ref="shiitake"/> in warm water until
+  soft, then trim the stalks and score the caps. Arrange everything on one large platter with the
+  <Qty ref="beef"/>, and keep it cool until the pan is ready. This takes
+  <Dur step="prep-vegetables"/>, and it runs while the kombu steeps.
+</Step>
+
+<Step id="beat-egg">
+  Crack the <Qty ref="egg"/> into a bowl and beat it lightly with chopsticks, just enough to break
+  up the yolk and white. Divide it between one small bowl for each diner, to be set at each place.
+  The egg is raw and is not cooked: it is the dipping sauce for the beef. This takes
+  <Dur step="beat-egg"/>.
+</Step>
+
+<Step id="make-warishita">
+  Pour the strained dashi into a wide, shallow pan with the <Qty ref="soy"/>, the <Qty ref="mirin"/>,
+  the <Qty ref="sake"/> and the <Qty ref="sugar"/>. Bring it to a simmer, stirring until the sugar has
+  dissolved. This is the warishita, the sweet soy sauce that the beef and vegetables are cooked in.
+  It takes <Dur step="make-warishita"/>.
+</Step>
+
+<Step id="cook-sukiyaki">
+  Set the pan over a medium flame and rub it with the <Qty ref="beef-fat"/>. Add a few slices of the
+  <Qty ref="beef"/> and let them colour lightly on one side. Then add the <Qty ref="napa"/>,
+  the <Qty ref="shiitake"/> and the <Qty ref="tofu"/>, with the <Qty ref="enoki"/> arranged around them. Simmer for <Dur step="cook-sukiyaki"/>, adding more beef and the
+  <Qty ref="spring-onion"/> in the last few minutes, and topping up the sauce with a little dashi
+  as it reduces.
+</Step>
+
+<Step id="serve-sukiyaki">
+  Bring the pan to the table, or serve from it at once, with the bowls of <Qty ref="egg"/> at each
+  place. Lift each piece of beef out with chopsticks and dip it in the raw egg before eating it,
+  with the vegetables and tofu taken from the pan as they are ready. This takes
+  <Dur step="serve-sukiyaki"/>.
+</Step>

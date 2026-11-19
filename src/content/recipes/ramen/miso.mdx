@@ -1,0 +1,169 @@
+---
+label: Miso
+defaultServings: 2
+difficulty: Hard
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-carcass
+    form: raw
+    amount: 800
+    unit: g
+    consumedFraction: 0.1
+    consumedFractionNote: "The bones and skin are strained out of the broth and discarded. What is eaten is the meat and fat that have gone into the stock. This is an editorial estimate, not a sourced figure."
+    note: broken into pieces
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2000
+    unit: ml
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 8
+    unit: g
+    note: sliced
+  - id: miso
+    ingredientRef: miso
+    form: awase
+    amount: 60
+    unit: g
+    note: for the tare
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely grated, fried gently for the tare
+  - id: sesame-oil
+    ingredientRef: sesame-oil
+    form: toasted
+    amount: 10
+    unit: ml
+    note: for the tare
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 70
+    unit: ml
+    portions:
+      - { id: mirin-tare, amount: 30, note: for the tare }
+      - { id: mirin-braise, amount: 40, note: for the braising liquid }
+  - id: sake
+    ingredientRef: sake
+    form: standard
+    amount: 80
+    unit: ml
+    portions:
+      - { id: sake-tare, amount: 20, note: for the tare }
+      - { id: sake-braise, amount: 60, note: for the braising liquid }
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 60
+    unit: ml
+    note: for the braising liquid
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 200
+    unit: g
+    note: in one piece, rolled and tied with string
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: for the marinated eggs
+  - id: noodles
+    ingredientRef: ramen-noodles
+    form: dried
+    amount: 200
+    unit: g
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 30
+    unit: g
+    note: finely sliced
+  - id: menma
+    ingredientRef: menma
+    form: fermented
+    amount: 60
+    unit: g
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 6
+    unit: g
+steps:
+  - { id: simmer-broth, durationMin: 150, type: passive }
+  - { id: braise-chashu, durationMin: 90, type: "parallel-with:simmer-broth", phase: rest }
+  - { id: boil-eggs, durationMin: 8, type: "parallel-with:simmer-broth", phase: prep }
+  - { id: marinate-eggs, durationMin: 60, type: passive }
+  - { id: fry-garlic, durationMin: 4, type: active, phase: prep }
+  - { id: make-tare, durationMin: 3, type: active, phase: prep }
+  - { id: strain-broth, durationMin: 10, type: active, phase: cook }
+  - { id: cook-noodles, durationMin: 3, type: active, phase: cook }
+  - { id: assemble-bowls, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The broth and the chashu can be made two days ahead and kept cold. The garlic oil and the miso tare keep for several days in the fridge, and the tare is made up in the bowl.
+  freezable: true
+  freezeInstructions: The broth freezes well without the noodles. The chashu can be frozen in its braising liquid.
+  reheatInstructions: Bring the broth to a simmer and warm the chashu through in it. Cook the noodles fresh and assemble each bowl at once.
+notes:
+  techniqueRationale:
+    - stepId: make-tare
+      text: The miso is worked into the tare off the heat, in a ladle of the hot broth, and never boiled. Heat dulls the fermented flavour of the miso, so it is added last.
+---
+
+<Step id="simmer-broth">
+  Put the <Qty ref="chicken"/>, the <Qty ref="water"/> and the <Qty ref="ginger"/> into a large
+  pot and bring it up to a bare simmer. Skim off the scum, then lower the heat so that the
+  surface only trembles, and leave it for <Dur step="simmer-broth"/>.
+</Step>
+
+<Step id="braise-chashu">
+  Put the <Qty ref="pork"/> into a pan with the <Qty ref="soy"/>, the <Qty ref="mirin-braise"/>
+  and the <Qty ref="sake-braise"/>, and add enough water to cover it halfway. Cover and simmer
+  gently for <Dur step="braise-chashu"/>, turning once, until the pork is tender. Leave it to
+  cool in its liquid.
+</Step>
+
+<Step id="boil-eggs">
+  Lower the <Qty ref="egg"/> into boiling water and cook them for <Dur step="boil-eggs"/>, then
+  cool them under cold water and peel them.
+</Step>
+
+<Step id="marinate-eggs">
+  Put the peeled eggs into a bag with a little of the chashu braising liquid and leave them for
+  <Dur step="marinate-eggs"/>.
+</Step>
+
+<Step id="fry-garlic">
+  Warm the <Qty ref="sesame-oil"/> in a small pan over a low heat, add the <Qty ref="garlic"/> and
+  fry it gently for <Dur step="fry-garlic"/>, until it is pale gold and smells sweet. Do not let it
+  colour.
+</Step>
+
+<Step id="make-tare">
+  Take the pan off the heat. Put the <Qty ref="miso"/> into a ladle, dip the ladle into the hot
+  broth and work the paste apart until it has gone. Stir it into the garlic oil with the
+  <Qty ref="mirin-tare"/> and the <Qty ref="sake-tare"/>, and divide it between two bowls.
+  This takes <Dur step="make-tare"/>.
+</Step>
+
+<Step id="strain-broth">
+  Strain the broth through a fine sieve into a clean pan, letting it drain without pressing, and
+  keep it hot at a low simmer. This takes <Dur step="strain-broth"/>.
+</Step>
+
+<Step id="cook-noodles">
+  Cook the <Qty ref="noodles"/> in a large pan of boiling water for <Dur step="cook-noodles"/>,
+  until just tender, then drain them well.
+</Step>
+
+<Step id="assemble-bowls">
+  Ladle the hot broth over the tare in each bowl and stir until smooth. Add the drained noodles,
+  then the sliced chashu, the halved marinated eggs, the <Qty ref="menma"/>, the
+  <Qty ref="spring-onion"/> and the <Qty ref="nori"/>, and serve at once.
+</Step>

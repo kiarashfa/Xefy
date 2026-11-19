@@ -1,0 +1,113 @@
+---
+title: Steak Frites
+subtitle: A thick steak pan-fried in butter and served with potatoes fried twice in deep oil; a serving is one steak with its chips.
+label: Bistro
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [pan-frying, deep-frying]
+image:
+  src: images/recipes/steak-frites.webp
+  alt: "A seared steak topped with green herb butter beside a pile of thin golden frites on a grey plate"
+ingredients:
+  - id: beef
+    ingredientRef: beef
+    form: raw
+    amount: 640
+    unit: g
+    note: top sirloin, in four steaks of equal size, trimmed of loose fat and brought to room temperature
+  - id: potatoes
+    ingredientRef: potato
+    form: raw
+    amount: 800
+    unit: g
+    note: floury potatoes, peeled and cut into batons
+    consumedFraction: 0.85
+    consumedFractionNote: "The peel is discarded. Roughly a seventh of the weight of whole potatoes goes; this is an editorial estimate, not a measured yield."
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    note: for deep-frying
+    consumedFraction: 0.12
+    consumedFractionNote: "Most frying oil stays in the pan; roughly a tenth of it is absorbed by the potatoes. This is an editorial estimate, not a measured figure."
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    note: for the steaks
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: cut-potatoes, durationMin: 10, type: active, phase: prep }
+  - { id: first-fry, durationMin: 6, type: active, phase: cook }
+  - { id: rest-frites, durationMin: 10, type: passive }
+  - { id: season-steak, durationMin: 3, type: "parallel-with:rest-frites", phase: prep }
+  - { id: sear-steak, durationMin: 8, type: active, phase: cook }
+  - { id: second-fry, durationMin: 4, type: active, phase: cook }
+  - { id: rest-steak, durationMin: 5, type: "parallel-with:second-fry", phase: rest }
+makeAhead:
+  aheadInstructions: The potatoes can be cut and kept in cold water for a day, then dried thoroughly before the first fry. Cook the steaks and the second fry just before serving.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: first-fry
+      text: The potatoes are fried once at a lower heat to cook them through, then left to rest, and fried again hot. The first fry sets the inside soft and the second gives the crisp outside, which a single frying cannot do.
+  commonPitfalls:
+    - stepId: first-fry
+      text: Frying too many potatoes at once drops the oil temperature, and the chips soak up fat instead of crisping. Fry in small batches and let the oil come back up to heat between them.
+---
+
+<Step id="cut-potatoes">
+  Cut the <Qty ref="potatoes"/> into batons about <Len cm={1}/> thick. Rinse them, then dry them
+  thoroughly in a clean cloth, since water in the oil makes it spit. This takes
+  <Dur step="cut-potatoes"/>.
+</Step>
+
+<Step id="first-fry">
+  Heat the <Qty ref="frying-oil"/> in a deep, heavy pan to <Temp c={150}/>. Fry the potatoes in
+  small batches for <Dur step="first-fry"/>, until they are cooked through and pale, but not yet
+  coloured. Lift them out and drain them.
+</Step>
+
+<Step id="rest-frites">
+  Leave the potatoes to rest on kitchen paper for <Dur step="rest-frites"/> while the oil is
+  reheated.
+</Step>
+
+<Step id="season-steak">
+  Season the <Qty ref="beef"/> on both sides with the <Qty ref="salt"/> and the <Qty ref="pepper"/>.
+  This takes <Dur step="season-steak"/>.
+</Step>
+
+<Step id="sear-steak">
+  Melt the <Qty ref="butter"/> in a heavy frying pan over a high heat until it foams. Lay the steaks
+  in the pan, in batches if needed, and cook them for <Dur step="sear-steak"/> in all, turning them
+  once, until they are browned on both sides and still rare in the centre. Baste them with the
+  foaming butter as they cook.
+</Step>
+
+<Step id="second-fry">
+  Reheat the oil to <Temp c={190}/> and fry the potatoes again in small batches for
+  <Dur step="second-fry"/>, until deep golden and crisp. Drain them and season them with a little
+  of the salt.
+</Step>
+
+<Step id="rest-steak">
+  Rest the steaks on a warm plate for <Dur step="rest-steak"/>, so the juices settle before they
+  are cut. Serve each steak with a portion of the chips.
+</Step>

@@ -1,0 +1,106 @@
+---
+title: Tiramisù
+subtitle: Egg yolk and sugar beaten into mascarpone, layered with coffee and Marsala soaked savoiardi and chilled. It uses raw egg yolk and Marsala, so nothing in it is cooked; a serving is one portion of the dish.
+label: Veneto
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [dessert]
+  method: [no-cook]
+names:
+  notToBeConfusedWith:
+    - name: Tirame su
+      note: The Friulian dessert of the 1940s from Il Vetturino in Pieris, which is counted as an early form of the same family. It is a related dessert, not this recipe.
+  searchOnly: ["tiramisu", "tirami su"]
+image:
+  src: images/recipes/tiramisu.webp
+  alt: "A slice of tiramisu showing layers of soaked sponge and mascarpone cream under a cocoa dusting, topped with chocolate shards, on a white plate with custard sauce"
+ingredients:
+  - id: yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 90
+    unit: g
+    note: raw, from fresh eggs
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 80
+    unit: g
+  - id: mascarpone
+    ingredientRef: mascarpone
+    form: fresh
+    amount: 250
+    unit: g
+    note: at room temperature
+  - id: espresso
+    ingredientRef: espresso
+    form: brewed
+    amount: 200
+    unit: ml
+    note: strong, cooled completely
+  - id: marsala
+    ingredientRef: marsala
+    form: sweet
+    amount: 40
+    unit: ml
+  - id: savoiardi
+    ingredientRef: savoiardi
+    form: dry
+    amount: 200
+    unit: g
+    note: dipped one at a time
+  - id: cocoa
+    ingredientRef: cocoa-powder
+    form: unsweetened
+    amount: 10
+    unit: g
+    note: for dusting, sifted just before serving
+steps:
+  - { id: whisk-yolks, durationMin: 8, type: active, phase: prep }
+  - { id: fold-mascarpone, durationMin: 5, type: active, phase: prep }
+  - { id: coffee-soak, durationMin: 5, type: active, phase: prep }
+  - { id: layer, durationMin: 10, type: active, phase: prep }
+  - { id: chill, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: Made the day before, and the flavour improves overnight. Dust with the cocoa only just before serving, since it darkens and dampens if it sits.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: whisk-yolks
+      text: Beating the yolks with the sugar until they are thick and pale gives the cream its body without any heat, which is why the mascarpone can go in straight away.
+  commonPitfalls:
+    - stepId: coffee-soak
+      text: A biscuit left to soak turns to mush in the dish. Dip each one for a moment only, so that it is wet through but still holds its shape.
+---
+
+<Step id="whisk-yolks">
+  Whisk the <Qty ref="yolk"/> with the <Qty ref="sugar"/> in a bowl until pale, thick and
+  falling in a ribbon, for <Dur step="whisk-yolks"/>. The yolks are not cooked, so the
+  mixture has to be beaten until it is at its fullest.
+</Step>
+
+<Step id="fold-mascarpone">
+  Beat the <Qty ref="mascarpone"/> into the yolk mixture in two batches, until the cream is
+  smooth and holds its shape on the whisk, for <Dur step="fold-mascarpone"/>.
+</Step>
+
+<Step id="coffee-soak">
+  Mix the <Qty ref="espresso"/> with the <Qty ref="marsala"/> in a shallow dish, and let it
+  cool completely. Dip the <Qty ref="savoiardi"/> one at a time, turning each once, so that
+  the dipping takes <Dur step="coffee-soak"/> in all.
+</Step>
+
+<Step id="layer">
+  Lay a layer of the dipped biscuits in a dish, spread half the cream over them, then repeat
+  with the rest of the biscuits and finish with the cream. Dust the surface with the
+  <Qty ref="cocoa"/> through a fine sieve just before it is served.
+</Step>
+
+<Step id="chill">
+  Cover the dish and chill it for <Dur step="chill"/>, until the biscuits have softened right
+  through and the cream has set.
+</Step>

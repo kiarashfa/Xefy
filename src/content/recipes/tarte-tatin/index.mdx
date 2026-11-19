@@ -1,0 +1,122 @@
+---
+title: Tarte Tatin
+subtitle: Apples cooked slowly in butter and caramel, covered with shortcrust and inverted hot onto a plate; a serving is one slice.
+label: Loire Valley
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/tarte-tatin.webp
+  alt: "A whole tarte tatin turned out onto a decorated plate, its apples glazed deep amber with caramel"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 200
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 180
+    unit: g
+    portions:
+      - { id: butter-pastry, amount: 100, note: cold, cut into cubes }
+      - { id: butter-caramel, amount: 80, note: for the caramel }
+  - id: yolk
+    ingredientRef: egg
+    form: yolk
+    amount: 17
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 30
+    unit: ml
+    note: iced
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 150
+    unit: g
+  - id: apples
+    ingredientRef: apple
+    form: raw
+    amount: 1200
+    unit: g
+    note: firm, sharp apples, peeled, cored and quartered
+    consumedFraction: 0.85
+    consumedFractionNote: "Peel and core are discarded. Roughly a seventh of the weight of whole apples goes; this is an editorial estimate, not a measured yield."
+steps:
+  - { id: make-pastry, durationMin: 8, type: active, phase: prep }
+  - { id: chill-pastry, durationMin: 60, type: passive }
+  - { id: caramel, durationMin: 8, type: active, phase: cook }
+  - { id: pack-apples, durationMin: 10, type: active, phase: prep }
+  - { id: cook-apples, durationMin: 20, type: active, phase: cook }
+  - { id: roll-pastry, durationMin: 6, type: "parallel-with:cook-apples", phase: prep }
+  - { id: bake, durationMin: 35, type: active, phase: cook }
+  - { id: invert, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The pastry can be made a day ahead and kept wrapped in the fridge. The tart is best baked on the day it is served, because the caramel softens as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Warm a slice briefly in a moderate oven to bring the caramel and pastry back together.
+notes:
+  techniqueRationale:
+    - stepId: caramel
+      text: The sugar and butter are cooked to a deep amber before the apples go in. A pale caramel tastes thin and does not set, so the tart comes out sticky on the plate rather than glossy.
+  commonPitfalls:
+    - stepId: invert
+      text: Turning the tart out too soon lets the caramel run and the apples slide apart. Leave it for a few minutes until the caramel has thickened, then turn it over on a plate in one firm movement.
+---
+
+<Step id="make-pastry">
+  Rub the <Qty ref="butter-pastry"/> into the <Qty ref="flour"/> with your fingertips until
+  the mixture looks like fine breadcrumbs. Add the <Qty ref="salt"/>, the <Qty ref="yolk"/>
+  and the <Qty ref="water"/>, and bring it together with a knife into a smooth disc. Do not
+  knead it. This takes <Dur step="make-pastry"/>.
+</Step>
+
+<Step id="chill-pastry">
+  Wrap the pastry and chill it for <Dur step="chill-pastry"/>, until firm enough to roll.
+</Step>
+
+<Step id="caramel">
+  Put the <Qty ref="sugar"/> into a heavy, dry ovenproof pan of about <Len cm={22}/> across over a
+  medium heat. Let it melt without stirring, then swirl until it is a deep amber. Take it off
+  the heat and stir in the <Qty ref="butter-caramel"/>. This takes <Dur step="caramel"/>.
+</Step>
+
+<Step id="pack-apples">
+  Stand the <Qty ref="apples"/> upright in the caramel, packed tightly in a circle with the
+  rounded skin side down. Fill the centre with the pieces that do not fit.
+  This takes <Dur step="pack-apples"/>.
+</Step>
+
+<Step id="cook-apples">
+  Return the pan to a medium heat and cook for <Dur step="cook-apples"/>, until the apples
+  are tender right through and the juices have thickened to a glaze.
+</Step>
+
+<Step id="roll-pastry">
+  While the apples cook, roll the pastry to a round a little larger than the pan, about
+  as thick as a coin. Lift it onto the apples, tucking the edges down inside the rim.
+  This takes <Dur step="roll-pastry"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={190}/> for <Dur step="bake"/>, until the pastry is deep golden and crisp.
+</Step>
+
+<Step id="invert">
+  Leave the tart to settle for a few minutes. Set a serving plate over the pan, hold them
+  together, and turn them over in one firm movement. Lift off the pan and replace any apples
+  that have moved. The whole process takes <Dur step="invert"/>.
+</Step>

@@ -1,0 +1,146 @@
+---
+title: Tempura
+subtitle: Shrimp and vegetables in a thin, cold batter of soft wheat flour, egg and iced water, fried quickly and eaten dipped in tentsuyu, a dashi, soy and mirin sauce with grated daikon and ginger.
+label: Light batter
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [deep-frying]
+names:
+  searchOnly: ["tempura prawns", "shrimp tempura", "prawn tempura"]
+image:
+  src: images/recipes/tempura.webp
+  alt: "Prawn, aubergine and green pepper tempura in a crisp golden batter on a small white plate"
+ingredients:
+  - id: shrimp
+    ingredientRef: shrimp
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and deveined, tails left on
+  - id: sweet-potato
+    ingredientRef: sweet-potato
+    form: raw
+    amount: 200
+    unit: g
+    note: cut into thin rounds
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into thin half-moons
+  - id: green-pepper
+    ingredientRef: green-pepper
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into thick rings
+  - id: flour
+    ingredientRef: tempura-flour
+    form: soft
+    amount: 120
+    unit: g
+    note: sifted
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: beaten, for the batter
+  - id: ice-water
+    ingredientRef: water
+    form: tap
+    amount: 200
+    unit: ml
+    consumedFraction: 0.85
+    consumedFractionNote: "A little of the batter is left in the bowl and the dipping sauce is not finished to the last drop. This is an editorial estimate, not a sourced figure."
+    note: iced, with ice cubes in the jug
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 1000
+    unit: ml
+    consumedFraction: 0.06
+    consumedFractionNote: "The batter takes up part of the oil as the pieces fry. This is an editorial estimate, not a sourced figure; most of the oil stays in the pan."
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 70
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 70
+    unit: ml
+  - id: daikon
+    ingredientRef: daikon
+    form: raw
+    amount: 100
+    unit: g
+    note: finely grated, squeezed lightly
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 5
+    unit: g
+    note: finely grated
+steps:
+  - { componentRef: dashi, multiplier: 0.5 }
+  - { id: prepare-vegetables, durationMin: 12, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: heat-oil, durationMin: 10, type: "parallel-with:steep-kombu", phase: rest }
+  - { id: simmer-tentsuyu, durationMin: 3, type: active, phase: cook }
+  - { id: make-batter, durationMin: 2, type: active, phase: prep }
+  - { id: fry-tempura, durationMin: 10, type: active, phase: cook }
+  - { id: drain-tempura, durationMin: 2, type: passive }
+makeAhead:
+  aheadInstructions: The tentsuyu can be made a day ahead and kept cold, and the vegetables cut and kept in the fridge. The batter is mixed at the last moment, because it thickens and turns heavy as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-batter
+      text: The batter is mixed with chopsticks for only a few seconds and left lumpy, with the flour and water still cold. Gluten that is not worked up stays weak, so the coating fries crisp and light instead of tough and bready.
+  commonPitfalls:
+    - stepId: fry-tempura
+      text: Crowding the pan drops the oil temperature, and the pieces come out greasy and soft. They are fried in small batches, and the oil is brought back up between them.
+---
+
+<Step id="prepare-vegetables">
+  Peel the <Qty ref="shrimp"/> and devein them, leaving the tails on. Cut the
+  <Qty ref="sweet-potato"/>, the <Qty ref="aubergine"/> and the <Qty ref="green-pepper"/> as
+  the ingredient lines describe, and pat everything dry. This takes
+  <Dur step="prepare-vegetables"/>.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a deep, heavy pan to a steady moderate heat, checking it with a
+  thermometer. It takes <Dur step="heat-oil"/> to come up to temperature.
+</Step>
+
+<Step id="simmer-tentsuyu">
+  Pour the strained dashi into a small pan with the <Qty ref="soy"/> and the <Qty ref="mirin"/>.
+  Bring it to the boil, then simmer for <Dur step="simmer-tentsuyu"/> to cook off the alcohol in the
+  mirin. This is the tentsuyu. Divide it between two small bowls, and add a spoonful of the
+  <Qty ref="daikon"/> and of the <Qty ref="ginger"/> to each.
+</Step>
+
+<Step id="make-batter">
+  Put the <Qty ref="ice-water"/> into a bowl with the <Qty ref="egg"/> and beat them together
+  lightly. Tip in the <Qty ref="flour"/> all at once and mix with chopsticks for only a few
+  seconds, leaving lumps. This takes <Dur step="make-batter"/>, and the batter is used straight away.
+</Step>
+
+<Step id="fry-tempura">
+  Dip each piece of <Qty ref="shrimp"/> and vegetable into the batter, let the excess drip off,
+  and lower it into the oil. Fry in small batches for <Dur step="fry-tempura"/>, turning once, until
+  the batter is pale gold and crisp, and the shrimp are just cooked through.
+</Step>
+
+<Step id="drain-tempura">
+  Lift the pieces out onto a wire rack and leave them to drain for <Dur step="drain-tempura"/>
+  before they are served, so the coating stays crisp. Serve at once with the tentsuyu.
+</Step>

@@ -8,6 +8,7 @@
     { "id": "breakfast", "label": "Breakfast" },
     { "id": "snack", "label": "Snack" },
     { "id": "dessert", "label": "Dessert" },
+    { "id": "pastry", "label": "Pastry" },
     { "id": "bread", "label": "Bread" },
     { "id": "sauce", "label": "Sauce" },
     { "id": "condiment", "label": "Condiment" },

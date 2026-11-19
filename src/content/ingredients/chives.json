@@ -1,0 +1,59 @@
+{
+  "id": "chives",
+  "name": "Chives",
+  "proseName": "chives",
+  "category": "herb",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fresh",
+      "label": "Fresh",
+      "proseQualifier": "fresh",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169994",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169994/nutrients",
+      "nutritionPer100g": {
+        "kcal": 30,
+        "protein": 3.27,
+        "fat": 0.73,
+        "carbs": 4.35,
+        "fiber": 2.5,
+        "sugars": 1.85,
+        "calcium": 92,
+        "iron": 1.6,
+        "magnesium": 42,
+        "phosphorus": 58,
+        "potassium": 296,
+        "sodium": 3,
+        "zinc": 0.56,
+        "copper": 0.157,
+        "manganese": 0.373,
+        "seleniumMcg": 0.9,
+        "vitaminC": 58.1,
+        "thiamin": 0.078,
+        "riboflavin": 0.115,
+        "niacin": 0.647,
+        "vitaminB6": 0.138,
+        "folateMcg": 105,
+        "choline": 5.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 218,
+        "vitaminE": 0.21,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 212.7,
+        "saturatedFat": 0.146,
+        "monounsaturatedFat": 0.095,
+        "polyunsaturatedFat": 0.267,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 1,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

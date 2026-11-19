@@ -1,0 +1,98 @@
+{
+  "id": "ramen-noodles",
+  "name": "Ramen Noodles",
+  "proseName": "ramen noodles",
+  "category": "noodle",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "proseQualifier": "dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168908",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168908/nutrients",
+      "sourceNote": "USDA has no record for ramen noodles. This is its record for dried somen, the thin dried Japanese wheat noodle made from flour, salt and water. The chow mein record was not taken because it describes a fried noodle, which carries far more fat than a dried ramen noodle. USDA does not separate the alkaline and egg versions of ramen noodles, so this is the nearest match rather than an exact one.",
+      "nutritionPer100g": {
+        "kcal": 356,
+        "protein": 11.35,
+        "fat": 0.81,
+        "carbs": 74.1,
+        "fiber": 4.3,
+        "calcium": 23,
+        "iron": 1.32,
+        "magnesium": 28,
+        "phosphorus": 80,
+        "potassium": 164,
+        "sodium": 1840,
+        "zinc": 0.45,
+        "copper": 0.144,
+        "manganese": 0.479,
+        "seleniumMcg": 8.3,
+        "vitaminC": 0,
+        "thiamin": 0.101,
+        "riboflavin": 0.026,
+        "niacin": 0.875,
+        "vitaminB6": 0.05,
+        "folateMcg": 14,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.115,
+        "monounsaturatedFat": 0.095,
+        "polyunsaturatedFat": 0.33,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 56,
+        "densitySource": "measured"
+      }
+    },
+    {
+      "id": "steamed",
+      "label": "Steamed, for stir-frying",
+      "proseName": "yakisoba noodles",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168909",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168909/nutrients",
+      "sourceNote": "USDA has no record for steamed yakisoba noodles. This is its record for cooked somen, the thin Japanese wheat noodle, and the nearest cooked plain-wheat noodle it publishes. The noodles are bought cooked, so the weight is the weight in the pack.",
+      "nutritionPer100g": {
+        "kcal": 131,
+        "protein": 4,
+        "fat": 0.18,
+        "carbs": 27.54,
+        "calcium": 8,
+        "iron": 0.52,
+        "magnesium": 2,
+        "phosphorus": 27,
+        "potassium": 29,
+        "sodium": 161,
+        "zinc": 0.22,
+        "copper": 0.025,
+        "manganese": 0.251,
+        "vitaminC": 0,
+        "thiamin": 0.02,
+        "riboflavin": 0.033,
+        "niacin": 0.097,
+        "vitaminB6": 0.013,
+        "folateMcg": 2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.025,
+        "monounsaturatedFat": 0.021,
+        "polyunsaturatedFat": 0.073,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 176,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

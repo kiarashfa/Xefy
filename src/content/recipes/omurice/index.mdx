@@ -1,0 +1,124 @@
+---
+title: Omurice
+subtitle: Ketchup-seasoned fried rice with chicken and onion, wrapped in a thin, soft omelette and finished with more ketchup.
+label: Ketchup-seasoned
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [pan-frying]
+names:
+  searchOnly: ["omuraisu", "omu rice", "omelette rice", "omelet rice"]
+image:
+  src: images/recipes/omurice.webp
+  alt: "An omurice: a smooth yellow omelette wrapped around rice, with a pool of ketchup poured over the middle and a watercress sprig, on a white plate"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken-thigh
+    form: raw
+    amount: 200
+    unit: g
+    note: cut into small dice
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 160
+    unit: g
+    note: short-grain, weighed raw, cooked before frying
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 90
+    unit: g
+    portions:
+      - { id: ketchup-rice, amount: 60, note: for the rice }
+      - { id: ketchup-top, amount: 30, note: for the top of the omelettes }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 20
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    note: beaten together
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: prep-filling, durationMin: 6, type: active, phase: prep }
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: beat-eggs, durationMin: 2, type: "parallel-with:cook-rice", phase: prep }
+  - { id: fry-rice, durationMin: 8, type: active, phase: cook }
+  - { id: cook-omelettes, durationMin: 10, type: active, phase: cook }
+  - { id: plate-omurice, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The fried rice can be made a few hours ahead and kept covered. The omelettes are cooked at the last moment, because they lose their softness as they stand.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-rice
+      text: The ketchup goes into the rice as it is fried, so the sugar and acid caramelise slightly on the grains. Adding it at the end leaves a wet pink sauce on top rather than rice that is coated all through.
+  commonPitfalls:
+    - stepId: cook-omelettes
+      text: An omelette cooked over high heat takes on a brown, tough skin before the middle has set. The pan is kept at a moderate heat and the egg is stirred only until it is half set, then left to finish.
+---
+
+<Step id="prep-filling">
+  Season the <Qty ref="chicken"/> with the <Qty ref="salt"/>, and have the
+  <Qty ref="onion"/> finely chopped beside it. This takes <Dur step="prep-filling"/>.
+</Step>
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost
+  clear. Cook it in a heavy pan with a tight lid, and leave it covered after the boil for
+  the last part of the <Dur step="cook-rice"/>. Spread it on a tray to cool a little.
+</Step>
+
+<Step id="beat-eggs">
+  Beat the <Qty ref="egg"/> with the <Qty ref="pepper"/> in a bowl until the whites and yolks
+  are just combined. Do not whisk it to a foam. This takes <Dur step="beat-eggs"/>.
+</Step>
+
+<Step id="fry-rice">
+  Heat the <Qty ref="oil"/> in a wide pan over a medium-high heat. Fry the chicken until it
+  has lost its pink, then add the onion and cook until it is soft. Tip in the cooked rice,
+  add the <Qty ref="ketchup-rice"/> and the <Qty ref="butter"/>, and stir for
+  <Dur step="fry-rice"/>, until every grain is coated and glossy. Tip it out onto a plate.
+</Step>
+
+<Step id="cook-omelettes">
+  Divide the beaten egg into two equal parts. Heat a small non-stick pan over a moderate
+  heat with a little butter. Pour in one part and stir with chopsticks until it is half set,
+  then tip the pan and let it settle into an oval. Spoon half of the fried rice down the
+  centre, fold the omelette over it, and roll it onto a plate. Repeat for the second
+  omelette. This takes <Dur step="cook-omelettes"/>.
+</Step>
+
+<Step id="plate-omurice">
+  Spread the <Qty ref="ketchup-top"/> over the top of each omelette in a line, and serve at
+  once while the egg is still soft.
+</Step>

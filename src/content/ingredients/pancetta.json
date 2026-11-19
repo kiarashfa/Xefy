@@ -1,0 +1,64 @@
+{
+  "id": "pancetta",
+  "name": "Pancetta",
+  "proseName": "pancetta",
+  "names": {
+    "notToBeConfusedWith": [
+      {
+        "name": "Guanciale",
+        "note": "Cured pork jowl rather than belly. Guanciale renders more of its soft fat, which is why it carries the Roman sauces; pancetta is leaner and is the pork of the Bolognese ones."
+      }
+    ]
+  },
+  "category": "cured meat",
+  "animalOrigin": "meat",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "cured-belly",
+      "label": "Cured belly, raw",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168277",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168277/nutrients",
+      "sourceNote": "USDA has no record for pancetta. This is its record for unprepared cured pork belly, the closest cut and cure it publishes. Bacon is usually smoked and pancetta is not, so the flavour differs, but the fat and salt profile of cured belly is close.",
+      "nutritionPer100g": {
+        "kcal": 393,
+        "protein": 13.66,
+        "fat": 37.13,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0.35,
+        "calcium": 6,
+        "iron": 0.38,
+        "magnesium": 13,
+        "phosphorus": 166,
+        "potassium": 201,
+        "sodium": 751,
+        "zinc": 1.14,
+        "copper": 0.046,
+        "manganese": 0.012,
+        "seleniumMcg": 20.1,
+        "vitaminC": 0,
+        "thiamin": 0.276,
+        "riboflavin": 0.081,
+        "niacin": 4.022,
+        "vitaminB6": 0.266,
+        "folateMcg": 0,
+        "choline": 47.8,
+        "vitaminB12Mcg": 0.5,
+        "vitaminAMcg": 11,
+        "vitaminE": 0.43,
+        "vitaminDMcg": 0.4,
+        "vitaminKMcg": 0,
+        "saturatedFat": 12.615,
+        "monounsaturatedFat": 15.922,
+        "polyunsaturatedFat": 5.757,
+        "transFat": 0.147,
+        "cholesterol": 66
+      }
+    }
+  ],
+  "image": "images/ingredients/pancetta-thumb.webp"
+}

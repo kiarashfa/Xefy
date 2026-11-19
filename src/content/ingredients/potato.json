@@ -53,6 +53,59 @@
         "gPerCup": 150,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "boiled",
+      "label": "Boiled, in skin",
+      "proseQualifier": "boiled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170438",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170438/nutrients",
+      "sourceNote": "USDA's record for potatoes boiled in their skins without salt, flesh only. The skins are not in these figures.",
+      "nutritionPer100g": {
+        "kcal": 87,
+        "protein": 1.87,
+        "fat": 0.1,
+        "carbs": 20.13,
+        "fiber": 1.8,
+        "sugars": 0.91,
+        "calcium": 5,
+        "iron": 0.31,
+        "magnesium": 22,
+        "phosphorus": 44,
+        "potassium": 379,
+        "sodium": 4,
+        "zinc": 0.3,
+        "copper": 0.188,
+        "manganese": 0.138,
+        "seleniumMcg": 0.3,
+        "vitaminC": 13,
+        "thiamin": 0.106,
+        "riboflavin": 0.02,
+        "niacin": 1.439,
+        "vitaminB6": 0.299,
+        "folateMcg": 10,
+        "choline": 13.5,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 2.2,
+        "saturatedFat": 0.026,
+        "monounsaturatedFat": 0.002,
+        "polyunsaturatedFat": 0.043,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 156,
+        "densitySource": "measured"
+      },
+      "purchasedAs": {
+        "form": "raw",
+        "ratio": 1.11,
+        "note": "Potatoes are bought raw and boiled in their skins. The peel comes off after cooking, so one gram of peeled boiled potato comes from about 1.1 grams of potato as bought."
+      }
     }
   ],
   "image": "images/ingredients/potato-thumb.webp"

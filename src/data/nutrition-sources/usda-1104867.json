@@ -1,0 +1,63 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "1104867",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/1104867/nutrients",
+  "description": "Flour, rice, glutinous",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "10/30/2020",
+  "retrieved": "2026-11-19",
+  "nutritionPer100g": {
+    "kcal": 358,
+    "protein": 6.69,
+    "fat": 1.16,
+    "carbs": 80.1,
+    "calcium": 10,
+    "iron": 0.34,
+    "magnesium": 21.2,
+    "phosphorus": 63,
+    "potassium": 80,
+    "sodium": 6,
+    "zinc": 1.34,
+    "copper": 0.17,
+    "manganese": 0.995,
+    "seleniumMcg": 2,
+    "thiamin": 0.053,
+    "riboflavin": 0,
+    "niacin": 1.12,
+    "vitaminB6": 0.044
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 11.8,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1500,
+      "unit": "kJ"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 1.07,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 0.22,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 40.7,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

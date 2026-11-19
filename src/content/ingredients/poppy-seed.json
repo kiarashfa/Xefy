@@ -1,0 +1,59 @@
+{
+  "id": "poppy-seed",
+  "name": "Poppy Seed",
+  "proseName": "poppy seed",
+  "category": "spice",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171330",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171330/nutrients",
+      "nutritionPer100g": {
+        "kcal": 525,
+        "protein": 17.99,
+        "fat": 41.56,
+        "carbs": 28.13,
+        "fiber": 19.5,
+        "sugars": 2.99,
+        "calcium": 1438,
+        "iron": 9.76,
+        "magnesium": 347,
+        "phosphorus": 870,
+        "potassium": 719,
+        "sodium": 26,
+        "zinc": 7.9,
+        "copper": 1.627,
+        "manganese": 6.707,
+        "seleniumMcg": 13.5,
+        "vitaminC": 1,
+        "thiamin": 0.854,
+        "riboflavin": 0.1,
+        "niacin": 0.896,
+        "vitaminB6": 0.247,
+        "folateMcg": 82,
+        "choline": 8.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 1.77,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 4.517,
+        "monounsaturatedFat": 5.982,
+        "polyunsaturatedFat": 28.569,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerTsp": 2.8,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/poppy-seed-thumb.webp"
+}

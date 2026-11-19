@@ -1,0 +1,124 @@
+---
+title: Macaron Parisien
+subtitle: Two almond meringue shells sandwiched around a dark chocolate ganache; a serving is one macaron.
+label: French meringue
+defaultServings: 24
+difficulty: Hard
+tags:
+  cuisine: [french]
+  course: [pastry, dessert]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Coconut macaroon
+      note: A mound of shredded coconut bound with egg white. It has no almond shell and no filling, though the English spelling is used for both.
+image:
+  src: images/recipes/macaron.webp
+  alt: "A pile of French macarons in red, pink, green, cream and chocolate on a white stand"
+ingredients:
+  - id: almonds
+    ingredientRef: almonds
+    form: ground
+    amount: 100
+    unit: g
+  - id: icing-sugar
+    ingredientRef: icing-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: whites
+    ingredientRef: egg
+    form: white
+    amount: 75
+    unit: g
+    note: at room temperature
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 100
+    unit: g
+  - id: chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 80
+    unit: g
+    note: finely chopped
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 80
+    unit: ml
+steps:
+  - { id: sift, durationMin: 4, type: active, phase: prep }
+  - { id: whip-meringue, durationMin: 8, type: active, phase: prep }
+  - { id: macaronage, durationMin: 4, type: active, phase: prep }
+  - { id: pipe, durationMin: 10, type: active, phase: prep }
+  - { id: rest-shells, durationMin: 40, type: passive }
+  - { id: ganache, durationMin: 8, type: "parallel-with:rest-shells", phase: prep }
+  - { id: bake, durationMin: 14, type: active, phase: cook }
+  - { id: cool-shells, durationMin: 20, type: passive }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The shells can be baked a day ahead and kept in an airtight tin. Fill them once the ganache has set, and then leave them for a day for the filling to soften the shells slightly.
+  freezable: true
+  freezeInstructions: Freeze unfilled shells in an airtight container with a sheet of paper between each layer. Fill them after thawing.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: rest-shells
+      text: The piped shells must stand until a skin forms on the surface. In the oven the skin holds the shell's top in place while the base lifts, which gives the frilled foot; without it the shells spread and crack.
+  commonPitfalls:
+    - stepId: macaronage
+      text: Stop folding as soon as the batter falls from the spatula in a slow, unbroken ribbon. Under-mixed batter holds peaks and cracks; over-mixed batter runs flat and never forms feet.
+---
+
+<Step id="sift">
+  Sift the <Qty ref="almonds"/> and the <Qty ref="icing-sugar"/> together twice, into a
+  bowl, discarding any coarse pieces left in the sieve. This takes <Dur step="sift"/>.
+</Step>
+
+<Step id="whip-meringue">
+  Whisk the <Qty ref="whites"/> until foamy, then add the <Qty ref="sugar"/> a spoonful at
+  a time, whisking hard between additions. Keep whisking until the meringue is stiff and
+  glossy and holds a firm peak when the whisk is lifted. This takes
+  <Dur step="whip-meringue"/>.
+</Step>
+
+<Step id="macaronage">
+  Tip the almond and sugar mixture onto the meringue and fold them together with a
+  spatula, pressing the batter against the side of the bowl, for <Dur step="macaronage"/>.
+  The batter is ready when it falls from the spatula in a slow, unbroken ribbon.
+</Step>
+
+<Step id="pipe">
+  Spoon the batter into a piping bag fitted with a plain round nozzle and pipe rounds
+  of an even size onto baking paper, lifting straight up at the end of each one. Tap the
+  tray firmly on the bench to release any air bubbles. This takes <Dur step="pipe"/>.
+</Step>
+
+<Step id="rest-shells">
+  Leave the piped shells uncovered at room temperature for <Dur step="rest-shells"/>, until
+  a dry skin forms and the surface no longer sticks to a fingertip.
+</Step>
+
+<Step id="ganache">
+  Warm the <Qty ref="cream"/> in a small pan until it is just steaming, and pour it over the
+  <Qty ref="chocolate"/>. Leave it for a minute, then stir until smooth and glossy. Chill
+  until thick enough to pipe. This takes <Dur step="ganache"/>.
+</Step>
+
+<Step id="bake">
+  Bake the shells at <Temp c={150}/> for <Dur step="bake"/>, until they lift cleanly from the
+  paper and the feet are firm when touched.
+</Step>
+
+<Step id="cool-shells">
+  Leave the shells on the tray for <Dur step="cool-shells"/>, until cold, before lifting
+  them off.
+</Step>
+
+<Step id="assemble">
+  Pipe a little of the ganache onto the flat side of half the shells and sandwich each with
+  another shell of matching size. Set them aside to firm for a while before serving.
+  Assembling takes <Dur step="assemble"/>.
+</Step>

@@ -1,0 +1,140 @@
+---
+title: Parmigiana di Melanzane
+subtitle: Floured and fried aubergine layered with tomato sauce, fior di latte and Parmigiano, then baked until the sauce bubbles; a serving is one quarter of the dish.
+label: Fried aubergine
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [pan-frying, baking]
+names:
+  alsoKnownAs:
+    - { name: Melanzane alla parmigiana, region: Italy, lang: it }
+    - { name: Eggplant parmesan, lang: en }
+  notToBeConfusedWith:
+    - name: Chicken parmesan
+      note: A breaded chicken cutlet under tomato and cheese, with no aubergine at all.
+      slugRef: chicken-parmesan
+  searchOnly: ["eggplant parmigiana", "aubergine parmigiana", "parmigiana"]
+image:
+  src: images/recipes/parmigiana-di-melanzane.webp
+  alt: "A slice of eggplant parmigiana showing layers of aubergine, melted cheese and tomato sauce, with a fresh basil leaf, close up"
+ingredients:
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 900
+    unit: g
+    note: two large, sliced lengthways about one centimetre thick
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    consumedFraction: 0.46
+    consumedFractionNote: "Blended across the aubergine and the sauce: most of the salt drawn from the aubergine is rinsed away, while the salt in the sauce is eaten."
+    portions:
+      - { id: salt-aubergine, amount: 6, note: to draw out the juice }
+      - { id: salt-sauce, amount: 4, note: for the sauce }
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 40
+    unit: g
+    note: for dredging
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 500
+    unit: ml
+    consumedFraction: 0.25
+    consumedFractionNote: "Most of the frying oil stays in the pan. The share that soaks into the aubergine and is eaten is an editorial estimate, since it depends on the slice and the oil temperature."
+  - id: passata
+    ingredientRef: tomato-puree
+    form: passata
+    amount: 500
+    unit: g
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 15
+    unit: g
+    note: leaves only
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 250
+    unit: g
+    note: fior di latte, drained and torn
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 80
+    unit: g
+    note: finely grated
+steps:
+  - { id: draw-juice, durationMin: 30, type: passive }
+  - { id: make-sauce, durationMin: 20, type: "parallel-with:draw-juice", phase: rest }
+  - { id: rinse-dry, durationMin: 8, type: active, phase: prep }
+  - { id: dredge-fry, durationMin: 20, type: active, phase: cook }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: passive }
+  - { id: rest-parmigiana, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The sauce can be made a day ahead and kept in the fridge. Assemble and bake the dish on the day it is served.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: draw-juice
+      text: Salting draws out the bitter juice and collapses the spongy flesh, so the slices take less oil and cook through without going greasy.
+  commonPitfalls:
+    - stepId: dredge-fry
+      text: Frying too many slices at once cools the oil, and the aubergine soaks it up instead of crisping. Fry in small batches and drain each one on kitchen paper.
+---
+
+<Step id="draw-juice">
+  Lay the <Qty ref="aubergine"/> slices in a colander in layers, sprinkling each with the
+  <Qty ref="salt-aubergine"/>. Leave them to drain for <Dur step="draw-juice"/>, until
+  beads of bitter liquid have come to the surface.
+</Step>
+
+<Step id="make-sauce">
+  Warm the <Qty ref="olive-oil"/> in a wide pan, add the <Qty ref="passata"/> and the
+  <Qty ref="salt-sauce"/>, and simmer gently for <Dur step="make-sauce"/>, until the sauce
+  has thickened and lost its raw edge. Tear in the <Qty ref="basil"/> at the end.
+</Step>
+
+<Step id="rinse-dry">
+  Rinse the aubergine slices under cold water and press them dry in a clean cloth.
+</Step>
+
+<Step id="dredge-fry">
+  Dust the slices with the <Qty ref="flour"/>, shaking off the excess. Fry them in the
+  <Qty ref="frying-oil"/> at <Temp c={180}/>, in small batches, for <Dur step="dredge-fry"/>,
+  until golden on both sides. Drain each batch on kitchen paper.
+</Step>
+
+<Step id="assemble">
+  Spread a spoonful of the sauce in a deep dish. Lay a layer of the fried aubergine, then
+  scatter over some of the <Qty ref="mozzarella"/> and the <Qty ref="parmigiano"/>, and spoon
+  over a little sauce. Repeat until the aubergine is used, and finish with the sauce and the
+  cheese.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={180}/> for <Dur step="bake"/>, until the sauce bubbles at the edges and the
+  cheese has melted and browned in patches.
+</Step>
+
+<Step id="rest-parmigiana">
+  Leave the dish to rest for <Dur step="rest-parmigiana"/> before cutting, so that the layers
+  hold together when it is served.
+</Step>

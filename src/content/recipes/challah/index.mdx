@@ -1,0 +1,130 @@
+---
+title: Challah
+subtitle: A braided loaf enriched with egg, honey and oil, made for the Shabbat table; a serving is one slice of the loaf.
+label: Three-strand braid
+defaultServings: 10
+difficulty: Medium
+tags:
+  cuisine: [jewish]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/challah.webp
+  alt: "A braided challah glazed golden and scattered with sesame seeds, on an ornate metal tray"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: lukewarm
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    portions:
+      - { id: egg-dough, amount: 80 }
+      - { id: egg-glaze, amount: 20, note: beaten, for glazing }
+  - id: honey
+    ingredientRef: honey
+    form: raw
+    amount: 50
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 40
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: poppy
+    ingredientRef: poppy-seed
+    form: whole
+    amount: 10
+    unit: g
+    optional: true
+    note: for the top
+steps:
+  - { id: mix, durationMin: 5, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: second-rise, durationMin: 60, type: passive }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:second-rise", phase: cook }
+  - { id: glaze, durationMin: 2, type: active, phase: cook }
+  - { id: bake, durationMin: 35, type: active, phase: cook }
+  - { id: cool, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before braiding.
+  freezable: true
+  freezeInstructions: Freeze the cooled loaf whole, wrapped tightly, for up to a month. Thaw it wrapped at room temperature.
+  reheatInstructions: Warm slices briefly in a moderate oven or a toaster.
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: Three ropes of the same length and thickness braid into a loaf that rises evenly. Ropes of uneven size give one thick end and one thin one.
+  commonPitfalls:
+    - stepId: glaze
+      text: A glaze brushed on thickly pools in the creases of the braid and bakes dark and sticky. Brush it lightly and evenly.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, the <Qty ref="salt"/> and the <Qty ref="yeast"/> into a large
+  bowl and stir them together. Add the <Qty ref="water"/>, the <Qty ref="honey"/>, the
+  <Qty ref="oil"/> and the <Qty ref="egg-dough"/>, and mix for <Dur step="mix"/>, until no dry
+  flour remains and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into three equal pieces and roll each one into a rope about <Len cm={40}/>
+  long. Lay the three ropes side by side and pinch them together at one end. Bring the right
+  rope over the middle one, then the left rope over the middle one, and repeat until you reach
+  the other end. Pinch the ends together and tuck them under the loaf.
+</Step>
+
+<Step id="second-rise">
+  Set the braid on a lined tray, cover it, and leave it to prove for <Dur step="second-rise"/>,
+  until a fingertip pressed in leaves a dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={180}/> with a shelf in the middle.
+</Step>
+
+<Step id="glaze">
+  Brush the braid lightly with the <Qty ref="egg-glaze"/>, and scatter the <Qty ref="poppy"/>
+  over the top.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep golden and the base sounds hollow when tapped. If the
+  top colours before the middle is cooked, lay a sheet of foil over it.
+</Step>
+
+<Step id="cool">
+  Lift the loaf onto a rack and leave it for <Dur step="cool"/> before slicing.
+</Step>

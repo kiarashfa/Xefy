@@ -58,6 +58,50 @@
         "transFat": 0.09,
         "cholesterol": 56
       }
+    },
+    {
+      "id": "shank",
+      "label": "Shank, bone-in, raw",
+      "proseName": "veal shank",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "172648",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/172648/nutrients",
+      "sourceNote": "USDA's record for veal shank meat with the bone removed, lean and fat separable. The bone is not in these figures, so a line weighed with its bone takes a consumed fraction for the share that is eaten.",
+      "nutritionPer100g": {
+        "kcal": 107,
+        "protein": 19.28,
+        "fat": 3.3,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 12,
+        "iron": 1.17,
+        "magnesium": 32,
+        "phosphorus": 207,
+        "potassium": 162,
+        "sodium": 107,
+        "zinc": 3.32,
+        "copper": 0.1,
+        "manganese": 0.01,
+        "seleniumMcg": 12.7,
+        "vitaminC": 0,
+        "thiamin": 0.082,
+        "riboflavin": 0.376,
+        "niacin": 5.254,
+        "vitaminB6": 0.392,
+        "folateMcg": 3,
+        "choline": 96.7,
+        "vitaminB12Mcg": 1.89,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.17,
+        "vitaminDMcg": 0.8,
+        "vitaminKMcg": 1,
+        "saturatedFat": 1.176,
+        "monounsaturatedFat": 1.563,
+        "polyunsaturatedFat": 0.155,
+        "transFat": 0.139,
+        "cholesterol": 63
+      }
     }
   ]
 }

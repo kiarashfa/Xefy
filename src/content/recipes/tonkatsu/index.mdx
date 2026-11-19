@@ -1,0 +1,130 @@
+---
+title: Tonkatsu
+subtitle: A thick pork loin cutlet coated in flour, egg and panko and deep-fried until the crumb is gold, served sliced with shredded cabbage and tonkatsu sauce.
+label: Deep-fried
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [deep-frying]
+names:
+  searchOnly: ["tonkatsu", "pork cutlet", "japanese pork cutlet", "katsu"]
+image:
+  src: images/recipes/tonkatsu.webp
+  alt: "Sliced tonkatsu, a breaded pork cutlet with a pink juicy centre, beside shredded cabbage on a rack and green plate"
+ingredients:
+  - id: pork
+    ingredientRef: pork-loin
+    form: boneless
+    amount: 300
+    unit: g
+    note: two boneless loin chops, cut about one finger thick
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 40
+    unit: g
+    note: for dredging
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: beaten with a fork
+  - id: panko
+    ingredientRef: panko
+    form: dry
+    amount: 80
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 800
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: "Breaded cutlets take up a little of the oil as they fry, and most of it stays in the pan. This is an editorial estimate, not a sourced figure."
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: very finely shredded
+  - id: tonkatsu-sauce
+    ingredientRef: tonkatsu-sauce
+    form: tonkatsu
+    amount: 60
+    unit: g
+steps:
+  - { id: prep-pork, durationMin: 6, type: active, phase: prep }
+  - { id: shred-cabbage, durationMin: 6, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 10, type: "parallel-with:prep-pork", phase: rest }
+  - { id: coat-pork, durationMin: 6, type: active, phase: prep }
+  - { id: fry-cutlets, durationMin: 7, type: active, phase: cook }
+  - { id: rest-cutlets, durationMin: 3, type: passive }
+  - { id: serve-tonkatsu, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The cabbage can be shredded and kept in cold water in the fridge for a few hours. The cutlets are breaded and fried just before they are eaten, because the crumb softens as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-cutlets
+      text: The oil is held at a steady moderate heat so that the crumb browns at the same rate as the pork cooks through. Hotter oil colours the crust before the centre is cooked; cooler oil soaks it.
+  commonPitfalls:
+    - stepId: rest-cutlets
+      text: Cutting a cutlet straight from the oil lets the juices run out and the crust steam from below. Resting it on a rack keeps the coating crisp and the meat moist.
+---
+
+<Step id="prep-pork">
+  Season the <Qty ref="pork"/> on both sides with the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>. Trim any sinew from the edges and make a few cuts through the fat
+  so that the chops do not curl in the oil. Lay each chop between sheets of cling film and
+  beat it lightly to an even thickness. This takes <Dur step="prep-pork"/>.
+</Step>
+
+<Step id="shred-cabbage">
+  Shred the <Qty ref="cabbage"/> very finely and leave it in a bowl of cold water for
+  <Dur step="shred-cabbage"/>, so that it crisps. Drain it well and pat it dry before it
+  goes on the plate.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a deep, heavy pan to <Temp c={170}/>, checking it with a
+  thermometer. It takes <Dur step="heat-oil"/> to come up to temperature and then holds
+  steady on a moderate flame.
+</Step>
+
+<Step id="coat-pork">
+  Set out three shallow dishes with the <Qty ref="flour"/>, the <Qty ref="egg"/> and the
+  <Qty ref="panko"/>. Dust each cutlet in flour and shake off the excess, dip it in the egg,
+  then press it into the panko on both sides so the crumb covers it evenly. This takes
+  <Dur step="coat-pork"/>.
+</Step>
+
+<Step id="fry-cutlets">
+  Lower the cutlets into the oil, which should stay at <Temp c={170}/>, and fry them for
+  <Dur step="fry-cutlets"/>, turning once, until the crumb is deep gold and the pork is
+  cooked through at its centre.
+</Step>
+
+<Step id="rest-cutlets">
+  Lift the cutlets out and drain them on a wire rack for <Dur step="rest-cutlets"/>. Do not
+  stack them, because the crust softens where they touch.
+</Step>
+
+<Step id="serve-tonkatsu">
+  Slice each cutlet across into strips and fan them on the plate beside the cabbage. Serve
+  the <Qty ref="tonkatsu-sauce"/> alongside in a small dish, to be spooned over.
+</Step>

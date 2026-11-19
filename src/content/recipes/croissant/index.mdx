@@ -1,0 +1,170 @@
+---
+title: Croissant
+subtitle: A laminated pastry of butter and dough, folded in three turns and baked until the layers stand apart; a serving is one croissant.
+label: Laminated
+defaultServings: 8
+difficulty: Hard
+tags:
+  cuisine: [french]
+  course: [pastry, breakfast]
+  method: [baking]
+names:
+  notToBeConfusedWith:
+    - name: Kipferl
+      note: The Austrian crescent the croissant descends from. It is a different pastry and is not laminated; the layers are the French change to it.
+image:
+  src: images/recipes/croissant.webp
+  alt: "A single golden, flaky croissant on a white plate"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 250
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 40
+    unit: ml
+    note: cold
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 80
+    unit: ml
+    note: cold
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 25
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 3
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 150
+    unit: g
+    portions:
+      - { id: butter-dough, amount: 25, note: softened }
+      - { id: butter-laminate, amount: 125, note: cold, in one flat slab }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 40
+    unit: g
+    note: beaten, for glazing
+steps:
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: rest-dough, durationMin: 60, type: passive }
+  - { id: beat-butter, durationMin: 8, type: active, phase: prep }
+  - { id: first-turn, durationMin: 10, type: active, phase: prep }
+  - { id: rest-first, durationMin: 30, type: passive }
+  - { id: second-turn, durationMin: 10, type: active, phase: prep }
+  - { id: rest-second, durationMin: 30, type: passive }
+  - { id: third-turn, durationMin: 10, type: active, phase: prep }
+  - { id: chill-laminated, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 25, type: active, phase: prep }
+  - { id: proof, durationMin: 120, type: passive }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:proof", phase: cook }
+  - { id: glaze, durationMin: 3, type: "parallel-with:proof", phase: prep }
+  - { id: bake, durationMin: 18, type: active, phase: cook }
+  - { id: cool, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: The laminated dough can be made a day ahead. Keep it wrapped and cold, then shape and proof the croissants on the day of baking.
+  freezable: true
+  freezeInstructions: Freeze the shaped croissants unproofed on a tray, then pack them into a bag. Bake from frozen, allowing a longer proof until they are puffed, before they go in the oven.
+  reheatInstructions: Warm baked croissants briefly in a moderate oven to crisp the layers again.
+notes:
+  techniqueRationale:
+    - stepId: beat-butter
+      text: The butter and the dough must have the same firmness. The thin, even layers of cold fat are what puff in the oven; butter that breaks through the dough, or is absorbed into it, bakes flat and greasy.
+  commonPitfalls:
+    - stepId: proof
+      text: An overproofed croissant collapses in the oven and the butter leaks out, while an underproofed one bakes dense. Judge by the puffed, soft look of the shapes rather than by the clock alone.
+---
+
+<Step id="mix-dough">
+  Put the <Qty ref="flour"/>, <Qty ref="sugar"/>, <Qty ref="salt"/> and <Qty ref="yeast"/>
+  into a bowl. Add the <Qty ref="water"/>, the <Qty ref="milk"/> and the
+  <Qty ref="butter-dough"/>, and mix until it comes together. Knead for
+  <Dur step="mix-dough"/>, until smooth and elastic.
+</Step>
+
+<Step id="rest-dough">
+  Shape the dough into a square, wrap it, and chill it for <Dur step="rest-dough"/>, so
+  that it firms and the gluten relaxes.
+</Step>
+
+<Step id="beat-butter">
+  Beat the <Qty ref="butter-laminate"/> between two sheets of baking paper with a rolling
+  pin, shaping it into a flat square about two thirds the size of the dough. Keep it cold
+  but pliable. The butter and the dough must have the same firmness.
+</Step>
+
+<Step id="first-turn">
+  Roll the dough into a rectangle, lay the butter in the centre, and fold the sides over
+  it so that it is fully enclosed, sealing the edges. Roll the parcel into a long
+  rectangle and fold it in thirds, like a letter. This takes <Dur step="first-turn"/>.
+</Step>
+
+<Step id="rest-first">
+  Wrap the dough and chill it for <Dur step="rest-first"/>, so the layers relax and the
+  butter firms again.
+</Step>
+
+<Step id="second-turn">
+  Turn the dough so that a folded edge faces you, roll it into a long rectangle, and fold
+  it in thirds again.
+</Step>
+
+<Step id="rest-second">
+  Wrap the dough and chill it for <Dur step="rest-second"/>.
+</Step>
+
+<Step id="third-turn">
+  Give the dough a third turn in the same way: roll it out, fold it in thirds, and wrap it.
+</Step>
+
+<Step id="chill-laminated">
+  Chill the laminated dough for <Dur step="chill-laminated"/>, until it is firm enough to
+  cut cleanly.
+</Step>
+
+<Step id="shape">
+  Roll the dough into a long rectangle of even thickness, trim the edges straight, and cut
+  it into long triangles. Roll each triangle up from the wide end, then curve the two ends
+  into a crescent. Lay the croissants on a lined tray with the tip underneath, well apart.
+</Step>
+
+<Step id="proof">
+  Leave the shaped croissants somewhere warm but not hot for <Dur step="proof"/>, until they
+  are puffed and soft and clearly larger, with the layers still visible on the surface.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={200}/> with a shelf in the middle while the croissants proof.
+</Step>
+
+<Step id="glaze">
+  Brush the croissants lightly with the <Qty ref="egg"/>, keeping it off the cut edges,
+  because glaze that runs down the sides seals the layers and stops them rising.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep golden and crisp, turning the tray halfway
+  through if your oven heats unevenly.
+</Step>
+
+<Step id="cool">
+  Leave the croissants on the tray for <Dur step="cool"/>, so the layers set before they
+  are eaten.
+</Step>

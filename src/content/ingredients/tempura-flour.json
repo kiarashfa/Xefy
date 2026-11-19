@@ -1,0 +1,60 @@
+{
+  "id": "tempura-flour",
+  "name": "Tempura Flour",
+  "proseName": "tempura flour",
+  "category": "flour",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "soft",
+      "label": "Soft, low protein",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169723",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169723/nutrients",
+      "sourceNote": "USDA has no record for tempura flour, the soft, low-protein wheat flour sold for batter. This is its record for enriched cake flour, the same kind of soft wheat and the nearest it publishes. Tempura flour blends differ by brand, and some add starch.",
+      "nutritionPer100g": {
+        "kcal": 362,
+        "protein": 8.2,
+        "fat": 0.86,
+        "carbs": 78.03,
+        "fiber": 1.7,
+        "sugars": 0.31,
+        "calcium": 14,
+        "iron": 7.32,
+        "magnesium": 16,
+        "phosphorus": 85,
+        "potassium": 105,
+        "sodium": 2,
+        "zinc": 0.62,
+        "copper": 0.139,
+        "manganese": 0.634,
+        "seleniumMcg": 4.9,
+        "vitaminC": 0,
+        "thiamin": 0.892,
+        "riboflavin": 0.43,
+        "niacin": 6.79,
+        "vitaminB6": 0.033,
+        "folateMcg": 282,
+        "choline": 10.4,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.02,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.3,
+        "saturatedFat": 0.127,
+        "monounsaturatedFat": 0.073,
+        "polyunsaturatedFat": 0.379,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 137,
+        "densitySource": "measured"
+      }
+    }
+  ]
+}

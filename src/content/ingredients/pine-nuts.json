@@ -1,0 +1,61 @@
+{
+  "id": "pine-nuts",
+  "name": "Pine Nuts",
+  "proseName": "pine nuts",
+  "category": "nut",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "nuts"
+  ],
+  "forms": [
+    {
+      "id": "shelled",
+      "label": "Shelled",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170591",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170591/nutrients",
+      "sourceNote": "USDA's record for pine nuts, filed under dried; it is the same nut as sold shelled and raw. It is the only pine-nut record that carries a full fat breakdown, which the Foundation record does not, so it is preferred here.",
+      "nutritionPer100g": {
+        "kcal": 673,
+        "protein": 13.69,
+        "fat": 68.37,
+        "carbs": 13.08,
+        "fiber": 3.7,
+        "sugars": 3.59,
+        "calcium": 16,
+        "iron": 5.53,
+        "magnesium": 251,
+        "phosphorus": 575,
+        "potassium": 597,
+        "sodium": 2,
+        "zinc": 6.45,
+        "copper": 1.324,
+        "manganese": 8.802,
+        "seleniumMcg": 0.7,
+        "vitaminC": 0.8,
+        "thiamin": 0.364,
+        "riboflavin": 0.227,
+        "niacin": 4.387,
+        "vitaminB6": 0.094,
+        "folateMcg": 34,
+        "choline": 55.8,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminE": 9.33,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 53.9,
+        "saturatedFat": 4.899,
+        "monounsaturatedFat": 18.764,
+        "polyunsaturatedFat": 34.071,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 135,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/pine-nuts-thumb.webp"
+}

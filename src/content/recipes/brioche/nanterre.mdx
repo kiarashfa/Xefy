@@ -1,0 +1,115 @@
+---
+label: Nanterre
+defaultServings: 10
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 25
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 4
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 30
+    unit: ml
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    portions:
+      - { id: egg-dough, amount: 130 }
+      - { id: egg-wash, amount: 20, note: beaten, for glazing }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 125
+    unit: g
+    note: softened but still cool
+steps:
+  - { id: mix, durationMin: 8, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: add-butter, durationMin: 12, type: active, phase: prep }
+  - { id: first-rise, durationMin: 90, type: passive }
+  - { id: chill, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: second-rise, durationMin: 120, type: passive }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:second-rise", phase: cook }
+  - { id: bake, durationMin: 35, type: active, phase: cook }
+  - { id: cool, durationMin: 30, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then take it out to come back to a workable temperature before shaping.
+  freezable: true
+  freezeInstructions: Freeze the baked loaf whole, wrapped tightly once fully cool, for up to a month. Thaw it wrapped at room temperature.
+  reheatInstructions: Warm a slice briefly in a moderate oven or a toaster to bring back the softness of the crumb.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, <Qty ref="sugar"/>, <Qty ref="salt"/> and <Qty ref="yeast"/>
+  into the bowl of a mixer fitted with a dough hook. Add the <Qty ref="milk"/> and the
+  <Qty ref="egg-dough"/>, and mix on low speed until the dough comes together into a soft,
+  sticky mass.
+</Step>
+
+<Step id="knead">
+  Knead on low speed for <Dur step="knead"/>, until the dough is smooth and pulls away
+  from the sides of the bowl in a sheet, though it will still stick to your fingers.
+</Step>
+
+<Step id="add-butter">
+  Add the <Qty ref="butter"/> a few pieces at a time, letting each one be absorbed before
+  the next goes in. Keep kneading for <Dur step="add-butter"/>, until the dough is glossy,
+  elastic and comes away from the bowl again.
+</Step>
+
+<Step id="first-rise">
+  Cover the bowl and leave the dough at room temperature for <Dur step="first-rise"/>,
+  until it has doubled in size. Knock it back gently to release the air.
+</Step>
+
+<Step id="chill">
+  Refrigerate the dough for <Dur step="chill"/>, until the butter has firmed and the
+  dough can be lifted without sticking.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces, each about the size of a walnut, and roll each one
+  into a smooth ball. Lay the balls in a buttered loaf tin in rows, so that they sit
+  side by side and touch. Brush the top with the <Qty ref="egg-wash"/>.
+</Step>
+
+<Step id="second-rise">
+  Cover the tin loosely and leave the brioche to rise for <Dur step="second-rise"/>, until
+  the balls have fused into one dough that reaches the rim of the tin.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={180}/> with a shelf in the lower middle while the brioche
+  rises.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep golden and a skewer pushed into the centre comes
+  out clean. If the top colours before the middle is set, lay a sheet of foil over it.
+</Step>
+
+<Step id="cool">
+  Turn the loaf out of the tin and leave it on a rack for <Dur step="cool"/> before
+  slicing.
+</Step>

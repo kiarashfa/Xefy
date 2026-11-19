@@ -1,0 +1,56 @@
+{
+  "id": "sea-bream",
+  "name": "Sea Bream",
+  "proseName": "sea bream",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw fillet",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173698",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173698/nutrients",
+      "sourceNote": "USDA has no record for sea bream, the porgy-family fish used for Japanese sushi. This is its record for raw snapper, another lean, white-fleshed sea fish, and the closest one it publishes. The fish must be sold for raw eating.",
+      "nutritionPer100g": {
+        "kcal": 100,
+        "protein": 20.51,
+        "fat": 1.34,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 32,
+        "iron": 0.18,
+        "magnesium": 32,
+        "phosphorus": 198,
+        "potassium": 417,
+        "sodium": 64,
+        "zinc": 0.36,
+        "copper": 0.028,
+        "manganese": 0.013,
+        "seleniumMcg": 38.2,
+        "vitaminC": 1.6,
+        "thiamin": 0.046,
+        "riboflavin": 0.003,
+        "niacin": 0.284,
+        "vitaminB6": 0.4,
+        "folateMcg": 5,
+        "choline": 65,
+        "vitaminB12Mcg": 3,
+        "vitaminAMcg": 32,
+        "vitaminE": 0.96,
+        "vitaminDMcg": 10.2,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.285,
+        "monounsaturatedFat": 0.251,
+        "polyunsaturatedFat": 0.459,
+        "cholesterol": 37
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": "rockfish",
+  "name": "Rockfish",
+  "proseName": "rockfish",
+  "category": "fish",
+  "animalOrigin": "fish",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "fish"
+  ],
+  "forms": [
+    {
+      "id": "mixed",
+      "label": "Mixed Mediterranean rockfish",
+      "proseQualifier": "mixed Mediterranean",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "173676",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/173676/nutrients",
+      "sourceNote": "USDA has no record for the Mediterranean rockfish of bouillabaisse: rascasse, gurnard, John Dory, conger and weever are all absent. This is its record for raw monkfish, a lean, firm white fish that is itself traditional in the soup and is the closest match to rockfish flesh. The figures are an estimate for the mixed fish, not for any one species.",
+      "nutritionPer100g": {
+        "kcal": 76,
+        "protein": 14.48,
+        "fat": 1.52,
+        "carbs": 0,
+        "fiber": 0,
+        "calcium": 8,
+        "iron": 0.32,
+        "magnesium": 21,
+        "phosphorus": 200,
+        "potassium": 400,
+        "sodium": 18,
+        "zinc": 0.41,
+        "copper": 0.028,
+        "manganese": 0.024,
+        "seleniumMcg": 36.5,
+        "vitaminC": 1,
+        "thiamin": 0.025,
+        "riboflavin": 0.06,
+        "niacin": 2.1,
+        "vitaminB6": 0.24,
+        "folateMcg": 7,
+        "vitaminB12Mcg": 0.9,
+        "vitaminAMcg": 12,
+        "saturatedFat": 0.34,
+        "monounsaturatedFat": 0.24,
+        "polyunsaturatedFat": 0.61,
+        "cholesterol": 25
+      }
+    }
+  ]
+}

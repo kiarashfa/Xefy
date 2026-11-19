@@ -104,6 +104,55 @@
         "gPerCup": 145,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "ground",
+      "label": "Ground",
+      "proseName": "ground almonds",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170568",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170568/nutrients",
+      "sourceNote": "USDA has no almond meal record. This is its record for blanched almonds, which is what ground almonds for macarons are made from; grinding does not change the composition of the nut.",
+      "nutritionPer100g": {
+        "kcal": 590,
+        "protein": 21.4,
+        "fat": 52.52,
+        "carbs": 18.67,
+        "fiber": 9.9,
+        "sugars": 4.63,
+        "calcium": 236,
+        "iron": 3.28,
+        "magnesium": 268,
+        "phosphorus": 481,
+        "potassium": 659,
+        "sodium": 19,
+        "zinc": 2.97,
+        "copper": 1.027,
+        "manganese": 1.835,
+        "seleniumMcg": 3.2,
+        "vitaminC": 0,
+        "thiamin": 0.191,
+        "riboflavin": 0.711,
+        "niacin": 3.5,
+        "vitaminB6": 0.115,
+        "folateMcg": 49,
+        "choline": 52.1,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 23.75,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 3.953,
+        "monounsaturatedFat": 33.415,
+        "polyunsaturatedFat": 12.368,
+        "transFat": 0.019,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 100,
+        "densitySource": "estimated",
+        "densityClass": "nut-chopped"
+      }
     }
   ],
   "image": "images/ingredients/almonds-thumb.webp"

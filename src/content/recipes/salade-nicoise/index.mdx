@@ -1,0 +1,160 @@
+---
+title: Salade Niçoise
+subtitle: Tomatoes, potatoes, green beans, tuna and anchovy with hard-boiled egg and olives, dressed in a mustard vinaigrette; a serving is one portion.
+label: Provence
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [salad]
+  method: [boiling]
+image:
+  src: images/recipes/salade-nicoise.webp
+  alt: "Salade niçoise on a white plate: seared sliced tuna, green beans, halved eggs, cherry tomatoes, olives and rolled anchovies"
+ingredients:
+  - id: lettuce
+    ingredientRef: romaine-lettuce
+    form: raw
+    amount: 100
+    unit: g
+    note: crisp leaves, to line the bowl
+  - id: potatoes
+    ingredientRef: potato
+    form: boiled
+    amount: 400
+    unit: g
+    note: small waxy potatoes, weighed after boiling and peeling
+  - id: beans
+    ingredientRef: green-beans
+    form: raw
+    amount: 250
+    unit: g
+    note: topped and tailed
+  - id: tomatoes
+    ingredientRef: tomato
+    form: fresh
+    amount: 400
+    unit: g
+    note: ripe, quartered
+  - id: eggs
+    ingredientRef: egg
+    form: hard-boiled
+    amount: 150
+    unit: g
+    note: boiled and shelled, weighed after shelling, then quartered
+  - id: tuna
+    ingredientRef: tuna
+    form: tinned
+    amount: 120
+    unit: g
+    note: drained and broken into large flakes
+  - id: anchovy
+    ingredientRef: anchovy
+    form: fillets
+    amount: 20
+    unit: g
+    note: drained
+  - id: olives
+    ingredientRef: olives
+    form: black
+    amount: 80
+    unit: g
+    note: small black olives
+  - id: spring-onions
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 50
+    unit: g
+    note: thinly sliced
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 5
+    unit: g
+    note: torn, to finish
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 5
+    unit: g
+    note: one small clove, crushed
+  - id: vinegar
+    ingredientRef: red-wine-vinegar
+    form: standard
+    amount: 20
+    unit: ml
+  - id: mustard
+    ingredientRef: mustard
+    form: dijon
+    amount: 10
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 90
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: cook-potatoes, durationMin: 20, type: passive }
+  - { id: cook-eggs, durationMin: 10, type: "parallel-with:cook-potatoes", phase: rest }
+  - { id: blanch-beans, durationMin: 4, type: "parallel-with:cook-potatoes", phase: cook }
+  - { id: make-vinaigrette, durationMin: 4, type: "parallel-with:cook-potatoes", phase: prep }
+  - { id: dress-separately, durationMin: 8, type: active, phase: prep }
+  - { id: assemble, durationMin: 6, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The eggs, vinaigrette and olives can be prepared a few hours ahead. Dress the potatoes, beans and tomatoes close to serving, since the potatoes absorb the dressing as they stand.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: dress-separately
+      text: Each cooked ingredient is tossed with the vinaigrette on its own before the salad is assembled, so the potatoes and beans take up the dressing while still warm. Dressing everything together leaves the tomatoes and eggs bruised and the lettuce limp.
+  commonPitfalls:
+    - stepId: cook-potatoes
+      text: Potatoes boiled until they fall apart cannot be sliced cleanly. Test them with the point of a knife and drain them as soon as the knife slides in without resistance.
+---
+
+<Step id="cook-potatoes">
+  Put the <Qty ref="potatoes"/> in a pan of cold salted water, bring it to the boil and simmer
+  until a knife slides in without resistance. Drain them and leave them to cool a little, then
+  peel and slice them. This takes <Dur step="cook-potatoes"/>.
+</Step>
+
+<Step id="cook-eggs">
+  Cover the <Qty ref="eggs"/> with cold water in a small pan, bring to the boil, and simmer for
+  <Dur step="cook-eggs"/>. Cool them in cold water, shell them, and quarter them.
+</Step>
+
+<Step id="blanch-beans">
+  Drop the <Qty ref="beans"/> into boiling salted water for <Dur step="blanch-beans"/>, until they
+  are just tender and still bright green. Drain them and refresh them in cold water.
+</Step>
+
+<Step id="make-vinaigrette">
+  Crush the <Qty ref="garlic"/> with the <Qty ref="salt"/>. Whisk in the <Qty ref="vinegar"/> and
+  the <Qty ref="mustard"/>, then slowly whisk in the <Qty ref="oil"/> and the <Qty ref="pepper"/>
+  until the dressing is emulsified. This takes <Dur step="make-vinaigrette"/>.
+</Step>
+
+<Step id="dress-separately">
+  Toss the warm <Qty ref="potatoes"/> with a little of the vinaigrette, and the <Qty ref="beans"/>
+  with a little more, each in its own bowl. Season the <Qty ref="tomatoes"/> with a pinch of the
+  <Qty ref="salt"/> and dress them lightly. This takes <Dur step="dress-separately"/>.
+</Step>
+
+<Step id="assemble">
+  Line a wide shallow bowl with the <Qty ref="lettuce"/>. Arrange the dressed potatoes, beans and
+  tomatoes on it, then scatter over the <Qty ref="tuna"/>, the <Qty ref="anchovy"/>, the
+  <Qty ref="eggs"/>, the <Qty ref="olives"/> and the <Qty ref="spring-onions"/>. Spoon over the
+  rest of the vinaigrette and scatter the <Qty ref="basil"/>. This takes <Dur step="assemble"/>.
+</Step>

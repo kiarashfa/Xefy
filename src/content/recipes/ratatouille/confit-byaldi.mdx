@@ -1,0 +1,111 @@
+---
+label: Confit byaldi
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: tomatoes
+    ingredientRef: tomato
+    form: fresh
+    amount: 600
+    unit: g
+    portions:
+      - { id: tomato-piperade, amount: 400, note: peeled, seeded and chopped for the base }
+      - { id: tomato-rounds, amount: 200, note: sliced into thin rounds for the top }
+  - id: pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 200
+    unit: g
+    note: peeled and finely chopped
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 100
+    unit: g
+    note: finely chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 5
+    unit: g
+    note: crushed
+  - id: courgette
+    ingredientRef: courgette
+    form: raw
+    amount: 300
+    unit: g
+    note: cut into thin rounds
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 300
+    unit: g
+    note: cut into thin rounds
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 2
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper-ground
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: make-piperade, durationMin: 20, type: active, phase: cook }
+  - { id: slice-rounds, durationMin: 15, type: active, phase: prep }
+  - { id: assemble-dish, durationMin: 8, type: active, phase: prep }
+  - { id: bake-covered, durationMin: 120, type: passive }
+  - { id: uncover-roast, durationMin: 25, type: passive }
+makeAhead:
+  aheadInstructions: The piperade base can be made a day ahead and kept in the fridge. Assemble the rounds on it close to baking, so the vegetables do not weep before they go in the oven.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: bake-covered
+      text: The dish is baked under parchment first so the vegetables steam in their own juices and soften right through. Removing the parchment at the end lets the surface roast and caramelise, which a covered dish never does.
+  commonPitfalls:
+    - stepId: slice-rounds
+      text: Rounds cut thicker than the thickness given will not soften in the time, and the centre of the dish stays raw. Slice the courgette, aubergine and tomato as thin as a coin.
+---
+
+<Step id="make-piperade">
+  Heat the <Qty ref="oil"/> in a wide, shallow pan over a medium heat. Add the <Qty ref="onion"/>
+  and cook it until soft. Add the <Qty ref="pepper"/>, the <Qty ref="garlic"/>, the
+  <Qty ref="tomato-piperade"/> and the <Qty ref="thyme"/>, and cook gently for
+  <Dur step="make-piperade"/>, until the mixture is thick and jammy.
+</Step>
+
+<Step id="slice-rounds">
+  Cut the <Qty ref="courgette"/>, the <Qty ref="aubergine"/> and the <Qty ref="tomato-rounds"/> into
+  thin rounds of an even thickness. This takes <Dur step="slice-rounds"/>.
+</Step>
+
+<Step id="assemble-dish">
+  Spread the piperade thinly in a shallow ovenproof dish. Fan the rounds of courgette, aubergine
+  and tomato over it in overlapping rows, seasoning them with the <Qty ref="salt"/> and the
+  <Qty ref="pepper-ground"/>. Cover with a sheet of baking paper. This takes
+  <Dur step="assemble-dish"/>.
+</Step>
+
+<Step id="bake-covered">
+  Bake at <Temp c={120}/> for <Dur step="bake-covered"/>, until the vegetables are soft right
+  through.
+</Step>
+
+<Step id="uncover-roast">
+  Remove the baking paper and roast at <Temp c={190}/> for <Dur step="uncover-roast"/>, until the
+  edges of the rounds are lightly caramelised. Serve it warm.
+</Step>

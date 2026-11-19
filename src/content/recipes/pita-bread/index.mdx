@@ -1,0 +1,105 @@
+---
+title: Pita Bread
+subtitle: A yeasted flatbread of plain flour, water and a little olive oil that puffs into a pocket in a very hot oven; a serving is one pita.
+label: Hot oven
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [greek]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/pita-bread.webp
+  alt: "Folded rounds of soft pale pita bread with light brown spots, in a wicker basket lined with paper"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 300
+    unit: ml
+    note: lukewarm
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 10
+    unit: ml
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: second-rise, durationMin: 30, type: passive }
+  - { id: heat-oven, durationMin: 30, type: "parallel-with:second-rise", phase: cook }
+  - { id: bake, durationMin: 12, type: active, phase: cook }
+  - { id: cool, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: true
+  freezeInstructions: Let the baked pitas cool fully, then freeze them in a bag for up to a month.
+  reheatInstructions: Warm them in a hot oven for a few minutes, or in a dry pan, to soften them.
+notes:
+  techniqueRationale:
+    - stepId: bake
+      text: The water in the dough turns to steam at a very high heat and pushes the two layers apart. A round that bakes slowly sets flat before it can puff.
+  commonPitfalls:
+    - stepId: heat-oven
+      text: A tray that is not fully hot cools the base of the round and stops the pocket forming. Heat it for the full time given.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, the <Qty ref="salt"/> and the <Qty ref="yeast"/> into a large
+  bowl and stir them together. Add the <Qty ref="water"/> and the <Qty ref="oil"/>, and mix
+  for <Dur step="mix"/>, until no dry flour remains and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces and roll each one into a smooth ball. Flatten each ball
+  and roll it into a round about <Len cm={18}/> across, dusting the bench as needed. Set the
+  rounds on a floured cloth and cover them.
+</Step>
+
+<Step id="second-rise">
+  Leave the rounds to prove for <Dur step="second-rise"/>, until a fingertip pressed in leaves
+  a dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={250}/> with a heavy baking tray or stone on the lowest shelf. Let it
+  heat for <Dur step="heat-oven"/> so the tray is fully hot before the first round goes in.
+</Step>
+
+<Step id="bake">
+  Bake the rounds one at a time, or as many as fit without touching, for <Dur step="bake"/>,
+  until they puff and are just beginning to colour. A round that has not puffed within a few
+  minutes is not hot enough.
+</Step>
+
+<Step id="cool">
+  Wrap the breads in a clean cloth as they come out, so they stay soft, and leave them for
+  <Dur step="cool"/>.
+</Step>

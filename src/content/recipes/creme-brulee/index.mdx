@@ -1,0 +1,89 @@
+---
+title: Crème Brûlée
+subtitle: A baked custard of cream and egg yolk under a sheet of caramel, which is torched or grilled just before it is served; a serving is one ramekin.
+label: Baked custard
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [dessert]
+  method: [baking]
+image:
+  src: images/recipes/creme-brulee.webp
+  alt: "A crème brûlée in a white fluted ramekin with a caramelised amber sugar crust, on a small glazed plate with a spoon"
+ingredients:
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 400
+    unit: ml
+  - id: yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 102
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 120
+    unit: g
+    portions:
+      - { id: sugar-custard, amount: 80 }
+      - { id: sugar-top, amount: 40, note: for the caramel }
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+steps:
+  - { id: heat-cream, durationMin: 6, type: active, phase: prep }
+  - { id: whisk-yolks, durationMin: 4, type: active, phase: prep }
+  - { id: combine, durationMin: 4, type: active, phase: prep }
+  - { id: bake, durationMin: 40, type: active, phase: cook }
+  - { id: chill, durationMin: 240, type: passive }
+  - { id: caramelise, durationMin: 5, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The custards need several hours in the fridge to set, so they are best made a day ahead. Add the sugar topping and caramelise it only just before serving, because the caramel softens as it stands.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: combine
+      text: The warm cream goes onto the yolks in a thin stream, whisking all the time. Added too fast, it cooks the yolks in lumps and the custard turns grainy.
+  commonPitfalls:
+    - stepId: bake
+      text: The custard is done when the edges are set and the centre still wobbles like a loose jelly. Left until it is firm all through it curdles and loses its silk.
+---
+
+<Step id="heat-cream">
+  Warm the <Qty ref="cream"/> with the <Qty ref="vanilla"/> in a small pan over a moderate
+  heat for <Dur step="heat-cream"/>, until it is steaming at the edges but not boiling.
+</Step>
+
+<Step id="whisk-yolks">
+  Whisk the <Qty ref="yolks"/> with the <Qty ref="sugar-custard"/> for
+  <Dur step="whisk-yolks"/>, until the mixture is pale and thick enough to fall in a ribbon.
+</Step>
+
+<Step id="combine">
+  Pour the warm cream onto the yolks in a thin stream, whisking all the time, for
+  <Dur step="combine"/>. Strain the custard into a jug and divide it between the ramekins.
+</Step>
+
+<Step id="bake">
+  Set the ramekins in a deep tin, pour in hot water to come halfway up their sides, and
+  bake at <Temp c={150}/> for <Dur step="bake"/>, until the edges are set and the centre
+  still trembles when the tin is shaken gently.
+</Step>
+
+<Step id="chill">
+  Lift the ramekins out of the water, cool them, and refrigerate them for
+  <Dur step="chill"/> until fully set.
+</Step>
+
+<Step id="caramelise">
+  Dust the top of each custard with the <Qty ref="sugar-top"/> in an even layer. Caramelise
+  it with a kitchen blowtorch, or under a very hot grill, for <Dur step="caramelise"/>,
+  until the sugar is a glassy, dark amber sheet. Serve within a few minutes.
+</Step>

@@ -1,0 +1,126 @@
+---
+title: Maki Sushi
+subtitle: Thin rolls of vinegared short-grain rice wrapped in nori, filled with raw tuna and cucumber and cut into rounds.
+label: Hosomaki
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [boiling, no-cook]
+names:
+  searchOnly: ["makizushi", "maki zushi", "sushi rolls", "hosomaki", "tuna roll"]
+image:
+  src: images/recipes/maki-sushi.webp
+  alt: "Three salmon maki rolls, each wrapped in nori with white rice and a core of raw orange salmon, on white"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 240
+    unit: g
+    note: short-grain, weighed raw
+  - id: vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 40
+    unit: ml
+    note: for the sushi seasoning
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 16
+    unit: g
+    note: for the sushi seasoning
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+    note: for the sushi seasoning
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 9
+    unit: g
+    note: whole sheets
+  - id: tuna
+    ingredientRef: tuna
+    form: raw
+    amount: 150
+    unit: g
+    note: must be sold for raw eating, cut into strips as long as the nori is wide
+  - id: cucumber
+    ingredientRef: cucumber
+    form: peeled
+    amount: 100
+    unit: g
+    note: cut into matchsticks
+  - id: wasabi
+    ingredientRef: wasabi
+    form: paste
+    amount: 4
+    unit: g
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: sushi
+    amount: 15
+    unit: g
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 30
+    unit: ml
+    note: for dipping
+steps:
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: prepare-fillings, durationMin: 10, type: "parallel-with:cook-rice", phase: prep }
+  - { id: dress-rice, durationMin: 6, type: active, phase: prep }
+  - { id: roll-hosomaki, durationMin: 12, type: active, phase: prep }
+  - { id: slice-rolls, durationMin: 4, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The rice is dressed on the day, and the fish is kept cold until it is rolled. The rolls are cut just before they are served, and do not keep well once cut.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: dress-rice
+      text: The seasoning goes onto the rice while it is still hot, and the rice is fanned as it is folded. The hot grains take up the vinegar evenly and the fanning drives off the steam, so the rice ends glossy and holds together without turning mushy.
+  commonPitfalls:
+    - stepId: roll-hosomaki
+      text: Rolling with too much rice on the nori makes a roll that splits when it is cut. A thin, even layer is pressed onto the sheet and the filling is set along the centre.
+---
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost clear,
+  drain it well, and cook it with a measured amount of water in a heavy pan with a tight lid. Leave
+  it covered off the heat for the last part of the <Dur step="cook-rice"/>.
+</Step>
+
+<Step id="prepare-fillings">
+  Cut the <Qty ref="tuna"/> into strips, and cut the <Qty ref="cucumber"/> into matchsticks. Keep
+  the tuna cold on a plate in the fridge until it is rolled. This takes
+  <Dur step="prepare-fillings"/>.
+</Step>
+
+<Step id="dress-rice">
+  Warm the <Qty ref="vinegar"/> with the <Qty ref="sugar"/> and the <Qty ref="salt"/> until the
+  sugar and salt have dissolved. Spread the hot rice in a wide wooden tray, pour the seasoning over
+  it, and fold it through with a rice paddle, fanning it as you go, until it is glossy and cooled
+  to the touch. This takes <Dur step="dress-rice"/>.
+</Step>
+
+<Step id="roll-hosomaki">
+  Lay a sheet of the <Qty ref="nori"/> on a bamboo mat, with the shiny side down. Spread a thin,
+  even layer of the seasoned rice over the lower half, leaving a border at the far edge. Lay a line
+  of the <Qty ref="tuna"/> and the <Qty ref="cucumber"/> along the rice, with a thin smear of
+  the <Qty ref="wasabi"/> along the rice. Roll the mat up tightly from the near edge, press to seal,
+  and set the roll aside. This takes <Dur step="roll-hosomaki"/>.
+</Step>
+
+<Step id="slice-rolls">
+  Cut each roll into rounds with a wet knife, wiping the blade between cuts. Arrange the rounds on
+  a plate with the <Qty ref="pickled-ginger"/>, and serve with the <Qty ref="soy"/> for dipping.
+  This takes <Dur step="slice-rolls"/>.
+</Step>

@@ -1,0 +1,186 @@
+---
+title: Coq au Vin
+subtitle: Chicken braised slowly in red wine with lardons, pearl onions and mushrooms, then thickened at the end; a serving is one portion.
+label: Burgundy
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [braising]
+names:
+  notToBeConfusedWith:
+    - name: Bœuf bourguignon
+      note: The same red wine braise made with beef chuck rather than chicken, with its own garnish and its own method.
+      slugRef: boeuf-bourguignon
+image:
+  src: images/recipes/coq-au-vin.webp
+  alt: "Braised chicken pieces with pearl onions and button mushrooms in a dark red-wine sauce, flecked with rosemary, in a white bowl"
+ingredients:
+  - id: chicken
+    ingredientRef: chicken
+    form: raw
+    amount: 1500
+    unit: g
+    note: bone-in, skin-on thighs and drumsticks, jointed
+    consumedFraction: 0.75
+    consumedFractionNote: "The bones are left on the plate and not eaten. Roughly a quarter of the weight of bone-in thighs and drumsticks is bone; this is an editorial estimate of the edible share."
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 30
+    unit: g
+  - id: lardons
+    ingredientRef: streaky-bacon
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into lardons
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+    portions:
+      - { id: oil-browning, amount: 15 }
+      - { id: oil-lardons, amount: 15 }
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 250
+    unit: g
+    note: small pearl onions, peeled and left whole
+    consumedFraction: 0.92
+    consumedFractionNote: "The papery skins are discarded after blanching. This is an editorial estimate of the peeled share of pearl onions."
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into thick rounds
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+  - id: red-wine
+    ingredientRef: red-wine
+    form: table
+    amount: 750
+    unit: ml
+    note: a young red Burgundy or another light, dry red
+  - id: cognac
+    ingredientRef: cognac
+    form: brandy
+    amount: 30
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 300
+    unit: ml
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.6
+    unit: g
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 5
+    unit: g
+  - id: mushrooms
+    ingredientRef: mushroom
+    form: raw
+    amount: 250
+    unit: g
+    note: whole button mushrooms, halved if large
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    portions:
+      - { id: butter-mushrooms, amount: 15 }
+      - { id: butter-finish, amount: 15 }
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: chopped, to finish
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: brown-chicken, durationMin: 12, type: active, phase: cook }
+  - { id: render-lardons, durationMin: 8, type: active, phase: cook }
+  - { id: soften-vegetables, durationMin: 10, type: active, phase: cook }
+  - { id: deglaze, durationMin: 5, type: active, phase: cook }
+  - { id: braise, durationMin: 60, type: passive }
+  - { id: cook-mushrooms, durationMin: 12, type: "parallel-with:braise", phase: cook }
+  - { id: finish, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The braise improves if it is made a day ahead. Cool it, keep it in the fridge, and skim the fat from the surface before reheating it gently.
+  freezable: true
+  freezeInstructions: Freeze the braise without the mushrooms, in portions, once it has cooled. Add the mushrooms when it is reheated.
+  reheatInstructions: Bring the braise back to a gentle simmer on the hob, then cook the mushrooms and stir them in before serving.
+notes:
+  techniqueRationale:
+    - stepId: brown-chicken
+      text: The chicken is browned skin side down in small batches, so the fat renders out of the skin and the pan stays hot enough to colour the meat rather than steam it. The brown crust is most of the flavour of the finished sauce.
+  commonPitfalls:
+    - stepId: braise
+      text: A braise that boils rather than simmers leaves the chicken stringy and the skin soft. Keep the oven at a low, steady heat and check that the liquid barely moves.
+---
+
+<Step id="brown-chicken">
+  Dust the <Qty ref="chicken"/> with the <Qty ref="flour"/>. Heat the <Qty ref="oil-browning"/> in a
+  heavy casserole over a high heat and brown the chicken in small batches, for
+  <Dur step="brown-chicken"/> in all, turning it until each piece is deep golden. Set the chicken
+  aside as it browns.
+</Step>
+
+<Step id="render-lardons">
+  Add the <Qty ref="oil-lardons"/> to the casserole, then add the <Qty ref="lardons"/> and
+  fry for <Dur step="render-lardons"/>, until the fat has run and the edges are crisp.
+</Step>
+
+<Step id="soften-vegetables">
+  Add the <Qty ref="onion"/>, the <Qty ref="carrot"/> and the <Qty ref="garlic"/>, and cook for
+  <Dur step="soften-vegetables"/>, until the onions are golden on the outside and the carrot
+  has begun to soften.
+</Step>
+
+<Step id="deglaze">
+  Pour in the <Qty ref="cognac"/> and let it bubble for a moment, then add the
+  <Qty ref="red-wine"/>, the <Qty ref="stock"/>, the <Qty ref="bay"/>, the <Qty ref="thyme"/>
+  and the chicken with its juices, scraping up the browned bits from the base. This takes
+  <Dur step="deglaze"/>. Bring it to a simmer.
+</Step>
+
+<Step id="braise">
+  Cover the casserole and braise it in the oven at <Temp c={160}/> for <Dur step="braise"/>,
+  until the chicken is tender and the meat pulls easily from the bone.
+</Step>
+
+<Step id="cook-mushrooms">
+  Melt the <Qty ref="butter-mushrooms"/> in a frying pan over a high heat and cook the
+  <Qty ref="mushrooms"/> until they are browned on the edges and their liquid has evaporated,
+  for <Dur step="cook-mushrooms"/>. Season them lightly.
+</Step>
+
+<Step id="finish">
+  Lift the chicken and vegetables into a clean pan. Skim the fat from the braising liquor and
+  boil it hard for <Dur step="finish"/>, until it has reduced and thickened enough to coat a
+  spoon. Whisk in the <Qty ref="butter-finish"/>, return the chicken, and add the mushrooms.
+  Season with the <Qty ref="salt"/> and the <Qty ref="pepper"/>, and scatter over the
+  <Qty ref="parsley"/>.
+</Step>

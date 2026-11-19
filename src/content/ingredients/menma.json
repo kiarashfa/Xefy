@@ -1,0 +1,60 @@
+{
+  "id": "menma",
+  "name": "Menma",
+  "proseName": "menma",
+  "category": "vegetable",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "fermented",
+      "label": "Fermented, seasoned",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "169212",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/169212/nutrients",
+      "sourceNote": "USDA has no record for menma, bamboo shoots fermented and then seasoned with soy. This is its record for canned bamboo shoots, drained, the nearest plain bamboo shoot it publishes. The seasoning is not in these figures, so the sodium is understated.",
+      "nutritionPer100g": {
+        "kcal": 19,
+        "protein": 1.72,
+        "fat": 0.4,
+        "carbs": 3.22,
+        "fiber": 1.4,
+        "sugars": 1.89,
+        "calcium": 8,
+        "iron": 0.32,
+        "magnesium": 4,
+        "phosphorus": 25,
+        "potassium": 80,
+        "sodium": 7,
+        "zinc": 0.65,
+        "copper": 0.114,
+        "manganese": 0.157,
+        "seleniumMcg": 0.5,
+        "vitaminC": 1.1,
+        "thiamin": 0.026,
+        "riboflavin": 0.026,
+        "niacin": 0.14,
+        "vitaminB6": 0.136,
+        "folateMcg": 3,
+        "choline": 0,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 1,
+        "vitaminE": 0.63,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0,
+        "saturatedFat": 0.092,
+        "monounsaturatedFat": 0.009,
+        "polyunsaturatedFat": 0.178,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 131,
+        "densitySource": "measured"
+      }
+    }
+  ],
+  "image": "images/ingredients/menma-thumb.webp"
+}

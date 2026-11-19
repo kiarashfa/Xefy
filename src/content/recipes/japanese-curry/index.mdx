@@ -1,0 +1,168 @@
+---
+title: Kare Raisu
+subtitle: Japanese curry and rice, a glossy roux-thickened stew of pork and vegetables, finished with ketchup and Worcestershire sauce and served over short-grain rice.
+description: Japan's curry rice, built on a roux that is cooked from butter, flour and curry powder rather than bought as a block, and with none of the spice paste of a South Asian curry.
+label: Roux from scratch
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [simmering]
+names:
+  searchOnly: ["kare raisu", "japanese curry rice", "curry rice"]
+image:
+  src: images/recipes/japanese-curry.webp
+  alt: "Japanese curry with beef, potato and carrot beside a mound of white rice and a small heap of red pickle, in a blue-striped bowl"
+ingredients:
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into bite-sized chunks
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 300
+    unit: g
+    note: finely sliced
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 200
+    unit: g
+    note: peeled and cut into chunks
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 400
+    unit: g
+    note: peeled and cut into large chunks
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: finely grated
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 6
+    unit: g
+    note: finely grated
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    note: for the roux
+  - id: roux-flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 40
+    unit: g
+    note: for the roux
+  - id: curry-powder
+    ingredientRef: curry-powder
+    form: ground
+    amount: 20
+    unit: g
+    note: for the roux
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1000
+    unit: ml
+  - id: ketchup
+    ingredientRef: tomato-ketchup
+    form: bottled
+    amount: 30
+    unit: g
+  - id: worcestershire
+    ingredientRef: worcestershire-sauce
+    form: bottled
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 360
+    unit: g
+    note: short-grain, weighed raw
+steps:
+  - { id: prepare-vegetables, durationMin: 15, type: active, phase: prep }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:simmer-curry", phase: rest }
+  - { id: brown-pork, durationMin: 8, type: active, phase: cook }
+  - { id: soften-onion, durationMin: 10, type: active, phase: cook }
+  - { id: simmer-curry, durationMin: 25, type: passive }
+  - { id: make-roux, durationMin: 5, type: "parallel-with:simmer-curry", phase: cook }
+  - { id: thicken-curry, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The curry is better for a day in the fridge, once it has cooled and the roux has had time to settle into the sauce. Reheat it gently and stir it, because the starch settles to the base of the pan.
+  freezable: true
+  freezeInstructions: Cool the curry quickly, then freeze it in portions with the potatoes included. The potato loses some of its texture, so the portions are best eaten within a few weeks.
+  reheatInstructions: Warm the curry over a low heat, stirring, and loosen it with a little water if it has thickened too much. Serve it over freshly cooked rice.
+notes:
+  techniqueRationale:
+    - stepId: make-roux
+      text: Cooking the flour and curry powder in the butter before any liquid goes in is what stops the sauce tasting of raw flour and gives it its deep brown colour. The roux is cooked to a paste first, then whisked into the stock.
+  commonPitfalls:
+    - stepId: thicken-curry
+      text: Adding the roux straight into a boiling pot leaves lumps that never break down. It is whisked into a ladle of hot liquid first, then returned to the pan.
+---
+
+<Step id="prepare-vegetables">
+  Cut the <Qty ref="carrot"/> and the <Qty ref="potato"/> into chunks, slice the
+  <Qty ref="onion"/> finely, and grate the <Qty ref="garlic"/> and the <Qty ref="ginger"/>.
+  Pat the <Qty ref="pork"/> dry. This takes <Dur step="prepare-vegetables"/>.
+</Step>
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost
+  clear. Cook it in a heavy pan with a tight lid, and leave it covered after the boil so
+  that it steams for the last part of the <Dur step="cook-rice"/>.
+</Step>
+
+<Step id="brown-pork">
+  Heat the <Qty ref="oil"/> in a heavy pot over a high heat. Brown the <Qty ref="pork"/> in
+  batches for <Dur step="brown-pork"/>, so that the pieces colour rather than steam, and
+  lift each batch out onto a plate.
+</Step>
+
+<Step id="soften-onion">
+  Lower the heat, add the <Qty ref="onion"/>, the <Qty ref="garlic"/> and the
+  <Qty ref="ginger"/> to the fat left in the pot, and cook them for
+  <Dur step="soften-onion"/>, stirring often, until the onion is soft and deep gold.
+</Step>
+
+<Step id="simmer-curry">
+  Return the pork to the pot with any juices, add the <Qty ref="carrot"/> and the
+  <Qty ref="potato"/>, pour in the <Qty ref="water"/> and bring it to the boil. Skim off the
+  scum, cover, and simmer gently for <Dur step="simmer-curry"/>, until the pork and the
+  potatoes are tender.
+</Step>
+
+<Step id="make-roux">
+  While the stew simmers, melt the <Qty ref="butter"/> in a small pan over a low heat. Stir
+  in the <Qty ref="roux-flour"/> and the <Qty ref="curry-powder"/> and cook them together
+  for <Dur step="make-roux"/>, stirring, until the paste smells toasted and has darkened
+  slightly. Take it off the heat.
+</Step>
+
+<Step id="thicken-curry">
+  Whisk the roux into a ladle of the hot stew until smooth, then stir it back into the pot.
+  Add the <Qty ref="ketchup"/>, the <Qty ref="worcestershire"/> and the <Qty ref="salt"/>,
+  and simmer for <Dur step="thicken-curry"/> more, until the sauce coats the back of a
+  spoon. Serve the curry over the rice.
+</Step>

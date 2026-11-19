@@ -1,0 +1,126 @@
+---
+title: Khachapuri
+subtitle: A yeasted Georgian bread filled with cheese, here in its most common form, the Imeruli round; a serving is one slice of the eight the batch makes.
+label: Imeruli
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [georgian]
+  course: [bread]
+  method: [baking, pan-frying]
+image:
+  src: images/recipes/khachapuri.webp
+  alt: "A round golden cheese bread cut into wedges, its surface speckled with baked cheese, on a white plate beside a cup of tea with a lemon slice"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 480 }
+      - { id: flour-bench, amount: 20, note: for dusting the bench }
+  - id: soured-cream
+    ingredientRef: soured-cream
+    form: cultured
+    amount: 150
+    unit: g
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 100
+    unit: ml
+    note: lukewarm
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: imeruli
+    ingredientRef: imeruli
+    form: fresh
+    amount: 300
+    unit: g
+    note: grated
+  - id: sulguni
+    ingredientRef: sulguni
+    form: brined
+    amount: 100
+    unit: g
+    note: grated
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+    note: for the pan
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 15, type: active, phase: prep }
+  - { id: second-rise, durationMin: 20, type: passive }
+  - { id: heat-pan, durationMin: 10, type: "parallel-with:second-rise", phase: cook }
+  - { id: fry, durationMin: 16, type: active, phase: cook }
+  - { id: cool, durationMin: 5, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: shape
+      text: The cheese is gathered into the dough rather than laid on top, so it stays inside the bread as it cooks.
+  commonPitfalls:
+    - stepId: fry
+      text: A pan that is not hot enough lets the cheese run out before the crust sets. Keep the pan at a steady medium-high heat.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour-dough"/> and the <Qty ref="salt"/> into a large bowl, and stir in the
+  <Qty ref="yeast"/>. Add the <Qty ref="soured-cream"/> and the <Qty ref="milk"/>, and mix for
+  <Dur step="mix"/>, until no dry flour remains and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into two equal pieces and roll each one into a ball. Dust the bench with the
+  <Qty ref="flour-bench"/>, and roll each ball into a round about <Len cm={30}/> across. Mix the
+  <Qty ref="imeruli"/> with the <Qty ref="sulguni"/>, and divide it between the two rounds,
+  piling it in the middle. Gather the edge of the dough up over the cheese in accordion folds,
+  pinch the top shut, and turn the piece over. Roll it gently into a round about
+  <Len cm={25}/> across, keeping the cheese inside.
+</Step>
+
+<Step id="second-rise">
+  Leave the khachapuri to prove for <Dur step="second-rise"/>, until a fingertip pressed in
+  leaves a dent that springs back slowly.
+</Step>
+
+<Step id="heat-pan">
+  Heat the <Qty ref="oil"/> in a heavy frying pan over a medium-high heat.
+</Step>
+
+<Step id="fry">
+  Lay one khachapuri in the hot pan and fry it for <Dur step="fry"/> in total, turning it once
+  when the underside is deep golden and the cheese has melted. Fry the second one the same way.
+</Step>
+
+<Step id="cool">
+  Leave the khachapuri on a board for <Dur step="cool"/>, then cut each into four.
+</Step>

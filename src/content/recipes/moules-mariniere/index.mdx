@@ -1,0 +1,97 @@
+---
+title: Moules Marinière
+subtitle: Mussels steamed open in white wine with shallot and butter, their own liquor reduced into the sauce; a serving is one portion of mussels in the shell.
+label: Shallot and white wine
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [steaming]
+image:
+  src: images/recipes/moules-mariniere.webp
+  alt: "A white bowl of steamed black mussels scattered with chopped parsley, with a portion of chips beside it"
+ingredients:
+  - id: mussels
+    ingredientRef: mussels
+    form: raw
+    amount: 2000
+    unit: g
+    note: in their shells, scrubbed and debearded
+    consumedFraction: 0.35
+    consumedFractionNote: "The shells are discarded. Roughly a third of the weight of mussels in the shell is meat; this is an editorial estimate of the edible share, not a measured yield."
+  - id: shallot
+    ingredientRef: shallot
+    form: raw
+    amount: 60
+    unit: g
+    note: finely chopped
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    portions:
+      - { id: butter-shallot, amount: 10 }
+      - { id: butter-finish, amount: 20 }
+  - id: wine
+    ingredientRef: white-wine
+    form: table
+    amount: 200
+    unit: ml
+    note: a dry white wine
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: chopped, to finish
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+    note: freshly ground, no salt added
+steps:
+  - { id: scrub-mussels, durationMin: 10, type: active, phase: prep }
+  - { id: soften-shallot, durationMin: 3, type: active, phase: cook }
+  - { id: steam-mussels, durationMin: 6, type: active, phase: cook }
+  - { id: reduce-liquor, durationMin: 4, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: null
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: steam-mussels
+      text: The mussels are opened in a closed pan with the wine, so the liquor they release is the sauce. Adding salt is unnecessary, because the sea liquor seasons it, and the pepper is added at the end.
+  commonPitfalls:
+    - stepId: steam-mussels
+      text: Mussels that stay shut after cooking are not safe to eat, and mussels left on the heat after they open turn tough. Take each one out as it opens and discard any that do not open at all.
+---
+
+<Step id="scrub-mussels">
+  Scrub the <Qty ref="mussels"/> under cold running water, pull away the beards, and tap any
+  that are open against the board. Discard any that stay open or are cracked. This takes
+  <Dur step="scrub-mussels"/>.
+</Step>
+
+<Step id="soften-shallot">
+  Melt the <Qty ref="butter-shallot"/> in a large, deep pan with a lid over a medium heat. Add the
+  <Qty ref="shallot"/> and cook for <Dur step="soften-shallot"/>, until soft and translucent
+  but not coloured.
+</Step>
+
+<Step id="steam-mussels">
+  Pour in the <Qty ref="wine"/>, bring it to a boil, and add the mussels. Cover and steam over a
+  high heat for <Dur step="steam-mussels"/>, shaking the pan now and then, until the shells have
+  opened. Lift the mussels out into a warm bowl as they open.
+</Step>
+
+<Step id="reduce-liquor">
+  Pour the liquor from the pan through a fine sieve to remove any grit, and return it to the pan.
+  Boil it hard for <Dur step="reduce-liquor"/>, until it has reduced by about half. Take the pan
+  off the heat and whisk in the <Qty ref="butter-finish"/>. Stir in the <Qty ref="parsley"/> and
+  the <Qty ref="pepper"/>, return the mussels, and toss them in the sauce before serving.
+</Step>

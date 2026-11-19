@@ -1,0 +1,86 @@
+---
+title: Crêpes Sucrées
+subtitle: Thin pancakes of wheat flour, milk, egg and butter, rested before cooking and served plain or with sugar; a serving is one crêpe.
+label: Breton
+defaultServings: 16
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [dessert]
+  method: [pan-frying]
+image:
+  src: images/recipes/crepes-sucrees.webp
+  alt: "A large thin crêpe on a white plate, dusted with icing sugar over a golden-brown caramelised surface"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 250
+    unit: g
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 150
+    unit: g
+    note: beaten
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 500
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    portions:
+      - { id: butter-batter, amount: 30, note: melted and cooled }
+      - { id: butter-pan, amount: 10, note: for greasing the pan }
+steps:
+  - { id: whisk-batter, durationMin: 6, type: active, phase: prep }
+  - { id: rest-batter, durationMin: 60, type: passive }
+  - { id: cook-crepes, durationMin: 18, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The batter can be made the day before and kept covered in the fridge. Whisk it well before use, because the flour settles.
+  freezable: true
+  freezeInstructions: Cool the crêpes completely, stack them with a sheet of baking paper between each, and freeze them in a bag.
+  reheatInstructions: Warm the crêpes one at a time in a dry pan, or stack them and warm them briefly in a low oven.
+notes:
+  techniqueRationale:
+    - stepId: rest-batter
+      text: The rest lets the flour take up the liquid fully, so the batter loosens and the crêpes spread thin without tearing when they are flipped.
+  commonPitfalls:
+    - stepId: cook-crepes
+      text: A pan that is too cool holds the batter in a thick, pale sheet that sticks. Wipe the pan with butter between crêpes rather than letting it build up, so each one releases cleanly.
+---
+
+<Step id="whisk-batter">
+  Whisk the <Qty ref="flour"/>, <Qty ref="sugar"/> and <Qty ref="salt"/> together in a
+  bowl. Make a well in the centre, add the <Qty ref="eggs"/> and about a third of the
+  <Qty ref="milk"/>, and work the flour in from the sides to a smooth paste. Whisk in the
+  rest of the milk and the <Qty ref="butter-batter"/>, which should be melted and cooled.
+  This takes <Dur step="whisk-batter"/>.
+</Step>
+
+<Step id="rest-batter">
+  Cover the bowl and leave the batter to rest for <Dur step="rest-batter"/>, until it is
+  loose and creamy. Whisk it briefly again before the first crêpe goes in.
+</Step>
+
+<Step id="cook-crepes">
+  Heat a flat, lightly buttered pan over a medium-high heat, using the
+  <Qty ref="butter-pan"/> on a piece of kitchen paper. Pour in a ladle of batter and tilt
+  the pan at once so that it runs into a thin, even layer. Cook until the underside is
+  golden, which takes about a minute, then turn it and cook the other side briefly. Stack
+  the crêpes on a plate as they come off. The batch takes <Dur step="cook-crepes"/> in all.
+</Step>

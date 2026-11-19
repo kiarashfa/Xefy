@@ -1,0 +1,86 @@
+---
+# The same frittata set on the hob and then finished in the oven rather than turned:
+# the top is cooked by dry heat, so the pan is not needed for the second side.
+label: Oven-finished
+defaultServings: 4
+difficulty: Easy
+ingredients:
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 300
+    unit: g
+    note: beaten
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 40
+    unit: g
+    note: finely grated
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: leaves only, finely chopped
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: beat-eggs, durationMin: 4, type: active, phase: prep }
+  - { id: heat-pan, durationMin: 3, type: active, phase: cook }
+  - { id: set-base, durationMin: 8, type: active, phase: cook }
+  - { id: finish-oven, durationMin: 10, type: passive }
+  - { id: rest-frittata, durationMin: 5, type: passive }
+makeAhead:
+  aheadInstructions: A frittata is best eaten within an hour of cooking. It keeps covered in the fridge for a day and is good cold, cut into wedges.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: set-base
+      text: Only the base is set in the pan. The top is left soft so that the oven can set it evenly, without the base catching or the surface toughening first.
+  commonPitfalls:
+    - stepId: finish-oven
+      text: An oven that is too hot puffs the frittata and then collapses it, and the surface browns before the middle is set. Keep the heat moderate and watch the centre.
+---
+
+<Step id="beat-eggs">
+  Beat the <Qty ref="eggs"/> hard with the <Qty ref="parmigiano"/>, the <Qty ref="parsley"/>,
+  the <Qty ref="salt"/> and the <Qty ref="pepper"/>, for <Dur step="beat-eggs"/>, until the
+  mixture is frothy and the cheese has broken into it.
+</Step>
+
+<Step id="heat-pan">
+  Heat the <Qty ref="olive-oil"/> in a heavy, ovenproof pan over a low flame until it
+  shimmers and runs thin across the base, for <Dur step="heat-pan"/>.
+</Step>
+
+<Step id="set-base">
+  Pour in the beaten egg and draw the set edges in towards the centre with a spatula, so the
+  raw egg runs into the gaps. Cook over the lowest heat for <Dur step="set-base"/>, until the
+  base is set and the top is still soft.
+</Step>
+
+<Step id="finish-oven">
+  Transfer the pan to an oven at <Temp c={180}/> and cook for <Dur step="finish-oven"/>, until
+  the top is set and springs back when touched lightly at the centre.
+</Step>
+
+<Step id="rest-frittata">
+  Leave the frittata in the pan for <Dur step="rest-frittata"/>, then slide it onto a board
+  and cut it into wedges.
+</Step>

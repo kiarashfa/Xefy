@@ -1,0 +1,100 @@
+---
+title: Gelato
+subtitle: Milk and cream thickened with an egg yolk custard, chilled and churned to a dense, soft gelato; a serving is one portion of a litre-sized batch.
+label: Custard base
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [dessert]
+  method: [simmering]
+names:
+  notToBeConfusedWith:
+    - name: Ice cream
+      note: Ice cream is built on cream and eggs as a rule, and it carries more fat than gelato, roughly 10 to 25 per cent against 5 to 9 per cent.
+  searchOnly: ["italian ice cream", "gelato al latte", "gelato di crema"]
+image:
+  src: images/recipes/gelato.webp
+  alt: "Two scoops of yellow gelato in a waffle cone held in a hand, wrapped in a paper napkin"
+ingredients:
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 500
+    unit: ml
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 250
+    unit: ml
+  - id: yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 90
+    unit: g
+    note: from fresh eggs
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 120
+    unit: g
+    portions:
+      - { id: sugar-custard, amount: 60, note: for the custard }
+      - { id: sugar-yolks, amount: 60, note: beaten into the yolks }
+  - id: vanilla
+    ingredientRef: vanilla-extract
+    form: pure
+    amount: 5
+    unit: ml
+steps:
+  - { id: warm-milk, durationMin: 8, type: active, phase: cook }
+  - { id: beat-yolks, durationMin: 4, type: "parallel-with:warm-milk", phase: prep }
+  - { id: make-custard, durationMin: 10, type: active, phase: cook }
+  - { id: chill-base, durationMin: 240, type: passive }
+  - { id: churn, durationMin: 25, type: passive }
+  - { id: freeze, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: The base is best made the day before and chilled overnight, then churned on the day it is needed.
+  freezable: true
+  freezeInstructions: Keep the churned gelato in a covered container in the freezer. Soften it in the fridge for a few minutes before serving.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-custard
+      text: The custard is heated only until it coats the back of a spoon, and not beyond. Past that point the yolks scramble, and no amount of straining brings the base back.
+  commonPitfalls:
+    - stepId: chill-base
+      text: A warm base churns to a soft, icy texture because the machine has to freeze a large mass at once. Chill it fully before it goes into the machine.
+---
+
+<Step id="warm-milk">
+  Warm the <Qty ref="milk"/> and the <Qty ref="cream"/> with the <Qty ref="sugar-custard"/>
+  in a heavy pan over a moderate flame, stirring until the sugar has dissolved and the
+  liquid is steaming, for <Dur step="warm-milk"/>.
+</Step>
+
+<Step id="beat-yolks">
+  Whisk the <Qty ref="yolks"/> with the <Qty ref="sugar-yolks"/> in a bowl until pale and
+  thick, for <Dur step="beat-yolks"/>.
+</Step>
+
+<Step id="make-custard">
+  Pour a ladleful of the hot milk on to the yolks, whisking, then pour the mixture back into
+  the pan. Stir over a low flame until it reaches <Temp c={85}/> and coats the back of a
+  spoon, for <Dur step="make-custard"/>. Do not let it boil. Strain it into a clean bowl,
+  stir in the <Qty ref="vanilla"/>, and let it cool.
+</Step>
+
+<Step id="chill-base">
+  Cover the base and chill it fully for <Dur step="chill-base"/>, until it is cold right through.
+</Step>
+
+<Step id="churn">
+  Churn the cold base in an ice cream machine for <Dur step="churn"/>, until it has thickened
+  to a soft, dense gelato.
+</Step>
+
+<Step id="freeze">
+  Transfer the gelato to a container, press a sheet of paper on the surface, and freeze it
+  for <Dur step="freeze"/>, until firm enough to scoop.
+</Step>

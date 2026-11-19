@@ -1,0 +1,100 @@
+---
+title: Puri
+subtitle: A thin round of whole-wheat atta dough, fried in hot oil until it balloons; a serving is one puri.
+label: Whole-wheat, deep-fried
+defaultServings: 16
+difficulty: Medium
+tags:
+  cuisine: [indian]
+  course: [bread]
+  method: [deep-frying]
+image:
+  src: images/recipes/puri.webp
+  alt: "Golden, puffed deep-fried puri stacked in a steel dish"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: atta
+    amount: 250
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 240 }
+      - { id: flour-bench, amount: 10, note: for dusting the bench }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 120
+    unit: ml
+    note: at about room temperature
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 10
+    unit: g
+    note: melted
+  - id: frying-oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 750
+    unit: ml
+    consumedFraction: 0.1
+    consumedFractionNote: "Most of the frying oil stays in the pan. The share a puri takes up as it fries is an editorial estimate, not a measurement."
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 8, type: active, phase: prep }
+  - { id: rest, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 15, type: "parallel-with:shape", phase: cook }
+  - { id: fry, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough can be kneaded up to a day ahead and kept covered in the fridge. Bring it back to room temperature before rolling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry
+      text: The moisture in the dough turns to steam in the hot oil, and that steam is what lifts the round. The dough has to be rolled thin enough for the steam to form inside it.
+  commonPitfalls:
+    - stepId: fry
+      text: Oil that is not hot enough soaks into a flat, greasy puri that does not balloon. Let the oil come back to temperature between batches.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour-dough"/> and the <Qty ref="salt"/> into a bowl and rub in the
+  <Qty ref="ghee"/>. Add the <Qty ref="water"/> a little at a time, and mix for
+  <Dur step="mix"/>, until a firm dough forms and no dry flour remains.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth and firm and no longer sticks to the hands.
+</Step>
+
+<Step id="rest">
+  Cover the dough and leave it to rest for <Dur step="rest"/>, so that it relaxes and rolls
+  out without shrinking.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces and roll each one into a smooth ball. Dust the bench with
+  the <Qty ref="flour-bench"/>, and roll each ball into a thin round about <Len cm={10}/>
+  across. Keep the rounds covered until they go into the oil.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="frying-oil"/> in a deep, heavy pan to <Temp c={180}/>. A pinch of dough
+  dropped into the oil should sizzle and rise at once.
+</Step>
+
+<Step id="fry">
+  Slide one round into the oil and press it under with a slotted spoon, so that the steam
+  inside it expands. It will balloon within a few seconds. Turn it and fry until golden on
+  both sides, then lift it onto kitchen paper. Fry one at a time, or as many as fit without
+  crowding the pan, for <Dur step="fry"/> in total.
+</Step>

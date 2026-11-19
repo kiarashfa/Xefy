@@ -1,0 +1,93 @@
+---
+title: Mousse au Chocolat
+subtitle: Dark chocolate lightened with whipped egg white and enriched with egg yolk, set in the fridge; a serving is one pot. This recipe uses raw egg.
+label: Whipped egg white
+defaultServings: 6
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [dessert]
+  method: [no-cook]
+image:
+  src: images/recipes/mousse-au-chocolat.webp
+  alt: "Airy chocolate mousse piled in a small glass on a white plate, with the tip of a spoon at the edge"
+ingredients:
+  - id: chocolate
+    ingredientRef: dark-chocolate
+    form: dark
+    amount: 150
+    unit: g
+    note: finely chopped
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+  - id: yolks
+    ingredientRef: egg
+    form: yolk
+    amount: 51
+    unit: g
+    note: raw
+  - id: whites
+    ingredientRef: egg
+    form: white
+    amount: 100
+    unit: g
+    note: raw, at room temperature
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 30
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+steps:
+  - { id: melt-chocolate, durationMin: 5, type: active, phase: prep }
+  - { id: add-yolks, durationMin: 3, type: active, phase: prep }
+  - { id: whip-whites, durationMin: 5, type: active, phase: prep }
+  - { id: fold, durationMin: 4, type: active, phase: prep }
+  - { id: set, durationMin: 240, type: passive }
+makeAhead:
+  aheadInstructions: The mousse is best made a day ahead. It needs several hours to set, and it keeps covered in the fridge for a day or two.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fold
+      text: The whites are folded in by hand in two additions, cutting down through the middle and turning the bowl. Stirring them in knocks out the air that gives the mousse its lightness.
+  commonPitfalls:
+    - stepId: add-yolks
+      text: Yolks added to chocolate that is too hot scramble and turn grainy. Let the chocolate cool until it is barely warm to the touch before the yolks go in.
+---
+
+<Step id="melt-chocolate">
+  Melt the <Qty ref="chocolate"/> with the <Qty ref="butter"/> in a bowl set over a pan of
+  barely simmering water, stirring until smooth. Take it off the heat and leave it to cool
+  until it is barely warm. This takes <Dur step="melt-chocolate"/>.
+</Step>
+
+<Step id="add-yolks">
+  Beat the <Qty ref="yolks"/> into the chocolate one at a time, until the mixture is glossy
+  and thick. This takes <Dur step="add-yolks"/>.
+</Step>
+
+<Step id="whip-whites">
+  Whisk the <Qty ref="whites"/> with the <Qty ref="salt"/> to soft peaks, then add the
+  <Qty ref="sugar"/> a spoonful at a time and whisk to firm, glossy peaks. This takes
+  <Dur step="whip-whites"/>.
+</Step>
+
+<Step id="fold">
+  Fold a third of the whites into the chocolate to loosen it, then fold in the rest in two
+  more additions, cutting down through the middle and turning the bowl. This takes
+  <Dur step="fold"/>. Divide the mousse between pots, one for each serving.
+</Step>
+
+<Step id="set">
+  Refrigerate the pots for <Dur step="set"/>, until set and firm to the touch.
+</Step>

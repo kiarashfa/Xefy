@@ -4,7 +4,11 @@
   "proseName": "wood ear mushrooms",
   "names": {
     "alsoKnownAs": [
-      { "name": "Cloud ear fungus", "region": "China", "lang": "en" }
+      {
+        "name": "Cloud ear fungus",
+        "region": "China",
+        "lang": "en"
+      }
     ]
   },
   "category": "vegetable",
@@ -37,5 +41,6 @@
         "vitaminC": 0
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/wood-ear-thumb.webp"
 }

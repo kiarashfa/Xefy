@@ -1,0 +1,165 @@
+---
+title: Katsudon
+subtitle: A fried pork cutlet simmered with onion in a dashi, soy and mirin broth, bound with soft-set egg and served over short-grain rice in a bowl.
+label: Fried then simmered
+defaultServings: 2
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [deep-frying, simmering]
+names:
+  searchOnly: ["katsu don", "pork cutlet rice bowl", "pork cutlet bowl"]
+image:
+  src: images/recipes/katsudon.webp
+  alt: "Katsudon in a black lacquer bowl: breaded pork cutlet under soft egg, strips of nori on top, over rice, with miso soup beside"
+ingredients:
+  - id: pork
+    ingredientRef: pork-loin
+    form: boneless
+    amount: 300
+    unit: g
+    note: two boneless loin chops, cut about one finger thick
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 40
+    unit: g
+    note: for dredging
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 200
+    unit: g
+    portions:
+      - { id: egg-coat, amount: 100, note: beaten with a fork, for the coating }
+      - { id: egg-topping, amount: 100, note: beaten lightly, for the topping }
+  - id: panko
+    ingredientRef: panko
+    form: dry
+    amount: 80
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 800
+    unit: ml
+    consumedFraction: 0.02
+    consumedFractionNote: "Breaded cutlets take up a little of the oil as they fry, and most of it stays in the pan. This is an editorial estimate, not a sourced figure."
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: halved and sliced into thin half-moons
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 70
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 70
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 160
+    unit: g
+    note: short-grain, weighed raw
+steps:
+  - { componentRef: dashi, multiplier: 0.5 }
+  - { id: slice-onion, durationMin: 4, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: cook-rice, durationMin: 20, type: "parallel-with:steep-kombu", phase: rest }
+  - { id: prep-pork, durationMin: 6, type: active, phase: prep }
+  - { id: heat-oil, durationMin: 10, type: "parallel-with:prep-pork", phase: rest }
+  - { id: coat-pork, durationMin: 6, type: active, phase: prep }
+  - { id: fry-cutlets, durationMin: 7, type: active, phase: cook }
+  - { id: rest-cutlets, durationMin: 3, type: passive }
+  - { id: simmer-onion, durationMin: 6, type: active, phase: cook }
+  - { id: assemble-bowls, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi and the simmering liquid can be made a day ahead and kept cold. The cutlets are fried just before the bowls are assembled, because the crust softens once it is in the sauce.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: assemble-bowls
+      text: The cutlet is laid in the sauce and the egg poured over at the end, then covered only until the egg has just set. That keeps the egg soft and glossy, which is what binds the bowl, rather than letting it cook through into scrambled curd.
+  commonPitfalls:
+    - stepId: simmer-onion
+      text: Simmering the cutlet for long in the sauce turns the crust to mush. The onion is cooked first, and the sliced cutlet is only warmed through in the broth at the end.
+---
+
+<Step id="slice-onion">
+  Halve the <Qty ref="onion"/> from root to tip and slice each half into thin half-moons.
+  This takes <Dur step="slice-onion"/>.
+</Step>
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost
+  clear. Cook it in a heavy pan with a tight lid, and leave it covered after the boil for
+  the last part of the <Dur step="cook-rice"/>. Keep it warm.
+</Step>
+
+<Step id="prep-pork">
+  Season the <Qty ref="pork"/> on both sides with the <Qty ref="salt"/> and the
+  <Qty ref="pepper"/>. Trim any sinew from the edges and make a few cuts through the fat
+  so that the chops do not curl in the oil. Lay each chop between sheets of cling film and
+  beat it lightly to an even thickness. This takes <Dur step="prep-pork"/>.
+</Step>
+
+<Step id="heat-oil">
+  Heat the <Qty ref="oil"/> in a deep, heavy pan to <Temp c={170}/>, checking it with a
+  thermometer. It takes <Dur step="heat-oil"/> to come up to temperature and then holds
+  steady on a moderate flame.
+</Step>
+
+<Step id="coat-pork">
+  Set out three shallow dishes with the <Qty ref="flour"/>, the <Qty ref="egg-coat"/> and the
+  <Qty ref="panko"/>. Dust each cutlet in flour and shake off the excess, dip it in the egg,
+  then press it into the panko on both sides so the crumb covers it evenly. This takes
+  <Dur step="coat-pork"/>.
+</Step>
+
+<Step id="fry-cutlets">
+  Lower the cutlets into the oil, which should stay at <Temp c={170}/>, and fry them for
+  <Dur step="fry-cutlets"/>, turning once, until the crumb is deep gold and the pork is
+  cooked through at its centre.
+</Step>
+
+<Step id="rest-cutlets">
+  Lift the cutlets out and drain them on a wire rack for <Dur step="rest-cutlets"/>. Do not
+  stack them, because the crust softens where they touch.
+</Step>
+
+<Step id="simmer-onion">
+  Pour the strained dashi into a shallow pan with the <Qty ref="soy"/>, the <Qty ref="mirin"/>
+  and the <Qty ref="sugar"/>, and bring it to the boil. Add the <Qty ref="onion"/> and
+  simmer for <Dur step="simmer-onion"/>, until the onion is soft and the broth has taken on
+  its sweetness.
+</Step>
+
+<Step id="assemble-bowls">
+  Slice each cutlet across into strips and lay them over the onion in the pan. Pour the
+  <Qty ref="egg-topping"/> over, cover, and take the pan off the heat as soon as the egg
+  has just set on top. Divide the rice between two deep bowls, slide the cutlet, onion and
+  egg over the top, and serve at once.
+</Step>

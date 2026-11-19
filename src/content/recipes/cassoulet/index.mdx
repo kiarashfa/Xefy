@@ -1,0 +1,154 @@
+---
+title: Cassoulet
+subtitle: Haricot beans cooked slowly with pork, pork sausage and duck confit, then baked under a crust of breadcrumbs; a serving is one portion.
+label: Castelnaudary
+defaultServings: 7
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [braising, baking]
+image:
+  src: images/recipes/cassoulet.webp
+  alt: "Cassoulet in a black cast-iron dish: browned white beans with a sausage on top, served on a wooden board beside a frisée salad"
+ingredients:
+  - id: beans
+    ingredientRef: haricot-beans
+    form: dried
+    amount: 500
+    unit: g
+    note: soaked overnight and drained
+  - id: pork
+    ingredientRef: pork-shoulder
+    form: raw
+    amount: 400
+    unit: g
+    note: cut into large cubes
+  - id: sausage
+    ingredientRef: toulouse-sausage
+    form: fresh
+    amount: 250
+    unit: g
+    note: pork sausage, cut into thick pieces
+  - id: duck
+    ingredientRef: duck
+    form: confit-leg
+    amount: 400
+    unit: g
+    note: bone-in duck confit legs
+    consumedFraction: 0.7
+    consumedFractionNote: "The bones are removed before serving and a little of the confit fat is left behind. This is an editorial estimate of the edible share of bone-in legs."
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 150
+    unit: g
+    note: chopped
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 100
+    unit: g
+    note: cut into rounds
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 15
+    unit: g
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.6
+    unit: g
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: stock
+    ingredientRef: stock
+    form: chicken
+    amount: 900
+    unit: ml
+  - id: crumbs
+    ingredientRef: breadcrumbs
+    form: dried-plain
+    amount: 40
+    unit: g
+    note: for the crust
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: soak-beans, durationMin: 720, type: passive }
+  - { id: simmer-beans, durationMin: 60, type: passive }
+  - { id: brown-meats, durationMin: 12, type: active, phase: cook }
+  - { id: crisp-duck, durationMin: 6, type: active, phase: cook }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 150, type: passive }
+  - { id: crust, durationMin: 20, type: "parallel-with:bake", phase: cook }
+makeAhead:
+  aheadInstructions: Cassoulet improves over a day. Cook it, cool it and keep it in the fridge, then warm it through in the oven before serving, adding a little stock if it has dried out.
+  freezable: true
+  freezeInstructions: Freeze the cooked cassoulet in portions once it has cooled. Thaw it fully before reheating.
+  reheatInstructions: Warm it slowly in a covered dish in a moderate oven, breaking the crust once the beans are hot.
+notes:
+  techniqueRationale:
+    - stepId: crust
+      text: The breadcrumb crust is broken into the beans and re-formed two or three times as the dish bakes. Each time the liquid rises through the crust and the beans take up the fat, which is what gives the dish its creamy centre.
+  commonPitfalls:
+    - stepId: bake
+      text: A dry dish comes out of the oven tough and pasty. Keep the beans covered in liquid throughout, adding stock as it reduces, and keep the heat low enough that the surface does not boil.
+---
+
+<Step id="soak-beans">
+  Cover the <Qty ref="beans"/> with plenty of cold water and leave them to soak for
+  <Dur step="soak-beans"/>. Drain them before cooking.
+</Step>
+
+<Step id="simmer-beans">
+  Put the drained beans into a large pot with the <Qty ref="onion"/>, the <Qty ref="carrot"/>,
+  the <Qty ref="bay"/> and the <Qty ref="thyme"/>. Cover with water and simmer gently for
+  <Dur step="simmer-beans"/>, until the beans are just tender. Drain them, keeping the
+  cooking liquor.
+</Step>
+
+<Step id="brown-meats">
+  Heat the <Qty ref="oil"/> in a casserole and brown the <Qty ref="pork"/> in batches over a
+  medium-high heat, for <Dur step="brown-meats"/> in all. Add the <Qty ref="sausage"/> and
+  turn it until its skin is lightly coloured.
+</Step>
+
+<Step id="crisp-duck">
+  Lift the <Qty ref="duck"/> out of its fat and set it skin side down in a dry pan over a medium
+  heat for <Dur step="crisp-duck"/>, until the skin is crisp and golden.
+</Step>
+
+<Step id="assemble">
+  Layer the beans, the pork, the sausage and the duck in the casserole, seasoning each layer
+  with a little of the <Qty ref="salt"/> and the <Qty ref="pepper"/>. Add the <Qty ref="garlic"/>
+  and pour over the <Qty ref="stock"/> and enough of the cooking liquor to cover the beans.
+  This takes <Dur step="assemble"/>.
+</Step>
+
+<Step id="bake">
+  Bake, uncovered, at <Temp c={150}/> for <Dur step="bake"/>, until the beans are creamy and
+  the meat is tender when pierced.
+</Step>
+
+<Step id="crust">
+  Sprinkle the <Qty ref="crumbs"/> over the surface. Each time a crust forms, break it into
+  the beans with a spoon, then let a new one form. This takes <Dur step="crust"/> in all.
+</Step>

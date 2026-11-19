@@ -1,0 +1,50 @@
+{
+  "id": "soba-noodles",
+  "name": "Soba Noodles",
+  "proseName": "soba noodles",
+  "category": "noodle",
+  "animalOrigin": "none",
+  "containsGluten": true,
+  "containsDairy": false,
+  "allergenTags": [
+    "gluten"
+  ],
+  "forms": [
+    {
+      "id": "dried",
+      "label": "Dried",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168906",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168906/nutrients",
+      "sourceNote": "This is USDA's record for dried soba, the Japanese buckwheat noodle. Many commercial soba is part wheat flour, so the gluten flag is set for the noodle as sold; check the packet.",
+      "nutritionPer100g": {
+        "kcal": 336,
+        "protein": 14.38,
+        "fat": 0.71,
+        "carbs": 74.62,
+        "calcium": 35,
+        "iron": 2.7,
+        "magnesium": 95,
+        "phosphorus": 254,
+        "potassium": 252,
+        "sodium": 792,
+        "zinc": 1.71,
+        "copper": 0.23,
+        "manganese": 1.291,
+        "vitaminC": 0,
+        "thiamin": 0.48,
+        "riboflavin": 0.13,
+        "niacin": 3.21,
+        "vitaminB6": 0.24,
+        "folateMcg": 60,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.136,
+        "monounsaturatedFat": 0.185,
+        "polyunsaturatedFat": 0.22,
+        "cholesterol": 0
+      }
+    }
+  ]
+}

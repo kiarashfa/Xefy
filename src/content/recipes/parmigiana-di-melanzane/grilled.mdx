@@ -1,0 +1,114 @@
+---
+# The same dish with the aubergine grilled rather than fried: the slices are brushed with oil
+# and charred on a hot pan or under a grill, so no flour and no frying oil are needed.
+label: Grilled aubergine
+defaultServings: 4
+difficulty: Medium
+ingredients:
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 900
+    unit: g
+    note: two large, sliced lengthways about one centimetre thick
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+    consumedFraction: 0.46
+    consumedFractionNote: "Blended across the aubergine and the sauce: most of the salt drawn from the aubergine is rinsed away, while the salt in the sauce is eaten."
+    portions:
+      - { id: salt-aubergine, amount: 6, note: to draw out the juice }
+      - { id: salt-sauce, amount: 4, note: for the sauce }
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 60
+    unit: ml
+    portions:
+      - { id: oil-grill, amount: 40, note: for brushing the aubergine }
+      - { id: oil-sauce, amount: 20, note: for the sauce }
+  - id: passata
+    ingredientRef: tomato-puree
+    form: passata
+    amount: 500
+    unit: g
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 15
+    unit: g
+    note: leaves only
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 250
+    unit: g
+    note: fior di latte, drained and torn
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 80
+    unit: g
+    note: finely grated
+steps:
+  - { id: draw-juice, durationMin: 30, type: passive }
+  - { id: make-sauce, durationMin: 20, type: "parallel-with:draw-juice", phase: rest }
+  - { id: rinse-dry, durationMin: 8, type: active, phase: prep }
+  - { id: grill-aubergine, durationMin: 12, type: active, phase: cook }
+  - { id: assemble, durationMin: 10, type: active, phase: prep }
+  - { id: bake, durationMin: 30, type: passive }
+  - { id: rest-parmigiana, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The sauce can be made a day ahead and kept in the fridge. Grill the aubergine and assemble the dish on the day it is served.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: grill-aubergine
+      text: Grilling gives the slices colour and a smoky edge without the oil a fried version soaks up, so the sauce and the cheese do more of the work.
+  commonPitfalls:
+    - stepId: grill-aubergine
+      text: A cold pan steams the aubergine rather than marking it. Heat the pan or the grill until it is very hot before the slices go on, and brush them with oil first.
+---
+
+<Step id="draw-juice">
+  Lay the <Qty ref="aubergine"/> slices in a colander in layers, sprinkling each with the
+  <Qty ref="salt-aubergine"/>. Leave them to drain for <Dur step="draw-juice"/>, until
+  beads of bitter liquid have come to the surface.
+</Step>
+
+<Step id="make-sauce">
+  Warm the <Qty ref="oil-sauce"/> in a wide pan, add the <Qty ref="passata"/> and the
+  <Qty ref="salt-sauce"/>, and simmer gently for <Dur step="make-sauce"/>, until the sauce
+  has thickened and lost its raw edge. Tear in the <Qty ref="basil"/> at the end.
+</Step>
+
+<Step id="rinse-dry">
+  Rinse the aubergine slices under cold water and press them dry in a clean cloth.
+</Step>
+
+<Step id="grill-aubergine">
+  Brush the slices on both sides with the <Qty ref="oil-grill"/>. Grill them on a very hot
+  ridged pan or under a hot grill, turning once, for <Dur step="grill-aubergine"/>, until
+  marked and tender right through.
+</Step>
+
+<Step id="assemble">
+  Spread a spoonful of the sauce in a deep dish. Lay a layer of the grilled aubergine, then
+  scatter over some of the <Qty ref="mozzarella"/> and the <Qty ref="parmigiano"/>, and spoon
+  over a little sauce. Repeat until the aubergine is used, and finish with the sauce and the
+  cheese.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={180}/> for <Dur step="bake"/>, until the sauce bubbles at the edges and the
+  cheese has melted and browned in patches.
+</Step>
+
+<Step id="rest-parmigiana">
+  Leave the dish to rest for <Dur step="rest-parmigiana"/> before cutting, so that the layers
+  hold together when it is served.
+</Step>

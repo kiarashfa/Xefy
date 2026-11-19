@@ -1,0 +1,149 @@
+---
+title: Laugenbrezel
+subtitle: A knotted yeasted dough dipped in a food-grade lye bath before it is baked, which browns the crust and gives it its flavour; a serving is one pretzel.
+label: Bavarian lye bath
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [german]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/brezel.webp
+  alt: "Glossy, deep brown lye pretzels piled in a cloth-lined basket"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1280
+    unit: ml
+    portions:
+      - { id: water-dough, amount: 280, note: lukewarm }
+      - { id: water-bath, amount: 1000, note: for the lye bath }
+    consumedFraction: 0.23
+    consumedFractionNote: "Blended across the water in the dough, which is eaten, and the water in the lye bath, which is poured away. The figure is an editorial estimate, not a measurement."
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 25
+    unit: g
+    note: softened but still cool
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: lye
+    ingredientRef: food-grade-lye
+    form: sodium-hydroxide
+    amount: 30
+    unit: g
+    note: for the lye bath
+    consumedFraction: 0.01
+    consumedFractionNote: "Almost all of the lye stays in the bath, which is poured away. The small share left on the crust is an editorial estimate, not a measurement."
+  - id: pretzel-salt
+    ingredientRef: fine-sea-salt
+    form: pretzel
+    amount: 5
+    unit: g
+    note: for the top
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: second-rise, durationMin: 20, type: passive }
+  - { id: make-bath, durationMin: 5, type: "parallel-with:second-rise", phase: prep }
+  - { id: heat-oven, durationMin: 20, type: "parallel-with:second-rise", phase: cook }
+  - { id: chill, durationMin: 15, type: passive }
+  - { id: dip, durationMin: 5, type: active, phase: cook }
+  - { id: top, durationMin: 2, type: active, phase: cook }
+  - { id: bake, durationMin: 15, type: active, phase: cook }
+  - { id: cool, durationMin: 15, type: passive }
+makeAhead:
+  aheadInstructions: The dough can be made the day before. After the first rise, cover it and keep it in the fridge overnight, then bring it back to room temperature before shaping.
+  freezable: true
+  freezeInstructions: Freeze the cooled pretzels in a bag for up to a month. Reheat from frozen in a hot oven.
+  reheatInstructions: Warm the pretzels briefly in a hot oven to crisp the crust again.
+notes:
+  techniqueRationale:
+    - stepId: dip
+      text: The lye is what browns the crust and gives the pretzel its characteristic flavour. Each piece is dipped in full so that the whole surface is coated, and the bath is not a brush-on glaze.
+  commonPitfalls:
+    - stepId: make-bath
+      text: Lye is caustic, and it attacks aluminium and releases flammable hydrogen. Use rubber gloves, safety goggles, and a glass, stainless steel or other non-aluminium bowl and spoon for the bath.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/> and the <Qty ref="salt"/> into a large bowl, add the
+  <Qty ref="yeast"/>, and stir them together. Add the <Qty ref="water-dough"/> and the
+  <Qty ref="butter"/>, and mix for <Dur step="mix"/>, until no dry flour remains and the dough
+  is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces and roll each one into a smooth ball. Roll each ball into a
+  rope about <Len cm={60}/> long, leaving the middle a little thicker than the ends. Form each
+  rope into a U, cross the two ends over each other, and press them onto the thick part of the
+  U. Set the pretzels on a lined tray.
+</Step>
+
+<Step id="second-rise">
+  Leave the pretzels to prove for <Dur step="second-rise"/>, until a fingertip pressed in
+  leaves a dent that springs back slowly.
+</Step>
+
+<Step id="make-bath">
+  Wear rubber gloves and safety goggles. Pour the <Qty ref="water-bath"/> into a glass,
+  stainless steel or other non-aluminium bowl. Stir in the <Qty ref="lye"/> slowly, a little at
+  a time, with a non-aluminium spoon, for <Dur step="make-bath"/>, until it has dissolved. Keep
+  the bath away from aluminium foil and aluminium tins, which it attacks.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={200}/> with a shelf in the middle.
+</Step>
+
+<Step id="chill">
+  Put the shaped pretzels in the fridge for <Dur step="chill"/>, until they have firmed enough to
+  hold their shape in the bath.
+</Step>
+
+<Step id="dip">
+  Lower each pretzel into the lye bath, one at a time, and dip it for <Dur step="dip"/> in
+  total, turning it once. Lift each one out with a slotted spoon and let it drain back onto the
+  lined tray.
+</Step>
+
+<Step id="top">
+  Sprinkle the drained pretzels with the <Qty ref="pretzel-salt"/>, and slash the thick part of
+  each knot once so that it opens in the oven.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep mahogany brown and firm to the touch.
+</Step>
+
+<Step id="cool">
+  Leave the pretzels on a rack for <Dur step="cool"/> before eating.
+</Step>

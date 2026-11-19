@@ -1,0 +1,54 @@
+{
+  "id": "ricotta",
+  "name": "Ricotta",
+  "proseName": "ricotta",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "forms": [
+    {
+      "id": "whole",
+      "label": "Whole milk, fresh",
+      "proseQualifier": "whole-milk",
+      "sourceDataset": "USDA FDC Foundation",
+      "sourceId": "746766",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/746766/nutrients",
+      "sourceNote": "USDA has no record for sheep's-milk ricotta, which is the Sicilian tradition for cannoli. This is its record for whole-milk ricotta from cow's milk, the nearest cheese it publishes.",
+      "nutritionCaveat": "Cited against whole-milk cow's-milk ricotta. Sicilian sheep's-milk ricotta is richer, so the energy and fat on this page are likely understated.",
+      "nutritionPer100g": {
+        "kcal": 157,
+        "protein": 7.81,
+        "fat": 11,
+        "carbs": 6.86,
+        "calcium": 224,
+        "iron": 0.1,
+        "magnesium": 19.7,
+        "phosphorus": 162,
+        "potassium": 230,
+        "sodium": 105,
+        "zinc": 0.56,
+        "copper": 0,
+        "manganese": 0,
+        "seleniumMcg": 5.5,
+        "thiamin": 0.043,
+        "riboflavin": 0.327,
+        "niacin": 0.168,
+        "vitaminB6": 0.099,
+        "vitaminB12Mcg": 0.78,
+        "vitaminAMcg": 127,
+        "vitaminE": 0.27,
+        "vitaminKMcg": 0.6,
+        "saturatedFat": 6.97,
+        "monounsaturatedFat": 2.56,
+        "polyunsaturatedFat": 0.389,
+        "transFat": 0.351,
+        "cholesterol": 48
+      }
+    }
+  ],
+  "image": "images/ingredients/ricotta-thumb.webp"
+}

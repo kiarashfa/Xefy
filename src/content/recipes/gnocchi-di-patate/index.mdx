@@ -1,0 +1,146 @@
+---
+title: Gnocchi di Patate
+subtitle: Dumplings of floury potato, flour and egg, boiled and finished in sage butter with Parmigiano; a serving is one quarter of the batch.
+label: Veneto
+defaultServings: 4
+difficulty: Medium
+tags:
+  cuisine: [italian]
+  course: [main-course]
+  method: [boiling, sauteing]
+names:
+  alsoKnownAs:
+    - { name: Gnocchi di patata, region: Italy, lang: it }
+  notToBeConfusedWith:
+    - name: Gnocchi alla romana
+      note: Made from semolina rather than potato, cooked as a set porridge in a tray and cut into rounds, not boiled as small dumplings.
+  searchOnly: ["potato gnocchi", "gnocchi di patate veneto"]
+image:
+  src: images/recipes/gnocchi-di-patate.webp
+  alt: "Potato gnocchi browning in sage butter in a dark frying pan, flecked with chopped sage and pepper, with a pan of green beans behind"
+ingredients:
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 800
+    unit: g
+    note: floury, scrubbed, cooked in their skins
+  - id: flour
+    ingredientRef: wheat-flour
+    form: "00"
+    amount: 220
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 200 }
+      - { id: flour-dusting, amount: 20, note: for the board }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: beaten
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 20
+    unit: g
+    consumedFraction: 0.37
+    consumedFractionNote: "Blended across the dough and the cooking water: the salt in the dough is eaten, and most of the salt in the pan is drained away with the water."
+    portions:
+      - { id: salt-dough, amount: 6 }
+      - { id: salt-water, amount: 14, note: for the pan }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 3000
+    unit: ml
+    consumedFraction: 0.05
+    consumedFractionNote: "Nearly all of the cooking water is poured away; the dumplings carry only a film of it."
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 80
+    unit: g
+  - id: sage
+    ingredientRef: sage
+    form: fresh
+    amount: 10
+    unit: g
+    note: leaves only
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 50
+    unit: g
+    note: finely grated, to serve
+steps:
+  - { id: boil-potatoes, durationMin: 30, type: passive }
+  - { id: heat-water, durationMin: 12, type: "parallel-with:boil-potatoes", phase: cook }
+  - { id: peel-mash, durationMin: 10, type: active, phase: prep }
+  - { id: make-dough, durationMin: 8, type: active, phase: prep }
+  - { id: shape, durationMin: 25, type: active, phase: prep }
+  - { id: cook-gnocchi, durationMin: 3, type: active, phase: cook }
+  - { id: sage-butter, durationMin: 5, type: "parallel-with:cook-gnocchi", phase: cook }
+  - { id: combine, durationMin: 1, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Shape the gnocchi on a floured tray and cook them the same day; they soften and stick if they wait too long.
+  freezable: true
+  freezeInstructions: Freeze the shaped gnocchi on a floured tray until firm, then bag them. Cook them from frozen, straight into the boiling water, and allow a little longer for them to rise.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-dough
+      text: Flour and kneading develop gluten, which turns a light gnocchi into a chewy one. The flour is there only to hold the potato together, so it is worked in as briefly as possible.
+  commonPitfalls:
+    - stepId: peel-mash
+      text: Mashing cold potato or passing it through a processor works the starch into a gluey paste. Peel and rice it while it is hot, and spread it so the steam can leave.
+---
+
+<Step id="boil-potatoes">
+  Put the <Qty ref="potato"/> into a pan of cold water and bring it to the boil. Cook
+  until a knife slides into the centre with no resistance, for
+  <Dur step="boil-potatoes"/>, then drain.
+</Step>
+
+<Step id="heat-water">
+  While the potatoes cook, bring the <Qty ref="water"/> to the boil in a wide pan, and
+  add the <Qty ref="salt-water"/> once it is rolling.
+</Step>
+
+<Step id="peel-mash">
+  Peel the potatoes while they are still too hot to hold comfortably. Pass the flesh
+  through a ricer onto a clean board, spread it out so the steam can leave, and let it
+  cool until it is warm rather than hot.
+</Step>
+
+<Step id="make-dough">
+  Scatter the <Qty ref="flour-dough"/> and the <Qty ref="salt-dough"/> over the potato, make a
+  well in the middle and drop in the <Qty ref="egg"/>. Bring it together with the
+  fingertips, working only until no dry flour remains and the dough is soft and just
+  slightly sticky.
+</Step>
+
+<Step id="shape">
+  Dust the board with the <Qty ref="flour-dusting"/>. Divide the dough into pieces and roll
+  each into a rope about <Len cm={2}/> thick. Cut the ropes into pieces about
+  <Len cm={2}/> long, and press each one with the back of a fork so it takes a ridge
+  on one side. Set them on a floured tray as you go, for <Dur step="shape"/>.
+</Step>
+
+<Step id="cook-gnocchi">
+  Lower the gnocchi into the boiling water in batches, stirring once so they do not
+  catch. Lift them out with a slotted spoon as soon as they rise to the surface, which
+  takes <Dur step="cook-gnocchi"/>, and drain them well.
+</Step>
+
+<Step id="sage-butter">
+  While the gnocchi cook, melt the <Qty ref="butter"/> in a wide pan over a moderate
+  flame with the <Qty ref="sage"/> leaves. Let it foam and turn a hazelnut brown, and
+  take the pan off the heat before it darkens further, for <Dur step="sage-butter"/>.
+</Step>
+
+<Step id="combine">
+  Tip the drained gnocchi into the sage butter and toss gently for
+  <Dur step="combine"/>, so each one is coated. Serve at once, with the
+  <Qty ref="parmigiano"/> over the top.
+</Step>

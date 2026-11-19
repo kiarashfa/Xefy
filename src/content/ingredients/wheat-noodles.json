@@ -45,6 +45,43 @@
         "vitaminB6": 0.05,
         "folateMcg": 14
       }
+    },
+    {
+      "id": "udon",
+      "label": "Udon, fresh",
+      "proseName": "udon noodles",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168909",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168909/nutrients",
+      "sourceNote": "USDA has no record for udon. This is its record for cooked somen, the thin Japanese wheat noodle, and the nearest cooked plain-wheat noodle it publishes. Udon is thicker than somen and is sold fresh or dried; the record is for the noodle cooked, so the weight is the weight as bought.",
+      "nutritionPer100g": {
+        "kcal": 131,
+        "protein": 4,
+        "fat": 0.18,
+        "carbs": 27.54,
+        "calcium": 8,
+        "iron": 0.52,
+        "magnesium": 2,
+        "phosphorus": 27,
+        "potassium": 29,
+        "sodium": 161,
+        "zinc": 0.22,
+        "copper": 0.025,
+        "manganese": 0.251,
+        "vitaminC": 0,
+        "thiamin": 0.02,
+        "riboflavin": 0.033,
+        "niacin": 0.097,
+        "vitaminB6": 0.013,
+        "folateMcg": 2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminDMcg": 0,
+        "saturatedFat": 0.025,
+        "monounsaturatedFat": 0.021,
+        "polyunsaturatedFat": 0.073,
+        "cholesterol": 0
+      }
     }
   ],
   "image": "images/ingredients/wheat-noodles-thumb.webp"

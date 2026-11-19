@@ -1,0 +1,30 @@
+{
+  "id": "umeboshi",
+  "name": "Umeboshi",
+  "proseName": "umeboshi",
+  "category": "condiment",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "salted",
+      "label": "Salt-pickled, traditional, pitted",
+      "sourceDataset": "Japanese Standard Tables of Food Composition in Japan, 2015 (Seventh Revised Edition), item 07022",
+      "sourceId": "07022",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Umeboshi",
+      "sourceNote": "The Japanese table's entry for traditional salt-pickled umeboshi, pitted, as reproduced in the Wikipedia article on umeboshi. The table gives energy in kilojoules only; the kilocalorie figure here is that value divided by 4.184. The reduced-salt umeboshi is a separate entry and is not used.",
+      "nutritionPer100g": {
+        "kcal": 33,
+        "protein": 0.9,
+        "fat": 0.2,
+        "carbs": 10.5,
+        "fiber": 3.6,
+        "sodium": 8700,
+        "potassium": 440
+      }
+    }
+  ],
+  "image": "images/ingredients/umeboshi-thumb.webp"
+}

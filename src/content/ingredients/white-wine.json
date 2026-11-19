@@ -1,0 +1,62 @@
+{
+  "id": "white-wine",
+  "name": "White Wine",
+  "proseName": "white wine",
+  "category": "drink",
+  "animalOrigin": "none",
+  "animalOriginNote": "Unfined wine has no animal input. Some wines are clarified with isinglass (fish) or egg white, and the label rarely says so; the figures describe the wine itself.",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [
+    "sulphites"
+  ],
+  "forms": [
+    {
+      "id": "table",
+      "label": "Table wine",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "174837",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/174837/nutrients",
+      "nutritionPer100g": {
+        "kcal": 82,
+        "protein": 0.07,
+        "fat": 0,
+        "carbs": 2.6,
+        "fiber": 0,
+        "sugars": 0.96,
+        "calcium": 9,
+        "iron": 0.27,
+        "magnesium": 10,
+        "phosphorus": 18,
+        "potassium": 71,
+        "sodium": 5,
+        "zinc": 0.12,
+        "copper": 0.004,
+        "manganese": 0.117,
+        "seleniumMcg": 0.1,
+        "vitaminC": 0,
+        "thiamin": 0.005,
+        "riboflavin": 0.015,
+        "niacin": 0.108,
+        "vitaminB6": 0.05,
+        "folateMcg": 1,
+        "choline": 4.3,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.4,
+        "saturatedFat": 0,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ]
+}

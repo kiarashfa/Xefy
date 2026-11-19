@@ -1,0 +1,101 @@
+---
+title: Gratin Dauphinois
+subtitle: Thinly sliced raw potatoes baked slowly in cream with garlic and nutmeg, with no cheese; a serving is one portion of a side dish.
+label: Dauphiné
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [side]
+  method: [baking]
+image:
+  src: images/recipes/gratin-dauphinois.webp
+  alt: "Gratin dauphinois in a cream stoneware dish: sliced potatoes baked golden brown with parsley, beside a glass of red wine"
+ingredients:
+  - id: potatoes
+    ingredientRef: potato
+    form: raw
+    amount: 1000
+    unit: g
+    note: waxy potatoes, peeled and sliced thinly
+    consumedFraction: 0.85
+    consumedFractionNote: "The peel is discarded. Roughly a seventh of the weight of whole potatoes goes; this is an editorial estimate, not a measured yield."
+  - id: cream
+    ingredientRef: double-cream
+    form: heavy
+    amount: 500
+    unit: ml
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 15
+    unit: g
+    note: for the dish
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 5
+    unit: g
+    note: one clove, halved
+  - id: nutmeg
+    ingredientRef: nutmeg
+    form: ground
+    amount: 1
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: slice-potatoes, durationMin: 10, type: active, phase: prep }
+  - { id: rub-dish, durationMin: 3, type: active, phase: prep }
+  - { id: layer, durationMin: 6, type: active, phase: prep }
+  - { id: bake, durationMin: 75, type: passive }
+  - { id: rest, durationMin: 10, type: passive }
+makeAhead:
+  aheadInstructions: The dish can be layered a few hours ahead and kept covered in the fridge. Bring it to room temperature before it goes into the oven, and add a little extra baking time.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: Reheat a portion gently in a moderate oven, loosely covered, until it is hot through.
+notes:
+  techniqueRationale:
+    - stepId: layer
+      text: The potatoes go in raw. Their starch thickens the cream as they bake, so the dish sets into a sliceable gratin rather than a pan of loose potato.
+  commonPitfalls:
+    - stepId: bake
+      text: Cream bubbles over the edge of a dish that is filled too high. Use a dish with generous sides and fill it no higher than the sides, and check that the potatoes are tender through with a knife before serving.
+---
+
+<Step id="slice-potatoes">
+  Peel the <Qty ref="potatoes"/> and slice them into rounds about <Len cm={0.3}/> thick. Keep the slices
+  in cold water until you need them, then drain and dry them. This takes
+  <Dur step="slice-potatoes"/>.
+</Step>
+
+<Step id="rub-dish">
+  Rub a shallow ovenproof dish all over with the cut side of the <Qty ref="garlic"/>, then butter
+  it with the <Qty ref="butter"/>. This takes <Dur step="rub-dish"/>.
+</Step>
+
+<Step id="layer">
+  Arrange the potato slices in overlapping layers in the dish, seasoning each layer with a little of
+  the <Qty ref="salt"/> and the <Qty ref="pepper"/>. Pour the <Qty ref="cream"/> over, so it just
+  reaches the top layer, and grate the <Qty ref="nutmeg"/> over the surface. This takes
+  <Dur step="layer"/>.
+</Step>
+
+<Step id="bake">
+  Bake at <Temp c={170}/> for <Dur step="bake"/>, until the top is golden and the cream has thickened,
+  and a knife slides easily through the potatoes.
+</Step>
+
+<Step id="rest">
+  Leave the gratin to rest for <Dur step="rest"/> before it is cut, so the cream sets around the
+  potatoes.
+</Step>

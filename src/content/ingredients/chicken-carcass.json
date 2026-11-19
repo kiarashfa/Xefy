@@ -1,0 +1,52 @@
+{
+  "id": "chicken-carcass",
+  "name": "Chicken Carcass",
+  "proseName": "chicken carcass",
+  "category": "meat",
+  "animalOrigin": "poultry",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "raw",
+      "label": "Raw, bone-in carcass",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171469",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171469/nutrients",
+      "sourceNote": "USDA has no record for a chicken carcass. This is its record for raw chicken back with meat and skin, the closest bone-in chicken record it publishes. Stock is made from the bones, so the recipe declares how much of the line is eaten.",
+      "nutritionPer100g": {
+        "kcal": 319,
+        "protein": 14.05,
+        "fat": 28.74,
+        "carbs": 0,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 13,
+        "iron": 0.94,
+        "magnesium": 15,
+        "phosphorus": 113,
+        "potassium": 144,
+        "sodium": 64,
+        "zinc": 1.26,
+        "copper": 0.047,
+        "manganese": 0.018,
+        "seleniumMcg": 12.1,
+        "vitaminC": 1.6,
+        "thiamin": 0.051,
+        "riboflavin": 0.116,
+        "niacin": 4.835,
+        "vitaminB6": 0.19,
+        "folateMcg": 6,
+        "vitaminB12Mcg": 0.25,
+        "vitaminAMcg": 75,
+        "vitaminE": 0.37,
+        "vitaminKMcg": 2.4,
+        "saturatedFat": 8.34,
+        "monounsaturatedFat": 12.25,
+        "polyunsaturatedFat": 6.14,
+        "cholesterol": 79
+      }
+    }
+  ]
+}

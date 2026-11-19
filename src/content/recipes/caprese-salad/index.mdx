@@ -1,0 +1,82 @@
+---
+title: Insalata Caprese
+subtitle: Ripe tomato and fresh mozzarella laid in overlapping slices with basil and olive oil; a serving is one quarter of the platter.
+label: Classic
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [salad]
+  method: [no-cook]
+names:
+  alsoKnownAs:
+    - { name: Capri salad, lang: en }
+  searchOnly: ["caprese salad", "tomato and mozzarella salad"]
+image:
+  src: images/recipes/caprese-salad.webp
+  alt: "Caprese salad on a white plate: sliced tomato and mozzarella arranged in a ring, each topped with a fresh basil leaf, with olive oil and black pepper"
+ingredients:
+  - id: tomato
+    ingredientRef: tomato
+    form: fresh
+    amount: 400
+    unit: g
+    note: ripe, at room temperature
+  - id: mozzarella
+    ingredientRef: mozzarella
+    form: fresh
+    amount: 250
+    unit: g
+    note: well drained
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 15
+    unit: g
+    note: leaves only
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 3
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: slice-tomato, durationMin: 5, type: active, phase: prep }
+  - { id: slice-mozzarella, durationMin: 3, type: active, phase: prep }
+  - { id: assemble, durationMin: 3, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Assemble the salad just before serving. Salt draws the juice out of the tomatoes, and the basil darkens if it waits.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  commonPitfalls:
+    - stepId: slice-tomato
+      text: Chilling tomatoes in the fridge dulls their flavour and turns the flesh mealy. Let them come to room temperature before slicing.
+---
+
+<Step id="slice-tomato">
+  Slice the <Qty ref="tomato"/> into rounds about <Len cm={1}/> thick, and lay them out on
+  a platter as you go.
+</Step>
+
+<Step id="slice-mozzarella">
+  Drain the <Qty ref="mozzarella"/> on kitchen paper, then slice it to the same thickness
+  as the tomato.
+</Step>
+
+<Step id="assemble">
+  Overlap the tomato and mozzarella slices along the platter, tuck the <Qty ref="basil"/>
+  leaves between them, and season with the <Qty ref="salt"/> and the <Qty ref="pepper"/>.
+  Trickle over the <Qty ref="olive-oil"/> and serve within the half hour, while the
+  tomato is still at room temperature.
+</Step>

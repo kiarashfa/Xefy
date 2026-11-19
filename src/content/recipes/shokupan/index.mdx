@@ -1,0 +1,134 @@
+---
+title: Shokupan
+subtitle: A soft Japanese milk loaf, enriched with butter and egg and kept moist by a cooked flour and milk starter, baked in a loaf tin. One serving is one slice.
+label: Tangzhong
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [bread]
+  method: [baking]
+names:
+  searchOnly: ["hokkaido milk bread", "milk bread", "japanese milk bread", "shokupan loaf"]
+image:
+  src: images/recipes/shokupan.webp
+  alt: "A loaf of soft Japanese milk bread cut open, showing the fine, fluffy white crumb, with a thick slice laid in front"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 400
+    unit: g
+    portions:
+      - { id: flour-tangzhong, amount: 40, note: for the tangzhong }
+      - { id: flour-dough, amount: 360, note: for the dough }
+  - id: milk
+    ingredientRef: milk
+    form: whole
+    amount: 260
+    unit: ml
+    portions:
+      - { id: milk-tangzhong, amount: 200, note: for the tangzhong }
+      - { id: milk-dough, amount: 60, note: for the dough }
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 50
+    unit: g
+    note: one egg, beaten
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 20
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 6
+    unit: g
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    note: softened and cut into small pieces
+    portions:
+      - { id: butter-dough, amount: 35, note: worked into the dough }
+      - { id: butter-tin, amount: 5, note: for greasing the tin }
+steps:
+  - { id: make-tangzhong, durationMin: 4, type: active, phase: prep }
+  - { id: cool-tangzhong, durationMin: 15, type: passive }
+  - { id: mix-dough, durationMin: 8, type: active, phase: prep }
+  - { id: knead-dough, durationMin: 12, type: active, phase: prep }
+  - { id: first-prove, durationMin: 60, type: passive }
+  - { id: shape-loaf, durationMin: 6, type: active, phase: prep }
+  - { id: second-prove, durationMin: 45, type: passive }
+  - { id: bake-loaf, durationMin: 35, type: passive }
+  - { id: cool-loaf, durationMin: 60, type: passive }
+makeAhead:
+  aheadInstructions: The tangzhong can be made a day ahead and kept covered in the fridge, then brought back to room temperature before it goes into the dough. The baked loaf keeps for a day or two wrapped at room temperature.
+  freezable: true
+  freezeInstructions: Slice the cooled loaf, wrap the slices in film and freeze them. Toast the slices from frozen.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: make-tangzhong
+      text: The flour and milk are cooked to a thick paste before they go into the dough. Cooking the starch in liquid lets it hold a large amount of water, and that water stays in the crumb as the loaf bakes, which is what keeps the bread soft for days rather than only on the day it is baked.
+  commonPitfalls:
+    - stepId: knead-dough
+      text: Butter dropped into the dough all at once sits in lumps and tears the gluten. The dough is kneaded until it is smooth and elastic first, and the butter goes in a few pieces at a time.
+---
+
+<Step id="make-tangzhong">
+  Whisk the <Qty ref="flour-tangzhong"/> into the <Qty ref="milk-tangzhong"/> in a small pan. Set it
+  over a medium heat and stir constantly until the mixture thickens to a paste that leaves a line
+  when the whisk is drawn through it. Scrape it into a bowl. This takes <Dur step="make-tangzhong"/>.
+</Step>
+
+<Step id="cool-tangzhong">
+  Leave the tangzhong until it is just warm to the touch, and no hotter, for
+  <Dur step="cool-tangzhong"/>. A hot starter would kill the yeast when it is added.
+</Step>
+
+<Step id="mix-dough">
+  Put the <Qty ref="flour-dough"/>, the <Qty ref="yeast"/>, the <Qty ref="sugar"/> and the
+  <Qty ref="salt"/> into a large bowl. Add the <Qty ref="milk-dough"/>, the <Qty ref="egg"/> and the
+  cooled tangzhong, and mix to a rough, sticky dough. This takes <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="knead-dough">
+  Knead the dough on a lightly floured surface for <Dur step="knead-dough"/>, until it is smooth and
+  springy. Work in the <Qty ref="butter-dough"/> a few pieces at a time, kneading each piece in fully
+  before the next goes in, until the dough is glossy and stretches into a thin window without tearing.
+</Step>
+
+<Step id="first-prove">
+  Put the dough into a clean bowl, cover it, and leave it somewhere warm for <Dur step="first-prove"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape-loaf">
+  Knock the dough back and press it into a rectangle. Fold it in from the sides and roll it up into
+  a log. Grease a loaf tin with the <Qty ref="butter-tin"/>, lay the log in seam side down. This takes
+  <Dur step="shape-loaf"/>.
+</Step>
+
+<Step id="second-prove">
+  Cover the tin and leave the dough to rise for <Dur step="second-prove"/>, until it has risen just
+  above the rim of the tin.
+</Step>
+
+<Step id="bake-loaf">
+  Bake the loaf in an oven heated to <Temp c={180}/> for <Dur step="bake-loaf"/>, until it is golden
+  on top and sounds hollow when it is tapped underneath.
+</Step>
+
+<Step id="cool-loaf">
+  Turn the loaf out of the tin onto a wire rack and leave it to cool for <Dur step="cool-loaf"/>
+  before it is sliced, so that the crumb sets.
+</Step>

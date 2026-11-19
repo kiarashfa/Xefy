@@ -1,0 +1,104 @@
+---
+title: Nikujaga
+subtitle: Thinly sliced beef, potato, onion and carrot simmered together in a dashi, soy and mirin broth until the potatoes have soaked up the sauce.
+label: Home simmered
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [simmering]
+names:
+  searchOnly: ["meat and potato stew", "niku jaga", "japanese meat and potato stew"]
+image:
+  src: images/recipes/nikujaga.webp
+  alt: "Nikujaga in a stoneware bowl: thin-sliced beef, potato, carrot and shirataki noodles, with a few green sprouts"
+ingredients:
+  - id: beef
+    ingredientRef: beef-short-plate
+    form: raw
+    amount: 300
+    unit: g
+    note: thinly sliced, cut into pieces about a hand long
+  - id: potato
+    ingredientRef: potato
+    form: raw
+    amount: 500
+    unit: g
+    note: peeled and cut into large chunks
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 150
+    unit: g
+    note: halved and cut into wedges
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 150
+    unit: g
+    note: peeled and cut into chunks
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 10
+    unit: ml
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 70
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 70
+    unit: ml
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+steps:
+  - { componentRef: dashi, multiplier: 0.5 }
+  - { id: prepare-vegetables, durationMin: 10, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: brown-beef, durationMin: 4, type: active, phase: cook }
+  - { id: simmer-stew, durationMin: 15, type: passive }
+  - { id: add-beef, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead and kept cold. The stew is at its best the day it is made, once the potatoes have had time to take up the sauce, and reheats gently.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: brown-beef
+      text: The beef is browned briefly before the liquid goes in, which gives the stew a deeper flavour than the same meat simmered raw. It is then taken out and added back only at the end, so that it does not toughen in the broth.
+  commonPitfalls:
+    - stepId: simmer-stew
+      text: Potatoes cut small break down into the sauce and cloud it. The chunks are kept large, and the pan is left alone once it has come to a simmer.
+---
+
+<Step id="prepare-vegetables">
+  Peel and cut the <Qty ref="potato"/> into large chunks, cut the <Qty ref="carrot"/> into
+  chunks, and cut the <Qty ref="onion"/> into wedges. Keep the potato in cold water until it
+  goes into the pan. This takes <Dur step="prepare-vegetables"/>.
+</Step>
+
+<Step id="brown-beef">
+  Heat the <Qty ref="oil"/> in a heavy, wide pan over a medium-high heat. Lay in the
+  <Qty ref="beef"/> in a single layer, in batches if needed, and brown it for
+  <Dur step="brown-beef"/>. Lift it out onto a plate.
+</Step>
+
+<Step id="simmer-stew">
+  Put the onion, the potato and the carrot into the pan. Pour the strained dashi over them
+  with the <Qty ref="soy"/>, the <Qty ref="mirin"/> and the <Qty ref="sugar"/>, and bring it
+  to the boil. Skim off the scum, then cover, lower the heat and simmer for
+  <Dur step="simmer-stew"/>, until the potatoes are tender through.
+</Step>
+
+<Step id="add-beef">
+  Return the beef to the pan, laying the slices over the top so that they are just covered
+  by the sauce. Simmer for <Dur step="add-beef"/> more, only until the beef has cooked
+  through, and serve it hot with the vegetables and the sauce spooned over.
+</Step>

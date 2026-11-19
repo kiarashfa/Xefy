@@ -189,6 +189,53 @@
         "gPerCup": 125,
         "densitySource": "measured"
       }
+    },
+    {
+      "id": "atta",
+      "label": "Atta",
+      "proseQualifier": "atta",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "168893",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/168893/nutrients",
+      "sourceNote": "Atta is finely milled whole wheat flour, the basis of chapati and puri. USDA's record for whole-grain wheat flour is the nearest complete record: it carries the fat breakdown and fibre, which the Foundation whole wheat record (790085) does not. USDA does not state the wheat class for this record, so it is not confirmed as hard wheat.",
+      "nutritionPer100g": {
+        "kcal": 340,
+        "protein": 13.21,
+        "fat": 2.5,
+        "carbs": 71.97,
+        "fiber": 10.7,
+        "sugars": 0.41,
+        "calcium": 34,
+        "iron": 3.6,
+        "magnesium": 137,
+        "phosphorus": 357,
+        "potassium": 363,
+        "sodium": 2,
+        "zinc": 2.6,
+        "copper": 0.41,
+        "manganese": 4.067,
+        "seleniumMcg": 61.8,
+        "vitaminC": 0,
+        "thiamin": 0.502,
+        "riboflavin": 0.165,
+        "niacin": 4.957,
+        "vitaminB6": 0.407,
+        "folateMcg": 44,
+        "choline": 31.2,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.71,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 1.9,
+        "saturatedFat": 0.43,
+        "monounsaturatedFat": 0.283,
+        "polyunsaturatedFat": 1.167,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerCup": 120,
+        "densitySource": "measured"
+      }
     }
   ],
   "image": "images/ingredients/wheat-flour-thumb.webp"

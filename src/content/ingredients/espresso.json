@@ -1,0 +1,61 @@
+{
+  "id": "espresso",
+  "name": "Espresso",
+  "proseName": "espresso",
+  "category": "drink",
+  "animalOrigin": "none",
+  "containsGluten": false,
+  "containsDairy": false,
+  "allergenTags": [],
+  "forms": [
+    {
+      "id": "brewed",
+      "label": "Brewed, restaurant-prepared",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "171891",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/171891/nutrients",
+      "sourceNote": "USDA's record for espresso as prepared in a restaurant. Its figures are for the brewed drink, which is almost all water, and the sugar and milk are not in it.",
+      "nutritionPer100g": {
+        "kcal": 9,
+        "protein": 0.12,
+        "fat": 0.18,
+        "carbs": 1.67,
+        "fiber": 0,
+        "sugars": 0,
+        "calcium": 2,
+        "iron": 0.13,
+        "magnesium": 80,
+        "phosphorus": 7,
+        "potassium": 115,
+        "sodium": 14,
+        "zinc": 0.05,
+        "copper": 0.05,
+        "manganese": 0.05,
+        "seleniumMcg": 0,
+        "vitaminC": 0.2,
+        "thiamin": 0.001,
+        "riboflavin": 0.177,
+        "niacin": 5.207,
+        "vitaminB6": 0.002,
+        "folateMcg": 1,
+        "choline": 2.6,
+        "vitaminB12Mcg": 0,
+        "vitaminAMcg": 0,
+        "vitaminE": 0.01,
+        "vitaminDMcg": 0,
+        "vitaminKMcg": 0.1,
+        "saturatedFat": 0.092,
+        "monounsaturatedFat": 0,
+        "polyunsaturatedFat": 0.092,
+        "transFat": 0,
+        "cholesterol": 0
+      },
+      "density": {
+        "gPerMl": 1,
+        "densitySource": "estimated",
+        "densityClass": "liquid-water-like"
+      }
+    }
+  ],
+  "image": "images/ingredients/espresso-thumb.webp"
+}

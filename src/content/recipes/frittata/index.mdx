@@ -1,0 +1,100 @@
+---
+title: Frittata
+subtitle: Beaten eggs with Parmigiano and parsley set slowly in an olive oil pan and turned once to finish; a serving is one wedge of a frittata made for four.
+label: Stovetop
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [italian]
+  course: [breakfast]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Omelette
+      note: A French-style omelette is folded over its filling and cooked fast. A frittata has its filling stirred into the egg and is set slowly without being folded.
+      slugRef: omelette-francaise
+  searchOnly: ["italian omelette", "frittata italiana"]
+image:
+  src: images/recipes/frittata.webp
+  alt: "A flat golden frittata flecked with green herbs on a flowered plate, with halved boiled eggs on salad in a dish behind"
+ingredients:
+  - id: eggs
+    ingredientRef: egg
+    form: whole
+    amount: 300
+    unit: g
+    note: beaten
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 40
+    unit: g
+    note: finely grated
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: leaves only, finely chopped
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: beat-eggs, durationMin: 4, type: active, phase: prep }
+  - { id: heat-pan, durationMin: 3, type: active, phase: cook }
+  - { id: set-frittata, durationMin: 15, type: active, phase: cook }
+  - { id: turn-frittata, durationMin: 4, type: active, phase: cook }
+  - { id: rest-frittata, durationMin: 5, type: passive }
+makeAhead:
+  aheadInstructions: A frittata is best eaten within an hour of cooking. It keeps covered in the fridge for a day and is good cold, cut into wedges.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: set-frittata
+      text: The heat is kept low so that the base sets without catching while the top is still soft. Cooked hard, the outside toughens before the middle has set.
+  commonPitfalls:
+    - stepId: turn-frittata
+      text: Turning the frittata with a spatula tears the set base. Slide it onto a plate, invert the plate over the pan, and let the frittata drop back into the pan.
+---
+
+<Step id="beat-eggs">
+  Beat the <Qty ref="eggs"/> hard with the <Qty ref="parmigiano"/>, the <Qty ref="parsley"/>,
+  the <Qty ref="salt"/> and the <Qty ref="pepper"/>, for <Dur step="beat-eggs"/>, until the
+  mixture is frothy and the cheese has broken into it.
+</Step>
+
+<Step id="heat-pan">
+  Heat the <Qty ref="olive-oil"/> in a heavy, lidded pan over a low flame until it shimmers
+  and runs thin across the base, for <Dur step="heat-pan"/>.
+</Step>
+
+<Step id="set-frittata">
+  Pour in the beaten egg and let it stand for a moment, then draw the set edges in towards
+  the centre with a spatula so that the raw egg runs into the gaps. Cover the pan and cook
+  over the lowest heat for <Dur step="set-frittata"/>, until the base is set and the top is
+  just firm, with a slight wobble at the centre.
+</Step>
+
+<Step id="turn-frittata">
+  Slide the frittata onto a plate, invert the plate over the pan, and let it drop back into
+  the pan for <Dur step="turn-frittata"/>, to set the second side.
+</Step>
+
+<Step id="rest-frittata">
+  Slide the frittata onto a board and leave it for <Dur step="rest-frittata"/> before cutting
+  it into wedges.
+</Step>

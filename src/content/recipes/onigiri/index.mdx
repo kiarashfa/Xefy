@@ -1,0 +1,100 @@
+---
+title: Onigiri
+subtitle: Plain short-grain rice pressed into triangles around a filling of salted, grilled salmon and wrapped in a strip of nori. One serving is one rice ball.
+label: Salmon
+defaultServings: 8
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [snack]
+  method: [boiling, grilling]
+names:
+  alsoKnownAs:
+    - { name: "Omusubi", region: Japan, lang: ja }
+  searchOnly: ["rice ball", "onigiri rice ball"]
+image:
+  src: images/recipes/onigiri.webp
+  alt: "Two triangular onigiri of white rice wrapped in nori, photographed close up on a pale background"
+ingredients:
+  - id: rice
+    ingredientRef: rice
+    form: sushi
+    amount: 320
+    unit: g
+    note: short-grain, weighed raw, cooked plain
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 7
+    unit: g
+    portions:
+      - { id: salt-rice, amount: 4, note: folded through the hot rice }
+      - { id: salt-salmon, amount: 3, note: rubbed onto the salmon }
+  - id: salmon
+    ingredientRef: salmon
+    form: raw
+    amount: 200
+    unit: g
+    note: skinned and boned, weighed raw
+  - id: nori
+    ingredientRef: nori
+    form: dried
+    amount: 12
+    unit: g
+    note: cut into strips to wrap each rice ball
+steps:
+  - { id: cook-rice, durationMin: 20, type: passive }
+  - { id: salt-fish, durationMin: 15, type: "parallel-with:cook-rice", phase: rest }
+  - { id: cut-nori, durationMin: 3, type: "parallel-with:cook-rice", phase: prep }
+  - { id: grill-salmon, durationMin: 8, type: active, phase: cook }
+  - { id: flake-salmon, durationMin: 4, type: active, phase: prep }
+  - { id: shape-onigiri, durationMin: 15, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The salmon can be grilled and flaked a day ahead and kept covered in the fridge. The rice is best shaped on the day it is cooked, because cold rice hardens, and each rice ball is wrapped in nori just before it is eaten.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: shape-onigiri
+      text: The rice is pressed with light, even pressure, enough to hold its shape. Pressed hard it turns dense and gummy, and the grains lose the separation that lets the ball come apart softly in the mouth.
+  commonPitfalls:
+    - stepId: shape-onigiri
+      text: Nori wrapped on too early softens as the rice gives up its moisture, and it loses the crisp edge that makes it worth eating. Each ball is wrapped just before it is eaten.
+---
+
+<Step id="cook-rice">
+  Rinse the <Qty ref="rice"/> in several changes of cold water until the water runs almost clear,
+  then drain it well. Cook it in a heavy pan with a tight lid, and leave it covered off the heat for
+  the last part of <Dur step="cook-rice"/>. While it is still hot, spread it on a wide tray and fold
+  the <Qty ref="salt-rice"/> through it so that every grain is lightly seasoned. No vinegar goes in,
+  because the rice is plain and not sushi rice.
+</Step>
+
+<Step id="salt-fish">
+  Rub the <Qty ref="salt-salmon"/> into both sides of the <Qty ref="salmon"/> and leave it on a rack
+  for <Dur step="salt-fish"/>, so that the salt firms the flesh. This happens while the rice cooks.
+</Step>
+
+<Step id="cut-nori">
+  Cut the <Qty ref="nori"/> into strips, each one wide enough to wrap a rice ball around its base
+  and long enough to meet on the other side. This takes <Dur step="cut-nori"/>.
+</Step>
+
+<Step id="grill-salmon">
+  Wipe the salmon dry and grill it until the flesh has turned opaque right through and comes away
+  in flakes. This takes <Dur step="grill-salmon"/>. Do not overcook it, because it dries quickly
+  once the centre is set.
+</Step>
+
+<Step id="flake-salmon">
+  Flake the salmon into a bowl with a fork, removing any bones as you go. This takes
+  <Dur step="flake-salmon"/>, and the flakes are left to cool while the rice is shaped.
+</Step>
+
+<Step id="shape-onigiri">
+  Wet your hands in a bowl of lightly salted water, shake them dry, and take a portion of the warm
+  rice in your palm. Press a hollow in the centre, put in a spoonful of the flaked salmon, and close
+  the rice over it. Shape it into a triangle with light, firm pressure, then wrap a strip of the
+  <Qty ref="nori"/> around its base just before it is eaten. This takes <Dur step="shape-onigiri"/>.
+</Step>

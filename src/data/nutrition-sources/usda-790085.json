@@ -1,0 +1,70 @@
+{
+  "sourceDataset": "USDA FDC Foundation",
+  "sourceId": "790085",
+  "sourceUrl": "https://fdc.nal.usda.gov/food-details/790085/nutrients",
+  "description": "Flour, whole wheat, unenriched",
+  "category": "Cereal Grains and Pasta",
+  "publicationDate": "4/1/2020",
+  "retrieved": "2026-11-19",
+  "nutritionPer100g": {
+    "kcal": 370,
+    "protein": 15.1,
+    "fat": 2.73,
+    "carbs": 71.2,
+    "fiber": 10.6,
+    "calcium": 38,
+    "iron": 3.86,
+    "magnesium": 136,
+    "phosphorus": 352,
+    "potassium": 376,
+    "sodium": 3,
+    "zinc": 3.24,
+    "copper": 0.452,
+    "manganese": 3.56,
+    "seleniumMcg": 23.6,
+    "thiamin": 0.504,
+    "riboflavin": 0.128,
+    "niacin": 5.55,
+    "vitaminB6": 0.268
+  },
+  "unmapped": [
+    {
+      "number": "255",
+      "name": "Water",
+      "amount": 9.44,
+      "unit": "g"
+    },
+    {
+      "number": "268",
+      "name": "Energy",
+      "amount": 1550,
+      "unit": "kJ"
+    },
+    {
+      "number": "202",
+      "name": "Nitrogen",
+      "amount": 2.41,
+      "unit": "g"
+    },
+    {
+      "number": "207",
+      "name": "Ash",
+      "amount": 1.56,
+      "unit": "g"
+    },
+    {
+      "number": "316",
+      "name": "Molybdenum, Mo",
+      "amount": 58.5,
+      "unit": "µg"
+    },
+    {
+      "number": "417",
+      "name": "Folate, total",
+      "amount": 39,
+      "unit": "µg"
+    }
+  ],
+  "skipped": [],
+  "densityCandidates": []
+}

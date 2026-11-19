@@ -1,0 +1,82 @@
+---
+# The same sauce made in a blender: the basil is pulsed in short bursts so the
+# blades do not warm it, and the cheese is folded in by hand afterwards.
+label: Blender
+defaultServings: 4
+difficulty: Easy
+ingredients:
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 60
+    unit: g
+    note: leaves only, picked and dried
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 3
+    unit: g
+    note: peeled
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 4
+    unit: g
+  - id: pine-nuts
+    ingredientRef: pine-nuts
+    form: shelled
+    amount: 20
+    unit: g
+  - id: parmigiano
+    ingredientRef: parmigiano-reggiano
+    form: aged
+    amount: 30
+    unit: g
+    note: finely grated
+  - id: pecorino
+    ingredientRef: pecorino-romano
+    form: aged
+    amount: 20
+    unit: g
+    note: finely grated
+  - id: olive-oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 100
+    unit: ml
+    portions:
+      - { id: oil-base, amount: 50, note: for the blender }
+      - { id: oil-finish, amount: 50, note: stirred in at the end }
+steps:
+  - { id: blend-base, durationMin: 2, type: active, phase: prep }
+  - { id: add-basil, durationMin: 3, type: active, phase: prep }
+  - { id: finish-by-hand, durationMin: 2, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Pesto is best within a day of making. Keep it covered in the fridge with a thin layer of oil over the surface, which slows the browning.
+  freezable: true
+  freezeInstructions: Freeze in small portions, covered with a layer of oil. Thaw in the fridge before stirring it through hot pasta.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: add-basil
+      text: Basil fears heat, and the blades warm the mixture as they run. Short pulses, with the cheese kept out of the blender, keep the leaves green and the sauce fresh.
+  commonPitfalls:
+    - stepId: add-basil
+      text: Running the blender without a break warms and darkens the basil. Pulse in short bursts and scrape the sides down between them.
+---
+
+<Step id="blend-base">
+  Put the <Qty ref="garlic"/>, the <Qty ref="salt"/>, the <Qty ref="pine-nuts"/> and the
+  <Qty ref="oil-base"/> into the blender and pulse until they form a coarse paste.
+</Step>
+
+<Step id="add-basil">
+  Add the <Qty ref="basil"/> and pulse in short bursts, scraping the sides down between
+  them, for <Dur step="add-basil"/>, until the sauce is a fine green paste.
+</Step>
+
+<Step id="finish-by-hand">
+  Turn the paste into a bowl and beat in the <Qty ref="parmigiano"/>, the
+  <Qty ref="pecorino"/> and the <Qty ref="oil-finish"/> by hand for
+  <Dur step="finish-by-hand"/>, until smooth and loose. Serve at once.
+</Step>

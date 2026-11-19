@@ -1,0 +1,85 @@
+---
+title: Croque Monsieur
+subtitle: Ham and Gruyère between slices of white bread, topped with more cheese and fried in butter until crisp and melted; a serving is one sandwich.
+label: Monsieur
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [snack]
+  method: [pan-frying]
+names:
+  notToBeConfusedWith:
+    - name: Grilled cheese
+      note: A cheese sandwich with no ham and no second layer of cheese on top, cooked in a pan or under a grill; the croque monsieur is a specific French sandwich of ham and Gruyère.
+      slugRef: grilled-cheese
+image:
+  src: images/recipes/croque-monsieur.webp
+  alt: "A croque monsieur in a dark pan: ham between toasted bread slices, topped with melted, browned cheese"
+ingredients:
+  - id: bread
+    ingredientRef: sandwich-bread
+    form: white
+    amount: 280
+    unit: g
+    note: sliced, crusts removed
+  - id: ham
+    ingredientRef: ham
+    form: sliced
+    amount: 240
+    unit: g
+    note: thinly sliced cooked ham
+  - id: gruyere
+    ingredientRef: gruyere
+    form: aged
+    amount: 200
+    unit: g
+    portions:
+      - { id: gruyere-inside, amount: 120, note: thinly sliced }
+      - { id: gruyere-top, amount: 80, note: grated }
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 40
+    unit: g
+    note: clarified, for frying
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 1
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+steps:
+  - { id: assemble-sandwiches, durationMin: 6, type: active, phase: prep }
+  - { id: fry-sandwiches, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The sandwiches can be assembled a few hours ahead and kept covered in the fridge. Fry them just before serving, since they lose their crispness as they stand.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: fry-sandwiches
+      text: The sandwich is fried in butter with a lid over it, so the bread crisps on the outside while the cheese inside melts. Without the lid the top layer of cheese does not melt before the bread darkens.
+  commonPitfalls:
+    - stepId: fry-sandwiches
+      text: A pan over a high heat burns the bread before the cheese has melted. Keep the heat at medium and turn the sandwich once, when the first side is deep golden.
+---
+
+<Step id="assemble-sandwiches">
+  Lay out the <Qty ref="bread"/> in pairs and season the inside of each pair lightly with the
+  <Qty ref="salt"/> and the <Qty ref="pepper"/>. Layer the <Qty ref="ham"/> and the
+  <Qty ref="gruyere-inside"/> on one slice of each pair, then close the sandwiches. Press the grated
+  <Qty ref="gruyere-top"/> on top of each sandwich. This takes <Dur step="assemble-sandwiches"/>.
+</Step>
+
+<Step id="fry-sandwiches">
+  Melt the <Qty ref="butter"/> in a heavy frying pan over a medium heat. Fry the sandwiches for
+  <Dur step="fry-sandwiches"/> in all, turning them once, until the bread is deep golden on both
+  sides and the cheese has melted. Cover the pan for the last minute or so to melt the cheese on
+  top. Cut each sandwich in half to serve.
+</Step>

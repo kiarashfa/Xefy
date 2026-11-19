@@ -1,0 +1,176 @@
+---
+title: Shabu-Shabu
+subtitle: Thin slices of beef swished through a kombu broth at the table until they just change colour, then dipped in ponzu or a sesame sauce.
+label: Kombu broth
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [poaching]
+names:
+  searchOnly: ["shabu shabu", "shabushabu"]
+image:
+  src: images/recipes/shabu-shabu.webp
+  alt: "Shabu-shabu at the table: a pot of simmering broth with leek, sprouts and greens, and a plate of thinly sliced raw beef held with chopsticks"
+ingredients:
+  - id: kombu
+    ingredientRef: kombu
+    form: dried
+    amount: 10
+    unit: g
+    note: a postcard-sized piece, wiped with a dry cloth
+    consumedFraction: 0.06
+    consumedFractionNote: "The kombu is lifted out whole and discarded; only what it gives up to the broth is eaten. This is the same editorial estimate as the dashi component."
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1560
+    unit: ml
+    portions:
+      - { id: broth-water, amount: 1500, note: for the kombu broth }
+      - { id: goma-water, amount: 60, note: for the sesame sauce }
+  - id: beef
+    ingredientRef: beef
+    form: raw
+    amount: 300
+    unit: g
+    note: top sirloin, sliced paper-thin
+  - id: tofu
+    ingredientRef: tofu
+    form: firm
+    amount: 200
+    unit: g
+    note: cut into cubes
+  - id: napa
+    ingredientRef: napa-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: cut into large pieces
+  - id: enoki
+    ingredientRef: enoki
+    form: raw
+    amount: 100
+    unit: g
+    note: root base cut off and separated into small clumps
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 100
+    unit: g
+    note: sliced thinly on the diagonal
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 80
+    unit: ml
+    portions:
+      - { id: soy-ponzu, amount: 60, note: for the ponzu }
+      - { id: soy-goma, amount: 20, note: for the sesame sauce }
+  - id: lemon
+    ingredientRef: lemon-juice
+    form: fresh
+    amount: 60
+    unit: ml
+    note: for the ponzu, in place of yuzu juice
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 20
+    unit: ml
+    note: for the ponzu
+  - id: katsuobushi
+    ingredientRef: katsuobushi
+    form: shaved
+    amount: 5
+    unit: g
+    consumedFraction: 0.08
+    consumedFractionNote: "The flakes are strained out of the ponzu and discarded; what stays behind is what dissolved into it."
+  - id: daikon
+    ingredientRef: daikon
+    form: raw
+    amount: 100
+    unit: g
+    note: grated, to serve with the ponzu
+  - id: sesame-paste
+    ingredientRef: sesame-paste
+    form: toasted
+    amount: 40
+    unit: g
+    note: for the sesame sauce
+  - id: vinegar
+    ingredientRef: rice-vinegar
+    form: plain
+    amount: 10
+    unit: ml
+    note: for the sesame sauce
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 10
+    unit: g
+    note: for the sesame sauce
+steps:
+  - { id: steep-kombu-broth, durationMin: 30, type: passive }
+  - { id: heat-broth, durationMin: 10, type: active, phase: cook }
+  - { id: make-ponzu, durationMin: 10, type: "parallel-with:steep-kombu-broth", phase: prep }
+  - { id: make-goma, durationMin: 6, type: "parallel-with:steep-kombu-broth", phase: prep }
+  - { id: prep-vegetables, durationMin: 12, type: "parallel-with:steep-kombu-broth", phase: prep }
+  - { id: cook-at-table, durationMin: 20, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The kombu broth can be made a day ahead and kept cold. The ponzu and the sesame sauce keep in the fridge for a day. The beef is sliced at the last moment, because thin slices darken and dry as they stand.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: heat-broth
+      text: The broth is kombu alone, without katsuobushi, so that its flavour stays light enough not to mask the beef. Seasoning comes from the sauces at the table, which is why the broth itself is kept unseasoned.
+  commonPitfalls:
+    - stepId: cook-at-table
+      text: Beef left in the broth keeps cooking and toughens. Each slice is lifted out as soon as its colour changes, and the next goes in only after it has been eaten.
+---
+
+<Step id="steep-kombu-broth">
+  Wipe the <Qty ref="kombu"/> over with a dry cloth, leaving the white bloom on the surface, and put
+  it into a pot with the <Qty ref="broth-water"/>. Leave it to steep for
+  <Dur step="steep-kombu-broth"/>.
+</Step>
+
+<Step id="heat-broth">
+  Bring the pot up slowly over a low flame, and lift the <Qty ref="kombu"/> out as soon as the first
+  fine bubbles form on the sides. Keep the broth just below a simmer. Kombu held at the boil turns the
+  broth slippery and faintly bitter, and the broth is the only cooking liquid the beef meets. This
+  takes <Dur step="heat-broth"/>.
+</Step>
+
+<Step id="make-ponzu">
+  Combine the <Qty ref="soy-ponzu"/> with the <Qty ref="lemon"/> and the <Qty ref="mirin"/>,
+  then scatter in the <Qty ref="katsuobushi"/>. Leave it to steep for <Dur step="make-ponzu"/>, then
+  strain it through a fine sieve into a small jug. Grate the <Qty ref="daikon"/> and set it out
+  beside the ponzu.
+</Step>
+
+<Step id="make-goma">
+  Work the <Qty ref="sesame-paste"/> in a bowl with the <Qty ref="goma-water"/> until it is smooth and
+  loose. Stir in the <Qty ref="soy-goma"/>, the <Qty ref="vinegar"/> and the
+  <Qty ref="sugar"/>, and keep stirring until the sugar has dissolved. This takes
+  <Dur step="make-goma"/>.
+</Step>
+
+<Step id="prep-vegetables">
+  Cut the <Qty ref="tofu"/> into cubes and the <Qty ref="napa"/> into large pieces. Separate the
+  <Qty ref="enoki"/> into small clumps and slice the <Qty ref="spring-onion"/> thinly on the diagonal.
+  Lay the <Qty ref="beef"/> out on a plate in single slices, so that each one can be lifted without
+  tearing. This takes <Dur step="prep-vegetables"/>.
+</Step>
+
+<Step id="cook-at-table">
+  Set the pot of broth on a portable burner at the table and bring it back to just below a simmer.
+  Each diner takes a slice of the <Qty ref="beef"/> with chopsticks and swishes it through the broth
+  for a few seconds, until it just changes colour, then dips it in the ponzu or the sesame sauce and
+  eats it at once. The <Qty ref="tofu"/>, the <Qty ref="napa"/> and the <Qty ref="enoki"/> are cooked
+  in the same broth and left in longer, and the <Qty ref="spring-onion"/> goes in last. This takes
+  <Dur step="cook-at-table"/>.
+</Step>

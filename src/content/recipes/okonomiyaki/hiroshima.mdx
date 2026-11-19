@@ -1,0 +1,110 @@
+---
+label: Hiroshima layered
+defaultServings: 2
+difficulty: Medium
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 80
+    unit: g
+    note: for a thin batter
+  - id: egg
+    ingredientRef: egg
+    form: whole
+    amount: 100
+    unit: g
+    note: cracked onto the top of each pancake
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 300
+    unit: g
+    note: thinly sliced
+  - id: bean-sprouts
+    ingredientRef: bean-sprouts
+    form: raw
+    amount: 80
+    unit: g
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 120
+    unit: g
+    note: in thin slices
+  - id: noodles
+    ingredientRef: ramen-noodles
+    form: steamed
+    amount: 200
+    unit: g
+    note: the steamed noodles as bought
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 20
+    unit: ml
+    consumedFraction: 0.8
+    consumedFractionNote: "A little of the oil stays in the pan when the pancakes are turned out. This is an editorial estimate, not a sourced figure."
+  - id: sauce
+    ingredientRef: tonkatsu-sauce
+    form: okonomiyaki
+    amount: 60
+    unit: g
+  - id: aonori
+    ingredientRef: aonori
+    form: dried
+    amount: 2
+    unit: g
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: red
+    amount: 10
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+steps:
+  - { componentRef: dashi, multiplier: 0.25 }
+  - { id: prepare-layers, durationMin: 8, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: mix-thin-batter, durationMin: 3, type: active, phase: prep }
+  - { id: fry-noodles, durationMin: 5, type: active, phase: cook }
+  - { id: build-layers, durationMin: 12, type: active, phase: cook }
+  - { id: finish-hiroshima, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi can be made a day ahead. The thin batter is mixed just before cooking, and the noodles are fried as the pancake is built.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+---
+
+<Step id="prepare-layers">
+  Shred the <Qty ref="cabbage"/> thinly and pick over the <Qty ref="bean-sprouts"/>. Lay the
+  <Qty ref="pork"/> slices out on a board. This takes <Dur step="prepare-layers"/>.
+</Step>
+
+<Step id="mix-thin-batter">
+  Whisk the <Qty ref="flour"/> with the strained dashi and the <Qty ref="salt"/> until smooth
+  and thin, thinner than the mixed batter. This takes <Dur step="mix-thin-batter"/>.
+</Step>
+
+<Step id="fry-noodles">
+  Heat the <Qty ref="oil"/> in a wide pan over a medium-high heat. Fry the <Qty ref="noodles"/>
+  loose for <Dur step="fry-noodles"/>, turning them with chopsticks, and then set them aside
+  on a plate.
+</Step>
+
+<Step id="build-layers">
+  Pour a thin layer of the batter into a clean hot pan and let it set for a moment. Pile
+  the <Qty ref="cabbage"/> on top and press it down, then add the <Qty ref="bean-sprouts"/>,
+  the <Qty ref="pork"/> and the fried noodles in turn, one layer on another. Crack the
+  <Qty ref="egg"/> on top, and cook for <Dur step="build-layers"/>, turning the whole pancake
+  once with two spatulas, until the cabbage is tender and the pork is cooked through.
+</Step>
+
+<Step id="finish-hiroshima">
+  Slide each pancake onto a plate with the egg side up. Brush it with the <Qty ref="sauce"/>
+  and finish with the <Qty ref="aonori"/> and the <Qty ref="pickled-ginger"/>. Serve at once,
+  with no mayonnaise.
+</Step>

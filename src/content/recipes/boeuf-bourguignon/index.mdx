@@ -1,0 +1,185 @@
+---
+title: Bœuf Bourguignon
+subtitle: Beef chuck braised slowly in red wine with lardons, onions and mushrooms, then thickened at the end; a serving is one portion.
+label: Red wine braise
+defaultServings: 6
+difficulty: Medium
+tags:
+  cuisine: [french]
+  course: [main-course]
+  method: [braising]
+names:
+  notToBeConfusedWith:
+    - name: Coq au vin
+      note: The same red wine braise made with chicken rather than beef, with its own garnish and its own method.
+image:
+  src: images/recipes/boeuf-bourguignon.webp
+  alt: "Chunks of beef braised in dark red-wine sauce served beside egg noodles in a white bowl, garnished with a sprig of herb"
+ingredients:
+  - id: beef
+    ingredientRef: beef-chuck
+    form: raw
+    amount: 1000
+    unit: g
+    note: cut into cubes about the size of a walnut
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 30
+    unit: g
+  - id: lardons
+    ingredientRef: streaky-bacon
+    form: raw
+    amount: 150
+    unit: g
+    note: cut into lardons
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 30
+    unit: ml
+    portions:
+      - { id: oil-browning, amount: 15 }
+      - { id: oil-lardons, amount: 15 }
+  - id: onion
+    ingredientRef: onion
+    form: white
+    amount: 200
+    unit: g
+    note: chopped
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 200
+    unit: g
+    note: cut into thick rounds
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+  - id: tomato-puree
+    ingredientRef: tomato-puree
+    form: concentrated
+    amount: 15
+    unit: g
+  - id: red-wine
+    ingredientRef: red-wine
+    form: table
+    amount: 750
+    unit: ml
+  - id: cognac
+    ingredientRef: cognac
+    form: brandy
+    amount: 30
+    unit: ml
+  - id: stock
+    ingredientRef: stock
+    form: beef
+    amount: 300
+    unit: ml
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.6
+    unit: g
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 5
+    unit: g
+  - id: mushrooms
+    ingredientRef: mushroom
+    form: raw
+    amount: 250
+    unit: g
+    note: whole button mushrooms, halved if large
+  - id: butter
+    ingredientRef: butter
+    form: unsalted
+    amount: 30
+    unit: g
+    portions:
+      - { id: butter-mushrooms, amount: 15 }
+      - { id: butter-finish, amount: 15 }
+  - id: parsley
+    ingredientRef: parsley
+    form: flat-leaf
+    amount: 10
+    unit: g
+    note: chopped, to finish
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 8
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: brown-beef, durationMin: 15, type: active, phase: cook }
+  - { id: render-lardons, durationMin: 8, type: active, phase: cook }
+  - { id: soften-vegetables, durationMin: 10, type: active, phase: cook }
+  - { id: deglaze, durationMin: 5, type: active, phase: cook }
+  - { id: braise, durationMin: 150, type: passive }
+  - { id: cook-mushrooms, durationMin: 12, type: "parallel-with:braise", phase: cook }
+  - { id: finish, durationMin: 8, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The braise improves if it is made a day ahead. Cool it, keep it in the fridge, and skim the fat from the surface before reheating it gently.
+  freezable: true
+  freezeInstructions: Freeze the braise without the mushrooms, in portions, once it has cooled. Add the mushrooms when it is reheated.
+  reheatInstructions: Bring the braise back to a gentle simmer on the hob, then cook the mushrooms and stir them in before serving.
+notes:
+  techniqueRationale:
+    - stepId: brown-beef
+      text: The beef is browned in small batches, so the pan stays hot and the meat colours rather than steams. The brown crust is most of the flavour of the finished sauce.
+  commonPitfalls:
+    - stepId: braise
+      text: A braise that boils rather than simmers toughens the meat. Keep the oven at a low, steady heat and check that the liquid barely moves.
+---
+
+<Step id="brown-beef">
+  Dust the <Qty ref="beef"/> with the <Qty ref="flour"/>. Heat the <Qty ref="oil-browning"/> in a
+  heavy casserole over a high heat and brown the beef in small batches, for
+  <Dur step="brown-beef"/> in all, turning it until each side is deep brown. Set the beef
+  aside as it browns.
+</Step>
+
+<Step id="render-lardons">
+  Add the <Qty ref="oil-lardons"/> to the casserole, then add the <Qty ref="lardons"/> and
+  fry for <Dur step="render-lardons"/>, until the fat has run and the edges are crisp.
+</Step>
+
+<Step id="soften-vegetables">
+  Add the <Qty ref="onion"/>, the <Qty ref="carrot"/> and the <Qty ref="garlic"/>, and cook for
+  <Dur step="soften-vegetables"/>, until the onion is soft and golden. Stir in the
+  <Qty ref="tomato-puree"/> and cook for a minute more.
+</Step>
+
+<Step id="deglaze">
+  Pour in the <Qty ref="cognac"/> and let it bubble for a moment, then add the
+  <Qty ref="red-wine"/>, the <Qty ref="stock"/>, the <Qty ref="bay"/>, the <Qty ref="thyme"/>
+  and the beef with its juices, scraping up the browned bits from the base. This takes
+  <Dur step="deglaze"/>. Bring it to a simmer.
+</Step>
+
+<Step id="braise">
+  Cover the casserole and braise it in the oven at <Temp c={160}/> for <Dur step="braise"/>,
+  until the beef is tender and gives easily when pierced.
+</Step>
+
+<Step id="cook-mushrooms">
+  Melt the <Qty ref="butter-mushrooms"/> in a frying pan over a high heat and cook the
+  <Qty ref="mushrooms"/> until they are browned on the edges and their liquid has evaporated,
+  for <Dur step="cook-mushrooms"/>. Season them lightly.
+</Step>
+
+<Step id="finish">
+  Lift the beef and vegetables into a clean pan. Skim the fat from the braising liquor and
+  boil it hard for <Dur step="finish"/>, until it has reduced and thickened enough to coat a
+  spoon. Whisk in the <Qty ref="butter-finish"/>, return the beef, and add the mushrooms.
+  Season with the <Qty ref="salt"/> and the <Qty ref="pepper"/>, and scatter over the
+  <Qty ref="parsley"/>.
+</Step>

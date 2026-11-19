@@ -1,0 +1,141 @@
+---
+title: Bagel
+subtitle: A ring of yeasted dough, boiled in malt water before it is baked and finished with seeds; a serving is one bagel.
+label: Boiled, then baked
+defaultServings: 8
+difficulty: Medium
+tags:
+  cuisine: [jewish]
+  course: [bread]
+  method: [boiling, baking]
+image:
+  src: images/recipes/bagel.webp
+  alt: "A sesame-crusted bagel on a wire cooling rack, with other bagels blurred behind"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: bread
+    amount: 500
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 2280
+    unit: ml
+    portions:
+      - { id: water-dough, amount: 280, note: lukewarm }
+      - { id: water-boil, amount: 2000, note: for the boil }
+    consumedFraction: 0.14
+    consumedFractionNote: "Blended across the water in the dough, which is eaten, and the water for the boil, which is almost all poured away. The figure is an editorial estimate, not a measurement."
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 10
+    unit: g
+  - id: yeast
+    ingredientRef: dried-yeast
+    form: active-dry
+    amount: 5
+    unit: g
+  - id: malt
+    ingredientRef: barley-malt-syrup
+    form: syrup
+    amount: 30
+    unit: g
+    note: for the boil
+    consumedFraction: 0.02
+    consumedFractionNote: "Almost all of the malt stays in the boiling water, which is poured away. The share that clings to the bagels is an editorial estimate, not a measurement."
+  - id: sesame
+    ingredientRef: sesame-seed
+    form: whole
+    amount: 15
+    unit: g
+    note: for the topping
+  - id: poppy
+    ingredientRef: poppy-seed
+    form: whole
+    amount: 10
+    unit: g
+    note: for the topping
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 10, type: active, phase: prep }
+  - { id: first-rise, durationMin: 60, type: passive }
+  - { id: shape, durationMin: 10, type: active, phase: prep }
+  - { id: second-rise, durationMin: 20, type: passive }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:second-rise", phase: cook }
+  - { id: heat-water, durationMin: 12, type: "parallel-with:second-rise", phase: cook }
+  - { id: boil, durationMin: 4, type: active, phase: cook }
+  - { id: top, durationMin: 2, type: active, phase: cook }
+  - { id: bake, durationMin: 20, type: active, phase: cook }
+  - { id: cool, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: The rings can be shaped and left to prove in the fridge overnight, then boiled and baked straight from cold.
+  freezable: true
+  freezeInstructions: Freeze the cooled bagels in a bag for up to a month. Thaw at room temperature, or toast them from frozen.
+  reheatInstructions: Warm a bagel briefly in a hot oven or a toaster to bring back the crust.
+notes:
+  techniqueRationale:
+    - stepId: boil
+      text: The boil sets the outside before the oven does, so the crust turns glossy and chewy while the crumb stays soft and dense. The malt in the water colours the crust and adds a faint sweetness.
+  commonPitfalls:
+    - stepId: boil
+      text: Water that is not at a steady simmer does not set the outside, and the bagels come out pale and doughy. Keep the pan at a simmer rather than a rolling boil.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/> and the <Qty ref="salt"/> into a large bowl, add the
+  <Qty ref="yeast"/>, and stir them together. Add the <Qty ref="water-dough"/> and mix for
+  <Dur step="mix"/>, until no dry flour remains and the dough is shaggy.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth, elastic and springs back when pressed. The dough is stiffer than a loaf dough, so it
+  will take a little more effort.
+</Step>
+
+<Step id="first-rise">
+  Put the dough in an oiled bowl, cover it, and leave it to rise for <Dur step="first-rise"/>,
+  until it has doubled in size.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces and roll each one into a smooth ball. Roll each ball into
+  a rope about <Len cm={25}/> long, then join the ends into a ring and pinch them firmly
+  together. Set the rings on a floured cloth and cover them.
+</Step>
+
+<Step id="second-rise">
+  Leave the rings to prove for <Dur step="second-rise"/>, until a fingertip pressed in leaves
+  a dent that springs back slowly.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={230}/> with a shelf in the middle, and line a baking tray with
+  baking paper.
+</Step>
+
+<Step id="heat-water">
+  Bring the <Qty ref="water-boil"/> to the boil in a wide pan. Stir in the <Qty ref="malt"/>
+  until it dissolves, then reduce the heat to a steady simmer.
+</Step>
+
+<Step id="boil">
+  Lower the rings into the simmering water, a few at a time, and boil them for
+  <Dur step="boil"/> in total, turning them once. Lift them out with a slotted spoon and let
+  them drain.
+</Step>
+
+<Step id="top">
+  Mix the <Qty ref="sesame"/> and the <Qty ref="poppy"/> on a plate. Press the top of each
+  drained ring into the seeds, then set it on the lined tray.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep golden and firm to the touch.
+</Step>
+
+<Step id="cool">
+  Leave the bagels on a rack for <Dur step="cool"/> before cutting, so the crumb can set.
+</Step>

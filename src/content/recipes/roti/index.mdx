@@ -1,0 +1,91 @@
+---
+title: Roti
+subtitle: A thin, unleavened round of whole-wheat atta dough cooked on a dry hot pan and brushed with ghee; a serving is one roti.
+label: Tawa-cooked
+defaultServings: 10
+difficulty: Easy
+tags:
+  cuisine: [indian]
+  course: [bread]
+  method: [pan-frying]
+image:
+  src: images/recipes/roti.webp
+  alt: "A soft whole-wheat roti with brown tawa-char spots on a paper plate, beside a small bowl of spiced potato curry"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: atta
+    amount: 250
+    unit: g
+    portions:
+      - { id: flour-dough, amount: 240 }
+      - { id: flour-bench, amount: 10, note: for dusting the bench }
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 150
+    unit: ml
+    note: at about room temperature
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 5
+    unit: g
+  - id: ghee
+    ingredientRef: ghee
+    form: clarified
+    amount: 15
+    unit: g
+    note: melted, for brushing
+steps:
+  - { id: mix, durationMin: 4, type: active, phase: prep }
+  - { id: knead, durationMin: 8, type: active, phase: prep }
+  - { id: rest, durationMin: 30, type: passive }
+  - { id: shape, durationMin: 12, type: active, phase: prep }
+  - { id: heat-pan, durationMin: 10, type: "parallel-with:shape", phase: cook }
+  - { id: cook, durationMin: 12, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dough can be kneaded up to a day ahead and kept covered in the fridge. Bring it back to room temperature before rolling.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: rest
+      text: The rest relaxes the gluten in the dough, so each round can be rolled wide without springing back and shrinking on the pan.
+  commonPitfalls:
+    - stepId: cook
+      text: A round rolled too thick stays raw in the middle, and one rolled too thin tears on the pan. Keep the rounds even and turn them as soon as the first side blisters.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour-dough"/> and the <Qty ref="salt"/> into a bowl. Add the
+  <Qty ref="water"/> a little at a time, and mix for <Dur step="mix"/>, until a soft dough
+  forms and no dry flour remains.
+</Step>
+
+<Step id="knead">
+  Turn the dough onto a lightly floured bench and knead for <Dur step="knead"/>, until it is
+  smooth and pliable.
+</Step>
+
+<Step id="rest">
+  Cover the dough and leave it to rest for <Dur step="rest"/>, so that it relaxes and rolls
+  out without shrinking.
+</Step>
+
+<Step id="shape">
+  Divide the dough into equal pieces and roll each one into a smooth ball. Dust the bench with
+  the <Qty ref="flour-bench"/>, and roll each ball into a thin round about <Len cm={18}/>
+  across. Keep the rounds covered until they go on the pan.
+</Step>
+
+<Step id="heat-pan">
+  Heat a heavy pan or tawa over a medium-high heat until it is very hot to the touch.
+</Step>
+
+<Step id="cook">
+  Lay a round on the hot pan and cook it for <Dur step="cook"/> in total, turning it as soon
+  as the underside blisters and browns in spots. Cook the other side the same way. Brush each
+  roti with the <Qty ref="ghee"/> as it comes off the pan.
+</Step>

@@ -1,0 +1,139 @@
+---
+title: Ratatouille
+subtitle: Aubergine, courgette, pepper, onion and tomato, each fried in olive oil, then stewed together slowly with garlic and herbs; a serving is one portion.
+label: Stewed
+defaultServings: 4
+difficulty: Easy
+tags:
+  cuisine: [french]
+  course: [side]
+  method: [sauteing, stewing]
+names:
+  alsoKnownAs:
+    - { name: Ratatouille niçoise, region: Nice, lang: fr }
+image:
+  src: images/recipes/ratatouille.webp
+  alt: "Ratatouille in a black frying pan: chunks of courgette, aubergine, peppers and tomato with a bay leaf and thyme sprigs"
+ingredients:
+  - id: aubergine
+    ingredientRef: aubergine
+    form: raw
+    amount: 800
+    unit: g
+    note: cut into cubes
+  - id: courgette
+    ingredientRef: courgette
+    form: raw
+    amount: 600
+    unit: g
+    note: cut into thick half-moons
+  - id: pepper
+    ingredientRef: red-pepper
+    form: fresh
+    amount: 300
+    unit: g
+    note: deseeded and cut into strips
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 200
+    unit: g
+    note: chopped
+  - id: tomatoes
+    ingredientRef: tomato
+    form: fresh
+    amount: 800
+    unit: g
+    note: skinned and chopped
+  - id: garlic
+    ingredientRef: garlic
+    form: raw
+    amount: 10
+    unit: g
+    note: crushed
+  - id: oil
+    ingredientRef: olive-oil
+    form: extra-virgin
+    amount: 80
+    unit: ml
+    note: for frying and stewing
+  - id: thyme
+    ingredientRef: thyme
+    form: fresh
+    amount: 3
+    unit: g
+  - id: bay
+    ingredientRef: bay-leaf
+    form: dried
+    amount: 0.6
+    unit: g
+  - id: basil
+    ingredientRef: basil
+    form: fresh
+    amount: 10
+    unit: g
+    note: torn, to finish
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: pepper-ground
+    ingredientRef: black-pepper
+    form: ground
+    amount: 2
+    unit: g
+steps:
+  - { id: cut-vegetables, durationMin: 20, type: active, phase: prep }
+  - { id: fry-aubergine, durationMin: 10, type: active, phase: cook }
+  - { id: fry-courgette, durationMin: 6, type: active, phase: cook }
+  - { id: soften-pepper-onion, durationMin: 8, type: active, phase: cook }
+  - { id: stew, durationMin: 40, type: passive }
+  - { id: finish, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: Ratatouille is better the next day, once the flavours have settled. Cool it, keep it covered in the fridge and bring it back to a gentle heat before serving.
+  freezable: true
+  freezeInstructions: Freeze it once cooled, in portions. Thaw it fully before reheating.
+  reheatInstructions: Reheat gently in a covered pan, stirring now and then, until it is hot through.
+notes:
+  techniqueRationale:
+    - stepId: fry-aubergine
+      text: Each vegetable is fried separately before the stew, because aubergine and courgette give off water and go soft and grey if they are crowded into the pot raw. Frying them first keeps their shape and gives the stew its depth.
+  commonPitfalls:
+    - stepId: stew
+      text: A stew left to boil hard breaks down into a purée with no distinct vegetables. Keep the pan at a bare simmer with a lid on, and stir gently.
+---
+
+<Step id="cut-vegetables">
+  Cut the <Qty ref="aubergine"/> into cubes, the <Qty ref="courgette"/> into thick half-moons, and
+  deseed the <Qty ref="pepper"/>. Chop the <Qty ref="onion"/> and skin and chop the
+  <Qty ref="tomatoes"/>. This takes <Dur step="cut-vegetables"/>.
+</Step>
+
+<Step id="fry-aubergine">
+  Heat some of the <Qty ref="oil"/> in a wide pan over a high heat and fry the <Qty ref="aubergine"/>
+  in batches for <Dur step="fry-aubergine"/>, until golden on all sides. Drain the batches on
+  kitchen paper as they are done.
+</Step>
+
+<Step id="fry-courgette">
+  Add a little more of the <Qty ref="oil"/> to the pan and fry the <Qty ref="courgette"/> for
+  <Dur step="fry-courgette"/>, until it is lightly coloured. Drain it.
+</Step>
+
+<Step id="soften-pepper-onion">
+  Add the remaining <Qty ref="oil"/> to the pan with the <Qty ref="pepper"/> and the
+  <Qty ref="onion"/>, and cook them for <Dur step="soften-pepper-onion"/>, until soft and beginning
+  to colour. Add the <Qty ref="garlic"/> for the last minute.
+</Step>
+
+<Step id="stew">
+  Return the aubergine and courgette to the pan with the <Qty ref="tomatoes"/>, the
+  <Qty ref="thyme"/>, the <Qty ref="bay"/>, the <Qty ref="salt"/> and the <Qty ref="pepper-ground"/>.
+  Cover and simmer very gently for <Dur step="stew"/>, stirring now and then, until the vegetables
+  are tender and the liquid has reduced to a thick sauce.
+</Step>
+
+<Step id="finish">
+  Take out the bay leaf and stir in the <Qty ref="basil"/>. This takes <Dur step="finish"/>.
+</Step>

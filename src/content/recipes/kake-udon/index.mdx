@@ -1,0 +1,96 @@
+---
+title: Kake Udon
+subtitle: Thick wheat noodles in a hot, light broth of dashi, soy and mirin, finished with spring onion and grated ginger.
+label: Hot broth
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [boiling]
+names:
+  searchOnly: ["kake udon", "udon in broth", "udon noodle soup"]
+image:
+  src: images/recipes/kake-udon.webp
+  alt: "Thick udon noodles in clear amber broth with chopped spring onion, in a dark brown bowl on a tray"
+ingredients:
+  - id: udon
+    ingredientRef: wheat-noodles
+    form: udon
+    amount: 400
+    unit: g
+    note: pre-cooked, as bought, two bowls of about two hundred grams each
+  - id: soy
+    ingredientRef: soy-sauce
+    form: light
+    amount: 35
+    unit: ml
+  - id: mirin
+    ingredientRef: mirin
+    form: standard
+    amount: 35
+    unit: ml
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 350
+    unit: ml
+    note: hot, for diluting the tsuyu
+    consumedFraction: 0.85
+    consumedFractionNote: "Some of the diluted tsuyu is left in the cup or the bowl; this is an editorial estimate, not a sourced figure."
+  - id: spring-onion
+    ingredientRef: spring-onion
+    form: fresh
+    amount: 20
+    unit: g
+    note: finely sliced
+  - id: ginger
+    ingredientRef: ginger
+    form: root
+    amount: 4
+    unit: g
+    note: grated
+steps:
+  - { componentRef: dashi, multiplier: 0.25 }
+  - { id: slice-spring-onion, durationMin: 4, type: "parallel-with:steep-kombu", phase: prep }
+  - { id: heat-udon, durationMin: 2, type: "parallel-with:steep-kombu", phase: cook }
+  - { id: simmer-tsuyu, durationMin: 3, type: active, phase: cook }
+  - { id: assemble-bowls, durationMin: 3, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The dashi and the tsuyu can be made a day ahead and kept cold. The broth is made hot and the noodles heated just before the bowls are assembled, because the noodles soften if they sit in the broth.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: simmer-tsuyu
+      text: The soy and mirin are simmered briefly with the dashi, not just stirred in, so that the mirin loses its raw alcohol edge before the broth is diluted. The result is a clean, rounded broth in place of a sharp one.
+  commonPitfalls:
+    - stepId: heat-udon
+      text: Udon that is boiled hard for long becomes slack and cloudy in the broth. The noodles are only heated through, lifted out and drained before they go into the bowl.
+---
+
+<Step id="slice-spring-onion">
+  Slice the <Qty ref="spring-onion"/> finely and grate the <Qty ref="ginger"/>. This takes
+  <Dur step="slice-spring-onion"/>.
+</Step>
+
+<Step id="heat-udon">
+  Bring a large pan of water to the boil. Lower in the <Qty ref="udon"/> and heat them
+  through for <Dur step="heat-udon"/>, loosening them with chopsticks. Lift them out and
+  drain them well, then divide them between two deep bowls.
+</Step>
+
+<Step id="simmer-tsuyu">
+  Pour the strained dashi into a small pan with the <Qty ref="soy"/> and the
+  <Qty ref="mirin"/>. Bring it to the boil, then simmer for <Dur step="simmer-tsuyu"/> to
+  cook off the alcohol in the mirin. This is the tsuyu. Dilute it with the
+  <Qty ref="water"/>, one part tsuyu to two parts water, and heat the broth until it is
+  steaming but not boiling.
+</Step>
+
+<Step id="assemble-bowls">
+  Pour the hot broth over the noodles in each bowl. Top each with a little of the
+  <Qty ref="spring-onion"/> and a small mound of the grated <Qty ref="ginger"/>, and serve
+  at once.
+</Step>

@@ -1,0 +1,63 @@
+{
+  "id": "sulguni",
+  "name": "Sulguni",
+  "proseName": "sulguni",
+  "category": "dairy",
+  "animalOrigin": "dairy",
+  "containsGluten": false,
+  "containsDairy": true,
+  "allergenTags": [
+    "dairy"
+  ],
+  "names": {
+    "searchOnly": [
+      "suluguni"
+    ]
+  },
+  "forms": [
+    {
+      "id": "brined",
+      "label": "Brined",
+      "sourceDataset": "USDA FDC SR Legacy",
+      "sourceId": "170846",
+      "sourceUrl": "https://fdc.nal.usda.gov/food-details/170846/nutrients",
+      "nutritionPer100g": {
+        "kcal": 318,
+        "protein": 21.6,
+        "fat": 24.64,
+        "carbs": 2.47,
+        "fiber": 0,
+        "sugars": 1.01,
+        "calcium": 575,
+        "iron": 0.2,
+        "magnesium": 21,
+        "phosphorus": 412,
+        "potassium": 75,
+        "sodium": 710,
+        "zinc": 2.46,
+        "copper": 0.022,
+        "manganese": 0.009,
+        "seleniumMcg": 16.1,
+        "vitaminC": 0,
+        "thiamin": 0.016,
+        "riboflavin": 0.27,
+        "niacin": 0.094,
+        "vitaminB6": 0.062,
+        "folateMcg": 8,
+        "choline": 15,
+        "vitaminB12Mcg": 0.73,
+        "vitaminAMcg": 197,
+        "vitaminE": 0.21,
+        "vitaminDMcg": 0.5,
+        "vitaminKMcg": 2.5,
+        "saturatedFat": 15.561,
+        "monounsaturatedFat": 7.027,
+        "polyunsaturatedFat": 0.778,
+        "cholesterol": 89
+      },
+      "sourceNote": "USDA has no record for sulguni. This is its record for whole-milk low-moisture mozzarella, the nearest match in method and milk: a cow's milk pasta filata cheese. Sulguni is kneaded and stretched in hot water and then brined, so this record stands in for its fat and protein rather than its salt.",
+      "nutritionCaveat": "Cited against whole-milk low-moisture mozzarella. Sulguni is brined in salt water after it is shaped, so it carries more salt than these figures show; USDA publishes no sulguni record."
+    }
+  ],
+  "image": "images/ingredients/sulguni-thumb.webp"
+}

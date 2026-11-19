@@ -1,0 +1,85 @@
+---
+title: Mochi
+subtitle: Glutinous rice flour mixed with sugar and water, steamed and kneaded into a soft, chewy dough, dusted with potato starch and shaped into pieces. One serving is one piece.
+label: Plain
+defaultServings: 12
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [dessert]
+  method: [steaming]
+names:
+  searchOnly: ["mochi rice cake", "japanese rice cake"]
+ingredients:
+  - id: flour
+    ingredientRef: glutinous-rice-flour
+    form: mochiko
+    amount: 200
+    unit: g
+    note: fine glutinous rice flour
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 40
+    unit: g
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 180
+    unit: ml
+  - id: starch
+    ingredientRef: potato-starch
+    form: starch
+    amount: 40
+    unit: g
+    note: for dusting the board and the pieces
+    portions:
+      - { id: starch-board, amount: 20, note: for the board }
+      - { id: starch-dough, amount: 20, note: for the hands and the pieces }
+    consumedFraction: 0.5
+    consumedFractionNote: "Much of the dusting falls onto the board and is brushed away. Half is taken as the thin coat on each piece, an editorial estimate, not a sourced figure."
+steps:
+  - { id: mix-dough, durationMin: 4, type: active, phase: prep }
+  - { id: steam-dough, durationMin: 15, type: passive }
+  - { id: dust-board, durationMin: 2, type: "parallel-with:steam-dough", phase: prep }
+  - { id: knead-dough, durationMin: 5, type: active, phase: prep }
+  - { id: shape-mochi, durationMin: 10, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: Mochi is best made on the day it is eaten, because it hardens as it cools. The dough can be mixed and steamed up to an hour before it is shaped, and it is kept covered while it waits.
+  freezable: true
+  freezeInstructions: Wrap each piece in cling film and freeze it. Thaw at room temperature before it is eaten, and do not microwave it from frozen, which makes it tough.
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: steam-dough
+      text: The flour and water are cooked to a smooth, translucent dough in the steamer, so no pounding is needed. The pounding that steamed whole rice requires is replaced by a bowl and a steamer, and the dough comes out evenly soft.
+  commonPitfalls:
+    - stepId: shape-mochi
+      text: Mochi that is left to stand begins to harden as it cools, and the texture is lost. Each piece is shaped and eaten while it is still soft.
+---
+
+<Step id="mix-dough">
+  Whisk the <Qty ref="flour"/>, the <Qty ref="sugar"/> and the <Qty ref="water"/> in a heatproof bowl
+  until there are no lumps. The mixture should be thin and smooth. This takes <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="steam-dough">
+  Set the bowl in a steamer over boiling water, cover, and steam for <Dur step="steam-dough"/>, stirring
+  once halfway through, until the dough is translucent and firm enough to hold its shape.
+</Step>
+
+<Step id="dust-board">
+  Dust a clean board with the <Qty ref="starch-board"/>, so that the hot dough will not stick. This
+  takes <Dur step="dust-board"/>.
+</Step>
+
+<Step id="knead-dough">
+  Turn the hot dough out onto the dusted board and knead it for <Dur step="knead-dough"/>, using the
+  <Qty ref="starch-dough"/> on your hands and the surface, until the dough is smooth and elastic.
+</Step>
+
+<Step id="shape-mochi">
+  Divide the dough into pieces of equal weight, and roll each into a smooth ball or a flat round.
+  One serving is one piece. Dust each piece lightly and set it aside, and eat it while it is still
+  soft. This takes <Dur step="shape-mochi"/>.
+</Step>

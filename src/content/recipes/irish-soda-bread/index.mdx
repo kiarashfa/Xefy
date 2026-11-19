@@ -1,0 +1,81 @@
+---
+title: Irish Soda Bread
+subtitle: A quick bread of plain flour, buttermilk and bicarbonate of soda, shaped into a round and cut across the top; a serving is one slice of the loaf.
+label: Buttermilk and white flour
+defaultServings: 10
+difficulty: Easy
+tags:
+  cuisine: [irish]
+  course: [bread]
+  method: [baking]
+image:
+  src: images/recipes/irish-soda-bread.webp
+  alt: "A pale, craggy round of white soda bread on a baking mat, its flour-dusted crust cracked open, with one end cut off"
+ingredients:
+  - id: flour
+    ingredientRef: wheat-flour
+    form: plain
+    amount: 450
+    unit: g
+  - id: bicarbonate
+    ingredientRef: bicarbonate-of-soda
+    form: standard
+    amount: 5
+    unit: g
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 6
+    unit: g
+  - id: buttermilk
+    ingredientRef: buttermilk
+    form: cultured
+    amount: 380
+    unit: ml
+    note: at about room temperature
+steps:
+  - { id: mix, durationMin: 5, type: active, phase: prep }
+  - { id: heat-oven, durationMin: 15, type: "parallel-with:mix", phase: cook }
+  - { id: shape, durationMin: 5, type: active, phase: prep }
+  - { id: bake, durationMin: 40, type: active, phase: cook }
+  - { id: cool, durationMin: 20, type: passive }
+makeAhead:
+  aheadInstructions: null
+  freezable: true
+  freezeInstructions: Wrap the cooled loaf tightly, whole or in slices, and freeze it for up to a month. Thaw at room temperature, or toast slices from frozen.
+  reheatInstructions: Warm slices briefly in a moderate oven or a toaster.
+notes:
+  techniqueRationale:
+    - stepId: mix
+      text: The bicarbonate and the acid in the buttermilk react as soon as they meet, so the dough is shaped and baked straight away rather than left to stand.
+  commonPitfalls:
+    - stepId: mix
+      text: Kneading develops gluten and makes the crumb tight and tough. Stop as soon as the dough holds together.
+---
+
+<Step id="mix">
+  Put the <Qty ref="flour"/>, the <Qty ref="bicarbonate"/> and the <Qty ref="salt"/> into a
+  large bowl and stir them together. Make a well in the centre, pour in the
+  <Qty ref="buttermilk"/>, and mix with a knife or a floured hand for <Dur step="mix"/>,
+  until the dough is soft and shaggy and just holds together. Do not knead it.
+</Step>
+
+<Step id="heat-oven">
+  Heat the oven to <Temp c={200}/> with a shelf in the middle, and line a baking tray with
+  baking paper.
+</Step>
+
+<Step id="shape">
+  Turn the dough onto a floured bench and pat it into a round about <Len cm={20}/> across
+  and <Len cm={4}/> high. Cut a deep cross into the top, reaching almost to the edges, and
+  set the loaf on the tray.
+</Step>
+
+<Step id="bake">
+  Bake for <Dur step="bake"/>, until deep golden and hollow when tapped on the base.
+</Step>
+
+<Step id="cool">
+  Lift the loaf onto a rack and leave it for <Dur step="cool"/> before cutting, so the crumb
+  can set.
+</Step>

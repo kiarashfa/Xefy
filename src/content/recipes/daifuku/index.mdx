@@ -1,0 +1,119 @@
+---
+title: Daifuku
+subtitle: A soft mochi dough wrapped round a ball of sweet red bean paste made from dried azuki beans. One serving is one daifuku.
+label: Red bean
+defaultServings: 12
+difficulty: Medium
+tags:
+  cuisine: [japanese]
+  course: [dessert]
+  method: [steaming]
+names:
+  alsoKnownAs:
+    - { name: "Daifuku mochi", region: Japan, lang: ja }
+  searchOnly: ["daifuku mochi rice cake", "red bean mochi"]
+image:
+  src: images/recipes/daifuku.webp
+  alt: "Two white daifuku mochi dusted with starch on a blue-striped plate, one cut open to show a smooth dark red bean paste filling"
+ingredients:
+  - id: azuki
+    ingredientRef: azuki-beans
+    form: dried
+    amount: 150
+    unit: g
+    note: soaked overnight, then simmered until soft
+  - id: water
+    ingredientRef: water
+    form: tap
+    amount: 1050
+    unit: ml
+    portions:
+      - { id: water-beans, amount: 900, note: for soaking and cooking the beans, then drained }
+      - { id: water-dough, amount: 150, note: for the dough }
+  - id: sugar
+    ingredientRef: caster-sugar
+    form: white
+    amount: 130
+    unit: g
+    portions:
+      - { id: sugar-paste, amount: 100, note: for the bean paste }
+      - { id: sugar-dough, amount: 30, note: for the dough }
+  - id: flour
+    ingredientRef: glutinous-rice-flour
+    form: mochiko
+    amount: 150
+    unit: g
+    note: fine glutinous rice flour, for the dough
+  - id: starch
+    ingredientRef: potato-starch
+    form: starch
+    amount: 40
+    unit: g
+    note: for dusting the board and the hands
+    consumedFraction: 0.5
+    consumedFractionNote: "Much of the dusting falls onto the board and is brushed away. Half is taken as the thin coat on each daifuku, an editorial estimate, not a sourced figure."
+steps:
+  - { id: soak-azuki, durationMin: 480, type: passive }
+  - { id: cook-azuki, durationMin: 60, type: passive }
+  - { id: mash-anko, durationMin: 15, type: active, phase: cook }
+  - { id: cool-anko, durationMin: 30, type: "parallel-with:steam-dough", phase: rest }
+  - { id: mix-dough, durationMin: 4, type: active, phase: prep }
+  - { id: steam-dough, durationMin: 15, type: passive }
+  - { id: knead-dough, durationMin: 4, type: active, phase: prep }
+  - { id: wrap-daifuku, durationMin: 20, type: active, phase: prep }
+makeAhead:
+  aheadInstructions: The bean paste can be made several days ahead and kept covered in the fridge, or frozen. The daifuku are best made on the day they are eaten, because the dough hardens as it cools.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: mash-anko
+      text: The paste is cooked down until it is stiff enough to hold a shape. A soft paste wraps badly and weeps through the dough, which is why the cooling in the next step matters as much as the cooking.
+  commonPitfalls:
+    - stepId: wrap-daifuku
+      text: Warm paste sealed inside the dough softens the dough from within, and the daifuku split at the seam. Each ball of paste is cooled completely before it is wrapped.
+---
+
+<Step id="soak-azuki">
+  Rinse the <Qty ref="azuki"/> and soak them overnight in the <Qty ref="water-beans"/>, enough for
+  the beans to swell and soften. This takes <Dur step="soak-azuki"/>, and it is done the day before.
+</Step>
+
+<Step id="cook-azuki">
+  Drain the beans and return them to a clean pan with fresh water to cover. Bring them to a boil, then
+  simmer them gently, topping up the water as it reduces, until the beans crush easily between two
+  fingers. This takes <Dur step="cook-azuki"/>.
+</Step>
+
+<Step id="mash-anko">
+  Drain the beans well and mash them, or press them through a sieve. Return the paste to the pan with
+  the <Qty ref="sugar-paste"/> and stir over a low heat until it is thick and glossy and holds a shape
+  on the spoon. This takes <Dur step="mash-anko"/>.
+</Step>
+
+<Step id="cool-anko">
+  Spread the paste on a plate and leave it to cool completely for <Dur step="cool-anko"/>, then divide
+  it into balls, one for each daifuku, while it is still firm enough to handle.
+</Step>
+
+<Step id="mix-dough">
+  Whisk the <Qty ref="flour"/>, the <Qty ref="sugar-dough"/> and the <Qty ref="water-dough"/> in a
+  heatproof bowl until smooth and free of lumps. This takes <Dur step="mix-dough"/>.
+</Step>
+
+<Step id="steam-dough">
+  Set the bowl in a steamer over boiling water, cover, and steam for <Dur step="steam-dough"/>,
+  stirring once halfway through, until the dough is translucent and firm.
+</Step>
+
+<Step id="knead-dough">
+  Turn the hot dough out onto a board dusted with a little of the <Qty ref="starch"/>, and knead it
+  for <Dur step="knead-dough"/> until it is smooth and elastic. Divide it into balls of equal weight.
+</Step>
+
+<Step id="wrap-daifuku">
+  Flatten each ball of dough into a round with the <Qty ref="starch"/> on your fingers. Set a ball of
+  the bean paste in the centre, draw the dough up around it, and pinch the seam closed. Turn the
+  daifuku seam side down. Each one is finished in turn, and this takes <Dur step="wrap-daifuku"/>.
+</Step>

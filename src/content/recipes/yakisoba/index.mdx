@@ -1,0 +1,137 @@
+---
+title: Yakisoba
+subtitle: Steamed wheat noodles stir-fried on a very hot pan with pork belly, cabbage and bean sprouts, glazed with a thick fruit-and-vinegar sauce and finished with aonori and red pickled ginger.
+label: Sauce yakisoba
+defaultServings: 2
+difficulty: Easy
+tags:
+  cuisine: [japanese]
+  course: [main-course]
+  method: [stir-frying]
+names:
+  searchOnly: ["sauce yakisoba", "yaki soba", "fried noodles", "japanese fried noodles"]
+image:
+  src: images/recipes/yakisoba.webp
+  alt: "Yakisoba on a cream plate with a brown rim: stir-fried wheat noodles glossy with sauce, with pork slices and cabbage"
+ingredients:
+  - id: noodles
+    ingredientRef: ramen-noodles
+    form: steamed
+    amount: 250
+    unit: g
+    note: the steamed noodles as bought, loosened by hand
+  - id: pork
+    ingredientRef: pork-belly
+    form: raw
+    amount: 150
+    unit: g
+    note: in thin slices
+  - id: cabbage
+    ingredientRef: white-cabbage
+    form: raw
+    amount: 200
+    unit: g
+    note: cut into bite-sized pieces
+  - id: onion
+    ingredientRef: onion
+    form: yellow
+    amount: 80
+    unit: g
+    note: thinly sliced
+  - id: carrot
+    ingredientRef: carrot
+    form: raw
+    amount: 60
+    unit: g
+    note: cut into thin matchsticks
+  - id: bean-sprouts
+    ingredientRef: bean-sprouts
+    form: raw
+    amount: 80
+    unit: g
+  - id: oil
+    ingredientRef: vegetable-oil
+    form: refined
+    amount: 15
+    unit: ml
+  - id: salt
+    ingredientRef: fine-sea-salt
+    form: fine
+    amount: 2
+    unit: g
+  - id: pepper
+    ingredientRef: black-pepper
+    form: ground
+    amount: 1
+    unit: g
+  - id: sauce
+    ingredientRef: tonkatsu-sauce
+    form: okonomiyaki
+    amount: 60
+    unit: g
+  - id: aonori
+    ingredientRef: aonori
+    form: dried
+    amount: 2
+    unit: g
+  - id: pickled-ginger
+    ingredientRef: pickled-ginger
+    form: red
+    amount: 10
+    unit: g
+steps:
+  - { id: prepare-ingredients, durationMin: 8, type: active, phase: prep }
+  - { id: loosen-noodles, durationMin: 2, type: "parallel-with:prepare-ingredients", phase: prep }
+  - { id: fry-pork, durationMin: 4, type: active, phase: cook }
+  - { id: stir-fry-vegetables, durationMin: 5, type: active, phase: cook }
+  - { id: add-noodles, durationMin: 4, type: active, phase: cook }
+  - { id: finish-yakisoba, durationMin: 2, type: active, phase: cook }
+makeAhead:
+  aheadInstructions: The vegetables can be cut and kept in the fridge for a few hours. The noodles are fried at the last moment, because they go soft and sticky if they stand.
+  freezable: false
+  freezeInstructions: null
+  reheatInstructions: null
+notes:
+  techniqueRationale:
+    - stepId: stir-fry-vegetables
+      text: The cabbage and onion go into a very hot pan and are moved constantly, so that they char a little at the edges and stay crisp. Vegetables that stew in their own juice come out soft, and the dish needs the contrast.
+  commonPitfalls:
+    - stepId: add-noodles
+      text: Adding the sauce before the noodles are hot turns them stodgy. The noodles are fried loose until they are hot through and lightly crisp, and the sauce goes in only at the end.
+---
+
+<Step id="prepare-ingredients">
+  Slice the <Qty ref="pork"/> thinly, cut the <Qty ref="cabbage"/> into bite-sized pieces, and
+  slice the <Qty ref="onion"/> and the <Qty ref="carrot"/>. Lay everything out beside the stove.
+  This takes <Dur step="prepare-ingredients"/>.
+</Step>
+
+<Step id="loosen-noodles">
+  Separate the <Qty ref="noodles"/> by hand so that the strands do not clump in the pan. This takes
+  <Dur step="loosen-noodles"/>.
+</Step>
+
+<Step id="fry-pork">
+  Heat the <Qty ref="oil"/> in a large wok or frying pan over a high heat until it shimmers. Add the
+  <Qty ref="pork"/> and stir-fry it for <Dur step="fry-pork"/>, until the fat has rendered and the
+  slices are just cooked, and season with the <Qty ref="salt"/> and the <Qty ref="pepper"/>.
+</Step>
+
+<Step id="stir-fry-vegetables">
+  Add the <Qty ref="cabbage"/>, the <Qty ref="onion"/> and the <Qty ref="carrot"/> to the pan and
+  stir-fry them hard for <Dur step="stir-fry-vegetables"/>, moving them constantly, until they are
+  just tender and a little charred at the edges. Add the <Qty ref="bean-sprouts"/> for the last
+  moment of the cooking.
+</Step>
+
+<Step id="add-noodles">
+  Add the <Qty ref="noodles"/> and toss them with the vegetables and pork for
+  <Dur step="add-noodles"/>, separating the strands with chopsticks, until they are hot through
+  and lightly crisp in places.
+</Step>
+
+<Step id="finish-yakisoba">
+  Pour the <Qty ref="sauce"/> over the noodles and toss for <Dur step="finish-yakisoba"/>, until
+  every strand is coated. Divide between two plates and finish with the <Qty ref="aonori"/> and the
+  <Qty ref="pickled-ginger"/>.
+</Step>

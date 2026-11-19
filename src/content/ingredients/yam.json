@@ -4,7 +4,10 @@
   "proseName": "yam",
   "names": {
     "alsoKnownAs": [
-      { "name": "Ñame", "lang": "es" }
+      {
+        "name": "Ñame",
+        "lang": "es"
+      }
     ]
   },
   "category": "root vegetable",
@@ -60,5 +63,6 @@
         "densitySource": "measured"
       }
     }
-  ]
+  ],
+  "image": "images/ingredients/yam-thumb.webp"
 }
