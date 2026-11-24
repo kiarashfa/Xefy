@@ -45,12 +45,18 @@
     text-decoration: none;
   }
 
-  /* The mark carries the accent; the wordmark stays ink, so the pair reads as
-     one lockup rather than as a coloured word. */
+  /* The mark carries the accent, and so does the X of the wordmark; the rest of
+     the word stays ink, so the pair still reads as one lockup. */
   .logo-mark {
     width: 26px;
     height: 26px;
     flex: none;
+    color: var(--accent);
+  }
+
+  .logo b,
+  .site-foot .foot-brand b {
+    font-weight: inherit;
     color: var(--accent);
   }
 
