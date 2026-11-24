@@ -1,28 +1,19 @@
 /**
- * Xefy's brand assets: what `build.mjs` draws. Everything site-specific lives
- * here; the layout it is poured into is `build.mjs`.
+ * Xefy's icon settings: what `icons.mjs` draws. Everything site-specific lives
+ * here; the layout it is poured into is `icons.mjs`.
  *
  * Colours are the light theme's tokens from `src/styles/global.css`, copied as
- * hex because the card is rendered outside the browser. Re-run `npm run brand`
- * after changing any of them.
+ * hex because the icons are rendered outside the browser. Re-run
+ * `npm run brand:icons` after changing any of them.
  */
 const fontsource = (pkg, file) => `node_modules/@fontsource/${pkg}/files/${file}`;
 
 export default {
   name: 'Xefy',
-  url: 'kiarashfa.github.io/Xefy',
-  tagline: 'A recipe encyclopedia where every number on the page is computed, never typed.',
 
-  wordmark: [{ text: 'Xefy', weight: 500 }],
-
-  cardTheme: 'light',
+  iconTheme: 'light',
   colors: {
     background: '#faf7f2',
-    ink: '#241f1c',
-    inkSoft: '#55504a',
-    muted: '#736a60',
-    line: '#e4dcd0',
-    accent: '#9a3324',
   },
 
   fonts: {

@@ -18,7 +18,8 @@
     "check:self": "node scripts/integrity/run.ts --content test-fixtures/broken-content --expect-failure",
     "astro": "astro",
     "check:fixtures": "node scripts/integrity/run.ts --content test-fixtures/engine-content",
-    "brand": "node scripts/brand/build.mjs",
+    "brand": "node scripts/brand/brand.ts",
+    "brand:icons": "node scripts/brand/icons.mjs",
     "check:layout": "node scripts/integrity/layout.mjs"
   },
   "dependencies": {
