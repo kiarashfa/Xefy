@@ -69,7 +69,9 @@ async function mdxHeads(dir: string): Promise<Array<Record<string, string>>> {
  * The version count is what sizes a batch, so it is what gets printed.
  */
 async function recipeDirs(): Promise<Array<{ slug: string; versions: string[] }>> {
-  const dirs = await readdir(path.join(CONTENT, 'recipes'), { withFileTypes: true }).catch(() => []);
+  const dirs = await readdir(path.join(CONTENT, 'recipes'), { withFileTypes: true }).catch(
+    () => [],
+  );
   const out: Array<{ slug: string; versions: string[] }> = [];
   for (const d of dirs) {
     if (!d.isDirectory()) continue;
@@ -83,7 +85,10 @@ async function recipeDirs(): Promise<Array<{ slug: string; versions: string[] }>
 }
 
 async function main(): Promise<void> {
-  const only = process.argv.slice(2).filter((a) => a.startsWith('--')).map((a) => a.slice(2));
+  const only = process.argv
+    .slice(2)
+    .filter((a) => a.startsWith('--'))
+    .map((a) => a.slice(2));
   const want = (name: string): boolean => only.length === 0 || only.includes(name);
 
   if (want('ingredients')) {
@@ -156,10 +161,15 @@ async function main(): Promise<void> {
 
     const missing: Array<[string, string[]]> = [
       ['recipe', recipes.map((r) => r.slug).filter((id) => !has('recipe', id))],
-      ['ingredient', ingredients.map((i) => String(i['id'])).filter((id) => !has('ingredient', id))],
+      [
+        'ingredient',
+        ingredients.map((i) => String(i['id'])).filter((id) => !has('ingredient', id)),
+      ],
       [
         'component',
-        comps.map((c) => String(c['id'] ?? c['slug'] ?? '')).filter((id) => id && !has('component', id)),
+        comps
+          .map((c) => String(c['id'] ?? c['slug'] ?? ''))
+          .filter((id) => id && !has('component', id)),
       ],
     ];
 

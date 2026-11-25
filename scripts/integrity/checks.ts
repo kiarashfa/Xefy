@@ -327,7 +327,11 @@ export async function runChecks(content: Content): Promise<CheckResult> {
           `notToBeConfusedWith "${entry.name}" has an empty note; an entry without the difference stated misinforms`,
         );
       }
-      if (entry.slugRef && !recipeSlugs.has(entry.slugRef) && !ingredientBySlug.has(entry.slugRef)) {
+      if (
+        entry.slugRef &&
+        !recipeSlugs.has(entry.slugRef) &&
+        !ingredientBySlug.has(entry.slugRef)
+      ) {
         add(
           'names',
           'fail',
@@ -359,7 +363,11 @@ export async function runChecks(content: Content): Promise<CheckResult> {
           `notToBeConfusedWith "${entry.name}" has an empty note`,
         );
       }
-      if (entry.slugRef && !recipeSlugs.has(entry.slugRef) && !ingredientBySlug.has(entry.slugRef)) {
+      if (
+        entry.slugRef &&
+        !recipeSlugs.has(entry.slugRef) &&
+        !ingredientBySlug.has(entry.slugRef)
+      ) {
         add(
           'names',
           'fail',
@@ -381,7 +389,12 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
     for (const [id, count] of seenLine) {
       if (count > 1) {
-        add('id-collisions', 'fail', unit.file, `ingredient or portion id "${id}" is used ${count} times`);
+        add(
+          'id-collisions',
+          'fail',
+          unit.file,
+          `ingredient or portion id "${id}" is used ${count} times`,
+        );
       }
     }
     const seenStep = new Map<string, number>();
@@ -423,12 +436,14 @@ export async function runChecks(content: Content): Promise<CheckResult> {
       ) as { lines: string[] }
     ).lines,
   );
-  const ON_THE_BONE = /\bbone-in\b|\bon the bone\b|\bleg quarters?\b|\bjointed\b|\bdrumsticks?\b|\bdrumettes?\b|\bwhole (?:bird|chicken|rack)/i;
+  const ON_THE_BONE =
+    /\bbone-in\b|\bon the bone\b|\bleg quarters?\b|\bjointed\b|\bdrumsticks?\b|\bdrumettes?\b|\bwhole (?:bird|chicken|rack)/i;
   for (const unit of authored) {
     for (const line of unit.ingredients) {
       if (line.consumedFraction < 1) continue;
       const formLabel =
-        ingredientBySlug.get(line.ingredientRef)?.data.forms.find((f) => f.id === line.form)?.label ?? '';
+        ingredientBySlug.get(line.ingredientRef)?.data.forms.find((f) => f.id === line.form)
+          ?.label ?? '';
       if (!ON_THE_BONE.test(line.note ?? '') && !ON_THE_BONE.test(formLabel)) continue;
       const key = `${unit.file}::${line.id}`;
       add(
@@ -507,7 +522,12 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     ];
     for (const note of noteEntries) {
       if (note.stepId && !stepIds.has(note.stepId)) {
-        add('recipe-structure', 'fail', version.file, `note stepId "${note.stepId}" matches no step`);
+        add(
+          'recipe-structure',
+          'fail',
+          version.file,
+          `note stepId "${note.stepId}" matches no step`,
+        );
       }
     }
   }
@@ -616,7 +636,8 @@ export async function runChecks(content: Content): Promise<CheckResult> {
 
   const CITE = /<Cite\b[^>]*?\bref\s*=\s*["']([^"']*)["'][^>]*?\/?>/g;
   /** A year, a century, or a percentage — the claims most worth a source. */
-  const CHECKABLE_CLAIM = /\b(1[0-9]{3}|20[0-9]{2})\b|\b\d{1,2}(st|nd|rd|th) century\b|\d+(\.\d+)?%/i;
+  const CHECKABLE_CLAIM =
+    /\b(1[0-9]{3}|20[0-9]{2})\b|\b\d{1,2}(st|nd|rd|th) century\b|\d+(\.\d+)?%/i;
 
   for (const about of [...content.recipeAbout, ...content.ingredientAbout]) {
     const declared = new Set(about.data.sources.map((s) => s.id));
@@ -666,8 +687,8 @@ export async function runChecks(content: Content): Promise<CheckResult> {
         about.data.sources.length === 1
           ? `one source. The floor is two independent sources — one account is not corroboration`
           : `${about.data.sources.length} sources, all from one publisher ` +
-            `("${[...publishers][0]}"). Pages from one publisher corroborate nothing — ` +
-            `the floor is two independent sources`,
+              `("${[...publishers][0]}"). Pages from one publisher corroborate nothing — ` +
+              `the floor is two independent sources`,
       );
     }
 
@@ -693,7 +714,9 @@ export async function runChecks(content: Content): Promise<CheckResult> {
         const refs = [...run[0].matchAll(CITE)].map((m) => m[1] ?? '');
         if (refs.length > 0 && refs.every((r) => wikipedia.has(r))) {
           wikipediaAlone++;
-          const before = about.body.slice(Math.max(0, (run.index ?? 0) - 70), run.index).replace(/\s+/g, ' ');
+          const before = about.body
+            .slice(Math.max(0, (run.index ?? 0) - 70), run.index)
+            .replace(/\s+/g, ' ');
           add(
             'about-wikipedia-alone',
             grandfathered ? 'warn' : 'fail',
@@ -887,7 +910,12 @@ export async function runChecks(content: Content): Promise<CheckResult> {
     }
     for (const [id, count] of ids) {
       if (count > 1) {
-        add('id-collisions', 'fail', version.file, `"${id}" is used ${count} times after the merge`);
+        add(
+          'id-collisions',
+          'fail',
+          version.file,
+          `"${id}" is used ${count} times after the merge`,
+        );
       }
     }
 

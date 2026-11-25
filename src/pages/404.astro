@@ -47,12 +47,14 @@ const ways = [
     <p class="notfound-quip">{quip}</p>
 
     <nav class="notfound-ways" aria-label="Ways out">
-      {ways.map((w) => <a href={w.href}>{w.label}</a>)}
+      {ways.map((w) => (
+        <a href={w.href}>{w.label}</a>
+      ))}
     </nav>
 
     <p class="notfound-note">
-      Or search: the button in the header finds regional names and common misspellings
-      as well as titles, which is very likely what brought you here.
+      Or search: the button in the header finds regional names and common misspellings as well as
+      titles, which is very likely what brought you here.
     </p>
   </main>
 

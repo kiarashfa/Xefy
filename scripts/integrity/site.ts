@@ -81,12 +81,22 @@ const IDS = /\bid\s*=\s*"([^"]+)"/g;
 function auditDocument(html: string, rel: string, findings: Finding[]): void {
   const ids = [...html.matchAll(IDS)].map((m) => m[1]!);
   for (const id of new Set(ids.filter((v, i) => ids.indexOf(v) !== i))) {
-    findings.push({ page: rel, kind: 'document', target: `#${id}`, detail: 'id used more than once' });
+    findings.push({
+      page: rel,
+      kind: 'document',
+      target: `#${id}`,
+      detail: 'id used more than once',
+    });
   }
 
   const headings = (html.match(/<h1\b/g) ?? []).length;
   if (headings !== 1) {
-    findings.push({ page: rel, kind: 'document', target: '<h1>', detail: `${headings} on the page, expected exactly one` });
+    findings.push({
+      page: rel,
+      kind: 'document',
+      target: '<h1>',
+      detail: `${headings} on the page, expected exactly one`,
+    });
   }
 
   if (!/<html[^>]*\blang=/.test(html)) {
@@ -95,7 +105,12 @@ function auditDocument(html: string, rel: string, findings: Finding[]): void {
 
   for (const m of html.matchAll(/<img\b[^>]*>/g)) {
     if (!/\balt\s*=/.test(m[0])) {
-      findings.push({ page: rel, kind: 'name', target: m[0].slice(0, 60), detail: 'image has no alt attribute' });
+      findings.push({
+        page: rel,
+        kind: 'name',
+        target: m[0].slice(0, 60),
+        detail: 'image has no alt attribute',
+      });
     }
   }
 
@@ -104,13 +119,25 @@ function auditDocument(html: string, rel: string, findings: Finding[]): void {
   for (const [, attrs = '', inner = ''] of html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a>/g)) {
     const text = inner.replace(/<[^>]*>/g, '').trim();
     if (!text && !/aria-label=/.test(attrs) && !/alt="[^"]+"/.test(inner)) {
-      findings.push({ page: rel, kind: 'name', target: `<a${attrs.slice(0, 50)}>`, detail: 'link has no accessible name' });
+      findings.push({
+        page: rel,
+        kind: 'name',
+        target: `<a${attrs.slice(0, 50)}>`,
+        detail: 'link has no accessible name',
+      });
     }
   }
-  for (const [, attrs = '', inner = ''] of html.matchAll(/<button\b([^>]*)>([\s\S]*?)<\/button>/g)) {
+  for (const [, attrs = '', inner = ''] of html.matchAll(
+    /<button\b([^>]*)>([\s\S]*?)<\/button>/g,
+  )) {
     const text = inner.replace(/<[^>]*>/g, '').trim();
     if (!text && !/aria-label=/.test(attrs)) {
-      findings.push({ page: rel, kind: 'name', target: `<button${attrs.slice(0, 50)}>`, detail: 'button has no accessible name' });
+      findings.push({
+        page: rel,
+        kind: 'name',
+        target: `<button${attrs.slice(0, 50)}>`,
+        detail: 'button has no accessible name',
+      });
     }
   }
 }
@@ -139,7 +166,12 @@ async function run(): Promise<void> {
 
       if (target === '') {
         if (fragment && !ids.has(fragment)) {
-          findings.push({ page: rel, kind: 'anchor', target: raw, detail: 'no element with that id on this page' });
+          findings.push({
+            page: rel,
+            kind: 'anchor',
+            target: raw,
+            detail: 'no element with that id on this page',
+          });
         }
         continue;
       }

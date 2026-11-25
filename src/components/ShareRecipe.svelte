@@ -51,11 +51,7 @@
 </script>
 
 <div class="side-card share-card" data-open={open ? '' : undefined}>
-  <button
-    class="share-card-toggle"
-    aria-expanded={open}
-    onclick={() => (open = !open)}
-  >
+  <button class="share-card-toggle" aria-expanded={open} onclick={() => (open = !open)}>
     <span class="side-card-label">Share this dish</span>
     <span class="makeahead-chevron" aria-hidden="true">▾</span>
   </button>

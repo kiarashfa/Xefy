@@ -62,7 +62,8 @@
    * mixing "Name A–Z" with "Fewest calories" can only offer one direction per
    * entry and doubles in length the moment both are wanted.
    */
-  type SortField = 'title' | 'style' | 'cuisine' | 'course' | 'totalMin' | 'kcalPerServing' | 'difficulty';
+  type SortField =
+    'title' | 'style' | 'cuisine' | 'course' | 'totalMin' | 'kcalPerServing' | 'difficulty';
   let sortField = $state<SortField>('title');
   let sortDesc = $state(false);
 
@@ -99,10 +100,12 @@
     return v.trim() === '' || !Number.isFinite(n) || n <= 0 ? null : n;
   };
 
-  const minutes = (m: number) => (m < 60 ? `${m}m` : `${Math.floor(m / 60)}h ${m % 60 || ''}`.trim());
+  const minutes = (m: number) =>
+    m < 60 ? `${m}m` : `${Math.floor(m / 60)}h ${m % 60 || ''}`.trim();
 
   /** Alphabetical, because a named vocabulary has no other order a reader can predict. */
-  const byLabel = (list: readonly Term[]) => [...list].sort((a, b) => a.label.localeCompare(b.label));
+  const byLabel = (list: readonly Term[]) =>
+    [...list].sort((a, b) => a.label.localeCompare(b.label));
 
   type Axis = 'query' | 'cuisine' | 'course' | 'method' | 'diet' | 'hide' | 'limits';
 
@@ -114,9 +117,12 @@
       const haystack = `${r.title} ${r.subtitle} ${r.style}`.toLowerCase();
       if (!haystack.includes(query.toLowerCase())) return false;
     }
-    if (skip !== 'cuisine' && cuisine.length && !cuisine.some((c) => r.tags.cuisine.includes(c))) return false;
-    if (skip !== 'course' && course.length && !course.some((c) => r.tags.course.includes(c))) return false;
-    if (skip !== 'method' && method.length && !method.some((c) => r.tags.method.includes(c))) return false;
+    if (skip !== 'cuisine' && cuisine.length && !cuisine.some((c) => r.tags.cuisine.includes(c)))
+      return false;
+    if (skip !== 'course' && course.length && !course.some((c) => r.tags.course.includes(c)))
+      return false;
+    if (skip !== 'method' && method.length && !method.some((c) => r.tags.method.includes(c)))
+      return false;
     // Diets are requirements, so every chosen one must hold: vegan AND gluten-free.
     if (skip !== 'diet' && diet.length && !diet.every((d) => r.diets.includes(d))) return false;
     // Allergens are an exclusion filter, never an inclusion one.
@@ -124,7 +130,11 @@
     if (skip !== 'limits') {
       if (maxMinutes != null && r.totalMin > maxMinutes) return false;
       if (maxKcal != null && r.kcalPerServing > maxKcal) return false;
-      if (maxDifficulty && DIFFICULTY_ORDER[r.difficulty as keyof typeof DIFFICULTY_ORDER] > DIFFICULTY_ORDER[maxDifficulty])
+      if (
+        maxDifficulty &&
+        DIFFICULTY_ORDER[r.difficulty as keyof typeof DIFFICULTY_ORDER] >
+          DIFFICULTY_ORDER[maxDifficulty]
+      )
         return false;
     }
     return true;
@@ -137,7 +147,10 @@
         const dir = sortDesc ? -1 : 1;
         if (sortField === 'title') return dir * a.title.localeCompare(b.title);
         if (sortField === 'style' || sortField === 'cuisine' || sortField === 'course')
-          return dir * textOf(a, sortField).localeCompare(textOf(b, sortField)) || a.title.localeCompare(b.title);
+          return (
+            dir * textOf(a, sortField).localeCompare(textOf(b, sortField)) ||
+            a.title.localeCompare(b.title)
+          );
         const key =
           sortField === 'difficulty'
             ? DIFFICULTY_ORDER[a.difficulty as keyof typeof DIFFICULTY_ORDER] -
@@ -193,7 +206,10 @@
   }
   const dietLabel = (id: string) => id.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase());
   const dietTerms = $derived(
-    [...new Set(recipes.flatMap((r) => r.diets as string[]))].map((id) => ({ id, label: dietLabel(id) })),
+    [...new Set(recipes.flatMap((r) => r.diets as string[]))].map((id) => ({
+      id,
+      label: dietLabel(id),
+    })),
   );
 
   /* Only terms with a dish behind them: a menu of empty filters wastes the
@@ -236,7 +252,9 @@
     },
   ]);
 
-  const hideTerms = $derived(byLabel(allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id)))));
+  const hideTerms = $derived(
+    byLabel(allergens.filter((a) => recipes.some((r) => r.allergens.includes(a.id)))),
+  );
   const hideCounts = $derived.by(() => {
     const out: Record<string, number> = {};
     for (const r of recipes) {
@@ -247,7 +265,13 @@
   });
 
   const activeCount = $derived(
-    cuisine.length + course.length + method.length + diet.length + excludedAllergens.length + limitCount + (query ? 1 : 0),
+    cuisine.length +
+      course.length +
+      method.length +
+      diet.length +
+      excludedAllergens.length +
+      limitCount +
+      (query ? 1 : 0),
   );
 
   function clearAll() {
@@ -264,7 +288,19 @@
 
   /* A changed question starts again at the top of its answer. */
   $effect(() => {
-    void [query, cuisine, course, method, diet, excludedAllergens, maxMinutes, maxKcal, maxDifficulty, sortField, sortDesc];
+    void [
+      query,
+      cuisine,
+      course,
+      method,
+      diet,
+      excludedAllergens,
+      maxMinutes,
+      maxKcal,
+      maxDifficulty,
+      sortField,
+      sortDesc,
+    ];
     limit = PAGE;
   });
 
@@ -313,7 +349,8 @@
     if (view === 'table') p.set('view', 'table');
     const qs = p.toString();
     const next = `${location.pathname}${qs ? `?${qs}` : ''}${location.hash}`;
-    if (next !== `${location.pathname}${location.search}${location.hash}`) history.replaceState(null, '', next);
+    if (next !== `${location.pathname}${location.search}${location.hash}`)
+      history.replaceState(null, '', next);
     try {
       localStorage.setItem(VIEW_KEY, view);
     } catch {}
@@ -372,18 +409,51 @@
       {:else if loadState === 'failed'}
         The full list could not be loaded; these are the first {recipes.length} of {total} dishes.
       {:else}
-        {shown.length === recipes.length ? `${shown.length} dishes` : `${shown.length} of ${recipes.length} dishes`}
+        {shown.length === recipes.length
+          ? `${shown.length} dishes`
+          : `${shown.length} of ${recipes.length} dishes`}
       {/if}
     </p>
     {#if activeCount > 0}
       <div class="catalog-active">
-        {#if query}<button class="catalog-chip" onclick={() => (query = '')}>“{query}” <span aria-hidden="true">×</span></button>{/if}
-        {#each cuisine as id (id)}<button class="catalog-chip" onclick={() => (cuisine = cuisine.filter((x) => x !== id))}>{cuisineLabel(id)} <span aria-hidden="true">×</span></button>{/each}
-        {#each course as id (id)}<button class="catalog-chip" onclick={() => (course = course.filter((x) => x !== id))}>{courseLabel(id)} <span aria-hidden="true">×</span></button>{/each}
-        {#each method as id (id)}<button class="catalog-chip" onclick={() => (method = method.filter((x) => x !== id))}>{methods.find((m) => m.id === id)?.label ?? id} <span aria-hidden="true">×</span></button>{/each}
-        {#each diet as id (id)}<button class="catalog-chip" onclick={() => (diet = diet.filter((x) => x !== id))}>{dietLabel(id)} <span aria-hidden="true">×</span></button>{/each}
-        {#each excludedAllergens as id (id)}<button class="catalog-chip is-exclusion" onclick={() => (excludedAllergens = excludedAllergens.filter((x) => x !== id))}>No {allergens.find((a) => a.id === id)?.label.toLowerCase() ?? id} <span aria-hidden="true">×</span></button>{/each}
-        {#if limitCount > 0}<button class="catalog-chip" onclick={() => { maxMinutes = null; maxKcal = null; maxDifficulty = ''; }}>Limits <span aria-hidden="true">×</span></button>{/if}
+        {#if query}<button class="catalog-chip" onclick={() => (query = '')}
+            >“{query}” <span aria-hidden="true">×</span></button
+          >{/if}
+        {#each cuisine as id (id)}<button
+            class="catalog-chip"
+            onclick={() => (cuisine = cuisine.filter((x) => x !== id))}
+            >{cuisineLabel(id)} <span aria-hidden="true">×</span></button
+          >{/each}
+        {#each course as id (id)}<button
+            class="catalog-chip"
+            onclick={() => (course = course.filter((x) => x !== id))}
+            >{courseLabel(id)} <span aria-hidden="true">×</span></button
+          >{/each}
+        {#each method as id (id)}<button
+            class="catalog-chip"
+            onclick={() => (method = method.filter((x) => x !== id))}
+            >{methods.find((m) => m.id === id)?.label ?? id}
+            <span aria-hidden="true">×</span></button
+          >{/each}
+        {#each diet as id (id)}<button
+            class="catalog-chip"
+            onclick={() => (diet = diet.filter((x) => x !== id))}
+            >{dietLabel(id)} <span aria-hidden="true">×</span></button
+          >{/each}
+        {#each excludedAllergens as id (id)}<button
+            class="catalog-chip is-exclusion"
+            onclick={() => (excludedAllergens = excludedAllergens.filter((x) => x !== id))}
+            >No {allergens.find((a) => a.id === id)?.label.toLowerCase() ?? id}
+            <span aria-hidden="true">×</span></button
+          >{/each}
+        {#if limitCount > 0}<button
+            class="catalog-chip"
+            onclick={() => {
+              maxMinutes = null;
+              maxKcal = null;
+              maxDifficulty = '';
+            }}>Limits <span aria-hidden="true">×</span></button
+          >{/if}
         <button class="catalog-clear" onclick={clearAll}>Clear all</button>
       </div>
     {/if}
@@ -497,12 +567,23 @@
       </button>
 
       <div class="catalog-view">
-        <button class:active={view === 'grid'} aria-pressed={view === 'grid'} onclick={() => (view = 'grid')}>Cards</button>
-        <button class:active={view === 'table'} aria-pressed={view === 'table'} onclick={() => (view = 'table')}>Table</button>
+        <button
+          class:active={view === 'grid'}
+          aria-pressed={view === 'grid'}
+          onclick={() => (view = 'grid')}>Cards</button
+        >
+        <button
+          class:active={view === 'table'}
+          aria-pressed={view === 'table'}
+          onclick={() => (view = 'table')}>Table</button
+        >
       </div>
     </div>
 
-    <div class="catalog-row catalog-menus" style={`--menus: ${facets.length + (hideTerms.length > 0 ? 1 : 0)}`}>
+    <div
+      class="catalog-row catalog-menus"
+      style={`--menus: ${facets.length + (hideTerms.length > 0 ? 1 : 0)}`}
+    >
       {#each facets as facet (facet.key)}
         <FacetMenu
           label={facet.key}
@@ -542,7 +623,9 @@
               {cuisineLabel(r.tags.cuisine[0])} · {r.style}
             </span>
             <span class="card-title">{r.title}</span>
-            <span class="card-meta">{minutes(r.totalMin)} · {r.kcalPerServing} kcal · {r.difficulty}</span>
+            <span class="card-meta"
+              >{minutes(r.totalMin)} · {r.kcalPerServing} kcal · {r.difficulty}</span
+            >
           </span>
         </a>
       </li>
@@ -556,7 +639,9 @@
              column on the table, for a fact the filters already act on. -->
         <tr>
           {#each COLUMNS as c (c.field)}
-            <th aria-sort={sortField === c.field ? (sortDesc ? 'descending' : 'ascending') : 'none'}>
+            <th
+              aria-sort={sortField === c.field ? (sortDesc ? 'descending' : 'ascending') : 'none'}
+            >
               <button type="button" class="th-sort" onclick={() => sortBy(c.field)}>
                 {c.label}<span class="th-dir" aria-hidden="true"></span>
               </button>

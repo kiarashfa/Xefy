@@ -18,8 +18,7 @@ export interface LicenseAssessment {
   attributionRequired: boolean;
 }
 
-const has = (text: string, ...needles: string[]) =>
-  needles.some((n) => text.includes(n));
+const has = (text: string, ...needles: string[]) => needles.some((n) => text.includes(n));
 
 export function assessLicense(shortName: string, usageTerms = ''): LicenseAssessment {
   const text = `${shortName} ${usageTerms}`.toLowerCase();

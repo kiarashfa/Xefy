@@ -124,9 +124,7 @@ async function build(): Promise<Site> {
       slug,
       identity: ordered[0]!.data as Recipe,
       versions: resolvedVersions,
-      about: aboutEntry
-        ? { ...(aboutEntry.data as any), body: aboutEntry.body }
-        : null,
+      about: aboutEntry ? { ...(aboutEntry.data as any), body: aboutEntry.body } : null,
       head: resolvedVersions[0]!.resolved,
     });
   }

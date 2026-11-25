@@ -50,11 +50,7 @@ const themeColorSync = `(()=>{const m=document.querySelector('meta[name="theme-c
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
-    {
-      noindex && (
-        <meta name="robots" content="noindex, follow" />
-      )
-    }
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
     <link rel="manifest" href={`${base}site.webmanifest`} />
@@ -104,19 +100,16 @@ const themeColorSync = `(()=>{const m=document.querySelector('meta[name="theme-c
     </script>
     <meta name="theme-color" content={THEME_COLOR.light} />
     <script is:inline set:html={themeColorSync} />
-
-    {
-      import.meta.env.PROD && (
-        <>
-          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-          {/* The path only: a query string or hash can carry what a reader shared, and it stays theirs. */}
-          <script
-            is:inline
-            set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(GA_ID)},{page_location:location.origin+location.pathname});`}
-          />
-        </>
-      )
-    }
+    {import.meta.env.PROD && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        {/* The path only: a query string or hash can carry what a reader shared, and it stays theirs. */}
+        <script
+          is:inline
+          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(GA_ID)},{page_location:location.origin+location.pathname});`}
+        />
+      </>
+    )}
   </head>
   <body data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
     <slot />

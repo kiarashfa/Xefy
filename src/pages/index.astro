@@ -60,7 +60,6 @@ const cuisines = withCounts(CUISINES, 'cuisine')
 const allCuisines = withCounts(CUISINES, 'cuisine').length;
 const courses = withCounts(COURSES, 'course').sort((a, b) => a.label.localeCompare(b.label));
 
-
 const title = 'Xefy · Recipe encyclopedia';
 const description =
   'One page per dish. Every quantity, nutrition figure and timing is derived from structured data and recomputes when you change the serving count or the units.';
@@ -79,65 +78,77 @@ const description =
       <ReverseSearchTeaser client:visible ingredients={teaserIngredients} base={base} />
     </div>
 
-    {
-      picks.count > 0 && (
-        <section class="home-section" aria-labelledby="featured-title" {...featuredAttributes(picks)}>
-          <div class="home-section-head">
-            <h2 id="featured-title" class="home-section-title">Featured today</h2>
-            <a class="home-section-link" href={`${base}recipes/`}>All {records.length} recipes →</a>
-          </div>
-          {/* Every candidate, inert until the script below clones the reader's day. */}
-          <template data-featured-pool data-pagefind-ignore>
-            {picks.pool.map((r) => <RecipeCard recipe={r} base={base} />)}
-          </template>
-          <ul class="card-grid" data-featured-list>
-            {featuredSlice(picks.pool, picks.count, picks.start).map((r) => <RecipeCard recipe={r} base={base} />)}
-          </ul>
-          <script is:inline set:html={FEATURED_SCRIPT} />
-        </section>
-      )
-    }
+    {picks.count > 0 && (
+      <section class="home-section" aria-labelledby="featured-title" {...featuredAttributes(picks)}>
+        <div class="home-section-head">
+          <h2 id="featured-title" class="home-section-title">
+            Featured today
+          </h2>
+          <a class="home-section-link" href={`${base}recipes/`}>
+            All {records.length} recipes →
+          </a>
+        </div>
+        {/* Every candidate, inert until the script below clones the reader's day. */}
+        <template data-featured-pool data-pagefind-ignore>
+          {picks.pool.map((r) => (
+            <RecipeCard recipe={r} base={base} />
+          ))}
+        </template>
+        <ul class="card-grid" data-featured-list>
+          {featuredSlice(picks.pool, picks.count, picks.start).map((r) => (
+            <RecipeCard recipe={r} base={base} />
+          ))}
+        </ul>
+        <script is:inline set:html={FEATURED_SCRIPT} />
+      </section>
+    )}
 
     <section class="home-section" aria-labelledby="cuisine-title">
       <div class="home-section-head">
-        <h2 id="cuisine-title" class="home-section-title">Browse by cuisine</h2>
-        <a class="home-section-link" href={`${base}cuisines/`}>All {allCuisines} cuisines →</a>
+        <h2 id="cuisine-title" class="home-section-title">
+          Browse by cuisine
+        </h2>
+        <a class="home-section-link" href={`${base}cuisines/`}>
+          All {allCuisines} cuisines →
+        </a>
       </div>
       <ul class="listing">
-        {
-          cuisines.map((t) => (
-            <li>
-              <a href={`${base}cuisines/${t.id}/`}>
-                {t.label}
-                <span class="count">{t.count}</span>
-              </a>
-            </li>
-          ))
-        }
+        {cuisines.map((t) => (
+          <li>
+            <a href={`${base}cuisines/${t.id}/`}>
+              {t.label}
+              <span class="count">{t.count}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
 
     <section class="home-section" aria-labelledby="course-title">
       <div class="home-section-head">
-        <h2 id="course-title" class="home-section-title">Browse by course</h2>
-        <a class="home-section-link" href={`${base}courses/`}>All courses →</a>
+        <h2 id="course-title" class="home-section-title">
+          Browse by course
+        </h2>
+        <a class="home-section-link" href={`${base}courses/`}>
+          All courses →
+        </a>
       </div>
       <ul class="listing">
-        {
-          courses.map((t) => (
-            <li>
-              <a href={`${base}courses/${t.id}/`}>
-                {t.label}
-                <span class="count">{t.count}</span>
-              </a>
-            </li>
-          ))
-        }
+        {courses.map((t) => (
+          <li>
+            <a href={`${base}courses/${t.id}/`}>
+              {t.label}
+              <span class="count">{t.count}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
 
     <div class="home-cta">
-      <a class="catalog-more-button" href={`${base}recipes/`}>Browse all {records.length} recipes</a>
+      <a class="catalog-more-button" href={`${base}recipes/`}>
+        Browse all {records.length} recipes
+      </a>
     </div>
   </main>
 

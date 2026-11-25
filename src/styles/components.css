@@ -1472,7 +1472,9 @@
     font-size: 12px;
     color: var(--muted);
     cursor: pointer;
-    transition: background 0.35s var(--ease), color 0.35s var(--ease);
+    transition:
+      background 0.35s var(--ease),
+      color 0.35s var(--ease);
   }
 
   .catalog-view button.active {
@@ -1919,7 +1921,9 @@
     border-radius: 100px;
     font-size: 12px;
     cursor: pointer;
-    transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+    transition:
+      background 0.3s var(--ease),
+      border-color 0.3s var(--ease);
   }
 
   .pill:hover {
@@ -1970,7 +1974,9 @@
     overflow: hidden;
     background: var(--surface-2);
     box-shadow: 0 16px 36px -20px var(--shadow);
-    transition: transform 0.5s var(--ease), box-shadow 0.5s ease;
+    transition:
+      transform 0.5s var(--ease),
+      box-shadow 0.5s ease;
   }
 
   .card:hover .card-image {

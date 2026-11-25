@@ -120,7 +120,9 @@ interface RawFood {
   foodPortions?: { amount?: number; gramWeight?: number; modifier?: string }[];
 }
 
-function mapNutrition(food: RawFood): Pick<CachedRecord, 'nutritionPer100g' | 'unmapped' | 'skipped'> {
+function mapNutrition(
+  food: RawFood,
+): Pick<CachedRecord, 'nutritionPer100g' | 'unmapped' | 'skipped'> {
   const byNumber = new Map(NUTRIENT_MAP.map((m) => [m.number, m]));
   const nutrition: Record<string, number> = {};
   const unmapped: CachedRecord['unmapped'] = [];
@@ -258,7 +260,9 @@ async function search(query: string): Promise<void> {
 
   console.log(`${result.totalHits ?? 0} matches for "${query}" — showing the closest:\n`);
   for (const food of result.foods ?? []) {
-    console.log(`  ${String(food.fdcId).padEnd(10)} ${(food.dataType ?? '').padEnd(11)} ${food.description}`);
+    console.log(
+      `  ${String(food.fdcId).padEnd(10)} ${(food.dataType ?? '').padEnd(11)} ${food.description}`,
+    );
   }
   console.log(
     '\nFoundation records are more recently sampled than SR Legacy; prefer them where the food matches.' +
@@ -271,8 +275,12 @@ async function show(fdcId: string, refresh: boolean): Promise<void> {
   const cached = !refresh && (await readCached(fdcId));
 
   console.log(`${record.description}`);
-  console.log(`${record.sourceDataset} · record ${record.sourceId} · published ${record.publicationDate ?? 'unknown'}`);
-  console.log(`${cached ? 'From the local cache' : 'Fetched and cached'}: src/data/nutrition-sources/usda-${fdcId}.json\n`);
+  console.log(
+    `${record.sourceDataset} · record ${record.sourceId} · published ${record.publicationDate ?? 'unknown'}`,
+  );
+  console.log(
+    `${cached ? 'From the local cache' : 'Fetched and cached'}: src/data/nutrition-sources/usda-${fdcId}.json\n`,
+  );
 
   console.log('Per 100 g:');
   // Several nutrient numbers map onto one field — the three energy figures in
@@ -300,11 +308,15 @@ async function show(fdcId: string, refresh: boolean): Promise<void> {
   }
 
   if (record.densityCandidates.length > 0) {
-    console.log('\nDensity, measured — from this record\'s own household portions:');
+    console.log("\nDensity, measured — from this record's own household portions:");
     for (const c of record.densityCandidates) {
-      console.log(`  ${c.measure.padEnd(10)} ${String(c.value).padStart(7)} g   (from "${c.from}")`);
+      console.log(
+        `  ${c.measure.padEnd(10)} ${String(c.value).padStart(7)} g   (from "${c.from}")`,
+      );
     }
-    console.log('  Pick the measure that matches how the recipe uses it; chopped and whole differ.');
+    console.log(
+      '  Pick the measure that matches how the recipe uses it; chopped and whole differ.',
+    );
   } else {
     console.log('\nNo household portions in this record — density will have to come from a class.');
   }
@@ -329,7 +341,9 @@ async function form(fdcId: string, id: string, label: string, density?: string):
   };
 
   const chosen = density
-    ? record.densityCandidates.find((c) => `${c.measure}:${c.value}` === density || c.measure === density)
+    ? record.densityCandidates.find(
+        (c) => `${c.measure}:${c.value}` === density || c.measure === density,
+      )
     : record.densityCandidates[0];
 
   if (chosen) {
@@ -395,9 +409,7 @@ switch (command) {
     await run(show(rest[0]!, rest.includes('--refresh')));
     break;
   case 'form':
-    await run(
-      form(rest[0]!, flag('id') ?? 'default', flag('label') ?? 'Default', flag('density')),
-    );
+    await run(form(rest[0]!, flag('id') ?? 'default', flag('label') ?? 'Default', flag('density')));
     break;
   case 'list':
     await run(list());

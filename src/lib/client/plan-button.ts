@@ -30,7 +30,9 @@ function renderCount(): void {
  * and can be changed freely.
  */
 function wireAddButtons(base: string): void {
-  for (const button of document.querySelectorAll<HTMLButtonElement>('.add-to-plan[data-add-to-plan]')) {
+  for (const button of document.querySelectorAll<HTMLButtonElement>(
+    '.add-to-plan[data-add-to-plan]',
+  )) {
     button.addEventListener('click', () => {
       const scope = button.closest<HTMLElement>('[data-version]');
       const root = document.querySelector<HTMLElement>('[data-recipe]');
@@ -50,8 +52,7 @@ function wireAddButtons(base: string): void {
       confirmation.className = 'add-confirmed';
       confirmation.setAttribute('role', 'status');
       confirmation.innerHTML = listOnly
-        ? `On the list at ${count} servings: ` +
-          `<a href="${base}shopping-list/">Shopping list</a>`
+        ? `On the list at ${count} servings: ` + `<a href="${base}shopping-list/">Shopping list</a>`
         : `Added at ${count} servings: ` +
           `<a href="${base}plan/">Plan</a> · <a href="${base}shopping-list/">Shopping list</a>`;
 

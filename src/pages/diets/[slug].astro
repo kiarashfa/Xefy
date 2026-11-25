@@ -40,8 +40,7 @@ const base = import.meta.env.BASE_URL;
       <p class="eyebrow">Diet</p>
       <h1 class="page-title">{term.label}</h1>
       <p class="page-lede">
-        {recipes.length} {recipes.length === 1 ? 'dish' : 'dishes'}.
-        {term.description}
+        {recipes.length} {recipes.length === 1 ? 'dish' : 'dishes'}.{term.description}
       </p>
     </div>
 
@@ -49,8 +48,8 @@ const base = import.meta.env.BASE_URL;
 
     <p class="source-line">
       Computed from every ingredient in the recipe, including the ones a name does not give away,
-      such as the rennet in a hard cheese or the anchovy in a bottle of Worcestershire. Nothing here is
-      hand-tagged, and nothing is a guarantee about the particular product you buy.
+      such as the rennet in a hard cheese or the anchovy in a bottle of Worcestershire. Nothing here
+      is hand-tagged, and nothing is a guarantee about the particular product you buy.
     </p>
   </main>
 

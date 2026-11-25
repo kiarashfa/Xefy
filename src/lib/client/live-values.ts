@@ -2,7 +2,6 @@ import { formatQuantity, type BaseUnit, type Density } from '../math/quantity.ts
 import { formatCount, formatLength, formatTemperature, type UnitSystem } from '../math/units.ts';
 import { restoreServings, restoreUnitSystem, servings, unitSystem } from '../stores/display.ts';
 
-
 /**
  * The one script that keeps every live value on the page current.
  *

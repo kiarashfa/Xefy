@@ -18,9 +18,14 @@ export function initIngredientIndex(): void {
 
   const params = new URLSearchParams(location.search);
   if (query) query.value = params.get('q') ?? '';
-  if (category && params.get('cat') && category.querySelector(`option[value="${CSS.escape(params.get('cat') ?? '')}"]`))
+  if (
+    category &&
+    params.get('cat') &&
+    category.querySelector(`option[value="${CSS.escape(params.get('cat') ?? '')}"]`)
+  )
     category.value = params.get('cat') ?? '';
-  if (order && params.get('sort') && order.querySelector(`option[value="${params.get('sort')}"]`)) order.value = params.get('sort') ?? 'az';
+  if (order && params.get('sort') && order.querySelector(`option[value="${params.get('sort')}"]`))
+    order.value = params.get('sort') ?? 'az';
 
   const name = (el: HTMLElement) => el.dataset['name'] ?? '';
   const uses = (el: HTMLElement) => Number(el.dataset['uses'] ?? '0');
@@ -37,12 +42,15 @@ export function initIngredientIndex(): void {
     const sorted = [...rows].sort(compare[order?.value ?? 'az'] ?? compare['az']);
     let shown = 0;
     for (const row of sorted) {
-      const hit = (!q || name(row).toLowerCase().includes(q)) && (!cat || row.dataset['cat'] === cat);
+      const hit =
+        (!q || name(row).toLowerCase().includes(q)) && (!cat || row.dataset['cat'] === cat);
       row.hidden = !hit;
       if (hit) shown++;
       list?.append(row);
     }
-    if (count) count.textContent = shown === total ? `${total} ingredients` : `${shown} of ${total} ingredients`;
+    if (count)
+      count.textContent =
+        shown === total ? `${total} ingredients` : `${shown} of ${total} ingredients`;
     if (empty) empty.hidden = shown > 0;
 
     const next = new URLSearchParams();

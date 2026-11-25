@@ -94,10 +94,17 @@ const timelineData = JSON.stringify(
 ---
 
 <BaseLayout title={`${title} · engine fixture`} description="Engine verification surface." noindex>
-  <main id="main" class="wrap" data-recipe={recipe.slug} data-default-servings={recipe.defaultServings}>
+  <main
+    id="main"
+    class="wrap"
+    data-recipe={recipe.slug}
+    data-default-servings={recipe.defaultServings}
+  >
     <p class="banner">
       Engine fixture — not site content. Present only in development builds.
-      {siblings.map((s) => <a href={`${import.meta.env.BASE_URL}dev/${s.slug}/`}>{s.label}</a>)}
+      {siblings.map((s) => (
+        <a href={`${import.meta.env.BASE_URL}dev/${s.slug}/`}>{s.label}</a>
+      ))}
     </p>
 
     <h1>{title}</h1>
@@ -117,10 +124,22 @@ const timelineData = JSON.stringify(
     <section class="card">
       <h2>Timing</h2>
       <div class="timing">
-        <div><b>{formatDuration(recipe.timing.prep)}</b><span>Prep</span></div>
-        <div><b>{formatDuration(recipe.timing.cook)}</b><span>Cook</span></div>
-        <div><b>{formatDuration(recipe.timing.rest)}</b><span>Rest</span></div>
-        <div><b>{formatDuration(recipe.timing.total)}</b><span>Total</span></div>
+        <div>
+          <b>{formatDuration(recipe.timing.prep)}</b>
+          <span>Prep</span>
+        </div>
+        <div>
+          <b>{formatDuration(recipe.timing.cook)}</b>
+          <span>Cook</span>
+        </div>
+        <div>
+          <b>{formatDuration(recipe.timing.rest)}</b>
+          <span>Rest</span>
+        </div>
+        <div>
+          <b>{formatDuration(recipe.timing.total)}</b>
+          <span>Total</span>
+        </div>
       </div>
       <p class="note">
         Critical path {recipe.criticalPathMin}m · card total {recipe.timing.total}m ·
@@ -142,60 +161,61 @@ const timelineData = JSON.stringify(
       <section>
         <h2>Ingredients</h2>
         <ul class="checklist">
-          {
-            recipe.lines.map((line) => (
-              <li>
-                <input type="checkbox" />
-                <span class="ing">
-                  <Fragment
-                    set:html={qtyHtml(
-                      {
-                        amount: line.line.amount,
-                        unit: line.line.unit,
-                        defaultServings: recipe.defaultServings,
-                        name: proseName(line),
-                        density: line.density,
-                        countUnit: line.form.countUnit,
-                      },
-                      servings,
-                      system,
-                      { showName: false },
-                    )}
-                  />
-                  {/* A counted line already names itself: "3 ½ egg yolks (60 g)". */}
-                  {!line.form.countUnit && <span class="ing-name">{proseName(line)}</span>}
-                  {line.line.portions && (
-                    <span class="ing-note">
-                      {line.line.contributions.map((c) => `${c.sourceKey} ${c.amount}${line.line.unit}`).join(' + ')}
-                    </span>
+          {recipe.lines.map((line) => (
+            <li>
+              <input type="checkbox" />
+              <span class="ing">
+                <Fragment
+                  set:html={qtyHtml(
+                    {
+                      amount: line.line.amount,
+                      unit: line.line.unit,
+                      defaultServings: recipe.defaultServings,
+                      name: proseName(line),
+                      density: line.density,
+                      countUnit: line.form.countUnit,
+                    },
+                    servings,
+                    system,
+                    { showName: false },
                   )}
-                  {line.line.consumedFraction < 1 && (
-                    <span class="ing-note">consumed ×{line.line.consumedFraction}</span>
-                  )}
-                </span>
-              </li>
-            ))
-          }
+                />
+                {/* A counted line already names itself: "3 ½ egg yolks (60 g)". */}
+                {!line.form.countUnit && <span class="ing-name">{proseName(line)}</span>}
+                {line.line.portions && (
+                  <span class="ing-note">
+                    {line.line.contributions
+                      .map((c) => `${c.sourceKey} ${c.amount}${line.line.unit}`)
+                      .join(' + ')}
+                  </span>
+                )}
+                {line.line.consumedFraction < 1 && (
+                  <span class="ing-note">consumed ×{line.line.consumedFraction}</span>
+                )}
+              </span>
+            </li>
+          ))}
         </ul>
       </section>
 
       <section>
         <h2>Method</h2>
         <ol class="steps">
-          {
-            recipe.flat.steps.map((step) => (
-              <li>
-                <span class="badge">{step.number}</span>
-                <div>
-                  <p class="step-text" set:html={renderProse(step.prose, { recipe, servings, system })} />
-                  <p class="step-meta">
-                    {step.phase ?? 'rest'} · {formatDuration(step.durationMin)} · {step.id}
-                    {step.fromComponent && <em> · from {step.fromComponent.title}</em>}
-                  </p>
-                </div>
-              </li>
-            ))
-          }
+          {recipe.flat.steps.map((step) => (
+            <li>
+              <span class="badge">{step.number}</span>
+              <div>
+                <p
+                  class="step-text"
+                  set:html={renderProse(step.prose, { recipe, servings, system })}
+                />
+                <p class="step-meta">
+                  {step.phase ?? 'rest'} · {formatDuration(step.durationMin)} · {step.id}
+                  {step.fromComponent && <em> · from {step.fromComponent.title}</em>}
+                </p>
+              </div>
+            </li>
+          ))}
         </ol>
       </section>
     </div>
@@ -204,54 +224,64 @@ const timelineData = JSON.stringify(
       <h2>Nutrition</h2>
       <table>
         <thead>
-          <tr><th>Nutrient</th><th>Per serving</th><th>Total, all servings</th></tr>
+          <tr>
+            <th>Nutrient</th>
+            <th>Per serving</th>
+            <th>Total, all servings</th>
+          </tr>
         </thead>
         <tbody>
-          {
-            MACROS.map((key) => (
-              <tr>
-                <td>{MACRO_LABELS[key]}</td>
-                <td>{formatNutrient(recipe.nutrition.perServing[key] ?? 0, key)}</td>
-                <td
-                  data-per-serving={recipe.nutrition.perServing[key] ?? 0}
-                  data-decimals={key === 'kcal' ? 0 : 1}
-                >
-                  {((recipe.nutrition.perServing[key] ?? 0) * servings).toFixed(key === 'kcal' ? 0 : 1)}
-                </td>
-              </tr>
-            ))
-          }
+          {MACROS.map((key) => (
+            <tr>
+              <td>{MACRO_LABELS[key]}</td>
+              <td>{formatNutrient(recipe.nutrition.perServing[key] ?? 0, key)}</td>
+              <td
+                data-per-serving={recipe.nutrition.perServing[key] ?? 0}
+                data-decimals={key === 'kcal' ? 0 : 1}
+              >
+                {((recipe.nutrition.perServing[key] ?? 0) * servings).toFixed(
+                  key === 'kcal' ? 0 : 1,
+                )}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <p class="note">
         Per-serving figures do not move with the stepper; the total does. As prepared with these
         ingredients.
       </p>
-      {
-        recipe.nutrition.estimated && (
-          <p class="note estimated">
-            Estimated — {recipe.nutrition.estimateReasons.join(' ')}
-          </p>
-        )
-      }
-      {
-        recipe.nutrition.partial.length > 0 && (
-          <p class="note">Partial (some ingredient carries no figure): {recipe.nutrition.partial.join(', ')}</p>
-        )
-      }
+      {recipe.nutrition.estimated && (
+        <p class="note estimated">Estimated — {recipe.nutrition.estimateReasons.join(' ')}</p>
+      )}
+      {recipe.nutrition.partial.length > 0 && (
+        <p class="note">
+          Partial (some ingredient carries no figure): {recipe.nutrition.partial.join(', ')}
+        </p>
+      )}
     </section>
 
     <section class="card">
       <h2>Computed labels</h2>
       <p>
         Diet: <b>{recipe.diet.heroLabel ?? 'no qualifying label'}</b>
-        {recipe.diet.labels.length > 0 && <span class="note"> (qualifies: {recipe.diet.labels.join(', ')})</span>}
+        {recipe.diet.labels.length > 0 && (
+          <span class="note"> (qualifies: {recipe.diet.labels.join(', ')})</span>
+        )}
       </p>
       <p>Free from: {recipe.diet.freeFrom.join(', ') || 'nothing claimed'}</p>
       <p>Allergens: {recipe.diet.allergens.join(', ') || 'none listed'}</p>
-      {recipe.diet.animalOriginNotes.map((n) => <p class="note">{n.label}: {n.note}</p>)}
-      {recipe.warnings.map((w) => <p class="note warn">Merge warning: {w}</p>)}
-      {recipe.errors.map((e) => <p class="note warn">Error: {e}</p>)}
+      {recipe.diet.animalOriginNotes.map((n) => (
+        <p class="note">
+          {n.label}: {n.note}
+        </p>
+      ))}
+      {recipe.warnings.map((w) => (
+        <p class="note warn">Merge warning: {w}</p>
+      ))}
+      {recipe.errors.map((e) => (
+        <p class="note warn">Error: {e}</p>
+      ))}
     </section>
   </main>
 

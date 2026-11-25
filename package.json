@@ -13,14 +13,16 @@
     "postbuild:index": "pagefind --site dist",
     "check:site": "node scripts/integrity/site.ts && node scripts/integrity/site-common.mjs && node scripts/integrity/public-text.mjs Xefy",
     "preview": "astro preview",
-    "check": "astro check",
+    "check": "astro check && npm run format:check",
     "check:content": "node scripts/integrity/run.ts",
     "check:self": "node scripts/integrity/run.ts --content test-fixtures/broken-content --expect-failure",
     "astro": "astro",
     "check:fixtures": "node scripts/integrity/run.ts --content test-fixtures/engine-content",
     "brand": "node scripts/brand/brand.ts",
     "brand:icons": "node scripts/brand/icons.mjs",
-    "check:layout": "node scripts/integrity/layout.mjs"
+    "check:layout": "node scripts/integrity/layout.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.5",
@@ -40,6 +42,9 @@
     "@resvg/resvg-js": "^2.6.2",
     "pagefind": "^1.5.2",
     "playwright-core": "^1.64.1",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "prettier-plugin-svelte": "4.1.1",
     "satori": "^0.33.5",
     "sharp": "^0.35.3",
     "tinyglobby": "^0.2.17",

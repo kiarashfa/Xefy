@@ -67,9 +67,7 @@ const addMinutes = (date: Date, minutes: number) => new Date(date.getTime() + mi
  */
 export function computeTimeline(steps: TimedStep[], anchor: TimelineAnchor): Timeline {
   const totalMin = criticalPathTotal(steps);
-  const start = anchorsStart(anchor.mode)
-    ? new Date(anchor.at)
-    : addMinutes(anchor.at, -totalMin);
+  const start = anchorsStart(anchor.mode) ? new Date(anchor.at) : addMinutes(anchor.at, -totalMin);
   const end = addMinutes(start, totalMin);
 
   const byId = new Map(steps.map((s) => [s.id, s]));

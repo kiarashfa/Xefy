@@ -6,8 +6,18 @@ import type { Allergen, AnimalOrigin, Difficulty } from '../../schemas/vocabular
 import { computeDiet, type DietResult } from '../math/diet.ts';
 import { computeNutrition, type NutritionResult } from '../math/nutrition.ts';
 import { toGrams, type Density } from '../math/quantity.ts';
-import { computeTiming, criticalPathTotal, type TimedStep, type TimingTotals } from '../math/timing.ts';
-import { flatten, type ComponentSource, type FlattenResult, type MergedLine } from '../transclusion/flatten.ts';
+import {
+  computeTiming,
+  criticalPathTotal,
+  type TimedStep,
+  type TimingTotals,
+} from '../math/timing.ts';
+import {
+  flatten,
+  type ComponentSource,
+  type FlattenResult,
+  type MergedLine,
+} from '../transclusion/flatten.ts';
 
 /**
  * Turns authored content into everything a page needs, in one place.

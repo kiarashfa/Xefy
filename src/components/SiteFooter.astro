@@ -27,23 +27,32 @@ const links = [
  */
 const COPYRIGHT_START_YEAR = 2026;
 const buildYear = new Date().getFullYear();
-const years = buildYear > COPYRIGHT_START_YEAR ? `${COPYRIGHT_START_YEAR}–${buildYear}` : `${COPYRIGHT_START_YEAR}`;
-
+const years =
+  buildYear > COPYRIGHT_START_YEAR
+    ? `${COPYRIGHT_START_YEAR}–${buildYear}`
+    : `${COPYRIGHT_START_YEAR}`;
 ---
 
 <footer class="site-foot" data-pagefind-ignore>
   <div class="wrap">
     <div class="foot-bar">
       <nav class="foot-links" aria-label="Site">
-        <a class="foot-brand" href={base}><b>X</b>efy</a>
+        <a class="foot-brand" href={base}>
+          <b>X</b>efy
+        </a>
         <ul>
-          {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+          {links.map((l) => (
+            <li>
+              <a href={l.href}>{l.label}</a>
+            </li>
+          ))}
         </ul>
       </nav>
       <p class="foot-copy">© {years} Kiarash Farajzadehahary</p>
     </div>
     <p class="foot-note">
-      Nutrition, timing and diet labels are computed from published data for reference. They are not dietary or medical advice, and allergen flags cannot account for the product you buy.
+      Nutrition, timing and diet labels are computed from published data for reference. They are not
+      dietary or medical advice, and allergen flags cannot account for the product you buy.
     </p>
   </div>
 </footer>

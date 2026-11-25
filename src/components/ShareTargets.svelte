@@ -101,7 +101,11 @@
       label: 'Gmail',
       href: `https://mail.google.com/mail/?view=cm&fs=1&su=${e(title || 'From Xefy')}&body=${e(text)}`,
     },
-    { id: 'email', label: 'Email', href: `mailto:?subject=${e(title || 'From Xefy')}&body=${e(text)}` },
+    {
+      id: 'email',
+      label: 'Email',
+      href: `mailto:?subject=${e(title || 'From Xefy')}&body=${e(text)}`,
+    },
   ]);
 
   /** Putting it in front of an audience. */

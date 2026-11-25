@@ -10,5 +10,7 @@ const { recipes, base } = Astro.props;
 ---
 
 <ul class="card-grid">
-  {recipes.map((r) => <RecipeCard recipe={r} base={base} />)}
+  {recipes.map((r) => (
+    <RecipeCard recipe={r} base={base} />
+  ))}
 </ul>

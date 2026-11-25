@@ -40,7 +40,10 @@ function uid(): string {
   try {
     const bytes = new Uint8Array(4);
     crypto.getRandomValues(bytes);
-    return [...bytes].map((b) => b.toString(36).padStart(2, '0')).join('').slice(0, 6);
+    return [...bytes]
+      .map((b) => b.toString(36).padStart(2, '0'))
+      .join('')
+      .slice(0, 6);
   } catch {
     return Math.random().toString(36).slice(2, 8);
   }

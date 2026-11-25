@@ -76,15 +76,16 @@
   const dropped = $derived(shared ? null : describeDropped(resolution.dropped));
 
   $effect(() => {
-    ensureDetails(base, resolution.items.map((i) => i.recipe.slug));
+    ensureDetails(
+      base,
+      resolution.items.map((i) => i.recipe.slug),
+    );
   });
 
   const lines = $derived(aggregateList(resolution.items, $details, staples));
   const groups = $derived(groupList(lines, active));
 
-  const text = $derived(
-    shareText(groups.toBuy, resolution.items, $unitSystem, shareUrl()),
-  );
+  const text = $derived(shareText(groups.toBuy, resolution.items, $unitSystem, shareUrl()));
 
   // The same list without the trailing URL, for the destinations that take a
   // link in a parameter of their own and would otherwise repeat it.
@@ -161,8 +162,7 @@
 {:else if resolution.items.length === 0}
   <p class="empty-state">
     {#if shared}
-      That link does not name anything on the site. It may have been shortened or edited in
-      transit.
+      That link does not name anything on the site. It may have been shortened or edited in transit.
     {:else}
       Nothing planned yet, so there is nothing to buy. Add a dish from any
       <a href={`${base}recipes/`}>recipe page</a>, or start from
@@ -210,11 +210,11 @@
 
         <ShareTargets
           mode="message"
-          text={text}
-          body={body}
+          {text}
+          {body}
           url={shareUrl()}
           title="Shopping list · Xefy"
-          payload={payload}
+          {payload}
         />
 
         <p class="source-line">

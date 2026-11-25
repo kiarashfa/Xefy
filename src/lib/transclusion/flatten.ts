@@ -2,7 +2,13 @@ import { isComponentStep, type IngredientLine, type StepEntry } from '../../sche
 import type { StepPhase } from '../../schemas/vocabularies.ts';
 import { mergeByForm, type SourceKey } from './merge.ts';
 
-export { mergeByForm, groupKey, type MergeGroup, type MergeInput, type SourceKey } from './merge.ts';
+export {
+  mergeByForm,
+  groupKey,
+  type MergeGroup,
+  type MergeInput,
+  type SourceKey,
+} from './merge.ts';
 
 /**
  * Build-time Component flattening.
@@ -130,7 +136,10 @@ interface Instance {
 function collectInstances(
   parent: FlattenSource,
   components: Map<string, ComponentSource>,
-): { order: { instance: Instance; step: Exclude<StepEntry, { componentRef: string }> }[]; instances: Instance[] } {
+): {
+  order: { instance: Instance; step: Exclude<StepEntry, { componentRef: string }> }[];
+  instances: Instance[];
+} {
   const instances: Instance[] = [];
   const order: { instance: Instance; step: Exclude<StepEntry, { componentRef: string }> }[] = [];
   const occurrences = new Map<string, number>();
@@ -257,11 +266,11 @@ export function flatten(
           ? { ...authored, ingredientRef: replacement.ingredientRef, form: replacement.form }
           : authored;
         return {
-        sourceKey: instance.sourceKey,
-        line,
-        // The component's own multiplier lands here, before the merge. The
-        // reader's serving scale multiplies the merged result later.
-        amount: line.amount * instance.multiplier,
+          sourceKey: instance.sourceKey,
+          line,
+          // The component's own multiplier lands here, before the merge. The
+          // reader's serving scale multiplies the merged result later.
+          amount: line.amount * instance.multiplier,
         };
       }),
     ),

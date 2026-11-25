@@ -23,7 +23,7 @@ const contentRoot =
   contentFlag === -1 ? DEFAULT_CONTENT : path.resolve(ROOT, argv[contentFlag + 1] ?? '');
 
 const ANSI = {
-  reset:'[0m',
+  reset: '[0m',
   dim: '[2m',
   bold: '[1m',
   red: '[31m',

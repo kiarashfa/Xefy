@@ -159,7 +159,9 @@ export function initInteractions(): void {
   // the key everyone already tries.
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    for (const popover of document.querySelectorAll<HTMLElement>('.attribution-popover[data-open]')) {
+    for (const popover of document.querySelectorAll<HTMLElement>(
+      '.attribution-popover[data-open]',
+    )) {
       popover.removeAttribute('data-open');
       const toggle = popover.previousElementSibling as HTMLElement | null;
       toggle?.setAttribute('aria-expanded', 'false');

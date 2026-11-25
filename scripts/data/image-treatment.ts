@@ -135,14 +135,16 @@ export async function treat(input: Buffer, size: OutputSize): Promise<Buffer> {
     .normalise({ lower: TREATMENT.normaliseLower, upper: TREATMENT.normaliseUpper })
     .toBuffer();
 
-  return sharp(balanced)
-    .modulate({ saturation: TREATMENT.saturation, brightness: TREATMENT.brightness })
-    .linear(TREATMENT.channelGain, TREATMENT.channelOffset)
-    .gamma(TREATMENT.gamma)
-    // Resampling always softens; this puts back what it took, no more.
-    .sharpen({ sigma: 0.6 })
-    .webp({ quality: TREATMENT.webpQuality, effort: 5 })
-    .toBuffer();
+  return (
+    sharp(balanced)
+      .modulate({ saturation: TREATMENT.saturation, brightness: TREATMENT.brightness })
+      .linear(TREATMENT.channelGain, TREATMENT.channelOffset)
+      .gamma(TREATMENT.gamma)
+      // Resampling always softens; this puts back what it took, no more.
+      .sharpen({ sigma: 0.6 })
+      .webp({ quality: TREATMENT.webpQuality, effort: 5 })
+      .toBuffer()
+  );
 }
 
 /** The same crop and encode with no treatment, for before-and-after comparison. */

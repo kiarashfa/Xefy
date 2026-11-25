@@ -78,165 +78,167 @@ const description = `${descriptor}. ${energy != null ? `100 g provides about ${M
     <div class="page-head">
       <p class="eyebrow">{ingredient.category}</p>
       <h1 class="page-title">{ingredient.name}</h1>
-      <p class="page-lede">{descriptor}. {dietNote}</p>
+      <p class="page-lede">
+        {descriptor}. {dietNote}
+      </p>
 
-      {
-        (ingredient.names?.alsoKnownAs?.length > 0 ||
-          ingredient.names?.notToBeConfusedWith?.length > 0) && (
-          <div class="names" style="margin-top:20px">
-            {ingredient.names.alsoKnownAs.length > 0 && (
-              <p class="name-line">
-                <span class="name-label">Also known as</span>
-                {ingredient.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
-                  <>
-                    {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
-                    <span class="name-alt">{n.name}</span>
-                    {n.region && <span class="name-region"> · {n.region}</span>}
-                  </>
-                ))}
-              </p>
-            )}
-            {ingredient.names.notToBeConfusedWith.length > 0 && (
-              <p class="name-line">
-                <span class="name-label">Not the same as</span>
-                {ingredient.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
-                  <>
-                    {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
-                    <span class="name-alt">{n.name}</span>
-                    <span class="name-region"> ({n.note})</span>
-                  </>
-                ))}
-              </p>
-            )}
-          </div>
-        )
-      }
+      {(ingredient.names?.alsoKnownAs?.length > 0 ||
+        ingredient.names?.notToBeConfusedWith?.length > 0) && (
+        <div class="names" style="margin-top:20px">
+          {ingredient.names.alsoKnownAs.length > 0 && (
+            <p class="name-line">
+              <span class="name-label">Also known as</span>
+              {ingredient.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
+                <>
+                  {i > 0 && (
+                    <span class="name-sep" aria-hidden="true">
+                      ·
+                    </span>
+                  )}
+                  <span class="name-alt">{n.name}</span>
+                  {n.region && <span class="name-region"> · {n.region}</span>}
+                </>
+              ))}
+            </p>
+          )}
+          {ingredient.names.notToBeConfusedWith.length > 0 && (
+            <p class="name-line">
+              <span class="name-label">Not the same as</span>
+              {ingredient.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
+                <>
+                  {i > 0 && (
+                    <span class="name-sep" aria-hidden="true">
+                      ·
+                    </span>
+                  )}
+                  <span class="name-alt">{n.name}</span>
+                  <span class="name-region"> ({n.note})</span>
+                </>
+              ))}
+            </p>
+          )}
+        </div>
+      )}
     </div>
 
     <div class="two-col">
       <aside class="left-stack">
-        {
-          credit && (
-            <figure class="hero-image is-square">
-              <img src={`${base}${credit.files.card}`} alt={credit.alt} width="800" height="800" />
-              <div class="attribution">
-                <button class="attribution-toggle" aria-expanded="false" aria-label="Image credit">
-                  i
-                </button>
-                <div class="attribution-popover">
-                  <a href={credit.sourceUrl}>{credit.title.replace('File:', '')}</a>
-                  {credit.author && <> by {credit.author}</>}
-                  <br />
-                  {credit.license}. {credit.modified}
-                </div>
+        {credit && (
+          <figure class="hero-image is-square">
+            <img src={`${base}${credit.files.card}`} alt={credit.alt} width="800" height="800" />
+            <div class="attribution">
+              <button class="attribution-toggle" aria-expanded="false" aria-label="Image credit">
+                i
+              </button>
+              <div class="attribution-popover">
+                <a href={credit.sourceUrl}>{credit.title.replace('File:', '')}</a>
+                {credit.author && <> by {credit.author}</>}
+                <br />
+                {credit.license}. {credit.modified}
               </div>
-            </figure>
-          )
-        }
+            </div>
+          </figure>
+        )}
 
         <div class="side-card">
           <div class="side-card-label">Used in</div>
-          {
-            usedIn.length === 0 ? (
-              <p class="empty-state">
-                No recipe on Xefy uses this yet. It will appear here as soon as one does.
+          {usedIn.length === 0 ? (
+            <p class="empty-state">
+              No recipe on Xefy uses this yet. It will appear here as soon as one does.
+            </p>
+          ) : (
+            <>
+              <ul class="ingredients used-in">
+                {usedIn.slice(0, USED_IN_SHOWN).map(({ recipe, grams: g }) => (
+                  <li>
+                    <span class="ing-text">
+                      <a href={`${base}recipes/${recipe.slug}/`}>{recipe.identity.title}</a>
+                      <span class="count">{grams(g)}</span>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="source-line">
+                {usedIn.length > USED_IN_SHOWN
+                  ? `The ${USED_IN_SHOWN} dishes using the most, at their own serving counts. ${usedIn.length - USED_IN_SHOWN} more use it in smaller amounts.`
+                  : 'Sorted by how much each recipe uses, most first, at its own serving count.'}
               </p>
-            ) : (
-              <>
-                <ul class="ingredients used-in">
-                  {usedIn.slice(0, USED_IN_SHOWN).map(({ recipe, grams: g }) => (
-                    <li>
-                      <span class="ing-text">
-                        <a href={`${base}recipes/${recipe.slug}/`}>{recipe.identity.title}</a>
-                        <span class="count">{grams(g)}</span>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <p class="source-line">
-                  {usedIn.length > USED_IN_SHOWN
-                    ? `The ${USED_IN_SHOWN} dishes using the most, at their own serving counts. ${usedIn.length - USED_IN_SHOWN} more use it in smaller amounts.`
-                    : 'Sorted by how much each recipe uses, most first, at its own serving count.'}
-                </p>
-              </>
-            )
-          }
+            </>
+          )}
         </div>
 
-        {
-          ingredient.generalSubstitutes?.length > 0 && (
-            <div class="side-card">
-              <div class="side-card-label">Rough substitutes</div>
-              {ingredient.generalSubstitutes.map((s: any) => (
-                <p class="source-line" style="margin-top:0">
-                  <b>{s.substitute}</b>{s.note && <>: {s.note}</>}
-                </p>
-              ))}
-              <p class="source-line">
-                Not dish-specific. A recipe that has a considered swap says so on its own page.
+        {ingredient.generalSubstitutes?.length > 0 && (
+          <div class="side-card">
+            <div class="side-card-label">Rough substitutes</div>
+            {ingredient.generalSubstitutes.map((s: any) => (
+              <p class="source-line" style="margin-top:0">
+                <b>{s.substitute}</b>
+                {s.note && <>: {s.note}</>}
               </p>
-            </div>
-          )
-        }
+            ))}
+            <p class="source-line">
+              Not dish-specific. A recipe that has a considered swap says so on its own page.
+            </p>
+          </div>
+        )}
       </aside>
 
       <div>
-        {
-          ingredient.forms.map((form: any) => (
-            <section style="margin-bottom:36px">
-              <h2 class="panel-title">
-                {form.label} · per 100 g
-              </h2>
+        {ingredient.forms.map((form: any) => (
+          <section style="margin-bottom:36px">
+            <h2 class="panel-title">{form.label} · per 100 g</h2>
 
-              {form.animalOriginNote && <p class="pitfall"><b>Worth knowing</b>{form.animalOriginNote}</p>}
-              {form.nutritionCaveat && <p class="callout">{form.nutritionCaveat}</p>}
-
-              <table class="nutrition-table">
-                <thead>
-                  <tr>
-                    <th>Nutrient</th>
-                    <th style="text-align:right">Per 100 g</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {NUTRIENT_ROWS.filter(([key]) => form.nutritionPer100g[key] != null).map(
-                    ([key, label, unit]) => (
-                      <tr>
-                        <td>{label}</td>
-                        <td>
-                          {formatNutrient(form.nutritionPer100g[key], key)}
-                          {unit}
-                        </td>
-                      </tr>
-                    ),
-                  )}
-                </tbody>
-              </table>
-
-              <p class="source-line">
-                {form.sourceDataset} record{' '}
-                {form.sourceUrl ? <a href={form.sourceUrl}>{form.sourceId}</a> : form.sourceId}.
-                {form.sourceNote && <> {form.sourceNote}</>}
-                {form.density && (
-                  <>
-                    {' '}
-                    Density {form.density.densitySource === 'measured' ? 'measured' : 'estimated'}
-                    {form.density.densityClass && <> from the {form.density.densityClass} class</>}.
-                  </>
-                )}
+            {form.animalOriginNote && (
+              <p class="pitfall">
+                <b>Worth knowing</b>
+                {form.animalOriginNote}
               </p>
-            </section>
-          ))
-        }
+            )}
+            {form.nutritionCaveat && <p class="callout">{form.nutritionCaveat}</p>}
 
-        {
-          about && (
-            <section class="about" style="margin-top:36px">
-              <h2 class="panel-title">About {ingredient.name}</h2>
-              <p>{about.data.summary}</p>
-            </section>
-          )
-        }
+            <table class="nutrition-table">
+              <thead>
+                <tr>
+                  <th>Nutrient</th>
+                  <th style="text-align:right">Per 100 g</th>
+                </tr>
+              </thead>
+              <tbody>
+                {NUTRIENT_ROWS.filter(([key]) => form.nutritionPer100g[key] != null).map(
+                  ([key, label, unit]) => (
+                    <tr>
+                      <td>{label}</td>
+                      <td>
+                        {formatNutrient(form.nutritionPer100g[key], key)}
+                        {unit}
+                      </td>
+                    </tr>
+                  ),
+                )}
+              </tbody>
+            </table>
+
+            <p class="source-line">
+              {form.sourceDataset} record{' '}
+              {form.sourceUrl ? <a href={form.sourceUrl}>{form.sourceId}</a> : form.sourceId}.
+              {form.sourceNote && <> {form.sourceNote}</>}
+              {form.density && (
+                <>
+                  {' '}
+                  Density {form.density.densitySource === 'measured' ? 'measured' : 'estimated'}
+                  {form.density.densityClass && <> from the {form.density.densityClass} class</>}.
+                </>
+              )}
+            </p>
+          </section>
+        ))}
+
+        {about && (
+          <section class="about" style="margin-top:36px">
+            <h2 class="panel-title">About {ingredient.name}</h2>
+            <p>{about.data.summary}</p>
+          </section>
+        )}
       </div>
     </div>
   </main>

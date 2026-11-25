@@ -14,7 +14,8 @@ export const GET: APIRoute = () => {
   const manifest = {
     name: 'Xefy · Recipe encyclopedia',
     short_name: 'Xefy',
-    description: 'A free recipe encyclopedia where every number on the page is computed, never typed.',
+    description:
+      'A free recipe encyclopedia where every number on the page is computed, never typed.',
     start_url: base,
     scope: base,
     display: 'standalone',

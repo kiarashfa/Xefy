@@ -1,7 +1,13 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { aggregateList, aggregateNutrition, displayAmount, displayName, groupList } from './aggregate.ts';
+import {
+  aggregateList,
+  aggregateNutrition,
+  displayAmount,
+  displayName,
+  groupList,
+} from './aggregate.ts';
 import { describeDropped, resolvePlan, totalPortions } from './resolve.ts';
 import { decodePlanFragment, encodePlanFragment, shareText } from './share.ts';
 import { sanitisePlan } from './store.ts';
@@ -71,11 +77,31 @@ const pizzaDetail: RecipeDetail = {
       nutritionEstimated: false,
       nutritionEstimateReasons: [],
       densityEstimated: false,
-      makeAhead: { aheadInstructions: null, freezable: true, freezeInstructions: null, reheatInstructions: null },
+      makeAhead: {
+        aheadInstructions: null,
+        freezable: true,
+        freezeInstructions: null,
+        reheatInstructions: null,
+      },
       ingredients: [
         line(),
-        line({ ingredientRef: 'water', name: 'Water', form: 'tap', formLabel: 'Tap', multiForm: false, amount: 160, unit: 'ml' }),
-        line({ ingredientRef: 'salt', name: 'Fine Sea Salt', form: 'fine', formLabel: 'Fine', multiForm: false, amount: 8 }),
+        line({
+          ingredientRef: 'water',
+          name: 'Water',
+          form: 'tap',
+          formLabel: 'Tap',
+          multiForm: false,
+          amount: 160,
+          unit: 'ml',
+        }),
+        line({
+          ingredientRef: 'salt',
+          name: 'Fine Sea Salt',
+          form: 'fine',
+          formLabel: 'Fine',
+          multiForm: false,
+          amount: 8,
+        }),
       ],
     },
     {
@@ -87,7 +113,12 @@ const pizzaDetail: RecipeDetail = {
       nutritionEstimated: true,
       nutritionEstimateReasons: ['The tinned tomato figure is a stand-in.'],
       densityEstimated: false,
-      makeAhead: { aheadInstructions: null, freezable: true, freezeInstructions: null, reheatInstructions: null },
+      makeAhead: {
+        aheadInstructions: null,
+        freezable: true,
+        freezeInstructions: null,
+        reheatInstructions: null,
+      },
       ingredients: [line({ amount: 260 })],
     },
   ],
@@ -106,11 +137,23 @@ const stewDetail: RecipeDetail = {
       nutritionEstimated: false,
       nutritionEstimateReasons: [],
       densityEstimated: true,
-      makeAhead: { aheadInstructions: null, freezable: false, freezeInstructions: null, reheatInstructions: null },
+      makeAhead: {
+        aheadInstructions: null,
+        freezable: false,
+        freezeInstructions: null,
+        reheatInstructions: null,
+      },
       ingredients: [
         // The same ingredient in a *different* Form: a separate purchase.
         line({ form: 'plain', formLabel: 'Plain white', amount: 100 }),
-        line({ ingredientRef: 'salt', name: 'Fine Sea Salt', form: 'fine', formLabel: 'Fine', multiForm: false, amount: 12 }),
+        line({
+          ingredientRef: 'salt',
+          name: 'Fine Sea Salt',
+          form: 'fine',
+          formLabel: 'Fine',
+          multiForm: false,
+          amount: 12,
+        }),
       ],
     },
   ],
@@ -218,18 +261,33 @@ test('staples, owned items and the list are three separate groups', () => {
   const lines = aggregateList(items, details, STAPLES);
 
   const plain = groupList(lines, planOf([]));
-  assert.deepEqual(plain.toBuy.map((l) => l.ingredientRef), ['flour']);
-  assert.deepEqual(plain.staples.map((l) => l.ingredientRef), ['water', 'salt']);
+  assert.deepEqual(
+    plain.toBuy.map((l) => l.ingredientRef),
+    ['flour'],
+  );
+  assert.deepEqual(
+    plain.staples.map((l) => l.ingredientRef),
+    ['water', 'salt'],
+  );
   assert.equal(plain.alreadyHave.length, 0);
 
   const ticked = groupList(lines, planOf([], { have: ['flour'] }));
   assert.equal(ticked.toBuy.length, 0);
-  assert.deepEqual(ticked.alreadyHave.map((l) => l.ingredientRef), ['flour']);
+  assert.deepEqual(
+    ticked.alreadyHave.map((l) => l.ingredientRef),
+    ['flour'],
+  );
 
   // One staple moved into "To buy" leaves the others where they were.
   const needed = groupList(lines, planOf([], { needStaples: ['water'] }));
-  assert.deepEqual(needed.toBuy.map((l) => l.ingredientRef), ['flour', 'water']);
-  assert.deepEqual(needed.staples.map((l) => l.ingredientRef), ['salt']);
+  assert.deepEqual(
+    needed.toBuy.map((l) => l.ingredientRef),
+    ['flour', 'water'],
+  );
+  assert.deepEqual(
+    needed.staples.map((l) => l.ingredientRef),
+    ['salt'],
+  );
 });
 
 test('a version with no detail contributes nothing rather than throwing', () => {
@@ -375,7 +433,12 @@ test('an empty plan has no portions and no division by zero', () => {
 test('the shared text puts the quantity first, one item per line', () => {
   const { items } = resolvePlan(planOf([item({ servings: 4 })]), catalog);
   const lines = aggregateList(items, details, STAPLES);
-  const text = shareText(groupList(lines, planOf([])).toBuy, items, 'metric', 'https://example.test/');
+  const text = shareText(
+    groupList(lines, planOf([])).toBuy,
+    items,
+    'metric',
+    'https://example.test/',
+  );
 
   const rows = text.split('\n');
   assert.equal(rows[0], 'Shopping list · Xefy');
@@ -442,7 +505,9 @@ test('a hostile fragment yields nothing the page can render', () => {
       // Whatever survives is a real catalogue entry with a sane serving count —
       // there is no path by which a fragment introduces content of its own.
       assert.ok(catalog.some((r) => r.slug === decoded.recipe));
-      assert.ok(Number.isInteger(decoded.servings) && decoded.servings >= 1 && decoded.servings <= 24);
+      assert.ok(
+        Number.isInteger(decoded.servings) && decoded.servings >= 1 && decoded.servings <= 24,
+      );
     }
   }
   assert.equal(decodePlanFragment(`#p=${'test-pizza:2,'.repeat(500)}`, catalog).length, 40);

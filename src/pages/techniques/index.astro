@@ -42,25 +42,23 @@ const entries = [
       </p>
     </div>
 
-    {
-      entries.length > 0 ? (
-        <ul class="listing listing-single">
-          {entries.map((e) => (
-            <li class="result-row">
-              <a href={`${base}techniques/${e.slug}/`}>
-                <span>
-                  {e.title}
-                  <span class="ing-note">{e.summary}</span>
-                </span>
-                {e.note && <span class="count">{e.note}</span>}
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p class="empty-state">No standalone procedures yet.</p>
-      )
-    }
+    {entries.length > 0 ? (
+      <ul class="listing listing-single">
+        {entries.map((e) => (
+          <li class="result-row">
+            <a href={`${base}techniques/${e.slug}/`}>
+              <span>
+                {e.title}
+                <span class="ing-note">{e.summary}</span>
+              </span>
+              {e.note && <span class="count">{e.note}</span>}
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty-state">No standalone procedures yet.</p>
+    )}
   </main>
   <SiteFooter />
   <script>

@@ -43,41 +43,36 @@ const shareAlike = credits.filter((c) => c.shareAlike).length;
       </p>
     </div>
 
-    {
-      shareAlike > 0 && (
-        <p class="source-line">
-          {shareAlike} of {credits.length} are ShareAlike, and the adapted versions are offered under
-          those same terms.
-        </p>
-      )
-    }
+    {shareAlike > 0 && (
+      <p class="source-line">
+        {shareAlike} of {credits.length} are ShareAlike, and the adapted versions are offered under
+        those same terms.
+      </p>
+    )}
 
     <ul class="attribution-list">
-      {
-        credits.map((c) => (
-          <li id={`${c.kind}-${c.slug}`}>
-            <img src={`${base}${c.files.thumb}`} alt="" width="56" height="56" loading="lazy" />
-            <div class="meta">
-              <b>
-                {/*
-                 * Three kinds, three routes — and Components live under
-                 * /techniques/, which serves both. A two-way ternary sent the
-                 * first Component credit to /ingredients/<slug>/, a page that
-                 * is never built; only check:site caught it.
-                 */}
-                <a href={`${base}${SECTION[c.kind] ?? 'ingredients'}/${c.slug}/`}>
-                  {c.slug}
-                </a>
-              </b>
-              <br />
-              <a href={c.sourceUrl}>{c.title.replace('File:', '')}</a>
-              {c.author && <> by {c.author}</>} · {c.licenseUrl ? <a href={c.licenseUrl}>{c.license}</a> : c.license}
-              <br />
-              {c.modified}
-            </div>
-          </li>
-        ))
-      }
+      {credits.map((c) => (
+        <li id={`${c.kind}-${c.slug}`}>
+          <img src={`${base}${c.files.thumb}`} alt="" width="56" height="56" loading="lazy" />
+          <div class="meta">
+            <b>
+              {/*
+               * Three kinds, three routes — and Components live under
+               * /techniques/, which serves both. A two-way ternary sent the
+               * first Component credit to /ingredients/<slug>/, a page that
+               * is never built; only check:site caught it.
+               */}
+              <a href={`${base}${SECTION[c.kind] ?? 'ingredients'}/${c.slug}/`}>{c.slug}</a>
+            </b>
+            <br />
+            <a href={c.sourceUrl}>{c.title.replace('File:', '')}</a>
+            {c.author && <> by {c.author}</>} ·{' '}
+            {c.licenseUrl ? <a href={c.licenseUrl}>{c.license}</a> : c.license}
+            <br />
+            {c.modified}
+          </div>
+        </li>
+      ))}
     </ul>
   </main>
 

@@ -38,8 +38,7 @@ const base = import.meta.env.BASE_URL;
       <p class="eyebrow">Method</p>
       <h1 class="page-title">{term.label}</h1>
       <p class="page-lede">
-        {recipes.length} {recipes.length === 1 ? 'dish' : 'dishes'}.
-        {term.description}
+        {recipes.length} {recipes.length === 1 ? 'dish' : 'dishes'}.{term.description}
       </p>
     </div>
 

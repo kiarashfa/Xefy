@@ -38,12 +38,22 @@ export function resolvePlan(value: Plan, catalog: readonly CatalogRecord[]): Pla
   for (const item of value.items) {
     const recipe = bySlug.get(item.recipe);
     if (!recipe) {
-      dropped.push({ uid: item.uid, recipe: item.recipe, version: item.version, reason: 'recipe-gone' });
+      dropped.push({
+        uid: item.uid,
+        recipe: item.recipe,
+        version: item.version,
+        reason: 'recipe-gone',
+      });
       continue;
     }
     const version = recipe.versions.find((v) => v.id === item.version);
     if (!version) {
-      dropped.push({ uid: item.uid, recipe: item.recipe, version: item.version, reason: 'version-gone' });
+      dropped.push({
+        uid: item.uid,
+        recipe: item.recipe,
+        version: item.version,
+        reason: 'version-gone',
+      });
       continue;
     }
     items.push({ item, recipe, version });
@@ -70,7 +80,8 @@ export function describeDropped(dropped: readonly DroppedItem[]): string | null 
     );
   }
 
-  const count = dropped.length === 1 ? 'One saved entry was' : `${dropped.length} saved entries were`;
+  const count =
+    dropped.length === 1 ? 'One saved entry was' : `${dropped.length} saved entries were`;
   return `${count} removed from this plan: ${parts.join(', and ')}.`;
 }
 

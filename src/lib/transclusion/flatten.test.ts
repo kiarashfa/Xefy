@@ -7,8 +7,25 @@ const boil: ComponentSource = {
   slug: 'boil-pasta',
   title: 'Pasta, boiled al dente',
   ingredients: [
-    { id: 'pasta', ingredientRef: 'spaghetti', form: 'dried', amount: 200, unit: 'g', optional: false, consumedFraction: 1 },
-    { id: 'water', ingredientRef: 'water', form: 'tap', amount: 2000, unit: 'ml', optional: false, consumedFraction: 0.05, consumedFractionNote: 'Drained.' },
+    {
+      id: 'pasta',
+      ingredientRef: 'spaghetti',
+      form: 'dried',
+      amount: 200,
+      unit: 'g',
+      optional: false,
+      consumedFraction: 1,
+    },
+    {
+      id: 'water',
+      ingredientRef: 'water',
+      form: 'tap',
+      amount: 2000,
+      unit: 'ml',
+      optional: false,
+      consumedFraction: 0.05,
+      consumedFractionNote: 'Drained.',
+    },
   ],
   steps: [{ id: 'boil', durationMin: 10, type: 'active', phase: 'cook' }],
   prose: new Map([['boil', 'Boil the <Qty ref="pasta"/>.']]),
@@ -16,10 +33,20 @@ const boil: ComponentSource = {
 
 const dish = (swap?: Record<string, { ingredientRef: string; form: string }>): FlattenSource => ({
   ingredients: [
-    { id: 'cheese', ingredientRef: 'cheddar', form: 'mature', amount: 150, unit: 'g', optional: false, consumedFraction: 1 },
+    {
+      id: 'cheese',
+      ingredientRef: 'cheddar',
+      form: 'mature',
+      amount: 150,
+      unit: 'g',
+      optional: false,
+      consumedFraction: 1,
+    },
   ],
   steps: [
-    swap ? { componentRef: 'boil-pasta', multiplier: 1, swap } : { componentRef: 'boil-pasta', multiplier: 1 },
+    swap
+      ? { componentRef: 'boil-pasta', multiplier: 1, swap }
+      : { componentRef: 'boil-pasta', multiplier: 1 },
     { id: 'melt', durationMin: 5, type: 'active', phase: 'cook' },
   ],
   prose: new Map([['melt', 'Stir in the <Qty ref="cheese"/>.']]),
@@ -35,7 +62,10 @@ test('a Component line keeps its own ingredient when nothing swaps it', () => {
 
 test('a swap replaces the ingredient and form on the named line, for this use only', () => {
   const result = flatten(dish({ pasta: { ingredientRef: 'macaroni', form: 'dried' } }), components);
-  assert.equal(result.ingredients.some((line) => line.ingredientRef === 'spaghetti'), false);
+  assert.equal(
+    result.ingredients.some((line) => line.ingredientRef === 'spaghetti'),
+    false,
+  );
   const macaroni = result.ingredients.find((line) => line.ingredientRef === 'macaroni');
   assert.ok(macaroni, 'the swapped line is macaroni');
   assert.equal(macaroni.amount, 200, 'the amount is the Component’s own');

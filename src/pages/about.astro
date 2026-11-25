@@ -27,7 +27,11 @@ const counts = [
 ];
 
 const contact = [
-  { label: 'Personal site', href: 'https://kiarashfa.github.io/website/', note: 'kiarashfa.github.io' },
+  {
+    label: 'Personal site',
+    href: 'https://kiarashfa.github.io/website/',
+    note: 'kiarashfa.github.io',
+  },
   { label: 'Email', href: 'mailto:kiarashfa@gmail.com', note: 'kiarashfa@gmail.com' },
   { label: 'GitHub', href: 'https://github.com/kiarashfa', note: 'github.com/kiarashfa' },
 ];
@@ -76,22 +80,20 @@ const description = 'What Xefy is, who builds it, and how to get in touch or sup
         <div class="side-card">
           <div class="side-card-label">Contact</div>
           <ul class="ingredients">
-            {
-              contact.map((item) => (
-                <li>
-                  <span class="ing-text">
-                    {item.href.startsWith('mailto:') ? (
-                      <a href={item.href}>{item.label}</a>
-                    ) : (
-                      <a href={item.href} target="_blank" rel="noopener">
-                        {item.label}
-                      </a>
-                    )}
-                    <span class="ing-note">{item.note}</span>
-                  </span>
-                </li>
-              ))
-            }
+            {contact.map((item) => (
+              <li>
+                <span class="ing-text">
+                  {item.href.startsWith('mailto:') ? (
+                    <a href={item.href}>{item.label}</a>
+                  ) : (
+                    <a href={item.href} target="_blank" rel="noopener">
+                      {item.label}
+                    </a>
+                  )}
+                  <span class="ing-note">{item.note}</span>
+                </span>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -111,7 +113,12 @@ const description = 'What Xefy is, who builds it, and how to get in touch or sup
               <PayPalMark />
               <span>Donate · PayPal</span>
             </a>
-            <a class="support-link" href="https://www.buymeacoffee.com/kiarashfa" target="_blank" rel="noopener">
+            <a
+              class="support-link"
+              href="https://www.buymeacoffee.com/kiarashfa"
+              target="_blank"
+              rel="noopener"
+            >
               <CoffeeMark />
               <span>Buy Me a Coffee</span>
             </a>
@@ -121,14 +128,12 @@ const description = 'What Xefy is, who builds it, and how to get in touch or sup
         <div class="side-card">
           <div class="side-card-label">Where it stands</div>
           <div class="nutrition-major">
-            {
-              counts.map((count) => (
-                <div class="nutri-stat">
-                  <div class="val">{count.value.toLocaleString('en')}</div>
-                  <div class="lbl">{count.label}</div>
-                </div>
-              ))
-            }
+            {counts.map((count) => (
+              <div class="nutri-stat">
+                <div class="val">{count.value.toLocaleString('en')}</div>
+                <div class="lbl">{count.label}</div>
+              </div>
+            ))}
           </div>
           <p class="support-note">
             Counted from the published recipes when the site is built. The collection grows dish by
@@ -143,9 +148,9 @@ const description = 'What Xefy is, who builds it, and how to get in touch or sup
         <div class="about about-prose">
           <p>
             Xefy gives every dish one page and derives every figure on it from structured data.
-            Change the serving count and the quantities move with it; switch to US customary and
-            the temperatures and dimensions in the method text change too. Nothing is typed into
-            prose by hand, so nothing on a page can drift out of step with anything else on it.
+            Change the serving count and the quantities move with it; switch to US customary and the
+            temperatures and dimensions in the method text change too. Nothing is typed into prose
+            by hand, so nothing on a page can drift out of step with anything else on it.
           </p>
           <p>
             The scaling is arithmetic rather than a multiplier printed beside a string. Amounts are

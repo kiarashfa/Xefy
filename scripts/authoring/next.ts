@@ -106,7 +106,9 @@ async function rows(): Promise<Row[]> {
 }
 
 const written = async (): Promise<Set<string>> => {
-  const dirs = await readdir(path.join(CONTENT, 'recipes'), { withFileTypes: true }).catch(() => []);
+  const dirs = await readdir(path.join(CONTENT, 'recipes'), { withFileTypes: true }).catch(
+    () => [],
+  );
   return new Set(dirs.filter((d) => d.isDirectory()).map((d) => d.name));
 };
 
@@ -149,7 +151,7 @@ function batches(remaining: Row[], size: number): Row[][] {
     let count = Math.max(1, first.versions);
 
     // Only from the same tier and group, and only what still fits.
-    for (let i = 0; i < pool.length && count < size; ) {
+    for (let i = 0; i < pool.length && count < size;) {
       const row = pool[i]!;
       if (row.tier !== first.tier || groupKey(row) !== groupKey(first)) break;
       if (count + Math.max(1, row.versions) > size) {

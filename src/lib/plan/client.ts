@@ -35,7 +35,9 @@ export function ensureCatalog(base: string): Promise<void> {
       catalog.set(records);
     })
     .catch(() => {
-      loadError.set('The catalogue could not be loaded, so this plan cannot be worked out right now.');
+      loadError.set(
+        'The catalogue could not be loaded, so this plan cannot be worked out right now.',
+      );
     });
   return catalogRequest;
 }

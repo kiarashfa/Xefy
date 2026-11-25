@@ -26,7 +26,10 @@ const terms = CUISINES.map((t) => ({
     <ul class="listing">
       {terms.map((t) => (
         <li>
-          <a href={`${base}cuisines/${t.id}/`}>{t.label}<span class="count">{t.count}</span></a>
+          <a href={`${base}cuisines/${t.id}/`}>
+            {t.label}
+            <span class="count">{t.count}</span>
+          </a>
         </li>
       ))}
     </ul>

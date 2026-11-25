@@ -125,7 +125,9 @@
         {/each}
       </ul>
       {#if selected.length > 0}
-        <button class="facet-menu-clear" onclick={() => onchange([])}>Clear {label.toLowerCase()}</button>
+        <button class="facet-menu-clear" onclick={() => onchange([])}
+          >Clear {label.toLowerCase()}</button
+        >
       {/if}
     </div>
   {/if}

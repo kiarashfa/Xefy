@@ -55,7 +55,9 @@ export function buildParallelGroups(steps: TimedStep[]): ParallelGroup[] {
       if (target == null) return current.id;
       const next = byId.get(target);
       if (!next) {
-        throw new TimingError(`step "${current.id}" runs alongside "${target}", which does not exist`);
+        throw new TimingError(
+          `step "${current.id}" runs alongside "${target}", which does not exist`,
+        );
       }
       if (seen.has(next.id)) {
         throw new TimingError(

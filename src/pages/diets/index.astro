@@ -27,16 +27,14 @@ const terms = DIETS.map((t) => ({
       </p>
     </div>
     <ul class="listing">
-      {
-        terms.map((t) => (
-          <li>
-            <a href={`${base}diets/${t.id}/`}>
-              {t.label}
-              <span class="count">{t.count}</span>
-            </a>
-          </li>
-        ))
-      }
+      {terms.map((t) => (
+        <li>
+          <a href={`${base}diets/${t.id}/`}>
+            {t.label}
+            <span class="count">{t.count}</span>
+          </a>
+        </li>
+      ))}
     </ul>
   </main>
   <SiteFooter />

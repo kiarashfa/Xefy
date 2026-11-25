@@ -8,7 +8,11 @@ import UnitToggle from '../../components/UnitToggle.svelte';
 import ShareRecipe from '../../components/ShareRecipe.svelte';
 
 import { loadContent } from '../../lib/content/disk.ts';
-import { resolveRecipe, type ComponentInput, type ResolvedRecipe } from '../../lib/content/resolve.ts';
+import {
+  resolveRecipe,
+  type ComponentInput,
+  type ResolvedRecipe,
+} from '../../lib/content/resolve.ts';
 import type { Recipe } from '../../schemas/recipe.ts';
 import { renderProse, proseName } from '../../lib/render/prose.ts';
 import { renderAbout } from '../../lib/render/markdown.ts';
@@ -16,7 +20,14 @@ import { qtyHtml } from '../../lib/render/live-values.ts';
 import { formatDuration } from '../../lib/math/units.ts';
 import { formatNutrient, type Nutrient } from '../../lib/math/nutrition.ts';
 import { recipeJsonLd } from '../../lib/render/json-ld.ts';
-import { labelFor, COURSES, CUISINES, METHODS, ALLERGEN_TERMS, ALLERGEN_DISCLAIMER } from '../../schemas/taxonomy.ts';
+import {
+  labelFor,
+  COURSES,
+  CUISINES,
+  METHODS,
+  ALLERGEN_TERMS,
+  ALLERGEN_DISCLAIMER,
+} from '../../schemas/taxonomy.ts';
 
 /**
  * The recipe page — the canonical template the rest of the site is built from.
@@ -104,7 +115,10 @@ const MICROS: [Nutrient, string, string][] = [
 const facts = (r: ResolvedRecipe) =>
   [
     { label: 'Style', value: r.label },
-    { label: 'Method', value: identity.tags.method.map((m: string) => labelFor(METHODS, m)).join(', ') },
+    {
+      label: 'Method',
+      value: identity.tags.method.map((m: string) => labelFor(METHODS, m)).join(', '),
+    },
     { label: 'Diet', value: r.diet.heroLabel },
     { label: 'Difficulty', value: r.difficulty, difficulty: true },
   ].filter((f) => f.value);
@@ -132,15 +146,21 @@ const description = identity.description ?? identity.subtitle;
     reads rendered HTML rather than frontmatter, so they have to reach the page
     in some form — this is the non-displayed one.
   */}
-  <span data-pagefind-index-attrs="data-alt-spellings" data-alt-spellings={searchOnly} hidden></span>
+  <span
+    data-pagefind-index-attrs="data-alt-spellings"
+    data-alt-spellings={searchOnly}
+    hidden
+  ></span>
 
   <nav class="wrap crumb" aria-label="Breadcrumb" data-pagefind-ignore>
     {/* The separator carries its own trailing space: a newline before the next
         element collapses away, and the crumb renders as "Recipes /Chinese". */}
-    <a href={`${base}recipes/`}>Recipes</a>{' / '}
+    <a href={`${base}recipes/`}>Recipes</a>
+    {' / '}
     <a href={`${base}cuisines/${identity.tags.cuisine[0]}/`}>
       {labelFor(CUISINES, identity.tags.cuisine[0])}
-    </a> / {title}
+    </a>{' '}
+    / {title}
   </nav>
 
   {/*
@@ -148,19 +168,17 @@ const description = identity.description ?? identity.subtitle;
     down is the page's one main region, and it carries the skip link's target.
   */}
   <main id="main">
-  <div class="hero-band">
-    <div class="wrap hero">
-      <div class="hero-text">
-        <p class="eyebrow">
-          {identity.tags.cuisine.map((c: string) => labelFor(CUISINES, c)).join(' · ')} · {
-            identity.tags.course.map((c: string) => labelFor(COURSES, c)).join(' · ')
-          }
-        </p>
-        <h1 class="hero-title">{title}</h1>
-        <p class="hero-subtitle">{identity.subtitle}</p>
+    <div class="hero-band">
+      <div class="wrap hero">
+        <div class="hero-text">
+          <p class="eyebrow">
+            {identity.tags.cuisine.map((c: string) => labelFor(CUISINES, c)).join(' · ')} ·{' '}
+            {identity.tags.course.map((c: string) => labelFor(COURSES, c)).join(' · ')}
+          </p>
+          <h1 class="hero-title">{title}</h1>
+          <p class="hero-subtitle">{identity.subtitle}</p>
 
-        {
-          (identity.names.alsoKnownAs.length > 0 ||
+          {(identity.names.alsoKnownAs.length > 0 ||
             identity.names.notToBeConfusedWith.length > 0) && (
             <div class="names">
               {identity.names.alsoKnownAs.length > 0 && (
@@ -168,7 +186,11 @@ const description = identity.description ?? identity.subtitle;
                   <span class="name-label">Also known as</span>
                   {identity.names.alsoKnownAs.slice(0, 4).map((n: any, i: number) => (
                     <>
-                      {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
+                      {i > 0 && (
+                        <span class="name-sep" aria-hidden="true">
+                          ·
+                        </span>
+                      )}
                       <span class="name-alt">{n.name}</span>
                       {n.region && <span class="name-region"> · {n.region}</span>}
                     </>
@@ -180,7 +202,11 @@ const description = identity.description ?? identity.subtitle;
                   <span class="name-label">Not the same as</span>
                   {identity.names.notToBeConfusedWith.slice(0, 2).map((n: any, i: number) => (
                     <>
-                      {i > 0 && <span class="name-sep" aria-hidden="true">·</span>}
+                      {i > 0 && (
+                        <span class="name-sep" aria-hidden="true">
+                          ·
+                        </span>
+                      )}
                       <span class="name-alt">{n.name}</span>
                       <span class="name-region"> ({n.note})</span>
                     </>
@@ -188,23 +214,19 @@ const description = identity.description ?? identity.subtitle;
                 </p>
               )}
             </div>
-          )
-        }
+          )}
 
-        <div class="fact-row">
-          {
-            facts(versions[0].resolved).map((f) => (
+          <div class="fact-row">
+            {facts(versions[0].resolved).map((f) => (
               <div class="fact">
                 <span class="fact-label">{f.label}</span>
                 <span class={`fact-value${f.difficulty ? ' is-difficulty' : ''}`}>{f.value}</span>
               </div>
-            ))
-          }
+            ))}
+          </div>
         </div>
-      </div>
 
-      {
-        identity.image && (
+        {identity.image && (
           <figure class="hero-image">
             {/* Almost always the page's largest contentful paint, so it is
                 fetched ahead of everything else and never lazily. */}
@@ -231,16 +253,20 @@ const description = identity.description ?? identity.subtitle;
               </div>
             )}
           </figure>
-        )
-      }
+        )}
+      </div>
+
+      <div class="wrap hero-close">
+        <hr />
+      </div>
     </div>
 
-    <div class="wrap hero-close"><hr /></div>
-  </div>
-
-  <div class="wrap" data-recipe={Astro.params.slug} data-default-servings={versions[0].resolved.defaultServings}>
-    {
-      versions.length > 1 && (
+    <div
+      class="wrap"
+      data-recipe={Astro.params.slug}
+      data-default-servings={versions[0].resolved.defaultServings}
+    >
+      {versions.length > 1 && (
         <>
           {/*
             Underlined tabs: which version of the dish. It reaches both columns,
@@ -265,13 +291,11 @@ const description = identity.description ?? identity.subtitle;
             The same dish, adapted. Every quantity, time and figure below changes with the version.
           </p>
         </>
-      )
-    }
+      )}
 
-    <div class="body-grid">
-      <aside class="left-col">
-        {
-          versions.map((v, vi) => {
+      <div class="body-grid">
+        <aside class="left-col">
+          {versions.map((v, vi) => {
             const r = v.resolved;
             const servings = r.defaultServings;
             return (
@@ -283,155 +307,174 @@ const description = identity.description ?? identity.subtitle;
                 role={versions.length > 1 ? 'tabpanel' : undefined}
                 aria-labelledby={versions.length > 1 ? `tab-${v.id}` : undefined}
               >
-                  <div class="side-card is-row">
-                    <span class="side-card-label">Servings</span>
-                    <ServingScaler client:visible recipe={r.slug} defaultServings={servings} />
-                  </div>
+                <div class="side-card is-row">
+                  <span class="side-card-label">Servings</span>
+                  <ServingScaler client:visible recipe={r.slug} defaultServings={servings} />
+                </div>
 
-                  <div class="side-card is-row">
-                    <span class="side-card-label">Units</span>
-                    <UnitToggle client:visible />
-                  </div>
+                <div class="side-card is-row">
+                  <span class="side-card-label">Units</span>
+                  <UnitToggle client:visible />
+                </div>
 
-                  <div class="side-card" data-timeline={v.id}>
-                    <div class="timing">
-                      {(['prep', 'cook', 'rest'] as const)
-                        .filter((k) => r.timing[k] > 0)
-                        .map((k) => (
-                          <>
-                            <div class="timing-item">
-                              <b>{formatDuration(r.timing[k])}</b>
-                              <span>{k}</span>
-                            </div>
-                            <div class="stat-sep" />
-                          </>
-                        ))}
-                      <div class="timing-item">
-                        <b>{formatDuration(r.timing.total)}</b>
-                        <span>Total</span>
-                      </div>
+                <div class="side-card" data-timeline={v.id}>
+                  <div class="timing">
+                    {(['prep', 'cook', 'rest'] as const)
+                      .filter((k) => r.timing[k] > 0)
+                      .map((k) => (
+                        <>
+                          <div class="timing-item">
+                            <b>{formatDuration(r.timing[k])}</b>
+                            <span>{k}</span>
+                          </div>
+                          <div class="stat-sep" />
+                        </>
+                      ))}
+                    <div class="timing-item">
+                      <b>{formatDuration(r.timing.total)}</b>
+                      <span>Total</span>
                     </div>
+                  </div>
 
-                    {/*
+                  {/*
                       The card already answers "how long", so "when do I start"
                       belongs in the same slot rather than a new one. Off by
                       default; every clock time it produces is created in the
                       browser and never reaches this HTML or the JSON-LD.
                     */}
-                    <button class="timing-link" aria-expanded="false">Plan my timing →</button>
-                    <div class="timeline-controls" hidden>
-                      {/*
+                  <button class="timing-link" aria-expanded="false">
+                    Plan my timing →
+                  </button>
+                  <div class="timeline-controls" hidden>
+                    {/*
                         A group of toggle buttons rather than a tablist: these
                         choose how the schedule is anchored and control no panel,
                         and calling something a tab that opens nothing misleads a
                         screen reader about what pressing it will do. Same shape
                         as the unit toggle, which is the same kind of control.
                       */}
-                      <div class="timeline-modes" role="group" aria-label="Timing anchor">
-                        <button type="button" aria-pressed="true" data-mode="ready-at">Ready at</button>
-                        <button type="button" aria-pressed="false" data-mode="start-at">Start at</button>
-                        <button type="button" aria-pressed="false" data-mode="start-now">
-                          Starting now
-                        </button>
-                      </div>
-                      <label>
-                        {/* The same field means the end of the schedule or the
+                    <div class="timeline-modes" role="group" aria-label="Timing anchor">
+                      <button type="button" aria-pressed="true" data-mode="ready-at">
+                        Ready at
+                      </button>
+                      <button type="button" aria-pressed="false" data-mode="start-at">
+                        Start at
+                      </button>
+                      <button type="button" aria-pressed="false" data-mode="start-now">
+                        Starting now
+                      </button>
+                    </div>
+                    <label>
+                      {/* The same field means the end of the schedule or the
                             beginning of it, so it says which. */}
-                        <span class="fact-label" data-time-label>Ready</span>
-                        {/*
+                      <span class="fact-label" data-time-label>
+                        Ready
+                      </span>
+                      {/*
                           Native, because it is keyboard- and screen-reader-
                           operable with no custom work — the same principle that
                           rules out drag-and-drop on the Plan.
                         */}
-                        <input type="time" value="20:00" aria-label="Time to anchor the schedule to" />
-                      </label>
-                    </div>
-                    <script
-                      type="application/json"
-                      is:inline
-                      set:html={JSON.stringify(
-                        r.flat.steps.map((s) => ({
-                          id: s.id,
-                          durationMin: s.durationMin,
-                          type: s.type,
-                          phase: s.phase,
-                        })),
-                      )}
-                    />
+                      <input
+                        type="time"
+                        value="20:00"
+                        aria-label="Time to anchor the schedule to"
+                      />
+                    </label>
                   </div>
+                  <script
+                    type="application/json"
+                    is:inline
+                    set:html={JSON.stringify(
+                      r.flat.steps.map((s) => ({
+                        id: s.id,
+                        durationMin: s.durationMin,
+                        type: s.type,
+                        phase: s.phase,
+                      })),
+                    )}
+                  />
+                </div>
 
-                  <div>
-                    <h2 class="panel-title">Ingredients</h2>
-                    <ul class="ingredients">
-                      {r.lines.map((line) => {
-                        const sub = r.substitutions.find((s: any) => s.lineRef === line.line.id);
-                        return (
-                          <li>
-                            <input class="chk" type="checkbox" aria-label={proseName(line)} />
-                            {line.ingredient.image ? (
-                              /*
-                               * The image is decorative — the ingredient's name
-                               * is already the next thing in the line — so the
-                               * link needs a name of its own, or it reaches a
-                               * screen reader as an anchor with no content.
-                               */
-                              <a
-                                class="ing-thumb"
-                                href={`${base}ingredients/${line.ingredient.id}/`}
-                                aria-label={`${line.ingredient.name}, ingredient page`}
-                              >
-                                <img src={`${base}${line.ingredient.image}`} alt="" width="34" height="34" loading="lazy" decoding="async" />
-                              </a>
-                            ) : (
-                              /*
-                               * No photograph yet, and still a way to the
-                               * ingredient page: the link used to hang off the
-                               * picture alone, which left every imageless
-                               * ingredient unreachable from the recipes naming it.
-                               */
-                              <a
-                                class="ing-thumb ing-thumb--blank"
-                                href={`${base}ingredients/${line.ingredient.id}/`}
-                                aria-label={`${line.ingredient.name}, ingredient page`}
-                              >
-                                <span aria-hidden="true">{line.ingredient.name.slice(0, 1)}</span>
-                              </a>
-                            )}
-                            <span class="ing-text">
-                              <Fragment
-                                set:html={qtyHtml(
-                                  {
-                                    amount: line.line.amount,
-                                    unit: line.line.unit,
-                                    defaultServings: servings,
-                                    name: proseName(line),
-                                    density: line.density,
-                                    countUnit: line.form.countUnit,
-                                  },
-                                  servings,
-                                  system,
-                                  { showName: Boolean(line.form.countUnit) },
-                                )}
+                <div>
+                  <h2 class="panel-title">Ingredients</h2>
+                  <ul class="ingredients">
+                    {r.lines.map((line) => {
+                      const sub = r.substitutions.find((s: any) => s.lineRef === line.line.id);
+                      return (
+                        <li>
+                          <input class="chk" type="checkbox" aria-label={proseName(line)} />
+                          {line.ingredient.image ? (
+                            /*
+                             * The image is decorative — the ingredient's name
+                             * is already the next thing in the line — so the
+                             * link needs a name of its own, or it reaches a
+                             * screen reader as an anchor with no content.
+                             */
+                            <a
+                              class="ing-thumb"
+                              href={`${base}ingredients/${line.ingredient.id}/`}
+                              aria-label={`${line.ingredient.name}, ingredient page`}
+                            >
+                              <img
+                                src={`${base}${line.ingredient.image}`}
+                                alt=""
+                                width="34"
+                                height="34"
+                                loading="lazy"
+                                decoding="async"
                               />
-                              {!line.form.countUnit && <> {proseName(line)}</>}
-                              {line.line.note && <span class="ing-note">{line.line.note}</span>}
-                              {sub && (
-                                <>
-                                  <button class="sub-hint" aria-expanded="false">
-                                    No {proseName(line)}? →
-                                  </button>
-                                  <span class="sub-body" hidden>
-                                    <b>{sub.substitute}</b> ({sub.ratio}). {sub.note}
-                                  </span>
-                                </>
+                            </a>
+                          ) : (
+                            /*
+                             * No photograph yet, and still a way to the
+                             * ingredient page: the link used to hang off the
+                             * picture alone, which left every imageless
+                             * ingredient unreachable from the recipes naming it.
+                             */
+                            <a
+                              class="ing-thumb ing-thumb--blank"
+                              href={`${base}ingredients/${line.ingredient.id}/`}
+                              aria-label={`${line.ingredient.name}, ingredient page`}
+                            >
+                              <span aria-hidden="true">{line.ingredient.name.slice(0, 1)}</span>
+                            </a>
+                          )}
+                          <span class="ing-text">
+                            <Fragment
+                              set:html={qtyHtml(
+                                {
+                                  amount: line.line.amount,
+                                  unit: line.line.unit,
+                                  defaultServings: servings,
+                                  name: proseName(line),
+                                  density: line.density,
+                                  countUnit: line.form.countUnit,
+                                },
+                                servings,
+                                system,
+                                { showName: Boolean(line.form.countUnit) },
                               )}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
+                            />
+                            {!line.form.countUnit && <> {proseName(line)}</>}
+                            {line.line.note && <span class="ing-note">{line.line.note}</span>}
+                            {sub && (
+                              <>
+                                <button class="sub-hint" aria-expanded="false">
+                                  No {proseName(line)}? →
+                                </button>
+                                <span class="sub-body" hidden>
+                                  <b>{sub.substitute}</b> ({sub.ratio}). {sub.note}
+                                </span>
+                              </>
+                            )}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
 
-                    {/*
+                  {/*
                       A side door, not the page's purpose — outlined rather than
                       a filled accent button, which would read as commerce on a
                       page that sells nothing.
@@ -439,134 +482,143 @@ const description = identity.description ?? identity.subtitle;
                       Two doors, because they are two intentions: cooking this
                       as part of the week, and simply wanting what it takes.
                     */}
-                    <div class="add-actions">
-                      <button class="add-to-plan" data-add-to-plan="plan" data-default-servings={servings}>
-                        Add to plan
-                      </button>
-                      <button class="add-to-plan" data-add-to-plan="list" data-default-servings={servings}>
-                        Add to shopping list
-                      </button>
-                    </div>
+                  <div class="add-actions">
+                    <button
+                      class="add-to-plan"
+                      data-add-to-plan="plan"
+                      data-default-servings={servings}
+                    >
+                      Add to plan
+                    </button>
+                    <button
+                      class="add-to-plan"
+                      data-add-to-plan="list"
+                      data-default-servings={servings}
+                    >
+                      Add to shopping list
+                    </button>
                   </div>
+                </div>
 
-                  <div class="nutrition">
-                    <h2 class="panel-title">Nutrition, per serving</h2>
-                    <div class="nutrition-major">
-                      {MACROS.map(([key, label]) => (
-                        <div class="nutri-stat">
-                          <div class="val">
-                            {formatNutrient(r.nutrition.perServing[key] ?? 0, key)}
-                            {key !== 'kcal' && 'g'}
-                          </div>
-                          <div class="lbl">{label}</div>
+                <div class="nutrition">
+                  <h2 class="panel-title">Nutrition, per serving</h2>
+                  <div class="nutrition-major">
+                    {MACROS.map(([key, label]) => (
+                      <div class="nutri-stat">
+                        <div class="val">
+                          {formatNutrient(r.nutrition.perServing[key] ?? 0, key)}
+                          {key !== 'kcal' && 'g'}
                         </div>
-                      ))}
-                    </div>
-
-                    <div class="nutrition-minor-label">Also per serving</div>
-                    <div class="nutrition-grid">
-                      {MICROS.filter((m) => r.nutrition.perServing[m[0]] != null).map(
-                        ([key, label, unit]) => (
-                          <div>
-                            <span>{label}</span>
-                            <b>
-                              {formatNutrient(r.nutrition.perServing[key] ?? 0, key)}
-                              {unit}
-                            </b>
-                          </div>
-                        ),
-                      )}
-                    </div>
-
-                    <p class="nutrition-note">
-                      As prepared with these ingredients, not as served.
-                      {r.nutrition.estimated && (
-                        <> Estimated: {r.nutrition.estimateReasons.join(' ')}</>
-                      )}
-                    </p>
-
-                    <div class="allergen-box">
-                      <b>Allergens</b>
-                      {r.diet.allergens.length > 0
-                        ? r.diet.allergens.map((a) => labelFor(ALLERGEN_TERMS, a)).join(', ')
-                        : 'None listed'}
-                      . {ALLERGEN_DISCLAIMER}
-                      {r.diet.animalOriginNotes.map((n) => (
-                        <>
-                          {' '}
-                          {n.label}: {n.note}
-                        </>
-                      ))}
-                    </div>
+                        <div class="lbl">{label}</div>
+                      </div>
+                    ))}
                   </div>
+
+                  <div class="nutrition-minor-label">Also per serving</div>
+                  <div class="nutrition-grid">
+                    {MICROS.filter((m) => r.nutrition.perServing[m[0]] != null).map(
+                      ([key, label, unit]) => (
+                        <div>
+                          <span>{label}</span>
+                          <b>
+                            {formatNutrient(r.nutrition.perServing[key] ?? 0, key)}
+                            {unit}
+                          </b>
+                        </div>
+                      ),
+                    )}
+                  </div>
+
+                  <p class="nutrition-note">
+                    As prepared with these ingredients, not as served.
+                    {r.nutrition.estimated && (
+                      <> Estimated: {r.nutrition.estimateReasons.join(' ')}</>
+                    )}
+                  </p>
+
+                  <div class="allergen-box">
+                    <b>Allergens</b>
+                    {r.diet.allergens.length > 0
+                      ? r.diet.allergens.map((a) => labelFor(ALLERGEN_TERMS, a)).join(', ')
+                      : 'None listed'}
+                    . {ALLERGEN_DISCLAIMER}
+                    {r.diet.animalOriginNotes.map((n) => (
+                      <>
+                        {' '}
+                        {n.label}: {n.note}
+                      </>
+                    ))}
+                  </div>
+                </div>
               </div>
             );
-          })
-        }
+          })}
 
-        {/*
+          {/*
           The one thing here somebody might show an audience, so this is where
           the public intents live and the only place on the site they do.
         */}
-        <ShareRecipe
-          client:visible
-          title={identity.title}
-          subtitle={identity.subtitle}
-          url={`${Astro.site?.origin ?? ''}${base}recipes/${Astro.params.slug}/`}
-          image={identity.image ? `${Astro.site?.origin ?? ''}${base}${identity.image.src}` : ''}
-        />
-      </aside>
+          <ShareRecipe
+            client:visible
+            title={identity.title}
+            subtitle={identity.subtitle}
+            url={`${Astro.site?.origin ?? ''}${base}recipes/${Astro.params.slug}/`}
+            image={identity.image ? `${Astro.site?.origin ?? ''}${base}${identity.image.src}` : ''}
+          />
+        </aside>
 
-      <div class="right-col">
-        {/* Recipe / About — a segmented control, scoped to this column only. */}
-        <div class="panel-switch" role="tablist" data-tablist aria-label="Recipe or background">
-          <button
-            role="tab"
-            id="tab-recipe"
-            aria-selected="true"
-            aria-controls="panel-recipe"
-            data-value="recipe"
-          >
-            Recipe
-          </button>
-          {about && (
+        <div class="right-col">
+          {/* Recipe / About — a segmented control, scoped to this column only. */}
+          <div class="panel-switch" role="tablist" data-tablist aria-label="Recipe or background">
             <button
               role="tab"
-              id="tab-about"
-              aria-selected="false"
-              aria-controls="panel-about"
-              data-value="about"
+              id="tab-recipe"
+              aria-selected="true"
+              aria-controls="panel-recipe"
+              data-value="recipe"
             >
-              About
+              Recipe
             </button>
-          )}
-        </div>
-
-        <div id="panel-recipe" role="tabpanel" aria-labelledby="tab-recipe" data-panel>
-          {versions.map((v, vi) => {
-            const r = v.resolved;
-            const servings = r.defaultServings;
-            return (
-              <div
-                data-version={v.id}
-                data-method
-                hidden={vi !== 0}
-                id={`panel-${v.id}-method`}
-                role={versions.length > 1 ? 'tabpanel' : undefined}
-                aria-labelledby={versions.length > 1 ? `tab-${v.id}` : undefined}
+            {about && (
+              <button
+                role="tab"
+                id="tab-about"
+                aria-selected="false"
+                aria-controls="panel-about"
+                data-value="about"
               >
+                About
+              </button>
+            )}
+          </div>
+
+          <div id="panel-recipe" role="tabpanel" aria-labelledby="tab-recipe" data-panel>
+            {versions.map((v, vi) => {
+              const r = v.resolved;
+              const servings = r.defaultServings;
+              return (
+                <div
+                  data-version={v.id}
+                  data-method
+                  hidden={vi !== 0}
+                  id={`panel-${v.id}-method`}
+                  role={versions.length > 1 ? 'tabpanel' : undefined}
+                  aria-labelledby={versions.length > 1 ? `tab-${v.id}` : undefined}
+                >
                   <h2 class="panel-title">Method</h2>
                   <ol class="steps">
                     {r.flat.steps.map((step) => {
                       const rationale = r.notes.techniqueRationale.find(
                         (n: any) => n.stepId === step.id,
                       );
-                      const pitfall = r.notes.commonPitfalls.find(
-                        (n: any) => n.stepId === step.id,
-                      );
+                      const pitfall = r.notes.commonPitfalls.find((n: any) => n.stepId === step.id);
                       return (
                         <li class="step" data-step={step.id}>
-                          <button class="step-check" aria-pressed="false" aria-label={`Mark step ${step.number} done`}>
+                          <button
+                            class="step-check"
+                            aria-pressed="false"
+                            aria-label={`Mark step ${step.number} done`}
+                          >
                             <span class="num">{step.number}</span>
                           </button>
                           <div class="step-body">
@@ -632,13 +684,12 @@ const description = identity.description ?? identity.subtitle;
                       </div>
                     </div>
                   </section>
-              </div>
-            );
-          })}
-        </div>
+                </div>
+              );
+            })}
+          </div>
 
-        {
-          about && (
+          {about && (
             <div id="panel-about" role="tabpanel" aria-labelledby="tab-about" data-panel hidden>
               <div class="about">
                 <Fragment set:html={renderAbout(about.body, about.data.sources)} />
@@ -656,11 +707,10 @@ const description = identity.description ?? identity.subtitle;
                 </div>
               </div>
             </div>
-          )
-        }
+          )}
+        </div>
       </div>
     </div>
-  </div>
   </main>
 
   <SiteFooter />

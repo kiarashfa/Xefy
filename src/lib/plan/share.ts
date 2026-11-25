@@ -44,9 +44,7 @@ export function shareText(
 
   const body = rendered.map((r) => `- ${r.amount.padEnd(width)}  ${r.name}`);
 
-  const forLine = items
-    .map((i) => `${i.recipe.title} (${i.item.servings} servings)`)
-    .join(', ');
+  const forLine = items.map((i) => `${i.recipe.title} (${i.item.servings} servings)`).join(', ');
 
   return [
     'Shopping list · Xefy',

@@ -194,16 +194,18 @@ async function findCandidates(query: string, limit: number): Promise<Candidate[]
   });
 
   const pages: any[] = data.query?.pages ?? [];
-  return pages
-    .map(toCandidate)
-    .filter((c): c is Candidate => c !== null)
-    // Only formats sharp can open. See DECODABLE_MIME.
-    .filter((c) => DECODABLE_MIME.has(c.mime.toLowerCase()))
-    .sort(
-      (a, b) =>
-        VERDICT_RANK[a.assessment.verdict] - VERDICT_RANK[b.assessment.verdict] ||
-        b.width * b.height - a.width * a.height,
-    );
+  return (
+    pages
+      .map(toCandidate)
+      .filter((c): c is Candidate => c !== null)
+      // Only formats sharp can open. See DECODABLE_MIME.
+      .filter((c) => DECODABLE_MIME.has(c.mime.toLowerCase()))
+      .sort(
+        (a, b) =>
+          VERDICT_RANK[a.assessment.verdict] - VERDICT_RANK[b.assessment.verdict] ||
+          b.width * b.height - a.width * a.height,
+      )
+  );
 }
 
 async function byTitle(title: string): Promise<Candidate> {
@@ -331,10 +333,7 @@ async function openverseSearch(
 ): Promise<Candidate[]> {
   const url = new URL(OPENVERSE);
   url.searchParams.set('q', query);
-  url.searchParams.set(
-    'license',
-    publicDomainOnly ? OPENVERSE_PUBLIC_DOMAIN : OPENVERSE_LICENCES,
-  );
+  url.searchParams.set('license', publicDomainOnly ? OPENVERSE_PUBLIC_DOMAIN : OPENVERSE_LICENCES);
   // Openverse indexes whatever size the upstream host serves, and Flickr's
   // default is 1024px — under the hero floor. `large` is what keeps the
   // results usable.
@@ -430,13 +429,22 @@ async function search(
   const target = source === 'openverse' ? '<adopt id>' : '"<File:Title>"';
   console.log(
     '\nPrefer public domain and CC BY over CC BY-SA where the photograph is as good;' +
-      '\nan image smaller than ' + MIN_EDGE + 'px on its short edge cannot make a hero crop.' +
+      '\nan image smaller than ' +
+      MIN_EDGE +
+      'px on its short edge cannot make a hero crop.' +
       (source === 'openverse'
         ? '\nOpenverse indexes drawings, paintings and museum objects alongside' +
           '\nphotographs, so look before believing a title.'
         : '') +
-      '\n\nLook at them first:  images.ts review "' + query + '" --slug <slug>' + via + ' --sheet' +
-      '\nThen:                images.ts adopt ' + target + ' --slug <slug>' + via +
+      '\n\nLook at them first:  images.ts review "' +
+      query +
+      '" --slug <slug>' +
+      via +
+      ' --sheet' +
+      '\nThen:                images.ts adopt ' +
+      target +
+      ' --slug <slug>' +
+      via +
       ' --kind recipe --alt "…"',
   );
 }
@@ -532,7 +540,9 @@ async function review(
     return;
   }
 
-  console.log(`\n${kept} candidate(s) in image-review/${slug}/. Compare, then adopt the one you want.`);
+  console.log(
+    `\n${kept} candidate(s) in image-review/${slug}/. Compare, then adopt the one you want.`,
+  );
 }
 
 /**
@@ -679,10 +689,9 @@ async function adopt(
       `${candidate.provider ? ` via ${candidate.provider}` : ''}`,
   );
   if (source === 'openverse') {
-    const listed = await readFile(
-      path.join(REVIEW_DIR, slug, 'candidates.txt'),
-      'utf8',
-    ).catch(() => null);
+    const listed = await readFile(path.join(REVIEW_DIR, slug, 'candidates.txt'), 'utf8').catch(
+      () => null,
+    );
     if (listed !== null && !listed.includes(identifier)) {
       console.log(
         `\n  !! ${identifier} is not among the candidates reviewed for "${slug}".\n` +
@@ -988,10 +997,13 @@ async function list(): Promise<void> {
   }
   console.log(`${credits.length} image(s):\n`);
   for (const c of credits) {
-    console.log(`  ${c.kind.padEnd(11)} ${c.slug.padEnd(24)} ${c.license.padEnd(16)} ${c.author ?? ''}`);
+    console.log(
+      `  ${c.kind.padEnd(11)} ${c.slug.padEnd(24)} ${c.license.padEnd(16)} ${c.author ?? ''}`,
+    );
   }
   const sa = credits.filter((c) => c.shareAlike).length;
-  if (sa > 0) console.log(`\n${sa} under ShareAlike; the attributions page states the licence per image.`);
+  if (sa > 0)
+    console.log(`\n${sa} under ShareAlike; the attributions page states the licence per image.`);
 }
 
 /* ------------------------------------------------------------------ */

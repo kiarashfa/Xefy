@@ -11,7 +11,12 @@
    */
   import { aggregateNutrition } from '../lib/plan/aggregate.ts';
   import { catalog, details, ensureCatalog, ensureDetails, loadError } from '../lib/plan/client.ts';
-  import { describeDropped, resolvePlan, totalPortions, type ResolvedPlanItem } from '../lib/plan/resolve.ts';
+  import {
+    describeDropped,
+    resolvePlan,
+    totalPortions,
+    type ResolvedPlanItem,
+  } from '../lib/plan/resolve.ts';
   import {
     addToPlan,
     clearPlan,
@@ -41,7 +46,10 @@
   const dropped = $derived(describeDropped(resolution.dropped));
 
   $effect(() => {
-    ensureDetails(base, resolution.items.map((i) => i.recipe.slug));
+    ensureDetails(
+      base,
+      resolution.items.map((i) => i.recipe.slug),
+    );
   });
 
   // Shopping-only items are not meals anybody has planned to eat, so they stay
@@ -168,8 +176,8 @@
       Nothing planned yet. Add a dish to any day below, from any
       <a href={`${base}recipes/`}>recipe page</a>, or from
       <a href={`${base}what-can-i-make/`}>what you already have</a>. The
-      <a href={`${base}shopping-list/`}>shopping list</a> works itself out from the serving counts
-      you choose.
+      <a href={`${base}shopping-list/`}>shopping list</a> works itself out from the serving counts you
+      choose.
     </p>
   {/if}
   {#if dropped}<p class="plan-dropped">{dropped}</p>{/if}
@@ -230,7 +238,7 @@
           body={planBody}
           url={planUrl()}
           title="Meal plan · Xefy"
-          payload={payload}
+          {payload}
         />
         <p class="source-line">
           The link carries the plan itself, so whoever opens it can copy the whole week into their
@@ -363,14 +371,23 @@
             {:else if query.trim()}
               <p class="plan-day-empty">Nothing matches that.</p>
             {/if}
-            <button class="plan-remove" onclick={() => { adding = null; query = ''; }}>
+            <button
+              class="plan-remove"
+              onclick={() => {
+                adding = null;
+                query = '';
+              }}
+            >
               Cancel
             </button>
           </div>
         {:else}
           <button
             class="day-adder-open"
-            onclick={() => { adding = day; query = ''; }}
+            onclick={() => {
+              adding = day;
+              query = '';
+            }}
             aria-label={`Add a dish to ${DAY_LABELS[day]}`}
           >
             <span aria-hidden="true">+</span> Add a dish

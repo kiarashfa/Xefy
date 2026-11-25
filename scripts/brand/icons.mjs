@@ -34,7 +34,12 @@ const fonts = [];
 for (const role of ['display', 'body']) {
   const { family, files } = config.fonts[role];
   for (const f of files) {
-    fonts.push({ name: family, data: readFileSync(at(f.path)), weight: f.weight, style: f.style ?? 'normal' });
+    fonts.push({
+      name: family,
+      data: readFileSync(at(f.path)),
+      weight: f.weight,
+      style: f.style ?? 'normal',
+    });
   }
 }
 
@@ -42,7 +47,10 @@ for (const role of ['display', 'body']) {
 
 function markPng(theme, size) {
   const svg = config.mark(readFileSync(at('public/favicon.svg'), 'utf8'), theme);
-  const png = new Resvg(svg, { fitTo: { mode: 'width', value: size }, font: { loadSystemFonts: false } })
+  const png = new Resvg(svg, {
+    fitTo: { mode: 'width', value: size },
+    font: { loadSystemFonts: false },
+  })
     .render()
     .asPng();
   return `data:image/png;base64,${png.toString('base64')}`;
@@ -52,7 +60,10 @@ function markPng(theme, size) {
 
 const h = (type, style, ...children) => ({
   type,
-  props: { style: { display: 'flex', ...style }, children: children.flat().filter((c) => c !== null) },
+  props: {
+    style: { display: 'flex', ...style },
+    children: children.flat().filter((c) => c !== null),
+  },
 });
 const img = (src, size, style = {}) => ({
   type: 'img',
@@ -65,11 +76,19 @@ async function icon(size, padding) {
   const inner = Math.round(size * (1 - 2 * padding));
   const tree = h(
     'div',
-    { width: size, height: size, alignItems: 'center', justifyContent: 'center', backgroundColor: config.colors.background },
+    {
+      width: size,
+      height: size,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: config.colors.background,
+    },
     img(markPng(config.iconTheme, inner * 2), inner),
   );
   const svg = await satori(tree, { width: size, height: size, fonts });
-  return new Resvg(svg, { fitTo: { mode: 'original' }, font: { loadSystemFonts: false } }).render().asPng();
+  return new Resvg(svg, { fitTo: { mode: 'original' }, font: { loadSystemFonts: false } })
+    .render()
+    .asPng();
 }
 
 /* ── run ─────────────────────────────────────────────────────────────────── */

@@ -64,7 +64,9 @@ function clear(scope: ParentNode): void {
 }
 
 function render(panel: Panel): void {
-  const scope = document.querySelector<HTMLElement>(`[data-method][data-version="${panel.version}"]`);
+  const scope = document.querySelector<HTMLElement>(
+    `[data-method][data-version="${panel.version}"]`,
+  );
   clear(panel.root);
   if (scope) clear(scope);
   if (!open || !scope) return;
@@ -89,7 +91,9 @@ function render(panel: Panel): void {
   scope.prepend(summary);
 
   for (const entry of timeline.entries) {
-    const meta = scope.querySelector<HTMLElement>(`[data-step="${CSS.escape(entry.stepId)}"] .step-meta`);
+    const meta = scope.querySelector<HTMLElement>(
+      `[data-step="${CSS.escape(entry.stepId)}"] .step-meta`,
+    );
     if (!meta) continue;
     const clock = document.createElement('span');
     clock.className = 'step-clock';

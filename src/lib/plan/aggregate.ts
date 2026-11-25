@@ -131,27 +131,26 @@ export function aggregateList(
       pantryStaple: stapleSet.has(group.ingredientRef),
       density: densityOf(line),
       countUnit: line.countUnit,
-      boughtFor: [
-        ...new Set(group.contributions.flatMap((c) => c.line.boughtFor ?? [])),
-      ],
+      boughtFor: [...new Set(group.contributions.flatMap((c) => c.line.boughtFor ?? []))],
       // One planned dish is one source, however many of its lines ended up
       // here. Two lines of one recipe merging — a split use, or a Form folded
       // into its purchase — must not make the recipe appear twice.
-      sources: [...group.contributions.reduce(
-        (acc, c) => {
-          const entry = byUid.get(c.sourceKey)!;
-          const existing = acc.get(c.sourceKey);
-          acc.set(c.sourceKey, {
-            uid: c.sourceKey,
-            slug: entry.recipe.slug,
-            title: entry.recipe.title,
-            servings: entry.item.servings,
-            amount: (existing?.amount ?? 0) + c.amount,
-          });
-          return acc;
-        },
-        new Map<string, ListSource>(),
-      ).values()],
+      sources: [
+        ...group.contributions
+          .reduce((acc, c) => {
+            const entry = byUid.get(c.sourceKey)!;
+            const existing = acc.get(c.sourceKey);
+            acc.set(c.sourceKey, {
+              uid: c.sourceKey,
+              slug: entry.recipe.slug,
+              title: entry.recipe.title,
+              servings: entry.item.servings,
+              amount: (existing?.amount ?? 0) + c.amount,
+            });
+            return acc;
+          }, new Map<string, ListSource>())
+          .values(),
+      ],
     };
   });
 }

@@ -74,8 +74,6 @@
   /* Fluid rather than stepped: 20px on a phone, 48px from a laptop up. */
   --gutter: clamp(20px, 4vw, 48px);
 
-
-
   /* One easing curve everywhere. Motion is slow and eased, never bouncy. */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
@@ -252,5 +250,4 @@
     padding-inline: 3px;
     border-radius: 3px;
   }
-
 }

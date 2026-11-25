@@ -103,7 +103,12 @@ export function formatCount(value: number): string {
  * flour.
  */
 export function formatDecimal(value: number): string {
-  const rounded = value < 1 ? Math.round(value * 100) / 100 : value < 10 ? Math.round(value * 10) / 10 : Math.round(value);
+  const rounded =
+    value < 1
+      ? Math.round(value * 100) / 100
+      : value < 10
+        ? Math.round(value * 10) / 10
+        : Math.round(value);
   return String(rounded);
 }
 
@@ -121,9 +126,7 @@ export function celsiusToFahrenheit(celsius: number): number {
 }
 
 export function formatTemperature(celsius: number, system: UnitSystem): string {
-  return system === 'metric'
-    ? `${Math.round(celsius)} °C`
-    : `${celsiusToFahrenheit(celsius)} °F`;
+  return system === 'metric' ? `${Math.round(celsius)} °C` : `${celsiusToFahrenheit(celsius)} °F`;
 }
 
 /* ------------------------------------------------------------------ *
