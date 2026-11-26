@@ -36,7 +36,7 @@ The Fontsource packages `@fontsource/fraunces` and `@fontsource/inter` are used 
 | [Rawpixel](https://www.rawpixel.com) | 6 photographs | CC0 1.0, as recorded on each image |
 | [WordPress Photo Directory](https://wordpress.org/photos/) | 1 photograph | CC0 1.0, as recorded on the image |
 | [Wikipedia](https://en.wikipedia.org) and other web sources | cited on each recipe, ingredient and technique page under its sources (207 distinct Wikipedia pages; 701 source links listed in all) | cited, not reproduced |
-| Google Analytics (loaded from `www.googletagmanager.com`) | page-view statistics in the published site only; the page address is sent without query string or fragment | Google's terms apply |
+| Google Analytics (loaded from `www.googletagmanager.com`) | page-view statistics in the published site only, and only after the visitor accepts analytics in the cookie bar; the page address is sent without query string or fragment | Google's terms apply |
 
 The site makes no other runtime call to a third party. Everything else it fetches comes from its own origin.
 

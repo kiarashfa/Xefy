@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import ConsentBar from '../components/ConsentBar.astro';
 
 interface Props {
   title: string;
@@ -20,9 +21,6 @@ const { title, description, noindex = false, pagefindIgnore = noindex } = Astro.
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const base = import.meta.env.BASE_URL;
-
-/** Site analytics. The measurement ID is public by design, and this is the only place it is written. */
-const GA_ID = 'G-XQGBVVQR15';
 
 /*
  * The link-preview card, drawn by `npm run brand` from the site's own mark and
@@ -100,20 +98,11 @@ const themeColorSync = `(()=>{const m=document.querySelector('meta[name="theme-c
     </script>
     <meta name="theme-color" content={THEME_COLOR.light} />
     <script is:inline set:html={themeColorSync} />
-    {import.meta.env.PROD && (
-      <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-        {/* The path only: a query string or hash can carry what a reader shared, and it stays theirs. */}
-        <script
-          is:inline
-          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(GA_ID)},{page_location:location.origin+location.pathname});`}
-        />
-      </>
-    )}
   </head>
   <body data-pagefind-ignore={pagefindIgnore ? 'all' : undefined}>
     <slot />
     {/* Shown on paper only, so a printed sheet can be found again. */}
     <p class="print-source wrap">{canonical.href}</p>
+    <ConsentBar />
   </body>
 </html>
